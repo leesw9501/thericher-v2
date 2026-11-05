@@ -2,7 +2,25 @@
 
 ## Current Work
 
-Updated Nov5UTC00:22 / KST09:22. Gibbs CLOSED the useful coverage package:
+Updated Nov5UTC00:54 / KST09:54. Archimedes CLOSED bounded history expansion:
+A/data/current-native17-minute-history-expansion-20261105-v1.
+Source9f714b0e/plan000b4c79/RESULTf886d9ca/closure18415114:
+RETURN-POINTER.json binds actual60GET(39accepted/21rejected),1POST/0recoveries,
+3849new Nov2 RTH1m rows. Eight complete missing-stock streams, AMD370/DIS359;
+mask missing rows, no fill/imputation.17-axis output is NOT all17 complete.
+Five typed timeframes/positive owner closure passed; Parent39refs stable.
+45completed/consumed streams skipped; two zero-row cohorts stopped frozen
+scope,125older streams unattempted/UNKNOWN.2.48seconds/GET. No active PID/
+next_due; rejected GET marker preserved, no retry granted. All21rejections
+reproduce historical_minute_clock_mismatch offline, NOT alone API quota/horizon
+proof. NEW offline-only diagnosis under:
+A/data/current-native17-minute-history-clock-diagnosis-20261105-v1.
+Distinguish provider returned session from NY DST/calendar/cursor bug using
+exact retained pages internally and native pre/postDST synthetic checks. No
+network/marker reset/old output rewrite/custody release/model effects;
+<=120active/600elapsed. Market bytes M/code A; future Data2 unchanged.
+
+Gibbs CLOSED the preceding useful coverage package:
 A/data/current-native17-minute-coverage-expansion-20261105-v1.
 Consumer: current Native17 intraday/cross-sector/resampling research inputs.
 Sourcee386c376aacb910bd998da71116cfecf90d574f01f1bac3fe570811a258eca68:

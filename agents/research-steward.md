@@ -2,8 +2,13 @@
 
 ## Current Resource Coordination
 
-Updated Nov4UTC23:07 / Nov5KST08:07. Nietzsche coordinates new Engine resources.
+Updated Nov5UTC00:45 / KST09:45. Kant coordinates NEW indicator-boosting resources.
 Parent owns integration/Git. Agent assignment is not proof of an active fit.
+Package research/current-h3-indicator-boosting-development-20261105-v1 is
+source/native preparation only. Proven CPU tree solver preferred; no active
+numerical/GPU job claimed. Freeze <=3configs/900solverupdates/3forecasts+
+1fixedblend/18views/600summedactive/1800elapsed/0retry before market. Existing
+registry/custody/positive owner checks remain, no old cap refund/holdout release.
 
 Current EOD Nov6 future worker is ACTUALLY SCHEDULED,0fits:
 A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.

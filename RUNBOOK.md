@@ -2,7 +2,7 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC00:22 / KST09:22. Company objective remains UNFINISHED.
+Updated Nov5UTC00:34 / KST09:34. Company objective remains UNFINISHED.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
@@ -66,10 +66,40 @@ five actual typed timeframes/all actors closed. Cold Data API requires exact
 expected Source; new Engine consumer binding remains explicit, no old target
 custody release/automatic forecast/Paper swap. Parent34refs0mismatch.
 
-Engineering INTC fixed1share future pair is NOT deployed. Windows invented
-host/native consumer passed b63/edd; real Linux fixture and exact2-task/PT10M
-installer are being prepared in separate scopes. No actual financial command
-is published from these source-only packages; use qualified current callbacks.
+Engineering INTC fixed1share pair IS ACTUALLY installed/enabled/read back00:32.
+Productionb63/releasec5c39906, real network-none invented-bank Linux8c5e/48be
+PASS/CLOSED, installer473f/plan63c5/binding349e,5focused/806mocked checks PASS.
+Adoption80c4ef92:
+D:/thericher-v2/model-artifacts/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PARENT-ADOPTION.json.
+EntryNov5UTC15:10(KST Nov6 00:10), owned exitNov6UTC15:10(KST Nov7 00:10),
+PT10M/hiddenpythonw/Enabledtrue/Ready3/0instances. Create/Enable consumed;
+NEVER manually run a Task or replay installer modes to inspect. Same original
+physical bank/B10/F9/pending/native risk, no new allocation/substitute.
+Financial admission/order/fill/currentowned/PnL UNKNOWN until exact evidence.
+
+Original convenience readback.ps1 silently skipped due dot-source parameter
+clobber; fixed-name second receipt also failed. Neither failure proves final
+enabled readback. The EXISTING source-qualified generic Readback branch passed
+in a separate process; exact enabled status facts separately confirmed. Safe
+readonly command, no create/enable/Run/broker calls:
+
+```powershell
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoProfile -NonInteractive -File 'D:/thericher-v2/model-artifacts/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/install.ps1' -Mode Readback -SourceSha256 473f1111746b45c65beab140ad432df5927fb3938b4d4d7a1f455a3dfd6ee73e -PlanPath 'D:/thericher-v2/model-artifacts/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PLAN.json' -PlanSha256 63c5e98a220557305416236f920aed252dc52208cad5e012725bcef5907aaeec
+```
+
+Readback fullXMLACL success alone does not report actual enabled state or a
+financial result; retain separate exact source-safe status facts. Raman owns
+an additional thin readback adapter, not a replacement installer/ownership.
+Adapter5c083af5 now6CLI/Ruff PASS; Parent actual expectedEnabled readback PASS,
+immutable receipt646d3218, no Task mutations. Exact future readonly invocation:
+
+```powershell
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoLogo -NoProfile -NonInteractive -File 'D:/thericher-v2/model-artifacts/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/readback-cli-repair-20261105-v1/readback-cli.ps1' -AdapterSha256 5c083af5cef13da6f2cfdcd728333129b5f37baab61d6dfe61713e5ca380d390 -ExpectedState Enabled
+```
+
+Original source473f/plan63c5/Task identities unchanged. Unique readonly receipt
+does not authorize financial effects or installer replay. Actual bound enabled
+receipt path is under receipts/583c54a735234758b38ce89c937c026f in that adapter.
 
 Docs-only C authority: Korean R3/20239PASS26knownSKIP/8of8/20265items, guarded
 cleanup,1437pins+AGENTS unchanged22:42; Ruff/fourCompose(.env.example) PASS22:43.

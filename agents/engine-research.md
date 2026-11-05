@@ -2,9 +2,20 @@
 
 ## Current Work
 
-Updated Nov4UTC23:07 / Nov5KST08:07. A=D:/thericher-v2/model-artifacts.
-Nietzsche owns Engine/Steward preparation; Parent owns shared policy/Git.
-No numerical worker remains active after the completed study below. History is Git through
+Updated Nov5UTC00:45 / KST09:45. A=D:/thericher-v2/model-artifacts.
+Kant owns NEW non-neural indicator-boosting preparation; Parent shared policy/Git.
+A/research/current-h3-indicator-boosting-development-20261105-v1.
+Concrete comparison: one distinct tree family, raw/indicator/raw-plus-indicator
+inputs, one fixed raw-TCN blend ONLY with compatible H3 target/row keys/
+availability/payoff/cost/book. No Paper swap. Reject exact registry duplicate;
+freeze data/splits/purge/kill/iterations/chronological validation BEFORE market.
+Native real solver/checkpoint/typed handoff first, no random validation or
+DEV-chosen epochs. Prefer available proven CPU, not dummy GPU/dependency churn.
+Prep <=240summedactive/1200elapsed. Numerical <=3configs/900solverupdates/
+3forecasts+1fixedblend/18costviews/600summedactive/1800elapsed/0retry. Count
+warmstart fit API calls honestly. Existing Nov2..6 custody remains reserved.
+Qualified launch predelegated, no post-start ACK; no fit yet claimed.
+Nietzsche's completed numerical workers remain closed. History is Git through
 b492b639; AGENTS.md owns research/claim boundaries.
 
 Future source preparation is COMPLETE, source880d7704/contract36b2e8d5:
@@ -71,8 +82,9 @@ Explicit consumer/data-custody binding remains before any new numerical study.
 
 Research queues remain separate:
 - Breadth: current25-minute0323 and short-swing1fac campaigns are CLOSED.
-  Next useful input is Data's completed Native17 minute coverage; no ready new
-  numerical contract is inferred from that acquisition or a failed prior trial.
+  NEW distinct non-neural H3 boosting preparation above; Data Native17 history
+  expands independently. Acquisition/failure never implies a ready numerical
+  contract or automatic old evaluation release.
 - Depth: NO_READY_LONG_TRAINING_CAMPAIGN. Require a concrete underfit/convergence
   or robustness question on a retained candidate before a longer new campaign;
   old early-stop/closed trial caps stay immutable. This is not a profitability

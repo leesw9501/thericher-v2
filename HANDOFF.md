@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov5UTC00:22 / KST09:22. Company objective
+Updated Nov5UTC00:51 / KST09:51. Company objective
 `coexistent-native-paper-execution-runtime-v1` is UNFINISHED. No new accepted
 Paper order, exact fill, current owned-position reconciliation or PnL is claimed.
 
@@ -125,6 +125,26 @@ Provisional USD orderable funds are not settled cash or account equity.
   A/execution/current-full17-scope-owner-kernel-enumeration-repair-20261105-v1.
   Native jobs closed/no Apply. Mendel owns narrow kernel-identity first-cause
   correction, not a blind repeat or an operator permission hold.
+  Kernel successor e3396c00/q49ed3264 passed32policy/29native/8cold/20adapter
+  groups/Claude CONDITIONAL_METADATA_ONLY, Parent11pins stable. ONE actual
+  Capture then passed the PID4 tuple but failed another unknown-principal
+  row PID432 BEFORE migration. OWNER-CHECK3a62d92c/RESULTa9d401e3/CLOSED7667172c:
+  A/execution/current-full17-kernel-row-identity-repair-20261105-v1.
+  All jobs closed/current131e unchanged/no Apply. Mendel now owns ONE bounded
+  actual source-safe null-principal metadata capability probe, not another
+  synthetic-only per-OS-row retry, private census or automatic exclusion.
+  First probe18a exited0 but recorder substring falsely rejected the boolean
+  native_birth_bound; actual DTO was lost. Old result stays UNKNOWN. Corrected
+  schema passed9cold cases. Parent separately scoped recoveryadcf8638, repeated
+  real invented producer/parse first, then ONE actual2second measurement:
+  A/execution/current-full17-null-principal-recorder-recovery-20261105-v1.
+  RESULT1c40bce1/CLOSEDb2cabc74, nativeJob joined/closed,1.891worker seconds,
+  no Task/private/broker calls.155null-principal rows; retainedPID432 matches
+  SECURE_SYSTEM/ACCESS_DENIED, not original-owner proof.89service-host rows and
+  other inaccessible rows show structural visibility, not one bad PID. No
+  current owner-absence/admission conclusion. Mendel now qualifies a narrowly
+  source-bound InteractiveToken/session-boundary scope; original-compatible
+  candidates override exclusion, unknown/nonzero/native-unbound still denies.
 - Old Full17 Nov4 producer ABSTAINe29d3459 had missing runtime_files before model
   child. Its entry lacks runtime receipts: effects UNKNOWN. Reproduced stale
   NATIVE_PIN is NOT asserted as historical cause. Open45's consumed2/20/20 exits
@@ -151,13 +171,30 @@ separate D: roots. MDs are memory, not proof that workers are running.
   fixed decoderb63e/15retained-byte negatives+6focused/Ruff per peer callback.
   Sourceb63e8886 and stricter terminaledd62040 completed Windows invented
   host/guest/native-consumer proof;7accepted terminal frames/36strict negatives.
-  No real Linux mounts were proven by that Windows fixture. James now owns
-  execution/current-nextday-engineering-linux-host-readiness-20261105-v1,
-  actual network-none Linux/invented-bank-only integration; Raman owns exact
-  future-definition installer. Direct peer Source/argv/native-proof handoff;
-  no actual financial/Task effects during preparation. Optional INTC1share
-  entryNov5UTC15:10/exitNov6UTC15:10 remains NOT deployed,
-  same physical bank/B10/F9/native risk, no new capital. Oldv8/query stay consumed.
+  Separate REAL Linux source8c5eecf1 now PASS/CLOSED: one network-none capsule,
+  invented-bank-only,43duplex renewals/96native Jobs/exactCID absent,79.64s
+  worker/1060elapsed. Actual Linux birth/mounts/source-stability proved, NOT
+  actual Paper admission; no real private/credential/broker calls. James CLOSED.
+  A/execution/current-nextday-engineering-linux-host-readiness-20261105-v1/RETURN-POINTER.json.
+  Parent production releasec5c39906 binds unchanged b63/nativebody/input3faae/
+  policyecbd; Linux fixture release779b MUST NOT be used financially.
+  Raman installer473f1111/plan63c5e98a/binding349e8dec proofc3f2e10f passed
+  5focused/806mocked assertions/Ruff. Parent16refs/25production+22Linux members
+  stable. ACTUAL created disabled2/independent disabled readback/exit-first
+  enabled2/separate source-qualified readback PASS Ready3/0instances at00:32:
+  A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PARENT-ADOPTION.json.
+  Adoption80c4ef92. INTC/NAS fixed1share entryNov5UTC15:10..<15:11/hard15:20
+  (KST Nov6 00:10), owned exitNov6UTC15:10(KST Nov7 00:10), PT10M/hiddenpythonw.
+  SAME physical bank/B10/F9/native risk/ALL old exits; no new allocation or
+  substitution. Actual effect-time admission/order/fill/owned-state/PnL UNKNOWN.
+  Original readback.ps1 CLI silently skipped from dot-source parameter clobber;
+  restoring pins after import gave actual disabled readback. Second fixed-name
+  receipt write failed, not enabled authority. Final independent installed
+  install.ps1 -Mode Readback passed fullXMLACL; separate exact status facts
+  true/Ready3/0instances. Tiny CLI adapter5c083af5 is now CLOSED/6CLI+Ruff PASS;
+  Parent actual expectedEnabled readback PASS/immutable receipt646d3218:
+  A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/readback-cli-repair-20261105-v1/receipts/583c54a735234758b38ce89c937c026f/Enabled-INDEPENDENT-READBACK.json.
+  Original473/63 ownership/seals unchanged; Create/Enable consumed/never replay.
 - Nietzsche/Engine-Steward: research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1;
   source880d/contract36b2 READY, full5policies/2savedrestores/2forecasts/15views,
   ZERO fits. Tiny native invented flow and8focused checks PASS,65pins/0mismatch.
@@ -173,8 +210,8 @@ separate D: roots. MDs are memory, not proof that workers are running.
   enabled22:50 by Parenta0fd/proof2b602, separate full OSXMLACL/principal/source
   readback PASS Ready3/0instances,0Task.Run/API.14refs/adoptionec75e582:
   A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
-  Future data UNKNOWN, modes consumed. Gibbs now separately prepares ONE hidden
-  Nov6 research-task installer; Data24a39/Engine880d remain unchanged.
+  Future data UNKNOWN, modes consumed. Hidden Nov6 research installer095c is
+  also completed/actually enabled above; Data24a39/Engine880d remain unchanged.
 - Beauvoir CLOSED Strategy07dab/45native tests, Parent45PASS/36pins stable.
   Offer consumed by NEW Engine0323/58bf campaign, now COMPLETE_VERIFIED:
   3TCN+1Ridge/244updates/4forecasts/36views,CPU23.527s,all4CIDs/Jobs/actors closed,
@@ -199,6 +236,21 @@ separate D: roots. MDs are memory, not proof that workers are running.
   acquisition never releases old evaluation custody or triggers a fit/forecast/
   Paper swap. Original Data2/Research1/RAW tasks/private history unchanged.
   No foreground market sleep, replacement follow-up chain or recurring report.
+
+New Data history9f714/000b4 is now ACTUALLY CLOSED:60GET(39accepted21rejected)/
+1POST/0recoveries,3849new Nov2 RTH1m rows,8complete streams/AMD370/DIS359.
+Five typed timeframes/positive owner closure,Parent39refs stable;45completed/
+consumed streams skipped.2zero-row cohorts stopped frozen scope,125older
+streams remain unattempted/UNKNOWN,not a global API horizon.21clock-mismatch
+rejections reproduce offline; Archimedes now diagnoses exact source-session
+versus pre/postDST calendar/parser semantics, no new API/retry/reset/regrade.
+A/data/current-native17-minute-history-expansion-20261105-v1/RETURN-POINTER.json.
+Kant owns distinct non-neural H3 indicator-
+boosting preparation (<=3configs/900solverupdates/3forecasts+fixedblend/18views/
+600summedactive/1800elapsed/0retry, native solver and chronological validation
+first). Exact new Engine Source/PID/fit/results remain unclaimed before callbacks.
+Source/native-qualified launches are predelegated, no post-start Parent ACK.
+Parent owns current integration/Git, not another platform or market wait.
 
 Preserve MSE Nov5UTC20:40, H3 AMD Nov6UTC20:45, Full17 Nov6UTC20:54/hard21:07,
 GOOGL Nov9UTC20:55, memory-terminal Nov20 and H20 Dec1UTC14:30 duties/identities.

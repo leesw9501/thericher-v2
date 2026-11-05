@@ -2,7 +2,7 @@
 
 ## Actual Current Runtime
 
-Updated Nov5UTC00:22 / KST09:22. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC00:34 / KST09:34. A=D:/thericher-v2/model-artifacts.
 Parent owns integration/adoption/Git. AGENTS.md is authority; old boards remain
 in Git through b492b639. No new accepted order/fill/current owned state or PnL
 is claimed. ONE initial B/10, F9 UNKNOWN-HELD, pending identities/reservations,
@@ -87,18 +87,39 @@ OWNER-CHECKa42dfbc4/RESULTb6ceaefa/CLOSEDa5bd3ef7:
 A/execution/current-full17-scope-owner-kernel-enumeration-repair-20261105-v1.
 All native jobs closed/no Apply; Mendel owns narrow kernel-identity correction.
 This is measurement incompleteness, not actual original writer or new approval.
+Kernel successor e339/q49ed passed32/29/8/20groups/Claude; Parent11pins stable.
+ONE actual Capture passedPID4 tuple but withheld on different PID432 unknown
+principal before migration. OWNER-CHECK3a62d92c/RESULTa9d401e3/CLOSED7667172c:
+A/execution/current-full17-kernel-row-identity-repair-20261105-v1.
+All native jobs closed/no Apply/current131e unchanged. Mendel now gets ONE
+actual safe null-principal OS-metadata capability probe (no Tasks/private/
+broker/SID or cmdline output), not another blind per-row synthetic successor.
 
 Next-day engineering preparation5eb/7124 then b63/edd passed Windows invented
-host/duplex/native BankLeg flow and strict terminal checks. It is NOT real Linux
-mount proof or financial deployment. James now owns:
+host/duplex/native BankLeg flow and strict terminal checks. Separate REAL Linux
+fixture8c5e/return48be is now PASS/CLOSED under:
 A/execution/current-nextday-engineering-linux-host-readiness-20261105-v1.
-One real network-none/invented-bank-only native integration, no real private/
-credentials/market/API/Task access. Raman independently prepares exact absent
-2-task PT10M disabled-create/fullXMLACL/exit-first installer under:
+One network-none/invented-bank-only capsule,43duplex renewals/96native Jobs/
+exactCID absent/79.64worker seconds. No real private/credentials/market/API/Task
+access, not financial admission. Parent production releasec5c3 binds b63/
+input3faae/policyecbd. Raman473f/plan63c5/binding349e exact2/PT10M installer:
 A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1.
-Direct qualified Source/proof/argv handoff, no placeholder hashes. INTC/NAS
-fixed1share entryNov5UTC15:10/exitNov6UTC15:10 still NOT deployed. SAME physical
-bank/ONEB10/F9/reservations/native risk; not a substitute for an unknown request.
+Actual proof/release/argv binding;5focused/806mocked checks/Ruff passed.
+Parent16refs/25production+22Linux source members stable. ACTUALLY created
+disabled2/separate disabled readback/exit-first enabled2/separate existing
+install.ps1 -Mode Readback PASS/fullXMLACL at00:32. Exact two status facts:
+Enabledtrue/Ready3/0instances. Adoption80c4ef92/PARENT-ADOPTION.json.
+INTC/NAS fixed1share entryNov5UTC15:10(KST Nov6 00:10), exitNov6UTC15:10
+(KST Nov7 00:10), PT10M/hiddenpythonw. SAME physical bank/ONEB10/F9/native risk;
+not a substitute for an unknown request. Actual admission/order/fill/PnL UNKNOWN.
+Original direct readback.ps1 silently skipped from imported parameter clobber;
+restored-pin disabled readback passed, repeat fixed-name receipt failed. Do not
+claim those failures as enabled authority; final existing generic readonly
+Readback plus exact status facts passed. Separate adapter5c083af5 CLOSED,
+6CLI cases/Ruff PASS. Parent actual corrected expectedEnabled readback PASS,
+immutable receipt646d3218 under readback-cli-repair-20261105-v1/receipts/
+583c54a735234758b38ce89c937c026f/Enabled-INDEPENDENT-READBACK.json.
+Create/Enable consumed; NEVER rerun/reset installer identities or old duties.
 
 ## Preserved Original Duties
 

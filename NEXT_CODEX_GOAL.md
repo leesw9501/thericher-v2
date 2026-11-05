@@ -22,7 +22,7 @@ unknown-request substitution. Provisional funds are not settled cash/equity.
 
 ## Current Evidence
 
-Updated Nov5UTC00:22 / KST09:22. Historical details remain in Git through
+Updated Nov5UTC00:51 / KST09:51. Historical details remain in Git through
 b492b639, RUNBOOK and immutable artifacts. This is current work, not a diary.
 
 - RAW ALL3 host8fd94086/plan38ecd706 is ACTUALLY installed/enabled with separate
@@ -76,6 +76,13 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    Capture/Apply/independent readback. Positive exact original-owner closure
    still required; no generic AccessDenied/name/PID exemption or blind retry.
    Current131e/aa416 exit remains enabled; no proposed7b0 adoption claimed.
+   Kernel successor e339 ONE Capture passedPID4 but withheld on PID432 before
+   migration; all jobs closed. ONE safe actual null-principal metadata probe
+   now precedes any further repair, no per-row blind retry/blanket exclusion.
+   Corrected Parent probeadcf/RESULT1c40/CLOSEDb2ca now observed155null-principal
+   rows, retainedPID432 SECURE_SYSTEM/accessdenied. No owner-absence inference.
+   Mendel source-binds original InteractiveToken/session scope, not global
+   handles/OSname exemptions; actual current131e remains unchanged.
 3. Data: source24a39b83/definitions268c7444 ACTUALLY installed/enabled22:50:
    A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
    Parent sourcea0fd/proof2b602 created ONLY exact absent two tasks disabled,
@@ -89,6 +96,15 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    7800new RTH1m rows/10missing stocks/2dates. Both dated five-timeframe typed
    outputs passed; Parent34refs stable/all actors closed/existing7 not repeated.
    Acquisition is not an Engine custody release/model evaluation/Paper swap.
+   Archimedes NEW history expansion: missing10 only,<=20priorRTHdates beforeNov3,
+   <=200streams/1000GET/1POST/2recoveries/2400summedactive/3600elapsed, exact
+   source/native/collector/storage guards. No duplicate streams/old marker reset.
+   A/data/current-native17-minute-history-expansion-20261105-v1 is now CLOSED:
+   9f714/000b4,60GET(39accepted21rejected)/1POST/0recoveries,3849newNov2rows/
+   five typed timeframes/allclosed/39pinsstable.125older streams UNKNOWN after
+   frozen2zero-cohortstop. Archimedes offline-only clock diagnosis distinguishes
+   provider returned session from DST/parser fault before any further call;
+   no old cursor/rejected-GET reset or automatic evaluation release.
 4. Engine/Steward: source880d/contract36b2 future Nov6 observation is READY using saved
    GRU and new Nov5 context/Nov6 targets, not reserved Nov2..4:
    A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
@@ -110,15 +126,26 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    1empiricalbaseline/2forecasts/9views. Net10 7.161%/DD6.107% versus fixedRAW
    8.526%/7.180%,incrementalFAIL/allactorsclosed. No strategy swap/rescue/rerun;
    next numerical work needs a concrete useful new contract, not GPU occupancy.
+   Kant NEW distinct CPU tree-boosting preparation: fixed H3 raw/indicator/
+   raw+indicator expert versus aligned rawTCN/samegross risky controls. Native
+   real solver/chronological validation/registry+contract before market,
+   <=3configs/900solverupdates/3forecasts+fixedblend/18views/600summedactive/
+   1800elapsed/0retry. No original target release/Paper swap/fit yet claimed.
+   A/research/current-h3-indicator-boosting-development-20261105-v1.
 6. Monitor: Korean GET/HEAD-only code is ready; new UI NOT deployed. Existing
    127.0.0.1:8787 remains last verified be48. No private web mounts/broker authority
    or public listener; static snapshot is not live account refresh.
-7. Execution preparation: next-day INTC fixed1share uses the SAME physical
-   bank/B10/F9/native risk. James owns a real network-none Linux invented-bank
-   host/guest/native-consumer proof; Raman owns exact absent future pair/PT10M
-   disabled-create/full-readback/exit-first installer. Direct qualified handoff,
-   no placeholder seals or Parent relay. Proposed Nov5UTC15:10/Nov6UTC15:10
-   pair is NOT deployed. No substitute for an unknown request/new allocation.
+7. Execution INTC fixed1share IS ACTUALLY installed/enabled/read back00:32:
+   A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PARENT-ADOPTION.json.
+   Installer473f/plan63c5/binding349e, productionb63/releasec5c3, real Linux
+   fixture8c5e/48be positive closure.5focused/806mocked checks passed; Parent
+   source refs stable. EntryNov5UTC15:10(KST Nov6 00:10), owned exitNov6UTC15:10
+   (KST Nov7 00:10), PT10M/hiddenpythonw/Ready3/0instances. SAME physical
+   bank/B10/F9/native risk, no new allocation/substitute. Create/Enable consumed.
+   Direct readback.ps1 had import/receipt bugs; exact existing install.ps1
+   -Mode Readback in a separate invocation PASS/fullXMLACL. Retain failed
+   attempts. Tiny adapter5c083 now6CLI/Ruff PASS, Parent actual expectedEnabled
+   readback PASS/immutable646d3218; original seals unchanged. Financial UNKNOWN.
 
 No foreground session/quota sleep or app follow-up chain. Workers own next_due.
 Useful ready CPU/CUDA work is delegated under measured headroom; no duplicate
