@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov5UTC21:58 / Nov6KST06:58.
+Updated Nov5UTC22:30 / Nov6KST07:30.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -77,10 +77,19 @@ Updated Nov5UTC21:58 / Nov6KST06:58.
    W25 frozen +3.6012%/DD.6505% is adaptive reusedDEV, not independent alpha or
    PaperPnL; no automatic HALF swap. All completed fits remain closed.
    Original83963 source/300second gate unchanged; no global token-floor change.
-8. Finish the two current technical recoveries without global waits: Planck owns
-   source-only native-commandline/lineage repair before any private-read grant;
-   Godel owns the MSE retained-exit outer successor graph/validity/native QA.
-   Darwin owns one pure pairwise-rank mechanism/consumer fixture, not market fits.
+8. Pairwise-rank641e9 actually completed17CUDAepochs2329updates/best7/13.812s,
+   one readout5books. Ranktop3+4.6670%/DD.93593% versus W25+3.6012%/.65045%:
+   frozen DDlimit.81307% FAIL, only1of47cohorts differs. All actors/lease closed,
+   Parent15refs+37source members verified; no model swap/alpha/duplicate fit.
+   Banach now prepares only saved-weight forward usability on exact Data83963
+   and future W25 point,0fits/economicreadouts; no future hash invented.
+9. Continue the two technical recoveries without global waits: Planck owns the
+   NEW actual offline INTC reader after source-native commandline/console repair;
+   historical bff probe stays WITHHELD/0private, Parent's pure rule passes5tests
+   and original guard branch without trusted-own/other-actor grants. Godel owns
+   MSE definitions-only installer/fullnativeXML+ACL qualification after c79
+   outer graph/native QA completed. Release FALSE/not installed. Actual future
+   effects still require fresh original ownership/account/risk/observer checks.
    Exact write sets and callbacks live in agents/orchestration.md.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/
@@ -89,7 +98,8 @@ Current ready/owned/due lives in agents/orchestration.md. Continue disjoint work
 no foreground market waiting or new follow-up chain.
 Original MSE20:40 opportunity failed pre-native output_not_owned; exact
 diagnosis/original-observer/no-mutation facts in HANDOFF. Old exit duty remains;
-route patch is NOT deployed while outer graph/late validity unqualified. Data
+outer recoveryc79 is source/native-ready but NOT deployed until its complete
+native definition/ACL installer and Parent release qualify. Data
 input is now present, but does not prove future inference/broker effects/PnL.
 
 ## Verification And Completion

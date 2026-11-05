@@ -3,7 +3,13 @@
 
 ## Current Resource State
 
-Updated Nov5UTC21:58. Actual full-coverage Chronos2 CUDA fit is CLOSED:
+Updated Nov5UTC22:30. Pairwise641e9 actual CUDA fit is now CLOSED17epochs/
+2329updates/INNERbest7/13.812s/200MiBreserved. Native8checks/1readout5books,
+4createdCIDs/35Jobs/GPUleaseclosed22:23:47.180.375/1800active/1247.376elapsed.
+Parent15refs+37members PASS; fixedDDFAIL/only1distinctcohort/adaptiveDEV means
+no automatic promotion. No duplicate fit. Banach is sole coordinator for the
+separate frozen-forward native consumer,0fits/readouts; no optimizer active.
+Actual full-coverage Chronos2 CUDA fit is CLOSED:
 8epochs/488updates/969rows each/56.18s, peak2.606GiB reserved, INNER-best0.
 All6containers/70Jobs/GPUlease closed19:43; cumulative269.01/2400SUM includes
 pre-fit failure/debits. API daf3692f source / a600f97c result in HANDOFF.

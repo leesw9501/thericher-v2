@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov5UTC22:00 / Nov6KST07:00. Company outcome UNFINISHED.
+Updated Nov5UTC22:30 / Nov6KST07:30. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -110,6 +110,27 @@ D:/thericher-v2/model-artifacts/execution/current-mse-observer-output-route-diag
 Route patch alone NOT deployed. Godel owns retained-exit outer successor/native
 qualification; no consumed opportunity replay/late forecast retag/new bank.
 Planck owns metadata-only native-commandline/lineage repair; no private grant.
+
+Current successors supersede that preparation projection: c79 outer graph now
+source/native-ready; Parent154members95aliases/fullgraph PASS. It is NOT installed
+or financially admitted. Godel owns exact native installation/independent full
+XML+API7ACL checks at:
+D:/thericher-v2/model-artifacts/execution/current-mse-retained-exit-native-installation-20261105-v1.
+No actual command is qualified until that callback. Do not manually run the old
+Task or put a TRUE release into the inert old definition. Parent measured native
+COM UTF8-declaration rejection, then structured DOM-root materialization PASS,
+0registrations/Taskruns. Preserve this first cause, not loose XML equivalence.
+
+New Planck actual offline INTC consumer preparation:
+D:/thericher-v2/model-artifacts/execution/current-intc-native-self-bound-readonly-consumer-20261105-v1.
+Native commandline and exact console-rule helper verified, but no current private
+read/READY command yet; new caller/source/5phase/RO/stability required at read.
+
+Boundary-rank fit641e9 CLOSED17CUDAepochs2329updates/best7/13.812s/200MiB;
+1readout5books, rank+4.6670%/DD.93593%, fixed.81307%DDlimit FAIL/only1of47diff:
+D:/thericher-v2/model-artifacts/research/current-net25-pairwise-ranking-development-20261105-v1/FINAL-API.json.
+All4CIDs/35Jobs/GPUleaseclosed; no fit rerun/model swap. Banach prepares only
+saved-weight forward usability,0fits/newDEVreadouts, future W25 point unknown.
 
 ## Verification
 

@@ -1,6 +1,57 @@
 # TheRicher v2 Handoff
 
-## Current Research Update
+## Current Integration
+
+Updated Nov5UTC22:30 / Nov6KST07:30. Company outcome remains UNFINISHED;
+no new exact broker acceptance/fill/current-owned/PnL claim. No operator decision.
+
+- Pairwise boundary-rank641e9 COMPLETE_VERIFIED_PRIMARY_FAIL: one actual CUDA
+  fit17full epochs/2329updates/INNER-best7 restored/13.812s/200MiB reserved.
+  Ranktop3 growth4.6670%/DD.93593%/turnover2.14985 versus W25
+  3.6012%/.65045%/2.12855 and originalscoretop3 3.3151%/1.03850%/2.12284.
+  Frozen DDlimit.81307% failed; only1of47cohorts materially differs. ReusedDEV/
+  modeledcosts only, no alpha/Paper swap. Eight native checks, one readout5books,
+  all4CIDs/35Jobs/GPUlease closed22:23:47;180.375/1800active/1247.376elapsed.
+  Parent15finalrefs+37source members verified:
+  A/research/current-net25-pairwise-ranking-development-20261105-v1/FINAL-API.json.
+  Banach now prepares separate saved-weight forward consumer,0fits/readouts;
+  future W25 point/hash unknown, not a current GPU optimizer.
+- Darwin pure rank offer CLOSED14nativeCPUtests, Parent independent14PASS/
+  full runtime/testRuff/14source refs. Consumed by the fit above, not another
+  active model worker:
+  A/research/current-net25-pairwise-rank-offer-20261105-v1/RESULT.json.
+- Metadata diagnosticbff08e CLOSED22:07:38: exact native/CIM command hashes and
+  semantic argv passed; strict child sets still rejected two precisely pinned
+  console-selector descendants. Old WITHHELD/oneprobe/0private unchanged:
+  A/execution/current-intc-native-commandline-lineage-20261105-v1/VERIFIED.json.
+  Parent pure lineage79c1c37d +5tests/negativecases passes the unchanged guard's
+  console branch on that retained exact snapshot; no console trusted-own grant,
+  new census, other-actor admission or historical/current private authority:
+  A/execution/current-intc-console-descendant-contract-20261105-v1/RESULT.json.
+  First isolated verifier bootstrap failure preserved; runtime/test lint clean,
+  frozen audit verifier has one known E501 style issue. Planck owns the NEW
+  fully bound offline INTC consumer; no actual private read claimed yet.
+- MSE retained-only outer Sourcec79ec06f COMPLETE SOURCE/NATIVE preparation,
+  19constructor+6ownerABI+11observer+5unchangedSDK cases,29finalchildrenclosed.
+  Parent independently verified154members/95aliases/full graph. No expired
+  forecast retag, original input/policy/bank/identities/reservations unchanged:
+  A/execution/current-mse-retained-owned-exit-outer-successor-20261106-v1/RESULT.json.
+  Future Nov6UTC15:40/15:45exit/15:52reconcile/hard16:00 is NOT installed.
+  Actual COM direct UTF8-declared XML assignment failed before any registration;
+  DOM DocumentElement.OuterXml materialized source-identical actions with
+  disabled/no-demand/no-catchup/unifiedtrue native hashf837de12,0Taskwrites.
+  Godel owns definitions-only installer/native fullXML/nativeACL qualification;
+  release remains FALSE. Parent installation challenge11379575 GO_WITH_LIMITS:
+  A/review/current-mse-retained-exit-installation-challenge-20261105-v1/RESULT.json.
+
+Read-only audit22:11 found155project Tasks/134enabled/0active at that instant.
+All11enabled console-capable actions have expired triggers/no future run;
+they are not evidence of current popups. Current observer uses exact quiet
+wrapper9fe9750c with CREATE_NO_WINDOW/SW_HIDE, not Hidden metadata alone.
+No Task changed/deleted by this audit. Loopback8787/health OK,8788 unreachable;
+health is not private custody/fill evidence. Current dispatch is orchestration.
+
+## Closed Research
 
 Updated Nov5UTC20:03 / Nov6KST05:03. A=D:/thericher-v2/model-artifacts.
 Direct-net-utility one-fit campaign a0eccc is COMPLETE/PRIMARY_FAIL:

@@ -2,11 +2,16 @@
 
 ## Current Handoff
 
-Updated Nov5UTC22:00. Darwin owns one new pure pairwise-rank mechanism/kernel
-and real invented native DTO/book smoke in assigned D scope:
+Updated Nov5UTC22:30. Darwin's pure boundary-regret pairwise-rank kernel and
+real invented native DTO/book smoke are CLOSED14nativeCPUtests. Parent repeated
+14tests independently/full runtimeRuff/14source refs PASS:
 A/research/current-net25-pairwise-rank-offer-20261105-v1.
 Ranking is not absolute expected return; a separately supplied cash/absolute-edge
-gate remains necessary. No market fit/label opening or optimizer claimed.
+gate remains necessary. Engine consumed this offer in one actual CUDA fit:
+17epochs2329updates/best7/13.812s. Ranktop3+4.6670%/DD.93593% exceeds W25growth
+but FAILS frozen.81307%DDlimit; only1of47cohorts differs, no alpha/Paper swap.
+All fit actors/lease closed. Banach now prepares saved-weight forward usability,
+not another Strategy fit. Exact result in Engine/HANDOFF; no active Darwin.
 Crossasset attention descriptive consumer closed: newexpert-2.9888%,fixed.25blend
 1.6173% versus W25 3.6012%; no model adoption. Do not repeat completed weights.
 

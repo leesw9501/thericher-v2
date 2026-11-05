@@ -3,7 +3,7 @@
 
 ## Current Research Update
 
-Updated Nov5UTC22:00 / Nov6KST07:00. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC22:30 / Nov6KST07:30. A=D:/thericher-v2/model-artifacts.
 All listed numerical workers are CLOSED; no optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
 
@@ -15,6 +15,7 @@ Results below are adaptive development, not independent alpha/Paper PnL.
 | Intraday GRU30/120 b26d |2actualCUDAfits22epochs2464updates EACH/best14;9.15/10.05s | Both cash at16DEVslots, PRIMARY_FAIL; MSE120 worse than30. FourDEVdays/within-intervalDD unknown. |
 | Crossasset Conv+attention47ce |1actualCUDAfit14full epochs1931updates/best7; raw receptivefield7bars | Strict300s clock failed300.0755; original readout withheld by900SUM runway. Old748.269debit unchanged. |
 | Frozen descriptive consumere6b310 |0fits/updates/retries;1archive/readout6books;32.735newactive | Newexpert-2.9888%/DD3.5808%/turnover18.7373; fixed.25blend1.6173%/1.2426%/3.6507 versus W25 3.6012%/.6505%/2.1286. All blend diagnostic checks FAIL; no qualified selection. |
+| Boundary pairwise rank641e9 |1CUDAfit17epochs2329updates/best7/13.812s;1readout5books | Ranktop3+4.6670%/DD.93593% versus W25+3.6012%/.65045%; fixed.81307% DDlimit FAIL. Only1of47cohorts differs; no alpha/model swap. |
 
 Exact current APIs:
 - A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
@@ -23,6 +24,7 @@ Exact current APIs:
 - A/research/current-intraday-gru-window30-120-20261105-v1/API.json.
 - A/research/current-net25-crossasset-tcn-attention-20261105-v1/API.json.
 - A/research/current-crossasset-frozen-descriptive-consumer-20261105-v1/API.json.
+- A/research/current-net25-pairwise-ranking-development-20261105-v1/FINAL-API.json.
 
 Parent independently verified descriptive API Sourcee6b310/contracte7ea1f/
 result81b4a8 and38frozen members. Native6checks/Ruff/exactW25parity passed, all
@@ -31,13 +33,20 @@ consumer never regraded the original training clock/protocol failure.
 
 ## Current Work
 
-Darwin prepares ONE pure pairwise-rank kernel with real native DTO/book fixture:
+Darwin CLOSED ONE pure pairwise-rank kernel with real native DTO/book fixture:
 A/research/current-net25-pairwise-rank-offer-20261105-v1.
-Ranking score is not an absolute-return forecast or automatic cash gate. Engine
-must freeze a distinct chronological/cohort-masked contract with inner selection,
-aligned samegross/cost/risk controls and reserved readout/cleanup before fitting.
-Source preparation is not a GPU launch. Reused DEV remains adaptive; no new
-epoch/threshold/window rescue of closed studies.
+Parent independent14tests/full runtimeRuff/14refs PASS. Engine consumed the exact
+offer in the completed study above. Ranking scores never became absolute return
+or cash gates. Parent15finalrefs+37members verified;8native checks,4CIDs/35Jobs/
+leaseclosed22:23:47,180.375/1800active and1247.376elapsed. Original-scoretop3
+3.3151%/DD1.03850% is a required concentration control, not a second alpha claim.
+Reused DEV/frozenDDfailure/only1distinctcohort remain unchanged.
+
+Banach now owns source/native saved-weight forward usability, not another fit:
+A/research/current-net25-pairwise-frozen-forward-readiness-20261105-v1.
+0fits/newDEV economicreadouts. Same checkpoint/FITstats/real Data83963 feature
+producer, actual native score/absolute-gate/funding ABI. Future W25 point/seal
+still unknown; no invented hash, Task installation, bank or Paper model switch.
 
 Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
 closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov5UTC21:58 / Nov6KST06:58.
+Updated Nov5UTC22:30 / Nov6KST07:30.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Company Outcome
@@ -18,9 +18,10 @@ and all original exits. A package/commit/installation is not company completion.
 | Parent / integration | Data83963 actually completed21:30:19GET/1POST/0failed/42s; four exact DATAREADY refs verified | HALFpoint5bf Nov6UTC13:30, thirdshadow13:45, W25shadow13:55 remain future/unobserved. |
 | Closed Parent control | One manual observer Disable21:21:38 and exact Restore21:32:08; original XML/API7/enabled restored | No remaining duty. Never replay consumed setters or original collector. |
 | Parent / installed Execution | HALF24ab/f611 original pair migrated18:48; INTC2dab/8fd686 original exit18:16 | HALF Nov6UTC14:31 entry/Nov11UTC14:30 exit; INTC Nov6UTC15:10/hard15:20. Installation is not a fill. |
-| Godel / Execution | Repairing MSE retained-exit outer graph/late-validity/native consumer in assigned D scope | Original20:40 opportunity failed output_not_owned before native; route15+5tests alone is NOT deployable. Preserve original duty/identity/bank. |
-| Planck / Execution metadata only | New current-intc-native-commandline-lineage-20261105-v1 | Replace list2cmdline quoting assumption with native command-line proof; identify exact collector extra child. No private admission/actor waiver. |
-| Darwin / Strategy | New current-net25-pairwise-rank-offer-20261105-v1 | One pure rank mechanism plus actual native DTO/book fixture for Engine, no market fit/label opening. |
+| Godel / Execution | c79 outer Source/native-ready19+6+11+5; Parent154members95aliases/graph PASS | NEW current-mse-retained-exit-native-installation-20261105-v1, exact full native definition/ACL installer. Not installed, release FALSE. |
+| Planck / Execution offline reader | bff commandline identity passed; console descendants precisely pinned; old WITHHELD/0private | NEW current-intc-native-self-bound-readonly-consumer-20261105-v1. Parent helper79c1c37d/5tests/oldguard branch ready; fresh caller/source/5phase actual admission still required. |
+| Closed Darwin / Strategy | Pure boundary-rank offer14tests; Parent independent14tests/fullruntimeRuff/14refs PASS | Consumed by actual Engine fit below; no active Strategy fit. |
+| Banach / Engine + GPU coordinator | Pairwise641e9 CLOSED17CUDAepochs2329updates/13.812s;rank+4.6670%/DD.93593% versus W25+3.6012%/.65045% | Frozen DDFAIL/only1of47distinct; NEW saved-weight forward consumer,0fits/newDEVreadouts, no current optimizer. |
 | Closed GPU workers | Chronos2, intraday GRU30/120 and crossasset attention fit closed; no optimizer currently claimed active | New work only after distinct frozen/native-ready campaign and measured headroom, never occupancy reruns. |
 | Closed descriptive consumer | e6b310:0fits/1readout6books; newexpert-2.9888%, fixed.25blend1.6173%, W25 3.6012% | Do not promote this blend; original strict-clock failure/old debit unchanged. |
 | Parent / scoped private read | Original233/6906/2c1 probes consumed and withheld; 0 actual private reads | Source-qualified caller, actual custody-writer admission and stable exact joins, not global Data/GPU silence. |
@@ -54,16 +55,23 @@ before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
 
 ## Throughput Review
 
-21:58: Ready work is disjoint custody lineage, MSE recovery and a pure strategy
-kernel; Parent integrates completed results and checks future input bindings.
+22:30: Ready work is disjoint actual offline custody reader, MSE definitions-only
+installation qualification and frozen-weight forward usability. Parent integrates
+completed data/research and validates the actual Windows native interface.
 No foreground market wait or operator-approval dependency. Parent's tested
 manual window let the original collector finish and restored the observer;
 the rejected autonomous-preparer proposal was never installed.
 
 Current company bottleneck is financial runtime evidence/attribution, not GPU
-permission. Native self-command-line measurement replaces a fragile quoting
-heuristic without waiving source/argv/ancestry checks. Reserve readout/cleanup
-before a future long fit: the closed attention study used its original runway.
+permission. New ranking fit used actualCUDA, reserved readout/cleanup and closed
+within all caps; no occupancy rerun. Native self-command-line measurement and
+exact old-guard console rule replace false denials without actor/source waivers.
+Reversible improvement: exercise real COM NewTask materialization BEFORE calling
+an installer ready. Actual UTF8-declared XML/BSTR mismatch was invisible in its
+mock; structured DOM root assignment preserves contents and passed0writes.
+Claude11379575 GO_WITH_LIMITS on future definitions-only plan: enable last,
+no catchup/demand/repetition; source/digests/nativeXML+ACL exact, effect-time fresh
+relevant owners/account/budget/unknown/observer/risk mandatory. No Task.Run.
 
 If one recovery remains blocked, continue another named package: current24ab
 public reader readiness, source-bound Data/publisher validation, or a distinct

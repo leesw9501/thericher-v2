@@ -2,6 +2,23 @@
 
 ## Current Work
 
+Updated Nov5UTC22:30. Planck owns NEW native-self-bound offline INTC consumer,
+0actualprivate reads so far. Historical bff diagnostic proved native commandline
+and exact semantic argv; strict children still withheld two exact console hosts.
+Parent pure helper79c1c37d validates only exact pinned binary/path/parent/rawcmd/
+nativePIDbirth/samecensus/empty-child,5tests and unchanged guard branch PASS.
+Consoles are NOT trusted own rows; other actors/actual writers still adjudicate.
+New caller/source/guest/ROmount/5phase/stability must qualify at actual read.
+Old probe stays WITHHELD/0private, no F9 release/claim. Exact refs in HANDOFF.
+
+MSE c79 outer retained-only recovery is Source/native-ready19+6+11+5tests,
+Parent154members95aliases/fullgraph PASS, not deployed. Actual COM UTF8 header
+failed before registration; DOM root-only assignment materializes native full
+definition without changed action/settings. Godel owns installer/fullXML+ACL
+qualification, Parent owns TRUE release and actual future definition effects.
+Original15:40/15:45/15:52/hard16Nov6 is only proposed; no new financial effect.
+Original13e failed opportunity/flags/inputs/identities/B10/F9/duties unchanged.
+
 Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
 Current actual deployment: HALF24ab/f611 original pair18:48; INTC2dab/8fd686
 original EXIT18:16. Exact adoptions in HANDOFF. Consumed entries/updates never
