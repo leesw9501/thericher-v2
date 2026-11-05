@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Updated Nov5UTC08:22 / KST17:22. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC10:48 / KST19:48. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new actual acceptance/fill/current-owned/PnL proven. Preserve ONE original
 initialB/10/F9 UNKNOWN-HELD/all pending/costs/losses/reservations/old exits.
@@ -66,11 +66,33 @@ Never replay consumed installers/enable/readback receipt writers to inspect.
 - NEW NET25 public reader8f5f6f56 READY under Aquinas:
   A/execution/current-net25-installed-public-outcome-reader-20261105-v1/CLOSURE.json.
   Eight groups/isolated inventedCLI roundtrip/Ruff/positive processclosure.
-  Initial sourcepin fault preserved; actual outcomes NOT read. Parent still
+  Initial sourcepin fault preserved; actual outcomes NOT read. Parent
   rechecked20Source/dependency members and reran8invented parser tests PASS.
-  Commands READY-COMMANDS.json; no actual read. Aquinas now owns NEW exact
-  current-custody reader readiness (invented only):
-  A/execution/current-net25-current-custody-reader-readiness-20261105-v1.
+  Commands READY-COMMANDS.json; no actual read. NEW current-custody final-r2
+  Source218f93b0 READY/fullRuff/8groups/realLinuxnetworknone/allRO/fivephases/
+ 12Jobsclosed. Parent source-only CLI PASS withoutcensus/private/Docker:
+  A/execution/current-net25-current-custody-reader-readiness-20261105-v1/final-r2/READY-COMMANDS.json.
+  Actualclosedpoint/positiveownerclosure/relevantwriteradmission/exactjoins/
+  stability remain required at read afterNov6entry; not currentcustody proof.
+  Earliest command clock is not permission to race an active entryowner.
+- F9 r3 actualreaderNOT_ADMITTED before_create, unknown Docker/Compose exact
+  instances, not provenfinancialwriters. Native5phaseinvented roundtripPASS,
+  oneactualcensus/0privateguests/reads/credentials/brokerqueries/Taskchanges:
+  A/execution/current-original-f9-readonly-recovery-readiness-20261105-v1/parent-mount-adapter-r3/FINAL-CALLBACK.json.
+  Later r4 passed before_create, denied before_start on a new Docker instance;
+  one never-started RO container removed/positively absent.0private/query.
+  R5 Code.exe parent has unknown owner; own-helper hypothesis contradicted.
+  Parent retained public argv hash match proves five-atom context ls --format
+  metadata syntax (official Docker docs), not financial permission/known owner:
+  A/execution/current-original-f9-readonly-recovery-readiness-20261105-v1/PARENT-PUBLIC-CLI-SHAPE.json.
+  Maxwell now owns a NEW narrow source/native-instance/argv capability and
+  ONE fresh five-phase actual RO attempt, not replay/reset of consumed r4:
+  A/execution/current-f9-docker-context-metadata-capability-20261105-v1.
+  Real Claude challenge/negative cases first. Unknown/mutating actor guards,
+  exact joins/stability/no locks/recovery remain. R4 2074.2873+R5 conservative
+  305.426 (old180 localcap failed) carried into new4000familySUM/1800elapsed.
+  Oldemptyhistoryquery/independentoriginalsend/brokerID remainsunknown,
+  F9UNKNOWN-HELD. No new broker query/credentials/reservation release.
 - Consumed accountreadonly6e6a/2a55:3venues/4holdings/positive provisionalfunds,
   1RAM-onlyPOST4GET/0retry. Not owned attribution/fullrisk/settledcash/equity/
   PnL/F9release. Do not repeat for reporting.
@@ -78,6 +100,12 @@ Never replay consumed installers/enable/readback receipt writers to inspect.
   No claim current holdings. HEAD501 is unsupported method, not app health.
 
 ## Scoped Deferred Work
+
+Fixedthird f0f has only a nonfinancial CPU/networknone shadow Task c96,
+ACTUALLY installed Nov6UTC13:45/hard13:50/separate fullXMLACL readback10:28:26:
+A/research/current-net25-fixedthird-shadow-opportunity-preparation-20261105-v1/PARENT-ADOPTION.json.
+Future point UNKNOWN; installed fixedhalf5bf/3ee2/25c8 and bank unchanged.
+Do not treat a development gain/shadow publication as financial eligibility.
 
 Original Full17 exit131e/aa416 remains enabledNov6UTC20:54/hard21:07.
 Optional7b0 stats-overlay migration DEFERRED after actual69aff metadataCapture

@@ -2,7 +2,7 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC08:22 / KST17:22. Company outcome UNFINISHED.
+Updated Nov5UTC10:48 / KST19:48. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. Full current reality is HANDOFF.md.
 No actual acceptance/fill/current-owned/PnL inferred from installation.
 
@@ -29,11 +29,24 @@ TCN3c24 now CLOSED32CPUepochs/28.065s/best8,207checks/allactorsclosed,
 thirdNet25growth1.8178%/DD.6433%; reuseddevelopment, not PaperPnL:
 D:/thericher-v2/model-artifacts/research/current-net25-tcn-first-market-run-20261105-v1/API.json.
 Old37bc/6d48/alignmentfailure clocks/debits preserved, no rerun.
-First OOFf3e1 CLOSEDinputunavailable0marketfits; masked scope thenCLOSED
-technicalcheckpointpathfailure0fits/1183.92carry. NEWcontinuation-r1 owned by
-McClintock relocates verifiedcheckpoint to /out without guardweakening;
-same10unusedfits/cumulative14400cap/hardyield13:15UTC. ActualGPUstart not inferred.
-D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r1.
+Final OOF24bb CLOSED10completed/11attempted/9852expert+1650gateupdates,
+13archives74batches/6books18views; actualCUDA GRUs/CPUTCN/gate,all3CIDs/Jobs/
+leaseclosed. Gatebest0 equalsfixedthird1.8178%/.6433%,incrementalgrowthFAIL.
+Oldpartialfits reused/one explicit failed-zero-update restart; no furtherfit:
+D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
+Saved-third f0f is CLOSED799bitwise parity/17native/0fits/allactorsclosed.
+Shadow c96 ACTUALLY enabled for Nov6UTC13:45..<13:46/hard13:50/PT4M:
+D:/thericher-v2/model-artifacts/research/current-net25-fixedthird-shadow-opportunity-preparation-20261105-v1/PARENT-ADOPTION.json.
+Separate fullXMLACL twice-stable readback10:28:26 proves installation, not old
+failed Enable CLI success. Never replay enable/create. CPU/networknone/no bank/
+credentials/broker, future point UNKNOWN; installed fixedhalf unchanged.
+Shallow OOF tree a1de CLOSED1CPUfit/0expertrefits/0retry, Net25growth0.4900%/
+DD0.1788%,FAILincrementalgrowth/all3CIDsJobsclosed:
+D:/thericher-v2/model-artifacts/research/current-net25-oof-shallow-tree-development-20261105-v1/API.json.
+See CLOCK-INTERPRETATION.json: runner25.69s/SUM54.04s, fullscope UNKNOWN, no
+retroactive complete budget pass or fit permission. Rawls now owns conditional
+cached Chronos2 Open60/Open4 campaign, actual inference/GPU not yet evidenced:
+D:/thericher-v2/model-artifacts/research/current-net25-chronos2-open60-development-20261105-v1.
 ffEA Data closed172GET/22213added; NEWf13a remaining22 closed79GET/
 7677newrows/189376known/26all17complete. No additionalwirequeued.
 D:/thericher-v2/model-artifacts/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
@@ -44,6 +57,25 @@ D:/thericher-v2/model-artifacts/execution/current-net25-installed-public-outcome
 After actualopportunity only, use exactsource-qualifiedcommand; never manual
 Task.Run/strategy/KIS/Docker merely as reader. Financialcurrentstate remains
 unknown without separate actualwriter admission/privateexactjoins/stability.
+
+Current-custody Bfinal218f source-only constructor/8groups/fullRuff/realLinux
+5phases/12Jobsclosed qualifies preparation only, no currentactualadmission:
+D:/thericher-v2/model-artifacts/execution/current-net25-current-custody-reader-readiness-20261105-v1/final-r2/READY-COMMANDS.json.
+Only after actual positive entryownerclosure, retainedpoint and freshactual
+writeradmission, use its exact source-pinned command. No invocation now.
+Parent publicsource-only CLI PASS. Never reinterpret an earliestclock as
+permission to race an active financialowner or rerun a consumed actualread.
+
+F9 r4 before_create PASS/before_start denied a new Docker instance; one RO
+container created/neverstarted/removed/positivelyabsent,0private/query:
+D:/thericher-v2/model-artifacts/execution/current-original-f9-readonly-recovery-readiness-20261105-v1/parent-current-read-r4/FIRST-CAUSE.json.
+Parent retained public argv hashes identify context ls --format metadata,
+not an owner proof/all-Docker exemption. Maxwell owns NEW narrow source/native
+instance/argv capability + ONE fresh RO attempt, not consumed r4 replay:
+D:/thericher-v2/model-artifacts/execution/current-f9-docker-context-metadata-capability-20261105-v1.
+No actual result yet; all other guards/exactjoins/stability unchanged. Keep
+originalsend/brokerID UNKNOWN, B10/reservations/exits; never kill unrelated apps,
+releaseUNKNOWNreservation, readcredentials/brokerquery or recover via observe().
 
 INTC15:25UTC A+B readout5c26 actuallyinstalled, AASOF independent of Bdenial;
 RAW13:30point/14:31entry,INTC15:10entry and allolderexits unchanged. Details and

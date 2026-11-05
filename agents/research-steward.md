@@ -2,20 +2,33 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC08:22 / KST17:22.
-McClintock is ONE coordinator for NEW masked-gate continuation-r1:
-D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r1.
-Original masked scope CLOSED0marketfits/1183.92cumulativeactive/allJobsclosed;
-safe artifact-path guard rejected checkpoint beneath /src. New declared scope
-byte-verifies/copies to /out without weakening guard,<=4preflighttechnicalfixes,
-same10unusedfits/0marketretry. Prior2/2cap and failures unchanged, no refund.
-<=9foldexpertfits+1gate, cumulative14400active includes old1183.92,21600elapsed
-from07:41:36. Hard checkpoint/yield/positive closure by Nov5UTC13:15 ahead of
-RAWpoint13:30/entry14:31. Actual optimizer/GPU use UNKNOWN until start callback.
-One coordinator may run distinct ready CPU/GPU workers with measured useful
-headroom/disjoint paths; no duplicate completed finalfits or extra trials.
-Track actual PID/birth/CID, co-tenancy, active_SUM including source/launcher/
-synthetic/failure/IO/cleanup, elapsed and peakVRAM separately.
+Updated Nov5UTC10:48 / KST19:48.
+Rawls owns conditional Chronos2 resource coordination, dispatched10:35:46UTC:
+D:/thericher-v2/model-artifacts/research/current-net25-chronos2-open60-development-20261105-v1.
+Zero fits/one799-key Open60/Open4 inference archive/one checkpoint-window,
+elapsed3600/SUM1200 includes120prep; no market inference retry/downloads.
+Native real SDK/weight hash/cross-learning isolation and CPU-CUDA headroom
+checks precede actual inference. No actual GPU launch yet evidenced here.
+No other numerical GPU worker claimed; user apps are not a permission hold.
+
+Completed OOF training is COMPLETE and GPUlease released:
+D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
+Source24bb:10completed/11attempted including ONE explicit failed-zero-updateTCN
+restart. Old successful HGB/GRU reused, never fitted again.9852expertupdates/
+1650gateupdates/64trees. Actual CUDA GRUs; CPU TCN/gate. Current numerical
+worker CLOSED, all3CIDs and owned Jobs freshly checked closed. No utilizationjob.
+Gate best0 exactly ties fixedthird, FAILincrementalgrowth; no further tuning.
+All old cap failures/debits remain; family cumulative below14400SUM/21600elapsed
+and closed before13:15UTC. Parent took over after LLM model-capacity failure,
+not a GPU/environment failure. Final native mixed-device checkpoint smoke
+proved negative no-capture and positive actual CUDA RNG restore without updates.
+
+Saved-third f0f ABI/799bitwise parity is CLOSED,0fits/CPUonly, all actors closed.
+Shadow c96 Task actually installed Nov6UTC13:45/hard13:50, inference only,
+not a current worker/GPU fit or financial authority. Shallow OOF tree a1de
+closed one CPU fit/development-fail/all3CIDsJobs closed. Runner25.69s/54.04SUM
+are narrower than fullscope elapsed, which remains UNKNOWN; no budget regrade.
+Ready resources alone are not a reason to duplicate completed fits.
 
 Prior unmasked OOFf3e1 CLOSED INPUT_UNAVAILABLE/0marketfits/758.76active,
 allJobs/CIDsclosed/noGPUlease. Old contracts/results/debits preserved, new

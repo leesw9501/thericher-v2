@@ -2,15 +2,37 @@
 
 ## Current Handoff
 
-Updated Nov5UTC08:22 / KST17:22. A=D:/thericher-v2/model-artifacts.
-No currently running Strategy LLM is implied. Kant's source offer is CLOSED:
+Updated Nov5UTC10:48 / KST19:48. A=D:/thericher-v2/model-artifacts.
+Rawls' Chronos2 Open-path proposal c2674620 is CLOSED and consumed by a
+separately scoped Engine campaign, not a Strategy GPU worker:
+A/research/current-net25-public-model-open-forecast-readiness-20261105-v1/READY.json.
+Cached exact checkpoint95a9710e/weightddcda3c7/Apache2 predates all targets;
+official commit Oct30,2025. Nine-family bounded duplicate check found no exact
+Open60/Open4 archive, not exhaustive novelty.16pure native checks passed.
+Open-only four-step medians are not absolute expected-return forecasts or the
+old close-to-open target; unknown corpus/context overlap still limits claims.
+No downloads/inference/GPU/market payload in that proposal.120worker upper,
+pre-first-record full elapsed not retained; no retroactive complete clock pass.
+Parent delegated actual Engine native/inference/readout separately10:35:46UTC.
+
+Popper now owns synthetic-only native-minute rule consumer readiness:
+A/research/current-native-minute-rule-consumer-readiness-20261105-v1.
+Concrete next Engine consumer: two fixed intraday opening-range/RSI-VWAP
+mechanisms, exact typed Data key/mask/clock interface and causal next-open
+proposal. Metadata before reservedOct30 only; no market fit/forecast/readout,
+GPU/Docker/network/Paper authority. Real invented parse-return/causality smoke
+and finite contract must qualify before a separately frozen numerical study.
+Elapsed1800/SUM450 from actual dispatch; source/test/IO/cleanup charged.
+
+Kant's source offer is CLOSED:
 A/research/current-net25-chronological-gate-candidate-20261105-v1.
 Sourcee3bb0338/OFFERbf6db24a,30native+9readback checks/Ruff/four synthetic gate
 updates, allactorsclosed.3OOFfolds/9historicalexpertfits+1convexgate proposed;
 fold-local FITstats/maturity+20purges, never fullFIT in-sample forecasts as OOF.
-Engine consumed it in f3e1 attempt; input masks withheld full-cohort admission,
-0marketfits. Parent assigned NEW explicitly masked Engine contract, same
-hypothesis and no old regrade. Strategy does not own fitting/custody/Paper risk.
+Engine first f3e1 attempt withheld full-cohort input, then explicit maskedOOF
+24bb completed10fits with successful oldfits reused. Gate best0 ties fixedthird,
+no incremental gain; shallowtree a1de also failed incremental growth. No rescue/
+Paper swap. Strategy does not own fitting/custody/Paper risk.
 
 ## Consumed Mechanisms
 

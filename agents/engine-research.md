@@ -2,29 +2,54 @@
 
 ## Current Work
 
-Updated Nov5UTC08:22 / KST17:22. A=D:/thericher-v2/model-artifacts.
-McClintock owns NEW continuation-r1 under masked chronological OOF gate:
-A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r1.
-Original masked scope CLOSED_PREFLIGHT_TECHNICAL_FAILURE_REPAIR_CAP,
-0marketfits/1183.92cumulativeactive/allJobsCIDsclosed. Safe checkpoint API
-correctly rejected artifact mounted under /src source root. Its2/2technicalcap
-and failures stay immutable. New scope byte-verifies/copies checkpoint to owned
-D-backed /out, preserves workspace guard, uses <=4newpreflighttechnicalfixes.
-Support proven13882gateFIT/1399gateINNER/799DEV, no need to rebuild roles.
-Same HGB/GRU/TCN absoluteNet25 experts,3chronologicalfolds/oneconvexgate,
-planned maturity+20purges/foldFIT-only stats/INNER-only checkpoints/one common
-47cohort DEV/6books18views. Keep all planned OOF keys and explicit unavailable
-forecasts. Supervised eligible rows require causal feature-known+label-known;
-no imputation/outcome-ranked dates or in-sample finalweights used as OOF.
-FinalDEV common support stays unchanged. Conditional historical evidence only.
-<=9newfoldfits+1gate, zero completed-finalfit repeats/market retries. Cumulative
-14400SUMactive includes old1183.92;21600elapsed from07:41:36; hard yield/positive
-closure by Nov5UTC13:15. Actual optimizer/GPU start UNKNOWN until callback.
-One Steward coordinates useful CPU/GPU concurrency and measured headroom.
-Claude leakage challenge required; unavailable is not agreement/global hold.
+Updated Nov5UTC10:48 / KST19:48. A=D:/thericher-v2/model-artifacts.
+OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
+A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
+Source24bb232f:3folds xHGB/GRU/TCN plus1gate,10completed/11attempted.
+Two completed fold1 fits reused byte-for-byte, failed epoch-zeroTCN attempt
+preserved; ONE explicit zero-update technical restart, no further retry.
+9852expertupdates/1650gateupdates/64HGBtrees,13archives74batches/6books18views.
+Actual CUDA GRUs and CPU TCN/gate, all3CIDs/Jobs/GPUlease positively closed.
+13882gateFIT/1399gateINNER/799DEV, fold-local stats/plannedmaturity+20purges,
+all planned OOF keys and missing masks retained; no fullFIT weights as OOF.
+INNER-best gate0 is equal experts+CASH; sign-only slots exactly match fixedthird.
+Net25growth1.8178%/DD0.6433% equals third, so incremental-growth test FAIL.
+No changed threshold/seen-DEV rerank or Paper swap. More epochs not justified
+by this result. Adaptive/conditional data and OOF-to-final shift stay explicit.
+
+Current Rawls package is conditional cached Chronos2 Open60->Open4 comparison:
+A/research/current-net25-chronos2-open60-development-20261105-v1.
+Dispatched10:35:46UTC, elapsed3600/SUM1200 including120prep,0fits/one799-key
+archive/6books18views, no inference retry/download/private/broker/Paper swap.
+Checkpoint95a9710e/weightddcda3c7 official Oct30,2025 predates all targets;
+unknown corpus/context remains. Actual native SDK/weight hash/cross-learning
+isolation/CPU-CUDA headroom precede market inference. Assignment is not actual
+GPU use. Rawls owns this resource coordination; no other numerical worker claimed.
+
+Old f3e1 unavailable, maskedpreflight, r1mixed-device failure and r2nativefixture
+failures remain immutable with all debits. McClintock model service hit capacity;
+Parent completed the qualified r2-native-repair locally, not a GPU failure.
+Actual mixed CPU-after-CUDA checkpoint guard stays intact; correct full CUDA
+RNG capture/restore passed positive+negative native smoke before remaining fits.
+Claude GO_WITH_LIMITS/e059cba4:
+A/review/current-net25-gate-mixed-device-recovery-20261105-v1/verdict.json.
 
 ## Completed Current Results
 
+- Frozen-third f0f CLOSED17native/12paritychecks, all799 half/TCN/third forecasts
+  bitwise equal,0fits/readouts/GPU/all actors closed:
+  A/research/current-net25-fixedthird-frozen-shadow-preparation-20261105-v1/API.json.
+  Shadow c96 ACTUALLY installed Nov6UTC13:45/hard13:50, CPU/networknone/no
+  financial authority, future publication UNKNOWN. Actual separate XMLACL
+  readback10:28:26, not failed Enable CLI success:
+  A/research/current-net25-fixedthird-shadow-opportunity-preparation-20261105-v1/PARENT-ADOPTION.json.
+- Shallow OOF tree a1de CLOSED one CPU depth2/7node fit,0expertrefits,
+  one799DEV archive/6books18views. Growth0.4900%/DD0.1788% at25bps eachleg,
+  FAIL versus half0.8346% and third1.8178%; no threshold rescue or extra fit.
+  A/research/current-net25-oof-shallow-tree-development-20261105-v1/API.json.
+  All3CIDs/Jobs closed. CLOCK-INTERPRETATION.json states runner25.69s/worker
+  SUM54.04s, not full-package elapsed/complete budget proof; fullscope UNKNOWN
+  with334.62s observed source-to-API lowerbound. Do not regrade old clocks.
 - TCN3c247ad7/contract4d1d4ea6 CLOSED DEVELOPMENT_PASS:
   A/research/current-net25-tcn-first-market-run-20261105-v1/API.json.
   32CPUepochs/3744updates/28.065s/INNERbest8 restored. MSE0.99165->best0.96925->
@@ -67,8 +92,10 @@ evidence without dated provenance/pretraining-scope qualification.
 
 Breadth: distinct mechanisms only with finite hypothesis/cost/availability/
 window/seed budget; no repeat completed HGB/GRU/TCN for GPU utilization.
-Depth: current maskedOOF fusion, training curves/earlystop/checkpoints/trialcaps
-as declared; no old immutable epoch cap becomes a global rule.
+Depth: maskedOOF fusion closed without incremental gain. Current distinct
+foundation Open-path inference may fail; do not rescue by seen-DEV tuning.
+Training curves/earlystop/checkpoints remain available in new trainable scopes;
+no old immutable epoch cap becomes a global rule.
 Data native minute history is a useful later input, not automatic release of
 old reserved evaluation. Source/producer/consumer ABI smoke before market.
 
@@ -83,5 +110,6 @@ scalar-comparable. No arm rescue/seen-holdout rerank/broker-risk changes.
 
 RAW8fd existing entryNov5UTC14:31/exitNov10UTC14:30, NON_PARITY quarterONEB10.
 New fixedhalf model25c8 only, entryNov6UTC14:31/exitNov11UTC14:30, samephysical
-bank/native risk and ONEoriginalB10. Research third and learned gate are NOT
-installed. Execution owns current holdings/lot sizing/risk/custody/financial PnL.
+bank/native risk and ONEoriginalB10. Research third has a nonfinancial shadow
+Task only; learned gate/tree/foundation are NOT financial sources. Execution
+owns current holdings/lot sizing/risk/custody/financial PnL.
