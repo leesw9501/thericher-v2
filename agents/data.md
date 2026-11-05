@@ -2,17 +2,34 @@
 
 ## Current Work
 
-Updated Nov5UTC02:23 / KST11:23. Archimedes owns NEW remaining-history work:
-A/data/current-native17-remaining-history-acquisition-20261105-v1.
-Only125UNATTEMPTED missing-stock streams from old9f manifest, Oct06..Nov02;
-skip completed/consumed/current3sessions, no identical old GET. Reuse actual
-qualified4faa profile/header telemetry. Frozen650GET/1initialPOST/2boundedGET
-recoveries/3600summedactive/3600elapsed/125streams;prep240active/1200elapsed.
-Existing collector/token/account/cache/storage/pacing checks remain. Exact
-source/native-qualified launch is delegated, no post-start ACK. Exact cursor
-stops on measured no-progress/source limit;2identical structural faults abort
-batch. No old marker reset/refund/imputation/model/eval/Paper promotion.
-No current new PID/HTTP count claimed until actual callback. Code A/bytes M.
+Updated Nov5UTC02:55 / KST11:55. Archimedes CLOSED remaining-history acquisition:
+A/data/current-native17-remaining-history-acquisition-20261105-v1/CALLBACK.json.
+Source3a80dd76/PLAN35c3ecbe/RESULTf7592340/CLOSED056d2f64:
+500acceptedGET/0failed/1POST/0recoveries,48749new RTH1m rows,125outputs/
+124complete390/1provider-gap masked. All500new response headers observed,
+unrecognized_nonblank; zero adopted old payloads/retained unknown-header rows.
+Actual1451.90worker/1452.47host seconds,2.904seconds perGET, minimum wire
+spacing2.193seconds. Charged3024.87/3600summedactive including120verification
+reserve,1520.09/3600elapsed. Actual Job/cacheowner positively closed.
+Native changed-manifest->request/header/parser/Bar/codec consumer and bounded
+source-stop fixture PASS. Parent345absolute source/callback refs stable;
+Parent independently ran85actual native codec readbacks03:14:17sessions*5TF,
+48749M1known, all relative payload hashes/semantic keys/masks passed,0HTTP/model.
+170relative BARS/ROLE refs resolved by real manifest-root reader, not cwdhashing;
+first bad Parent generic projection is NOT proof and is now properly checked.
+Five typed timeframes preserve masks;17-axis is NOT17complete stocks.
+Grade remains provisional local label/clock profile, not PIT/CA/finality/alpha/
+Paper/evaluation promotion. Old9f unattempted status is immutable history, not
+the present coverage of this new independently sourced acquisition.
+
+NEW assigned next package, no actual join/source result yet claimed:
+A/data/current-native17-historical-source-join-20261105-v1.
+Research-grade join existing7 overlap + missing10 only with exact source/
+calendar/venue/UTC/basis compatibility; no conflict override/imputation/raw
+rewrite. Invented producer->join->Bar/resampler before payload; source/masks/
+clock/header lineage and current custody retained,5typed timeframes.
+300summedactive/1800elapsed, zero newHTTP/token/account/order/Task/fit/forecast.
+Publishing does not release reserved Oct30-Nov6 targets or change Paper input.
 
 Header-compatible completion is CLOSED, not a pending fit/collector:
 A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
@@ -37,7 +54,8 @@ runtime attribution inference not direct observation. ff3c native-compatible
 pure fix/conditional salvage references are in its callback.8662known rows/
 9complete remain provisional/conditional, NEVER injectedM/blank header proof:
 A/data/current-native17-continuation-cursor-firstcause-20261105-v1/CALLBACK.json.
-No new network or marker changes in diagnosis. Old125streams remain UNKNOWN.
+No new network or marker changes in that diagnosis. Its old125streams were
+UNKNOWN then; new3a80 results above are separate, not a regrade.
 
 Archimedes CLOSED preceding bounded history expansion:
 A/data/current-native17-minute-history-expansion-20261105-v1.

@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Updated Nov5UTC02:23 / KST11:23. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC03:02 / KST12:02. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new acceptance/fill/current owned-state/PnL is claimed. ONE initialB/10,
 F9 UNKNOWN-HELD, pending/costs/losses/reservations/ALL original exits persist.
@@ -36,12 +36,20 @@ Create/Enable consumed; NEVER replay. Financial admission/submit/fill/PnL UNKNOW
 
 ## Readers And Observations
 
-- James owns NEW source-qualified exact INTC outcome reader preparation:
-  A/execution/current-intc-engineering-exact-outcome-reader-readiness-20261105-v1.
-  Bind b63/c5c input/policy/release and actual native public/private schema;
-  invented producer/terminal/cycle/intent/fill/owned projection with negative
-  cases. No actual private/Task/Docker/broker read during prep or financial
-  admission inferred. Parent activates only after qualified actual linkage.
+- INTC public reader90062da8 is source-ready,11native filesystem tests/Ruff,
+  Parent13refs stable; exact commands READY-COMMANDS.json:
+  A/execution/current-intc-installed-public-outcome-reader-20261105-v1.
+  Actual ONE public smoke02:55:03 found stable absent outcome directory:
+  UNKNOWN/NO_EXACT_PHASE_TERMINAL_UNKNOWN_NOT_ZERO, not no-intent/zero fill.
+  PID24736 joined/exit0,allchildrenclosed,2.407active/507.803elapsed.
+  Source-scoped unique stable immutable chain can project worker-reported
+  acceptance/fill/owned categories AS-OF runtime, not independently current
+  custody or OS Scheduler origin. No new mandatory producer pointer; old1ba
+  pointer-gap interpretation superseded for public A only, old tests unchanged.
+  James assigned current-intc-current-custody-reader-readiness-20261105-v1
+  PREPONLY,180active1200elapsed: native exact book/plan/intent/fill joins,
+  network-none/allRO/relevantfinancial-writers/before-after stability required
+  at later actual activation. No actual private admission/read claimed.
 - Public readercd6e/95cd validates exact attempt/launch/child/terminal/closure
   source/hash/nativePID/birth/UTC/stability;Parent8invented cases PASS:
   A/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.
@@ -81,10 +89,16 @@ birth stable, CSRSS source hash a958083f. Actual retained-target smoke passed;
 Qualification is explicitly INERT_ONLY_PRECISION_WITHHELD, NOT released:
 source-derived CIM/float acceptance bound unproved, ClaudeREPAIR_REQUIRED.
 No dependency install/Task/private/broker/census calls or currentownerabsence.
-NEW current-full17-native-clock-conversion-repair-20261105-v1 derives exact
-conversion/calibration within240active/1200elapsed; same original-candidate/
-OS-source/bracketing/precision/PIDreuse/stale-exe guards, no blanket OS exemption.
-Current131e retained until actual qualified migration; no blind capture retry.
+Clock repair5a195d65/q9ecf374e passed695clock/13provider/32/52/15/20groups,
+three owned-worker deltas-2/-2/-5ticks explicitly measured,not universal;
+15Jobsclosed,Claudeunavailable NOTagreement,Parent18pins stable. ONEactual
+Capture69aff0e5 withheld beforeApply: PSUTIL_SOURCE_UNKNOWN lookup failed
+BEFORE positive image/hash proof. RESULT67d36e04/CLOSEDac13f297,2Jobsclosed:
+A/execution/current-full17-native-clock-conversion-repair-20261105-v1/actual/OWNER-CHECK-69aff0e51ed14aedb044134616649097.json.
+Optional migration DEFERRED; current131e retained, no per-PID list expansion.
+Frozen OS-image set is implementation-specific, not AGENTS requirement to
+qualify everyOSprocess.7b0 uses different runtime census; no evidence this
+fault blocks actual runtime, which remains unmeasured. No global hold.
 
 Korean readonly UI coexistence1b659ded/proof1ef9d171 passed6native groups/Ruff,
 but RAW8fd/INTCb63/Full17-131e classify proposed8788 unknown_custody_capability:

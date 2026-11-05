@@ -2,15 +2,23 @@
 
 ## Current Source Handoff
 
-Updated Nov5UTC02:23 / KST11:23. Bacon owns NEW bounded source preparation:
-A/research/current-short-swing-first-passage-candidate-preparation-20261105-v1.
-Consumer is next Engine short-swing campaign, not a broker writer. ONE fixed
-first-passage profit/stop/vertical-horizon mechanism, official-source research
-and pure kernel on invented Bars. Explicit decision/entry/label availability,
-gap-open fills, conservative samebar high+low ambiguity, overnight/purge/cost/
-missing-data cases.180summedactive/1200elapsed, no sweeps/market arrays/fits/
-forecast/registry changes. Native producer-to-consumer smoke and focused tests.
-Engine owns eventual contracts/budgets; proposal is not numerical authority.
+Updated Nov5UTC03:02 / KST12:02. Bacon CLOSED two distinct source proposals:
+- M1ea286/54tests: strict completed-minute/delayed-exit mechanism, daily-only
+  input mismatch retained.180charged/1179.53elapsed, no market arrays/fits.
+  A/research/current-short-swing-first-passage-candidate-preparation-20261105-v1/final/CALLBACK.json.
+- D1be2fc846/kernel20fe4988/37tests+Ruff/Parent21pins stable:
+  A/research/current-d1-observed-barrier-next-open-candidate-20261105-v1/final-r2/CALLBACK.json.
+  Observe completedD1 TP2%/SL1%, exit next official OPEN, e+3OPEN vertical;
+  double-hit ambiguousSTOP not guaranteed worst delayedfill. Explicit calendar/
+  availability/gap/overnight/cost/purge/missingness; never intrabar/barrierfill.
+  180charged/727.72elapsed,allworkersreturned,0market/fits/forecast/registry.
+  ConsumerKant actual same-book replay and Nietzsche learned-exit PREP;
+  direct per-asset ABI delivered, not a new broker writer/multimodel platform.
+  Old30732 snapshot preserved; final calendar validation changed source, so
+  old Engine0918/35checks NOT reassigned. Fresh finalhandoff smoke precedes
+  market under later frozen contract, no human approval/extra ACK.
+No permanent active LLM is implied; resume this capability only for a distinct
+useful mechanism or concrete consumer discrepancy. Old policy/Paper unchanged.
 
 ## Previous Handoff
 

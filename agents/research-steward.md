@@ -2,11 +2,18 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC02:27 / KST11:27. Kant owns new first-passage campaign PREP,
-not a market numerical/GPU worker. Metadata capability/native invented smoke/
-one bounded offer only,240summedactive/1200elapsed; later ready useful campaign
-still needs frozen actual contract and measured resource dispatch. Bacon owns
-disjoint pure mechanism; roles exchange readiness directly. No fit duplicated.
+Updated Nov5UTC03:02 / KST12:02. Kant owns NEW D1rule common-book replay,
+0fits/4books12views/420active1800elapsed, strict exact-source/basis/full-row
+admission; fresh finalBacon20fe producer smoke, no cached RAWscalarcomparison.
+Kant rule8870/e402 CLOSED DEVELOPMENT_FAIL,0fits/4books12views/6Jobsclosed.
+Nietzsche old35bd native checkpoint0 failure closed1context/0updates/0market,
+Job/CID/exactGPUleaseclosed,67.52active/1194.42elapsed; no refund.
+NEW current-d1-learned-next-open-exit-development-20261105-v1 technicalrepair
+180active900elapsed then predelegated SAMEoffer1a688 finite1fit/128maxepochs/
+20000updates/480fitseconds/earlystop20/1800active3600elapsed, if actualsource/
+native/data/registry/resources qualify. One resource owner; measured CPU/CUDA
+choice/headroom, personalapps not permissionhold. No currentGPU/marketfit
+claimed, dummyutilization, duplicate completed training or Paper swap.
 Kant CLOSED preceding indicator-boosting resources.
 Parent owns integration/Git. Agent assignment is not proof of an active fit.
 Package research/current-h3-indicator-boosting-development-20261105-v1:

@@ -2,16 +2,43 @@
 
 ## Current Work
 
-Updated Nov5UTC02:27 / KST11:27. A=D:/thericher-v2/model-artifacts.
-Kant owns NEW first-passage campaign readiness, PREPARATION ONLY:
-A/research/current-short-swing-first-passage-campaign-readiness-20261105-v1.
-Direct schema handoff from Bacon's pure mechanism. Metadata-only confirm actual
-OHLC/label capability, one finite distinct campaign offer or concrete rejection,
-aligned book/cost/baselines/temporal purge/selection-reuse limitations. Actual
-invented producer/label/forecast consumer and tiny native optimizer/checkpoint
-smoke before any market fitting.240summedactive/1200elapsed incl failures/
-cleanup. No market fit/eval/registry debit/custody release yet; no duplicate old
-training or GPU-utilization-only campaign. Parent shared policy/Git.
+Updated Nov5UTC03:02 / KST12:02. A=D:/thericher-v2/model-artifacts.
+Kant CLOSED deterministic common-book D1 exit-rule campaign:
+A/research/current-d1-observed-exit-common-book-development-20261105-v1.
+Source8870bcef/contracte4025ff6/RESULT70912b79 DEVELOPMENT_FAIL. Strict full
+basis/calendar/rows passed;47cohorts/4books12views/0fits0forecasts0retry.
+At10bpsPER-SIDE growth/DD/turnover: D1exit0.398%/5.352%/46.599,
+NEW RAWvertical3.696%/5.402%/47.606,EW1.318%/6.350%/46.997.
+Lowerexposure0.243 versusRAW0.497 does not rescue failed incrementalgrowth.
+72postchecks/Ruff/6Jobsclosed,Parent84refs stable;93.30newactive+21.03postverify,
+600closedprep carried once. New matched forced-flat book, not cached8.955/
+8.526 scalar comparisons; adaptive reused development, no Paper change/rerun.
+Bacon finalSourcebe2fc846/kernel20fe4988,37tests/Ruff/Parent21refs stable:
+A/research/current-d1-observed-barrier-next-open-candidate-20261105-v1/final-r2/CALLBACK.json.
+Completed D1 TP2%/SL1% observation->next official OPEN, e+3OPEN vertical;
+ambiguousSTOP label not guaranteed worst delayedfill. Never intrabar execution.
+Original M1ea286/54tests is closed synthetic-only/daily-input mismatch.
+Engine0918/35checks used mutable30732, Parent found2source drift refs; old
+proof stays old. Fresh finalproducer->typedconsumer smoke before market inside
+new campaign, no poststartACK. Metadata confirms ed401 full17+SPYQQQ D1OHLC,
+2965sessions20150102..20261016; value alignment is separate, not inferred.
+
+Nietzsche CLOSED distinct learned exit-payoff PREPARATION with technicalfailure:
+A/research/current-d1-learned-next-open-exit-campaign-preparation-20261105-v1.
+Source35bd7627/offer1a688969 frozen before rule performance. Epochzero
+scheduler.step advancedlast_epoch before checkpoint0, rejected before any
+update:1nativecontext/0updates/0restoredforecasts/0market. Job/CID/GPUlease
+closed;67.52active/1194.42elapsed, old failure/debits unchanged.
+NEW minimal caller repair and same finite numerical offer delegated:
+A/research/current-d1-learned-next-open-exit-development-20261105-v1.
+Technical180active900elapsed/1context4syntheticupdates; if exact native/source/
+row/calendar/registry/resource-qualified,1neuralfit/128maxepochs/20000updates/
+480fitseconds/earlystop20/LRpatience6/earliestINNERbestincludingepoch0,
+1forecastarchive/1598shadows/4books12views/1alignment1readout0retry/
+1800active3600elapsed. No poststartACK, duplicate finished fit or Paper change.
+Chronological FIT2015..2023/INNER2024..2025, plannedmaturity+20sessionpurge;
+DEV47Jan-Jul2026 reused only. Own-window/state exit advantage vs fixedvertical,
+not Bellman optimum/learned RAWfusion. No current marketfit/GPU activity claimed.
 
 Kant CLOSED preceding non-neural indicator-boosting:
 A/research/current-h3-indicator-boosting-development-20261105-v1.

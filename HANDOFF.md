@@ -2,13 +2,13 @@
 
 ## Current Reality
 
-Updated Nov5UTC02:23 / KST11:23.
+Updated Nov5UTC02:56 / KST11:56.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new accepted order, exact fill, current owned reconciliation or PnL is claimed.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Read AGENTS.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and current role stateboards.
-History is Git through2a7fc30b and immutable artifacts, not a second diary.
+History is Git through9a96e0f2 and immutable artifacts, not a second diary.
 
 No operator decision pending. Private no-cost Data/Research/KIS Paper authority
 is delegated; never read/route KIS_LIVE_*. No secrets/account/order identifiers/
@@ -107,12 +107,21 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   Parent286refs stable;323.97charged active/allJobs+cacheownerclosed.40new
   responses have observed present/unrecognized_nonblank headers;8662retained
   seeds keep UNKNOWN_NOT_RETAINED. No retroactive header/old evaluation claim.
-  Archimedes now owns remaining125UNATTEMPTED streams, Oct06..Nov02:
-  A/data/current-native17-remaining-history-acquisition-20261105-v1.
-  Reuse qualified profile,650GET/1initialPOST/2boundedGETrecoveries/3600active/
-  3600elapsed/125streams;prep240active/1200elapsed. Skip old consumed/completed
-  scopes, actual owner/token/storage before delegated launch, no extra ACK.
-  No new PID/HTTP count or source horizon inferred before actual result.
+  NEW remaining125 acquisition ACTUALLY CLOSED500acceptedGET/0failed/1POST/
+  0recoveries,48749newRTH rows/124complete390/1maskedprovider-gap stream:
+  A/data/current-native17-remaining-history-acquisition-20261105-v1/CALLBACK.json.
+  Source3a80dd76/PLAN35c3ecbe/RESULTf7592340/CLOSED056d2f64. All500new wire
+  header categories observed, zero old payload adoption; provisional profile
+  still not PIT/CA/finality/evaluation/Paper qualification.2.904sec/GET,
+  1451.90worker/1452.47host seconds,3024.87chargedSUM/1520.09elapsed,allJobs/
+  cacheownerclosed. Parent345absolute refs stable; independent85actual codec
+  readbacks03:14 checked17sessions*5TF/relative hashes/semantic keys/masks,
+  48749M1known/0HTTP/model, not cwdhashing.17-axis not17complete stocks.
+  No duplicate GET.
+  Archimedes assigned source-qualified existing7+missing10 canonical join:
+  A/data/current-native17-historical-source-join-20261105-v1.
+  300active/1800elapsed,0HTTP, retain source/basis/calendar/masks/conflicts/
+  custody; no current result or old reserved-target release inferred.
 - Kant CLOSED HGB familyc31dd342/contract9eecee48:
  3CPUfits63/54/51iterations,12synthetic iterations/3forecasts/1fixedblend/
  18views/0retry. Net10bps PER SIDE growth: raw6.460%,indicator3.202%,
@@ -124,6 +133,27 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   verification. Existing sklearn1.9 CPU2, no install/framework change.
   Persistent RAW matches retained within1e-8; forced-flat RAW8.526% is separate.
   No rerun/rescue/independent-alpha/Paper swap.
+- New D1 exit-rule expert: Bacon finalbe2fc846/kernel20fe4988,37tests/Ruff/
+  Parent21refs stable,180charged/727.72elapsed. Completed D1 TP2%/SL1% event
+  observed at CLOSE -> next official OPEN, e+3OPEN vertical, never intrabar fill:
+  A/research/current-d1-observed-barrier-next-open-candidate-20261105-v1/final-r2/CALLBACK.json.
+  Old M1ea286/54tests remains synthetic-only/daily-input mismatch. Initial
+  D1kernel30732 changed during producer work; old Engine0918/35tests are NOT
+  reassigned to20fe. Parent caught2drifted refs; fresh final-handoff smoke is
+  required inside separately delegated replay, not another human approval.
+  Kant's new common-book comparison8870/e402 is COMPLETE DEVELOPMENT_FAIL:
+  A/research/current-d1-observed-exit-common-book-development-20261105-v1/FINAL-CALLBACK.json.
+  Strict fullbasis/calendar/rows passed;0fits/47cohorts/4books12views/0retry.
+  At10bps per side D1exitgrowth0.398%/DD5.352% vs newRAWvertical3.696%/5.402%,
+  EW1.318%/6.350%;lowerexposure not rescue.72checks/Ruff/6Jobsclosed,
+  Parent84refs stable. New forced-flat book, not cached RAW8.955/8.526.
+  Nietzsche35bd learned-exit PREP failed checkpoint0 scheduler caller before
+  updates;1nativecontext/0updates/0market/Job+CID+leaseclosed, not model failure.
+  NEW current-d1-learned-next-open-exit-development-20261105-v1 has bounded
+  technical repair then SAMEfrozenoffer1a688 numerical launch predelegated:
+  1fit/128maxepochs/earlystop20/20000updates/480fitseconds, strict source/native/
+  basis/rows/registry/resources first. No poststartACK or repeated old training.
+  No current marketfit/GPU worker claimed; hypothesis froze before rule outcome.
 - Nietzsche CLOSED1fac signed-payoff CUDA study:47epochs/329updates/best15,
  15.436s/494MB,2forecasts9views.7.161%/DD6.107% vs forced-flatRAW8.526%/7.180%,
   incrementalFAIL despite lower turnover/DD.14checks/all4CIDs/Jobs/GPUleases
@@ -158,8 +188,17 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   stable. Qualification explicitlyINERT_ONLY_PRECISION_WITHHELD; CIM/float
   acceptance bound not established, ClaudeREPAIR_REQUIRED, no Task mutation:
   A/execution/current-full17-psutil-native-identity-fallback-20261105-v1/API.json.
-  Mendel owns current-full17-native-clock-conversion-repair-20261105-v1,
-  bounded source/conversion/calibration; no global hold or per-PID bypass.
+  Clock repair5a195d65/qualification9ecf374e passed695clock/13provider/
+  32/52/15/20integration cases. Three owned-worker CIM deltas-2/-2/-5ticks
+  are MEASURED, not universal;15Jobsclosed,Claudeunavailable NOTagreement.
+  Parent18source/proof refs stable; ONEactual Capture69aff0e5 then withheld
+  BEFOREApply: PSUTIL_SOURCE_UNKNOWN, no retained image/hash proof. TwoJobs
+  closed0/20;RESULT67d36e04/CLOSEDac13f297:
+  A/execution/current-full17-native-clock-conversion-repair-20261105-v1/actual/OWNER-CHECK-69aff0e51ed14aedb044134616649097.json.
+  Optional migration DEFERRED, no per-PID OS-list expansion. Current131e stays.
+  Frozen OS-image list is implementation-specific, not a company policy to
+  qualify every OS process.7b0 runtime uses different census; no proof this
+  fault blocks actual runtime, which remains unmeasured.
 - UI coexistence1b659ded/proof1ef9d171 six native groups/Ruff passed, but current
   RAW8fd/INTCb63/Full17-131e reject8788 as unknown_custody_capability:
   A/execution/current-korean-readonly-ui-coexistence-preparation-20261105-v1/check-20261105T011336285246Z/CALLBACK.json.
@@ -176,6 +215,15 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
 
 ## Duties And Verification
 
+INTC public reader90062da8 now ready,11native filesystem checks/Ruff,
+Parent13refs stable. Actual single02:55 public smoke stableabsent->UNKNOWN,
+not nointent/zero fill; no private/broker calls. Exactcommands:
+A/execution/current-intc-installed-public-outcome-reader-20261105-v1/READY-COMMANDS.json.
+Source-qualified chain may report worker categories AS-OF runtime, not
+independently current custody/OS Scheduler origin. James owns separate
+current-intc-current-custody-reader-readiness-20261105-v1 PREP only;
+actual financial-writer admission/networknone/allRO/exactjoins/stability later.
+
 Preserve MSE Nov5UTC20:40, H3 AMD Nov6UTC20:45, Full17 Nov6UTC20:54/hard21:07,
 GOOGL Nov9UTC20:55,memory-terminal Nov20,H20 Dec1UTC14:30, plus new RAW/INTC
 owned exits above. No manually Run consumed Tasks/substitute intents.
@@ -183,8 +231,8 @@ owned exits above. No manually Run consumed Tasks/substitute intents.
 Full C authority:
 A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
 20239PASS/26knownWindowsSKIP,created8/8workers[20265items],native/helper0/
-guardedcleanup.1437protected pins+AGENTS rechecked02:23 unchanged; Ruff/
-fourCompose(.env.example) PASS02:24. Recheck exact digests at integration;
+guardedcleanup.1437protected pins+AGENTS rechecked03:10 unchanged; Ruff/
+fourCompose(.env.example) PASS03:10. Recheck exact digests at integration;
 docs/external reuse only while unchanged. Dcode has independent focused/native
 proof; repeated C suite cannot validate it. R1/R2 remain withheld.
 Credential-free uv --no-env-file, no implicit.env, models onA/market onM.

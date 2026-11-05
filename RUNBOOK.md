@@ -2,7 +2,7 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC02:23 / KST11:23. Company objective remains UNFINISHED.
+Updated Nov5UTC03:10 / KST12:10. Company objective remains UNFINISHED.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
@@ -23,6 +23,12 @@ before mutation, nonzeroPID2040 nativeACCESS_DENIED/birth unavailable;
 RESULTbd67fe77/CLOSED68202de4/allJobsclosed/noApply. Current131e/aa416 retained:
 D:/thericher-v2/model-artifacts/execution/current-full17-original-interactive-session-scope-repair-20261105-v1/actual/OWNER-CHECK-76cde8e3c9d54e77a807fcdb0d77529e.json.
 No blind Capture retry, birth-drift/private-writer claim or company-wide hold.
+NEW5a195/q9ecf clock repair passed native conversion/calibration tests, but ONE
+actual69aff0e5 Capture failed PSUTIL_SOURCE_UNKNOWN beforeApply. TwoJobsclosed,
+RESULT67d36e04/CLOSEDac13f297; current131e retained, optional migration deferred:
+D:/thericher-v2/model-artifacts/execution/current-full17-native-clock-conversion-repair-20261105-v1/actual/OWNER-CHECK-69aff0e51ed14aedb044134616649097.json.
+No per-PID OS-list expansion; this particular list is not AGENTS/global policy
+or proof that the different actual runtime census fails. Do not replayCapture.
 
 Data0596 provisional NY-primary recovery decoded retained21pages only,
 2413RTH rows/2382defectflagged,0GET/POST/model. Raw archives/old failures intact.
@@ -41,10 +47,15 @@ Select revision-v2 Source4faa03cb/RESULTc2a75afc/CLOSED4ee40c9a, not failedroot.
 40acceptedGET/0failed/1POST/3018newrows;11680known/29of30complete,all20Oct29/30
 targets full,AMDNov2 gap20preserved. New40responses have observed header category;
 old8662seeds retain UNKNOWN_NOT_RETAINED. Parent286refs stable/allactorsclosed.
-Do not rerun completed acquisition. Archimedes owns NEW125unattempted streams:
-D:/thericher-v2/model-artifacts/data/current-native17-remaining-history-acquisition-20261105-v1.
-650GET/1initialPOST/2recoveries/3600active/3600elapsed, exact source/native/owner/
-token/storage-qualified delegated launch. No oldGETrepeat/custody/Paper promotion.
+NEW3a80 remaining125 ACTUALLY CLOSED500acceptedGET/0failed/1POST/48749newrows,
+124full/1maskedprovider-gap,allJobs/cacheownerclosed,2.904seconds/GET:
+D:/thericher-v2/model-artifacts/data/current-native17-remaining-history-acquisition-20261105-v1/CALLBACK.json.
+RESULTf7592340/CLOSED056d2f64,Parent345absolute refs stable. Parent85actual
+codec readbacks03:14 resolved17sessions*5TF relativehashes/masks/semantic keys,
+48749M1known/0HTTP/model; initialbadcwdhash projection is NOTproof.
+Native5TF/masks retained, no all17complete/PIT/CA/finality/Paper/readout claim.
+Do not rerun collection. Source-qualified existing7+missing10 join assigned,
+current-native17-historical-source-join-20261105-v1,300active1800elapsed/0HTTP.
 
 HGB c31dd342/9eecee48 CLOSED3CPUfits/168iterations/18views,primaryblendFAIL
 5.511% vs persistentRAW8.955% at10bps per side.41checks/6Jobs/68refs stable;
@@ -66,6 +77,21 @@ Task-exit inference. Public operational closure is NOT acceptance/fill/owned
 inventory; financial fields remain UNKNOWN, reservation_releasefalse. Receipt
 provenance assumes an honest host, not cryptographic proof of Scheduler origin.
 When projecting JSON in PowerShell use ConvertFrom-Json -DateKind String.
+
+INTC source-scoped public outcome reader90062da8 is READY,11native filesystem
+checks/Ruff/Parent13refs stable. Actual02:55 ONE smoke stableabsent->UNKNOWN,
+not nointent/zero fill. Existing producer reports AS-OF runtime categories,
+not independently currentcustody/OS Scheduler origin or accounting PnL:
+D:/thericher-v2/model-artifacts/execution/current-intc-installed-public-outcome-reader-20261105-v1/READY-COMMANDS.json.
+
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-intc-installed-public-outcome-reader-20261105-v1/cli.py' --source 90062da86894fc250c52b7161bdf86dc185b8d74205f70004b77f171a8892d7b --phase entry
+```
+
+Use phase exit only for its exact owned exit. Bounded stable source/phase/UUID/
+clock/input/policy chain, never latestmtime. No private/Task/Docker/broker/env
+access. Current-local-custody reader is separately PREP only; actual writer
+admission/networknone/allRO/exactjoins/stability later. No reservation release.
 
 Data source24a39/definitions268c ACTUALLY installed/enabled22:50:
 D:/thericher-v2/model-artifacts/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.

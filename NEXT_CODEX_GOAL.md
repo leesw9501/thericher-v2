@@ -23,7 +23,7 @@ exits persist. No refill/new bank/foreign adoption/unknown-request substitute.
 
 ## Current Evidence And Next Actions
 
-Updated Nov5UTC02:23 / KST11:23. Current facts, not a diary; exact proof in HANDOFF.
+Updated Nov5UTC02:56 / KST11:56. Current facts, not a diary; exact proof in HANDOFF.
 
 1. RAW ALL3 host8fd/plan38 ACTUALLY enabled/read back: entryNov5UTC14:31..<14:35
    (KST23:31), owned exitNov10UTC14:30..<14:35. Quarter of ONEB10 ceiling,
@@ -64,12 +64,15 @@ Updated Nov5UTC02:23 / KST11:23. Current facts, not a diary; exact proof in HAND
    A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
    Select revision-v2,Parent286refs stable.40newheaders observed;8662retained
    seeds keep UNKNOWN_NOT_RETAINED, no retroactive header/PIT/CA/finality claim.
-   Archimedes owns NEW125UNATTEMPTED older streams,Oct06..Nov02:
-   A/data/current-native17-remaining-history-acquisition-20261105-v1.
-   Frozen650GET/1initialPOST/2recoveries/3600active/3600elapsed/125streams;
-   prep240active/1200elapsed. Reuse qualified profile,skip oldconsumed/completed,
-   actual owner/token/storage/native checks before delegated launch, no extra
-   ACK. Source limit/cursor evidence stays scoped;no imputation/oldtarget release.
+   NEW3a80 ACTUALLY CLOSED500acceptedGET/0failed/1POST/48749newRTHrows,
+   124of125streams full; oneprovider-gap remainsmasked. RESULTf7592340/
+   CLOSED056d2f64,allJobs+cacheownerclosed,2.904sec/GET,Parent345absolute refs
+   stable;Parent85native readbacks17sessions*5TF/relativehashes/masks PASS03:14:
+   A/data/current-native17-remaining-history-acquisition-20261105-v1/CALLBACK.json.
+   No old source regrade/targetrelease/PIT/CA/finality/Paper promotion.
+   Archimedes assigned NEW existing7+missing10 source-qualified canonical join,
+   current-native17-historical-source-join-20261105-v1,300active1800elapsed/
+   0HTTP. Actualjoin outcome unknown; preserve mask/basis/calendar/lineage.
 4. Engine: c31dd342/9eecee48 HGB family is CLOSED, not active training:
    A/research/current-h3-indicator-boosting-development-20261105-v1/FINAL-CALLBACK.json.
    3CPUfits/168market+12synthetic iterations/3forecasts/1fixedblend/18views,
@@ -80,6 +83,20 @@ Updated Nov5UTC02:23 / KST11:23. Current facts, not a diary; exact proof in HAND
    no current numerical/GPU worker claimed; do not invent a dummy campaign.
    Native17 continuation may support a useful later contract, not automatic
    old target release. Frozen Nov2..4 unavailable eval remains unchanged.
+   New D1 finalbe2fc/20fe37tests/Ruff/Parent21refs stable: completedbar
+   TP2/SL1 observation->NEXT OPEN/e+3vertical, no intrabarfill. Kant owns new
+   aligned common-book0fit4policy12view replay8870/e402 is CLOSED FAIL:
+   strict basis/calendar/rows passed;net10D1growth0.398% vs RAWvertical3.696%,
+   72checks/6Jobsclosed/Parent84refs stable,no Paper swap. No cached8.955/8.526
+   scalar comparison. Old0918/35checks bind changed30732,
+   not current20fe; fresh producer smoke before market, no poststartACK:
+   A/research/current-d1-observed-exit-common-book-development-20261105-v1.
+   Distinct learned D1exit35bd PREP failed checkpoint0 caller beforeupdates;
+   1context/0updates/0market/Job+CID+leaseclosed. NEW technicalrepair then
+   SAMEfrozenoffer1a688 numerical launch delegated afteractualqualification:
+   A/research/current-d1-learned-next-open-exit-development-20261105-v1.
+   No extraACK or actual marketfit/GPU activity inferred. Old completed studies
+   never rerun.
 5. Future Data24a39 Nov5/6UTC21:10 and saved GRU/Ridge observation880d
    Nov6UTC21:35 ACTUALLY enabled/read back (adoptionec75e582/78ecce0f).
    Future outcomes UNKNOWN; no fit duplication/foreground sleeping worker.
@@ -93,8 +110,11 @@ Updated Nov5UTC02:23 / KST11:23. Current facts, not a diary; exact proof in HAND
    capability is separate work if critical, never a global Data/Paper hold.
    d658/7dfa psutil diagnostic subsequently passed native capability/18Jobs
    closed but qualification explicitlyINERT_ONLY_PRECISION_WITHHELD; Claude
-   REPAIR_REQUIRED. Mendel owns bounded exact clock-conversion repair, not
-   actual migration/ownerabsence yet. Current131e retained.
+   REPAIR_REQUIRED. New5a195/q9ecf exactclock/calibration passed but ONEactual
+   Capture69aff0e5 failed PSUTIL_SOURCE_UNKNOWN beforeApply,2Jobsclosed0/20.
+   Optional migration deferred, no per-PID OS-list expansion. This particular
+   list is implementation-specific, not a company-wide OS qualification gate.
+   Current131e retained; no evidence same fault blocks actualruntime.
 7. Korean monitor coexistence1b659/1ef9 passed6native groups/Ruff but current
    RAW/INTC/Full17 contracts reject8788 as unknown_custody_capability:
    A/execution/current-korean-readonly-ui-coexistence-preparation-20261105-v1/check-20261105T011336285246Z/CALLBACK.json.

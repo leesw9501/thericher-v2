@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov5UTC02:23 / KST11:23.
+Updated Nov5UTC03:08 / KST12:08.
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns policy/goal/integration/Git. No operator decision pending.
@@ -19,13 +19,13 @@ schemas/readiness directly; Parent is not another post-start ACK barrier.
 | --- | --- | --- |
 | Parent / Execution |RAW8fd/plan38 enabled/read back; public readercd6e ready|PointNov5UTC13:30, entry14:31(KST23:31), exitNov10UTC14:30. Exact runtime chain then qualified financial linkage, never Task-exit inference.|
 | Parent / Execution |INTCb63/releasec5c, installer473f/63c5 ACTUALLY enabled/read back|EntryNov5UTC15:10(KST Nov6 00:10), owned exitNov6UTC15:10(KST Nov7 00:10); one share only if unchanged native bank/risk checks allow.|
-| Archimedes / Data |4faa completion CLOSED; NEW remaining125 history assigned|40acceptedGET/3018newrows/all20Oct29/30targets full. New125UNATTEMPTED streams650GET/3600active+elapsed, preserve native clock/header/owner/token checks; no oldGETrepeat.|
-| Kant / Engine-Steward |NEW first-passage campaign readiness; c31 HGB CLOSED|Metadata-only OHLC capability/one finite offer/native invented optimizer+handoff smoke,240active/1200elapsed. HGB primary blendFAIL retained; no new market fit/GPU worker yet.|
-| Nietzsche / Engine-Steward |CLOSED1fac and0323 families|CUDA signed-payoff fit329updates failed incremental growth; intraday4fits allcash. No active numerical/GPU worker inferred.|
-| Mendel / reliability |d658 diagnostic CLOSED; NEW clock-conversion repair|Actual CSRSS identity capability passed, but source-derived CIM/float acceptance unresolved;7dfa explicitlyINERT. Bound exact conversion/calibration once, no per-PID bypass; current131e retained.|
+| Archimedes / Data |3a80 acquisition CLOSED; source-join assigned|500acceptedGET/48749newrows/124of125full, Jobs+cacheownerclosed. Join existing7+missing10 with masks/lineage, noHTTP or oldtarget release; actual newjoin result not yet claimed.|
+| Kant / Engine-Steward |D1 rule replay8870/e402 CLOSED DEVELOPMENT_FAIL|Alignment passed; net10growth0.398% vs newRAWvertical3.696%,72checks/6Jobsclosed/Parent84refs stable.0fits/onealignment/4books12views; no Paper swap/rerun.|
+| Nietzsche / Engine-Steward |35bd native checkpoint failed; NEW repair+finite learned successor delegated|Old1context/0updates/0market/Job+CID+leaseclosed. Fix epoch0 scheduler caller in NEWroot; actual native+source-qualified then one128maxepoch fit under frozen1a688 offer. No actualGPU/market fit yet claimed.|
+| Mendel / reliability |5a195 clock repair CLOSED; actual Capture WITHHELD|Native conversion/calibration passed; actual69aff0e5 failed PSUTIL_SOURCE_UNKNOWN beforeApply. Optional migration deferred, no per-PID expansion; current131e retained.|
 | Raman / Infra |CLOSED Korean UI coexistence1b659ded/1ef9d171|Six native groups/Ruff; RAW/INTC/Full17 reject8788 as unknown_custody_capability. Do not deploy/waive guards. Existing8787 untouched; static UNKNOWN preview only.|
-| James / Execution |NEW exact INTC outcome reader prep|Bind installed b63/c5c/473/63c5 and actual native cycle/intent/fill schema; invented producer-to-consumer tests, no private read in prep. Future financial admission remains separate.|
-| Bacon / Strategy |NEW short-swing first-passage proposal/kernel|ONE fixed profit/stop/vertical-horizon mechanism on invented Bars, gap/samebar ambiguity/cost/availability tests. No market fits/forecast or new trial permission.|
+| James / Execution |Public reader9006 CLOSED11tests; current-custody reader PREP assigned|Actual02:55 absent publicdirectory UNKNOWN/notzero,13refs stable. Publiccategories AS-OF runtime, no new pointer; currentlocalcustody/freshbrokerholdings separate and unobserved.|
+| Bacon / Strategy |D1be2fc/20fe CLOSED37tests; M1ea286 CLOSED54tests|D1completed TP2/SL1 observation->nextOPEN, e+3OPEN vertical, no intrabar fill. Finalsource handoff directKant; old30732 snapshot/35checks preserved, not silently reassigned.|
 
 Scheduled Data24a39 two dates Nov5/6UTC21:10, Research880d Nov6UTC21:35 are
 ACTUALLY enabled/read back, not sleeping LLMs. Future outcomes UNKNOWN.
@@ -87,20 +87,27 @@ GOOGL Nov9UTC20:55, memory-terminal Nov20 and H20 Dec1UTC14:30 duties.
 
 ## Throughput Review
 
-02:23: Header-compatible actual acquisition now succeeded, unlike predecessor's
-zero accepted requests. Dispatch only remaining125unattempted streams, not the
-completed20. New tree family completed, no claimed active GPU job. Strategy
-prepares a different executable short-swing target while Data owns collection;
-Execution prepares exact financial interpretation before tonight's opportunity.
-Parent integrates evidence/Git and native owner recovery in parallel.
+03:08: Actual500request collection complete; delegate compatible canonical join,
+not recollection. D1rule comparison closed FAIL; learned exit hypothesis froze
+before its performance and continues independently. Epochzero scheduler caller
+failed before updates; a bounded NEW technical repair may qualify the same
+finite offer, no refund/duplicate completed fit or company hold. No proven
+current GPU worker. Execution separates source-attested runtime categories
+from independently current local custody; missing public outcome is UNKNOWN.
 
-Stop spending successive synthetic-only rewrites on every inaccessible OS row.
-Latest optional Full17 migration is held before mutation; preserve131e and
-tonight's independently installed RAW/INTC, rather than invent closure or a
-company-wide hold. Installed psutil actually resolved retained PID2040 image/
-birth through native OS metadata; qualify that reusable narrow capability,
-not another PID/name bypass. Keep float precision explicit, never manufacture
-100ns identity or original owner closure. Advisory unavailable is not agreement.
+Reversible improvement: freeze producer LAST, then exact consumer smoke before
+payload. Parent caught mutable30732/20fe handoff drift; preserve old35checks and
+qualify finalbe2fc, not silently reuse old proof. Public outcome interpretation
+uses existing exact producer/terminal binding rather than adding a mandatory
+new pointer/publication gate. No new platform or operator approval.
+
+Optional Full17 migration is deferred after actual69aff PSUTIL_SOURCE_UNKNOWN
+before mutation. Preserve131e and tonight's independent RAW/INTC. Alternatives:
+retain original future exit now; later qualify genuinely original-owner-scoped
+metadata rather than every OS image; or prioritize exact new Paper results.
+The particular OS list is implementation-specific, not global AGENTS policy.
+No source proof this fault blocks7b0's different actual runtime census. Claude
+unavailable is not agreement; measurement is not universal100ns identity.
 
 UI8788 conflict is scoped and real in current frozen contracts. A physically RO
 reader is not an automatic registered capability. Keep it undeployed; a
