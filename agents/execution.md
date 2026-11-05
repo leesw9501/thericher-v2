@@ -2,7 +2,7 @@
 
 ## Current Work
 
-Updated Nov5UTC23:08. MSE c79 ACTUALLY ENABLED22:55 through exact recovery83959851,
+Updated Nov5UTC23:48. MSE c79 ACTUALLY ENABLED22:55 through exact recovery83959851,
 independent full nativeXML/API7ACL readbacks beforeTrue/beforeEnable/afterEnable:
 A/execution/current-mse-retained-exit-zero-delay-recovery-20261105-v1/PARENT-ADOPTION.json.
 Nov6UTC15:40/15:45exit/15:52reconcile/hard16:00, same original request/input/
@@ -19,7 +19,12 @@ exceeds600 cap, no regrade. NEW phase-owned-transport recovery exercises SAME
 actual five-phase CurrentReadAdmission on invented allRO fixture before actual,
 not the prior invented_admit bypass. NativePID/birth/exe/closedargv/exactCID/
 network/mount proof is required, no Docker-name/unknown-writer waiver.
-Godel prepares c79-only publictechnical result reader, no actualfuture reads.
+Godel CLOSED c79-only publictechnical reader5cb1317a,9native producer/parser
+tests independently repeated by Parent/fullRuff/prewindowNOT_DUE0actualreads:
+A/execution/current-mse-c79-public-outcome-reader-20261105-v1/COMMANDS.json.
+Eligible only afterNov6UTC16:00; no old13ealias, clock override or latest scan.
+Public operational closure cannot prove acceptance/fill/current owned inventory,
+fees/settlement/PnL, root exit or observer restoration; all remain unknown.
 Historical bff diagnostic proved native commandline
 and exact semantic argv; strict children still withheld two exact console hosts.
 Parent pure helper79c1c37d validates only exact pinned binary/path/parent/rawcmd/

@@ -2,7 +2,14 @@
 
 ## Current Handoff
 
-Updated Nov5UTC22:30. Darwin's pure boundary-regret pairwise-rank kernel and
+Updated Nov5UTC23:48. Darwin now owns source/native duplicate check and one
+masked-transfer offer at
+A/research/current-net25-domain-masked-transfer-offer-20261105-v1.
+Compare prior masked-pretraining/frozen-probe/scratch-patch families. If distinct,
+test one FIT-only reconstruction kernel/actual checkpoint-consumer on invented
+tensors; if duplicate, reject concretely. No market/GPU fit or paper authority.
+
+Darwin's prior pure boundary-regret pairwise-rank kernel and
 real invented native DTO/book smoke are CLOSED14nativeCPUtests. Parent repeated
 14tests independently/full runtimeRuff/14source refs PASS:
 A/research/current-net25-pairwise-rank-offer-20261105-v1.
@@ -10,8 +17,8 @@ Ranking is not absolute expected return; a separately supplied cash/absolute-edg
 gate remains necessary. Engine consumed this offer in one actual CUDA fit:
 17epochs2329updates/best7/13.812s. Ranktop3+4.6670%/DD.93593% exceeds W25growth
 but FAILS frozen.81307%DDlimit; only1of47cohorts differs, no alpha/Paper swap.
-All fit actors/lease closed. Banach now prepares saved-weight forward usability,
-not another Strategy fit. Exact result in Engine/HANDOFF; no active Darwin.
+All fit actors/lease closed. Saved-weight forward b89 Task is actually enabled,
+nonfinancial only, not another Strategy fit. Exact result in Engine/HANDOFF.
 Crossasset attention descriptive consumer closed: newexpert-2.9888%,fixed.25blend
 1.6173% versus W25 3.6012%; no model adoption. Do not repeat completed weights.
 

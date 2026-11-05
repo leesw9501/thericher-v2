@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov5UTC23:08 / Nov6KST08:08. Company outcome UNFINISHED.
+Updated Nov5UTC23:48 / Nov6KST08:48. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -46,6 +46,13 @@ No manual Task.Run/strategy invocation merely to inspect evidence.
   Create-CLOSED missing preserved; explicit requestedPT0S registration-default
   omission only, not arbitrary XML/ACL waiver. Actual financial results UNKNOWN.
 
+- Saved pairwise-rank forward b89 ACTUALLY ENABLED for Nov6UTC14:10/hard14:20,
+  KST23:10..23:20, CPU-only exactTorch2.7/no private/broker/GPU authority:
+  D:/thericher-v2/model-artifacts/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
+  Two independent exact fullXML/nativeAPI7ACL readbacks/14negatives/0setters.
+  Original EnableCLI failed after setter; its missing enabled receipt is not
+  forged. Never replay Install/Enable. Future point/hash/inference UNKNOWN.
+
 Actual financial effects retain native source/clock/account/budget/unknown-request/
 quote/orderability/emergency/observer/reconciliation checks. Definition installation
 or source test is not financial admission, OS-origin proof or fill.
@@ -81,6 +88,18 @@ W25 publicationreader04f093 remains source-ready:
 D:/thericher-v2/model-artifacts/research/current-net25-w25-installed-publication-reader-20261105-v1/READY.json.
 Raw Data link is closed publisher witness, not independent current rawpayload.
 Web reads public categorical data, not artifact executables/private custody.
+
+New MSE c79 public-only reader,9native tests independently repeated by Parent;
+prewindowNOT_DUE/0actualreads. Only afterNov6UTC16:00:
+
+```powershell
+& 'C:\Users\Public\Documents\thericher-v2\.venv\Scripts\python.exe' -I -B 'D:\thericher-v2\model-artifacts\execution\current-mse-c79-public-outcome-reader-20261105-v1\reader.py' --source-sha256 5cb1317a8a13100168a979537edad5c1a2984c63b5a6e459a92c56ba8ba6da07
+```
+
+Exact c79/TRUE/source/release/round/immutable operational links only. Observed
+timing not emitted stays unknown. Operational closure is not root exit, observer
+restoration, acceptance/fill/current owned/fees/settlement/PnL. No clock override,
+old13ealias, private fallback, TaskRun or consumed installer replay.
 
 ## Research
 

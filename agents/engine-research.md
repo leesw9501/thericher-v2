@@ -3,7 +3,7 @@
 
 ## Current Research Update
 
-Updated Nov5UTC22:30 / Nov6KST07:30. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC23:48 / Nov6KST08:48. A=D:/thericher-v2/model-artifacts.
 All listed numerical workers are CLOSED; no optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
 
@@ -49,9 +49,18 @@ Source d7c2241f:0fits/newDEV economicreadouts, one nativecapsule/10Jobsclosed;
 Torch2.7 image. Parent4APIrefs+55members verified. Runtime lint clean; two unused
 imports remain in frozen native harness. Same checkpoint/FITstats/realData83963
 feature producer/score/absolute-gate/funding ABI. Future W25 point/seal unknown.
-No invented hash/Task/bank/Paper switch. Banach now owns one finite nonfinancial
-Windows definition/installer preparation in sibling:
-A/research/current-net25-pairwise-forward-native-installation-20261105-v1.
+No invented hash/bank/Paper switch. Saved CPU-only forward Task b89 is ACTUALLY
+ENABLED for Nov6UTC14:10/hard14:20. New read-only repair9b16612f independently
+verified full nativeXML/API7ACL twice,14negatives/0setters:
+A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
+Original EnableCLI failure and missing enabled receipt stay preserved, never
+replayed/forged. Future point/hash/inference remain unknown; no GPU authority.
+
+Darwin owns source-only/native masked-transfer offer in sibling
+A/research/current-net25-domain-masked-transfer-offer-20261105-v1.
+Check prior masked/pretraining families before proposing FIT-only masked-patch
+pretraining then signedNet25 fine-tuning. Reuse completed scratch/W25 controls;
+no new market fit until a distinct native-ready finite campaign exists.
 
 Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
 closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov5UTC23:08 / Nov6KST08:08.
+Updated Nov5UTC23:38 / Nov6KST08:38.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Company Outcome
@@ -21,8 +21,9 @@ and all original exits. A package/commit/installation is not company completion.
 | Parent completed / Godel closed | MSE c79 ACTUALLYENABLED22:55 through83959851; exact independent fullnativeXML/API7ACL, no TaskRun/broker effect | Nov6UTC15:40trigger/15:45exit/15:52reconcile/hard16:00. Original03db partial/CLOSEDmissing preserved, no replay or fill claim. |
 | Planck / Execution offline reader |50aeb proved exact parent closure, gueststarted but ownDockerattach was rejectedbeforeprivate;0private/CIDabsent/all16processesclosed;612.89/600capFAIL preserved | NEW current-intc-phase-owned-transport-readonly-recovery-20261105-v1. Validate ownedtransport BEFORE child contract; real SAME5phase native invented admission beforeactual, no name/PID/writer waiver. |
 | Closed Darwin / Strategy | Pure boundary-rank offer14tests; Parent independent14tests/fullruntimeRuff/14refs PASS | Consumed by actual Engine fit below; no active Strategy fit. |
-| Banach / Engine-Infra readonly repair | b89 actualInstallDisabled+independentdisabledReadback PASS; EnableCLI failedafterenabledtrue; enabledreaderfailed | NEW current-net25-pairwise-forward-enabled-readback-repair-20261105-v1. Exact fullnativeXML/API7ACL firstcause/readback only, no setter replay. Nonfinancial/no currentoptimizer/futurepointUNKNOWN. |
-| Godel / Execution public reader | Preparing current-mse-c79-public-outcome-reader-20261105-v1 | Exact futurec79 public technical receipts, not old13ealias/private/financial fill claim; no Task/KIS/Docker/schedule. |
+| Closed Banach / Engine-Infra | b89 future forward Task ACTUALLYENABLED,9b16612f two independent exact fullXML/nativeAPI7ACL readbacks/14negatives;0additionalsetters | Nov6UTC14:10/hard14:20 savedCPU-only nonfinancial forecast. OriginalEnableCLI failure/missingoldreceipt preserved. FuturepointUNKNOWN, no model/bank swap. |
+| Closed Godel / Execution public reader |5cb1317a c79-only technical reader9tests/fullRuff/ParentactualprewindowNOT_DUE0reads | Exact command afterNov6UTC16:00. Financial/observed-timing/root-exit/observer facts remain unknown, no old13ealias or rawlatestscan. |
+| Darwin / Strategy | NEW current-net25-domain-masked-transfer-offer-20261105-v1 | Source-only duplicate check on priorSSL/patch families, one native kernel/consumer or concrete rejection,0market/GPU fit. |
 | Closed GPU workers | Chronos2, intraday GRU30/120 and crossasset attention fit closed; no optimizer currently claimed active | New work only after distinct frozen/native-ready campaign and measured headroom, never occupancy reruns. |
 | Closed descriptive consumer | e6b310:0fits/1readout6books; newexpert-2.9888%, fixed.25blend1.6173%, W25 3.6012% | Do not promote this blend; original strict-clock failure/old debit unchanged. |
 | Parent / scoped private read | Original233/6906/2c1 probes consumed and withheld; 0 actual private reads | Source-qualified caller, actual custody-writer admission and stable exact joins, not global Data/GPU silence. |
@@ -56,9 +57,9 @@ before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
 
 ## Throughput Review
 
-23:08: Ready work is disjoint actual offline custody launch-lifetime repair and
-saved-weight forward definition preparation. Parent completed MSE installation
-and integrates
+23:38: Ready work is disjoint actual offline custody phase-owned-transport fix
+and a bounded Strategy masked-transfer duplicate check/native offer. Parent
+completed MSE and nonfinancial forward installations and integrates
 completed data/research and validates the actual Windows native interface.
 No foreground market wait or operator-approval dependency. Parent's tested
 manual window let the original collector finish and restored the observer;
@@ -72,10 +73,12 @@ Reversible improvement: native materialization is necessary but not sufficient
 for REGISTER serialization. Actual registered-only zeroRandomDelay omission was
 measured against every other full native field; exact optionalzero edition18cases
 allowed recovery without weakening other settings/ACL or replaying Create.
-Private next improvement is process-lifetime correctness: an opaque tool shell
-staying alive is a real unclassified actor, not an approval wait. Source-bound
-one-shot read after positive launching-process closure removes it without a
-permanent PID/name exception. All other relevant writers still adjudicate.
+Private exact parent closure is now proven, no opaque-PWSH whitelist. Next
+reversible improvement is exercise SAME actual5phase admission/census/attach on
+invented private fixtures; prior transport smoke replaced admission with a fake
+True and missed a legitimate-owned Dockerattach being checked too early.
+Source/PID/birth/executable/argv/exactCID/image/mount/network proof precedes the
+full child predicate; no blanket child/name grant. Old612.89/600failure retained.
 Claude11379575 GO_WITH_LIMITS on future definitions-only plan: enable last,
 no catchup/demand/repetition; source/digests/nativeXML+ACL exact, effect-time fresh
 relevant owners/account/budget/unknown/observer/risk mandatory. No Task.Run.

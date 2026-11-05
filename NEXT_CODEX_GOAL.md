@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov5UTC23:08 / Nov6KST08:08.
+Updated Nov5UTC23:48 / Nov6KST08:48.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -99,11 +99,16 @@ Updated Nov5UTC23:08 / Nov6KST08:08.
    Dockerattach child was rejected before its trustedtransport loop.0private/
    allclosed;612.89/600capfailure preserved. New phase-owned-transport scope
    must exercise SAME real five-phase admission on invented allRO native input
-   before actualread, no blanketchild allowance. Godel prepares publicc79reader.
-11. Forward b89 Task was actuallycreated/disabledreadbackPASS; EnableCLI failed
-   after actualenabledtrue/0active, thenenabledreadbackfailed. Banach owns ONLY
-   read-only firstcause/fullXMLAPI7ACL repair; no setter replay or completed-
-   deployment claim yet. NonfinancialCPUonly, no bank/Paper/GPU authority.
+   before actualread, no blanketchild allowance. Publicc79reader is READY9tests,
+   independently repeated by Parent; actual future outcome remains unknown.
+11. Forward b89 Task ACTUALLY ENABLED, two independent fullnativeXML/API7ACL
+   readbacks under9b16612f/14negatives,0additionalsetters. OldEnableCLI remains
+   failed, originalmissing enabledreceipt not forged. Nov6UTC14:10/hard14:20
+   CPU-only nonfinancial savedforward, no bank/Paper/GPU authority. Exact adoption
+   A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
+12. Darwin checks prior masked/pretrained families for one useful distinct same-
+   architecture signedNet25 transfer mechanism/native offer,0marketfits. Do not
+   repeat completedSSL if duplicate; no model or utilization-only activity.
    Exact write sets and callbacks live in agents/orchestration.md.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/

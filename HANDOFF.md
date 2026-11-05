@@ -2,15 +2,21 @@
 
 ## Current Integration
 
-Checkpoint Nov5UTC23:28: saved-rank forward Task b89 was actually created
-disabled, then separate disabled readback PASSED. EnableReadOnly CLI failed
-AFTER actual enable; fresh Task query shows enabledtrue/0instances/state3.
-Separate enabled Readback also failed, so NOT yet qualified as complete deployed:
+Checkpoint Nov5UTC23:38: saved-rank forward Task b89 is NOW ACTUALLY ENABLED,
+with two separate independent fullnativeXML/API7ACL readbacks under new9b16612f:
+A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
+Nov6UTC14:10/hard14:20 (KST23:10..23:20), CPU-only exactTorch2.7,0broker/private/
+GPU authority. Actual future point/hash UNKNOWN; no fit/inference during install.
+Original disabledcreate/readback passed; EnableReadOnly CLI failed AFTER actual
+enable and remains failed. Historical post-setter firstcause UNKNOWN. Its later
+Readback failed on missing original ENABLED-READBACK.json; not manufactured.
+New read-only repair proved enabledtrue/state3/0instances/two-stable exact full
+source/definition/clocks/ACL,14negatives,0setters. Original receipt namespace:
 A/research/current-net25-pairwise-forward-native-installation-20261105-v1/installation.
-Never repeat InstallDisabled/EnableReadOnly. Banach owns read-only first-cause/
-exact fullXML/API7ACL repair in current-net25-pairwise-forward-enabled-readback-repair-20261105-v1.
-Future14:10/hard14:20Nov6 is nonfinancial CPU-only,0broker/private/GPU authority;
-actual point/hash UNKNOWN. Existing MSE/HALF Paper/bank unchanged.
+Never repeat InstallDisabled/EnableReadOnly. Banach's scoped repair is CLOSED;
+58.37active/350.21elapsed/allJobsclosed. Existing MSE/HALF Paper/bank unchanged.
+Only Planck's phase-owned private-read repair and Darwin's source/native masked-
+transfer duplicate-check offer are active; no GPU optimizer currently claimed.
 
 Parent-closed INTC read50aeb did close its exact opaque launching parents and
 start an allRO/networknone guest. It still stopped BEFORE private-read release:
