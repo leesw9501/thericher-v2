@@ -2,12 +2,14 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC15:31 / Nov6KST00:31.
+Updated Nov5UTC15:58 / Nov6KST00:58.
 No new training is claimed running. W25 parity94a0 completed one799sweep,
 0fits/readouts/updates,51.305SUM/180; all2CIDs/Jobs/GPUlease closed14:21:47.
-Modelcbd remains frozen, future83963 not yet admitted. Carson owns new bounded
-future-intake-integration-repair; up to3 identical INVENTED native smokes,0market
-fits/evaluations. Prior NULaudit failure4f8a/olddebits unchanged. Safe weights
+Modelcbd remains frozen; futureintake69ba inventednative path nowqualified,
+0actualfuturedataadmission. One nativeattempt/PatchCUDA+threeCPUexpertforwards,
+.344modelseconds/24MiBreserved,48.274SUM/allJobsCIDGPUleaseclosed. Carson now
+prepares one NONFINANCIAL savedW25 future shadow publisher, no newfit/economic
+readout; original HALF financial model unchanged. NULaudit4f8a/olddebits unchanged. Safe weights
 may be restored for this concrete future-input consumer, not occupancy work.
 Rawls later-cohort source/invented fixture work has no GPU allocation. Practical
 ordinary technicalfixes within new wall/worker caps are not extra model trials.

@@ -2,11 +2,17 @@
 
 ## Current Work
 
-Updated Nov5UTC15:31 / Nov6KST00:31. A=D:/thericher-v2/model-artifacts.
-Current consumer work is Carson's future-intake-integration-repair,0newfits/
-marketreadouts. Old4f8a NULaudit failure happened before child/nativeattempt,
-two-fix cap consumed; preserved, not an experiment result. New practical bounded
-source/invented smoke scope repairs plumbing without reopening old clocks.
+Updated Nov5UTC15:58 / Nov6KST00:58. A=D:/thericher-v2/model-artifacts.
+Futureintake69ba COMPLETE: inventedKISdaily->actualBar/Data83963seal->truthful
+FUTURE_83963 typedfeatures->PatchCUDA/HGB+GRU+TCNCPU->W25->strictpublic18
+parse-and-return;15negatives/firstnativeattemptPASS/allJobsCIDleaseclosed,
+48.274SUM/0fits/updates/marketreadouts. Parent20refs14unique and alreadyclosed
+syntheticpublicationreader independently PASS,0newforwards. Actualfuturehashes
+UNKNOWN, not actualadmission. Carson now prepares one NONFINANCIAL W25 future
+shadow publisher Nov6UTC13:55/hard14:05, savedweights only, no HALF hot-swap:
+A/research/current-net25-w25-nov6-shadow-opportunity-preparation-20261105-v1.
+Old4f8a NULaudit and newr01 missingNumPybootstrap failures/debits preserved;
+PIPE/EOF+samehostbootstrap fixed them without reopening old clocks.
 W25 saved-composition parity94a0 is READY_FROZEN_DEV_PARITY_ONLY, original
 modelcbd unchanged: one799sweep/bitwise originalbatch/maxmixederror1.6696e-9,
 0fits/updates/newdata/readouts,51.305SUM/allJobsCIDsleaseclosed14:21:47.

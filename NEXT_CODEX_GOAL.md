@@ -20,26 +20,35 @@ substitute unknown request. No secret/account-order IDs/raw private values outpu
 
 ## Ready / Owned / Due
 
-Updated Nov5UTC15:31 / Nov6KST00:31; evidence is in HANDOFF and role boards.
+Updated Nov5UTC15:58 / Nov6KST00:58; evidence is in HANDOFF and role boards.
 
 ACTUAL RAW14:31 is now operationally closed stopped_for_adapter_recovery,
 exact publicattempt1f8779b3/terminal7a0b7d3b/ownerclosed14:31:16. Financial facts
 UNKNOWN. Forensic458 confirms.py-only producers recorded Python EXE as.pyw
 entry source in four exact actor rows; identity predicate correctly failed.
-Epicurus new producer repair PREPARATION only, no runtime/old-row promotion.
+Producerfaa25 qualified58pure/nativeownpair/fullRuff/9Jobsclosed, NOT deployed.
+Epicurus now prepares full futureHALF source/native repair preserving original
+entryNov6/exitNov11 identities/paths/bank/model/risk, no old-row promotion.
 Observer currentEnabledReady14:57, historic restoration not proven.
 Never rerun consumed opportunity/replace unknown request/reset reservations.
 INTC15:10 actualTaskexit20; public333 UNKNOWN_PUBLIC_CHAIN/0public files.
 No financial outcome inferred. Do NOT invoke frozen B10bd without its required
-positive333 closure. Confucius owns independent readonly derivative with fresh
-actual relevant-writer/lease/source/caller/private-join admission and UNKNOWN
-public provenance, no fabricated closure/reservationrelease. Claude6b427c2d
-GO_WITH_LIMITS. Kierkegaard diagnoses isolated GUI early failure, not strategy
-replay. Original INTC exitNov6UTC15:10 preserved; no Task mutation here.
+positive333 closure. New independentbf701 nativefixture qualified, but ONEactual
+read15:53 WITHHELD at public-source audit boundary BEFOREcreate/admission/private
+capture. Never repeat that consumed source/read. Confucius repairs exact public
+allowlist and actualconstructor->freshpubliccapture path, not a broadfile waiver.
+Fresh actual relevant-writer/lease/source/caller/private-join admission remains
+mandatory with UNKNOWN public provenance, no fabricated closure/reservationrelease. Claude6b427c2d
+GO_WITH_LIMITS. GUI ownidentity/preGuard probes passed, original failure remains
+UNKNOWN; Kierkegaard tests next realMetadata/adapter constructor only, no Census/
+Context/private effects. Original INTC exitNov6UTC15:10 preserved; no Task mutation.
 
-Current source-integration repairs are parallel: Epicurus truthful.pyw producers,
-Rawls later-cohort collector runtime binding, Carson W25 futureintake/native
-consumer. Previous mockcounter/capture-ValueError/NULaudit failures remain
+Current parallel work: Epicurus fullHALF.pyw nativeintegration; Rawls minimal
+installer qualification for two source/native-ready latercollectorsc7b/ef1a;
+Carson W25 savedweight shadow publisher Nov6UTC13:55 preparation. Futureintake69ba
+native full inventedBar/features/fourexperts/public18 PASSED/15negatives/allactors
+closed/0fits/readouts; Parent20refs14unique and closedpublicationreader passed.
+Previous mockcounter/capture-ValueError/NULaudit failures remain
 unqualified with old caps/debits preserved. New practical30min/1200SUM scopes
 allow bounded ordinary software fixes/invented smokes, not new model fits,
 economic trials, old opportunity replay or a new operator approval.

@@ -2,13 +2,21 @@
 
 ## Current Work
 
-Updated Nov5UTC15:31 / Nov6KST00:31. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC15:58 / Nov6KST00:58. A=D:/thericher-v2/model-artifacts.
+Later nativeintegrationc7b/definitionsef1a READY_BUILD_ONLY for Nov10asof->Nov11
+and Nov13asof->Nov16, original21:30/hard21:45UTC. Two fullsource editions and
+actualinventedprovider/Bar/features/quietowner/unknown-token/Scheduler paths
+qualified;2nativeattempts/3fixes/475.602SUM,27Jobs6controllersclosed15:51:30.
+All HTTP counts are MOCK/invented, actualwire/KIS/credentials/private/Task0.
+No actualfuturedata/installation inferred. Rawls now qualifies minimalfuture
+installer only at A/data/current-net25-w25-later-cohort-installer-preparation-20261105-v1,
+Parent owns actual installation after exactsource/fullnativeXMLACL checks.
 Rawls later-cohort source0b33 CLOSED1140actualBar/typedfeatures/23negatives,
 0actualacquisition; forward6ce3 contract fixes Nov6/11/16 cohort entries.
 Native runtimebindingd6ff UNQUALIFIED: capturelauncherValueError beforePID/birth,
 quietowner/provider/Bar/features/token/Scheduler proof not reached,0definitions
 qualified/0Task/KIS/private effects/allactualJobsclosed15:04:48/89.001SUM.
-New practical bounded source/invented repair assigned under
+Completed bounded source/invented repair under
 A/data/current-net25-w25-later-cohort-integration-repair-20261105-v1.
 No actual future data or collector installation inferred. Original firstData83963
 Nov5UTC21:30 opportunity unchanged. Later definitions remain preparation only.

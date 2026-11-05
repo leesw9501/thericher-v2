@@ -2,23 +2,32 @@
 
 ## Current Runtime
 
-Updated Nov5UTC15:31 / Nov6KST00:31. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC15:58 / Nov6KST00:58. A=D:/thericher-v2/model-artifacts.
 INTC actual15:10 Taskexit20/public333 UNKNOWN_PUBLIC_CHAIN. Parent public-only
 diagnostic found0captured files/0terminals with native selectorUNKNOWN, not a
 parser failure: A/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
 No submit/fill/no-effect inference. Frozen10bd NOT invoked: positive-public
-closure missing. Confucius prepares independently admitted local-custody reader,
-no public-success prerequisite but all actual relevantwriter/lease/caller/source/
-private exactjoins/stability/networknone/allRO checks retained. Claude6b427c2d
-GO_WITH_LIMITS, no actualprivate read yet. Kierkegaard ownGUI-only diagnosis
-cannot invoke strategy/Context/Task. Original exitNov6UTC15:10 preserved.
+closure missing. Independently admitted bf701 reader qualified39pure/invented
+5phasecapsule,14oldPythonmembersbyteexact. ONE actualread15:53 WITHHELD at
+fresh public.capture audit beforecreate/admission/private capture, nofinance
+projection; exact result in HANDOFF. Never repeat that source/read. Confucius
+repairs exactpublicsourceallowlist and realconstructor->capture path, not broad
+audit waiver. The new independently admitted local-custody reader has no
+public-success prerequisite; all actual relevantwriter/lease/caller/source/
+private exactjoins/stability/networknone/allRO checks remain. Claude6b427c2d
+GO_WITH_LIMITS, no actualprivate capture. OwnGUI identity/preGuard bootstrappassed,
+publicmetadata115files/fourfaults lacks exactcurrentactor/sourcejoin; original
+cause UNKNOWN. Kierkegaard next realMetadata/adapter constructor-only diagnosis
+cannot invoke strategy/Context/Census/Task. Original exitNov6UTC15:10 preserved.
 ACTUAL RAW14:31 closed stopped_for_adapter_recovery, attempt1f8779b3,
 terminal7a0b7d3b/closedb3eb2f00/PID42128 birth134383626605046894. Matching
 faultmanual_lineage_unbound/nativeNOT_ENTERED. Forensic458 independently joins
 four exact original rows: BOTH.py-only producers record PythonEXE forlauncher.pyw.
 Identity predicate correctly denied; historical observer restoration UNPROVEN.
-Epicurus now repairs bothproducers in separate pythonw-producer-integration-repair
-root; old67906 mockcounter failure/58purecases/0nativeprobes preserved.
+Producerfaa25 now READY58pure/PSparse/fullRuff/oneownnativepair/9Jobsclosed,
+Parent18refs verified; no deployment. Source confirms HALF/RAW.pyw dependency
+if reached, not INTC.py. Epicurus now fullHALF nativeintegration derivative;
+originaltasks/ops/bank/model/risk unchanged. Old67906 failure preserved.
 No consumed Task replay/substitute/reset/release; original RAW exitNov10 kept.
 INTC ACTUAL migration/recovery complete13:31:56: both original tasks a3fe/d68b,
 independent exact pair fullXML/nativeACL readbackc4a813d8, enabledReady/0instances.

@@ -2,17 +2,17 @@
 
 ## Current Reality
 
-Updated Nov5UTC15:31 / Nov6KST00:31.
+Updated Nov5UTC15:58 / Nov6KST00:58.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new actual acceptance, exact fill, current-owned reconciliation or PnL proven.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Read AGENTS.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and active role stateboards.
 Historical detail remains in Git through05596e92 and immutable external evidence.
-Current integration verification13:43: exact1437protected+AGENTS unchanged,
+Current integration verification15:59: exact1437protected+AGENTS unchanged,
 Ruff/four Compose(.env.example)/diffPASS; existing20239PASS/26knownSKIP full
 authority reused, NOT freshly rerun. External proof separately focused/native:
-A/execution/current-intc-parent-delivery-adoption-20261105-v1/INTEGRATION-VERIFICATION.json.
+A/verification/current-paper-failure-and-frozen-w25-integration-20261105-v1/CHECKPOINT-1600.json.
 
 No operator decision pending. Private no-cost Data/Research/KIS Paper delegated.
 Never read/route KIS_LIVE_* or output secrets/account-order IDs/raw private values.
@@ -29,16 +29,30 @@ Independent public-only diagnostic15:28 found0captured public files/0terminals,
 selectorUNKNOWN, not a parser exception or proof of no financial effects:
 A/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
 No acceptance/fill/no-submit/zero inferred. Frozen B10bd requires positive public
-closure and therefore is NOT invoked. Separate independent read-only derivative
-now assigned to Confucius: actual fresh relevant-custody-writer/lease admission
-and exact private joins replace ONLY that circular public-terminal prerequisite.
+closure and therefore is NOT invoked. Separate independent readerbf701 completed
+39pure/coldconstructors/realinvented5phasecapsule/12Jobsclosed,14oldPythonmembers
+byteexact. Parent37source/closure refs checked. ONE actual attempt15:52:59..15:53:03
+WITHHELD precreate: fresh public.capture source-loader hit METADATA_FILE_READ_DENIED
+inside installed audit;0admission phases/0private capture. Source transport96
+calls this callback BEFORE Dockercreate; false CID_absent is not a leaked CID.
+Exact evidence, no latest selection:
+A/execution/current-intc-independent-readonly-custody-repair-20261105-v1/actual/entry-830e46f879bf42219baabc174a1ede4e/RESULT.json
+(sha0ebc73f245923ac93d0d4883f847cc0ba936d2fd62136195bf641b019790953d).
+Do NOT repeat that consumed source/read. Confucius now repairs exact public-source
+allowlist under current-intc-readonly-public-boundary-repair-20261105-v1,
+testing realconstructor->freshpubliccapture afteraudit before any later read.
+Actual fresh relevant-custody-writer/lease admission and exact private joins
+replace ONLY the circular public-terminal prerequisite, never writer checks.
 Old10bd remains unchanged; unknown writers/unstable files still withhold read,
 absent journal stays UNKNOWN, never reservation release. Claude GO_WITH_LIMITS:
 A/review/current-intc-unknown-public-readonly-custody-challenge-20261105-v1/RESULT.json
 (session6b427c2d/response01a00bbe). No actual private read by this preparation.
-Kierkegaard separately diagnoses early hidden-GUI identity/source admission,
-own tiny caller only, never replaying the expired strategy. Missing GUI executable
-pin hypothesis falsified: both shim/nativeGUI hashes ARE in frozen runtimepins.
+Kierkegaard's two ownGUI identity probes and one full actual-I-B/null-handles
+preGuard bootstrap passed, NOT original Task success. Public metadata forensics
+96dd inventories115files/28968bytes/fourfaults, no currentguardhash or exactrunjoin;
+cannot attribute original failure. Now actualMetadata/adapter constructor-only
+diagnostic with ownpublic output, no Census/Context/private/broker. Missing GUI
+pin and universal shimargv mismatch hypotheses falsified in those tested scopes.
 Original INTC exitNov6UTC15:10 remains; no Task changes here.
 
 RAW ACTUAL entry14:31 opportunity is now CLOSED at14:31:16, source-bound public
@@ -51,9 +65,13 @@ birth/argv and four actual rows: entry-source hash is Python EXE, notlauncher.py
 BOTH pinned producers census1347/win_rowsae08 recognize.py only; source predicate
 is false. Manual GetCommandLine digest not separately retained, not invented:
 A/execution/current-raw-all3-original-identity-fault-diagnosis-20261105-v1/RETURN.json.
-Epicurus now prepares separate truthful.pyw producer derivatives/native proof,
-NOT runtime deployment or old-row promotion. Original identity checks stay:
-A/execution/current-pythonw-entry-source-producer-repair-20261105-v1.
+Producerfaa25 now READY58pure/fullRuff/PSparse/one real.py+.pyw pair3.04s,
+9Jobsclosed; Parent18refs checked. Source proves same dependency if reached in
+futureHALF entry/RAW exit, NOT INTC host.py. Epicurus now prepares complete
+HALF source/native derivative under current-net25-pythonw-native-host-repair-
+20261105-v1; no deployment/old-row promotion or originalTask mutation yet.
+Original identity checks stay; old67906 mockcounter failure retained:
+A/execution/current-pythonw-producer-integration-repair-20261105-v1/HANDOFF.json.
 Observer historical restoration remains unproven; current Task facts14:57
 EnabledReady/0instances only, no Task mutation or inference from exit.
 No task replay, substitute request, reservation release or financial conclusion.

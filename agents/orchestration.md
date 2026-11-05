@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov5UTC15:31 / Nov6KST00:31.
+Updated Nov5UTC15:58 / Nov6KST00:58.
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared policy/goal/Git. No operator decision pending.
@@ -22,14 +22,14 @@ An MD or assignment does not prove an actual running LLM/optimizer/GPU.
 | Parent / Engine-Steward | OOF24bb CLOSED10completed/11attempted,9852expert+1650gateupdates; all3CIDs/Jobs/GPUleaseclosed | Gate best0 exactly equals fixedthird1.8178%/.6433%; FAILincrementalgrowth, no further tuning or Paper swap. |
 | Parent / completed shadow | Frozen-third f0f CLOSED799bitwise parity; shadow c96 ACTUALLY enabled/readback10:28:26 | Nov6UTC13:45 CPU/networknone proposal only, future point UNKNOWN, no half hot-swap/financial permission. |
 | Parent / completed tree | OOF shallowtree a1de CLOSED1CPUfit/0expertrefits, growth0.4900%/DD0.1788% | FAIL versus half/third, no tuning rescue. Fullscope elapsed UNKNOWN, runner clocks not a complete budget pass. |
-| Rawls / Data | Forward6ce3/laterData0b33 CLOSED; d6ff runtimebinding UNQUALIFIED, capturelauncher ValueError prePID | New later-cohort-integration-repair source/invented native path; no install/Task/KIS/private/targetrelease. |
+| Rawls / Data | Latercohortc7b/ef1a qualified2BUILD_ONLY;2nativeattempts/3fixes/475.602SUM,27Jobs6controllersclosed15:51:30; actualwire0 | Minimalfutureinstaller qualification, Parent actual install after exactsource/nativeXMLACL checks;0actualfuturedata. |
 | Popper / closed Strategy-Data | Minute offerfed81602 READY33native/0market checks,allcommandsjoined | Engine consumes exact typed/mask/provisionalclock contract; Parent independent5pure cases passed. |
-| Carson / Engine integration | Patch/W25parity94a0 READY; futureintake4f8a NOTREADY/NUL audit beforechild | New future-intake-integration-repair uses owned stdin/PIPE and full invented native path;0fits/old799parity/new market readouts. Harvey CLOSED, no hidden optimizer. |
+| Carson / Engine integration | Futureintake69ba full invented Bar/features/fourexperts/public18 PASS/15negatives/allactorsclosed/0fits; Parent20refs14unique+closedreaderPASS | SavedW25 nonfinancial shadow publisher Nov6UTC13:55/hard14:05 prep; no HALFhotswap/newfits/economicreadouts. |
 | Aquinas / invoked Execution | Bfinal218f READY/fullRuff/8groups/realLinux5phases12Jobsclosed | Exact source-only CLI ParentPASS. Actualpoint/owneradmission/privatejoins remain use-time, no actualprivate read. |
 | Closed Maxwell / Parent | 2a4 fixture failed; Parentc35 guardABI55PASS/Ruff, not actual runtime | Whole INTC delivery/native lifecycle still required; no deployed mutation from source tests. |
-| Epicurus / Execution-Infra | RAWforensic458 sourcebug confirmed; producer67906 NOTREADY on mockcounter after58purecases,0nativeprobes | New pythonw-producer-integration-repair completes bothactualproducers/nativeownhelper; no oldsource/admissionweakening/Task/order/private read. |
-| Kierkegaard / temporary Infra | INTC actualearlyfailure unknown; sourcecomparison disproves missingGUIexe pin | Tiny truthful own GUI identity caller/source diagnosis only, no strategy/Context/private/Task effects. |
-| Confucius / temporary Execution | B10bd frozen positive-public prerequisite unmet; Claude6b427c2d conditional recommendation | New independent-readonly-custody derivative/invented full5phase qualification; actual relevantwriters/joins/stability remain mandatory,0actualreads yet. |
+| Epicurus / Execution-Infra | Producerfaa25 READY58pure/nativepair3.04s/9Jobsclosed, Parent18refsPASS; sourceconfirms HALF/RAW.pyw dependency ifreached | Full futureHALF native/source repair preserving original model25c8/entryexit/ops/bank/risk; no actualdeploymentyet. |
+| Kierkegaard / temporary Infra | OwnGUIidentity/preGuardbootstrap PASS; forensic96dd115files/fourfaults noexactcurrentrunjoin, originalcauseUNKNOWN | Own realMetadata/adapter constructor diagnostic only, no Census/Context/private/strategy/Task. |
+| Confucius / temporary Execution | bf701 qualified39pure/nativeinventedcapsule, Parent37refs14oldmembersPASS; ONEactualread15:53 WITHHELD precreate publicsourceaudit,0private | Scoped public-boundary repair with realconstructor->freshpubliccapture regression; no repeatedbfread/publicsuccessgate/broadwaiver/reservationrelease. |
 | Closed Jason / invoked readout | New-source publicreader333 READY14native/real inventedCLI/fullRuff/allchildrenclosed | Manual exact a3fe public technical read after actual window; old15:25 A+B is not assumed compatible, no financial conclusions. |
 | Closed Gauss / native diagnostic | 9bc6 actual suspended target had NULL CIM source hashes; exact kernel denied; helpersclosed | No fallback/thirdprobe/field imputation; not a demonstrated ordinary production failure or global hold. |
 | Parent / result integration | OLD INTC A+B5c26 DISABLED13:57:58; obsolete contract/fullXMLACL retained/no financialTaskchange | Newpublic333 source ready; B a3fe preparation separate, no replacement schedule/actualprivate read. |
@@ -88,14 +88,19 @@ hard21:07,GOOGLNov9UTC20:55,memoryNov20,H20Dec1UTC14:30 and ALL owned exits.
 
 ## Throughput Review
 
-15:31: No foreground market wait. Both actual entries need technical recovery,
+15:58: No foreground market wait. Both actual entries need technical recovery,
 not operator approval. Parent integrates actual UNKNOWN evidence; five disjoint
 source/fixture packages active by assignment, not proof of running numerical
-workers. Prior two-fix plumbing caps stopped before native tests; new practical
+workers. Practical caps finished bothproducers, laterData and futureW25 paths;
+old two-fix plumbing caps had stopped before native tests. New bounded
 time/worker-limited technical scopes finish integration without reopening market
 fits/evaluations or old deadlines. Completed training not repeated. Current
 financial inquiry is not blocked on unrelated Data/GPU work or public success;
 fresh actual custody-writer admission remains mandatory for any private read.
+Actualbf read failed earlier at self-publicsource audit; fix and exercise that
+realcoldconstructor->fresh path, not only a capsule with invented Admission.
+Do not infer a leaked container from CID_absentfalse when exact source trace
+failed in before_create before any Dockercreate command. Old failure stays.
 
 If a path remains blocked, finish exact first-cause repair, inspect independently
 admitted original custody, or continue fresh-input/consumer readiness. Missing

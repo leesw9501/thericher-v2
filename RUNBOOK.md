@@ -2,16 +2,19 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC15:31 / Nov6KST00:31. Company outcome UNFINISHED.
+Updated Nov5UTC15:58 / Nov6KST00:58. Company outcome UNFINISHED.
 
 INTC15:10 opportunity is CONSUMED, Taskexit20/public333 UNKNOWN. Do not replay
 host.py/Task/old readout to diagnose. Public-only diagnostic0files/0terminals:
 D:/thericher-v2/model-artifacts/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
 Frozen private reader10bd is TECHNICAL READY but its positive-public prerequisite
 is unmet; do not run its --execute as a workaround. Separately scoped independent
-readonly derivative is under preparation, preserving actual writer admission/
-exact joins/networknone/allRO/stability and all unknown reservations. Actual
-ready command is UNKNOWN until native qualification, not a planned placeholder.
+readonlybf701 qualified but ONE actualread15:53 hit public-source audit denial
+BEFOREcreate/admission/private capture. Do not repeat bf701 --execute. Exact result:
+D:/thericher-v2/model-artifacts/execution/current-intc-independent-readonly-custody-repair-20261105-v1/actual/entry-830e46f879bf42219baabc174a1ede4e/RESULT.json.
+New public-boundary repair is preparation only, preserving actual writer
+admission/exact joins/networknone/allRO/stability and unknown reservations.
+Its actual ready command remains UNKNOWN, not a planned placeholder.
 Original INTC exitNov6UTC15:10 unchanged. GUI ownidentity diagnostic cannot run
 the strategy/Context/broker/private path. RAW14:31 consumed adapterfailure,
 forensic458 confirms.pyw sourceproducer defect; no replay/reset/release.
