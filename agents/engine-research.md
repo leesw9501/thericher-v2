@@ -2,21 +2,23 @@
 
 ## Current Work
 
-Updated Nov5UTC00:45 / KST09:45. A=D:/thericher-v2/model-artifacts.
-Kant owns NEW non-neural indicator-boosting preparation; Parent shared policy/Git.
+Updated Nov5UTC01:35 / KST10:35. A=D:/thericher-v2/model-artifacts.
+Kant CLOSED non-neural indicator-boosting; Parent shared policy/Git.
 A/research/current-h3-indicator-boosting-development-20261105-v1.
-Concrete comparison: one distinct tree family, raw/indicator/raw-plus-indicator
-inputs, one fixed raw-TCN blend ONLY with compatible H3 target/row keys/
-availability/payoff/cost/book. No Paper swap. Reject exact registry duplicate;
-freeze data/splits/purge/kill/iterations/chronological validation BEFORE market.
-Native real solver/checkpoint/typed handoff first, no random validation or
-DEV-chosen epochs. Prefer available proven CPU, not dummy GPU/dependency churn.
-Prep <=240summedactive/1200elapsed. Numerical <=3configs/900solverupdates/
-3forecasts+1fixedblend/18costviews/600summedactive/1800elapsed/0retry. Count
-warmstart fit API calls honestly. Existing Nov2..6 custody remains reserved.
-Qualified launch predelegated, no post-start ACK; no fit yet claimed.
-Nietzsche's completed numerical workers remain closed. History is Git through
-b492b639; AGENTS.md owns research/claim boundaries.
+Sourcec31dd342/contract9eecee48,3CPUfits/63+54+51=168iterations,
+12synthetic iterations/3forecasts/1fixedblend/18views/0retry. Existing sklearn1.9
+CPU2, no install/framework change. Net10bps PER SIDE growth raw6.460%,
+indicator3.202%,raw+indicator6.553%,fixedblend5.511%,retainedRAW8.955%,
+alignedEW6.027%. Primary fixedblend incrementalFAIL; no posthoc arm selection.
+Persistent RAW reproduces retained within1e-8, not forced-flatRAW8.526%.
+41independent/native solver/codec/checkpoint checks/Ruff PASS,6Jobs closed,
+Parent68source/result/input/runtime refs rehashed0mismatch. Registrye8d0e3b3/
+outcome205143c1,<=34.08activeupper/209.05elapsed numerical+verification;
+prep49.08upper/807.71elapsed. No rescue/refit/Paper swap/independent-alpha claim.
+FINAL-CALLBACK.json binds exact Source/contract/debits/positive closures.
+No numerical/GPU worker remains active. Existing Nov2..6 custody stays reserved;
+Data0596 provisional clock recovery does not grant readout/target release.
+History is Git through81fba8f8; AGENTS.md owns research/claim boundaries.
 
 Future source preparation is COMPLETE, source880d7704/contract36b2e8d5:
 A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
@@ -82,7 +84,7 @@ Explicit consumer/data-custody binding remains before any new numerical study.
 
 Research queues remain separate:
 - Breadth: current25-minute0323 and short-swing1fac campaigns are CLOSED.
-  NEW distinct non-neural H3 boosting preparation above; Data Native17 history
+  Distinct non-neural H3 boosting is now CLOSED/FAIL; Data Native17 history
   expands independently. Acquisition/failure never implies a ready numerical
   contract or automatic old evaluation release.
 - Depth: NO_READY_LONG_TRAINING_CAMPAIGN. Require a concrete underfit/convergence

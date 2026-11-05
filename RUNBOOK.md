@@ -2,13 +2,45 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC00:34 / KST09:34. Company objective remains UNFINISHED.
+Updated Nov5UTC01:45 / KST10:45. Company objective remains UNFINISHED.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
 OPEN5 means the operational [official OPEN, OPEN+5minutes) fresh-order band,
 not an order at exactly OPEN+5 or a fill/reconciliation expiry. Raw elapsed3
 exits in the fourth session's OPEN5 band; retained recovery duties persist.
+
+Current health: GET http://127.0.0.1:8787/health returned200/statusok01:39,
+broker_callsfalse. HEAD501 is unsupported method, not application health.
+This confirms service response, not fresh account/owned/PnL facts.
+Korean8788 remains UNDEPLOYED: native compatibility1b659ded/proof1ef9d171
+returns unknown_custody_capability in RAW8fd/INTCb63/Full17-131e. No guard waiver:
+D:/thericher-v2/model-artifacts/execution/current-korean-readonly-ui-coexistence-preparation-20261105-v1/check-20261105T011336285246Z/CALLBACK.json.
+Static UNKNOWN preview there is design-only, not current account state.
+
+Latest optional Full17 migrationb748/q5000 Capture76cde8e3 consumed/WITHHELD
+before mutation, nonzeroPID2040 nativeACCESS_DENIED/birth unavailable;
+RESULTbd67fe77/CLOSED68202de4/allJobsclosed/noApply. Current131e/aa416 retained:
+D:/thericher-v2/model-artifacts/execution/current-full17-original-interactive-session-scope-repair-20261105-v1/actual/OWNER-CHECK-76cde8e3c9d54e77a807fcdb0d77529e.json.
+No blind Capture retry, birth-drift/private-writer claim or company-wide hold.
+
+Data0596 provisional NY-primary recovery decoded retained21pages only,
+2413RTH rows/2382defectflagged,0GET/POST/model. Raw archives/old failures intact.
+10bitwise timeframe comparisons/24negatives/15saved-role readbacks/122pins PASS:
+D:/thericher-v2/model-artifacts/data/current-native17-ny-primary-clock-recovery-20261105-v1/CALLBACK.json.
+Grade PROVISIONAL_LOCAL_REFERENCE_LABEL_RESEARCH_ONLY, not verified eventtime/
+PIT/CA/finality/alpha/Paper/evaluation input. No automatic custody release.
+Continuationd9d2697b then CLOSED21GET0accepted/1POST/0newrows,6262seedrows/
+9complete streams/30outputs,not a successful new acquisition. Owner released,
+190refs stable. Do not rerun ACTUAL-ONCE or consumed GETs:
+D:/thericher-v2/model-artifacts/data/current-native17-ny-clock-history-continuation-20261105-v1/CALLBACK.json.
+Archimedes offline-only cursor firstcause owns exact21retained outcomes;
+no new request until concrete source/adapter cause and separately bounded fix.
+
+HGB c31dd342/9eecee48 CLOSED3CPUfits/168iterations/18views,primaryblendFAIL
+5.511% vs persistentRAW8.955% at10bps per side.41checks/6Jobs/68refs stable;
+no current numeric/GPU worker or Paper swap:
+D:/thericher-v2/model-artifacts/research/current-h3-indicator-boosting-development-20261105-v1/FINAL-CALLBACK.json.
 
 Exact installed public outcome reader cd6e11ce/reader95cd1648, Parent8tests PASS:
 D:/thericher-v2/model-artifacts/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.

@@ -2,7 +2,31 @@
 
 ## Current Work
 
-Updated Nov5UTC00:54 / KST09:54. Archimedes CLOSED bounded history expansion:
+Updated Nov5UTC01:52 / KST10:52. Archimedes owns NEW header-compatible completion:
+A/data/current-native17-header-compatible-three-session-completion-20261105-v1.
+Use20useful new lower cursors for Oct29/30 partial streams; AMDNov2 missing20
+has no useful backwards continuation, preserve gap.<=60GET/1initialPOST/
+2recoveries/400summedactive/1200elapsed;prep240active/1200elapsed. Native
+header-category parity ONLY, unchanged0596 clock/value/venue/date/cursor/
+dedup checks. Actual wire records allowlisted header presence/category/failure
+stage before parser. After2identical structural faults abort batch, not21same
+calls. Source/native/actual cache/account/token/storage checks before delegated
+launch, no extra ACK. No old GET repeat/reset/refund/old output rewrite/model/
+evaluation/Paper promotion. No new Source/PID/HTTP yet claimed. Code A/bytes M.
+
+Predecessor d9d2697b/0b9c68e4 CLOSED21GET(0accepted21failed)/1POST/0newrows,
+6262seedrows/9complete streams/30outputs. Owner released/190pins stable;
+not successful new acquisition. Offline1549b290/693ba06f diagnosed all21:
+all2520rows match requested session, latest key<=request, strictNY decoder
+byte-identical0596. Confirmed codefault STRICT_HEADER_CATEGORY_GATE_DIFFERS_
+FROM_FROZEN_NATIVE_PARSER via source/native fixture; actual old header UNKNOWN,
+runtime attribution inference not direct observation. ff3c native-compatible
+pure fix/conditional salvage references are in its callback.8662known rows/
+9complete remain provisional/conditional, NEVER injectedM/blank header proof:
+A/data/current-native17-continuation-cursor-firstcause-20261105-v1/CALLBACK.json.
+No new network or marker changes in diagnosis. Old125streams remain UNKNOWN.
+
+Archimedes CLOSED preceding bounded history expansion:
 A/data/current-native17-minute-history-expansion-20261105-v1.
 Source9f714b0e/plan000b4c79/RESULTf886d9ca/closure18415114:
 RETURN-POINTER.json binds actual60GET(39accepted/21rejected),1POST/0recoveries,
@@ -13,12 +37,20 @@ Five typed timeframes/positive owner closure passed; Parent39refs stable.
 scope,125older streams unattempted/UNKNOWN.2.48seconds/GET. No active PID/
 next_due; rejected GET marker preserved, no retry granted. All21rejections
 reproduce historical_minute_clock_mismatch offline, NOT alone API quota/horizon
-proof. NEW offline-only diagnosis under:
+proof. CLOSED offline diagnosis4c9/6c6ed55c under:
 A/data/current-native17-minute-history-clock-diagnosis-20261105-v1.
-Distinguish provider returned session from NY DST/calendar/cursor bug using
-exact retained pages internally and native pre/postDST synthetic checks. No
-network/marker reset/old output rewrite/custody release/model effects;
-<=120active/600elapsed. Market bytes M/code A; future Data2 unchanged.
+All21pages diagnosed:2409redundant Korea clocks +1h for EDT history captured
+in EST, local NY/calendar/cursor roundtrips sound. No proven API horizon.
+NEW0596/20eab50b provisional NY-primary profile recovered2413RTH rows from
+retained pages (Oct29 1192/Oct30 1190/Nov2 31),2382admitted with defectflags.
+No raw Korea-field rewrite/GET/POST/model.10bitwise timeframe comparisons/
+24negative checks/15saved-role readbacks PASS,allJobs closed,Parent122refs
+stable. Independent READBACK653519b7. Consumer requires explicit new Source/
+version/profile, never old9f alias or Paper/evaluation qualification:
+A/data/current-native17-ny-primary-clock-recovery-20261105-v1/CALLBACK.json.
+Official KIS local/Korea fields; Parent Claude NY_PRIMARY_PROVISIONAL_ONLY,
+REVIEW02af8d9a. Grade PROVISIONAL_LOCAL_REFERENCE_LABEL_RESEARCH_ONLY;
+not verified eventtime/PIT/CA/finality/alpha. Old source/results/caps untouched.
 
 Gibbs CLOSED the preceding useful coverage package:
 A/data/current-native17-minute-coverage-expansion-20261105-v1.
