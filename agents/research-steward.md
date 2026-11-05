@@ -1,15 +1,25 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
+
+## Current Resource State
+
+Updated Nov5UTC20:03. Actual full-coverage Chronos2 CUDA fit is CLOSED:
+8epochs/488updates/969rows each/56.18s, peak2.606GiB reserved, INNER-best0.
+All6containers/70Jobs/GPUlease closed19:43; cumulative269.01/2400SUM includes
+pre-fit failure/debits. API daf3692f source / a600f97c result in HANDOFF.
+Directutility CPU29epochs812updates/best17 and saved consumer r1 also closed;
+no fit duplication or current optimizer claimed. Both studies failed their
+own declared development tests, not a ban on other GPU campaigns or Paper.
+Next ready work is Singer's pure turnover-aware policy offer; numerical launch
+needs an actually implemented new contract, not GPU-utilization justification.
+
 ## Current Work
 
-Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
-No model optimizer/GPU training currently claimed. W25 saved inference is
-installed Nov6UTC13:55; future actual input UNKNOWN. Completed studies/leases
-stay closed. New729parameter directutility offer is not market-ready; Carver
-implements a small native fee/DTO bridge first, no numerical campaign launch.
-If a distinct frozen campaign becomes ready, choose CPU/GPU by useful throughput;
-do not rerun completed fits for occupancy. Parent Paper recovery is now deployed,
-not another pending resource approval.
+W25 saved inference is installed Nov6UTC13:55; future input UNKNOWN. Completed
+studies/leases stay closed. If a distinct frozen campaign becomes ready, choose
+CPU/GPU by useful throughput and fresh measured headroom. Source-only policy
+work is not optimizer activity. Parent Paper recovery is actually deployed,
+not another resource approval. Exact evidence/metrics are centralized in HANDOFF.
 
 ## Closed Evidence
 

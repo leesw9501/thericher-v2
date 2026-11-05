@@ -70,15 +70,19 @@ Web reads public categorical data, not artifact executables/private custody.
 
 ## Research
 
-Completed studies/leases remain closed. New directutility pure offer and native
-allocation/fee bridge have10 and6tests respectively; no market model claimed.
-D:/thericher-v2/model-artifacts/research/current-direct-net-utility-book-bridge-20261105-v1.
-Carver has a separately delegated one-fit campaign scope with exact runtime/book/
-mask/native smoke prerequisites, no new approval barrier or Paper swap:
-D:/thericher-v2/model-artifacts/research/current-direct-net-utility-one-fit-20261105-v1.
-Assignment is NOT actual training. Original broad Curie bridge missed cap,
-no implementation/fit, retained failed. Parent review2d533b61 GO_WITH_LIMITS,
-reused DEV never independent alpha. No dummy GPU or completed fit reruns.
+Actual directutility CPU campaign is COMPLETE/PRIMARY_FAIL; actual post-checkpoint
+Chronos2 CUDA campaign is COMPLETE_FORECAST_ONLY/DEVELOPMENT_FAIL:
+D:/thericher-v2/model-artifacts/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
+D:/thericher-v2/model-artifacts/research/current-postcheckpoint-chronos2-full-coverage-20261105-v1/API.json.
+Exact metrics/source/closure in HANDOFF. All model containers/Jobs/leases closed,
+no dummy GPU/completed-fit reruns. Saved direct consumer bootstrap-r1 PASS,
+3cohorts51rows parity0/no new fit/readout; failed strategy remains failed.
+Next pure turnover-aware policy offer is a preparation, not actual training.
+Reused DEV is never independent alpha/PaperPnL or automatic model deployment.
+
+OriginalData83963/source/window remains unchanged. Potential300second token
+gate versus4minute observer collision has timing-only evidence; no new observer
+preparer installed and no token/timing reset. Current decision in orchestration.
 
 ## Verification
 

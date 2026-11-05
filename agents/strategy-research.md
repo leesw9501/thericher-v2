@@ -2,6 +2,18 @@
 
 ## Current Handoff
 
+Updated Nov5UTC20:05. Directutility proposal was consumed in one CPU fit:
+29epochs812updates/best17; growth3.7056% but DD1.3383%/turnover7.2376 failed
+its fixed controls. No frozen criterion rescue. Chronos2 full-coverage actual
+CUDA8epochs488updates selected best0; forecast worse than persistence,0books.
+Detailed evidence belongs in HANDOFF/Engine, not a source-profitability claim.
+Singer owns a distinct small pure turnover-aware action-persistence/no-trade
+mechanism with invented native tests, no market/GPU/financial authority:
+A/research/current-turnover-aware-policy-offer-20261105-v1.
+No source-only offer is a currently running fit or automatic Paper model swap.
+
+## Prior Consumed Handoff
+
 Updated Nov5UTC18:51 / Nov6KST03:51. New distinct mechanism:
 A/research/current-cost-aware-next-mechanism-offer-20261105-v1/OFFER.json.
 Direct729parameter allocation utility instead of MSE forecast; signedNet25

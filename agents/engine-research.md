@@ -1,16 +1,46 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
+
+## Current Research Update
+
+Updated Nov5UTC19:28 / Nov6KST04:28.
+Direct-net-utility one-fit campaign a0eccc is COMPLETE/PRIMARY_FAIL:
+A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
+One CPU fit29epochs/812updates/INNER-best17 restored;1archive799rows/1readout/
+2final-flat books. Net25 growth3.7056%/DD1.3383%/turnover7.2376, versus saved
+W25 3.6012%/.6505%/2.1286 and samegrossEW2.3991%/.7512%/7.2092.
+Growth tests passed; fixed DD<=.8131% and turnover<=2.1286 failed. No rescue,
+retry, convergence, alpha or Paper model change. All model/container workers
+closed; activeSUMupper259.80. Parent22guestpins+contract/result/closure verified.
+Native allocation bridge6tests/22subtests and current24ab publicreader11tests/
+source-only CLI/fullRuff passed. They are not financial evidence.
+
+Post-checkpoint Open60->4 Data5be623/manifestca12 is DATAREADY:
+A/data/current-postcheckpoint-open4-data-readiness-20261105-v1/READY.json.
+FIT969/INNER340/DEV680 complete, actual four-step targets,23sessionpurges,
+all target dates after trusted Oct30,2025 checkpoint95a9710e/weightddcda3c7.
+Parent24source/master/role refs verified. No reserved2026Oct30-Nov6 label use;
+data/corpus/CA/PIT/finality limitations and adaptiveDEV claims remain.
+
+Updated Nov5UTC20:03: Chronos2 daf3692f COMPLETE_FORECAST_ONLY/DEVELOPMENT_FAIL.
+Actual CUDA8full969-row epochs/488updates/56.18s, INNER-best0 restored; one680row
+DEV archive/readout. MAE.025661 versus persistence.024231, MSE.00125592 versus
+.00117611. Native funding parity failed on invented input:0marketbooks/PnL.
+Pre-fit /dev guard failure/debit preserved,0marketfit before scoped repair.
+All6CIDs/70Jobs/lease closed; Parent33references verified. Exact result:
+A/research/current-postcheckpoint-chronos2-full-coverage-20261105-v1/API.json.
+Saved direct consumer bootstrap-r1 passed3cohorts/51rows/parity0/5negatives,
+0newfit/economicreadout; PRIMARY_FAIL unchanged. Source/closure in HANDOFF.
+Singer prepares one distinct turnover-aware policy/no-trade-band pure offer;
+no market optimizer currently claimed and no completed fit may be repeated.
+
 ## Current Work
 
-Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
-W25 shadow/laterData actually installed, future actual hashes UNKNOWN.
-New direct-net-utility offer has pure10checks, not market readiness. Curie broad
-bridge scope expired WITHOUT implementation/fit. Fresh Carver owns only the
-small allocation-to-actualfee bridge and invented3cohort tests:
-A/research/current-direct-net-utility-book-bridge-20261105-v1.
-No market launch, optimizer/GPU or completed-fit rerun claimed. Parent review
-2d533b61 GO_WITH_LIMITS requires native units/book/runtime parity before any
-separately frozen1fit. W25 adaptiveDEV is not alpha/PaperPnL, no HALF hot-swap.
+Updated Nov5UTC20:03. W25 shadow/laterData actually installed; future hashes
+UNKNOWN. Direct utility/Chronos studies and saved consumer are closed above.
+Next consumer is a NEW turnover-aware policy contract, not a change to old
+failed criteria. Preserve OOF custody for learned expert fusion and actualfee
+units. W25 adaptiveDEV is not alpha/PaperPnL; no HALF model hot-swap.
 
 ## Closed Evidence
 

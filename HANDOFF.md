@@ -1,5 +1,49 @@
 # TheRicher v2 Handoff
 
+## Current Research Update
+
+Updated Nov5UTC20:03 / Nov6KST05:03. A=D:/thericher-v2/model-artifacts.
+Direct-net-utility one-fit campaign a0eccc is COMPLETE/PRIMARY_FAIL:
+A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
+One CPU fit29epochs/812updates/INNER-best17 restored;1archive799rows/1readout/
+2final-flat books. Net25 growth3.7056%/DD1.3383%/turnover7.2376, versus saved
+W25 3.6012%/.6505%/2.1286 and samegrossEW2.3991%/.7512%/7.2092.
+Growth tests passed; fixed DD<=.8131% and turnover<=2.1286 failed. No rescue,
+retry, convergence, alpha or Paper model change. All model/container workers
+closed; activeSUMupper259.80. Parent22guestpins+contract/result/closure verified.
+Native allocation bridge6tests/22subtests and current24ab publicreader11tests/
+source-only CLI/fullRuff passed. They are not financial evidence.
+
+Post-checkpoint Open60->4 Data5be623/manifestca12 is DATAREADY:
+A/data/current-postcheckpoint-open4-data-readiness-20261105-v1/READY.json.
+FIT969/INNER340/DEV680 complete, actual four-step targets,23sessionpurges,
+all target dates after trusted Oct30,2025 checkpoint95a9710e/weightddcda3c7.
+Parent24source/master/role refs verified. No reserved2026Oct30-Nov6 label use;
+data/corpus/CA/PIT/finality limitations and adaptiveDEV claims remain.
+
+Chronos2 full-coverage campaign is COMPLETE_FORECAST_ONLY / DEVELOPMENT_FAIL:
+A/research/current-postcheckpoint-chronos2-full-coverage-20261105-v1/API.json.
+Source daf3692f, API a600f97c; Parent33source/result/review references verified.
+Actual CUDA fit8complete epochs/488updates/969rows each/56.18seconds; INNER
+worsened, best0/original weights and RNG restored. Peak reserved2.606GiB.
+One680row DEV archive/readout: normalized MAE.025661 versus persistence.024231;
+MSE.00125592 versus.00117611. Native funding-convention parity FAILED on
+invented input, so ZERO market books/PnL claims. Not convergence or a general
+foundation-model rejection. Pre-fit /dev guard failure had0marketfits, retained
+debit/source; scoped fix preceded the first actual fit, not a numerical retry.
+All6containers/70Jobs/lease closed by19:43; activeSUMupper269.01/2400.
+
+Saved direct allocation consumer bootstrap-r1 PASS: fixed first3cohorts/51rows,
+maxerror0/actions identical, invented roundtrip+5negatives,0fits/new archives/
+economic readouts/labels/GPU. Original import-order failure retained; result
+does not upgrade the failed direct-utility strategy:
+A/research/current-direct-net-utility-frozen-consumer-20261105-v1/bootstrap-r1/out/RESULT.json.
+
+Singer owns a distinct pure turnover-aware persistence/no-trade policy offer,
+not market training or a Paper model swap:
+A/research/current-turnover-aware-policy-offer-20261105-v1.
+No current optimizer claimed; completed fits are never rerun for occupancy.
+
 ## Current Reality
 
 Updated Nov5UTC18:51 / Nov6KST03:51.
@@ -59,16 +103,16 @@ This section supersedes older preparation projections below.
   All workers closed/0private/no READY command:
   A/execution/current-intc-retained-receipt-namespace-repair-20261105-v1/CLOSURE.json.
   No writer/caller waiver, consumed-probe replay or reservation release.
-- Direct-net-utility offer is implemented/pure10checks, NOT market-ready. Old
-  Curie bridge scope closed WITHOUT implementation/fit; missed preparation cap,
-  no external block. New Carver owns only small actualfee/DTO bridge and invented
-  three-cohort tests. Current24ab PURE PUBLIC readera446 is READY11tests/fullRuff/
+- Direct-net-utility campaign now COMPLETE/PRIMARY_FAIL; current research
+  section above supersedes its earlier preparation. Curie failed preparation
+  remains preserved; Carver's bridge, actual fit and saved consumer are closed.
+  Current24ab PURE PUBLIC readera446 is READY11tests/fullRuff/
   Parent source-only CLI; no actual future read. Its exact README command is at
   A/execution/current-net25-24ab-public-outcome-reader-20261105-v1/README.md.
   A/research/current-cost-aware-next-mechanism-offer-20261105-v1/OFFER.json;
   A/research/current-direct-net-utility-engine-bridge-20261105-v1/HANDOFF.json.
-  Parent Claude2d533b61 GO_WITH_LIMITS before any separate new one-fit campaign.
-  No market fit/evaluation or completed-fit rerun has been launched.
+  Parent Claude2d533b61 preceded the completed distinct one-fit campaign.
+  No completed-fit rerun or automatic Paper model change.
 
 ## Installed Future Pipeline
 

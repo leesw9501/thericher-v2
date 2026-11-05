@@ -2,6 +2,26 @@
 
 ## Current Work
 
+Updated Nov5UTC20:05. Post-checkpoint Open60->4 consumer data is DATAREADY:
+A/data/current-postcheckpoint-open4-data-readiness-20261105-v1/READY.json.
+Source5be6238e/manifestca12e0c4, FIT969/INNER340/DEV680,23sessionpurges;
+actual four-step targets all after checkpoint Oct30,2025. Parent24source/master/
+role references verified. No reservedOct30-Nov6,2026 label release; existing
+CA/PIT/finality/context limitations preserved. Engine consumed it in completed
+Chronos2 forecast-only study, not a qualified market/Paper return comparison.
+
+Original83963 collector has300second token gate/abort-if-not-due versus observer
+4minute schedule. Stable timing-only read20:02:03 saw19:59:02 last POST-start mark,
+no secrets/state writes. A separate finite observer-control preparation is
+under review, not installed; originalTask/source/clocks/publishers unchanged.
+Claude delta871ed27e REVISE and proportionality/restoration concerns retained.
+Mill's source-only feasibility closed5tests/Ruff; no controller/admission/
+restore path implemented, NOT READY. Exact source and timing schema:
+A/data/current-net25-83963-observer-preparation-20261105-v1/RESULT.json.
+Do not install an unimplemented preparer or relabel old83963. A future scoped
+token60 successor requires truthful downstream contracts, not global floor
+relaxation. This is not a global collection/research/Paper hold.
+
 Updated Nov5UTC17:48 / Nov6KST02:48. A=D:/thericher-v2/model-artifacts.
 Later W25 collectorsc7b ACTUALLY enabled Nov10/13UTC21:30..<21:31/hard21:45.
 Qualified recovery3996 five separate modes PASS, full independent XML/nativeACL.

@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov5UTC18:51 / Nov6KST03:51.
+Updated Nov5UTC20:05 / Nov6KST05:05.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -44,13 +44,16 @@ Updated Nov5UTC18:51 / Nov6KST03:51.
    Do not replay consumed probes, waive writers, or release unknown reservations.
    Fresh appropriately qualified source/caller/writer/stability is a scoped
    technical dependency, not operator approval or another lane's hold.
-5. Carver implements a SMALL direct-net-utility allocation/actualfee bridge and
-   invented3cohort tests, not a market campaign:
-   A/research/current-direct-net-utility-book-bridge-20261105-v1.
-   Distinct729parameter proposal/pure10checks exists; oldCurie bridge missed
-   preparation cap and produced NO implementation/fit. Parent Claude2d533b61
-   GO_WITH_LIMITS before any separate frozen1fit. No new optimizer/GPU or
-   duplicate completed training claimed.
+5. Directutility actual CPU fit COMPLETE/PRIMARY_FAIL:29epochs812updates/best17,
+   growth3.7056%/DD1.3383%/turnover7.2376; DD/turnover criteria failed. Saved
+   consumer r1 passes3cohort51row exact parity, no new fit/economic readout:
+   A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
+   Chronos2 new post-checkpoint full-coverage CUDA study COMPLETE_FORECAST_ONLY:
+   8epochs488updates/56.18s/best0, worse than persistence,0marketbooks; all
+   containers/Jobs/lease closed. API and qualified source refs in HANDOFF.
+   Singer prepares distinct pure turnover-aware persistence/no-trade-band offer:
+   A/research/current-turnover-aware-policy-offer-20261105-v1.
+   No current optimizer, failed-criterion regrade or automatic Paper model swap.
 6. Actual Paper query17:20 holdings4/noINTC; history18:10 terminal response0rows.
    Both as-of/read-only and independent of local custody; NOT exact original
    intent/fill/owned/PnL or no-historical-request proof. Sources7f2/05f, exact
@@ -60,6 +63,11 @@ Updated Nov5UTC18:51 / Nov6KST03:51.
    enabled through3996 five-mode recovery. Future DATAREADY/points UNKNOWN.
    W25 frozen +3.6012%/DD.6505% is adaptive reusedDEV, not independent alpha or
    PaperPnL; no automatic HALF swap. All completed fits remain closed.
+   Data300second immediate-abort gate and observer4minute cadence have a scoped
+   token collision concern. Timing-only stable read20:02 showed last POST-start
+   mark19:59:02; not successful issuance/future POST proof. Source feasibility
+   closed5tests, controller NOT READY/not installed. Original83963 unchanged;
+   no observer pause without implemented restoration or global floor change.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/
 emergency/token and pending duties. UI8787 only; Korean8788 not deployed.
@@ -77,10 +85,5 @@ Reuse only1437protected+AGENTS unchanged. D code requires its own focused/native
 evidence; repeated C suites do not validate external code. Refresh Ruff/four
 Compose(.env.example)/diff, commit/push integration. uv --no-env-file.
 Do not replace this objective merely because a package/commit/deployment finishes.
-Carver's native allocation/actualfee bridge now passed6tests/22subtests plus
-full target Ruff. A NEW isolated1fit scope is delegated under
-A/research/current-direct-net-utility-one-fit-20261105-v1, existing Docker2.7 CPU1,
-max120epochs/10000updates/INNERbest/early12/1attempt0retry. Actual role/mask/book/
-optimizer/runtime smoke and frozen source/contract precede any market fit.
-Parent review2d533b61 is already prebound; no postlaunch acknowledgment gate.
-This is assigned work, not a claim training started or profitability achieved.
+Completed research is evidence for the next distinct hypothesis, not company
+completion. Exact source/result/closure links are in HANDOFF and role boards.
