@@ -19,7 +19,16 @@ closed. Native same-shape CPU3updates .031-.053s vsCUDA1.90-2.02s;24combined
 CPU/CUDA synthetic profile updates, CPU chosen before market. Known allcash, primaryFAIL;
 not a GPU environment/permission hold or reason for duplicate training.
 Registryed2076b0/d40bd9ae,188.81activeupper/304.09elapsed. New short-swing
-cost-edge candidate preparation is Engine-owned, not another old25-minute fit.
+cost-edge1fac/04f5 is now CLOSED too:1CUDAfit47epochs/329updates/best15,
+15.436s/494MB allocated,1empirical FITbaseline/2forecasts/9views/0retry.
+Actual larger-shape native probe selected CUDA before market. PrimaryFAIL
+growth versus fixedRAW despite lowerDD/turnover. All4CIDs/PIDs/Jobs/leases
+closed;165.17activeupper/360.91elapsed,registry35d999ac/b7c2bdd3. No duplicate fit.
+Parent49exact research refs rehashed0mismatch. No current numerical/GPU worker
+claimed; Datae386 completed7800new Native17 M1 rows/20streams/all actors closed.
+Explicit Engine consumer/custody binding precedes a useful new campaign; this
+does not turn acquisition into automatic old holdout release or duplicate fit.
+Execution fixes production binding in parallel. GPU remains available.
 
 ## Measured Resources
 

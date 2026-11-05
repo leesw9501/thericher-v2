@@ -22,7 +22,7 @@ unknown-request substitution. Provisional funds are not settled cash/equity.
 
 ## Current Evidence
 
-Updated Nov4UTC23:08 / Nov5KST08:08. Historical details remain in Git through
+Updated Nov5UTC00:22 / KST09:22. Historical details remain in Git through
 b492b639, RUNBOOK and immutable artifacts. This is current work, not a diary.
 
 - RAW ALL3 host8fd94086/plan38ecd706 is ACTUALLY installed/enabled with separate
@@ -67,10 +67,15 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    distinguish failure/no-intent/attempt/acceptance/exact fill/current owned state.
    Financial facts require a qualified private reader or named reconciliation,
    not public closure. Preserve all original exits and unknown requests.
-2. Reliability: diagnose exact v3 census without blind reissue. Challenge whether
-   global custody admission belongs on definition-only work. A new recovery
-   contract needs relevant original-owner closure, full XML/ACL/source/rollback
-   tests and Claude challenge; no silent waiver of an immutable old contract.
+2. Reliability: original-owner-only recovery8338 then visibilityf710 each had
+   ONE failed actual Capture BEFORE migration. Latest exact f710 failure was
+   PID4 native OpenProcess ACCESS_DENIED, not a proven writer/birth change.
+   WTS ca011 ONE Capture also failed PID4 principal visibility before mutation;
+   not a real writer conclusion. Mendel qualifies a narrow kernel-identity
+   correction with prebound contingent
+   Capture/Apply/independent readback. Positive exact original-owner closure
+   still required; no generic AccessDenied/name/PID exemption or blind retry.
+   Current131e/aa416 exit remains enabled; no proposed7b0 adoption claimed.
 3. Data: source24a39b83/definitions268c7444 ACTUALLY installed/enabled22:50:
    A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/API.json.
    Parent sourcea0fd/proof2b602 created ONLY exact absent two tasks disabled,
@@ -78,6 +83,12 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    PASS Ready3/0instances; adoptionec75e582 under parent-install/PARENT-ADOPTION.json.
    Both opportunities21:10..<21:11/hard21:25UTC(KST Nov6/7 06:10). No catchup/
    Task.Run/API during install; consumed modes never replayed. Future data UNKNOWN.
+   Useful missing Native17 minute coverage is now COMPLETE:
+   A/data/current-native17-minute-coverage-expansion-20261105-v1.
+   Sourcee386/RESULTca397/closure4dcef,80GET/1POST/0recoveries,20streams/
+   7800new RTH1m rows/10missing stocks/2dates. Both dated five-timeframe typed
+   outputs passed; Parent34refs stable/all actors closed/existing7 not repeated.
+   Acquisition is not an Engine custody release/model evaluation/Paper swap.
 4. Engine/Steward: source880d/contract36b2 future Nov6 observation is READY using saved
    GRU and new Nov5 context/Nov6 targets, not reserved Nov2..4:
    A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
@@ -95,11 +106,19 @@ Roles own disjoint D: packages and exchange exact schemas/readiness directly.
    NEW campaign0323/58bf COMPLETED4fits/244updates/4forecasts/36views,allclosed;
    fixed cost hurdle kept allcash, primaryFAIL, no threshold/arm rescue:
    A/research/current-intraday-net-edge-indicator-development-20261105-v1/CALLBACK.json.
-   Next Engine preparation is lower-turnover1-to-several-day cost-edge, distinct
-   hypothesis/contract before any numerical dispatch; no reserved dates or rerun.
+   Distinct short-swing1fac/04f5 also COMPLETED1CUDAfit47epochs329updates15.436s,
+   1empiricalbaseline/2forecasts/9views. Net10 7.161%/DD6.107% versus fixedRAW
+   8.526%/7.180%,incrementalFAIL/allactorsclosed. No strategy swap/rescue/rerun;
+   next numerical work needs a concrete useful new contract, not GPU occupancy.
 6. Monitor: Korean GET/HEAD-only code is ready; new UI NOT deployed. Existing
    127.0.0.1:8787 remains last verified be48. No private web mounts/broker authority
    or public listener; static snapshot is not live account refresh.
+7. Execution preparation: next-day INTC fixed1share uses the SAME physical
+   bank/B10/F9/native risk. James owns a real network-none Linux invented-bank
+   host/guest/native-consumer proof; Raman owns exact absent future pair/PT10M
+   disabled-create/full-readback/exit-first installer. Direct qualified handoff,
+   no placeholder seals or Parent relay. Proposed Nov5UTC15:10/Nov6UTC15:10
+   pair is NOT deployed. No substitute for an unknown request/new allocation.
 
 No foreground session/quota sleep or app follow-up chain. Workers own next_due.
 Useful ready CPU/CUDA work is delegated under measured headroom; no duplicate

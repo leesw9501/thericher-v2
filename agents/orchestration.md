@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov4UTC23:10 / Nov5KST08:10.
+Updated Nov5UTC00:22 / KST09:22.
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns shared policy/goal/boards, actual adoption, integration and Git.
@@ -16,12 +16,12 @@ Role MDs are durable memory, not proof of a running LLM/worker.
 | Owner | Package / state | Concrete next consumer |
 | --- | --- | --- |
 | Parent / Execution |RAW8fd/plan38 ACTUALLY enabled; public readercd6e complete|Owned entryNov5UTC14:31/exitNov10UTC14:30; inspect exact public chain, then qualified financial facts, never Task-exit inference.|
-| Gibbs / Data-native |CLOSED research/current-eod-gru-nov6-future-definition-installation-20261105-v1|Data2tasks enabled22:50; Research1task ACTUALLY enabled/readback23:02 source095c/proofaa73/adoption78ecce0f. No active LLM/financial worker; future data/results UNKNOWN.|
-| Nietzsche / Engine-Steward |research/current-short-swing-cost-edge-candidate-preparation-20261105-v1|0323 net-edge campaign CLOSED4fits/244updates/4forecasts36views,primaryFAIL/allcash. Now distinct lower-turnover1-to-several-day mechanism; no duplicate/threshold rescue or Paper swap.|
+| Gibbs / Data-native |CLOSED data/current-native17-minute-coverage-expansion-20261105-v1|e386 ACTUAL80GET/1POST/20streams/7800new M1 rows;10missing stocks/2dates, five typed timeframes, all actors closed. Explicit Engine consumer binding next; no old custody release. Data2/Research1 remain enabled/future UNKNOWN.|
+| Nietzsche / Engine-Steward |CLOSED research/current-short-swing-cost-edge-candidate-preparation-20261105-v1|1fac CUDA47epochs329updates/9views, net10 growth7.161% vs fixedRAW8.526%,incrementalFAIL. All actors/GPU leases closed; Parent49refs stable. No duplicate/rescue/Paper swap.|
 | Beauvoir / Strategy |CLOSED research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1|Source07dab/45tests Parent45PASS36pins stable;9clockheldgap rejected/distinct6clock146event offer. Direct Engine handoff; not numerical dispatch.|
-| Mendel / reliability |execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1 successor|Partial192c disabledactual/CIMcoldproducerfailure; Parentalias0825 probe actualPASS/10Jobs+ownCIDclosed. Qualify successor with currentaliasbinding/nativecoldproducer/fullXMLACL/ownerclosure before actualadoption; oldaff unchanged.|
-| Raman / public reader |CLOSED cd6e11ce/95cd1648|Parent8tests passed; entry/exit pointers missing22:05 ->UNKNOWN. No active financial/GPU owner inferred.|
-| James / engineering baseline |execution/current-nextday-single-proposal-paper-engineering-preparation-20261105-v1|NEW next-day source/synthetic prep only, fix scoped metadata actor admission/retain exact delta. Existing BankLeg/ONEbank/F9 native fixture; no actual entry/newbank/substitute. Oldv8/query remainclosed.|
+| Mendel / reliability |NEW kernel-identity correction after WTS ca011|8338 SID/f710 OpenProcess/ca011 WTS principal all failed on measurement before migration. Latest exact PID4 unknown-principal is not a project writer. Narrow positive kernel identity proof and prebound conditional modes; current131e remains enabled.|
+| Raman / future installer |execution/current-nextday-engineering-future-definition-preparation-20261105-v1|Exact absent2/PT10M definitions, disabled create/fullXMLACL/exit-first/rollback. Receive actual Linux Source/proof/argv directly from James; no placeholder seal or actual Scheduler call in prep.|
+| James / engineering baseline |execution/current-nextday-engineering-linux-host-readiness-20261105-v1|b63/edd Windows native flow passed; now real network-none Linux/invented-bank fixture on exact existing image. No real credentials/private/broker mounts. Future INTC1 pair NOT deployed.|
 
 Independent roles exchange exact schemas and readiness directly. One mutable
 write owner per package; workers own next_due. No foreground market wait,
@@ -41,9 +41,11 @@ all-positions-flat/profitability veto or app follow-up chain.
   provisionalfunds,1POST4GET/0retry/10.928s,0orders/private-book writes.
   Not owned attribution/settledcash/equity/PnL/reservation release.
 - Full17 exit131e/aa416 actual adopted19:55. aff27/7b0 NOT adopted.
-  v3 Capture6922b017 RESULT3c12c999/CLOSEDf682a8ff22:30 withheld BEFORE migration:
-  adaptermatched1/stats0, offender discarded at original scoped_admission.py29.
-  Registration gaps are not actual private-writer conclusions.
+  v3 Capture6922b017 withheld before migration;8338 ONE Capture failed unscoped
+  SID visibility, f710 ONE Capture failed native opening protectedPID4 at00:00.
+  OWNER-CHECKe61b830f/RESULT93cf6650/CLOSEDa92af93e. No Apply/retry or actual
+  writer/birth-change conclusion. New WTS source must classify actual original
+  compatible unknowns conservatively without requiring all-machine handles.
 - EOD Nov4 metadata auditf1de CLOSED scopedrejection before arrays; savedweights
   exist but Nov2..4 custody was not released. NEW futureNov6 source880d preserves
   full5policies/15costviews/2forecasts/0fits; registry5278b871 frozen beforetargets.
@@ -64,11 +66,23 @@ all-positions-flat/profitability veto or app follow-up chain.
 
 ## Throughput Review
 
-23:10: Data2 and research1 future tasks are ACTUALLY enabled/read back, no longer
-source-only packages. Ready Parent work is evidence integration/Git; Mendel owns
-scoped source successor, James owns new next-day INTC1share engineering prep,
-Nietzsche owns distinct short-swing cost-edge preparation. Original8fd point/
-entry13:30/14:31UTC remain worker-owned due, no market foreground sleep.
+00:22: Data new missing10/2dates acquisition is ACTUALLY complete, not an idle
+plan.1fac CUDA campaign completed and underperformed the carriedRAW growth;
+all actors closed. Independent Parent49research/34Data refs rehashed0mismatch.
+Mendel owns actual first-cause Windows visibility repair; James Linux fixture
+and Raman exact installer are disjoint and directly exchange ready bindings.
+Parent integrates/adopts/Git, not a post-start relay. RAW point/entry13:30/
+14:31UTC and Data2/Research1 due remain task-owned, no foreground market wait.
+Ca011 Capture actual failed PID4 WTS principal before mutation; exact receipt
+a42dfbc4/resultb6ceaefa/closeda5bd3ef7 retained. No Apply/current131e unchanged.
+One source-quality pass is not actual native-enumeration completeness. Mendel
+now corrects this exact kernel scope, not unrelated actors or financial risk.
+
+Reversible improvement: prebind a source-qualified conditional Capture/Apply/
+independent Readback transaction before measurement. A positive fresh relevant
+owner check should not require another immutable source root or LLM ACK; an
+actual unknown owner/failure still withholds mutation. Source quality is NOT
+actual absence/admission. Keep old failed measurements and current exit intact.
 
 0323 completed4fits/4forecasts in23.527s actual market training. Native same-shape
 CPU .031-.053s vs CUDA1.90-2.02s per3updates selected CPU BEFORE fits; GPU was

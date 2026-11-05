@@ -51,15 +51,32 @@ not missing data or alpha. Fixedhalf MSE slightly below zero but matched-EW
 cash tie FAILS frozen incremental criterion. UnconditionalEW14 growth-5.4447%.
 Registryed2076b0/d40bd9ae,188.81activeupper/304.09elapsed; no threshold/arm rescue.
 
-Next bounded preparation, not another25-minute repeat:
+Next short-swing study is also COMPLETE, not a running fit:
 A/research/current-short-swing-cost-edge-candidate-preparation-20261105-v1.
-Nietzsche chooses a distinct1-to-several-day/lower-turnover cost-aware mechanism
-from existing metadata and current daily inputs. Native target/exit/quantity/
-cost/split/trial/checkpoint contract before any new fit, <=2newmodels/forecasts;
-no reservedOct30/Nov2..6/oldfit replay/current Paper swap. Useful CPU/CUDA work
-remains delegated under Steward, not an occupancy goal or architecture list.
+Source1fac522f/contract04f5871a, signed hurdle probability plus conditional
+gain/loss means, fixed logical admission of saved relative-all3 top4 slots.
+One CUDA fit47epochs/329updates/best15/earlystop32,15.436s/494MBallocated;
+one empirical FIT baseline,2forecasts/9views/0retry. Net10 learned7.161%/DD6.107%/
+turn37.891 versus fixedRAW/constant8.526%/7.180%/49.942. Incremental growth FAIL;
+lower turnover/DD are diagnostics, not a stress/threshold rescue or winner.
+14focused/native target-fee/checkpoint/parse checks PASS, all4CIDs/PIDs/Jobs/GPU
+leases closed; registry35d999ac/b7c2bdd3,165.17activeupper/360.91elapsed.
+No calibrated-probability/independent-alpha/Paper claim or current strategy swap.
+Nietzsche CLOSED. No ready deeper-training question is invented for utilization.
+Parent49exact refs rehashed0mismatch. Data e386 completed missing10 Native17
+stocks/2dates:7800new RTH1m rows/five typed timeframes/all actors closed.
+Explicit consumer/data-custody binding remains before any new numerical study.
 
 ## Completed Results / Do Not Repeat
+
+Research queues remain separate:
+- Breadth: current25-minute0323 and short-swing1fac campaigns are CLOSED.
+  Next useful input is Data's completed Native17 minute coverage; no ready new
+  numerical contract is inferred from that acquisition or a failed prior trial.
+- Depth: NO_READY_LONG_TRAINING_CAMPAIGN. Require a concrete underfit/convergence
+  or robustness question on a retained candidate before a longer new campaign;
+  old early-stop/closed trial caps stay immutable. This is not a profitability
+  approval gate or a restriction on another ready useful CPU/CUDA experiment.
 
 All below are adaptive development on reused data, not independent alpha or
 Paper PnL. No source-only proof or research pass changes deterministic bank risk.

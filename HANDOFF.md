@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov4UTC23:08 / Nov5KST08:08. Company objective
+Updated Nov5UTC00:22 / KST09:22. Company objective
 `coexistent-native-paper-execution-runtime-v1` is UNFINISHED. No new accepted
 Paper order, exact fill, current owned-position reconciliation or PnL is claimed.
 
@@ -97,6 +97,34 @@ Provisional USD orderable funds are not settled cash or account equity.
   This is public-path mapping only, not actual original-owner/financial proof.
   Mendel prepares a tested successor; escaped metadata query in old failed
   synthetic test remains recorded, not zero-CIM/regraded proof.
+  Successor83384321 passed32policy/5coldparser/18adapter groups. Its optional
+  unrelated common-A profile was NOT an observed block. Parent+Claude corrected
+  that static classification (MEASURE_ONCE_WITH_LIMITS,session85b8538b), issued
+  source-quality-only q091d48cc, and ran ONE Capture. Exact OWNER-CHECKda022550/
+  RESULT0f0a5513/CLOSEDf275d6c0 at23:31:
+  A/execution/current-full17-original-owner-only-future-metadata-migration-20261105-v2/actual/OWNER-CHECK-da02255025854c6bb158e3179f81a4cf.json.
+  WITHHELD ORIGINAL_OWNER_VISIBILITY_INCOMPLETE at processes.ps1:23 querying
+  SID for a cmdless row BEFORE original-owner classification. PID not retained:
+  measurement failure, NOT proven relevant actor or absence. Both native Jobs
+  closed; initial M-Quiet failed before Capture/update branch. No Apply/retry.
+  Sourcef7106ad5/qualification60e952e4 then passed32policy/12nativeproducer/
+  3coldconsumer/20adapter groups but ONE actual Capture also failed BEFORE
+  migration at00:00. OWNER-CHECKe61b830f/RESULT93cf6650/CLOSEDa92af93e:
+  A/execution/current-full17-original-owner-visibility-repair-20261105-v1.
+  PID4 native OpenProcess ACCESS_DENIED left native birth unavailable;
+  ORIGINAL_NATIVE_BIRTH_MISMATCH is not a measured changed birth or writer.
+  Jobs closed; no Apply. Mendel now uses official WTS/account enumeration for
+  a new source, prebinding contingent Capture/Apply/independent readback.
+  Original-compatible unknown candidates still withhold; no generic access-
+  denied/PID/name exemption. Old sources/failed attempts remain immutable.
+  New WTS sourceca0116ab/qualification9065f860 passed32policy/19native/
+  6cold/20adapter groups and Claude CONDITIONAL_METADATA_ONLY. Parent10pins
+  stable; ONE actual Capture again withheld BEFORE migration on PID4's missing
+  WTS principal, not an observed original writer. Exact OWNER-CHECKa42dfbc4/
+  RESULTb6ceaefa/CLOSEDa5bd3ef7:
+  A/execution/current-full17-scope-owner-kernel-enumeration-repair-20261105-v1.
+  Native jobs closed/no Apply. Mendel owns narrow kernel-identity first-cause
+  correction, not a blind repeat or an operator permission hold.
 - Old Full17 Nov4 producer ABSTAINe29d3459 had missing runtime_files before model
   child. Its entry lacks runtime receipts: effects UNKNOWN. Reproduced stale
   NATIVE_PIN is NOT asserted as historical cause. Open45's consumed2/20/20 exits
@@ -112,12 +140,24 @@ separate D: roots. MDs are memory, not proof that workers are running.
 - Raman CLOSED: execution/current-raw-all3-installed-public-outcome-reader-20261105-v1;
   sourcecd6e/reader95cd, Parent8invented chain tests PASS. At22:05 both phase
   pointers missing ->UNKNOWN; reader never qualifies financial facts.
-- Mendel: execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1;
-  new scoped future metadata recovery above, not actual adoption.
-- James owns NEW execution/current-nextday-single-proposal-paper-engineering-preparation-20261105-v1;
-  source/synthetic prep only, fixed INTC1share optional Nov5UTC15:10 entry/
-  Nov6UTC15:10 exit, existing BankLeg/ONEbank/F9/native risk. No actual deployment,
-  order or extra capital. Oldv8/account query remain closed/consumed.
+- Mendel: new WTS/account-scoped original-owner enumeration repair above;
+  no actual adoption or financial-owner absence claimed from source tests.
+- James closed execution/current-nextday-single-proposal-paper-engineering-preparation-20261105-v1:
+  5eb676/7124,9native+7focused groups/17invented BankLegs PASS,0real effects.
+  Old RAW qualifier correctly rejected engineering schema/PT10M, not permission.
+  NEW execution/current-nextday-engineering-native-host-binding-20261105-v1
+  binds the existing finite owned host/duplex to that consumer without fake RAW
+  labels. Current cold flow passed; independent Raman found strict JSON issue,
+  fixed decoderb63e/15retained-byte negatives+6focused/Ruff per peer callback.
+  Sourceb63e8886 and stricter terminaledd62040 completed Windows invented
+  host/guest/native-consumer proof;7accepted terminal frames/36strict negatives.
+  No real Linux mounts were proven by that Windows fixture. James now owns
+  execution/current-nextday-engineering-linux-host-readiness-20261105-v1,
+  actual network-none Linux/invented-bank-only integration; Raman owns exact
+  future-definition installer. Direct peer Source/argv/native-proof handoff;
+  no actual financial/Task effects during preparation. Optional INTC1share
+  entryNov5UTC15:10/exitNov6UTC15:10 remains NOT deployed,
+  same physical bank/B10/F9/native risk, no new capital. Oldv8/query stay consumed.
 - Nietzsche/Engine-Steward: research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1;
   source880d/contract36b2 READY, full5policies/2savedrestores/2forecasts/15views,
   ZERO fits. Tiny native invented flow and8focused checks PASS,65pins/0mismatch.
@@ -141,8 +181,23 @@ separate D: roots. MDs are memory, not proof that workers are running.
   Parent50pins stable. Known allcash at fixed cost hurdle, primaryFAIL, no rescue.
   A/research/current-intraday-net-edge-indicator-development-20261105-v1/CALLBACK.json.
   GPU worked in native profile; same-shape CPU was faster and selected before
-  market. Nietzsche now prepares a distinct lower-turnover short-swing cost-edge
-  mechanism, not another25-minute fit or old result/threshold retuning.
+  market. Nietzsche also completed1fac/04f5 short-swing signed-payoff study:
+  1CUDAfit47epochs329updates/best15/15.436s/494MB,1empiricalbaseline/2forecasts/
+  9views, net10 growth7.161%/DD6.107% versus fixedRAW8.526%/7.180%; incremental
+  growth FAIL despite lower turnover/DD.14focused checks/all4CIDs/Jobs/GPUleases
+  closed; registry35d999ac/b7c2bdd3. No calibrated-probability/independent-alpha/
+  Paper claim or rescue; weights preserved onD. Nietzsche CLOSED.
+  A/research/current-short-swing-cost-edge-candidate-preparation-20261105-v1/CALLBACK.json.
+- Gibbs CLOSED data/current-native17-minute-coverage-expansion-20261105-v1:
+  sourcee386c376/RESULTca39730c/closure4dcef487, ACTUAL80GET/1POST/0recoveries,
+  20streams/7800new RTH1m rows, missing10stocks on Nov3/4. Existing7 Native17
+  overlap NOT recollected; old pending cursors unchanged. Both dated canonical
+  1m/5m/10m/1h/3h typed consumers passed; all actors closed. Parent34exact refs
+  rehashed0mismatch.462.86s charged active upper; market bytes on M/code on A.
+  Cold Data read_new_canonical requires full expected Source and returns exact
+  masks/closure/custody witness. Explicit Engine consumer binding is deferred:
+  acquisition never releases old evaluation custody or triggers a fit/forecast/
+  Paper swap. Original Data2/Research1/RAW tasks/private history unchanged.
   No foreground market sleep, replacement follow-up chain or recurring report.
 
 Preserve MSE Nov5UTC20:40, H3 AMD Nov6UTC20:45, Full17 Nov6UTC20:54/hard21:07,
@@ -164,7 +219,7 @@ Latest C authority:
 A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
 20239PASS/26known Windows SKIP, created8/8workers[20265items], helper/native0,
 guarded current-child/lease cleanup.1437protected pins+AGENTS rechecked22:42:
-0mismatch. Fresh Ruff/four Compose(.env.example)/diff PASS22:43. Docs/external reuse
+0mismatch. Later1437pins+AGENTS/Ruff/fourCompose/diff PASS23:12. Docs/external reuse
 requires exact digests; D code needs its own native/focused proof. R1/R2 stay
 withheld. Credential-free commands use uv --no-env-file, never implicit .env.
 

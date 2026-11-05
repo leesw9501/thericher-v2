@@ -2,7 +2,7 @@
 
 ## Actual Current Runtime
 
-Updated Nov4UTC22:43 / Nov5KST07:43. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC00:22 / KST09:22. A=D:/thericher-v2/model-artifacts.
 Parent owns integration/adoption/Git. AGENTS.md is authority; old boards remain
 in Git through b492b639. No new accepted order/fill/current owned state or PnL
 is claimed. ONE initial B/10, F9 UNKNOWN-HELD, pending identities/reservations,
@@ -62,8 +62,7 @@ actor not retained. Canonical adapter binding worked; another cause is UNKNOWN:
 A/execution/current-full17-stats-census-adoption-repair-20261105-v3/adapter-runs/3647945dd79244d4ab5e5b83d0bd0278/99-withheld.json.
 No blind reissue/caller OWNED waiver. Old5001/116c/ba844 failures stay immutable.
 
-Mendel now prepares a NEW original-owner-only future metadata migration:
-A/execution/current-full17-original-owner-only-future-metadata-migration-20261105-v1.
+Mendel prepares a NEW original-owner-only WTS/account-scoped metadata migration.
 Old aff full-bank-census precondition remains frozen. New contract changes only
 the future definition/public release; requires positive exact original131e/bd7
 Task/process/container closure and restart exclusion, fullXML/API7ACL/source,
@@ -71,6 +70,35 @@ disabledUPDATE28/independentreadback/rollback. No bank/private book/observer
 state access or financial effects. Runtime financial admission stays unchanged.
 Actual new adoption is NOT claimed; unknown relevant owner withholds it only.
 Claude challenge/native mocked whole-flow proof before Parent actual action.
+
+Historical successor8338 actual Capture was withheld on cmdless-row SID query;
+no offendingPID retained. f710 visibility repair32policy/12native/3cold/20adapter
+groups passed, but ONE actual Capture failed00:00 before migration opening
+protectedPID4: native birth unavailable/ACCESS_DENIED, NOT measured birth drift.
+Exact OWNER-CHECKe61b830f/RESULT93cf6650/CLOSEDa92af93e:
+A/execution/current-full17-original-owner-visibility-repair-20261105-v1.
+No Apply; all native Jobs closed. Do not rerun consumed old captures. New source
+prebinds contingent Capture/Apply/independent readback under fresh relevant
+owner checks; no generic AccessDenied/PID/name bypass or financial exemption.
+WTS sourceca011/qualification9065 then passed32policy/19native/6cold/20adapter
+groups/Claude CONDITIONAL_METADATA_ONLY; Parent10pins stable. ONE actual
+Capture also withheld before mutation on PID4's unavailable WTS principal.
+OWNER-CHECKa42dfbc4/RESULTb6ceaefa/CLOSEDa5bd3ef7:
+A/execution/current-full17-scope-owner-kernel-enumeration-repair-20261105-v1.
+All native jobs closed/no Apply; Mendel owns narrow kernel-identity correction.
+This is measurement incompleteness, not actual original writer or new approval.
+
+Next-day engineering preparation5eb/7124 then b63/edd passed Windows invented
+host/duplex/native BankLeg flow and strict terminal checks. It is NOT real Linux
+mount proof or financial deployment. James now owns:
+A/execution/current-nextday-engineering-linux-host-readiness-20261105-v1.
+One real network-none/invented-bank-only native integration, no real private/
+credentials/market/API/Task access. Raman independently prepares exact absent
+2-task PT10M disabled-create/fullXMLACL/exit-first installer under:
+A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1.
+Direct qualified Source/proof/argv handoff, no placeholder hashes. INTC/NAS
+fixed1share entryNov5UTC15:10/exitNov6UTC15:10 still NOT deployed. SAME physical
+bank/ONEB10/F9/reservations/native risk; not a substitute for an unknown request.
 
 ## Preserved Original Duties
 

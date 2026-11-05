@@ -2,7 +2,24 @@
 
 ## Current Work
 
-Updated Nov4UTC22:51 / Nov5KST07:51. A=D:/thericher-v2/model-artifacts;
+Updated Nov5UTC00:22 / KST09:22. Gibbs CLOSED the useful coverage package:
+A/data/current-native17-minute-coverage-expansion-20261105-v1.
+Consumer: current Native17 intraday/cross-sector/resampling research inputs.
+Sourcee386c376aacb910bd998da71116cfecf90d574f01f1bac3fe570811a258eca68:
+ACTUAL80GET/1POST/0recoveries,20streams/7800new RTH1m rows on Nov3/4.
+Missing10 were AMD/NAS and JPM/JNJ/XOM/PG/KO/HD/V/DIS/UNH/NYS. Existing7
+Native17 overlap was NOT recollected; original pending cursors unchanged.
+Both dated canonical outputs passed actual typed1m/5m/10m/1h/3h consumers.
+ACTUAL-CLOSED4dcef487/RESULTca39730c; Parent34exact refs rehashed0mismatch.
+All actual/native actors closed;462.86s charged active upper/1800s cap.
+No Task/account/order/model effects. Market bytes stay M; source/code stay A.
+Cold Data reader read_new_canonical(date, expected_source=e386-full-SHA) returns
+FP64[17,390,5] plus masks/source/closure/custody witness. Bind an explicit new
+consumer contract before Engine use; no old evaluation-custody release,
+automatic fit/forecast, current Paper swap or rerun of this completed scope.
+Exact API.json/CALLBACK.json name consumer/cursor/output refs. next_due NONE.
+
+A=D:/thericher-v2/model-artifacts;
 M=D:/market_data. Parent owns actual adoption/Git; Gibbs owns separate D: code.
 AGENTS.md is the authority. Historical stateboards remain in Git through b492b639.
 

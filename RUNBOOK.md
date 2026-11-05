@@ -2,10 +2,13 @@
 
 ## Current Owned Commands
 
-Updated Nov4UTC22:45 / Nov5KST07:45. Company objective remains UNFINISHED.
+Updated Nov5UTC00:22 / KST09:22. Company objective remains UNFINISHED.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
+OPEN5 means the operational [official OPEN, OPEN+5minutes) fresh-order band,
+not an order at exactly OPEN+5 or a fill/reconciliation expiry. Raw elapsed3
+exits in the fourth session's OPEN5 band; retained recovery duties persist.
 
 Exact installed public outcome reader cd6e11ce/reader95cd1648, Parent8tests PASS:
 D:/thericher-v2/model-artifacts/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.
@@ -45,12 +48,28 @@ Both saved GRU and Ridge exist, old Nov2..4 custody remains unchanged.
 Full17 future exit remains131e/aa416. aff27/7b0 overlay NOT adopted; exact
 v3 Capture6922b017 withheld22:30 before mutation, no opaque retry:
 D:/thericher-v2/model-artifacts/execution/current-full17-stats-census-adoption-repair-20261105-v3/adapter-runs/3647945dd79244d4ab5e5b83d0bd0278/99-withheld.json.
-New original-owner-only definition migration is PARTIAL source preparation,
-not adopted: cold CIM mock-isolation failure/disabled actual anchors. See
-Execution board. Separate public alias probe0825 CONSUMED/PASS, exact own
+Original-owner successor8338 Capture failed SID visibility; f710 Capture failed
+native opening protectedPID4/ACCESS_DENIED at00:00, BEFORE migration. No Apply
+or measured actual-writer/birth-drift conclusion. New WTS source is preparation
+only; see Execution board before any future adoption. WTS ca011 ONE Capture
+also withheld before mutation on PID4 principal visibility; OWNER-CHECKa42dfbc4/
+RESULTb6ceaefa/CLOSEDa5bd3ef7. All old captures consumed/no Apply or replay.
+Separate public alias probe0825 CONSUMED/PASS, exact own
 container+10Jobs closed; RESULT0fa77ff9/CLOSURE3ca137c8. Path form only, NOT
 original-owner/financial admission. No probe retry or source flags bypass.
 Account query6e6a/2a55 is CONSUMED, not a command to reissue authentication.
+
+Native17 missing-minute acquisition e386 is COMPLETE, not a command to rerun:
+D:/thericher-v2/model-artifacts/data/current-native17-minute-coverage-expansion-20261105-v1/API.json.
+80GET/1POST/0recoveries,20streams/7800new1m rows,10missing stocks/Nov3+4,
+five actual typed timeframes/all actors closed. Cold Data API requires exact
+expected Source; new Engine consumer binding remains explicit, no old target
+custody release/automatic forecast/Paper swap. Parent34refs0mismatch.
+
+Engineering INTC fixed1share future pair is NOT deployed. Windows invented
+host/native consumer passed b63/edd; real Linux fixture and exact2-task/PT10M
+installer are being prepared in separate scopes. No actual financial command
+is published from these source-only packages; use qualified current callbacks.
 
 Docs-only C authority: Korean R3/20239PASS26knownSKIP/8of8/20265items, guarded
 cleanup,1437pins+AGENTS unchanged22:42; Ruff/fourCompose(.env.example) PASS22:43.
