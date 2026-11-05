@@ -2,6 +2,76 @@
 
 ## Current Integration
 
+Checkpoint Nov5UTC23:28: saved-rank forward Task b89 was actually created
+disabled, then separate disabled readback PASSED. EnableReadOnly CLI failed
+AFTER actual enable; fresh Task query shows enabledtrue/0instances/state3.
+Separate enabled Readback also failed, so NOT yet qualified as complete deployed:
+A/research/current-net25-pairwise-forward-native-installation-20261105-v1/installation.
+Never repeat InstallDisabled/EnableReadOnly. Banach owns read-only first-cause/
+exact fullXML/API7ACL repair in current-net25-pairwise-forward-enabled-readback-repair-20261105-v1.
+Future14:10/hard14:20Nov6 is nonfinancial CPU-only,0broker/private/GPU authority;
+actual point/hash UNKNOWN. Existing MSE/HALF Paper/bank unchanged.
+
+Parent-closed INTC read50aeb did close its exact opaque launching parents and
+start an allRO/networknone guest. It still stopped BEFORE private-read release:
+early Root/collector-only console contract rejected its own transport Docker
+attach child before the existing native-owned-transport validation loop ran.
+0private; exactCID absent/all16recordedprocessesclosed. Conservative active
+612.89 exceeds frozen600, NOT regraded or refunded:
+A/execution/current-intc-parent-closed-offline-read-20261105-v1/API.json.
+Planck owns NEW phase-owned-transport recovery with identity binding BEFORE
+full child validation and exact actualCID/argv/nativeimage/mounts/network proof.
+Crucially native invented smoke must exercise SAME real five-phase admission/
+CIM/caller/attach path, not replace admission with returnTrue. Unknown children/
+writers still deny, no Docker-name/PID waiver, no private effect/retry claimed.
+
+Actual deployment checkpoint Nov5UTC22:55: exact new MSE retained-owned exit
+Task is NOW ENABLED with Parent TRUE binding and separate full nativeXML/API7
+ACL readbacks before binding, before enabling and after enabling:
+A/execution/current-mse-retained-exit-zero-delay-recovery-20261105-v1/PARENT-ADOPTION.json.
+Runtimec79/recovery83959851, triggerNov6UTC15:40/exit15:45/reconcile15:52/
+hard16:00 (KSTNov7 00:40/00:45/00:52/01:00). OneCreate/oneTrueBind/oneEnable,
+0Task.Run/broker/private/observer effects; no financial admission/fill/PnL claim.
+Same original input/policy/model/physicalbank/ops/identities/ONEinitialB10/
+F9UNKNOWN-HELD/reservations/losses/all old exits. All fresh runtime guards stay.
+
+Preserved first cause: installer03db Plan/CreateDisabled ran ONCE, created the
+disabled target then failed post-create FULL_NATIVE_XML. Its original CLOSED
+receipt remains missing; never manufactured or replayed. CREATED.json and
+CreateDisabled-ATTEMPT.json persist under:
+A/execution/current-mse-retained-exit-native-installation-20261105-v1/installation.
+DO NOT repeat any consumed Create/Bind/Enable/reader stage to inspect results.
+Parent source-qualified read-only diagnosis: requested/native API7 ACL PASS;
+the ONLY canonical-tree delta is Windows registration dropping the exact
+TimeTrigger/RandomDelay PT0S leaf (and consequent child list), while native
+NewTask materialization retained it. All other full fields match. Initial
+diagnostic inline parse and JSON-as-XML mistakes had0Taskwrites; no financial
+data. New explicit zero-default registered edition passed18focused/native
+read-only cases including nonzero-delay/clock/action/settings/ACL/active negatives.
+Microsoft schema makes RandomDelay optional/defaultPT0M; only the exact observed
+requestedPT0S omission is normalized, every other field/ACL exact. Claude40c5d2b9
+GO_WITH_LIMITS, exact evidence in adoption; not a generic XML tolerance/new bank.
+
+Private reader checkpoint23:08: Source95f67099 narrow exactOSbinary2 checker
+and62native checks PASS, generated/private single-link rules unchanged. Actual
+before-create census still withheld opaque launching PowerShell parent;0CID/
+0private, all5owned processes closed,180.541active/1023elapsed. No PID whitelist:
+A/execution/current-intc-known-console-binary-readonly-recovery-20261105-v1/API.json.
+Planck now owns bounded hidden one-shot launch after positive exact launching
+PID/birth closure, with fresh five-phase admission unchanged. It is a scoped
+launch-lifetime repair, not operator permission or company-wide idle hold.
+Detached-launch Claude attempt was review_unavailable, not agreement/approval:
+A/review/current-intc-parent-closed-launch-delta-20261105-v1/RESULT.json.
+
+Saved rank forward consumerd7c2241f CLOSED:51row source/native parity, CPU/CUDA
+maxerror7.45e-7/4.77e-7 and exact allocations in originalTorch2.7 image; CPU
+selected within declared tolerance. One nativecapsule/10Jobsclosed,0fits/DEV
+economicreadouts,85.62active/563.43elapsed. Parent4APIrefs+55members verified:
+A/research/current-net25-pairwise-frozen-forward-readiness-20261105-v1/API.json.
+Runtime lint passed; two unused imports remain in frozen native harness. Future
+W25 point/hash remains UNKNOWN, no Task installed by this source-only result.
+Banach now prepares its exact native future definition/installer, no training.
+
 Updated Nov5UTC22:30 / Nov6KST07:30. Company outcome remains UNFINISHED;
 no new exact broker acceptance/fill/current-owned/PnL claim. No operator decision.
 

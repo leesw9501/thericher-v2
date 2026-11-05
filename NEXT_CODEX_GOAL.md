@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov5UTC22:30 / Nov6KST07:30.
+Updated Nov5UTC23:08 / Nov6KST08:08.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -81,15 +81,29 @@ Updated Nov5UTC22:30 / Nov6KST07:30.
    one readout5books. Ranktop3+4.6670%/DD.93593% versus W25+3.6012%/.65045%:
    frozen DDlimit.81307% FAIL, only1of47cohorts differs. All actors/lease closed,
    Parent15refs+37source members verified; no model swap/alpha/duplicate fit.
-   Banach now prepares only saved-weight forward usability on exact Data83963
-   and future W25 point,0fits/economicreadouts; no future hash invented.
-9. Continue the two technical recoveries without global waits: Planck owns the
-   NEW actual offline INTC reader after source-native commandline/console repair;
-   historical bff probe stays WITHHELD/0private, Parent's pure rule passes5tests
-   and original guard branch without trusted-own/other-actor grants. Godel owns
-   MSE definitions-only installer/fullnativeXML+ACL qualification after c79
-   outer graph/native QA completed. Release FALSE/not installed. Actual future
-   effects still require fresh original ownership/account/risk/observer checks.
+   Saved-weight forwardd7 is Source/native READY51rowparity/0fits/readouts,
+   Parent4refs55members PASS; futureW25hashUNKNOWN. Banach prepares exact finite
+   nonfinancial Windows definition/installer, not a model swap or training.
+9. MSE c79 ACTUALLY INSTALLED/ENABLED through recovery83959851 after only measured
+   registeredRandomDelayPT0S omission. Original03dbcreate partial/CLOSEDmissing
+   preserved; no setter replay.18nativefocused cases and independent fullnative
+   XML/API7ACL beforeTrue/beforeEnable/afterEnable PASS. Original owned exit,
+   samebank/B10/F9/pending preserved; no financial effect/claim. Exact adoption:
+   A/execution/current-mse-retained-exit-zero-delay-recovery-20261105-v1/PARENT-ADOPTION.json.
+   Nov6UTC15:40/15:45exit/15:52reconcile/hard16:00; all fresh effect-time guards.
+10. Planck continues offline INTC reader launch-lifetime repair. KnownOSbinary2
+   checker62tests passed, but opaque parent shell withheld actual95f beforeCID/
+   private; no actor waiver/F9release. New source-bound hidden one-shot waits
+   only for positive exact launching PID/birth closure, then unchanged five-phase
+   census/RO/stability. Parentclosure now proven in50aeb, but before_read own
+   Dockerattach child was rejected before its trustedtransport loop.0private/
+   allclosed;612.89/600capfailure preserved. New phase-owned-transport scope
+   must exercise SAME real five-phase admission on invented allRO native input
+   before actualread, no blanketchild allowance. Godel prepares publicc79reader.
+11. Forward b89 Task was actuallycreated/disabledreadbackPASS; EnableCLI failed
+   after actualenabledtrue/0active, thenenabledreadbackfailed. Banach owns ONLY
+   read-only firstcause/fullXMLAPI7ACL repair; no setter replay or completed-
+   deployment claim yet. NonfinancialCPUonly, no bank/Paper/GPU authority.
    Exact write sets and callbacks live in agents/orchestration.md.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/
@@ -98,8 +112,8 @@ Current ready/owned/due lives in agents/orchestration.md. Continue disjoint work
 no foreground market waiting or new follow-up chain.
 Original MSE20:40 opportunity failed pre-native output_not_owned; exact
 diagnosis/original-observer/no-mutation facts in HANDOFF. Old exit duty remains;
-outer recoveryc79 is source/native-ready but NOT deployed until its complete
-native definition/ACL installer and Parent release qualify. Data
+outer recoveryc79 is now actually deployed through separately qualified native
+definition/ACL recovery. Runtime financial results remain unobserved. Data
 input is now present, but does not prove future inference/broker effects/PnL.
 
 ## Verification And Completion

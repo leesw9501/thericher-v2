@@ -42,11 +42,16 @@ leaseclosed22:23:47,180.375/1800active and1247.376elapsed. Original-scoretop3
 3.3151%/DD1.03850% is a required concentration control, not a second alpha claim.
 Reused DEV/frozenDDfailure/only1distinctcohort remain unchanged.
 
-Banach now owns source/native saved-weight forward usability, not another fit:
+Banach source/native saved-weight forward usability is CLOSED, not another fit:
 A/research/current-net25-pairwise-frozen-forward-readiness-20261105-v1.
-0fits/newDEV economicreadouts. Same checkpoint/FITstats/real Data83963 feature
-producer, actual native score/absolute-gate/funding ABI. Future W25 point/seal
-still unknown; no invented hash, Task installation, bank or Paper model switch.
+Source d7c2241f:0fits/newDEV economicreadouts, one nativecapsule/10Jobsclosed;
+51rowparity CPU/CUDA7.45e-7/4.77e-7 and allocations exact, CPU chosen in exact
+Torch2.7 image. Parent4APIrefs+55members verified. Runtime lint clean; two unused
+imports remain in frozen native harness. Same checkpoint/FITstats/realData83963
+feature producer/score/absolute-gate/funding ABI. Future W25 point/seal unknown.
+No invented hash/Task/bank/Paper switch. Banach now owns one finite nonfinancial
+Windows definition/installer preparation in sibling:
+A/research/current-net25-pairwise-forward-native-installation-20261105-v1.
 
 Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
 closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain

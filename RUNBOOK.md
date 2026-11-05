@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov5UTC22:30 / Nov6KST07:30. Company outcome UNFINISHED.
+Updated Nov5UTC23:08 / Nov6KST08:08. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -37,6 +37,14 @@ No manual Task.Run/strategy invocation merely to inspect evidence.
   reader:8symbols390/390minutes/3120rows/positive child+owner closure/stability.
   Nov6 target capture/result remains future, no historical target release.
   Preserve original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 duties.
+- MSE c79 retained-owned exit ACTUALLY ENABLED22:55, exact83959851 recovery:
+  D:/thericher-v2/model-artifacts/execution/current-mse-retained-exit-zero-delay-recovery-20261105-v1/PARENT-ADOPTION.json.
+  Nov6UTC15:40/15:45exit/15:52reconcile/hard16:00 (KSTNov7 00:40/00:45/00:52/01:00).
+  Independent full nativeXML/API7ACL beforeTrue/beforeEnable/afterEnable; all
+  original bank/inputs/identities/B10/F9/exits unchanged.0TaskRun/broker effects.
+  Never replay consumed03dbCreate or8395Bind/Enable/read stages. Original
+  Create-CLOSED missing preserved; explicit requestedPT0S registration-default
+  omission only, not arbitrary XML/ACL waiver. Actual financial results UNKNOWN.
 
 Actual financial effects retain native source/clock/account/budget/unknown-request/
 quote/orderability/emergency/observer/reconciliation checks. Definition installation
@@ -111,26 +119,27 @@ Route patch alone NOT deployed. Godel owns retained-exit outer successor/native
 qualification; no consumed opportunity replay/late forecast retag/new bank.
 Planck owns metadata-only native-commandline/lineage repair; no private grant.
 
-Current successors supersede that preparation projection: c79 outer graph now
-source/native-ready; Parent154members95aliases/fullgraph PASS. It is NOT installed
-or financially admitted. Godel owns exact native installation/independent full
-XML+API7ACL checks at:
+Historical installer preparation (consumed/partial, do not replay):
 D:/thericher-v2/model-artifacts/execution/current-mse-retained-exit-native-installation-20261105-v1.
-No actual command is qualified until that callback. Do not manually run the old
-Task or put a TRUE release into the inert old definition. Parent measured native
+Its singleCreate registered a disabled task then lacked CLOSED; actual final
+activation is recorded above under recovery8395. Do not manually run the old
+Task or repeat setters. Parent measured native
 COM UTF8-declaration rejection, then structured DOM-root materialization PASS,
 0registrations/Taskruns. Preserve this first cause, not loose XML equivalence.
 
-New Planck actual offline INTC consumer preparation:
-D:/thericher-v2/model-artifacts/execution/current-intc-native-self-bound-readonly-consumer-20261105-v1.
-Native commandline and exact console-rule helper verified, but no current private
-read/READY command yet; new caller/source/5phase/RO/stability required at read.
+Current Planck actual offline INTC launch-lifetime preparation:
+D:/thericher-v2/model-artifacts/execution/current-intc-parent-closed-offline-read-20261105-v1.
+Previous95f62checks/exactOSbinary2 passed, but still-alive opaque parent blocked
+actualbeforeCID/0private; no whitelist/replay. Need exactparentPIDbirthclosure,
+new caller/source, all5phase/RO/stability at actualread; no private READY yet.
 
 Boundary-rank fit641e9 CLOSED17CUDAepochs2329updates/best7/13.812s/200MiB;
 1readout5books, rank+4.6670%/DD.93593%, fixed.81307%DDlimit FAIL/only1of47diff:
 D:/thericher-v2/model-artifacts/research/current-net25-pairwise-ranking-development-20261105-v1/FINAL-API.json.
-All4CIDs/35Jobs/GPUleaseclosed; no fit rerun/model swap. Banach prepares only
-saved-weight forward usability,0fits/newDEVreadouts, future W25 point unknown.
+All4CIDs/35Jobs/GPUleaseclosed; no fit rerun/model swap. Savedd7 forward consumer
+CLOSED51row native parity/0fits/readouts/onecapsule10Jobs. FutureW25hashUNKNOWN.
+Banach prepares exact finite nonfinancial Windows definition/installer only;
+it is not installed yet. Full runtime details/source refs are in Engine/HANDOFF.
 
 ## Verification
 

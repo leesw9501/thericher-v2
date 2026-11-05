@@ -2,21 +2,41 @@
 
 ## Current Work
 
-Updated Nov5UTC22:30. Planck owns NEW native-self-bound offline INTC consumer,
-0actualprivate reads so far. Historical bff diagnostic proved native commandline
+Updated Nov5UTC23:08. MSE c79 ACTUALLY ENABLED22:55 through exact recovery83959851,
+independent full nativeXML/API7ACL readbacks beforeTrue/beforeEnable/afterEnable:
+A/execution/current-mse-retained-exit-zero-delay-recovery-20261105-v1/PARENT-ADOPTION.json.
+Nov6UTC15:40/15:45exit/15:52reconcile/hard16:00, same original request/input/
+policy/model/bank/B10/F9/pending/losses/exits,0Run/broker/private/observereffects.
+Original03db singleCreate partial/CLOSEDmissing remains unchanged. Only measured
+registered omission of requested RandomDelayPT0S is normalized;18focused/native
+cases, exact other fields and ACL. Installation is not runtime admission/fill.
+
+Planck owns NEW parent-closed offline INTC launch,0actualprivate reads so far.
+That50aeb scope is now CLOSED: exactparentclosure succeeded, but early console
+child contract rejected legitimate Dockerattach before existing ownedtransport
+loop. Before_read denied/0private/CIDabsent/all16processesclosed;612.89active
+exceeds600 cap, no regrade. NEW phase-owned-transport recovery exercises SAME
+actual five-phase CurrentReadAdmission on invented allRO fixture before actual,
+not the prior invented_admit bypass. NativePID/birth/exe/closedargv/exactCID/
+network/mount proof is required, no Docker-name/unknown-writer waiver.
+Godel prepares c79-only publictechnical result reader, no actualfuture reads.
+Historical bff diagnostic proved native commandline
 and exact semantic argv; strict children still withheld two exact console hosts.
 Parent pure helper79c1c37d validates only exact pinned binary/path/parent/rawcmd/
 nativePIDbirth/samecensus/empty-child,5tests and unchanged guard branch PASS.
 Consoles are NOT trusted own rows; other actors/actual writers still adjudicate.
-New caller/source/guest/ROmount/5phase/stability must qualify at actual read.
-Old probe stays WITHHELD/0private, no F9 release/claim. Exact refs in HANDOFF.
+KnownOSbinary2 checker62native cases now passes without private/source singlelink
+relaxation, but actual95f beforecreate denied still-alive opaque launchingPWSH.
+That unknown actor is not whitelisted. New bounded hidden launch proves exact
+parentPIDbirth closure before unchanged fresh5phase/source/RO/stability checks.
+Old probes stay WITHHELD/0private, no F9release/claim. Exact refs in HANDOFF.
 
-MSE c79 outer retained-only recovery is Source/native-ready19+6+11+5tests,
-Parent154members95aliases/fullgraph PASS, not deployed. Actual COM UTF8 header
+MSE c79 outer retained-only recovery passed19+6+11+5tests,
+Parent154members95aliases/fullgraph PASS. Actual COM UTF8 header
 failed before registration; DOM root-only assignment materializes native full
-definition without changed action/settings. Godel owns installer/fullXML+ACL
-qualification, Parent owns TRUE release and actual future definition effects.
-Original15:40/15:45/15:52/hard16Nov6 is only proposed; no new financial effect.
+definition without changed action/settings. Godel installer work is CLOSED;
+Parent performed actual TRUE binding/future enable after registered-default
+recovery above. No new financial effect.
 Original13e failed opportunity/flags/inputs/identities/B10/F9/duties unchanged.
 
 Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
