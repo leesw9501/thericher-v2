@@ -2,26 +2,18 @@
 
 ## Current Work
 
-Updated Nov5UTC17:48 / Nov6KST02:48. A=D:/thericher-v2/model-artifacts.
-W25 shadowff383 ACTUALLY enabled Nov6UTC13:55/hard14:05. Parent104source refs/
-two exact same-native-Python aliases and complete fullXMLnativeACL twice-readback
-16:14 PASS. Old failed enable CLI happened after actual enable; no setter replay.
-A/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
-Saved PatchCUDA+HGB/GRU/TCNCPU -> frozenW25/public18;0fits/new economic readouts,
-no bank/private/order authority or HALF hot-swap. Actual future pointUNKNOWN.
-Futureintake69ba fullinvented Bar/Data83963/features/fourexpert/public18 native
-PASS/15negatives/allactorsclosed; Parent20refs14unique. Publicationreader04f093
-READY24negatives/fullRuff/allJobsclosed, no future actual read:
-A/research/current-net25-w25-installed-publication-reader-20261105-v1/READY.json.
-Raw Data link is a publisher hash witness, not current rawpayload verification.
+Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
+W25 shadow/laterData actually installed, future actual hashes UNKNOWN.
+New direct-net-utility offer has pure10checks, not market readiness. Curie broad
+bridge scope expired WITHOUT implementation/fit. Fresh Carver owns only the
+small allocation-to-actualfee bridge and invented3cohort tests:
+A/research/current-direct-net-utility-book-bridge-20261105-v1.
+No market launch, optimizer/GPU or completed-fit rerun claimed. Parent review
+2d533b61 GO_WITH_LIMITS requires native units/book/runtime parity before any
+separately frozen1fit. W25 adaptiveDEV is not alpha/PaperPnL, no HALF hot-swap.
 
-W25 frozencomposition/modelcbd unchanged; old799 parity94a0 bitwise originalbatch/
-maxmixed1.6696e-9/0fits/readouts/allleasesclosed. Forward6ce3 fixes Nov6/11/16
-OPEN entries to Nov11/16/19 OPEN exits,51rows/smallmeasurement not alpha.
-Later Data c7b ACTUALLY enabled Nov10/13UTC21:30 via recovery3996; no future
-DATAREADY/hash invented. All completed Patch/GRU/TCN/Chronos/gate fits stay closed.
-No optimizer/GPU training currently claimed. New useful campaign requires distinct
-hypothesis/finite frozen data/targets/costs/trials, not occupancy or seen-DEV rescue.
+## Closed Evidence
+
 OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
 A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
 Source24bb232f:3folds xHGB/GRU/TCN plus1gate,10completed/11attempted.
@@ -200,3 +192,10 @@ New fixedhalf model25c8 only, entryNov6UTC14:31/exitNov11UTC14:30, samephysical
 bank/native risk and ONEoriginalB10. Research third has a nonfinancial shadow
 Task only; learned gate/tree/foundation are NOT financial sources. Execution
 owns current holdings/lot sizing/risk/custody/financial PnL.
+Carver's native allocation/actualfee bridge now passed6tests/22subtests plus
+full target Ruff. A NEW isolated1fit scope is delegated under
+A/research/current-direct-net-utility-one-fit-20261105-v1, existing Docker2.7 CPU1,
+max120epochs/10000updates/INNERbest/early12/1attempt0retry. Actual role/mask/book/
+optimizer/runtime smoke and frozen source/contract precede any market fit.
+Parent review2d533b61 is already prebound; no postlaunch acknowledgment gate.
+This is assigned work, not a claim training started or profitability achieved.

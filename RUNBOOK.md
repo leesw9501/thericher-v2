@@ -1,86 +1,92 @@
 # Runbook
 
-## Current Commands And Authority
+## Current Authority
 
-Updated Nov5UTC17:48 / Nov6KST02:48. Company outcome UNFINISHED.
-A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality;
-agents/orchestration.md holds current owners. No operator decision pending.
-Never read/route KIS_LIVE_*; use uv --no-env-file and Compose .env.example.
-Preserve ONE original initialB/10/F9UNKNOWN-HELD/pending/reservations/old exits.
-No manual Task.Run or strategy invocation merely to inspect evidence.
+Updated Nov5UTC18:58 / Nov6KST03:58. Company outcome UNFINISHED.
+A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
+No operator decision pending; AGENTS.md owns standing authority.
+Never read/route KIS_LIVE_* or output secret/raw private values.
+Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
+No manual Task.Run/strategy invocation merely to inspect evidence.
 
-## Consumed Opportunities
+## Actual Deployments
 
-RAW Nov5UTC14:31 is consumed, exact public operational terminal
-stopped_for_adapter_recovery/ownerclosed14:31:16. Financial facts UNKNOWN.
-Four exact rows demonstrate .py-only metadata source defect for .pyw.
-D:/thericher-v2/model-artifacts/execution/current-raw-all3-original-identity-fault-diagnosis-20261105-v1/RETURN.json.
-
-INTC Nov5UTC15:10 consumed: Taskexit20/public333 UNKNOWN/0captured public files.
-Original future exitNov6UTC15:10 remains a3fe, new2dab NOT deployed:
-D:/thericher-v2/model-artifacts/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
-D:/thericher-v2/model-artifacts/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json.
-Never replay consumed entry/installer/pair or infer no effects from missing data.
-
-## Completed Account Query
-
-Actual17:20 HOLDINGS_COMPLETE/count4/INTC_presentfalse:
-D:/thericher-v2/model-artifacts/execution/current-paper-current-holdings-readonly-20261105-v1/qualified-readonly60-r1/RESULT.json.
-1POST/3GET/0orders/0private reads; native Job closed. Configured routing match
-only; sequential venues/not atomic. No original-intent/fill/owned attribution/
-fees/settledcash/PnL/full account-risk proof. No reservation release or repeat
-query from this completed opportunity.
-
-## Current Future Definitions
-
-- HALF original3ee2/model25c8, entryNov6UTC14:31..<14:35, exitNov11UTC14:30.
-  D:/thericher-v2/model-artifacts/execution/current-net25-native-definition-recovery-20261105-v1/PARENT-ADOPTION.json.
-  b1a and migration4b26 NOT deployed. New source/helper qualification must resolve
-  actual embedded-descriptor owner check AND token readiness before Parent Apply.
-- INTC original exitNov6UTC15:10.2dab/8fd686 native repair qualified, helper89b6
-  not Apply-ready until fresh typed owner producer and token-window readiness:
-  D:/thericher-v2/model-artifacts/execution/current-intc-fixed-runtime-exit-only-migration-preparation-20261105-v1/READY-COMMANDS.json.
-  This pointer describes preparation, NOT permission to fabricate a proof.
-- First Data83963 Nov5UTC21:30/hard21:45, half publisher5bf Nov6UTC13:30/hard14:10.
-  Original future DATAREADY/point UNKNOWN.
-- Third shadowc96 Nov6UTC13:45/hard13:50, W25 shadowff383 Nov6UTC13:55/hard14:05:
+- HALF24ab/f611 original pair actually updated18:48, EXIT before ENTRY:
+  D:/thericher-v2/model-artifacts/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json.
+  EntryNov6UTC14:31..<14:35/exitNov11UTC14:30, original model25c8/B10/ops unchanged.
+  Separate fullXML/nativeACL readbacks PROPOSED/PROPOSED. Wrapper/default factory
+  is NOT qualified; actual supported single-role OwnerProofPath branch succeeded
+  with new source-pinned actual owner proof per write. Never replay updates/Pair.
+- INTC2dab/8fd686 original EXIT actually updated18:16:
+  D:/thericher-v2/model-artifacts/execution/current-intc-exit-owner-factory-completion-20261105-v1/PARENT-ADOPTION.json.
+  OriginalNov6UTC15:10..<15:11/hard15:20. Residual60s token race, no guaranteed
+  sell; consumed Nov5ENTRY untouched.
+- Data83963 Nov5UTC21:30/hard21:45; halfpoint5bf Nov6UTC13:30/hard14:10;
+  thirdshadowc96 Nov6UTC13:45/hard13:50; W25shadowff38313:55/hard14:05 installed.
   D:/thericher-v2/model-artifacts/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
-  W25 saved inference only/no bank or orders. No automatic HALF hot-swap.
-- LaterData c7b Nov10/13UTC21:30/hard21:45 ACTUALLY enabled:
+  W25 saved inference only/no bank/orders; future inputs/publication UNKNOWN.
+- LaterData c7b Nov10/13UTC21:30/hard21:45 actually enabled:
   D:/thericher-v2/model-artifacts/data/current-w25-engine-true-partial-recovery-20261105-v1/installation/ReadBothEnabled-CLOSED.json.
-  All five recovery modes consumed PASS; NEVER replay. First unchanged, missing
-  second-only create. New explicit engine=true edition matches measured OS
-  registration; native ACL/other fields retained, not a normalization waiver.
+  All five recovery modes consumed; never replay. First preserved, missing second
+  only created; explicit true edition/new measured OS behavior, no ACL waiver.
 - NAS8 Data24a39 Nov5/6UTC21:10; savedGRU/Ridge880d Nov6UTC21:35 installed.
-  Preserve all original MSE/H3AMD/Full17/GOOGL/RAW/HALF/memory/H20 exit duties.
+  Preserve original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 duties.
 
-All future financial effects retain source/clock/account/budget/unknown-request/
-freshquote/orderability/emergency/owner/observer/reconciliation checks.
-Future installation is not financial admission, OS-origin proof or a fill.
+Actual financial effects retain native source/clock/account/budget/unknown-request/
+quote/orderability/emergency/observer/reconciliation checks. Definition installation
+or source test is not financial admission, OS-origin proof or fill.
 
-## Readers
+## Consumed Results And Readers
 
-INTC readerfc4e is WITHHELD, no private-ready command:
-D:/thericher-v2/model-artifacts/execution/current-intc-native-worker-policy-completion-20261105-v1/CLOSURE.json.
-Actual CIM/Docker classifier reached; two exact Docker CLI actors unknown and
-source audit denial unresolved. No private reads. Old10bd/bf/c13e/aff2/58c reads
-and probes immutable; never replay or waive actual writers/source/stability.
-Use only a newly qualified complete exact-source reader under actual admission,
-networknone/allRO/private exactjoins/before-after checks, never observe().
+RAW Nov5UTC14:31 consumed, public stopped_for_adapter_recovery/ownerclosed14:31:16;
+.pyw producer fault reproduced. INTC Nov5UTC15:10 consumed Taskexit20/public333
+UNKNOWN/0publicfiles. Financial effects unknown; no replay/substitute/reset/release.
+Exact evidence and original adoptions are in HANDOFF and pushed history.
 
-W25 future publication reader04f093 is ready24negatives/Ruff/closedJobs:
+Fresh actual account facts:
+D:/thericher-v2/model-artifacts/execution/current-paper-current-holdings-readonly-20261105-v1/qualified-readonly60-r1/RESULT.json.
+17:20 holdings4/noINTC, sequential venues/not atomic, configured routing match.
+D:/thericher-v2/model-artifacts/execution/current-paper-intc-session-order-history-readonly-20261105-v1/RESULT.json.
+18:10 terminal history response0rows/0INTC, as-of/open session only.
+No exact original-intent/fill/owned/fullrisk/settlement/PnL or absence proof.
+Both completed queries have closed workers; no reservation release/repeat.
+
+Private233 is WITHHELD/no private command:
+D:/thericher-v2/model-artifacts/execution/current-intc-retained-receipt-namespace-repair-20261105-v1/CLOSURE.json.
+Receipt namespace repair removed audit denial; actual classifier saw controller+
+3null-source actors. These are historic observation blockers, not asserted still
+running. No consumed-probe replay/actor waiver. A new exact qualified reader needs
+fresh actual writer/source/caller/lease/networknone/allRO/privatejoins/stability.
+Never recovery-capable observe() as offline reader.
+
+Current24ab public readera446 is READY11tests/fullRuff/Parent source-only CLI:
+D:/thericher-v2/model-artifacts/execution/current-net25-24ab-public-outcome-reader-20261105-v1/README.md.
+Old8f5 rejects migrated source; never use it as an unqualified alias. No actual
+future read before opportunity. Exact README has pinned source-only/phase commands.
+W25 publicationreader04f093 remains source-ready:
 D:/thericher-v2/model-artifacts/research/current-net25-w25-installed-publication-reader-20261105-v1/READY.json.
-Use only after actual qualified immutable publication through exact API binding.
-No current future read/worker/schedule; raw Data link is publisher hash witness,
-not independent current rawpayload proof. Web reads public categorical data only.
+Raw Data link is closed publisher witness, not independent current rawpayload.
+Web reads public categorical data, not artifact executables/private custody.
+
+## Research
+
+Completed studies/leases remain closed. New directutility pure offer and native
+allocation/fee bridge have10 and6tests respectively; no market model claimed.
+D:/thericher-v2/model-artifacts/research/current-direct-net-utility-book-bridge-20261105-v1.
+Carver has a separately delegated one-fit campaign scope with exact runtime/book/
+mask/native smoke prerequisites, no new approval barrier or Paper swap:
+D:/thericher-v2/model-artifacts/research/current-direct-net-utility-one-fit-20261105-v1.
+Assignment is NOT actual training. Original broad Curie bridge missed cap,
+no implementation/fit, retained failed. Parent review2d533b61 GO_WITH_LIMITS,
+reused DEV never independent alpha. No dummy GPU or completed fit reruns.
 
 ## Verification
 
-Fresh source-identical full16:49:
+Fresh C full16:49:
 D:/thericher-v2/model-artifacts/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.json.
-20239PASS/26knownWindowsSKIP/actual8of8/8workers[20265items]/native+helper0/
-guarded cleanup. Serialbudget108PASS. Reuse only1437protected+AGENTS unchanged.
-External source/native tests separately required. Before integration:
+20239PASS/26knownWindowsSKIP/8of8[20265items]/helper+native0/guardedcleanup,
+serialbudget108PASS. Reuse only1437protected+AGENTS unchanged. D external code
+has its own focused/native checks. Use uv --no-env-file:
 
 ```powershell
 uv run --no-env-file --extra dev ruff check .
@@ -91,19 +97,15 @@ docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.m
 git diff --check
 ```
 
-No foreground market waiting, new follow-up chain or dummy GPU training.
-Completed model fits/DEV evaluations stay closed. Current8787 only; Korean8788
-not deployed and public exposure not authorized.
+No foreground market wait, new follow-up chain or public exposure.
+Current8787 only; Korean8788/optional Full17 migration deferred.
 
 ## Frozen History
 
-Complete expanded historical commands/proofs/failures/debits remain in pushed
-commit6daa9b57, not present permission or current state:
-
 ```powershell
+git show e7e1758f:RUNBOOK.md
 git show 6daa9b57:RUNBOOK.md
-git show 6daa9b57:HANDOFF.md
 ```
 
-Compaction changes no runtime/Task/financial state or authority. Its consumer is
-Orchestrator restart/recovery without mistaking retired commands for current ones.
+Old commands/proofs/caps/debits/unknowns remain immutable history, not current
+permission to replay jobs. Compaction changes no runtime or financial state.

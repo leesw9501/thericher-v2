@@ -1,27 +1,17 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-## Current Resource Coordination
+## Current Work
 
-Updated Nov5UTC17:48 / Nov6KST02:48.
-No optimizer/GPU training currently claimed. Completed fits/leases remain closed.
-W25 actual shadowff383 enabled Nov6UTC13:55/hard14:05, saved PatchCUDA inference
-plus HGB/GRU/TCNCPU;0fits/readouts/bank/private/orders, frozenHALF unchanged:
-D:/thericher-v2/model-artifacts/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
-Futureintake69ba complete invented realBar/features/fourexpert/public18 native,
-allJobsCIDGPUleaseclosed,0actualfutureadmission. Publicationreader04f093 ready.
-LaterData c7b actually enabled Nov10/13UTC21:30; actual future inputsUNKNOWN.
-Prepare/consume qualified actual forward publications at worker-owned times,
-not foreground waiting or new GPU occupancy work.
+Updated Nov5UTC18:51 / Nov6KST03:51. A=D:/thericher-v2/model-artifacts.
+No model optimizer/GPU training currently claimed. W25 saved inference is
+installed Nov6UTC13:55; future actual input UNKNOWN. Completed studies/leases
+stay closed. New729parameter directutility offer is not market-ready; Carver
+implements a small native fee/DTO bridge first, no numerical campaign launch.
+If a distinct frozen campaign becomes ready, choose CPU/GPU by useful throughput;
+do not rerun completed fits for occupancy. Parent Paper recovery is now deployed,
+not another pending resource approval.
 
-Patch2abffa completed17CUDAepochs/1989updates/full29727FIT each/best5/18.34fitsec/
-490MiB reserved,allleasesclosed. CUDA measured7.22ms vsCPU137.83ms justified it.
-GRU7eaa42epochs/TCN3c2432CPUepochs/Chronosdf3a/d11cc/representation0b8f and
-hurdle/gate/tree all CLOSED. Prior finite ceilings/debits preserved, no repeats.
-W25PRIMARY fixedblendfedd uses saved outputs only; +3.6012%/DD0.6505% at25bps
-eachleg/adaptive reusedDEV, not independentalpha/PaperPnL.
-A useful NEW ready frozen campaign may use GPU concurrency under actual headroom;
-this is not permission to rerun completed fits or add trials to frozen studies.
-Current critical path is native Paper technical recovery, not GPU authorization.
+## Closed Evidence
 
 Completed OOF training is COMPLETE and GPUlease released:
 D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.

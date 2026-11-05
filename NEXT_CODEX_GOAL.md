@@ -5,86 +5,82 @@
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 
 Obtain interpretable native KIS Paper acceptance, exact linked fill and current
-owned-position reconciliation. Keep cost-aware intraday/short-swing Data and
-Research progressing independently. Profitability is not Paper permission.
-Installation, tests, Task exit and operational closure are not this outcome.
+owned-position reconciliation. Advance independent cost-aware intraday/short-swing
+research. Installation, tests, Task exit and operational closure are not this
+outcome. Profitability is not Paper permission.
 
 Workspace C:/Users/Public/Documents/thericher-v2.
 Read HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Parent owns shared policy, integration and Git. Roles own disjoint D: packages.
-No operator decision pending. Never read/route KIS_LIVE_*.
-Preserve ONE original initialB/10, F9 UNKNOWN-HELD, all pending identities,
-reservations, costs/losses and original exits. No refill/new bank/foreign adoption
-or substitute unknown request. Never output secrets or raw private values.
+Parent owns shared policy/integration/Git. No operator decision pending.
+Never read/route KIS_LIVE_* or output secret/raw private values.
+Preserve ONE initialB/10/F9UNKNOWN-HELD/all pending/reservations/costs/losses/
+original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
-## Actual State
+## Actual State And Next Work
 
-Updated Nov5UTC17:48 / Nov6KST02:48.
+Updated Nov5UTC18:51 / Nov6KST03:51.
 
-- RAW Nov5UTC14:31 consumed: exact public chain stopped_for_adapter_recovery,
-  original owner closed14:31:16; .py-only metadata producer defect reproduced.
-  Financial effects UNKNOWN. Never replay or release an unknown reservation.
-- INTC Nov5UTC15:10 consumed: Taskexit20/public333 UNKNOWN_PUBLIC_CHAIN.
-  Actual Metadata constructor import-order fault separately reproduced and
-  repaired in qualified2dab/8fd686; not proof of the historical effect.
-  Original future exitNov6UTC15:10 still a3fe, NOT migrated to2dab.
-- Actual Paper holdings query17:20 succeeded: count4, INTC_present=false.
-  Three sequential US-venue queries, not atomic. Configured routing matches
-  original public reference, not broker identity echo. No linked-fill/attributed
-  inventory/fees/settledcash/PnL proof; no reservation release.
-  A/execution/current-paper-current-holdings-readonly-20261105-v1/qualified-readonly60-r1/RESULT.json.
-- HALF original3ee2 definitions/model25c8 remain installed for entryNov6UTC14:31
-  and exitNov11UTC14:30. Qualified b1a runtime is NOT deployed. Before migration,
-  finish known descriptor-sync/effect-time owner check and omitted bounded
-  first-issuance readiness helper. Actual clients use60s, not Data300s.
-- W25 ff383 shadow ACTUALLY enabled Nov6UTC13:55/hard14:05, saved inference only,
-  no financial bank/authority/model swap. Independent fullXML/nativeACL readback:
-  A/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
-- Later W25 Data collectors c7b ACTUALLY enabled for Nov10/13UTC21:30,
-  separate final fullXML/nativeACL readback. New explicit engine=true edition
-  reflects measured OS registration, not a false/true equivalence waiver.
-  Original first never recreated; only absent second created; no Task.Run:
-  A/data/current-w25-engine-true-partial-recovery-20261105-v1/installation/ReadBothEnabled-CLOSED.json.
-- Fresh original Data83963 Nov5UTC21:30 -> half point5bf Nov6UTC13:30 ->
-  third shadow13:45 -> W25 shadow13:55 remain installed. Future data/points UNKNOWN.
+1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
+   and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
+   write and separate fullXML/nativeACL PROPOSED/PROPOSED readback. Same25c8
+   model/original inputs/ops/bank/risk. No Task.Run or financial effect:
+   A/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json.
+   R2 wrapper remains unqualified; supported single-role OwnerProofPath branch
+   succeeded. NEVER replay consumed updates/default factory/Pair.
+2. INTC original future EXIT ACTUALLY migrated18:16 to2dab/8fd686, one write,
+   fresh104d owner proof and separate PROPOSED/enabled/0instances inspection:
+   A/execution/current-intc-exit-owner-factory-completion-20261105-v1/PARENT-ADOPTION.json.
+   Consumed Nov5ENTRY untouched. Conditional60s token race remains; no guaranteed
+   sell or effect. Original Nov6UTC15:10..<15:11/hard15:20 remains.
+3. Current24ab PURE PUBLIC readera446 is READY:11focused tests, fullRuff and
+   Parent actual source-only CLI PASS, no actual future outcome read/new worker:
+   A/execution/current-net25-24ab-public-outcome-reader-20261105-v1/README.md.
+   Actual post-window public technical chain and separately admitted private
+   joins are still needed. No latest scan/Task exit/install means fill.
+4. Private reader233 fixed receipt namespace/audit denial but actual classifier
+   withheld controller+3null-source actors; allclosed/0private/no READY command:
+   A/execution/current-intc-retained-receipt-namespace-repair-20261105-v1/CLOSURE.json.
+   Do not replay consumed probes, waive writers, or release unknown reservations.
+   Fresh appropriately qualified source/caller/writer/stability is a scoped
+   technical dependency, not operator approval or another lane's hold.
+5. Carver implements a SMALL direct-net-utility allocation/actualfee bridge and
+   invented3cohort tests, not a market campaign:
+   A/research/current-direct-net-utility-book-bridge-20261105-v1.
+   Distinct729parameter proposal/pure10checks exists; oldCurie bridge missed
+   preparation cap and produced NO implementation/fit. Parent Claude2d533b61
+   GO_WITH_LIMITS before any separate frozen1fit. No new optimizer/GPU or
+   duplicate completed training claimed.
+6. Actual Paper query17:20 holdings4/noINTC; history18:10 terminal response0rows.
+   Both as-of/read-only and independent of local custody; NOT exact original
+   intent/fill/owned/PnL or no-historical-request proof. Sources7f2/05f, exact
+   results in HANDOFF. No reservation released.
+7. FirstData83963 Nov5UTC21:30 -> halfpoint5bf Nov6UTC13:30 -> thirdshadow13:45 ->
+   W25shadowff38313:55 remain installed. LaterData c7b Nov10/13UTC21:30 actually
+   enabled through3996 five-mode recovery. Future DATAREADY/points UNKNOWN.
+   W25 frozen +3.6012%/DD.6505% is adaptive reusedDEV, not independent alpha or
+   PaperPnL; no automatic HALF swap. All completed fits remain closed.
 
-## Ready Parallel Work
+Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/
+emergency/token and pending duties. UI8787 only; Korean8788 not deployed.
+Current ready/owned/due lives in agents/orchestration.md. Continue disjoint work,
+no foreground market waiting or new follow-up chain.
 
-1. Execution/Epicurus: finish truthful HALF .pyw + exact descriptor + token-readiness
-   derivative and original future pair migration helper. Parent verifies full
-   source/native proofs and fresh relevant owner closure, updates EXIT first,
-   independent readback, then ENTRY. No known-broken source deployment.
-2. Execution/Kierkegaard: complete actual typed fresh-owner producer for original
-   INTC EXIT-only migration, not another plan. Carson designs exact token-window
-   readiness without moving financial effects outside original window. Parent
-   integrates only a qualified complete source/helper; consumed ENTRY untouched.
-3. Execution/Confucius: diagnose exact two Docker CLI capability hashes and source
-   audit denial after real CIM/Docker path reached. fc4e is WITHHELD/0private;
-   no command is private-ready. No broad Docker exemption or another blind replay.
-4. Research/Data: frozen W25 primary +3.6012%/DD0.6505% at25bps eachleg is adaptive
-   reused DEV, NOT independent alpha/PaperPnL. All completed fits remain closed.
-   Future source/intake/publication readers are prepared; await actual qualified
-   publication only inside its worker-owned opportunity, never foreground sleep.
-   Do not retrain completed GRU/TCN/Patch/Chronos/gate or invent GPU occupancy work.
+## Verification And Completion
 
-Current callbacks/owners live in agents/orchestration.md. Package restrictions
-do not hold other ready lanes. Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/
-memory/H20 exits, same physical bank/emergency/token state and pending duties.
-Korean8788 is not deployed; current8787 only, no public exposure.
-
-## Completion And Verification
-
-Require exact current source/release/time/input/request/fill/current-owned links
-and relevant positive closure. No recovery-capable observe() as an offline reader.
-Actual unknown writer/unstable source/files withhold only that read.
-Company objective stays unfinished until actual required financial runtime closure.
-
-Fresh C authority16:49:
+Actual source/release/time/input/request/fill/current-owned links and relevant
+positive closure required. No recovery-capable observe() as offline reader.
+Fresh C full16:49:20239PASS/26knownWindowsSKIP/8of8[20265items]/native+helper0/
+guardedcleanup; serial108PASS:
 A/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.json.
-20239PASS/26knownWindowsSKIP/created8of8/8workers[20265items]/helper+native0/
-guardedcleanup; serialbudget108PASS. Exact1437protected+AGENTS unchanged required
-for reuse. D code needs its own focused/native proof, not repeated C tests.
-Refresh Ruff/default+research+accounting+monitor Compose with .env.example/diff,
-commit/push owned integration. uv --no-env-file. Do not mark a package commit
-company completion or replace this objective while runtime closure is missing.
+Reuse only1437protected+AGENTS unchanged. D code requires its own focused/native
+evidence; repeated C suites do not validate external code. Refresh Ruff/four
+Compose(.env.example)/diff, commit/push integration. uv --no-env-file.
+Do not replace this objective merely because a package/commit/deployment finishes.
+Carver's native allocation/actualfee bridge now passed6tests/22subtests plus
+full target Ruff. A NEW isolated1fit scope is delegated under
+A/research/current-direct-net-utility-one-fit-20261105-v1, existing Docker2.7 CPU1,
+max120epochs/10000updates/INNERbest/early12/1attempt0retry. Actual role/mask/book/
+optimizer/runtime smoke and frozen source/contract precede any market fit.
+Parent review2d533b61 is already prebound; no postlaunch acknowledgment gate.
+This is assigned work, not a claim training started or profitability achieved.

@@ -2,7 +2,7 @@
 
 ## Current Reality
 
-Updated Nov5UTC17:48 / Nov6KST02:48.
+Updated Nov5UTC18:51 / Nov6KST03:51.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new exact acceptance/fill/current-owned reconciliation or PnL proven.
 Workspace C:/Users/Public/Documents/thericher-v2.
@@ -31,43 +31,57 @@ A/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.js
 Reuse requires exact1437protected+AGENTS unchanged; external code needs its own
 focused/native evidence. Prior tests are not financial admission.
 
-## Actually Installed And Consumed
+## Nov5 18:51 Integration
 
-| Opportunity (UTC; KST=UTC+9) | Actual state / consumer |
-| --- | --- |
-| RAW Nov5 point13:30/entry14:31; exitNov10 14:30 | Point qualified; entry consumed stopped_for_adapter_recovery, exact owner closed14:31:16. Source-bound public chain, financial UNKNOWN. Four exact rows prove .py-only producer records EXE for .pyw. No replay. |
-| INTC Nov5 entry15:10; exitNov6 15:10 | Original pair a3fe/d68b actually migrated13:31:56/fullXMLACL readback; consumed entry Taskexit20/public333 UNKNOWN/0public files. Future exit still a3fe; new2dab repair NOT deployed. |
-| HALF entryNov6 14:31..<14:35/exitNov11 14:30/PT7M | Original3ee2/8ab5/777f enabled/fullXMLACL readback07:33:54. Frozen model25c8 HGB+GRU, same B10. Qualified b1a NOT deployed; descriptor/readiness fixes continue. |
-| Data83963 Nov5 21:30/hard21:45 | ACTUALLY enabled, <=19GET/oneinitialPOST/0retry. Future DATAREADY unknown. |
-| Half publisher5bf Nov6 13:30/hard14:10 | ACTUALLY enabled, saved CPU HGB+GRU inference; READY literal is frozen ABI, not current Task state. |
-| Third shadowc96 Nov6 13:45/hard13:50 | ACTUALLY enabled/readback10:28:26. CPU/networknone/no financial authority. |
-| W25 shadowff383 Nov6 13:55/hard14:05 | ACTUALLY enabled; failed enable CLI followed actual enable, no setter replay. Independent fullXML/nativeACL twice-readback16:14 proves definition only. PatchCUDA+threeCPU experts/saved weights/0fits/no bank or orders. |
-| Later W25 Data c7b Nov10/13 21:30/hard21:45 | ACTUALLY enabled by qualified recovery3996, five separate modes PASS. First retained; only absent second created. Intentional engine=true sealed editionde424 matches measured OS behavior, not equivalence/ACL waiver. |
-| NAS8 Data Nov5/6 21:10; savedGRU/Ridge Nov6 21:35 | Data24a39/Research880d definitions remain installed; future actual outcomes unknown. |
+This section supersedes older preparation projections below.
+- INTC future original EXIT ACTUALLY migrated to2dab/8fd686 at18:16.
+  One write, fresh typed104d owner proof, separate strict PROPOSED/enabled/
+  zero-instance readback. Consumed entry untouched. Exact adoption:
+  A/execution/current-intc-exit-owner-factory-completion-20261105-v1/PARENT-ADOPTION.json.
+  Remaining conditional60s token race is explicit; no guaranteed sell/fill.
+- HALF original pair ACTUALLY migrated to24ab/f611 at18:48, EXIT before ENTRY,
+  one write each with NEW fresh actual source-pinned owner proof per write.
+  Separate complete XML/nativeACL readbacks PROPOSED/PROPOSED; original
+  Nov6UTC14:31/Nov11UTC14:30/model25c8/B10/ops/identities unchanged:
+  A/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json.
+  New descriptor projection, truthful.pyw producers and bounded60s readiness
+  are deployed. R2 wrapper remains unqualified; the supported single-role
+  OwnerProofPath branch actually succeeded. Never replay updates/Pair/default
+  factory. Old failed0fc/fbfe/d039/1049/2576 wrapper evidence stays failed.
+- Fresh KIS Paper Nov5 history query18:10 completed terminal pagination,0rows/
+  0INTC records observed,1POST1GET/0order actions/private reads. As-of while US
+  session open; not no-historical-request, exact intent/fill/owned or PnL proof:
+  A/execution/current-paper-intc-session-order-history-readonly-20261105-v1/RESULT.json.
+  Parent25source pins/result/closure hashes verified. Earlier17:20 holdings4/
+  noINTC remains a different sequential account observation, not attribution.
+- Reader233 retained-public-receipt namespace repair removed actual audit denial,
+  but metadata classifier withheld qualification controller +3null-source actors.
+  All workers closed/0private/no READY command:
+  A/execution/current-intc-retained-receipt-namespace-repair-20261105-v1/CLOSURE.json.
+  No writer/caller waiver, consumed-probe replay or reservation release.
+- Direct-net-utility offer is implemented/pure10checks, NOT market-ready. Old
+  Curie bridge scope closed WITHOUT implementation/fit; missed preparation cap,
+  no external block. New Carver owns only small actualfee/DTO bridge and invented
+  three-cohort tests. Current24ab PURE PUBLIC readera446 is READY11tests/fullRuff/
+  Parent source-only CLI; no actual future read. Its exact README command is at
+  A/execution/current-net25-24ab-public-outcome-reader-20261105-v1/README.md.
+  A/research/current-cost-aware-next-mechanism-offer-20261105-v1/OFFER.json;
+  A/research/current-direct-net-utility-engine-bridge-20261105-v1/HANDOFF.json.
+  Parent Claude2d533b61 GO_WITH_LIMITS before any separate new one-fit campaign.
+  No market fit/evaluation or completed-fit rerun has been launched.
 
-Exact deployment/adoption pointers:
-- RAW/INTC original and consumed evidence:
-  A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json;
-  A/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json;
-  A/execution/current-raw-all3-original-identity-fault-diagnosis-20261105-v1/RETURN.json.
-- HALF:
-  A/execution/current-net25-native-definition-recovery-20261105-v1/PARENT-ADOPTION.json.
-- First Data/publisher:
-  A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json;
-  A/research/current-net25-publisher-parent-readiness-20261105-v1/PARENT-ADOPTION.json.
-- W25:
-  A/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json;
-  A/data/current-w25-engine-true-partial-recovery-20261105-v1/installation/ReadBothEnabled-CLOSED.json.
-- W25 independent publication reader04f093 READY24negatives/fullRuff, no actual
-  future read; raw Data link is a closed publisher hash witness, not independent
-  current rawpayload proof:
-  A/research/current-net25-w25-installed-publication-reader-20261105-v1/READY.json.
+## Installed Future Pipeline
 
-No manual Task.Run/catchup/substitute effect. Installation is not runtime admission
-or fill. Preserve all original exits: MSE Nov5UTC20:40,H3AMD Nov6UTC20:45,
-Full17 Nov6UTC20:54/hard21:07,GOOGL Nov9UTC20:55,RAW/HALF above,memoryNov20,
-H20Dec1UTC14:30. OLD INTC15:25 A+B5c26 disabled13:57:58/rollback retained.
-Observer current enabled facts are not proof of original restoration/OS origin.
+FirstData83963 Nov5UTC21:30/hard21:45; half5bf Nov6UTC13:30/hard14:10;
+thirdc96 Nov6UTC13:45/hard13:50; W25ff383 Nov6UTC13:55/hard14:05.
+Later c7b Data Nov10/13UTC21:30/hard21:45 actually enabled by3996.
+NAS8 Data24a39 Nov5/6UTC21:10; savedGRU/Ridge880d Nov6UTC21:35 remain installed.
+Actual future DATAREADY/points UNKNOWN. Exact earlier adoption pointers remain
+in RUNBOOK/Git. W25 is nonfinancial saved inference, not HALF model swap.
+RAW consumed14:31 adapterrecovery/ownerclosed14:31:16; INTC consumed15:10
+Taskexit20/publicUNKNOWN. No replay/no inferred financial outcome.
+Preserve all original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits.
+Old INTC15:25 A+B disabled; original observer restoration unproven.
 
 ## Data And Research
 
@@ -167,43 +181,17 @@ Observer current enabled facts are not proof of original restoration/OS origin.
 
 ## Current Owners And Recovery
 
-- Epicurus: qualified b1a native entry/exit and helper4b26 are NOT deployed.
-  Audit known Windows embedded3P->exactnative4 descriptor sync against ACTUAL
-  effect-time owner Readback, not only installer. Integrate existing bounded
-  first_issuance helper after observer yield. Keep model/SDK/logical3ee2/ops/B10.
-  A/execution/current-net25-pythonw-native-pair-completion-20261105-v1.
-- Kierkegaard: INTC2dab/8fd686 cold native Metadata+adapter and SDK fixtures pass;
-  reproduced import ordering is fixed, not inferred historical cause. Public
-  early-fault sink exactsource/PIDbirth/stage only. EXIT-only helper89b6 still
-  needs executable typed fresh-owner producer. No Apply-ready claim or entry replay.
-  A/execution/current-intc-fixed-runtime-order-native-repair-20261105-v1.
-- Carson: source audit confirms BOTH actual Paper clients60s, RAM reuse; not
-  Data300 failure. HALF readiness helper omitted; INTC may require earlier quiet
-  interval to meet original15:10..<15:11 financial window. Source-only exact
-  design continues; no automatic window extension/token reset/API call.
-  A/execution/current-paper-token-window-readiness-audit-20261105-v1/RESULT.json.
-- Confucius: readerfc4e actual CIM/Docker path reached classifier, then withheld
-  unknown_custody_capability for two exact Docker CLI actors and audit denial.
-  All five metadata children closed,0private. Elapsed delivery overrun disclosed,
-  helper refused READY. No private command released. Diagnose exact hash/source
-  before another real probe, no broad Docker/source waiver:
-  A/execution/current-intc-native-worker-policy-completion-20261105-v1/CLOSURE.json.
-- Parent/Rawls: laterData recovery3996 actually complete; new intentional true
-  edition qualified from real disabled registration probe, both probe tasks
-  deleted/independently absent. Original838 failures/markers/style findings kept.
-  Source23pins independently verified. Claudecb15422f GO_WITH_LIMITS:
-  A/review/current-w25-explicit-true-recovery-adoption-20261105-v1/RESULT.json.
-- Parent: Korean8788 remains undeployed under actual coexistence incompatibility;
-  current8787 only, no public exposure. Optional Full17 migration deferred;
-  existing exit131e preserved. No optimizer/GPU training currently claimed.
-  Completed Patch/GRU/TCN/Chronos/gate fits are not rerun for occupancy.
-
-Prior readers10bd/bf701/c13e/aff2/58c are immutable, NOT commands to replay.
-bf/c13e actual attempts failed before Dockercreate/private read; subsequent
-metadata probes advanced source/stdio/worker-policy boundaries. Preserve actual
-failures/debits. Fresh relevant-custody-writer/source/lease/networknone/allRO/
-before-after stability/exact joins remain mandatory; public success is not a
-circular prerequisite. Missing journals/holdings remain UNKNOWN, not zero.
+Current24ab readera446 is complete; Carver fee bridge6tests/22subtests passed.
+Only current assignment: new isolated directutility1fit campaign under Carver,
+not a claim that a numerical worker has actually started.
+Parent owns Git/integration/current goal. Completed or failed earlier role
+deliveries are closed, not active GPU/LLM daemons. Current matrix is
+agents/orchestration.md; do not dispatch stale historical assignments.
+No private-ready command from233. Four blocker actors were observed at that
+specific probe, not asserted still running. New caller/actor proof must be fresh,
+source-qualified and stable; no consumed read replay or writer waiver.
+Korean8788 and optional Full17 migration remain deferred; current8787 only.
+No new training currently claimed. Preserve all old failed sources/caps/debits.
 
 ## Verification
 

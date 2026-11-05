@@ -2,6 +2,23 @@
 
 ## Current Handoff
 
+Updated Nov5UTC18:51 / Nov6KST03:51. New distinct mechanism:
+A/research/current-cost-aware-next-mechanism-offer-20261105-v1/OFFER.json.
+Direct729parameter allocation utility instead of MSE forecast; signedNet25
+already costs BOTH legs, so no double charge. New action DTO is not a forecast.
+Own capped sparsemax/mean-variance kernel +10pure/nativeCPU checks PASS.
+Official mechanism sources: https://arxiv.org/abs/2005.13665v3 and
+https://proceedings.mlr.press/v48/martins16.html . No public code/weights reused,
+not their benchmark or evidence of project profitability.
+Actual existing fee/book parity required before a NEW one-fit campaign;
+allocation entry-cost-inclusive f differs from native post-fee NAV weight u.
+Curie's Engine preparation elapsed cap expired WITHOUT implementation/fit;
+no artificial readiness, freeze, GPU or external-block claim. Separate Carver
+implements only the small native fee/DTO bridge and invented tests. Parent
+Claude2d533b61 GO_WITH_LIMITS/advisory, no market launch yet. No Paper swap.
+
+## Earlier Snapshot: Consumed Handoff
+
 Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
 Rawls' Chronos2 Open-path proposal c2674620 is CLOSED and consumed by a
 separately scoped Engine campaign, not a Strategy GPU worker:
