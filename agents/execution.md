@@ -2,7 +2,24 @@
 
 ## Current Runtime
 
-Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC15:31 / Nov6KST00:31. A=D:/thericher-v2/model-artifacts.
+INTC actual15:10 Taskexit20/public333 UNKNOWN_PUBLIC_CHAIN. Parent public-only
+diagnostic found0captured files/0terminals with native selectorUNKNOWN, not a
+parser failure: A/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
+No submit/fill/no-effect inference. Frozen10bd NOT invoked: positive-public
+closure missing. Confucius prepares independently admitted local-custody reader,
+no public-success prerequisite but all actual relevantwriter/lease/caller/source/
+private exactjoins/stability/networknone/allRO checks retained. Claude6b427c2d
+GO_WITH_LIMITS, no actualprivate read yet. Kierkegaard ownGUI-only diagnosis
+cannot invoke strategy/Context/Task. Original exitNov6UTC15:10 preserved.
+ACTUAL RAW14:31 closed stopped_for_adapter_recovery, attempt1f8779b3,
+terminal7a0b7d3b/closedb3eb2f00/PID42128 birth134383626605046894. Matching
+faultmanual_lineage_unbound/nativeNOT_ENTERED. Forensic458 independently joins
+four exact original rows: BOTH.py-only producers record PythonEXE forlauncher.pyw.
+Identity predicate correctly denied; historical observer restoration UNPROVEN.
+Epicurus now repairs bothproducers in separate pythonw-producer-integration-repair
+root; old67906 mockcounter failure/58purecases/0nativeprobes preserved.
+No consumed Task replay/substitute/reset/release; original RAW exitNov10 kept.
 INTC ACTUAL migration/recovery complete13:31:56: both original tasks a3fe/d68b,
 independent exact pair fullXML/nativeACL readbackc4a813d8, enabledReady/0instances.
 EXIT once, ENTRY-only recovery once after fresh ownerproof. Partial9b0816 kept;
@@ -11,9 +28,16 @@ A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.js
 No Task.Run/order/fill or financial admission proved by installation.
 RAW actual13:30 point3e781926/closurecef75fec is qualified by existing reader:
 A/execution/current-intc-parent-delivery-adoption-20261105-v1/RAW-POINT-READBACK.json.
-Epicurus now owns new a3fe current-custody readiness, no actualprivate read:
-A/execution/current-intc-a3fe-current-custody-reader-readiness-20261105-v1.
-Old15:25 A+B remains OLD sourcecontract, not automatically compatible.
+New a3fe current-custody10bd TECHNICAL READY: Parent cold namespace constructor
+and one networknone/allRO invented capsule/fivephases/15Jobsclosed/ownCIDabsent,
+22pure cases. No actualprivate read/financialadmission, old1a122 failure retained:
+A/execution/current-intc-a3fe-custody-bootstrap-repair-20261105-v1/READY-COMMANDS.json.
+Manual use after15:20/exact333 positiveclosure andfreshrelevantwriteradmission/
+stable exactjoins only; RAM categorical projection, no brokerholdings/PnL claim.
+Old15:25 A+B DISABLED13:57:58, sourcecontract obsolete. FullXML/nativeACL
+rollback retained; Enabledfalse only, independent read-only closure after
+postwrite omitted-default XML failure, no setter replay/no financialTaskchange:
+A/execution/current-intc-parent-delivery-adoption-20261105-v1/OLD-READOUT-DISABLED.json.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new actual acceptance/fill/current-owned/PnL proven. Preserve ONE original
 initialB/10/F9 UNKNOWN-HELD/all pending/costs/losses/reservations/old exits.
@@ -21,7 +45,7 @@ No new bank/refill/foreign adoption/substitute unknown request/live.
 
 | Installed definition | Entry / owned exit UTC | Evidence |
 | --- | --- | --- |
-| RAW ALL3 host8fd/plan38 | Nov5 14:31..<14:35 / Nov10 14:30..<14:35 | A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json; c48d adoption. PointNov5 13:30 remains UNKNOWN. QuarterONEB10 ceiling/NON_PARITY. |
+| RAW ALL3 host8fd/plan38 | Nov5 14:31 consumed / Nov10 14:30..<14:35 exit retained | Point3e781926 qualified; actualstopped_adapter_recovery/exactownerclosed14:31:16, financialUNKNOWN. Fourrows.pyw producerbug source-proven; no replay. QuarterONEB10 ceiling/NON_PARITY. |
 | INTC engineering1share a3fe/released68b | Nov5 15:10..<15:11/hard15:20 / Nov6 15:10 | A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json; exact same original pair, original B10/state/identities; migrated13:31:56, no actual fill. |
 | NET25 frozen fixedhalf3ee2/8ab5/777f | Nov6 14:31..<14:35 / Nov11 14:30..<14:35 | A/execution/current-net25-native-definition-recovery-20261105-v1/PARENT-ADOPTION.json; actual completeXML/nativeACL readback07:33:54. Model25c8 HGB+GRU only, no research-third swap. |
 
@@ -55,7 +79,7 @@ Never replay consumed installers/enable/readback receipt writers to inspect.
 
 ## Readers And Result Consumers
 
-- INTC A+B readout5c26/capturef8f4/readout8a149 ACTUALLY installed/fullreadback
+- HISTORICAL, now DISABLED: INTC A+B readout5c26/capturef8f4/readout8a149 installed/fullreadback
  06:01, Nov5UTC15:25..<15:26/PT5M(KSTNov6 00:25):
   A/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
   PublicA9006 publishes worker-ASOF before B; Bdenial never erases A.
@@ -139,8 +163,8 @@ closed. This is not financial admission/holdings or all-owner closure.
 Originalpair migration/recovery is complete as above; no replay or furtherwrite.
 Jason newa3fe purepublicreader333 READY14native/CLI/fullRuff/allchildrenclosed:
 A/execution/current-intc-a3fe-public-readout-compatibility-20261105-v1/READY-COMMANDS.json.
-Old15:25 A+B still oldsourcecontract, not automatically qualified for migrated
-source. Newcurrent-custody preparation is separate, no newschedule/actualread.
+Old15:25 A+B is disabled as obsolete; newcurrent-custody preparation is separate,
+no replacement schedule/actualread. Financial entry/exit remain unchanged.
 
 Parent captured exact original INTC2Task completeXML/nativeACL twice stable
 at11:48,473f/63c5 source matched, enabledReady/0instances:

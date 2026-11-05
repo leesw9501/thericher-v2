@@ -2,7 +2,19 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC13:36 / KST22:36. Company outcome UNFINISHED.
+Updated Nov5UTC15:31 / Nov6KST00:31. Company outcome UNFINISHED.
+
+INTC15:10 opportunity is CONSUMED, Taskexit20/public333 UNKNOWN. Do not replay
+host.py/Task/old readout to diagnose. Public-only diagnostic0files/0terminals:
+D:/thericher-v2/model-artifacts/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
+Frozen private reader10bd is TECHNICAL READY but its positive-public prerequisite
+is unmet; do not run its --execute as a workaround. Separately scoped independent
+readonly derivative is under preparation, preserving actual writer admission/
+exact joins/networknone/allRO/stability and all unknown reservations. Actual
+ready command is UNKNOWN until native qualification, not a planned placeholder.
+Original INTC exitNov6UTC15:10 unchanged. GUI ownidentity diagnostic cannot run
+the strategy/Context/broker/private path. RAW14:31 consumed adapterfailure,
+forensic458 confirms.pyw sourceproducer defect; no replay/reset/release.
 
 INTC ACTUAL existing-pair migration/recovery COMPLETE13:31:56, a3fe/d68b:
 D:/thericher-v2/model-artifacts/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json.
@@ -14,11 +26,12 @@ Future actual source/account/budget/pending/quote/orderability/emergency/owner
 checks still required. No financial admission, submit/fill/owned/PnL yet.
 New purepublic333 exact reader ready,14native/CLI/fullRuff:
 D:/thericher-v2/model-artifacts/execution/current-intc-a3fe-public-readout-compatibility-20261105-v1/READY-COMMANDS.json.
-OLD15:25 A+B remains b63/c5c contract, not automatically compatible. New private
-reader PREPARATION separately owned, no actualprivate read or new schedule:
-D:/thericher-v2/model-artifacts/execution/current-intc-a3fe-current-custody-reader-readiness-20261105-v1.
+OLD15:25 A+B DISABLED13:57:58 as obsolete b63/c5c; full original XML/ACL saved,
+oneEnabledfalse then independent read-only closure, no setter replay. New private
+reader10bd TECHNICAL READY, no actualprivate read or new schedule:
+D:/thericher-v2/model-artifacts/execution/current-intc-a3fe-custody-bootstrap-repair-20261105-v1/READY-COMMANDS.json.
 RAW actual13:30 source3e781926/ownerclosurecef75fec/weights2b10653c qualified by
-existing reader (not Task exit), for unchanged RAW14:31 future native input:
+existing reader (not Task exit); actual RAW14:31 then stopped for adapter recovery:
 D:/thericher-v2/model-artifacts/execution/current-intc-parent-delivery-adoption-20261105-v1/RAW-POINT-READBACK.json.
 A=D:/thericher-v2/model-artifacts. Full current reality is HANDOFF.md.
 No actual acceptance/fill/current-owned/PnL inferred from installation.
@@ -82,9 +95,13 @@ FAIL; old index/import/calendar-format failures preserved. Patch2abffa completed
 17CUDAepochs/1989updates/fullFIT/best5/18.34s/490MiB, allresourcesclosed,
 Net25+2.1575%/DD1.8922%,development-pass not independent alpha/risk dominance:
 D:/thericher-v2/model-artifacts/research/current-net25-patch-transformer-development-20261105-v1/API.json.
-Harvey now frozen-consumer parity only (0fits), Rawls two fixed patch+third blends
-(0fits), no weightsweep/automatic installed model swap. Exact active roots in
-Engine/Steward stateboards. Parent137refs/130unique on patch/r3/publicreader PASS.
+Frozenconsumer8a1 READY_CUDA_ONLY/799archivebatchbitwise/CPUoutofold tolerance;
+fixedblendsfedd COMPLETE2evaluations/12books36views/0fits. W25PRIMARY
+Net25+3.6012%/DD0.6505% PASSED vs third1.8178%/.6433%; W50diagnosticnotpromoted.
+Allworkersclosed, adaptive DEV only, no installed model swap. Current work is
+W25 frozencomposition and predeclared forward contract,0fits/economicreadouts;
+exact roots in Engine/Steward boards. Parent137refs/130unique on patch/r3/
+publicreader and92refs/85unique on frozenconsumer/blends PASS, no reruns.
 No completed fit/forecast rerun or actual running state inferred from MD.
 ffEA Data closed172GET/22213added; NEWf13a remaining22 closed79GET/
 7677newrows/189376known/26all17complete. No additionalwirequeued.

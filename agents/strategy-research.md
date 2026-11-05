@@ -40,8 +40,13 @@ by Harvey's bounded Engine campaign, not a new permanent Strategy worker:
 A/research/current-net25-patch-transformer-development-20261105-v1.
 Patch2abffa now completed17actualCUDAepochs/1989updates/best5/fullFITcoverage,
 Net25+2.1575%/DD1.8922%,vs third+1.8178%/.6433%; development-pass but higher
-exposure/turnover/risk. Native frozen consumer and two fixed blends are delegated
-to Engine separately; no automatic live/Paper winner or independent claim.
+exposure/turnover/risk. Frozenconsumer8a1 now CUDA-only qualified; fixed W25
+primary blend fedd achieved Net25+3.6012%/.6505%DD under predeclared .8042%DD
+limit, versus third+1.8178%/.6433%. W50diagnosticnotpromoted. Actual2evaluations/
+12books36views,0fits; no automatic live/Paper winner or independent claim.
+Mechanism is complementarity of compatible signed cost-aware experts, not a
+claim that individually good experts are required or that complex gates help.
+W25composition and source-only futureevaluation contract now owned by Engine.
 Parent checked official paper https://arxiv.org/abs/2211.14730 and official
 Apache2 repo https://github.com/yuqinie98/PatchTST . Temporal patches/shared
 channel weights are a mechanism hypothesis, not proof of trading returns or

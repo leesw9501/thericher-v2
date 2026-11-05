@@ -2,7 +2,16 @@
 
 ## Current Work
 
-Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC15:31 / Nov6KST00:31. A=D:/thericher-v2/model-artifacts.
+Rawls later-cohort source0b33 CLOSED1140actualBar/typedfeatures/23negatives,
+0actualacquisition; forward6ce3 contract fixes Nov6/11/16 cohort entries.
+Native runtimebindingd6ff UNQUALIFIED: capturelauncherValueError beforePID/birth,
+quietowner/provider/Bar/features/token/Scheduler proof not reached,0definitions
+qualified/0Task/KIS/private effects/allactualJobsclosed15:04:48/89.001SUM.
+New practical bounded source/invented repair assigned under
+A/data/current-net25-w25-later-cohort-integration-repair-20261105-v1.
+No actual future data or collector installation inferred. Original firstData83963
+Nov5UTC21:30 opportunity unchanged. Later definitions remain preparation only.
 Archimedes CLOSED remaining22 f13a056e revision-v2:
 A/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
 79acceptedGET/0failed/oneinitialPOST/0retry/0recovery,7677newrows;

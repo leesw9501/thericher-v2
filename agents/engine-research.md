@@ -2,7 +2,17 @@
 
 ## Current Work
 
-Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC15:31 / Nov6KST00:31. A=D:/thericher-v2/model-artifacts.
+Current consumer work is Carson's future-intake-integration-repair,0newfits/
+marketreadouts. Old4f8a NULaudit failure happened before child/nativeattempt,
+two-fix cap consumed; preserved, not an experiment result. New practical bounded
+source/invented smoke scope repairs plumbing without reopening old clocks.
+W25 saved-composition parity94a0 is READY_FROZEN_DEV_PARITY_ONLY, original
+modelcbd unchanged: one799sweep/bitwise originalbatch/maxmixederror1.6696e-9,
+0fits/updates/newdata/readouts,51.305SUM/allJobsCIDsleaseclosed14:21:47.
+Forward6ce3 predeclares Nov6/11/16 OPEN entries to Nov11/16/19 OPEN exits,
+51future rows/smallmeasurement only. Later actual hashes remain UNKNOWN;
+future83963 role must be truthfully qualified, never oldDEV wrapper impersonation.
 OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
 A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
 Source24bb232f:3folds xHGB/GRU/TCN plus1gate,10completed/11attempted.
@@ -36,13 +46,25 @@ A/research/current-net25-patch-transformer-development-20261105-v1/API.json.
 Higher growth is not risk dominance, convergence or independent alpha. All
 CIDs/Jobs/GPUlease closed,211.919SUM/1386.615elapsed. Parent137refs/130unique
 across patch/r3/publicreader stable,0numericalreruns/private reads.
-Harvey now owns frozen patch native consumer/CPU-CUDA sign parity,0fits/readouts:
-A/research/current-net25-patch-frozen-native-consumer-20261105-v1.
-Rawls owns W25=.25patch+.75third PRIMARY/W50halfblend DIAGNOSTIC, exactly
-two fixed candidates/0fits/two common-book evaluations, no weightsweep. Primary
-growth>half/third/cash and DD<=1.25thirdDD; same25funded taperecost10/25/30:
-A/research/current-net25-patch-third-fixed-blends-development-20261105-v1.
-No automatic seen-winner/installed model swap. Native/source qualification first.
+Frozen patch consumer8a1eff47/package7683c5 READY_CUDA_ONLY,0fits/readouts.
+CUDA archivebatch799bitwise; otherbatches maxerror6.678329e-9/sign799same.
+CPU signssame but maxerror5.066626e-6 exceeds predeclared1e-6: UNQUALIFIED,
+no old-contract tolerance relaxation/clamp. Ten negatives/nativeCSVDTOCLI/fullRuff,
+bothCIDs/Jobs/lease closed,34.022SUM/906.697elapsed:
+A/research/current-net25-patch-frozen-native-consumer-20261105-v1/API.json.
+Fixedblend fedd3db1 COMPLETE:W25PRIMARY Net25+3.6012%/DD0.6505%/70effects,
+turnover2.1286/meanGross2.2096%, matchedEW+0.6972%. DDlimit0.8042% PASSED.
+W50diagnostic+4.0135%/DD0.6505% NOT promoted. Exactly2evaluations/12books/
+36views/0fits/forecasts; original half/third controls byteequal, all8Jobs closed:
+A/research/current-net25-patch-third-fixed-blends-development-20261105-v1/API.json.
+Adaptive DEV only, not independent alpha/Paper permission. Parent92refs/85unique
+across frozenconsumer/blends stable, no numerical reruns/private reads.
+Harvey CLOSED frozen W25 producer; immutable source and qualified parity above:
+A/research/current-net25-w25-frozen-composition-readiness-20261105-v1.
+Rawls completed source-only forward contract and now repairs later-cohort native binding,
+calendar-bound nonoverlapping cohorts/missing masks/small-sample limitations:
+A/research/current-net25-w25-forward-evaluation-contract-20261105-v1.
+No actual new point/evaluation/Task or automatic installed model swap.
 Mechanism adapted from official PatchTST, not its published benchmark replication:
 https://arxiv.org/abs/2211.14730 ; https://github.com/yuqinie98/PatchTST (Apache2).
 General forecasting evidence is not an equity-profit claim. No runtime replacement.
