@@ -2,7 +2,55 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC06:22 / KST15:22. Company objective remains UNFINISHED.
+Updated Nov5UTC08:22 / KST17:22. Company outcome UNFINISHED.
+A=D:/thericher-v2/model-artifacts. Full current reality is HANDOFF.md.
+No actual acceptance/fill/current-owned/PnL inferred from installation.
+
+NET25 fixedhalf definitions ACTUALLY enabled/fullXML+nativeACL separate readback
+07:33:54: entryNov6UTC14:31..<14:35(KSTNov6 23:31), ownedexitNov11UTC14:30
+(KST23:30),PT7M/hiddenpythonw/noDemand/catchup/repeat.
+D:/thericher-v2/model-artifacts/execution/current-net25-native-definition-recovery-20261105-v1/PARENT-ADOPTION.json.
+Host3ee2e88b/installer8ab5c6a1/plan777f1a29. ONEoriginalglobalB10/allF9pending/
+reservations/costs/losses/oldexits unchanged, not newmodelbank. Exact effect-time
+owner/source/input/clock/quote/orderability/native risk checks remain.
+Original partial create/enable markers consumed; do NOT replay. Parent measured
+Windows-default normalization did not drop security/unknownfields or fabricate
+oldsuccess. Recoveryfeadbdb3,9syntheticcases/actualfullreadbacks.
+Do not run recover.ps1/installer merely to inspect; use immutable readbackproofs.
+
+Savedweight publisher5bf ACTUALLY enabled/readback07:09:56,Nov6UTC13:30/hard14:10:
+D:/thericher-v2/model-artifacts/research/current-net25-publisher-parent-readiness-20261105-v1/PARENT-ADOPTION.json.
+RootREADY literal QUALIFIED_NOT_INSTALLED is frozenworkerABI readiness token,
+not actualTaskstate; never retag it. Exact frozenHGB+GRU25c8,CPUinferenceonly.
+FreshOHLC19 Data83963 actualenabled/readback7c7a88 Nov5UTC21:30/hard21:45.
+Actual futureDATAREADY/POINT unknown. Never placeholder/oldasof/modelthirdswap.
+
+TCN3c24 now CLOSED32CPUepochs/28.065s/best8,207checks/allactorsclosed,
+thirdNet25growth1.8178%/DD.6433%; reuseddevelopment, not PaperPnL:
+D:/thericher-v2/model-artifacts/research/current-net25-tcn-first-market-run-20261105-v1/API.json.
+Old37bc/6d48/alignmentfailure clocks/debits preserved, no rerun.
+First OOFf3e1 CLOSEDinputunavailable0marketfits; masked scope thenCLOSED
+technicalcheckpointpathfailure0fits/1183.92carry. NEWcontinuation-r1 owned by
+McClintock relocates verifiedcheckpoint to /out without guardweakening;
+same10unusedfits/cumulative14400cap/hardyield13:15UTC. ActualGPUstart not inferred.
+D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r1.
+ffEA Data closed172GET/22213added; NEWf13a remaining22 closed79GET/
+7677newrows/189376known/26all17complete. No additionalwirequeued.
+D:/thericher-v2/model-artifacts/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
+
+NEW NET25 purepublicreader8f5f6f56 source-ready,8groups/isolated inventedCLI/
+Ruff; Parent20refs/reran8invented tests PASS, no actualoutcomeread:
+D:/thericher-v2/model-artifacts/execution/current-net25-installed-public-outcome-reader-20261105-v1/READY-COMMANDS.json.
+After actualopportunity only, use exactsource-qualifiedcommand; never manual
+Task.Run/strategy/KIS/Docker merely as reader. Financialcurrentstate remains
+unknown without separate actualwriter admission/privateexactjoins/stability.
+
+INTC15:25UTC A+B readout5c26 actuallyinstalled, AASOF independent of Bdenial;
+RAW13:30point/14:31entry,INTC15:10entry and allolderexits unchanged. Details and
+exactcommands below are frozen/datestamped references, not currentpermission/
+deploymentfacts. New actual records above supersede stale pendingprojections.
+
+## Nov5 06:22 Dated Reference
 
 New finite after-entry readout ACTUALLY installed/fullXMLACL readback06:01:
 D:/thericher-v2/model-artifacts/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.

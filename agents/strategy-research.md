@@ -1,100 +1,39 @@
 # Strategy Research Stateboard (전략 탐색)
 
-## Current Source Handoff
+## Current Handoff
 
-Updated Nov5UTC06:22 / KST15:22. Kant is invoked for one chronologicalOOF
-convex-gate source proposal, not a new durable team/platform:
+Updated Nov5UTC08:22 / KST17:22. A=D:/thericher-v2/model-artifacts.
+No currently running Strategy LLM is implied. Kant's source offer is CLOSED:
 A/research/current-net25-chronological-gate-candidate-20261105-v1.
-At most3historicalOOFblocks/9proposedfold-expert fits and1gate; fold-specific
-FIT/INNER/normalization/purge precede each target, never final-fit in-sample
-predictions. Current package is pure/synthetic, no marketfit/forecast/eval/
-registry/GPU. Engine owns any later finite numerical decision.
+Sourcee3bb0338/OFFERbf6db24a,30native+9readback checks/Ruff/four synthetic gate
+updates, allactorsclosed.3OOFfolds/9historicalexpertfits+1convexgate proposed;
+fold-local FITstats/maturity+20purges, never fullFIT in-sample forecasts as OOF.
+Engine consumed it in f3e1 attempt; input masks withheld full-cohort admission,
+0marketfits. Parent assigned NEW explicitly masked Engine contract, same
+hypothesis and no old regrade. Strategy does not own fitting/custody/Paper risk.
 
-Bacon's selective-entry source21d7b907 is
-CLOSED/native-ready41tests/Ruff/Parent22refs stable:
-A/research/current-cost-aware-selective-entry-candidate-20261105-v1.
-Absolute Net25 target and causal entry features consumed by actual Engine
-campaign7eaa/ec9f, now COMPLETE development-pass; not a fit/claim by Strategy.
-Engine328closeout checks/all actorsclosed; lowgross/reusedDEV/fee limitations
-remain. No old relative-score reinterpretation or current Paper hot-swap.
+## Consumed Mechanisms
 
-Bacon CLOSED pure TCN expert/synthetic readiness proposal:
-A/research/current-net25-temporal-convolution-candidate-20261105-v1.
-Same absolute target/split/purge/cost-aware book, finite explicit window and
-trial/compute/earlystop contract. Source d8bb/48de,25native+12focused/44pins,
-one seed/fit offered. Parent then reassigned Bacon as temporary Engine
-executor: numerical37bc failed synthetic calendar before updates/fit.
-Boundary-only Source continuation is Engine-owned, not an unapproved
-Strategy fit or completed-model repeat.
-Consumer is Engine's next informed campaign, not an indicator team or platform.
+- Selective absolute Net25 entry21d7,41native tests, consumed by Engine7eaa
+  HGB+CUDA GRU fixedhalf development-pass. Data60completedD1 own/SPY/QQQOHLC
+  plus8indicators, nextOPEN->e+3OPEN, no relative-score unit reinterpretation.
+- TCN d8bb/48de,25native+12focused/44pins, consumed by actual3c24:
+  32CPUepochs/best8/28.065s, fixedthird growth1.8178%/DD.6433% at25bps eachleg.
+  Reused DEV, low exposure, no independent alpha/Paper claim/hot-swap.
+- D1barrier20fe/be2fc,37tests: observe completedbar TP2/SL1, exit nextofficial
+  OPEN, e+3vertical; ambiguousSTOP not worst guaranteed delayedfill. Rule8870
+  failed incremental growth; learnedexit20a8 failed too. Do not repeat/rescue.
+- M1ea286/54tests remains pure source/daily-input mismatch, not actual M1 study.
+  New minute coverage can support a future separately scoped consumer after
+  exact availability/label/data contract, not old reserved-target release.
 
-Bacon CLOSED two preceding distinct source proposals:
-- M1ea286/54tests: strict completed-minute/delayed-exit mechanism, daily-only
-  input mismatch retained.180charged/1179.53elapsed, no market arrays/fits.
-  A/research/current-short-swing-first-passage-candidate-preparation-20261105-v1/final/CALLBACK.json.
-- D1be2fc846/kernel20fe4988/37tests+Ruff/Parent21pins stable:
-  A/research/current-d1-observed-barrier-next-open-candidate-20261105-v1/final-r2/CALLBACK.json.
-  Observe completedD1 TP2%/SL1%, exit next official OPEN, e+3OPEN vertical;
-  double-hit ambiguousSTOP not guaranteed worst delayedfill. Explicit calendar/
-  availability/gap/overnight/cost/purge/missingness; never intrabar/barrierfill.
-  180charged/727.72elapsed,allworkersreturned,0market/fits/forecast/registry.
-  ConsumerKant actual same-book replay and Nietzsche learned-exit PREP;
-  direct per-asset ABI delivered, not a new broker writer/multimodel platform.
-  Old30732 snapshot preserved; final calendar validation changed source, so
-  old Engine0918/35checks NOT reassigned. Fresh finalhandoff smoke precedes
-  market under later frozen contract, no human approval/extra ACK.
-No permanent active LLM is implied; resume this capability only for a distinct
-useful mechanism or concrete consumer discrepancy. Old policy/Paper unchanged.
+## Next Useful Invocation
 
-## Previous Handoff
-
-Updated Nov4UTC22:47 / Nov5KST07:47. Beauvoir CLOSED D-only source preparation:
-A/research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1.
-
-Consumer is Engine/Nietzsche, not a new broker writer or indicator team.
-ONE price-only RSI/Bollinger/ATR/trend feature/proposal kernel; no volume/VWAP.
-Explicit RTH30-minute events,5-minute feature-to-entry lag,25-minute hold,
-same row masks/complete intervals/no cross-session or lookahead.
-Proposed finite raw120TCN/raw+indicator120TCN/raw+indicator60TCN/indicatorRidge
-offer <=4fits/4forecasts; fixed50/50 blend, no learned gate/search. This is an
-OFFER, not actual numerical authority/readout. Engine owns final contract,
-costs0/14/29bps each leg, split/purge/support/custody and dispatch choice.
-No market arrays/models/heldout reads, credentials/API/Task/Docker or C/Git writes.
-
-Before handoff exercise actual invented Bar/resampler -> features -> typed
-forecast/decision parser, focused tests/emitted F821/E9. Prefer existing native
-kernels/libraries;2-3official sources/version/license/limitations, not a reading
-list/framework. Source claims are not checked stock-profit evidence.
-Source07dabccd/kernel fe6dcac1/API delivered directly to Engine.45invented tests
-PASS; Parent independently repeated45PASS22:47,36source refs/0mismatch, full
-Ruff/emittedF-E9 PASS. All verification actors closed;143/600s activeupper,
-944/1800s sealed elapsed.0market arrays/fits/forecasts/financial effects.
-Original9-clock card is REJECTED: one feature-eligible held path is unknown.
-Distinct6-clock k42..72 offer has146metadata-supported events,134used with
-two session embargoes. Coverage-informed adaptive hypothesis, not missing-row
-deletion/9-clock regrade or independent replication. Engine must verify actual
-support/freeze BEFORE payloads; no numerical permission inferred from this offer.
-
-## Closed Executable Work
-
-- current-intraday-signal-candidate-preparation-20261105-v1:
-  delayed opening-range breakout and EOD loser reversal,27invented tests/Ruff.
-  consumer-readiness-v1 adds26real Bar/resampler/replay/OrderIntent tests.
-  ORB35-minute prefix cannot feed old36x5m model; EOD delayed25-minute target
-  is not oldH30. Later2a362c08 GRU/Ridge study is completed, not a pending fit.
-- current-return-tcn-stateful-paper-policy-readiness-20261104-v1:
-  ee1e4be7/kernel6a22d79e,20native tests/33pins,0market reads/fits.
-  17NAS+NYS+CASH/e+3 fourth-session OPEN5/NON_PARITY/RELATIVE_SIGN_ONLY.
-  Native C profile subsequently integrated; actual RAW8fd pair now enabled
-  Nov5UTC14:31/Nov10UTC14:30, not evidence of submit/fill/PnL.
-- current-cross-asset-patch-attention-candidate-preparation-20261104-v1:
-  bacd8aaa/kernel12495619;actual21f2e6f2 CUDA study completed primaryFAIL.
-  Crossformer/iTransformer concepts, not paper reproduction or bulk import.
-- Prior full18 adapterbd6f1fa8 and full17 named-account worker2d9c55fd native
-  invented flows are closed; source-only tests never prove financial deployment.
-
-Exact APIs/callbacks and historical studies remain in RUNBOOK/Engine artifacts
-and Git through b492b639. Completed kernels/campaigns are not reimplemented
-merely to keep this role active. No permanent MD per indicator or broker/
-execution-risk authority. Individual profitability is not required for new
-exploratory fusion, learned fusion needs chronological OOF predictions.
+Only propose a distinct executable mechanism for a named Engine consumer,
+not another reading list/indicator agent. Prefer common costs/book, causal
+feature/label availability and finite time/window/seed caps. Pure kernels may
+be implemented in assigned D: scope. Parent chooses useful next campaign using
+actual results, not GPUoccupancy. Record official source/version/license or
+not_disclosed; public model pretraining overlap limits performance claims.
+No broker/credentials/Task/privatebank/GPU/holdout-release authority in Strategy.
+Prior proposals/results remain Git/RUNBOOK/immutable sources, not duplicated diary.

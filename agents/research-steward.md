@@ -2,105 +2,56 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC06:22 / KST15:22. Bacon is sole temporary GPU coordinator for
-the selected absolute-Net25 TCN continuation; Nietzsche publisher is CPU-only.
-Sourceoffer d8bb/48de passed25native+12focused/44pins. Numerical37bc failed
-130session invented-calendar index130 BEFORE any optimizer/marketfit:
-A/research/current-net25-temporal-convolution-development-20261105-v1/RESULT.json.
-0fit/0updates/0archives,allJobs/CID/lease closed.554.34activeincl180prep kept.
-Parent delegated one boundary-only versioned repair using the SAME unusedfit,
-TOTAL1800active/original06:44UTCdeadline, no marketretry or refunded time.
-No actual GPU training/start is claimed from a source or assignment.
-Kant prepares a longer chronologicalOOFgate offer, no market/GPU dispatch yet.
+Updated Nov5UTC08:22 / KST17:22.
+McClintock is ONE coordinator for NEW masked-gate continuation-r1:
+D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r1.
+Original masked scope CLOSED0marketfits/1183.92cumulativeactive/allJobsclosed;
+safe artifact-path guard rejected checkpoint beneath /src. New declared scope
+byte-verifies/copies to /out without weakening guard,<=4preflighttechnicalfixes,
+same10unusedfits/0marketretry. Prior2/2cap and failures unchanged, no refund.
+<=9foldexpertfits+1gate, cumulative14400active includes old1183.92,21600elapsed
+from07:41:36. Hard checkpoint/yield/positive closure by Nov5UTC13:15 ahead of
+RAWpoint13:30/entry14:31. Actual optimizer/GPU use UNKNOWN until start callback.
+One coordinator may run distinct ready CPU/GPU workers with measured useful
+headroom/disjoint paths; no duplicate completed finalfits or extra trials.
+Track actual PID/birth/CID, co-tenancy, active_SUM including source/launcher/
+synthetic/failure/IO/cleanup, elapsed and peakVRAM separately.
 
-NET25 campaign7eaa/ec9f is CLOSED:
-CPU84trees/best64/0.159s; CUDA GRU42epochs/best18/4914updates/21.897s,
-peakallocated326269952B/reserved411041792B.328closeout checks/all workers/
-Jobs/CIDs closed/GPUlease released,168.07activeupper/263.83elapsed.
-A/research/current-cost-aware-selective-entry-development-20261105-v1/CALLBACK.json.
-Development-pass is lowexposure/reused-data only, not Paper PnL. No duplicate
-fit or utilization-only job. Frozen-forward7a8 closed with799bitwise parity,
-17native/149closeout checks and no fit. Nietzsche now owns Nov6preopen
-publisher preparation, not numerical resource ownership. Original model
-weights remain fixed while actual TCN state is recorded above.
+Prior unmasked OOFf3e1 CLOSED INPUT_UNAVAILABLE/0marketfits/758.76active,
+allJobs/CIDsclosed/noGPUlease. Old contracts/results/debits preserved, new
+conditional input admission is a separate declared scope, not oldpass/retry.
+Source masks support482/336/83cohorts; old full-cohort requirement not companyhold.
+Claude falsification/leakage challenge belongs to new interpretation.
 
-Kant CLOSED D1rule common-book replay,
-0fits/4books12views/420active1800elapsed, strict exact-source/basis/full-row
-admission; fresh finalBacon20fe producer smoke, no cached RAWscalarcomparison.
-Kant rule8870/e402 CLOSED DEVELOPMENT_FAIL,0fits/4books12views/6Jobsclosed.
-Nietzsche old35bd native checkpoint0 failure closed1context/0updates/0market,
-Job/CID/exactGPUleaseclosed,67.52active/1194.42elapsed; no refund.
-NEW current-d1-learned-next-open-exit-development-20261105-v1 Source20a8
-completed1CPUfit33epochs/best13/3828updates/11.502s, INNERearlystop20.
-Measured native CPU beat CUDA for this small shape; not a permission hold.
-Primary incremental growth FAIL; all Jobs/CIDs/GPUlease closed, no refit.
-One resource coordinator retains measured headroom, not personal-app approval.
-Kant CLOSED preceding indicator-boosting resources.
-Parent owns integration/Git. Agent assignment is not proof of an active fit.
-Package research/current-h3-indicator-boosting-development-20261105-v1:
-c31dd342/9eecee48,3CPUfits/168market+12synthetic boosting iterations/
-3forecasts+1blend/18views/0retry. Existing sklearn1.9 CPU2; no install or GPU
-worker. PeakRSS323MiB; actual marketworker2.656s, fullnumerical+verification
-upper34.08active/209.05elapsed. Prep49.08upper/807.71elapsed.41checks/Ruff PASS,
-6native Jobs closed; Parent68refs stable. Registrye8d0e3b3/outcome205143c1.
-Primary blendFAIL; no rerun/arm rescue/currentPaper swap/holdout release.
-No current numerical/GPU job claimed. Data history continuation is independent.
+## Completed Training / Do Not Repeat
 
-Current EOD Nov6 future worker is ACTUALLY SCHEDULED,0fits:
-A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
-Use saved825c9a4c GRU/6a0f711c normalizer and new Nov5/6 data24a39, not reserved
-Nov2..4. Existing registry/custody, finite restore/forecast/cost/time caps;
-Task095c/adoption78ecce0f enabled/readback23:02, dueNov6UTC21:35, no sleeping
-worker. Actual future data/results remain UNKNOWN. Old f1de metadata audit CLOSED
-with Nov4 scoped rejection before payload, not an automatic custody release.
+- TCN3c24 CLOSED32CPUepochs/3744updates/28.065s/best8 restored,
+  207checks/allJobs+2CIDsclosed/noGPUlease. Cumulative1059.27active incl798.10old.
+  Native same-shape CPU6.53ms vsCUDA219.6ms; CPUchosen for throughput, not a
+  permission/environment failure. Development-third pass is not PaperPnL.
+  A/research/current-net25-tcn-first-market-run-20261105-v1/API.json.
+- HGB+GRU7eaa CLOSED84trees/.159s plus actualCUDA42epochs/best18/4914updates/
+ 21.897s/311MiBallocated,328checks/allactorsclosed/lease released.
+  A/research/current-cost-aware-selective-entry-development-20261105-v1/API.json.
+- Inference7a8/799bitwise parity is0fits. Publisher5bf is scheduledCPUonly
+  Nov6UTC13:30; savedGRU/Ridge880d scheduledNov6UTC21:35 is0fits/2restores.
+- Earlier37bc/6d48/alignment preflight failures had0marketfits; immutable old
+  clocks/debits remain. Fresh3c24 succeeded without rerunning completedweights.
+- Prior20a8/43da/023e/2a36/1a03/92ac/0323/1fac completed; resource/economic
+  evidence remains Engine/RUNBOOK/Git/immutable callbacks, no occupancy reruns.
 
-Strategy07dab offer was consumed by Engine0323/58bf, now COMPLETE_VERIFIED:
-3TCN+1Ridge/244updates/4forecasts/36views/0retry,CPU23.527s,4CIDs/allJobs/actors
-closed. Native same-shape CPU3updates .031-.053s vsCUDA1.90-2.02s;24combined
-CPU/CUDA synthetic profile updates, CPU chosen before market. Known allcash, primaryFAIL;
-not a GPU environment/permission hold or reason for duplicate training.
-Registryed2076b0/d40bd9ae,188.81activeupper/304.09elapsed. New short-swing
-cost-edge1fac/04f5 is now CLOSED too:1CUDAfit47epochs/329updates/best15,
-15.436s/494MB allocated,1empirical FITbaseline/2forecasts/9views/0retry.
-Actual larger-shape native probe selected CUDA before market. PrimaryFAIL
-growth versus fixedRAW despite lowerDD/turnover. All4CIDs/PIDs/Jobs/leases
-closed;165.17activeupper/360.91elapsed,registry35d999ac/b7c2bdd3. No duplicate fit.
-Parent49exact research refs rehashed0mismatch. No current numerical/GPU worker
-claimed; Datae386 completed7800new Native17 M1 rows/20streams/all actors closed.
-Explicit Engine consumer/custody binding precedes a useful new campaign; this
-does not turn acquisition into automatic old holdout release or duplicate fit.
-Execution fixes production binding in parallel. GPU remains available.
+## Resource Rules And Recovery
 
-## Measured Resources
+Operator grants first GPUpriority including personal apps/concurrent useful
+training. Unknown desktop app is not approval hold. Measure actual free/projected
+peakVRAM and desktop/driver reserve; never kill user apps or change driver.
+Dated Nov4UTC22:39 snapshot:RTX4090/22404MiBfree/35C;D1244GiB33.4percentfree.
+Not current usage. Recheck at numerical launch. No all-GPU-idle requirement or
+age reclaim of live/unknown owned lease. ActualOOM/driver/emergencyExecution
+requires checkpoint/yield and preserved failure/debit, no silent retry.
 
-Nov4UTC22:39 diagnostic: RTX4090,2percent,1735/24564MiB used,22404MiB free,35C.
-D:1244.0GiB/33.4percent free; C:207.3GiB/22.3percent free.
-This is a dated snapshot, NOT current training or isolated speed evidence.
-No GPU permission/environment hold. Project has operator-approved first GPU
-priority including personal apps; no application-name allowlist/kill-user-apps.
-Recheck actual free/projected peak VRAM and desktop/driver headroom at launch.
-No all-GPU-idle rule or age reclaim of a live/unknown project lease.
-
-## Closed Work / Custody
-
-- 43da4041 rawTCN:3CPUfits/861updates,360.14s training, all7CIDs/controller/
-  finalizer closed; registry3e387589/6e7b3d7f. Same-shape CPU measured faster.
-- 023e10c3 ranking:1CUDAfit6.9736s/118MiB,primaryFAIL,closed.
-- 2a362c08 GRU/Ridge:1CUDAfit.44875s/77.49MB+1CPUfit,2forecasts15views;
-  all5CIDs/12actors/Jobs/leases closed;ac8eb6da/957ce78e.
-- 1a03e249 absolute:2CUDAfits511updates,peak496MB,both economic arms FAIL;
-  all8CIDs/18actors closed;1347f8e9/2888205b.
-- 92ac3b66 OOF:6CPUfits1102updates,gateFAIL;all10CIDs/22actors closed;
-  3c87c5fb/5e18f130. CPU chosen from measured small-shape throughput.
-- 6274/7cfb policy:9views/0fits/forwards/GPU;fa59b492/3381d7f4,allclosed.
-  Invented-basis lot inactivity does not justify another predictive fit.
-- 37add4d3 ensemble packaging:retained weights/native synthetic forward;
-  no duplicated market fit. Existing remaining results in Engine/RUNBOOK/Git.
-
-Historical boards remain in Git through b492b639 and immutable callbacks.
-Old closed caps/debits are never refunded/globalized. New campaigns freeze
-cumulative summed owned-worker active and end-to-end ceilings, trial/evaluation
-caps, curves/early-stop/checkpoint criteria BEFORE numerical dispatch.
-Technical retries only inside predeclared unchanged caps; no holdout reopening.
-Co-tenancy is recorded, not an isolated benchmark. Yield safely for actual OOM/
-driver instability/emergency Execution and preserve failures/debits.
+GPU utilization is not outcome. Current small models finish quickly; source/
+orchestration dominates. Prefer prepared proven native runner plus bounded
+executor, check real role support/ABI before market and launch without extra
+Parent poststartACK. No new resource/approval platform. No credential/broker/
+Task/privatecustody authority in research. ModelsA/dataM,15percentD reserve.

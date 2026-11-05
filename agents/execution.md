@@ -2,146 +2,102 @@
 
 ## Current Runtime
 
-Updated Nov5UTC06:22 / KST15:22. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC08:22 / KST17:22. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
-No new acceptance/fill/current owned-state/PnL is claimed. ONE initialB/10,
-F9 UNKNOWN-HELD, pending/costs/losses/reservations/ALL original exits persist.
-No new bank/refill/foreign adoption/substitute request/live behavior.
+No new actual acceptance/fill/current-owned/PnL proven. Preserve ONE original
+initialB/10/F9 UNKNOWN-HELD/all pending/costs/losses/reservations/old exits.
+No new bank/refill/foreign adoption/substitute unknown request/live.
 
-RAW ALL3 host8fd/plan38 ACTUALLY enabled/separately read backNov4UTC21:42:
-entryNov5UTC14:31..<14:35(KST23:31), exitNov10UTC14:30..<14:35(KST23:30).
-Hiddenpythonw/Ready3/0instances then. Adoptionc48dbe03/14refs stable:
-A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json.
-SDK304f/f6,17NAS+NYS+CASH,RELATIVE_SIGN_ONLY/NON_PARITY,.25ONEB10 ceiling.
-Point13:30UTC/KST22:30 remains future UNKNOWN. Coherent19c632/READY0c5b/
-closure5c058 typed/closed, not an actual point. Original input wins on recovery.
-Account/bank/budget/pending/quote/orderability/owner/observer/emergency at effects.
+| Installed definition | Entry / owned exit UTC | Evidence |
+| --- | --- | --- |
+| RAW ALL3 host8fd/plan38 | Nov5 14:31..<14:35 / Nov10 14:30..<14:35 | A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json; c48d adoption. PointNov5 13:30 remains UNKNOWN. QuarterONEB10 ceiling/NON_PARITY. |
+| INTC engineering1share b63/releasec5c/473f/63c5 | Nov5 15:10..<15:11/hard15:20 / Nov6 15:10 | A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PARENT-ADOPTION.json;80c4, actual completeXMLACL readback00:32. Samephysicalbank/native risk, not substitute. |
+| NET25 frozen fixedhalf3ee2/8ab5/777f | Nov6 14:31..<14:35 / Nov11 14:30..<14:35 | A/execution/current-net25-native-definition-recovery-20261105-v1/PARENT-ADOPTION.json; actual completeXML/nativeACL readback07:33:54. Model25c8 HGB+GRU only, no research-third swap. |
 
-INTC fixed1share hostb63/releasec5c, installer473f/plan63c5/binding349e is
-ACTUALLY installed/enabled/read back00:32: entryNov5UTC15:10..<15:11/hard15:20
-(KST Nov6 00:10), owned exitNov6UTC15:10(KST Nov7 00:10),PT10M/hiddenpythonw.
-SAME bank/ONEB10/F9/native risk, not a separate allowance/substitute intent:
-A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PARENT-ADOPTION.json.
-Adoption80c4ef92,5focused/806mocked checks,Parent16refs stable. Real Linux8c5e/
-48be fixture one network-none invented-bank capsule/43duplex/96Jobs/exactCID
-absent,79.64worker seconds. No actual private/credential/broker use in fixture.
-Windows native proofb63/edd alone was NOT Linux mount proof.
-Original readback CLI silently skipped from dot-source switch/pin clobber;
-fixed-name second receipt also failed. Retain failures. Actual independent
-existing install.ps1 -Mode Readback/fullXMLACL then exact status facts passed.
-Adapter5c083af5/6CLI tests/Ruff actual expectedEnabled readback PASS:
-readback-cli-repair-20261105-v1/receipts/583c54a735234758b38ce89c937c026f/Enabled-INDEPENDENT-READBACK.json.
-Receipt646d3218,true/Ready3/0instances. Original473/63 seals/ownership unchanged.
-Create/Enable consumed; NEVER replay. Financial admission/submit/fill/PnL UNKNOWN.
+New tasks hiddenpythonw/noDemand/catchup/repeat;NET25PT7M. Future definitions
+are NOT actual financial admission or fills. Every side effect still checks
+source/actual clock/exact request/account/budget/pending/quote/orderability/
+observer/emergency/reconciliation. Original pending recovery/exit retains input.
+NET25 global.10initialbasis is the existing ONEB10, not a second model allowance.
 
-## Readers And Observations
+## Installed NET25 Pipeline / Recovery
 
-- INTC public reader90062da8 is source-ready,11native filesystem tests/Ruff,
-  Parent13refs stable; exact commands READY-COMMANDS.json:
-  A/execution/current-intc-installed-public-outcome-reader-20261105-v1.
-  Actual ONE public smoke02:55:03 found stable absent outcome directory:
-  UNKNOWN/NO_EXACT_PHASE_TERMINAL_UNKNOWN_NOT_ZERO, not no-intent/zero fill.
-  PID24736 joined/exit0,allchildrenclosed,2.407active/507.803elapsed.
-  Source-scoped unique stable immutable chain can project worker-reported
-  acceptance/fill/owned categories AS-OF runtime, not independently current
-  custody or OS Scheduler origin. No new mandatory producer pointer; old1ba
-  pointer-gap interpretation superseded for public A only, old tests unchanged.
-  B current-custody kernel29328 passed15native tests; capturehost3058 passed
-  9native tests + real networknone/allRO INVENTED Linux fixture. No actual
-  private admission/read. Exactjoins/relevantfinancial-writers/five phases/
-  before-after stability remain at later effect-time read.
-  A/execution/current-intc-current-custody-capture-host-20261105-v1.
-  Future composite15:25readout preparation877c passed9native/14mocked
-  Scheduler/Ruff/real GUI+Job closure, not installed:
-  A/execution/current-intc-after-entry-readout-preparation-20261105-v1.
-  Its NEW compatibility successor5c26/capturef8f4/readout8a149 is ACTUALLY
-  installed/enabled/separatelyfullXMLACLreadback06:01, Parent adoption:
+Fresh full60D1OHLC19 Data83963 revision-v2 installedNov5UTC21:30/hard21:45,
+<=19GET/oneinitialPOST/0retry. Actual futureDATAREADY UNKNOWN:
+A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json.
+Savedweight point publisher5bf installedNov6UTC13:30/hard14:10:
+A/research/current-net25-publisher-parent-readiness-20261105-v1/PARENT-ADOPTION.json.
+Nativee1a008 leaf real inventedLinuxentry/exit/489SDKpins; source qualification
+not current financial-writer admission. Future point/model/source links required.
+
+Original native installer created only EXITdisabled, then rawXML/default
+comparison withheld; Parent recovered only original absent ENTRY. Original
+enable turned EXITon before another measured omission withheld ENTRY. Parent
+enabled only original ENTRY after exact exit proof. Old attempt markers and
+failures untouched. Recoveryfeadbdb3 uses native materialization plus exact
+measured omitted defaults, full expected XML/nativeACL/principal/source/plan/
+future/zero-instance/originalcreatedACL checks. Nine synthetic cases/native
+separate readbacks PASS; no Task.Run/broker/private/credential calls.
+Claude REPAIR_REQUIRED safeguards applied, not an authority grant:
+A/review/current-net25-taskxml-recovery-20261105-v1/verdict.json.
+Never replay consumed installers/enable/readback receipt writers to inspect.
+
+## Readers And Result Consumers
+
+- INTC A+B readout5c26/capturef8f4/readout8a149 ACTUALLY installed/fullreadback
+ 06:01, Nov5UTC15:25..<15:26/PT5M(KSTNov6 00:25):
   A/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
-  Nov5UTC15:25..<15:26(KSTNov6 00:25),PT5M/hiddenGUI/noDemand/catchup.
-  22native/8composite/14mockedScheduler checks, Windowsconstructor corrected;
-  original optionalprobe failedbeforegather/missingBINDING and NOT retried.
-  Linuxinventedfixture5phases/12Jobs/exactCIDabsent is NOT finalcurrentadmission.
-  A publishes before B and survives denial. ActualB relevantwriter/source/
-  mount/exactjoins/stability still atread, not claimed now.
-  Original-I builderimport failedbeforePlan/Task; Parent verified7modulepins
-  and used isolatedrunpy with exactfrozenroot, oldSource unchanged. Actual
-  5entrypoint isolatedhelp auditb560 passed, allJobsclosed. No private/Task.Run/
-  broker calls, reservationrelease/currentbrokerholdings/fees/PnL claim.
-- NET25 nativeleaf e1a008/aa6e is qualified47actualLinuxchecks/489SDKhashes/
-  6CIDsclosed, inventedentry/ownedexit with originalaccountsession/risk:
-  A/execution/current-net25-next-session-native-host-preparation-20261105-v1/API.json.
-  This is NOT actual financialadmission or deployment. Einstein owns NEW
-  fullhost/finiteinstaller finalization, Nov6entry14:31/Nov11exit14:30UTC;
-  source-qualified publisher remainsdependency. ONEglobalinitialB10, never
-  another10percent bank/permodel or an unknown-request substitute.
-- Public readercd6e/95cd validates exact attempt/launch/child/terminal/closure
-  source/hash/nativePID/birth/UTC/stability;Parent8invented cases PASS:
+  PublicA9006 publishes worker-ASOF before B; Bdenial never erases A.
+  CurrentB needs actual relevant-writer admission/fivephases/networknone/
+  private+sourceRO/exactjoins/before-after stability, not old invented fixture.
+ 22native+8composite+14mockedScheduler/finalWindowsconstructor PASS.
+  Parent isolated builderimport repair verified7frozenmodules withoutSource
+  change; b560 fiveactual isolatedhelps PASS/allJobsclosed.
+- INTC public90062da8 has11native filesystem tests/Ruff;02:55 actual single
+  public smoke found stableabsent->UNKNOWN, not nointent/zerofill:
+  A/execution/current-intc-installed-public-outcome-reader-20261105-v1/READY-COMMANDS.json.
+  Exact source-linked worker categories are ASOF, not independently current
+  custody/cryptographic OS Scheduler origin. Never recovery-capable observe().
+- RAW publiccd6e/95cd exact attempt/launch/child/terminal/closure source/hash/
+  nativePID/birth/UTC/stability reader,8invented cases/Parentchecks:
   A/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.
-  Missing/invalid chain UNKNOWN, no latest/Task-exit fallback. Always financial
-  UNKNOWN/reservation_releasefalse; operational closure is not fill/custody.
-- Financial facts need source-qualified actual relevant private-writer
-  admission, network-none/private+sourceRO/exact joins/before-after stability,
-  no recovery/locks. Never recovery-capable observe() merely as reader.
-- Account query6e6a/2a55 CONSUMED:3venues/4holdings/positive provisional funds,
-  1RAM-onlyPOST4GET/0retry10.928s,no orders/privatebook/custody mounts/tokenfile.
-  A/execution/current-bounded-engineering-paper-baseline-20261105-v1/account-readonly/CALLBACK.json.
-  Not owned attribution/full risk/settledcash/equity/PnL/F9 release.
-- Existing8787 health GET200/statusok01:39,broker_callsfalse,body not printed.
-  HEAD501 is unsupported method, not a healthy application check. This does not
-  prove current holdings/account refresh. Last image bindingbe48 remains dated.
+  Always financialUNKNOWN/reservationreleasefalse; missing chain never latest/
+  Task-exit fallback or zero. No broker/private access.
+- NEW NET25 public reader8f5f6f56 READY under Aquinas:
+  A/execution/current-net25-installed-public-outcome-reader-20261105-v1/CLOSURE.json.
+  Eight groups/isolated inventedCLI roundtrip/Ruff/positive processclosure.
+  Initial sourcepin fault preserved; actual outcomes NOT read. Parent still
+  rechecked20Source/dependency members and reran8invented parser tests PASS.
+  Commands READY-COMMANDS.json; no actual read. Aquinas now owns NEW exact
+  current-custody reader readiness (invented only):
+  A/execution/current-net25-current-custody-reader-readiness-20261105-v1.
+- Consumed accountreadonly6e6a/2a55:3venues/4holdings/positive provisionalfunds,
+  1RAM-onlyPOST4GET/0retry. Not owned attribution/fullrisk/settledcash/equity/
+  PnL/F9release. Do not repeat for reporting.
+- Existing http://127.0.0.1:8787 health GET200/statusok/brokerfalse01:39 only.
+  No claim current holdings. HEAD501 is unsupported method, not app health.
 
-## Scoped Blocks
+## Scoped Deferred Work
 
-Original Full17 exit131e/aa416 stays enabled Nov6UTC20:54..<21:00/hard21:07:
-A/execution/current-full17-nov6-exit-operational-migration-preparation-20261105-v1/PARENT-ADOPTION.json.
-Proposed7b0/51e0 stats overlay NOT adopted. Latest metadata-only b748/q5000
-passed32policy/42producer/12cold/20adapter groups/release parser/Ruff,
-Parent11pins stable; Claude unavailable NOT agreement. ONE actual Capture
-withheld before migration on nonzero PID2040/native ACCESS_DENIED/birth absent:
-A/execution/current-full17-original-interactive-session-scope-repair-20261105-v1/actual/OWNER-CHECK-76cde8e3c9d54e77a807fcdb0d77529e.json.
-RESULTbd67fe77/CLOSED68202de4,allnativeJobsclosed/noApply. Not actual birth
-change/private-writer evidence. Stop blind per-OS-row synthetic rewrites.
-Prior v3/8338/f710/ca011/e339 failures retained; adcf actual metadata-only
-recovery observed155null-principal rows, not original-owner absence.
-This optional migration block does not stop installed RAW/INTC or Data/Research.
+Original Full17 exit131e/aa416 remains enabledNov6UTC20:54/hard21:07.
+Optional7b0 stats-overlay migration DEFERRED after actual69aff metadataCapture
+PSUTIL_SOURCE_UNKNOWN beforeApply; old d658 precision proof withheld/Claude
+REPAIR_REQUIRED,5a195 measuredclockrepair not universal. No per-PID OSlist
+expansion/global qualification rule; not proven samefault in actualruntime.
+A/execution/current-full17-native-clock-conversion-repair-20261105-v1/API.json.
 
-Mendel CLOSED pinned psutil-native identity diagnosticd658/qualification7dfa:
-A/execution/current-full17-psutil-native-identity-fallback-20261105-v1.
-Parent's metadata-only retainedPID2040 probe found installed psutil7.2.2 image/
-birth stable, CSRSS source hash a958083f. Actual retained-target smoke passed;
-32/52/15/20groups+13provider cases/Ruff/18Jobsclosed,10source members stable.
-Qualification is explicitly INERT_ONLY_PRECISION_WITHHELD, NOT released:
-source-derived CIM/float acceptance bound unproved, ClaudeREPAIR_REQUIRED.
-No dependency install/Task/private/broker/census calls or currentownerabsence.
-Clock repair5a195d65/q9ecf374e passed695clock/13provider/32/52/15/20groups,
-three owned-worker deltas-2/-2/-5ticks explicitly measured,not universal;
-15Jobsclosed,Claudeunavailable NOTagreement,Parent18pins stable. ONEactual
-Capture69aff0e5 withheld beforeApply: PSUTIL_SOURCE_UNKNOWN lookup failed
-BEFORE positive image/hash proof. RESULT67d36e04/CLOSEDac13f297,2Jobsclosed:
-A/execution/current-full17-native-clock-conversion-repair-20261105-v1/actual/OWNER-CHECK-69aff0e51ed14aedb044134616649097.json.
-Optional migration DEFERRED; current131e retained, no per-PID list expansion.
-Frozen OS-image set is implementation-specific, not AGENTS requirement to
-qualify everyOSprocess.7b0 uses different runtime census; no evidence this
-fault blocks actual runtime, which remains unmeasured. No global hold.
-
-Korean readonly UI coexistence1b659ded/proof1ef9d171 passed6native groups/Ruff,
-but RAW8fd/INTCb63/Full17-131e classify proposed8788 unknown_custody_capability:
+Korean8788/e200 remains NOTDEPLOYED: RAW/INTC/Full17 classify it
+unknown_custody_capability despite physicalRO. Sixnativegroups/Ruff are not
+runtime recognition. No guardwaiver/private webmounts/broker/public authority:
 A/execution/current-korean-readonly-ui-coexistence-preparation-20261105-v1/check-20261105T011336285246Z/CALLBACK.json.
-PhysicalRO alone is not runtime recognition. No actual UI/guard/Task/private
-changes; e200/8788 stays undeployed. Static UNKNOWN preview only. A qualified
-runtime/profile version is separate work, not an OWNED bypass or Paper gate.
-Web gets no broker/private-custody/public-serving authority.
-
-Baselinev8 closed after onecapsuleCREATE beforeguest/client/token/privatebook/
-intent; only its broker effects excluded. Other Full17/Open45/F9 histories
-UNKNOWN; bounded zero-row query/expired window does not release reservation.
+Current8787 stays. These optional blocks do not hold Data/Research/Paper.
 
 ## Duties And Next Action
 
-MSE Nov5UTC20:40,H3 AMD Nov6UTC20:45,Full17 Nov6UTC20:54/hard21:07,
-GOOGL Nov9UTC20:55,memory-terminal Nov20,H20 Dec1UTC14:30,RAW/INTC exits above.
-All original identities/inputs/paths persist, no manual Run of consumed jobs.
-After actual opportunities use exact bound readers; distinguish no signal/
-technical failure/attempt/acceptance/exact fill/owned state/terminal closure/
-fees/settlement/netPnL unknown. Do not let unrelated Data/Research cooldowns
-block qualified read-only results. No app follow-up chain/foreground market wait.
+Preserve MSE Nov5UTC20:40,H3AMDNov6UTC20:45,Full17 above,GOOGLNov9UTC20:55,
+memoryNov20,H20Dec1UTC14:30 and every ownedRAW/INTC/NET25exit.
+Never manualRun consumed tasks/reset/release reservations from missing holdings.
+After actual opportunities classify nointent/technicalfailure/attempt/accepted/
+exactfill/currentowned/terminalclosure/fees-settlement-netPnL separately.
+Relevant activefinancialwriters/unstable files/unboundfills withhold private
+conclusions, not independently qualified public A. No foreground session wait.
