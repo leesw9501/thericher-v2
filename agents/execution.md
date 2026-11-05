@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Updated Nov5UTC05:27 / KST14:27. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC06:22 / KST15:22. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new acceptance/fill/current owned-state/PnL is claimed. ONE initialB/10,
 F9 UNKNOWN-HELD, pending/costs/losses/reservations/ALL original exits persist.
@@ -54,11 +54,26 @@ Create/Enable consumed; NEVER replay. Financial admission/submit/fill/PnL UNKNOW
   Future composite15:25readout preparation877c passed9native/14mocked
   Scheduler/Ruff/real GUI+Job closure, not installed:
   A/execution/current-intc-after-entry-readout-preparation-20261105-v1.
-  A publishes before B and survives B denial. Known old3058 ancestor binding
-  does not admit the new composite/GUI. James owns NEW exact source-qualified
-  caller compatibility package, not per-PID/globalOS exemption; no private
-  opens during metadata preflight. Parent final activation/installation only
-  after actual source/native qualification. No current custody/fee/PnL claim.
+  Its NEW compatibility successor5c26/capturef8f4/readout8a149 is ACTUALLY
+  installed/enabled/separatelyfullXMLACLreadback06:01, Parent adoption:
+  A/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
+  Nov5UTC15:25..<15:26(KSTNov6 00:25),PT5M/hiddenGUI/noDemand/catchup.
+  22native/8composite/14mockedScheduler checks, Windowsconstructor corrected;
+  original optionalprobe failedbeforegather/missingBINDING and NOT retried.
+  Linuxinventedfixture5phases/12Jobs/exactCIDabsent is NOT finalcurrentadmission.
+  A publishes before B and survives denial. ActualB relevantwriter/source/
+  mount/exactjoins/stability still atread, not claimed now.
+  Original-I builderimport failedbeforePlan/Task; Parent verified7modulepins
+  and used isolatedrunpy with exactfrozenroot, oldSource unchanged. Actual
+  5entrypoint isolatedhelp auditb560 passed, allJobsclosed. No private/Task.Run/
+  broker calls, reservationrelease/currentbrokerholdings/fees/PnL claim.
+- NET25 nativeleaf e1a008/aa6e is qualified47actualLinuxchecks/489SDKhashes/
+  6CIDsclosed, inventedentry/ownedexit with originalaccountsession/risk:
+  A/execution/current-net25-next-session-native-host-preparation-20261105-v1/API.json.
+  This is NOT actual financialadmission or deployment. Einstein owns NEW
+  fullhost/finiteinstaller finalization, Nov6entry14:31/Nov11exit14:30UTC;
+  source-qualified publisher remainsdependency. ONEglobalinitialB10, never
+  another10percent bank/permodel or an unknown-request substitute.
 - Public readercd6e/95cd validates exact attempt/launch/child/terminal/closure
   source/hash/nativePID/birth/UTC/stability;Parent8invented cases PASS:
   A/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.

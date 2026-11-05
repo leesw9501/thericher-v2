@@ -23,7 +23,7 @@ exits persist. No refill/new bank/foreign adoption/unknown-request substitute.
 
 ## Current Evidence And Next Actions
 
-Updated Nov5UTC05:27 / KST14:27. Current facts, not a diary; exact proof in HANDOFF.
+Updated Nov5UTC06:22 / KST15:22. Current facts, not a diary; exact proof in HANDOFF.
 
 1. RAW ALL3 host8fd/plan38 ACTUALLY enabled/read back: entryNov5UTC14:31..<14:35
    (KST23:31), owned exitNov10UTC14:30..<14:35. Quarter of ONEB10 ceiling,
@@ -45,6 +45,10 @@ Updated Nov5UTC05:27 / KST14:27. Current facts, not a diary; exact proof in HAND
    CLI5c083 actual enabled receipt646d,6CLI tests; original silent/parameter/
    fixed-receipt failures retained. Create/Enable consumed, NEVER replay.
    Actual admission/submit/fill/currentowned/PnL remain UNKNOWN.
+   New readout5c26/f8f4/8a149 ACTUALLY installed/fullreadback06:01, due15:25
+   (KSTNov6 00:25),PT5M/hiddenGUI/noDemand/catchup. A9006 event-ASOF separate
+   from actualB currentlocalcustody admission, still UNKNOWN:
+   A/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
 3. Data: sourcee386 completed7800new Nov3/4 minute rows/80GET1POST.
    Source9f714 completed3849Nov2rows/60GET(39accepted21rejected)/1POST0retry,
    five typed timeframes/allclosed/Parent34+39refs stable.17-axis is not17
@@ -75,10 +79,15 @@ Updated Nov5UTC05:27 / KST14:27. Current facts, not a diary; exact proof in HAND
    Parent250refs/247unique stable; independent29panels/145typedroles PASS:
    A/data/current-native17-retained45-recovery-20261105-v1/CALLBACK.json.
    Preserve header/capture/clock/basis masks and reservedOct30; Archimedes
-   next owns offline Nov2existing7 binding, not automatic target release.
+   Nov2existing7 offline72d20 remained scoped-unresolved/0admitted/0HTTP,
+   not proof globalabsence/targetrelease. New <=313GET earlier+gap loop is
+   assigned afterretainedreuse, onecollector/onePOST/no retry.
    Recentcontrols7ff4 CLOSED9GET1POST: Nov4AMD/SPY/QQQ positive120rows each,
    sixolderETFpagesempty. Exactrequests only, NOT global retention horizon.
-   Kant assigned8GET intermediateOctober probe; no future result inferred.
+   Later807053 actual8GET1POST allOct1/15/23/28 SPYQQQ matching120each.
+   Context21e96 reused38streams/14820minutes/0GET0POST and published separate
+   research19 panels140790known/19dates/627checks190roles/allJobsclosed:
+   A/data/current-native17-market-context-minute-acquisition-20261105-v1/API.json.
 4. Engine: c31dd342/9eecee48 HGB family is CLOSED, not active training:
    A/research/current-h3-indicator-boosting-development-20261105-v1/FINAL-CALLBACK.json.
    3CPUfits/168market+12synthetic iterations/3forecasts/1fixedblend/18views,
@@ -108,12 +117,24 @@ Updated Nov5UTC05:27 / KST14:27. Current facts, not a diary; exact proof in HAND
    reused adaptive DEV/actualfeeunknown, NOT independentalpha/PaperPnL.
    328checks/allactors+GPUleaseclosed/Parent56refs stable:
    A/research/current-cost-aware-selective-entry-development-20261105-v1/API.json.
-   Nietzsche next inference-only frozen-forward proposal; Bacon distinct
-   absolute-Net25 TCN synthetic offer. No old training duplicate/hot-swap.
+   Frozenforward7a8 is COMPLETE799bitwisekeys/17native149closeout/0fits;
+   model25c8. IndependentNet25nativeleaf e1a008/aa6e47Linuxchecks/489SDKpins/
+   6CIDsclosed, not financialadmission/deployment. Nietzsche nowNov6preopen
+   publisher, Einstein fullhost/finiteinstaller; entryNov6UTC14:31 and owned
+   exitNov11UTC14:30. No placeholder/currentRAW-INTC hot-swap or newbank.
+   Bacon TCN37bc preflightFAILED130fixtureindex130,0fit/updates/market;
+   boundary-only continuation carries554.34active in ORIGINAL1800total/
+   06:44UTCdeadline, sameunusedonefit/0marketretry. NoGPUtrainingclaim yet.
+   Kant prepares a chronologicalOOF learnedfusion offer, no marketfitting.
 5. Future Data24a39 Nov5/6UTC21:10 and saved GRU/Ridge observation880d
    Nov6UTC21:35 ACTUALLY enabled/read back (adoptionec75e582/78ecce0f).
    Future outcomes UNKNOWN; no fit duplication/foreground sleeping worker.
    Source880d retains full5policies/2restores/2forecasts/15views/0fits.
+   New full60D1OHLC19 Data83963revision-v2 ACTUALLY enabled and independently
+   fullXMLACL readback7c7a88, dueNov5UTC21:30(KSTNov6 06:30),19GETmax/onePOST:
+   A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json.
+   OriginalenableCLI failed aftereffect; readonlyParentrecovery verifiedexact
+   definition without re-enable or fakeoldreceipt. ActualREADY remainsUNKNOWN.
 6. Original Full17 exit131e/aa416 remains enabled Nov6UTC20:54/hard21:07.
    Proposed7b0 stats overlay NOT adopted. Latest b748/q5000 Capture76cde8e3
    withheld BEFORE mutation: PID2040 native ACCESS_DENIED/birth unavailable,

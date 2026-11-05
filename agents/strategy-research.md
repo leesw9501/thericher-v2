@@ -2,7 +2,15 @@
 
 ## Current Source Handoff
 
-Updated Nov5UTC05:27 / KST14:27. Bacon's selective-entry source21d7b907 is
+Updated Nov5UTC06:22 / KST15:22. Kant is invoked for one chronologicalOOF
+convex-gate source proposal, not a new durable team/platform:
+A/research/current-net25-chronological-gate-candidate-20261105-v1.
+At most3historicalOOFblocks/9proposedfold-expert fits and1gate; fold-specific
+FIT/INNER/normalization/purge precede each target, never final-fit in-sample
+predictions. Current package is pure/synthetic, no marketfit/forecast/eval/
+registry/GPU. Engine owns any later finite numerical decision.
+
+Bacon's selective-entry source21d7b907 is
 CLOSED/native-ready41tests/Ruff/Parent22refs stable:
 A/research/current-cost-aware-selective-entry-candidate-20261105-v1.
 Absolute Net25 target and causal entry features consumed by actual Engine
@@ -10,10 +18,14 @@ campaign7eaa/ec9f, now COMPLETE development-pass; not a fit/claim by Strategy.
 Engine328closeout checks/all actorsclosed; lowgross/reusedDEV/fee limitations
 remain. No old relative-score reinterpretation or current Paper hot-swap.
 
-Bacon owns NEW pure TCN expert/synthetic readiness proposal:
+Bacon CLOSED pure TCN expert/synthetic readiness proposal:
 A/research/current-net25-temporal-convolution-candidate-20261105-v1.
 Same absolute target/split/purge/cost-aware book, finite explicit window and
-trial/compute/earlystop contract. No market fit/forecast/eval/GPU launch yet.
+trial/compute/earlystop contract. Source d8bb/48de,25native+12focused/44pins,
+one seed/fit offered. Parent then reassigned Bacon as temporary Engine
+executor: numerical37bc failed synthetic calendar before updates/fit.
+Boundary-only Source continuation is Engine-owned, not an unapproved
+Strategy fit or completed-model repeat.
 Consumer is Engine's next informed campaign, not an indicator team or platform.
 
 Bacon CLOSED two preceding distinct source proposals:

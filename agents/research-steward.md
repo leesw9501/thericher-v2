@@ -2,15 +2,27 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC05:27 / KST14:27. NET25 campaign7eaa/ec9f is CLOSED:
+Updated Nov5UTC06:22 / KST15:22. Bacon is sole temporary GPU coordinator for
+the selected absolute-Net25 TCN continuation; Nietzsche publisher is CPU-only.
+Sourceoffer d8bb/48de passed25native+12focused/44pins. Numerical37bc failed
+130session invented-calendar index130 BEFORE any optimizer/marketfit:
+A/research/current-net25-temporal-convolution-development-20261105-v1/RESULT.json.
+0fit/0updates/0archives,allJobs/CID/lease closed.554.34activeincl180prep kept.
+Parent delegated one boundary-only versioned repair using the SAME unusedfit,
+TOTAL1800active/original06:44UTCdeadline, no marketretry or refunded time.
+No actual GPU training/start is claimed from a source or assignment.
+Kant prepares a longer chronologicalOOFgate offer, no market/GPU dispatch yet.
+
+NET25 campaign7eaa/ec9f is CLOSED:
 CPU84trees/best64/0.159s; CUDA GRU42epochs/best18/4914updates/21.897s,
 peakallocated326269952B/reserved411041792B.328closeout checks/all workers/
 Jobs/CIDs closed/GPUlease released,168.07activeupper/263.83elapsed.
 A/research/current-cost-aware-selective-entry-development-20261105-v1/CALLBACK.json.
 Development-pass is lowexposure/reused-data only, not Paper PnL. No duplicate
-fit or utilization-only job. Nietzsche next owns inference-only frozen-forward
-preparation; Bacon prepares a distinct absolute-Net25 TCN offer, no market
-training predeclared/launched yet. GPU remains available under standing priority.
+fit or utilization-only job. Frozen-forward7a8 closed with799bitwise parity,
+17native/149closeout checks and no fit. Nietzsche now owns Nov6preopen
+publisher preparation, not numerical resource ownership. Original model
+weights remain fixed while actual TCN state is recorded above.
 
 Kant CLOSED D1rule common-book replay,
 0fits/4books12views/420active1800elapsed, strict exact-source/basis/full-row

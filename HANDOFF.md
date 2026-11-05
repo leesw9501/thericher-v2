@@ -2,13 +2,13 @@
 
 ## Current Reality
 
-Updated Nov5UTC05:27 / KST14:27.
+Updated Nov5UTC06:22 / KST15:22.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new accepted order, exact fill, current owned reconciliation or PnL is claimed.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Read AGENTS.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and current role stateboards.
-History is Git throughbe9ddb52 and immutable artifacts, not a second diary.
+History is Git through6545f9b2 and immutable artifacts, not a second diary.
 
 No operator decision pending. Private no-cost Data/Research/KIS Paper authority
 is delegated; never read/route KIS_LIVE_*. No secrets/account/order identifiers/
@@ -20,6 +20,30 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
 
 ## Actually Installed
 
+- INTC after-entry readout5c26/capturef8f4/readout8a149 ACTUALLY enabled and
+  separately fullXMLACLreadback06:01: Nov5UTC15:25(KSTNov6 00:25),PT5M/
+  hiddenpythonw/noDemand/catchup/repeat. It does NOT submit orders.
+  A/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
+  A9006 AS-OF worker evidence publishes independently before B; currentB
+  private-writer admission/exactjoins/allRO/stability is still UNKNOWN.
+  22native/8composite/14mockedScheduler checks; final Windowsconstructor PASS.
+  Older Linuxfixture5phases/12Jobs is not actual final-host admission. Original
+  optionalprobe failedbeforegather/missingBINDING, retained/not retried.
+  Parent recovered bare-I builderimport via verified exact-root isolatedrunpy;
+  oldSource unchanged. b560 actual isolatedhelp5entrypoints PASS/allJobsclosed.
+  Create/Enable/readback consumed; no Task.Run/private/API/credential calls.
+- FreshOHLC19 Source83963 revision-v2 ACTUALLY enabled/complete independent
+  XMLACLreadback7c7a88, hidden/noDemand/catchup/PT14M, dueNov5UTC21:30
+  (KSTNov6 06:30),hard21:45.19GETmax/oneinitialPOST/0retry at future effect:
+  A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json.
+  Full60completedMODE1 vendorproxyOHLC19 Aug13-Nov5, actualinvented rawparser/
+  Bar->futuretarget-free Net25feature consumer and13mockedScheduler checks.
+  Actual futureDataREADY/payload UNKNOWN. OriginalEnableCLI failed after the
+  actualenable; followingReadback failed missing old successreceipt. Parent
+ 645673 readonly adapter reuses exactReadSource/ReadOwned/source/OSowner/
+  creation identity/fullXMLACL twice stable, actualreceipt7c7a88. No repeated
+  registration/enable or manufactured old receipt. CachedCOM explanation is
+  inference, not measured first cause. Original failed records remain.
 - RAW ALL3 host8fd/plan38: actual create-disabled/exit-first enable/separate
   fullXMLACL readbackNov4UTC21:42, hiddenpythonw/Ready3/0instances then.
   EntryNov5UTC14:31..<14:35(KST23:31), exitNov10UTC14:30..<14:35(KST23:30).
@@ -125,11 +149,21 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   capturemetadataunknown2413 preserved. Parent250refs/247unique stable and
   independent29panels/145typedroles PASS.106.78active/618.17elapsed,
   allJobsclosed. No PIT/CA/finality/targetrelease/Paper promotion.
-  Archimedes next offline Nov2existing7 binding, no reservedOct30 release.
+  Offline Nov2existing7 Source72d20/CLOSED41cdf remained unresolved within
+  exact original graph,0payload/0admitted/0HTTP/13.14active/261.42elapsed.
+  Not proof all caches absent; no successor or reservedOct30 release.
   Kant recentcontrols7ff4/c5d29 CLOSED9GET1POST0recovery: Nov4 AMD/SPY/QQQ
   each120matchingrows; six Jan/Jun/Sep ETF pagesempty. Currentrouteworks,
   not a global retention/30daylimit.83checks/allJobs+cacheclosed/66refs stable.
-  New8GET intermediateOctober scope assigned; future result not inferred.
+  Later807053 intermediateOctober control CLOSED8GET1POST: Oct1/15/23/28
+  SPYQQQ each120matchingrows; exact tested pages, not globalhorizon.
+  Context21e96 then reused38retainedSPYQQQ streams/14820RTHminutes/0gaps,
+  separately published140790knownresearch19 rows/19dates/190typedroles:
+  A/data/current-native17-market-context-minute-acquisition-20261105-v1/FINAL-CALLBACK.json.
+  0newGET/POST,627checks/Ruff/allJobsclosed,117.20active/734.21elapsed.
+  Parent38actualpanels/190typedroles independently passed06:29, noHTTP/fit.
+  Headerunknown14820/terminalH1H3 tails stay explicit. Archimedes now owns
+  <=313GET earlier+gap loop afterreuse, no reservedOct30release/newmodel swap.
 - Kant CLOSED HGB familyc31dd342/contract9eecee48:
  3CPUfits63/54/51iterations,12synthetic iterations/3forecasts/1fixedblend/
  18views/0retry. Net10bps PER SIDE growth: raw6.460%,indicator3.202%,
@@ -175,9 +209,21 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   account tariff: not independentalpha/PaperPnL/investment readiness.
   Official general USonline25bp is a conservative research reference, not
   verified API/account/Paperfee; old10bp studies stay immutable.
-  Nietzsche owns inference-only frozen-forward preparation, no refit/current
-  RAW8fd or INTCb63 hot-swap. Bacon prepares distinct absolute-Net25 TCN
-  synthetic offer, not an active GPU campaign.168.07active/263.83elapsed.
+  Frozenforward7a8/model25c8 is COMPLETE:799bitwise CPU+GRU savedforecast
+  parity/17native/149closeout,Parent71refs stable/allactorsclosed/no fit:
+  A/research/current-net25-frozen-forward-proposal-preparation-20261105-v1/API.json.
+  New honestNET25nativeleaf e1a008/aa6e passed47actualLinuxchecks/489SDKpins/
+  6CIDsclosed, NOT fullhost/deployment/financialadmission. Nietzsche owns
+  Nov6preopen publisher; Einstein owns fullhost/finiteinstaller finalization,
+  entryNov6UTC14:31/ownedexitNov11UTC14:30. ActualREADY/point still future.
+  No oldRAW8fd/INTCb63 hot-swap, newbank, reservedtarget read or duplicatefit.
+  TCN d8bb/48de offer25native+12focused/44pins; numerical37bc CLOSED BEFORE
+  optimizer/market because130fixture indexed130,0fits/updates/archives.
+ 554.34active carried; Parent boundary-only continuation uses SAMEunusedfit
+  under unchangedTOTAL1800active/original06:44UTCdeadline/0marketretry:
+  A/research/current-net25-temporal-convolution-development-20261105-v1/RESULT.json.
+  Bacon soleGPUcoordinator, no actualtraining inferred yet. Kant prepares
+  chronologicalOOFgate source offer, not marketfitting/registry/holdout release.
 - Nietzsche CLOSED1fac signed-payoff CUDA study:47epochs/329updates/best15,
  15.436s/494MB,2forecasts9views.7.161%/DD6.107% vs forced-flatRAW8.526%/7.180%,
   incrementalFAIL despite lower turnover/DD.14checks/all4CIDs/Jobs/GPUleases

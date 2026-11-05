@@ -2,7 +2,29 @@
 
 ## Current Work
 
-Updated Nov5UTC05:27 / KST14:27. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC06:22 / KST15:22. A=D:/thericher-v2/model-artifacts.
+Saved-weight forward7a8 is COMPLETE, modelref25c8f84c:
+A/research/current-net25-frozen-forward-proposal-preparation-20261105-v1/API.json.
+799exact keys CPU+GRU bitwise parity/17native/149closeout checks,0fits/
+newmarketforecasts/evaluations; Parent71refs stable/allactorsclosed.
+New honestNet25financialprofile initially unsupported; independente1a008leaf
+now passed47actual Linuxchecks/489SDKhashes/6CIDsclosed. Fullhost/installer
+still PREPARATION, not financial admission or deployment.
+Nietzsche owns credential/GPU-free Nov6preopen publisher against fresh Data
+source83963 and e1a008leaf; futureDATAREADY/point UNKNOWN. No Source hashcycle.
+Earliest new entryNov6OPEN/ownedexitNov11OPEN, actualOPEN5 NON_PARITY.
+
+Bacon's distinct TCNoffer d8bb/48de passed25native+12focused/44pins, onefit
+only. Numerical37bc CLOSED technicalpreflightfailure,0fit/0updates/0market:
+A/research/current-net25-temporal-convolution-development-20261105-v1/RESULT.json.
+130session fixture indexed130 before optimizer.554.34activeincl180prep remains
+charged. New boundary-only Sourceversion continuation is delegated inside
+UNCHANGED cumulative1800active/original06:44UTCdeadline, same one unusedfit/
+seed/splits/cost/book/INNERstop;0marketretries. Not an activeGPU training claim
+until actual worker evidence. Currenthalf forwardbundle remains unchanged.
+Kant owns a pure chronologicalOOF convexgate offer, no marketfitting yet;
+full-fit in-sample predictions cannot serve as gate-training OOF evidence.
+
 NET25 selective-entry campaign is COMPLETE_VERIFIED / DEVELOPMENT_PASS:
 A/research/current-cost-aware-selective-entry-development-20261105-v1/API.json.
 Source7eaa8dc0/contractec9f39f7; Parent56absolute refs/54unique stable.
@@ -20,13 +42,13 @@ not independent alpha, converged learning, Paper PnL or investment readiness.
 Jobs/CIDs closed and GPUlease released.168.07active/263.83elapsed, old debits
 unchanged. Do not repeat these completed fits.
 
-Nietzsche owns NEW inference-only preparation:
+Nietzsche CLOSED inference-only preparation:
 A/research/current-net25-frozen-forward-proposal-preparation-20261105-v1.
 Safe existing weights/normalizers -> causal prefix -> typed proposal, actual
 native restore/parity smoke; no new fit/readout/broker/Task/C/Git. Fresh dated
 forward input is a dependency, never a placeholder or current RAW hot-swap.
-Bacon owns a distinct absolute-Net25 TCN candidate/synthetic preparation only;
-no numerical campaign or GPU worker is inferred from the assignment.
+Bacon's later TCN numerical/preflight state is recorded above, not inferred
+from the old source-only proposal. No completed HGB/GRU fit is repeated.
 
 Kant CLOSED deterministic common-book D1 exit-rule campaign:
 A/research/current-d1-observed-exit-common-book-development-20261105-v1.

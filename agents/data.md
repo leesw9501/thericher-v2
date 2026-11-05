@@ -2,7 +2,36 @@
 
 ## Current Work
 
-Updated Nov5UTC05:27 / KST14:27. Retained45 qualification is COMPLETE:
+Updated Nov5UTC06:22 / KST15:22. New freshOHLC19 futureSource83963 revision-v2
+is ACTUALLY enabled/full independent XMLACL readback, no manual Task.Run:
+A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json.
+Nov5UTC21:30..<21:31/hard21:45(KSTNov6 06:30),19GETmax/oneinitialPOST/
+0retry, same-captureMODE1 vendorproxy/full60sessionsAug13-Nov5. Real invented
+native rawparser/Bar -> prefix -> Net25 features passed; actual READY UNKNOWN.
+OriginalEnableCLI failed AFTER actualenable; following readback failed missing
+successreceipt. Parent645673 readonly adapter reused exactReadSource/ReadOwned
+fullXMLACL/OSowner/creation binding twice stable: ACTUAL7c7a88PASS. No repeated
+enable/registration, fabricatedoldreceipt or changedruntimeSource. Cause of
+original CLI failure remains unclassified; cachedCOM attribution is inference.
+
+Retained SPY/QQQ context21e96 is COMPLETE0GET0POST/38streams/14820minutes,
+0gaps; separate19asset research panels140790known/19dates/190typedroles:
+A/data/current-native17-market-context-minute-acquisition-20261105-v1/FINAL-CALLBACK.json.
+627checks/Ruff/allJobsclosed,117.20active/734.21elapsed. Parent independently
+read all38panels/190typedroles06:29: exacthash/key/mask/provenance PASS,
+14820context+140790research19known,0HTTP/fit. Headerunknown14820
+and terminalH1/H3 tails remain explicit, no target/Paper qualification.
+Recent October probe807053 completed8GET1POST: Oct1/15/23/28 SPYQQQ all120
+matchingrows each. Exact tested pages, not contiguous retention/fullsessions.
+
+Archimedes now owns earlier+gap acquisition with<=313newGET after retained
+reuse,2400SUMactive/2400elapsed/onecollector/oneinitialPOST/no retry:
+A/data/current-native17-earlier-and-gap-minute-acquisition-20261105-v1.
+Freshestmissing Nov2/gaps then earlierdescending; exactempty-cursor closure,
+not globalhorizon. No reservedOct30release/newmodel/Paper swap. Kant's context
+publication is closed; invoked OOFgate preparation has no acquisition role.
+
+Retained45 qualification is COMPLETE:
 A/data/current-native17-retained45-recovery-20261105-v1/CALLBACK.json.
 Sourcefe793118/RESULT6b25b77c/CLOSEDa0b194e2.45admitted streams/17550new
 typed minutes/0conflicts0duplicates/0HTTP. Joined successor159486known/
@@ -13,15 +42,16 @@ Parent250refs/247unique stable and independently exercised29actual panels/
 145typed roles: hashes/keys/masks/provenance PASS,159486known/19complete.
 106.78chargedactive/618.17elapsed, all native Jobs positively closed.
 
-Archimedes now owns ONE offline existing7 Nov2 binding successor:
+Archimedes CLOSED offline existing7 Nov2 binding without a successor:
 A/data/current-native17-nov2-existing7-binding-20261105-v1.
-Up to2730 previously published minutes only if source/calendar/value/basis
-compatible; preserve reservedOct30 separately, no imputation/newHTTP/targetrelease.
+Source72d20/RESULTc393cd62: exact original publication refs unresolved,
+0payloadread/0admitted/0HTTP/13.14active/261.42elapsed/positiveclosure.
+Not proof all caches absent. Prior159486known/32784missing unchanged.
 Kant CLOSED recent-route controls7ff4/c5d29:9GET/1POST/0recoveries,
 Nov4 AMD/SPY/QQQ each120matching-date rows; six Jan/Jun/Sep ETF pages empty.
 83closure checks/Parent66refs stable/cacheownerclosed. This bounds exact
-requests, NOT a global retention/30day limit. A separate8GET intermediate-
-October control package is assigned; no result is inferred before closure.
+requests, NOT a global retention/30day limit. The later807053 actual results
+above supersede the old pending-probe projection, not its immutable evidence.
 
 Archimedes CLOSED preceding remaining-history acquisition:
 A/data/current-native17-remaining-history-acquisition-20261105-v1/CALLBACK.json.

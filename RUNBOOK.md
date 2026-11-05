@@ -2,7 +2,37 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC05:27 / KST14:27. Company objective remains UNFINISHED.
+Updated Nov5UTC06:22 / KST15:22. Company objective remains UNFINISHED.
+
+New finite after-entry readout ACTUALLY installed/fullXMLACL readback06:01:
+D:/thericher-v2/model-artifacts/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
+Task thericher-intc-after-entry-readout-20261105-v1 dueNov5UTC15:25(KSTNov6
+00:25),PT5M/hiddenGUI/noDemand/catchup/repetition. No manualRun. A9006 publishes
+ASOF worker evidence before independently admitted B, never a fresh broker
+holdings/PnL claim. Exact future public JSON:
+D:/thericher-v2/model-artifacts/execution/current-intc-readonly-composite-compatibility-20261105-v1/readout/runtime/entry/READOUT.json.
+Read only qualified categorical/count fields, never import artifact code in web.
+Original-I builder localimport failed; Parent verified7frozenmodule hashes and
+used isolated stdlibrunpy with only the exact readout directory inserted.
+Actual5entrypoint isolatedhelp auditb560 passed. Create/enable/readback consumed.
+
+New fullOHLC19 Data83963 revision-v2 ACTUALLY enabled/fullXMLACL readback:
+D:/thericher-v2/model-artifacts/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/PARENT-ADOPTION.json.
+Task thericher-data-net25-nov5-ohlc19-for-nov6-once-20261105-v1 dueNov5UTC21:30
+(KSTNov6 06:30),PT14M/hard21:45,19GET/oneinitialPOST/zero retry at effect.
+FutureREADY remainsUNKNOWN, not staleO/C or filled futurelabels. Original
+EnableReadOnly CLI failed AFTERenable and subsequent oldReadback lacked the
+successreceipt. NEVER replay mutation. Parent645673 readonly adapter reused
+exactReadSource/ReadOwned completeXMLACL/source/owner/creation checks twice
+stable, actual7c7a88PASS. No fabricatedoldreceipt/sourcechange. Parent output
+is consumed too; inspect immutable proof and safeTaskfacts rather than replay.
+
+Frozen Net25forward7a8/model25c8 has799bitwise parity,0newfits. Nativeleaf
+e1a008 is source-qualified47Linuxchecks, NOT a deployed financialhost. Separate
+Nov6publisher/host finalization continue; actualfuturepoint/financialstateUNKNOWN.
+TCN37bc failedsyntheticcalendar index130 before anyoptimizer/fit; repaired
+Source continuation keeps sameunusedfit/554.34oldactive/original1800total/
+06:44UTCdeadline. No completedtraining rerun or inferredGPU activity.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
