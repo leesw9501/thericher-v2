@@ -2,6 +2,18 @@
 
 ## Current Source Handoff
 
+Updated Nov5UTC02:23 / KST11:23. Bacon owns NEW bounded source preparation:
+A/research/current-short-swing-first-passage-candidate-preparation-20261105-v1.
+Consumer is next Engine short-swing campaign, not a broker writer. ONE fixed
+first-passage profit/stop/vertical-horizon mechanism, official-source research
+and pure kernel on invented Bars. Explicit decision/entry/label availability,
+gap-open fills, conservative samebar high+low ambiguity, overnight/purge/cost/
+missing-data cases.180summedactive/1200elapsed, no sweeps/market arrays/fits/
+forecast/registry changes. Native producer-to-consumer smoke and focused tests.
+Engine owns eventual contracts/budgets; proposal is not numerical authority.
+
+## Previous Handoff
+
 Updated Nov4UTC22:47 / Nov5KST07:47. Beauvoir CLOSED D-only source preparation:
 A/research/current-intraday-net-edge-indicator-candidate-preparation-20261105-v1.
 

@@ -2,7 +2,7 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC01:45 / KST10:45. Company objective remains UNFINISHED.
+Updated Nov5UTC02:23 / KST11:23. Company objective remains UNFINISHED.
 Current installed RAW8fd/plan38 entryNov5UTC14:31(KST23:31), exitNov10UTC14:30.
 Actual point/financial effects remain UNKNOWN. Definitions are enabled; NEVER
 replay consumed installer/enable/rollback modes to inspect their result.
@@ -34,8 +34,17 @@ Continuationd9d2697b then CLOSED21GET0accepted/1POST/0newrows,6262seedrows/
 9complete streams/30outputs,not a successful new acquisition. Owner released,
 190refs stable. Do not rerun ACTUAL-ONCE or consumed GETs:
 D:/thericher-v2/model-artifacts/data/current-native17-ny-clock-history-continuation-20261105-v1/CALLBACK.json.
-Archimedes offline-only cursor firstcause owns exact21retained outcomes;
-no new request until concrete source/adapter cause and separately bounded fix.
+Offline1549 source/native smoke confirmed strict-header compatibility fault;
+old actual headers remained UNKNOWN. NEW4faa completion is ACTUALLY CLOSED:
+D:/thericher-v2/model-artifacts/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
+Select revision-v2 Source4faa03cb/RESULTc2a75afc/CLOSED4ee40c9a, not failedroot.
+40acceptedGET/0failed/1POST/3018newrows;11680known/29of30complete,all20Oct29/30
+targets full,AMDNov2 gap20preserved. New40responses have observed header category;
+old8662seeds retain UNKNOWN_NOT_RETAINED. Parent286refs stable/allactorsclosed.
+Do not rerun completed acquisition. Archimedes owns NEW125unattempted streams:
+D:/thericher-v2/model-artifacts/data/current-native17-remaining-history-acquisition-20261105-v1.
+650GET/1initialPOST/2recoveries/3600active/3600elapsed, exact source/native/owner/
+token/storage-qualified delegated launch. No oldGETrepeat/custody/Paper promotion.
 
 HGB c31dd342/9eecee48 CLOSED3CPUfits/168iterations/18views,primaryblendFAIL
 5.511% vs persistentRAW8.955% at10bps per side.41checks/6Jobs/68refs stable;

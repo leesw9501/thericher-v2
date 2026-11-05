@@ -2,7 +2,7 @@
 
 ## Current Outcome
 
-Updated Nov5UTC01:32 / KST10:32.
+Updated Nov5UTC02:23 / KST11:23.
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Parent owns policy/goal/integration/Git. No operator decision pending.
@@ -19,13 +19,13 @@ schemas/readiness directly; Parent is not another post-start ACK barrier.
 | --- | --- | --- |
 | Parent / Execution |RAW8fd/plan38 enabled/read back; public readercd6e ready|PointNov5UTC13:30, entry14:31(KST23:31), exitNov10UTC14:30. Exact runtime chain then qualified financial linkage, never Task-exit inference.|
 | Parent / Execution |INTCb63/releasec5c, installer473f/63c5 ACTUALLY enabled/read back|EntryNov5UTC15:10(KST Nov6 00:10), owned exitNov6UTC15:10(KST Nov7 00:10); one share only if unchanged native bank/risk checks allow.|
-| Archimedes / Data |NEW header-compatible-three-session-completion prep|d9d closed21GET/0newrows;1549 offline shows strict-header gate differs from native parser, oldheader UNKNOWN. Finish20partialstreams via newlowercursors<=60GET, actual header telemetry, no oldrepeat/refund/promotion.|
-| Kant / Engine-Steward |CLOSED c31dd342/9eecee48 HGB family|3CPUfits/168market iterations/3forecasts/1blend/18views. Primary blend5.511% versus raw8.955%, FAIL. Six Jobs closed, Parent68refs stable; no Paper swap/rerun.|
+| Archimedes / Data |4faa completion CLOSED; NEW remaining125 history assigned|40acceptedGET/3018newrows/all20Oct29/30targets full. New125UNATTEMPTED streams650GET/3600active+elapsed, preserve native clock/header/owner/token checks; no oldGETrepeat.|
+| Kant / Engine-Steward |NEW first-passage campaign readiness; c31 HGB CLOSED|Metadata-only OHLC capability/one finite offer/native invented optimizer+handoff smoke,240active/1200elapsed. HGB primary blendFAIL retained; no new market fit/GPU worker yet.|
 | Nietzsche / Engine-Steward |CLOSED1fac and0323 families|CUDA signed-payoff fit329updates failed incremental growth; intraday4fits allcash. No active numerical/GPU worker inferred.|
-| Mendel / reliability |CLOSED b748 original-session migration prep; actual Capture WITHHELD|Nonzero PID2040 native ACCESS_DENIED before mutation; current131e retained. Stop blind per-OS-row rewrites; optional migration is locally blocked, not Data/Paper permission.|
+| Mendel / reliability |d658 diagnostic CLOSED; NEW clock-conversion repair|Actual CSRSS identity capability passed, but source-derived CIM/float acceptance unresolved;7dfa explicitlyINERT. Bound exact conversion/calibration once, no per-PID bypass; current131e retained.|
 | Raman / Infra |CLOSED Korean UI coexistence1b659ded/1ef9d171|Six native groups/Ruff; RAW/INTC/Full17 reject8788 as unknown_custody_capability. Do not deploy/waive guards. Existing8787 untouched; static UNKNOWN preview only.|
-| James / Execution |CLOSED real Linux fixture8c5e/48be|One network-none invented-bank capsule/43duplex/96Jobs/exactCID absent; supports installed INTC production source, not actual financial proof.|
-| Beauvoir / Strategy |CLOSED07dab proposal|Native45tests/Parent45PASS; consumed by0323. No active LLM promised.|
+| James / Execution |NEW exact INTC outcome reader prep|Bind installed b63/c5c/473/63c5 and actual native cycle/intent/fill schema; invented producer-to-consumer tests, no private read in prep. Future financial admission remains separate.|
+| Bacon / Strategy |NEW short-swing first-passage proposal/kernel|ONE fixed profit/stop/vertical-horizon mechanism on invented Bars, gap/samebar ambiguity/cost/availability tests. No market fits/forecast or new trial permission.|
 
 Scheduled Data24a39 two dates Nov5/6UTC21:10, Research880d Nov6UTC21:35 are
 ACTUALLY enabled/read back, not sleeping LLMs. Future outcomes UNKNOWN.
@@ -61,6 +61,18 @@ GOOGL Nov9UTC20:55, memory-terminal Nov20 and H20 Dec1UTC14:30 duties.
   All native Jobs closed/no Apply; actual native birth unavailable, not proven
   birth drift or private writer. Prep32/42/12/20groups,11pins stable; Claude
   unavailable is NOT agreement. Prior failures remain in Git/immutable artifacts.
+- psutil-native fallbackd658/qualification7dfa CLOSED INERT_ONLY_PRECISION_WITHHELD:
+ 32policy/52producer/15cold/20adapter+13provider cases/Ruff,18Jobsclosed;
+ actual retainedPID capability passed but NOT exact100ns identity/owner closure.
+ Claude precision review REPAIR_REQUIRED/078ec630. Parent10source members stable.
+ A/execution/current-full17-psutil-native-identity-fallback-20261105-v1/API.json.
+ NEW current-full17-native-clock-conversion-repair-20261105-v1 derives actual
+ conversion/calibration only; no effect-mode admission or Task mutation yet.
+- Header-compatible4faa actual40acceptedGET/0failed/1POST/3018newrows,
+ 11680known/29of30complete,AMDNov2 gap20preserved. Parent286refs stable,
+ 323.97chargedactive/allJobs+cacheownerclosed. New40header witnesses observed;
+ old8662seeds keep UNKNOWN_NOT_RETAINED, no retroactive qualification:
+ A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
 - Actual account query6e6a/2a55 consumed:3venues/4holdings/positive provisional
   funds/1POST4GET. Not owned attribution/settledcash/PnL or F9 release.
   Baselinev8 closed BEFORE guest/client/token/intent, only its effects excluded.
@@ -68,32 +80,33 @@ GOOGL Nov9UTC20:55, memory-terminal Nov20 and H20 Dec1UTC14:30 duties.
   Nov2..4 eval remains INPUT_UNAVAILABLE/0forecasts and custody unreleased;
   later acquired rows do not repair/regrade its immutable outcome.
 - C:R3 full20239PASS/26knownskip/created8of8[20265items]/native+helper0/guarded
-  cleanup.1437protected pins+AGENTS rechecked01:38 unchanged; Ruff/fourCompose
-  PASS00:36. Recheck exact digests on next integration.
+  cleanup.1437protected pins+AGENTS rechecked02:23 unchanged; Ruff/fourCompose
+  PASS02:24. Recheck exact digests on next integration.
   A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
   External source has independent native/focused proof; no unnecessary20K rerun.
 
 ## Throughput Review
 
-01:32: New tree family completed, not a claimed active GPU job. Data's prior
-zero-cohort stop was caused by redundant source-clock disagreement, not proven
-absence of history. Retained-page recovery first avoided new requests; next
-missing-only continuation is source/native-qualified and predelegated. Parent
-integrates evidence and Git while that role owns actual gates/cooldowns.
+02:23: Header-compatible actual acquisition now succeeded, unlike predecessor's
+zero accepted requests. Dispatch only remaining125unattempted streams, not the
+completed20. New tree family completed, no claimed active GPU job. Strategy
+prepares a different executable short-swing target while Data owns collection;
+Execution prepares exact financial interpretation before tonight's opportunity.
+Parent integrates evidence/Git and native owner recovery in parallel.
 
 Stop spending successive synthetic-only rewrites on every inaccessible OS row.
 Latest optional Full17 migration is held before mutation; preserve131e and
 tonight's independently installed RAW/INTC, rather than invent closure or a
-company-wide hold. Alternatives: retain current exit; separately qualify a
-minimal native identity capability if it becomes critical; or prioritize new
-Paper results/Data/Research. Review classification with available advisory,
-never infer unavailable review as agreement.
+company-wide hold. Installed psutil actually resolved retained PID2040 image/
+birth through native OS metadata; qualify that reusable narrow capability,
+not another PID/name bypass. Keep float precision explicit, never manufacture
+100ns identity or original owner closure. Advisory unavailable is not agreement.
 
 UI8788 conflict is scoped and real in current frozen contracts. A physically RO
 reader is not an automatic registered capability. Keep it undeployed; a
 source-qualified runtime version/migration or static preview is a separate
 choice, not a reason to block Paper or grant broker authority to web.
 
-History is Git through81fba8f8 and immutable external callbacks, not another
+History is Git through2a7fc30b and immutable external callbacks, not another
 per-agent journal/backlog/next-goal platform. Company outcome stays unfinished
 until actual required financial runtime closure; no foreground market wait.

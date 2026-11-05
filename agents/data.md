@@ -2,17 +2,30 @@
 
 ## Current Work
 
-Updated Nov5UTC01:52 / KST10:52. Archimedes owns NEW header-compatible completion:
-A/data/current-native17-header-compatible-three-session-completion-20261105-v1.
-Use20useful new lower cursors for Oct29/30 partial streams; AMDNov2 missing20
-has no useful backwards continuation, preserve gap.<=60GET/1initialPOST/
-2recoveries/400summedactive/1200elapsed;prep240active/1200elapsed. Native
-header-category parity ONLY, unchanged0596 clock/value/venue/date/cursor/
-dedup checks. Actual wire records allowlisted header presence/category/failure
-stage before parser. After2identical structural faults abort batch, not21same
-calls. Source/native/actual cache/account/token/storage checks before delegated
-launch, no extra ACK. No old GET repeat/reset/refund/old output rewrite/model/
-evaluation/Paper promotion. No new Source/PID/HTTP yet claimed. Code A/bytes M.
+Updated Nov5UTC02:23 / KST11:23. Archimedes owns NEW remaining-history work:
+A/data/current-native17-remaining-history-acquisition-20261105-v1.
+Only125UNATTEMPTED missing-stock streams from old9f manifest, Oct06..Nov02;
+skip completed/consumed/current3sessions, no identical old GET. Reuse actual
+qualified4faa profile/header telemetry. Frozen650GET/1initialPOST/2boundedGET
+recoveries/3600summedactive/3600elapsed/125streams;prep240active/1200elapsed.
+Existing collector/token/account/cache/storage/pacing checks remain. Exact
+source/native-qualified launch is delegated, no post-start ACK. Exact cursor
+stops on measured no-progress/source limit;2identical structural faults abort
+batch. No old marker reset/refund/imputation/model/eval/Paper promotion.
+No current new PID/HTTP count claimed until actual callback. Code A/bytes M.
+
+Header-compatible completion is CLOSED, not a pending fit/collector:
+A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
+Select revision-v2/SOURCE4faa03cb/FINALfc8df834/RESULTc2a75afc/CLOSED4ee40c9a;
+initial root Source is failed preparation, not authority.40acceptedGET/0failed/
+1POST/0recoveries,3018new unique RTH rows,11680known/29of30complete streams.
+All20Oct29/30targets complete;AMDNov2 remains370/390,20missing/no new request.
+40actual new headers present/unrecognized_nonblank, bound to requests/raw;
+8662seed rows keep header_observed=false/UNKNOWN_NOT_RETAINED and bitwise parity.
+Grade PROVISIONAL_LOCAL_LABEL_WITH_RETAINED_HEADER_UNKNOWN; not verified PIT/
+CA/finality or automatic consumer qualification.323.97/400charged active,
+positive native Job/cache-owner closure. Parent286refs rehashed0mismatch02:21.
+125older remained UNKNOWN at that closure; successor result not inferred.
 
 Predecessor d9d2697b/0b9c68e4 CLOSED21GET(0accepted21failed)/1POST/0newrows,
 6262seedrows/9complete streams/30outputs. Owner released/190pins stable;

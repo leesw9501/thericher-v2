@@ -23,7 +23,7 @@ exits persist. No refill/new bank/foreign adoption/unknown-request substitute.
 
 ## Current Evidence And Next Actions
 
-Updated Nov5UTC01:35 / KST10:35. Current facts, not a diary; exact proof in HANDOFF.
+Updated Nov5UTC02:23 / KST11:23. Current facts, not a diary; exact proof in HANDOFF.
 
 1. RAW ALL3 host8fd/plan38 ACTUALLY enabled/read back: entryNov5UTC14:31..<14:35
    (KST23:31), owned exitNov10UTC14:30..<14:35. Quarter of ONEB10 ceiling,
@@ -59,14 +59,17 @@ Updated Nov5UTC01:35 / KST10:35. Current facts, not a diary; exact proof in HAND
    Continuationd9d CLOSED21GET/0accepted/0newrows; offline1549 confirmed a
    strict-header gate compatibility fault, not clock/cursor failure. Actual
    oldheaders UNKNOWN, no runtime attribution certainty/old outcome regrade.
-   Archimedes owns NEW header-compatible completion:
-   A/data/current-native17-header-compatible-three-session-completion-20261105-v1.
-   Finish20partialOct29/30 via newlowercursors, preserve AMDNov2 gap,
-   <=60GET/1initialPOST/2recoveries/400active/1200elapsed;prep240active/1200elapsed.
-   Nativeheader parity/actual header telemetry; clock/value/cursor unchanged.
-   Source/native/actual owner/token/storage qualify then delegated launch, no
-   extra ACK. No oldGET/reset/refund/imputation/Paper/eval promotion or newHTTP
-   claimed. Conditional salvage is not observed-header proof.
+   Header-compatible4faa ACTUALLY CLOSED40acceptedGET/0failed/1POST/3018newrows,
+   all20Oct29/30targets complete,29of30streams full;AMDNov2 retains20missing:
+   A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
+   Select revision-v2,Parent286refs stable.40newheaders observed;8662retained
+   seeds keep UNKNOWN_NOT_RETAINED, no retroactive header/PIT/CA/finality claim.
+   Archimedes owns NEW125UNATTEMPTED older streams,Oct06..Nov02:
+   A/data/current-native17-remaining-history-acquisition-20261105-v1.
+   Frozen650GET/1initialPOST/2recoveries/3600active/3600elapsed/125streams;
+   prep240active/1200elapsed. Reuse qualified profile,skip oldconsumed/completed,
+   actual owner/token/storage/native checks before delegated launch, no extra
+   ACK. Source limit/cursor evidence stays scoped;no imputation/oldtarget release.
 4. Engine: c31dd342/9eecee48 HGB family is CLOSED, not active training:
    A/research/current-h3-indicator-boosting-development-20261105-v1/FINAL-CALLBACK.json.
    3CPUfits/168market+12synthetic iterations/3forecasts/1fixedblend/18views,
@@ -88,6 +91,10 @@ Updated Nov5UTC01:35 / KST10:35. Current facts, not a diary; exact proof in HAND
    A/execution/current-full17-original-interactive-session-scope-repair-20261105-v1.
    Stop blind per-OS-row rewrites. Keep current exit; alternative native identity
    capability is separate work if critical, never a global Data/Paper hold.
+   d658/7dfa psutil diagnostic subsequently passed native capability/18Jobs
+   closed but qualification explicitlyINERT_ONLY_PRECISION_WITHHELD; Claude
+   REPAIR_REQUIRED. Mendel owns bounded exact clock-conversion repair, not
+   actual migration/ownerabsence yet. Current131e retained.
 7. Korean monitor coexistence1b659/1ef9 passed6native groups/Ruff but current
    RAW/INTC/Full17 contracts reject8788 as unknown_custody_capability:
    A/execution/current-korean-readonly-ui-coexistence-preparation-20261105-v1/check-20261105T011336285246Z/CALLBACK.json.

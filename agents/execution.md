@@ -2,7 +2,7 @@
 
 ## Current Runtime
 
-Updated Nov5UTC01:43 / KST10:43. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC02:23 / KST11:23. A=D:/thericher-v2/model-artifacts.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new acceptance/fill/current owned-state/PnL is claimed. ONE initialB/10,
 F9 UNKNOWN-HELD, pending/costs/losses/reservations/ALL original exits persist.
@@ -36,6 +36,12 @@ Create/Enable consumed; NEVER replay. Financial admission/submit/fill/PnL UNKNOW
 
 ## Readers And Observations
 
+- James owns NEW source-qualified exact INTC outcome reader preparation:
+  A/execution/current-intc-engineering-exact-outcome-reader-readiness-20261105-v1.
+  Bind b63/c5c input/policy/release and actual native public/private schema;
+  invented producer/terminal/cycle/intent/fill/owned projection with negative
+  cases. No actual private/Task/Docker/broker read during prep or financial
+  admission inferred. Parent activates only after qualified actual linkage.
 - Public readercd6e/95cd validates exact attempt/launch/child/terminal/closure
   source/hash/nativePID/birth/UTC/stability;Parent8invented cases PASS:
   A/execution/current-raw-all3-installed-public-outcome-reader-20261105-v1/API.json.
@@ -66,6 +72,19 @@ change/private-writer evidence. Stop blind per-OS-row synthetic rewrites.
 Prior v3/8338/f710/ca011/e339 failures retained; adcf actual metadata-only
 recovery observed155null-principal rows, not original-owner absence.
 This optional migration block does not stop installed RAW/INTC or Data/Research.
+
+Mendel CLOSED pinned psutil-native identity diagnosticd658/qualification7dfa:
+A/execution/current-full17-psutil-native-identity-fallback-20261105-v1.
+Parent's metadata-only retainedPID2040 probe found installed psutil7.2.2 image/
+birth stable, CSRSS source hash a958083f. Actual retained-target smoke passed;
+32/52/15/20groups+13provider cases/Ruff/18Jobsclosed,10source members stable.
+Qualification is explicitly INERT_ONLY_PRECISION_WITHHELD, NOT released:
+source-derived CIM/float acceptance bound unproved, ClaudeREPAIR_REQUIRED.
+No dependency install/Task/private/broker/census calls or currentownerabsence.
+NEW current-full17-native-clock-conversion-repair-20261105-v1 derives exact
+conversion/calibration within240active/1200elapsed; same original-candidate/
+OS-source/bracketing/precision/PIDreuse/stale-exe guards, no blanket OS exemption.
+Current131e retained until actual qualified migration; no blind capture retry.
 
 Korean readonly UI coexistence1b659ded/proof1ef9d171 passed6native groups/Ruff,
 but RAW8fd/INTCb63/Full17-131e classify proposed8788 unknown_custody_capability:

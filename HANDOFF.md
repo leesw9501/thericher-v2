@@ -2,13 +2,13 @@
 
 ## Current Reality
 
-Updated Nov5UTC01:32 / KST10:32.
+Updated Nov5UTC02:23 / KST11:23.
 Company coexistent-native-paper-execution-runtime-v1 remains UNFINISHED.
 No new accepted order, exact fill, current owned reconciliation or PnL is claimed.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Read AGENTS.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and current role stateboards.
-History is Git through81fba8f8 and immutable artifacts, not a second diary.
+History is Git through2a7fc30b and immutable artifacts, not a second diary.
 
 No operator decision pending. Private no-cost Data/Research/KIS Paper authority
 is delegated; never read/route KIS_LIVE_*. No secrets/account/order identifiers/
@@ -99,14 +99,20 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   oldheader UNKNOWN, runtime attribution remains inference. Conditional
   native-header salvage8662known rows is not observed-header qualification.
   A/data/current-native17-continuation-cursor-firstcause-20261105-v1/CALLBACK.json.
-  Archimedes NOW owns new header-compatible completion:
-  A/data/current-native17-header-compatible-three-session-completion-20261105-v1.
-  Finish20partialOct29/30 streams via new lower cursors, keep AMDNov2 gap.
-  <=60GET/1initialPOST/2recoveries/400active/1200elapsed;prep240active/1200elapsed.
-  Source/native/actual collector/token/storage before predelegated launch;
-  no extra ACK. Nativeheader-category parity/actual header telemetry, clock/
-  value/cursor checks unchanged. No oldGET/reset/refund/Paper/eval promotion.
-  No new Source/PID/HTTP yet claimed. Old125older streams still UNKNOWN.
+  Header-compatible completion ACTUALLY CLOSED40acceptedGET/0failed/1POST/
+  0recoveries,3018newRTH rows,11680known/29of30complete streams. All20Oct29/30
+  targets complete;AMDNov2 remains370/390. Select revision-v2 Source4faa03cb/
+  RESULTc2a75afc/CLOSED4ee40c9a, not failed initial root Source:
+  A/data/current-native17-header-compatible-three-session-completion-20261105-v1/RETURN-POINTER.json.
+  Parent286refs stable;323.97charged active/allJobs+cacheownerclosed.40new
+  responses have observed present/unrecognized_nonblank headers;8662retained
+  seeds keep UNKNOWN_NOT_RETAINED. No retroactive header/old evaluation claim.
+  Archimedes now owns remaining125UNATTEMPTED streams, Oct06..Nov02:
+  A/data/current-native17-remaining-history-acquisition-20261105-v1.
+  Reuse qualified profile,650GET/1initialPOST/2boundedGETrecoveries/3600active/
+  3600elapsed/125streams;prep240active/1200elapsed. Skip old consumed/completed
+  scopes, actual owner/token/storage before delegated launch, no extra ACK.
+  No new PID/HTTP count or source horizon inferred before actual result.
 - Kant CLOSED HGB familyc31dd342/contract9eecee48:
  3CPUfits63/54/51iterations,12synthetic iterations/3forecasts/1fixedblend/
  18views/0retry. Net10bps PER SIDE growth: raw6.460%,indicator3.202%,
@@ -147,6 +153,13 @@ local_paper simulator and kis_paper broker outcomes remain distinct.
   exact previousPID432 SECURE_SYSTEM; no owner-absence conclusion.
   A/execution/current-full17-null-principal-recorder-recovery-20261105-v1/measure-RESULT.json.
   Original recorder18a lost DTO; keep that failure, not regraded.
+  NEW psutil diagnosticd658/7dfa CLOSED: actual retained-target identity smoke
+  passed,32/52/15/20groups+13provider cases/Ruff/18Jobsclosed,10source members
+  stable. Qualification explicitlyINERT_ONLY_PRECISION_WITHHELD; CIM/float
+  acceptance bound not established, ClaudeREPAIR_REQUIRED, no Task mutation:
+  A/execution/current-full17-psutil-native-identity-fallback-20261105-v1/API.json.
+  Mendel owns current-full17-native-clock-conversion-repair-20261105-v1,
+  bounded source/conversion/calibration; no global hold or per-PID bypass.
 - UI coexistence1b659ded/proof1ef9d171 six native groups/Ruff passed, but current
   RAW8fd/INTCb63/Full17-131e reject8788 as unknown_custody_capability:
   A/execution/current-korean-readonly-ui-coexistence-preparation-20261105-v1/check-20261105T011336285246Z/CALLBACK.json.
@@ -170,8 +183,8 @@ owned exits above. No manually Run consumed Tasks/substitute intents.
 Full C authority:
 A/verification/current-korean-readonly-repo-integration-20261105-v1/r3/RESULT.json.
 20239PASS/26knownWindowsSKIP,created8/8workers[20265items],native/helper0/
-guardedcleanup.1437protected pins+AGENTS rechecked00:39 unchanged; Ruff/
-fourCompose(.env.example) PASS00:36. Recheck exact digests at integration;
+guardedcleanup.1437protected pins+AGENTS rechecked02:23 unchanged; Ruff/
+fourCompose(.env.example) PASS02:24. Recheck exact digests at integration;
 docs/external reuse only while unchanged. Dcode has independent focused/native
 proof; repeated C suite cannot validate it. R1/R2 remain withheld.
 Credential-free uv --no-env-file, no implicit.env, models onA/market onM.

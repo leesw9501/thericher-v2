@@ -2,8 +2,18 @@
 
 ## Current Work
 
-Updated Nov5UTC01:35 / KST10:35. A=D:/thericher-v2/model-artifacts.
-Kant CLOSED non-neural indicator-boosting; Parent shared policy/Git.
+Updated Nov5UTC02:27 / KST11:27. A=D:/thericher-v2/model-artifacts.
+Kant owns NEW first-passage campaign readiness, PREPARATION ONLY:
+A/research/current-short-swing-first-passage-campaign-readiness-20261105-v1.
+Direct schema handoff from Bacon's pure mechanism. Metadata-only confirm actual
+OHLC/label capability, one finite distinct campaign offer or concrete rejection,
+aligned book/cost/baselines/temporal purge/selection-reuse limitations. Actual
+invented producer/label/forecast consumer and tiny native optimizer/checkpoint
+smoke before any market fitting.240summedactive/1200elapsed incl failures/
+cleanup. No market fit/eval/registry debit/custody release yet; no duplicate old
+training or GPU-utilization-only campaign. Parent shared policy/Git.
+
+Kant CLOSED preceding non-neural indicator-boosting:
 A/research/current-h3-indicator-boosting-development-20261105-v1.
 Sourcec31dd342/contract9eecee48,3CPUfits/63+54+51=168iterations,
 12synthetic iterations/3forecasts/1fixedblend/18views/0retry. Existing sklearn1.9
@@ -18,7 +28,7 @@ prep49.08upper/807.71elapsed. No rescue/refit/Paper swap/independent-alpha claim
 FINAL-CALLBACK.json binds exact Source/contract/debits/positive closures.
 No numerical/GPU worker remains active. Existing Nov2..6 custody stays reserved;
 Data0596 provisional clock recovery does not grant readout/target release.
-History is Git through81fba8f8; AGENTS.md owns research/claim boundaries.
+History is Git through2a7fc30b; AGENTS.md owns research/claim boundaries.
 
 Future source preparation is COMPLETE, source880d7704/contract36b2e8d5:
 A/research/current-eod-gru-nov6-frozen-observation-preparation-20261105-v1.
