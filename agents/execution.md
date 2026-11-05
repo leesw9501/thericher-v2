@@ -29,6 +29,18 @@ A/execution/current-mse-nov5-public-pair-reader-20261105-v1/README.md.
 It cannot prove root exit, observer restoration or financial outcomes, and
 does not grant GPU/private-custody admission.
 
+Actual MSE20:40 stopped20:40:08 with PairRESULT STOPPED_UNKNOWN_RuntimeError,
+visits0/oldrestoreflagtrue; Taskexit0 misleading. Parent source-bound diagnosis
+reproduced output_not_owned BEFORE helper Task access; actual original observer
+XML/API7/enabled unchanged, STARTED absent/current named controller/helper0:
+A/execution/current-mse-observer-output-route-diagnosis-20261105-v1/RESULT.json.
+No new native financial leg; historical inventory/PnL unknown, old flag remains.
+Godel route bridge patch15+5tests/13childrenclosed is NOT deployable: outer graph
+still binds old Task/Nov5 validity; no future installed/replay/capital change.
+Parent manual Data83963 observer-control Sourcec43 is native17/Readiness0write
+qualified. Exact optional21:21 Suspend and positive child-bound Restore duty
+are in HANDOFF; this is NOT a worker/Task or broker path. No actual Disable yet.
+
 ## Closed Evidence
 
 | Installed definition | Entry / owned exit UTC | Evidence |

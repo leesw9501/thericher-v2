@@ -31,7 +31,9 @@ No new exact acceptance/fill/current-owned/PnL proven.
 | Closed continuous-book work | Goodall4fc software failure0books retained; Parent159ec corrected metadata scope completed1readout4books/0fits, bothCIDsclosed20:31 | MemoryON declared tests pass versusOFF, but exposure differs and signW25 stronger absolute growth; no Paper swap. |
 | Closed Euclid / Execution |27checks pass, actual oneprobe withheld ancestry-child mismatch,0private/no READY; diagnostic8checks unintegrated | Need actual first-cause lineage, not another actor waiver or consumed-probe replay. |
 | Closed Lorentz / Data | Intraday30/120 same-key roles READY57120/14280/14280,24sessions; all workersclosed20:30:44 | Ohm's new GPU family, not repeated dailyGRU or training already started. |
-| Ohm / Engine + GPU coordinator | New fixed2fit intraday GRU family code preparation; no optimizer/native actor during MSE20:40..21:00 | Actual source/role/native/VRAM readiness and relevant MSE positive closure before numerical launch. |
+| Closed Ohm / Engine | Actual2CUDA intraday GRUs22epochs2464updates each/best14; MSE120 worse than30, bothcash; allclosed21:00 | No fit repetition. FourDEVdays/noalpha; Sourceb26d/API in HANDOFF. |
+| Planck / Engine + GPU coordinator | NEW crossasset temporalConv+attention/fixed.25W25blend source/native preparation | Onefit/onejointreadout after qualified native/book/source/resource prebind, no optimizer claimed yet. |
+| Parent / Data83963 control | Conditional manual quiet window Sourcec43/native17/actualReadiness0writes | OnlySuspend21:21..<21:22 with fresh exact checks; durable Parent restore duty path in HANDOFF. |
 | Parent / scoped private read |233 actual metadata withheld controller+3nullsource actors, allclosed/0private/no READY | New qualified caller/actor/stability, never consumed-probe replay or waiver. |
 | Parent / account evidence |17:20 holdings4/noINTC;18:10 history0rows/terminal response; no order/private effects | As-of broker facts only, not original intent/fill/owned linkage or reservation release. |
 | Parent / Data-Research installed | FirstData21:30, halfpoint13:30, thirdshadow13:45,W25shadow13:55; laterDataNov10/13 installed | Worker-owned future input/inference; actual hashes/outcomes UNKNOWN. |
@@ -120,3 +122,15 @@ preflight ceiling explicitly includes MSE queue time BEFORE first contract,
 not a retrospective failed-cap extension. Claude91701054 GO_WITH_LIMITS:
 4DEVsessions/selection reuse/assumed arrival/relevant owner closure limitations.
 Parent actual MSE follow-through is next; no Task.Run/substitute/new schedule.
+
+21:16: MSE actual opportunity failed20:40:08 before native due old observer
+output route outside helper-owned root, despite Taskexit0. Parent reproduced
+exact guard denial, proved original observer fullXML/nativeACL/enabled and
+current named owner absence; no restore mutation or financial-flat claim.
+Ohm scoped resource wait lifted on that proof, completed two newCUDAfits and
+closed. Godel small route patch now tested but full successor envelope/late
+validity/owner integration unqualified, NOTDEPLOYED. Do not repeat dead MSE job.
+Original Data83963 still due21:30. Parent's explicit manual quiet-window duty
+replaces the unimplemented autonomous-preparer proposal, not its failed READY
+claim. Sourcec43 Readiness passed0writes; source/native source-format17tests.
+Suspend/Restore remain UNKNOWN until actual effects/positive exact readback.

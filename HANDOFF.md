@@ -60,11 +60,53 @@ A/data/current-intraday-window30-120-training-readiness-20261105-v1/READY.json.
 Same30/120bar keys, nextminuteOPEN->60minuteOPEN,24sessions16FIT4INNER4DEV;
 57120/14280/14280 rows. Initial preflight failure retained, one cached build,
 all workers closed20:30:44. Masks/vendor-clock/PIT/finality limits remain.
-Ohm owns NEW bounded intraday GRU window-family code/native preparation:
-A/research/current-intraday-gru-window30-120-20261105-v1.
-No optimizer launched. Original MSE20:40..21:00 takes scoped priority; before
-actual new training Parent needs positive relevant owner closure, not Task exit.
+Ohm intraday study is COMPLETE/PRIMARY_FAIL, Sourceb26d4119:
+A/research/current-intraday-gru-window30-120-20261105-v1/API.json.
+Actual2CUDA fits22full epochs/2464updates EACH/INNER-best14 restored; fit9.15s
+and10.05s, peak106/300MiB reserved. DEV MSE30.688952 versus120.695430; both
+model books chose cash at all16slots, momentumcontrol-.7811%. Onejointarchive/
+1evaluation/6books/0marketretry, all actors closed21:00:27/66.71activeupper.
+Native12/Ruff passed; pre-fit serialization failure/debit retained. Four DEV
+days/adaptive reuse/within-interval DD unknown, no alpha/Paper swap.
+Planck owns NEW cross-asset temporalConv+attention expert/fixed.25W25 blend
+preparation, not another window/GRU rerun:
+A/research/current-net25-crossasset-tcn-attention-20261105-v1.
+No new optimizer claimed before actual qualified dispatch callback.
 Completed fits are never repeated for occupancy.
+
+## Resume-First Control Duty
+
+Updated Nov5UTC21:16. Parent owns ONE proposed manual observer quiet interval
+for unchanged Data83963, not a scheduled worker. Sourcec43b6f75/native17tests
+and actual Readiness21:04 ORIGINAL_READY_NO_EFFECT/0writes:
+A/execution/current-parent-data83963-quiet-window-20261105-v1/SOURCE.json.
+Only21:21..<21:22UTC may Parent attempt Suspend after fresh source/XML/API7/
+enabled/idle/relevant-owner checks. NO actual Disable yet. Before any new work
+after interruption inspect this exact path:
+A/execution/current-parent-data83963-quiet-window-20261105-v1/owned-window/SUSPEND-ATTEMPT.json.
+If present, Parent retains restoration responsibility until positively bound
+original actual Data child closure + exact observer Restore/readback. No timer,
+Taskexit, absent pointer or expired cap clears it. Unknown remains explicit.
+Do not reset/replay a consumed setter. Exact original DataTask/source/clock and
+300gate unchanged; no manual Task.Run/API/credential/token-state change.
+Claude51745ab8 GO_WITH_LIMITS; liveness/restore cautions retained. F9 is an
+unchanged financial reservation, not by itself an observer-control owner.
+No current unknown actual observer loan may be overridden.
+
+MSE original Nov5 20:40 opportunity actually stopped20:40:08 before native:
+13e04e11/6e5d4ea9 PairRESULT e28ec540/visits0/restoreflagtrue. Taskexit0 was
+NOT success. Native source-format guard diagnosis found output_not_owned:
+A/execution/current-mse-observer-output-route-diagnosis-20261105-v1/RESULT.json.
+At20:47 exact original observer FULLXML/nativeACL/enabled/STARTEDabsent and
+named MSE launch/helper processes0; no observer mutation/Restore needed. Old
+flag left unchanged. No new MSE native leg reached; historical owned inventory,
+F9/fees/settlement/PnL remain UNKNOWN. Original owned-exit duty remains.
+Godel route recovery patch15tests+5frozenSDK tests/13childrenclosed is NOT
+DEPLOYABLE: old outer graph/Task identity/Nov5 validity still constrain it:
+A/execution/current-mse-owned-exit-observer-route-recovery-20261105-v1/RESULT.json.
+One inert disabled future definition prepared, nothing installed. No borrowed
+owner/old forecast retag or consumed MSE replay. Independent GPU work resumed
+after the scoped relevant-controller failure/closure proof, not a21:00 timer.
 
 ## Current Reality
 

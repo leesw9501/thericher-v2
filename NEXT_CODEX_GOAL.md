@@ -54,10 +54,10 @@ Updated Nov5UTC20:05 / Nov6KST05:05.
    Singer offer CLOSED17tests; Parent159ec continuous-book metadata-corrected
    scope completed1readout4books/0fits after old4fc failed0books. MemoryON.5533%
    versusOFF.3067%, lowerturnover; exposure differs/no alpha/Paper swap.
-   IntradayData3716c READY same30/120keys24sessions57120/14280/14280rows. Ohm
-   prepares NEW fixed2fit GRU family; no optimizer launched. Actual source/native/
-   GPU headroom and positive MSE original owner closure precede launch:
-   A/research/current-intraday-gru-window30-120-20261105-v1.
+   IntradayData3716c consumed by actual2CUDA GRUs,22epochs2464updates each;
+   Sourceb26d COMPLETE/PRIMARY_FAIL, bothcash/allclosed21:00. No repeat fits.
+   Planck now prepares distinct crossasset temporalConv+attention/fixedblend:
+   A/research/current-net25-crossasset-tcn-attention-20261105-v1.
 6. Actual Paper query17:20 holdings4/noINTC; history18:10 terminal response0rows.
    Both as-of/read-only and independent of local custody; NOT exact original
    intent/fill/owned/PnL or no-historical-request proof. Sources7f2/05f, exact
@@ -81,6 +81,13 @@ Original MSE20:40..21:00 is next actual owned opportunity, not a new schedule.
 Source-pinned public pair reader is ready5invented tests; it does not prove
 financial effects, root exit or independently verified observer restoration:
 A/execution/current-mse-nov5-public-pair-reader-20261105-v1/README.md.
+That actual MSE opportunity now failed pre-native output_not_owned; exact
+diagnosis/original-observer/no-mutation facts in HANDOFF. Old exit duty remains;
+new route patch is NOT deployable while outer graph/late validity unqualified.
+Before new work after interruption inspect HANDOFF's Parent manual Data83963
+quiet-window duty. Sourcec43/native17/Readiness0writes; optionalSuspend21:21 and
+actualRestore only after original positive source-bound child closure. No
+autonomous worker claimed, no original collector/source/300gate changes.
 
 ## Verification And Completion
 
