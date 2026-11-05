@@ -20,16 +20,26 @@ substitute unknown request. No secret/account-order IDs/raw private values outpu
 
 ## Ready / Owned / Due
 
-Updated Nov5UTC11:18 / KST20:18; exact evidence is in HANDOFF and role boards.
+Updated Nov5UTC13:36 / KST22:36; exact evidence is in HANDOFF and role boards.
+
+INTC actual migration COMPLETE13:31:56: both original tasks a3fe/d68b, exact
+pair/fullXML/nativeACL twice-readbackc4a813d8. EXIT once, ENTRY-only recovery
+once; no Task.Run/order/fill. Oldf4a partial failure preserved, no Pair replay:
+A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json.
+RAW actual13:30 point3e781926/ownerclosurecef75fec is now qualified via existing
+reader, not Task exit; see RAW-POINT-READBACK.json in same Parent root.
 
 1. Parent/Execution: today RAW point13:30UTC, entry14:31(KST23:31), original
    exitNov10UTC14:30; INTC engineering1share entry15:10(KSTNov6 00:10),
-   exitNov6UTC15:10. Definitions actually installed; financial effects UNKNOWN.
+   exitNov6UTC15:10. Definitions actually installed/migrated; effects UNKNOWN.
    After actual windows use exact source-bound public readers and separately
    admitted private-custody joins. Never Task.Run or infer fill from Task exit.
    INTC A+B finite readout5c26 is actually installed for15:25UTC(KST00:25):
    A/execution/current-intc-readonly-composite-compatibility-20261105-v1/PARENT-ADOPTION.json.
-   A independently reports worker-ASOF; B requires fresh relevant-writer admission.
+   It remains OLD b63/c5c contract, not automatically compatible after migration.
+   Newpublicreader333 READY; Epicurus owns new a3fe current-custody preparation
+   at A/execution/current-intc-a3fe-current-custody-reader-readiness-20261105-v1.
+   No actual private read, account call or new schedule by that preparation.
 2. Parent/Execution: fixedhalf model25c8 now ACTUALLY installed for entry
    Nov6UTC14:31(KSTNov6 23:31), exitNov11UTC14:30(KST23:30), not a fill.
    Host3ee2/installer8ab5/plan777f fullXML/nativeACL separate readback07:33:54:
@@ -82,11 +92,26 @@ Updated Nov5UTC11:18 / KST20:18; exact evidence is in HANDOFF and role boards.
    Chronos2df3a CLOSED actualCUDA799rows/25forwards/.8088s/0fits,
    growth-1.6332%/DD2.0660%,FAIL; all36Jobs/3CIDs/GPUleaseclosed:
    A/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
-   Rawls now assigned CPU-only minute fixed-rule benchmark from fed81602:
-   A/research/current-native-minute-fixed-rule-development-20261105-v1.
-   Harvey owns synthetic-only supervised Chronos2 adaptation readiness/atmost
-   2invented updates, no market fit/zero-shot replay:
-   A/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
+   Supervised Chronosd11cc CLOSED250CUDAupdates/6INNER/best100/0fullFITepochs,
+   Net25-2.5478%/DD3.1234%,FAIL; allactors/leaseclosed. Only250/29727FIT
+   samples were trained; no convergence/full-FIT or all-foundation rejection.
+   A/research/current-net25-chronos2-supervised-actual-role-development-20261105-v1/API.json.
+   Minute prefix05b0 CLOSED24sessions/6books18views:ORB-3.2526%,RSI-VWAP
+   -4.6345% at25eachleg,bothFAIL/allJobsclosed. Oldtimeout kept, no tuning:
+   A/research/current-native-minute-prefix-parity-development-20261105-v1/API.json.
+   Frozen representation0b8f CLOSED1209CUDAforwards/2Ridge/8books24views,
+   Net25-3.3795% versus raw-0.5243%,FAIL; allresourcesclosed.
+   A/research/current-net25-chronos2-frozen-representation-development-20261105-v1/API.json.
+   Hurdle77ac3fits/799savedproposals now r3cb5e readoutONCE/0refits,Net25
+   -0.09422%/DD2.21714%,FAIL; old index/import/date-format failures preserved:
+   A/research/current-net25-oof-hurdle-meta-policy-development-20261105-v1/readout-only-r3/API.json.
+   Patch2abffa COMPLETE17CUDAepochs/1989updates/best5/fullFIT/0retry; Net25
+   +2.1575%/DD1.8922%,development-pass but risk/exposure above third, not alpha:
+   A/research/current-net25-patch-transformer-development-20261105-v1/API.json.
+   Harvey owns frozen-consumer parity (0fits); Rawls W25primary/W50diagnostic
+   fixed blends (0fits), no weightsweep or installed half/model swap:
+   A/research/current-net25-patch-frozen-native-consumer-20261105-v1;
+   A/research/current-net25-patch-third-fixed-blends-development-20261105-v1.
    Reused adaptive DEV is not independentalpha/PaperPnL; no installed model swap.
 6. Other owned future tasks: DataNAS8 Nov5/6UTC21:10 and frozen savedGRU/Ridge
    Nov6UTC21:35 remain installed. Preserve MSE Nov5UTC20:40, H3AMDNov6UTC20:45,
@@ -103,11 +128,24 @@ passed, after_remove forwarded an already-removed ownCID and withheld result.
 R7 pure18checks passed but native precreate denied own UV/venv wrappers, then
 nested direct-launch root locator failed preSource; cap exhausted/allcommands
 joined/0newprivateguests. No further F9 read/replay; keep UNKNOWN-HELD.
-Maxwell now prepares actual financial guard compatibility plus exact future
-migration plan, source-only/no deployed mutations or broker effects:
-A/execution/current-paper-context-listing-native-compatibility-preparation-20261105-v1.
-RAW/INTC/half SOURCE_AFFECTED is not an actual effect-time fault or repaired
-deployment. Existing B10/input/pending/reservations/exits unchanged.
+Maxwell2a4 draft NOTREADY; Parentc35 guardABI55PASS/Ruff is source-only.
+Instrumented9bc6 suspended-target probe correctly denied missing CIM source
+fields, NOT a demonstrated production fault or permission to impute them.
+INTC a3fe/46c2 whole delivery is source/native-fixture READY102Jobsclosed;
+Parent40refs/actual source.check and fresh relevant-original-owner absence PASS.
+A/execution/current-intc-parent-delivery-adoption-20261105-v1/VERIFIED.json.
+Actual existing-pair migration/recovery now complete after fresh proof per write,
+65regression+21native tests and exact finalreadback. Jason new publicreader333
+is READY14tests/CLI/fullRuff; Epicurus new private-read readiness only.
+Existing15:25 A+B is OLD contract, not automatically compatible. Full external
+harness Ruff27issues explicitly retained; emitted correctness checks PASS.
+Parent original2Task fullXMLACL CAPTURE53c66 matches473f/63c5,
+both original names20261105 (exit dueNov6), not custody closure.
+Actual Claudeauthpresent; old REVISE5fe codesunparsed remains. Completed-delivery
+ff41b649 GO_WITH_LIMITS is advisory/fresh owner+actual admission required:
+A/review/current-intc-production-delivery-challenge-20261105-v1/RESULT.json.
+No agreement/deployment/fill inferred. Existing B10/inputs/pending/exits
+unchanged; independent Data/Research continue.
 
 ## Completion And Verification
 

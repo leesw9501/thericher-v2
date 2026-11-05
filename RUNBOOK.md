@@ -2,7 +2,24 @@
 
 ## Current Owned Commands
 
-Updated Nov5UTC11:18 / KST20:18. Company outcome UNFINISHED.
+Updated Nov5UTC13:36 / KST22:36. Company outcome UNFINISHED.
+
+INTC ACTUAL existing-pair migration/recovery COMPLETE13:31:56, a3fe/d68b:
+D:/thericher-v2/model-artifacts/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json.
+Final independent fullXML/nativeACL readbackc4a813d8; both enabledReady0instances.
+Oldf4a partial EXIT failure preserved, exact measured embeddeddescriptor sync
+578d/65regression+21native then ENTRY-only write; no EXIT/Pair replay/Task.Run.
+NativeACL unchanged; old embedded descriptor NOT equivalent to actualnative.
+Future actual source/account/budget/pending/quote/orderability/emergency/owner
+checks still required. No financial admission, submit/fill/owned/PnL yet.
+New purepublic333 exact reader ready,14native/CLI/fullRuff:
+D:/thericher-v2/model-artifacts/execution/current-intc-a3fe-public-readout-compatibility-20261105-v1/READY-COMMANDS.json.
+OLD15:25 A+B remains b63/c5c contract, not automatically compatible. New private
+reader PREPARATION separately owned, no actualprivate read or new schedule:
+D:/thericher-v2/model-artifacts/execution/current-intc-a3fe-current-custody-reader-readiness-20261105-v1.
+RAW actual13:30 source3e781926/ownerclosurecef75fec/weights2b10653c qualified by
+existing reader (not Task exit), for unchanged RAW14:31 future native input:
+D:/thericher-v2/model-artifacts/execution/current-intc-parent-delivery-adoption-20261105-v1/RAW-POINT-READBACK.json.
 A=D:/thericher-v2/model-artifacts. Full current reality is HANDOFF.md.
 No actual acceptance/fill/current-owned/PnL inferred from installation.
 
@@ -48,13 +65,27 @@ retroactive complete budget pass or fit permission. Chronosdf3a is now CLOSED
 actualCUDA799/25forwards/.8088s/peak495.35MiB,Net25-1.6332%/DD2.0660%,FAIL;
 all36Jobs/3CIDs/GPUleaseclosed, no repeat:
 D:/thericher-v2/model-artifacts/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
-Rawls assigned actual CPU-only minute-rule cost-aware benchmark:
-D:/thericher-v2/model-artifacts/research/current-native-minute-fixed-rule-development-20261105-v1.
+Minute prefix05b0 is now CLOSED24sessions/6books18views, ORBNet25-3.2526%,
+RSI-VWAP-4.6345%,bothFAIL,allJobsclosed; oldtimeout/debits kept:
+D:/thericher-v2/model-artifacts/research/current-native-minute-prefix-parity-development-20261105-v1/API.json.
 Popper fed81602 offer33nativechecks/0market; Parent independent5pure cases:
 D:/thericher-v2/model-artifacts/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
-Harvey synthetic-only native Chronos2 supervised-adaptation readiness/atmost2
-invented updates, no market fit/GPU-use claim merely from assignment:
-D:/thericher-v2/model-artifacts/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
+Supervised Chronosd11cc CLOSED250CUDAupdates/6INNER/best100/0.00841epoch,
+Net25-2.5478%/DD3.1234%,FAIL/allresourcesclosed:
+D:/thericher-v2/model-artifacts/research/current-net25-chronos2-supervised-actual-role-development-20261105-v1/API.json.
+Actual source roles FIT2015-Nov2023/INNER2024-Nov2025; original2019-22/2023
+request was incorrect, oldmismatch0f972 kept. Frozen representation0b8f is now
+CLOSED1209CUDAforwards/2Ridge/8books24views,Net25-3.3795% vs raw-0.5243%,FAIL:
+D:/thericher-v2/model-artifacts/research/current-net25-chronos2-frozen-representation-development-20261105-v1/API.json.
+Hurdle now r3cb5e saved799 readoutONCE/0refits, Net25-0.09422%/DD2.21714%,
+FAIL; old index/import/calendar-format failures preserved. Patch2abffa completed
+17CUDAepochs/1989updates/fullFIT/best5/18.34s/490MiB, allresourcesclosed,
+Net25+2.1575%/DD1.8922%,development-pass not independent alpha/risk dominance:
+D:/thericher-v2/model-artifacts/research/current-net25-patch-transformer-development-20261105-v1/API.json.
+Harvey now frozen-consumer parity only (0fits), Rawls two fixed patch+third blends
+(0fits), no weightsweep/automatic installed model swap. Exact active roots in
+Engine/Steward stateboards. Parent137refs/130unique on patch/r3/publicreader PASS.
+No completed fit/forecast rerun or actual running state inferred from MD.
 ffEA Data closed172GET/22213added; NEWf13a remaining22 closed79GET/
 7677newrows/189376known/26all17complete. No additionalwirequeued.
 D:/thericher-v2/model-artifacts/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
@@ -84,11 +115,30 @@ CIDclosed,0broker/credentials/Taskchanges. R7pure18checks passed, same-path
 native denied own UV/venv launch chain, nested direct-rootcopy failed before
 Source/native. Cap exhausted/0newprivateguests; NOTnative-qualified/no moreread:
 D:/thericher-v2/model-artifacts/execution/current-f9-after-remove-forwarding-repair-20261105-v1/direct-native-r1/CLOSURE.json.
-Maxwell now source-only financial compatibility/migration-plan preparation:
-D:/thericher-v2/model-artifacts/execution/current-paper-context-listing-native-compatibility-preparation-20261105-v1.
-RAW8fd/INTCb63/half3ee2 source affected, actual fault UNKNOWN. No installed
-guard/Task/claims mutation or automatic activation. Keep originalsend/brokerID
-UNKNOWN, B10/reservations/exits; never kill apps/releaseUNKNOWN or observe().
+Maxwell2a4 draft failed; Parentc35 actual guard-ABI55checks/Ruff passed, NOT
+whole caller/OS/lifecycle proof. New INTCa3fe/46c2 production/fixture delivery
+is READY102Jobsclosed with exact new native lifecycle; old fixture-field failure
+preserved. Parent40refs/actual source.check and fresh relevant-owner absence PASS:
+D:/thericher-v2/model-artifacts/execution/current-intc-parent-delivery-adoption-20261105-v1/VERIFIED.json.
+Actual originalpair action-only migration/recovery now complete as top summary,
+exact fresh proof per write and independent finalreadback; no Task.Run/reset.
+Targeted emitted correctness checks PASS, full external harness Ruff27issues
+not claimed clean. Newa3fe publicreader preparation is separate; old15:25 A+B
+is not presumed compatible after migration. No new schedule/financial read.
+Original2Task fullXML/nativeACL capture53c66 (no replay/mutation):
+D:/thericher-v2/model-artifacts/execution/current-intc-context-original-definition-capture-20261105-v1/CAPTURE.json.
+Both names end20261105-v1 (exit dueNov6), not draft20261106alias. Capture
+proves definitions only, not current owner/process/custody closure.
+Native9bc6 suspended-context diagnostic correctly rejected NULL CIM source
+hashes despite real native image proof; no thirdhelper/row imputation/waiver:
+D:/thericher-v2/model-artifacts/execution/current-docker-context-listing-instrumented-native-probe-20261105-v1/HANDOFF.json.
+Actual ordinary running-context/financial effect outcomes remain unknown.
+ClaudeAUTH_PRESENT; real review REVISE/session5fe01e70 (codesunparsed):
+D:/thericher-v2/model-artifacts/review/current-paper-context-compatibility-challenge-20261105-v1/RESULT.json.
+Completed-delivery review ff41b649 GO_WITH_LIMITS, scoped/advisory:
+D:/thericher-v2/model-artifacts/review/current-intc-production-delivery-challenge-20261105-v1/RESULT.json.
+No loginabsence/agreement or deployment inferred. Existing B10/F9/pending/exits
+unchanged; never kill apps/releaseUNKNOWN or recover via observe().
 
 INTC15:25UTC A+B readout5c26 actuallyinstalled, AASOF independent of Bdenial;
 RAW13:30point/14:31entry,INTC15:10entry and allolderexits unchanged. Details and

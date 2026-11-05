@@ -2,7 +2,7 @@
 
 ## Current Work
 
-Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
 OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
 A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
 Source24bb232f:3folds xHGB/GRU/TCN plus1gate,10completed/11attempted.
@@ -17,21 +17,35 @@ Net25growth1.8178%/DD0.6433% equals third, so incremental-growth test FAIL.
 No changed threshold/seen-DEV rerank or Paper swap. More epochs not justified
 by this result. Adaptive/conditional data and OOF-to-final shift stay explicit.
 
-Rawls' Chronos2 comparison is CLOSED; current assigned work is CPU-only actual
-minute-rule benchmark from Popper's native fed81602 offer:
-A/research/current-native-minute-fixed-rule-development-20261105-v1.
-Two fixed ORB15/RSI14-VWAP rules, next d+1OPEN->d+11OPEN, first eligible lot per
-symbol/session, .5/17 fixed slots,25bps eachleg/10legacy/30stress. Only named
-pre-Oct30 all17complete dates selected from metadata before targets; excluded
-keys/support retained. Small reused adaptive development, not independent alpha.
-No fits/GPU/parameter search/old target release or Paper changes. Assignment
-does not establish an actual market readout.
-
-Harvey owns synthetic-only supervised Chronos2 adaptation readiness:
-A/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
-At most2invented updates/one training attempt, real native train/INNER curve/
-safe best-checkpoint restore/parser, no market fits/forecasts/readout. Actual
-headroom and native SDK must qualify; no actual GPU start yet evidenced here.
+Hurdle77ac3CPUfits/6classifierepochs/best1/799savedproposals now read ONCE in
+r3cb5e,0refits/newforecasts: Net25-0.09422%/DD2.21714%,FAIL versus half/third:
+A/research/current-net25-oof-hurdle-meta-policy-development-20261105-v1/readout-only-r3/API.json.
+Original global/local2765 index bug, r1F401 and r2YYYYMMDD-vs-ISO format failures
+remain. All799x3 normalized source dates agreed; exact metadata repair before
+the one actual book evaluation, no thresholds/labels/models changed or old pass
+invented. Source-format fixture must represent real coordinate/date conventions.
+Frozen representation0b8f COMPLETE/FAIL: actual1209CUDA encoder forwards/2Ridge,
+8books24views. Net25 representation-3.3795%/DD5.0008%, raw-0.5243%/DD2.1309%:
+A/research/current-net25-chronos2-frozen-representation-development-20261105-v1/API.json.
+All5CIDs/Jobs/GPUlease closed12:43:20; encoder26.38s/528MiB reserved. No refit.
+Scratch patch2abffa COMPLETE/DEVELOPMENT_PASS: same12channel60+8indicator,
+17CUDAepochs/1989updates/best5/INNER earlystop12/LR schedule/bestSFTrestore;
+ALL29727eligibleFIT rows each epoch,18.34fitseconds/490MiBreserved,0retry.
+Net25growth2.1575%/DD1.8922% vs third1.8178%/.6433%, exposure7.04% vs1.82%:
+A/research/current-net25-patch-transformer-development-20261105-v1/API.json.
+Higher growth is not risk dominance, convergence or independent alpha. All
+CIDs/Jobs/GPUlease closed,211.919SUM/1386.615elapsed. Parent137refs/130unique
+across patch/r3/publicreader stable,0numericalreruns/private reads.
+Harvey now owns frozen patch native consumer/CPU-CUDA sign parity,0fits/readouts:
+A/research/current-net25-patch-frozen-native-consumer-20261105-v1.
+Rawls owns W25=.25patch+.75third PRIMARY/W50halfblend DIAGNOSTIC, exactly
+two fixed candidates/0fits/two common-book evaluations, no weightsweep. Primary
+growth>half/third/cash and DD<=1.25thirdDD; same25funded taperecost10/25/30:
+A/research/current-net25-patch-third-fixed-blends-development-20261105-v1.
+No automatic seen-winner/installed model swap. Native/source qualification first.
+Mechanism adapted from official PatchTST, not its published benchmark replication:
+https://arxiv.org/abs/2211.14730 ; https://github.com/yuqinie98/PatchTST (Apache2).
+General forecasting evidence is not an equity-profit claim. No runtime replacement.
 
 Old f3e1 unavailable, maskedpreflight, r1mixed-device failure and r2nativefixture
 failures remain immutable with all debits. McClintock model service hit capacity;
@@ -43,6 +57,23 @@ A/review/current-net25-gate-mixed-device-recovery-20261105-v1/verdict.json.
 
 ## Completed Current Results
 
+- Chronos supervised d11cc CLOSED1actualCUDAfit/250updates/65.737s/6INNER,
+  best100 safe restore/peak3.031GiB reserved/799DEV/6books18views:
+  A/research/current-net25-chronos2-supervised-actual-role-development-20261105-v1/API.json.
+  Net25growth-2.5478%/DD3.1234%,FAIL,allCIDs/PIDsJobs/GPUleaseclosed.
+  Actual coverage250/29727FIT samples=0.00841epoch, first2015Mar-Apr keys;
+  initialINNER1.2214 vs bestpostupdate1.2623, last1.2937. No convergence or
+  representative full-FIT conclusion.494.41SUM/2400,2709.28elapsed. Explicit
+  actual FIT2015-Nov2023/INNER2024-Nov2025 corrected Parent's false original
+  2019-22/2023 request; old0f972 mismatch/0fits/alignment/debits immutable.
+- Native-minute prefix05b0 CLOSED24sessions/24durablecommits/6books18views:
+  A/research/current-native-minute-prefix-parity-development-20261105-v1/API.json.
+  ORB15 Net25-3.2526%/DD3.2565%; RSI14VWAP-4.6345%/DD4.6345%,bothFAIL.
+  Same firsteligible10minute hold/fixedslots, no parameter rescue. Native5460
+  decision/2730key/3375Decimal-tuple parity; markethost16.77s vs old125timeout.
+  516.90familySUM/2200,1275.79elapsed/allJobsclosed. Old7f07 partial17support
+  snapshots NOTcomplete tapes; its timeout/343.90debit retained, no forecasts/
+  labels/readout result there. Costs dominate, not an input qualification claim.
 - Chronos2 df3a7570 CLOSED DEVELOPMENT_FAIL/0fits/one799archive/25forwards:
   A/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
   ActualCUDA forecast0.8088s/peak519416832bytes; batch32 native CPU0.1829s/
@@ -117,6 +148,10 @@ without incremental gain. Synthetic-only trainable adaptation readiness is a
 distinct mechanism, not permission to repeat zero-shot or seen-DEV rescue.
 Training curves/earlystop/checkpoints remain available in new trainable scopes;
 no old immutable epoch cap becomes a global rule.
+Temporal train/INNER separation is not a requirement to present SGD only the
+earliest FIT keys. Future training may use seeded within-FIT shuffling/batching
+and predeclared representative coverage before earlystop. Current250sample
+pilot remains partial, not regraded; no extra global gate or Paper delay.
 Data native minute history is a useful later input, not automatic release of
 old reserved evaluation. Source/producer/consumer ABI smoke before market.
 

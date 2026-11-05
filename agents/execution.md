@@ -2,7 +2,18 @@
 
 ## Current Runtime
 
-Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
+INTC ACTUAL migration/recovery complete13:31:56: both original tasks a3fe/d68b,
+independent exact pair fullXML/nativeACL readbackc4a813d8, enabledReady/0instances.
+EXIT once, ENTRY-only recovery once after fresh ownerproof. Partial9b0816 kept;
+nativeACL unchanged, measuredembedded sync only, oldembedded NOT equivalent.
+A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json.
+No Task.Run/order/fill or financial admission proved by installation.
+RAW actual13:30 point3e781926/closurecef75fec is qualified by existing reader:
+A/execution/current-intc-parent-delivery-adoption-20261105-v1/RAW-POINT-READBACK.json.
+Epicurus now owns new a3fe current-custody readiness, no actualprivate read:
+A/execution/current-intc-a3fe-current-custody-reader-readiness-20261105-v1.
+Old15:25 A+B remains OLD sourcecontract, not automatically compatible.
 Parent owns adoption/integration/Git. Company outcome UNFINISHED.
 No new actual acceptance/fill/current-owned/PnL proven. Preserve ONE original
 initialB/10/F9 UNKNOWN-HELD/all pending/costs/losses/reservations/old exits.
@@ -11,7 +22,7 @@ No new bank/refill/foreign adoption/substitute unknown request/live.
 | Installed definition | Entry / owned exit UTC | Evidence |
 | --- | --- | --- |
 | RAW ALL3 host8fd/plan38 | Nov5 14:31..<14:35 / Nov10 14:30..<14:35 | A/execution/current-raw-all3-future-finite-definition-preparation-20261105-v1/native-surface-recovery-20261105-v1/PARENT-ADOPTION.json; c48d adoption. PointNov5 13:30 remains UNKNOWN. QuarterONEB10 ceiling/NON_PARITY. |
-| INTC engineering1share b63/releasec5c/473f/63c5 | Nov5 15:10..<15:11/hard15:20 / Nov6 15:10 | A/execution/current-nextday-engineering-future-definition-preparation-20261105-v1/PARENT-ADOPTION.json;80c4, actual completeXMLACL readback00:32. Samephysicalbank/native risk, not substitute. |
+| INTC engineering1share a3fe/released68b | Nov5 15:10..<15:11/hard15:20 / Nov6 15:10 | A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json; exact same original pair, original B10/state/identities; migrated13:31:56, no actual fill. |
 | NET25 frozen fixedhalf3ee2/8ab5/777f | Nov6 14:31..<14:35 / Nov11 14:30..<14:35 | A/execution/current-net25-native-definition-recovery-20261105-v1/PARENT-ADOPTION.json; actual completeXML/nativeACL readback07:33:54. Model25c8 HGB+GRU only, no research-third swap. |
 
 New tasks hiddenpythonw/noDemand/catchup/repeat;NET25PT7M. Future definitions
@@ -105,14 +116,58 @@ Never replay consumed installers/enable/readback receipt writers to inspect.
 
 ## Scoped Deferred Work
 
-Maxwell current SOURCE-ONLY financial native compatibility preparation:
-A/execution/current-paper-context-listing-native-compatibility-preparation-20261105-v1.
-SOURCE-IMPACT.json at prior R6 root proves RAW8fd/INTCb63/HALF3ee2 omit the
-exact context-ls argv role; actual effect-time fault UNKNOWN. Adapter must
-preserve all actual native instance/source/frame/mount/account/risk/request/
-bank/exit checks. Deliver invented real guard tests and exact future migration
-plan before any new deployment. Installed sources/claims/Tasks remain unchanged;
-R6 readonly capability never silently upgrades them. No further F9 read queued.
+Maxwell2a4 compatibility draft CLOSED NOTREADY (fixture ABI/620.38SUM>600).
+Parent c35c3416 source guard-ABI READY55/Ruff/920.38conservativeSUM:
+A/execution/current-paper-context-listing-native-wrapper-abi-repair-20261105-v1/CLOSURE.json.
+Actual RAW/HALF check and INTC Guard->exactAdmission.check/classify executed
+on invented boundaries; not whole caller/OS/financial runtime admission.
+Two real source-defined negative exception types were correctly rejected by
+production and initially mishandled by tests; old failures preserved.
+
+New productiona3fe/fixture46c2 is source/native-fixture READY: actual unchanged
+native lifecycle/43duplexrounds/invented positive entry-exit+unknown hold cases,
+102Jobs/CID/PIDs closed. Old babbf5c2 failure remains; production28fields stays
+distinct from fixture38fields, no fake flag or old pass relabel:
+A/execution/current-intc-context-native-production-fixture-repair-20261105-v1/RESULT.json.
+Parent40publicrefs and actual source.check(host=True) PASS, exact old account/
+basis/input/policy/runtime/state/bank/operational paths preserved:
+A/execution/current-intc-parent-delivery-adoption-20261105-v1/VERIFIED.json.
+Targeted emitted F821/F822/F823/E9 PASS; full external harness Ruff27issues
+not called clean. Fresh Parent owner factory two native census/container views
+found no relevant original processes/containers or session/visit files, allJobs
+closed. This is not financial admission/holdings or all-owner closure.
+Originalpair migration/recovery is complete as above; no replay or furtherwrite.
+Jason newa3fe purepublicreader333 READY14native/CLI/fullRuff/allchildrenclosed:
+A/execution/current-intc-a3fe-public-readout-compatibility-20261105-v1/READY-COMMANDS.json.
+Old15:25 A+B still oldsourcecontract, not automatically qualified for migrated
+source. Newcurrent-custody preparation is separate, no newschedule/actualread.
+
+Parent captured exact original INTC2Task completeXML/nativeACL twice stable
+at11:48,473f/63c5 source matched, enabledReady/0instances:
+A/execution/current-intc-context-original-definition-capture-20261105-v1/CAPTURE.json.
+SHA53c66b86, no mutations/Task.Run/private calls; NOT process/custody closure.
+Both original Task names end20261105-v1 though exit dueNov6. Old draft alias
+exit-20261106-v1 was wrong, not evidence original exit missing. HALF entry/
+exit and shadow also actuallyenabled/idle at11:37, not financial evidence.
+
+Gauss native probes040d/9bc6 CLOSED NOTREADY. Actual suspended target row's
+CIM exe/entry/path source hashes were NULL; genuine Win32 image/birth proof
+matched but unchanged kernel correctly denied context_exact_binary_source.
+A/execution/current-docker-context-listing-instrumented-native-probe-20261105-v1/HANDOFF.json.
+All helpers closed/neverresumed/no daemon/private/broker/Task; no third helper,
+row imputation or classifier relaxation. This diagnostic does not demonstrate
+the same failure for ordinary running editor commands; full financial admission
+was NOT tested. Independent research/installed opportunities remain active.
+
+Claude status AUTH_PRESENT; bounded32-child tool-free challenge returned actual
+REVISE/session5fe01e70 with reason codes unparsed:
+A/review/current-paper-context-compatibility-challenge-20261105-v1/RESULT.json.
+Adverse named advice retained; no deployment adopted from55source tests. Do not
+invent its reasons or say user login missing; old review failures' cause unknown.
+Concrete delivery review ff41b649 GO_WITH_LIMITS retains actual owner/admission/
+future clocks/lint limitations; not a financial authority grant:
+A/review/current-intc-production-delivery-challenge-20261105-v1/RESULT.json.
+No further F9 read queued. Existing source/bank/requests/pending/exits unchanged.
 
 Fixedthird f0f has only a nonfinancial CPU/networknone shadow Task c96,
 ACTUALLY installed Nov6UTC13:45/hard13:50/separate fullXMLACL readback10:28:26:

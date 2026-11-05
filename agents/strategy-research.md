@@ -2,7 +2,7 @@
 
 ## Current Handoff
 
-Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
 Rawls' Chronos2 Open-path proposal c2674620 is CLOSED and consumed by a
 separately scoped Engine campaign, not a Strategy GPU worker:
 A/research/current-net25-public-model-open-forecast-readiness-20261105-v1/READY.json.
@@ -26,8 +26,27 @@ benchmark, not Strategy fitting or evaluation authority.
 
 Chronos2 Open-path proposal was consumed: actualCUDA799forecasts/25forwards,
 Net25growth-1.6332%/DD2.0660%,FAIL versus half/third. No proposal/refit rescue.
-Harvey separately investigates synthetic-only native supervised adaptation,
-not another standalone zero-shot run or current profitable model.
+Supervised adaptation d11cc also failed Net25-2.5478%/DD3.1234% after250
+updates/0.00841FITepoch, not convergence or a general foundation rejection.
+Minute offer now consumed by05b0 complete24sessions/ORB-3.2526%,RSI-VWAP
+-4.6345%,bothFAILat25eachleg; prefix optimization preserved5460 decisions.
+No threshold/holding-time change to rescue seen results. Frozen representation
+0b8f also failed: Net25-3.3795% versus raw-0.5243%,1209actualCUDAforwards/all
+resourcesclosed. Hurdle3fits/799proposals completed; index adapter failure left
+initially zero readouts; corrected metadata-only r3 now read ONCE: Net25-0.09422%,
+FAIL. No refits/archive regeneration; source/index/dateformat failures retained.
+Next distinct mechanism is scratch channel-independent patch attention, consumed
+by Harvey's bounded Engine campaign, not a new permanent Strategy worker:
+A/research/current-net25-patch-transformer-development-20261105-v1.
+Patch2abffa now completed17actualCUDAepochs/1989updates/best5/fullFITcoverage,
+Net25+2.1575%/DD1.8922%,vs third+1.8178%/.6433%; development-pass but higher
+exposure/turnover/risk. Native frozen consumer and two fixed blends are delegated
+to Engine separately; no automatic live/Paper winner or independent claim.
+Parent checked official paper https://arxiv.org/abs/2211.14730 and official
+Apache2 repo https://github.com/yuqinie98/PatchTST . Temporal patches/shared
+channel weights are a mechanism hypothesis, not proof of trading returns or
+our adaptation reproducing the official forecasting benchmark. Native Torch,
+same exact input/target/cost baselines; no extra public-code runtime authority.
 
 Kant's source offer is CLOSED:
 A/research/current-net25-chronological-gate-candidate-20261105-v1.

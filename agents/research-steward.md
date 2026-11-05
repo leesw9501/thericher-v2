@@ -2,15 +2,23 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC11:18 / KST20:18.
-Chronos2 numerical campaign is CLOSED/GPUlease released; no repeat inference.
-Rawls now assigned CPU-only minute-rule benchmark,0fits/GPU:
-D:/thericher-v2/model-artifacts/research/current-native-minute-fixed-rule-development-20261105-v1.
-Harvey owns synthetic-only Chronos2 supervised-adaptation readiness and GPU
-coordination, at most2invented optimizerupdates/one attempt/0marketfits:
-D:/thericher-v2/model-artifacts/research/current-chronos2-supervised-adaptation-readiness-20261105-v1.
-Actual native train/checkpoint/INNER/parser plus measured headroom required.
-Assignment is not actual GPU use; no other numerical GPU worker claimed.
+Updated Nov5UTC13:36 / KST22:36.
+Completed supervised Chronosd11cc, frozen representation0b8f and minute05b0
+campaigns are CLOSED. Frozen encoder actually ran1209forwards/26.38worker
+seconds/528MiB reserved, all5CIDs/Jobs/GPUlease closed12:43:20.
+Patch2abffa COMPLETE actual17CUDAepochs/1989updates/full29727FITeach/best5,
+18.34fitseconds/490MiBreserved; allCIDs/Jobs/GPUlease closed. Measured native
+batch256 CPU137.83ms vsCUDA7.22ms justifiedCUDA. No GPU occupancy rerun.
+D:/thericher-v2/model-artifacts/research/current-net25-patch-transformer-development-20261105-v1/API.json.
+Net25+2.1575%/DD1.8922%,development-pass not riskdominance/independentalpha.
+Harvey now owns frozen native consumer/parity/17row CPUCUDA benchmark only,
+0fits/labels/readouts,600SUM/1200elapsed/hard13:55UTC:
+D:/thericher-v2/model-artifacts/research/current-net25-patch-frozen-native-consumer-20261105-v1.
+Rawls hurdle3fits/799savedproposals now r3readoutONCE/0refits,Net25-0.09422%,
+FAIL. Old source/import/dateformat failures/debits retained. New separate fixed
+two-blend comparison is CPU-only/0fits,240SUM/900elapsed/hard13:50:
+D:/thericher-v2/model-artifacts/research/current-net25-patch-third-fixed-blends-development-20261105-v1.
+Assignments are not actual running GPU/evaluation evidence; no completed-fit repeat.
 
 Completed OOF training is COMPLETE and GPUlease released:
 D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
@@ -39,6 +47,15 @@ Claude falsification/leakage challenge belongs to new interpretation.
 
 ## Completed Training / Do Not Repeat
 
+- Supervised Chronosd11cc CLOSED250CUDAupdates/65.737s/6INNER/best100,
+  peak3.031GiB reserved; only250/29727samples (0.00841epoch), not convergence.
+  Net25-2.5478%/DD3.1234%,FAIL.494.41SUM/2400,2709.28elapsed; all original
+  numericalPIDs/CIDs/Jobs/leaseclosed,799archive not rerun:
+  A/research/current-net25-chronos2-supervised-actual-role-development-20261105-v1/API.json.
+  Synthetic readinesscd0462updates/93.85SUM remains separate, not market fit.
+- Minute05b0 CLOSED24sessioncommits/6books18views/0fits/GPU,516.90familySUM,
+  actualmarket host16.77s. Old125s timeout and343.90debit preserved. No need
+  GPU for the sequential Decimal prefix repair; no profitability rescue.
 - Chronos2 df3a CLOSED actualCUDA799rows/25forwards/0fits,forecast0.8088s,
   peak495.35MiB allocated/562MiB reserved; nativebatch32CPU0.1829/CUDA0.0304s.
   Six actual native API calls/group-mutation checks passed; Net25-1.6332%/

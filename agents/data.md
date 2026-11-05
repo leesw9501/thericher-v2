@@ -2,7 +2,7 @@
 
 ## Current Work
 
-Updated Nov5UTC11:18 / KST20:18. A=D:/thericher-v2/model-artifacts.
+Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
 Archimedes CLOSED remaining22 f13a056e revision-v2:
 A/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
 79acceptedGET/0failed/oneinitialPOST/0retry/0recovery,7677newrows;
@@ -15,9 +15,13 @@ beforewire; revision-v2 retained old consumed marker and tested301prefix/suffix
 cases, no old outcome regrade. No further wire queued. Future83963 unchanged.
 Popper minute-rule consumer fed81602 is CLOSED33native/0market checks:
 A/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
-Rawls now assigned separate actual CPU-only fixed-rule benchmark, metadata-
-complete pre-Oct30 sessions only; no reserved release or source-grade upgrade.
-A/research/current-native-minute-fixed-rule-development-20261105-v1.
+Rawls consumed it in24metadata-complete pre-Oct30 sessions through prefix05b0:
+A/research/current-native-minute-prefix-parity-development-20261105-v1/API.json.
+Two rules completed/failed economically at25eachleg,0fits/GPU/no reserved
+release/source-grade upgrade. Old125s timeout/17partial snapshots stay failed.
+Daily training role metadata confirmed actual7eaa FIT2015-Nov2023 and
+INNER2024-Nov2025; Parent's requested2019-22/2023 was not the original split.
+Explicit corrected contract preserves old mismatch and every payload/role hash.
 
 ## Current Coverage
 
@@ -57,7 +61,11 @@ Future revision-v2/actual/publication/DATAREADY.json and payload remain UNKNOWN.
 Frozen modelhalf25c8 publisher5bf ACTUALLY installed Nov6UTC13:30; no new fit.
 
 Coherent19 Nov4asof/Nov5decision c632/READY0c5b/closure5c058 is typed-ready/closed;
-RAW point publisher ownsNov5UTC13:30, actualpointUNKNOWN. No stale asof retag.
+RAW publisher actually ranNov5UTC13:30; existing source-qualified reader now
+validates actualpoint3e781926/positiveownerclosurecef75fec/weights2b10653c,
+not Task exit. A/execution/current-intc-parent-delivery-adoption-20261105-v1/RAW-POINT-READBACK.json.
+Source/model/manifest/score/calendar/affine/ceiling/actualmode/nativebirth/byte
+links passed; proposal only, not financial admission/fill. No stale asof retag.
 NAS8Data24a39 hidden tasks Nov5/6UTC21:10..<21:11/hard21:25 actually installed:
 A/data/current-nas8-nov5-nov6-finite-acquisition-preparation-20261105-v1/parent-install/PARENT-ADOPTION.json.
 Saved GRU/Ridge observation880d scheduledNov6UTC21:35,0fits. Old consumed Nov2..4
