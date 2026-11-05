@@ -2,38 +2,26 @@
 
 ## Current Resource Coordination
 
-Updated Nov5UTC15:58 / Nov6KST00:58.
-No new training is claimed running. W25 parity94a0 completed one799sweep,
-0fits/readouts/updates,51.305SUM/180; all2CIDs/Jobs/GPUlease closed14:21:47.
-Modelcbd remains frozen; futureintake69ba inventednative path nowqualified,
-0actualfuturedataadmission. One nativeattempt/PatchCUDA+threeCPUexpertforwards,
-.344modelseconds/24MiBreserved,48.274SUM/allJobsCIDGPUleaseclosed. Carson now
-prepares one NONFINANCIAL savedW25 future shadow publisher, no newfit/economic
-readout; original HALF financial model unchanged. NULaudit4f8a/olddebits unchanged. Safe weights
-may be restored for this concrete future-input consumer, not occupancy work.
-Rawls later-cohort source/invented fixture work has no GPU allocation. Practical
-ordinary technicalfixes within new wall/worker caps are not extra model trials.
-Completed supervised Chronosd11cc, frozen representation0b8f and minute05b0
-campaigns are CLOSED. Frozen encoder actually ran1209forwards/26.38worker
-seconds/528MiB reserved, all5CIDs/Jobs/GPUlease closed12:43:20.
-Patch2abffa COMPLETE actual17CUDAepochs/1989updates/full29727FITeach/best5,
-18.34fitseconds/490MiBreserved; allCIDs/Jobs/GPUlease closed. Measured native
-batch256 CPU137.83ms vsCUDA7.22ms justifiedCUDA. No GPU occupancy rerun.
-D:/thericher-v2/model-artifacts/research/current-net25-patch-transformer-development-20261105-v1/API.json.
-Net25+2.1575%/DD1.8922%,development-pass not riskdominance/independentalpha.
-Frozen consumer8a1eff47 READY_CUDA_ONLY/34.022SUM/906.697elapsed, bothCIDs/
-Jobs/lease closed. CPU5.0666e-6 error exceeds frozen1e-6 despite same signs;
-CUDA799archivebatchbitwise/otherbatchsignsame. No tolerance/clamp rescue.
-D:/thericher-v2/model-artifacts/research/current-net25-patch-frozen-native-consumer-20261105-v1/API.json.
-Rawls hurdle3fits/799savedproposals now r3readoutONCE/0refits,Net25-0.09422%,
-FAIL. Old source/import/dateformat failures/debits retained. Fixedblends fedd now
-CLOSED2evaluations/12books36views/0fits/0GPU,63.095SUM/all8Jobsclosed; W25
-primary development-pass+3.6012%/.6505%DD, W50diagnosticnotpromoted.
-D:/thericher-v2/model-artifacts/research/current-net25-patch-third-fixed-blends-development-20261105-v1/API.json.
-Harvey is CLOSED, not a current GPUcoordinator/optimizer. Existing HALF financial
-stays frozen; no W25 bank/model swap. Ready new numerical work requires its own
-unchanged frozen contract/resource evidence, never completed training reruns.
-Assignments are not actual running GPU/evaluation evidence; no completed-fit repeat.
+Updated Nov5UTC17:48 / Nov6KST02:48.
+No optimizer/GPU training currently claimed. Completed fits/leases remain closed.
+W25 actual shadowff383 enabled Nov6UTC13:55/hard14:05, saved PatchCUDA inference
+plus HGB/GRU/TCNCPU;0fits/readouts/bank/private/orders, frozenHALF unchanged:
+D:/thericher-v2/model-artifacts/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
+Futureintake69ba complete invented realBar/features/fourexpert/public18 native,
+allJobsCIDGPUleaseclosed,0actualfutureadmission. Publicationreader04f093 ready.
+LaterData c7b actually enabled Nov10/13UTC21:30; actual future inputsUNKNOWN.
+Prepare/consume qualified actual forward publications at worker-owned times,
+not foreground waiting or new GPU occupancy work.
+
+Patch2abffa completed17CUDAepochs/1989updates/full29727FIT each/best5/18.34fitsec/
+490MiB reserved,allleasesclosed. CUDA measured7.22ms vsCPU137.83ms justified it.
+GRU7eaa42epochs/TCN3c2432CPUepochs/Chronosdf3a/d11cc/representation0b8f and
+hurdle/gate/tree all CLOSED. Prior finite ceilings/debits preserved, no repeats.
+W25PRIMARY fixedblendfedd uses saved outputs only; +3.6012%/DD0.6505% at25bps
+eachleg/adaptive reusedDEV, not independentalpha/PaperPnL.
+A useful NEW ready frozen campaign may use GPU concurrency under actual headroom;
+this is not permission to rerun completed fits or add trials to frozen studies.
+Current critical path is native Paper technical recovery, not GPU authorization.
 
 Completed OOF training is COMPLETE and GPUlease released:
 D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.

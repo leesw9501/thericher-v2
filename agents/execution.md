@@ -2,55 +2,43 @@
 
 ## Current Runtime
 
-Updated Nov5UTC15:58 / Nov6KST00:58. A=D:/thericher-v2/model-artifacts.
-INTC actual15:10 Taskexit20/public333 UNKNOWN_PUBLIC_CHAIN. Parent public-only
-diagnostic found0captured files/0terminals with native selectorUNKNOWN, not a
-parser failure: A/execution/current-intc-public-failure-diagnosis-20261105-v1/RESULT.json.
-No submit/fill/no-effect inference. Frozen10bd NOT invoked: positive-public
-closure missing. Independently admitted bf701 reader qualified39pure/invented
-5phasecapsule,14oldPythonmembersbyteexact. ONE actualread15:53 WITHHELD at
-fresh public.capture audit beforecreate/admission/private capture, nofinance
-projection; exact result in HANDOFF. Never repeat that source/read. Confucius
-repairs exactpublicsourceallowlist and realconstructor->capture path, not broad
-audit waiver. The new independently admitted local-custody reader has no
-public-success prerequisite; all actual relevantwriter/lease/caller/source/
-private exactjoins/stability/networknone/allRO checks remain. Claude6b427c2d
-GO_WITH_LIMITS, no actualprivate capture. OwnGUI identity/preGuard bootstrappassed,
-publicmetadata115files/fourfaults lacks exactcurrentactor/sourcejoin; original
-cause UNKNOWN. Kierkegaard next realMetadata/adapter constructor-only diagnosis
-cannot invoke strategy/Context/Census/Task. Original exitNov6UTC15:10 preserved.
-ACTUAL RAW14:31 closed stopped_for_adapter_recovery, attempt1f8779b3,
-terminal7a0b7d3b/closedb3eb2f00/PID42128 birth134383626605046894. Matching
-faultmanual_lineage_unbound/nativeNOT_ENTERED. Forensic458 independently joins
-four exact original rows: BOTH.py-only producers record PythonEXE forlauncher.pyw.
-Identity predicate correctly denied; historical observer restoration UNPROVEN.
-Producerfaa25 now READY58pure/PSparse/fullRuff/oneownnativepair/9Jobsclosed,
-Parent18refs verified; no deployment. Source confirms HALF/RAW.pyw dependency
-if reached, not INTC.py. Epicurus now fullHALF nativeintegration derivative;
-originaltasks/ops/bank/model/risk unchanged. Old67906 failure preserved.
-No consumed Task replay/substitute/reset/release; original RAW exitNov10 kept.
-INTC ACTUAL migration/recovery complete13:31:56: both original tasks a3fe/d68b,
-independent exact pair fullXML/nativeACL readbackc4a813d8, enabledReady/0instances.
-EXIT once, ENTRY-only recovery once after fresh ownerproof. Partial9b0816 kept;
-nativeACL unchanged, measuredembedded sync only, oldembedded NOT equivalent.
-A/execution/current-intc-parent-delivery-adoption-20261105-v1/PARENT-ADOPTION.json.
-No Task.Run/order/fill or financial admission proved by installation.
-RAW actual13:30 point3e781926/closurecef75fec is qualified by existing reader:
-A/execution/current-intc-parent-delivery-adoption-20261105-v1/RAW-POINT-READBACK.json.
-New a3fe current-custody10bd TECHNICAL READY: Parent cold namespace constructor
-and one networknone/allRO invented capsule/fivephases/15Jobsclosed/ownCIDabsent,
-22pure cases. No actualprivate read/financialadmission, old1a122 failure retained:
-A/execution/current-intc-a3fe-custody-bootstrap-repair-20261105-v1/READY-COMMANDS.json.
-Manual use after15:20/exact333 positiveclosure andfreshrelevantwriteradmission/
-stable exactjoins only; RAM categorical projection, no brokerholdings/PnL claim.
-Old15:25 A+B DISABLED13:57:58, sourcecontract obsolete. FullXML/nativeACL
-rollback retained; Enabledfalse only, independent read-only closure after
-postwrite omitted-default XML failure, no setter replay/no financialTaskchange:
-A/execution/current-intc-parent-delivery-adoption-20261105-v1/OLD-READOUT-DISABLED.json.
-Parent owns adoption/integration/Git. Company outcome UNFINISHED.
-No new actual acceptance/fill/current-owned/PnL proven. Preserve ONE original
-initialB/10/F9 UNKNOWN-HELD/all pending/costs/losses/reservations/old exits.
-No new bank/refill/foreign adoption/substitute unknown request/live.
+Updated Nov5UTC17:48 / Nov6KST02:48. A=D:/thericher-v2/model-artifacts.
+Company outcome UNFINISHED. No new exact linked fill/current-owned/PnL proven.
+Actual fresh Paper holdings17:20 COMPLETE/count4/noINTC,1POST3GET/0orders/private
+reads; source7f2/16pins ParentPASS/nativeJobclosed. Routing fingerprint matches
+configured original source, not broker identity echo; three venues sequential.
+No fill attribution/fullrisk/fees/settledcash/PnL or reservation release:
+A/execution/current-paper-current-holdings-readonly-20261105-v1/qualified-readonly60-r1/RESULT.json.
+
+RAW14:31 consumed stopped_for_adapter_recovery/exactownerclosed14:31:16.
+Forensic458 proves two .py-only producers put PythonEXE in .pyw source fields.
+INTC15:10 consumed Taskexit20/public333 UNKNOWN/0public files. Original financial
+effects UNKNOWN; no replay/no substitute request. Original a3fe pair was actually
+migrated13:31:56/fullXMLnativeACL; future exitNov6UTC15:10 stilla3fe.
+New2dab/8fd686 repaired actual reproduced Metadata import order, exact GUI cold
+constructor/earlyfault/nativeSDK fixture PASS, not historical cause attribution.
+EXIT-only89b6 needs a truthful fresh typed owner producer before Parent Apply.
+
+HALF b1a native entry/ownedexit+SDKguard checks qualified, NOT deployed.
+Original3ee2 pair/model25c8/B10/ops unchanged. Epicurus resolves measured embedded
+descriptor sync in actual owner Readback and missing first_issuance readiness
+helper before complete future pair migration. Both actual Paper clients use60s,
+not Data300. INTC issuance at15:10 may miss15:11 freshsell deadline; Carson designs
+earlier readiness without moving original financial effect window.
+A/execution/current-paper-token-window-readiness-audit-20261105-v1/RESULT.json.
+
+Confucius readerfc4e reached real CIM/Docker classifier; withheld on two exact
+Docker CLI actors unknown and audit denial. All five metadata children closed,
+0private, late delivery overrun disclosed/no READY command. Source-only diagnosis,
+not broad exemption or another unqualified actual read:
+A/execution/current-intc-native-worker-policy-completion-20261105-v1/CLOSURE.json.
+Old10bd/bf/c13e/aff2/58c and all consumed probes immutable. Relevant actualwriter/
+source/lease/privatejoins/networknone/allRO/stability remain mandatory. Public
+success is not a circular private-read prerequisite. Never recovery observe().
+
+Parent owns adoption/Git. Preserve ONE initialB/10/F9 UNKNOWN-HELD/pending/
+reservations/costs/losses/ALL original exits. No foreign adoption/new bank/refill.
+OLD15:25 A+B disabled13:57:58/fullrollback retained. Definitions are not fills.
 
 | Installed definition | Entry / owned exit UTC | Evidence |
 | --- | --- | --- |

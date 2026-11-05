@@ -2,23 +2,26 @@
 
 ## Current Work
 
-Updated Nov5UTC15:58 / Nov6KST00:58. A=D:/thericher-v2/model-artifacts.
-Futureintake69ba COMPLETE: inventedKISdaily->actualBar/Data83963seal->truthful
-FUTURE_83963 typedfeatures->PatchCUDA/HGB+GRU+TCNCPU->W25->strictpublic18
-parse-and-return;15negatives/firstnativeattemptPASS/allJobsCIDleaseclosed,
-48.274SUM/0fits/updates/marketreadouts. Parent20refs14unique and alreadyclosed
-syntheticpublicationreader independently PASS,0newforwards. Actualfuturehashes
-UNKNOWN, not actualadmission. Carson now prepares one NONFINANCIAL W25 future
-shadow publisher Nov6UTC13:55/hard14:05, savedweights only, no HALF hot-swap:
-A/research/current-net25-w25-nov6-shadow-opportunity-preparation-20261105-v1.
-Old4f8a NULaudit and newr01 missingNumPybootstrap failures/debits preserved;
-PIPE/EOF+samehostbootstrap fixed them without reopening old clocks.
-W25 saved-composition parity94a0 is READY_FROZEN_DEV_PARITY_ONLY, original
-modelcbd unchanged: one799sweep/bitwise originalbatch/maxmixederror1.6696e-9,
-0fits/updates/newdata/readouts,51.305SUM/allJobsCIDsleaseclosed14:21:47.
-Forward6ce3 predeclares Nov6/11/16 OPEN entries to Nov11/16/19 OPEN exits,
-51future rows/smallmeasurement only. Later actual hashes remain UNKNOWN;
-future83963 role must be truthfully qualified, never oldDEV wrapper impersonation.
+Updated Nov5UTC17:48 / Nov6KST02:48. A=D:/thericher-v2/model-artifacts.
+W25 shadowff383 ACTUALLY enabled Nov6UTC13:55/hard14:05. Parent104source refs/
+two exact same-native-Python aliases and complete fullXMLnativeACL twice-readback
+16:14 PASS. Old failed enable CLI happened after actual enable; no setter replay.
+A/research/current-net25-w25-shadow-parent-adoption-20261105-v1/PARENT-ADOPTION.json.
+Saved PatchCUDA+HGB/GRU/TCNCPU -> frozenW25/public18;0fits/new economic readouts,
+no bank/private/order authority or HALF hot-swap. Actual future pointUNKNOWN.
+Futureintake69ba fullinvented Bar/Data83963/features/fourexpert/public18 native
+PASS/15negatives/allactorsclosed; Parent20refs14unique. Publicationreader04f093
+READY24negatives/fullRuff/allJobsclosed, no future actual read:
+A/research/current-net25-w25-installed-publication-reader-20261105-v1/READY.json.
+Raw Data link is a publisher hash witness, not current rawpayload verification.
+
+W25 frozencomposition/modelcbd unchanged; old799 parity94a0 bitwise originalbatch/
+maxmixed1.6696e-9/0fits/readouts/allleasesclosed. Forward6ce3 fixes Nov6/11/16
+OPEN entries to Nov11/16/19 OPEN exits,51rows/smallmeasurement not alpha.
+Later Data c7b ACTUALLY enabled Nov10/13UTC21:30 via recovery3996; no future
+DATAREADY/hash invented. All completed Patch/GRU/TCN/Chronos/gate fits stay closed.
+No optimizer/GPU training currently claimed. New useful campaign requires distinct
+hypothesis/finite frozen data/targets/costs/trials, not occupancy or seen-DEV rescue.
 OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
 A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
 Source24bb232f:3folds xHGB/GRU/TCN plus1gate,10completed/11attempted.

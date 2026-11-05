@@ -2,24 +2,21 @@
 
 ## Current Work
 
-Updated Nov5UTC15:58 / Nov6KST00:58. A=D:/thericher-v2/model-artifacts.
-Later nativeintegrationc7b/definitionsef1a READY_BUILD_ONLY for Nov10asof->Nov11
-and Nov13asof->Nov16, original21:30/hard21:45UTC. Two fullsource editions and
-actualinventedprovider/Bar/features/quietowner/unknown-token/Scheduler paths
-qualified;2nativeattempts/3fixes/475.602SUM,27Jobs6controllersclosed15:51:30.
-All HTTP counts are MOCK/invented, actualwire/KIS/credentials/private/Task0.
-No actualfuturedata/installation inferred. Rawls now qualifies minimalfuture
-installer only at A/data/current-net25-w25-later-cohort-installer-preparation-20261105-v1,
-Parent owns actual installation after exactsource/fullnativeXMLACL checks.
-Rawls later-cohort source0b33 CLOSED1140actualBar/typedfeatures/23negatives,
-0actualacquisition; forward6ce3 contract fixes Nov6/11/16 cohort entries.
-Native runtimebindingd6ff UNQUALIFIED: capturelauncherValueError beforePID/birth,
-quietowner/provider/Bar/features/token/Scheduler proof not reached,0definitions
-qualified/0Task/KIS/private effects/allactualJobsclosed15:04:48/89.001SUM.
-Completed bounded source/invented repair under
-A/data/current-net25-w25-later-cohort-integration-repair-20261105-v1.
-No actual future data or collector installation inferred. Original firstData83963
-Nov5UTC21:30 opportunity unchanged. Later definitions remain preparation only.
+Updated Nov5UTC17:48 / Nov6KST02:48. A=D:/thericher-v2/model-artifacts.
+Later W25 collectorsc7b ACTUALLY enabled Nov10/13UTC21:30..<21:31/hard21:45.
+Qualified recovery3996 five separate modes PASS, full independent XML/nativeACL.
+Originalfirst retained disabled until both definitions proved; only absent
+second created; enable then separate readback. No Task.Run/collector/API now:
+A/data/current-w25-engine-true-partial-recovery-20261105-v1/installation/ReadBothEnabled-CLOSED.json.
+Parent23pinsPASS. New sealed explicit engine=true editionde424/f520 matches
+actual registered OS behavior. Two harmless disabled registration probes deleted/
+independently absent; not false/true equivalence or nativeACL waiver.
+Original838 partial/create/INSTALL-START/failures preserved, never replay.
+MaterialRoot explicitly original838; ActiveService bound; mocks16negatives/native
+XML/closed8Jobs,139.898/500SUM. Claudecb15422f GO_WITH_LIMITS advisory:
+A/review/current-w25-explicit-true-recovery-adoption-20261105-v1/RESULT.json.
+Same c7b runtime/source/cursor/19GETonePOST0retry; actualfuturedataUNKNOWN.
+Original firstData83963 Nov5UTC21:30/hard21:45 and NAS8 schedules unchanged.
 Archimedes CLOSED remaining22 f13a056e revision-v2:
 A/data/current-native17-remaining22-minute-acquisition-20261105-v1/RETURN-POINTER.json.
 79acceptedGET/0failed/oneinitialPOST/0retry/0recovery,7677newrows;
