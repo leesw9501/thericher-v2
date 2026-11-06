@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC12:52 / KST21:52. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC13:43 / KST22:43. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -82,11 +82,39 @@ is partial, not exact cumulativeactive or budgetPASS. Oldnative1bc1999 keyword-
 onlyTypeError/0steps and oldprojection1130elapsed/180upper/0build remainfailed.
 Dataed055/READYef94 ONEbuild complete; no oldW25modelcalls or source/capreset.
 
-Next source-only Strategy Godel offer:
-A/research/current-fixed-expiry-hold-exit-offer-20261106-v1.
-Freshremaining H2/H1 at e1/e2, ORIGINAL e3expiry, no doublefee/resethorizon.
-Dedup exact oldG99 and check context availability first;0numericaldispatch now.
-Do not train an architecture clone simply to fill GPU.
+Strategy offer0ae1/ec7e is COMPLETE/Parent35pins5testsPASS. New separate campaign:
+A/research/current-saved-head-fixed-expiry-exit-development-20261106-v1.
+Freshremaining H2/H1 at e1/e2, originalW25entries/quantities/e3expiry;0fits/
+<=4forwards/onejointseal beforetargetreads/8books/1readout.1800active3600elapsed/
+cleanup120/readout180/<=2nativegraphs inclbootstrap/<=6syntheticsteps. Native
+canonical->keywordparser->savedmodel->stopDTO->selectedlotbook mustpass before
+Data'soneprojection/forwards. Frozenbest10/FITstats/sharedH3scale, exact25bps
+eachactualleg. Compare blindH3/simpleCLOSE<=entryOPEN/cash. Primarygrowthbeats
+all eachperiod/DD<=1.25blind, <2changedcohorts ornoneineither=>NONINFORMATIVE.
+Ratioexpectation is not expectedcashadvantage; H2 is not Bellmanvalue of H1:
+heuristic only/no optimality/independentalpha/Paperswap. Unknowninput withholds,
+no silentHOLD/SELL/subset. Fresh13:01 Claude review_unavailable, notagreement.
+ActualreadyData/native required; no new optimizer or occupancy-only training.
+Actual native2Source30b4d8e1/proofa3c404ca PASS/native-repair2; lifetimegraphs2,
+0optimizerupdates/marketfits. Data4f31/READYbab237d2 ONEbuild COMPLETE13:25:32,
+2176latequeries/allknown/e1zbyte-reused; consume exact qualified callback directly,
+not await ParentACK or finalLLMreport. New marketforwards/seal/eightbook readout
+remain separately evidenced, not inferred from readiness. CONTRACT-v2 preserves
+v1 and narrows coverage BEFORE payloads: unknown unheld/already-sold rows remain
+reported but are not policyconsumers; unknownactualheld decision withholds entire
+primary period, never imputation/evaluatedsubset selection. Alloldcriteria/caps
+and source all19 producer dependency unchanged.
+Actual COMPLETE_HEURISTIC_ONLY/READOUT-SOURCE1cdde93c/resultdd20f235/sealc8248bf9:
+fourCUDAforwards/0fits/8books/onejointreadout. DEVprimary+3.028788%/DD.571370%
+vs blind+3.601215%/.650455%, simple+3.252656%; recent+.235601%/.544454% versus
+blind+.244454%/.544454%, simple-.033186%. Changedcohorts5+3/informative;
+growthFAILboth/DDPASS, no rerun/rerank/Paperswap. All8CIDs/Jobsclosed.
+Linkedaccounting242.236s/sharednativeonce; review-I/O ledger incomplete, no
+budgetPASS. Firstnative causal fixture changed a latercohort's legitimatepast;
+real e1byte guard rejected correctly. Native2fixed the fixture, not a modelleak.
+Next Godel DLinear/flat-linear matchedH123 sourceoffer must dedup oldlinear/Ridge
+contracts and exactApache2code/version before any newnumericcontract. Paper
+research benchmarks do not prove tradingreturns. No current optimizer is queued.
 
 Clockless4b11 superseded BEFOREeffects. Clock-bound72eb/native26checks is
 ACTUALLY INSTALLED/enabled21:47 by Parent721d; actualREADY/pointUNKNOWN.

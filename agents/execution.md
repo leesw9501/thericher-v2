@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC12:52 / KST21:52.
+Updated Nov6UTC13:43 / KST22:43.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
@@ -17,6 +17,31 @@ versioned SAMEaccount owner/bank SDK+BankLeg/CapsuleVisit delivery graph,
 1200active3600elapsed/cleanup120/<=2nativegraphs,0actualprivate-KIS-Task-effects.
 Do not reuse engineeringCSCO identity for LSTM; retain originalB10/F9/exits/
 operations and actualeffect risk/admission checks. Actualpoint hashUNKNOWN.
+That original nativepackage is now CLOSED_WITHHELD/071f, twofailedgraphs/all
+Jobs+CIDsclosed/28.731s measured. Guestexit0 was not retained fullnativePASS:
+transport required a missingtop-levelstatus. CLIENT-LIFETIME also proves the
+coldperCapsule client cannot promise17-target completion in4minutes. Original
+unknown-request/token safeguards behaved correctly; not merely a fixture issue.
+New separately versioned current-nov9-net25-transport-abi-recovery-20261106-v1
+has600active1800elapsed/cleanup90/ONEgraph0retry. Reuse existing retainedPhase/
+factory in ONEoriginalowner capsule, same<=8visits/4aggregateorderPOST/1tokenPOST/
+128requests/clock/pacing/risk caps; partialtarget coverage honest. Add only exact
+transportstatus projection/producerretention; no coldrestartcache/floorwaiver.
+Actual component79e44694/nativeca30bad2 is PASS/onegraph/8realtransportparse-return
+cases, Parent58ownpins and independent8source-format testsPASS/allJobs+CIDsclosed.
+Parent tests had0OSchildren/private/broker/model calls, not anothernativegraph.
+WarmPhase preservedbyteidentical
+a9d9db6e, samePhase bearer reuse/crossinstrumentfactory branch proved; one
+Source72positive target, factory-only secondinstrument is NOT another proposal.
+No17-target completion or crossrestartbearer claim. Producerbytes retained before
+hosttail;14.778new measuredwall/43.509combined,840conservative debit, not exactCPU.
+ORIGIN refinement addendum is explicitly postrun disclosure, not backdated proof;
+actual prefrozenSource bound warmPhase/caps before dispatch under Parentauthority.
+No actual deployment/financialadmission. NEW current-nov9-net25-actual-host-
+preparation-20261106-v1 gets900active2700elapsed/cleanup120/<=2nativegraphs:
+quietGUI host/source/actions/lateSource72binding+typedinputpersist/retainedinput
+exit/originalowner risk.0actualenv-private-KIS-Task-effects. Ptolemy futurepair
+schema READY but freeze/native/install0, awaiting actualhost/action callback.
 Clock-bound72eb publisher ACTUALLY INSTALLED12:51 via721d/fa46/b002, independent
 disabled840a/enabledc78c fullXML/API7ACL PASS/0instances/0TaskRun. Nov6UTC21:47/
 laststart<21:52/hard22:00; actualREADY/pointUNKNOWN. Old4b11 neverinstalled,

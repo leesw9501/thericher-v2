@@ -1,10 +1,33 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC11:36 / KST20:36. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC13:43 / KST22:43. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
 ## Current Handoff
+
+Fixed-expiry source-only offer0ae1e5dc/ec7ea2d2 is COMPLETE:
+A/research/current-fixed-expiry-hold-exit-offer-20261106-v1/API.json.
+Frozen LSTM H2/H1 on fresh e1/e2 contexts, original W25 entries/quantities and
+e3expiry;0new fits. Parent35smallmembers/5inventedtests PASS. Ratiofee inversion
+is exact, but expectedratio>1 is NOT expectedcashadvantage and H2 is not the
+value of a revisable H1 policy. This is a heuristic, not optimal stopping/alpha.
+Bounded named-contract dedup found no exact saved-head tuple, not globalnovelty.
+Missing e1rawx/e2rawx+z8 and actual selected-lot book/native were explicitly
+retained; sourceoffer did not authorize payload/model calls. Conservative300
+debit/1011elapsed, exactactiveunmeasured, no budgetPASS. All offerworkersclosed.
+The separately dispatched saved-head campaign is now COMPLETE4CUDAforwards/
+0fits/8books: DEVprimary+3.028788% vs blind+3.601215%; recent+.235601% vs+.244454%.
+Changedcohorts5+3/informative, growthFAILboth/DDPASS, no rerun/Paperswap. Data4f31/
+READYbab onebuild2176queries/allknown COMPLETE; olded055/replacement2fits remain
+closed. New Godel source-only DLinear/flat-linear H123 offer checks exactprior
+linear/Ridge contracts before suggesting oneexperiment; no numericalauthority.
+Official LTSF primary paper https://arxiv.org/abs/2205.13504 and officialrepo
+https://github.com/cure-lab/LTSF-Linear (Apache-2.0 LICENSE checked by ParentNov6)
+are mechanism references, not stockprofits/novelty. Exact revision/hash required
+before anycode reuse, no public model/code inExecution. Fresh13:01 Claude
+review_unavailable/exit1, notagreement:
+A/review/current-fixed-expiry-saved-head-challenge-20261106-v1/RESULT.json.
 
 Godel cost/turnover offer COMPLETE Sourcecfc8eb24/API d6a85b2c:
 A/research/current-short-swing-cost-turnover-research-20261106-v1.
@@ -13,9 +36,9 @@ not a new entry/allcash cure. Bounded prior-mechanism dedup excludes generic
 persistence/no-trade/hurdle/utility as novelty.13inventedtests/33ownrefs/
 Parent38smallpins/independent13tests PASS;0marketdecode-fit-GPU-private-broker.
 1280elapsed/conservative600allowance charged; exactactive unmetered/cache-scope
-caveat retained, not exact600actualspend. Actual newDataABI/quantitybook still
-needed, not fitting readiness. Arendt prebound distinct Ridge/MLP family;
-Godel now owns temporaryData e+1 readiness, not modelselection/Git.
+caveat retained, not exact600actualspend. The newDataABI/quantitybook was later
+consumed by completeded055/replacementrecovery2. DEV0switches/NONINFORMATIVE;
+recentRidge worse than blindH3/MLP. Godel now owns latecontextData, not selection/Git.
 Actual account fee plan remains unknown; no retroactive25bpseachleg change.
 Intraday MSEaa96 and H30hurdleff295 both allcash/NONINFORMATIVE. FIT-onlysupport
 b1ec3f09 found H30positive1898/65280 andmean-.498830% afterfees. This supports

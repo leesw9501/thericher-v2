@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC12:52 / Nov6KST21:52. Company outcome UNFINISHED.
+Updated Nov6UTC13:43 / Nov6KST22:43. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -20,6 +20,15 @@ D:/thericher-v2/model-artifacts/research/current-nov9-publisher-principal-identi
 ExistingData0f9task21:30/allPaperduties unchanged; actualREADY/point UNKNOWN.
 NET253module/twotest port passed fresh58+177serial/20289full/Ruff/fourCompose;
 not a swap of installed financialSDK. Sameowner futuregraph preparation separate.
+New warmcomponent is READY but NOT an actual financial launcher/action:
+D:/thericher-v2/model-artifacts/execution/current-nov9-net25-transport-abi-recovery-20261106-v1/HANDOFF.json.
+Source79e44694/nativeca30bad2/onegraph/8realtransportparse-return cases/allclosed;
+existing Phase/factory reused insideONEcapsule, original8visits/4orderPOST/
+1tokenPOST/128requests unchanged. Parent58ownpinsPASS. Coldrestart may still
+defer while preserving unknownrequests. NEVER use launch_native/native_host as
+actualfinancialactions. Qualified actualhost/quietfuturepair preparation is under
+D:/thericher-v2/model-artifacts/execution/current-nov9-net25-actual-host-preparation-20261106-v1.
+No actualhost/install CLI yet. Old071f/ba625 failedSources remainfailed/closed.
 
 IMPORTANT Nov6UTC05:38: CSCO future pair ACTUALLY INSTALLED via declaration-only
 recoverybc71ebab/Plana077bfb0. Both enabled/0instances after separate-process
@@ -55,7 +64,11 @@ TransformerfixedH3 validation194023/costoffer cfc8 are also COMPLETE; never
 rerun their readouts. Replacement recovery2 and Dataed055/READYef94 are COMPLETE:
 twofits includingCUDA MLP17epochs/1870updates/best5,14books/allactorsclosed.
 DEV0switches/NONINFORMATIVE; recentRidge worse than blindhold. Do not repeat fits.
-Exactcurrentowners and source-only hold/exit offer are in stateboards.
+Saved-head fixed-expiry exit also COMPLETE4CUDAforwards/0fits/8books/allclosed:
+D:/thericher-v2/model-artifacts/research/current-saved-head-fixed-expiry-exit-development-20261106-v1/native-repair2/API.json.
+Primary informativegrowthFAILboth, DDpass; no rerun/Paperswap. LateData4f31/
+READYbab237d2 onebuild2176rows COMPLETE, no newprojection. Exact nextcurrent
+owners/source-only DLinear offer are in stateboards, not a CLI training queue.
 LSTM-H3 shadow715b8f79 is COMPLETE/valid13:55..<14:05, not financial entry14:31
 admission; H3policyvalidation5aa7 matches savedLSTM allocations, no alpha gain.
 Its oldfailedattempt1 has TWO brokenbindings (workercontent/identity and recreated

@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC12:52 / KST21:52.
+Updated Nov6UTC13:43 / KST22:43.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -27,11 +27,11 @@ integration/Git; role MDs and directories are not running-process proof.
 | Owner | Current work / actual state |
 | --- | --- |
 | Planck / Data closed | Capture0f9c INSTALLED21:30; clock-bound publisher72eb/native26checks COMPLETE and ACTUALLY INSTALLED21:47 via721d. ActualREADY/point UNKNOWN. Samebest10/IND8, one futureforward; old4b11 SUPERSEDED beforeeffects. |
-| Arendt / Engine and sole Steward closed | Replacement recovery COMPLETE: Ridge1fit + CUDA MLP17epochs/best5/1870updates;14books/all8CIDsclosed. DEV0switches/NONINFORMATIVE; recentRidge3switches worse than blindhold. No active optimizer or repeat queued. |
-| Ptolemy / invoked Infra closed | Identity repair721d/qualificationfa46/41nativechecks COMPLETE; actual Parent create-disabled/independentreadback/enable/independentreadback PASS12:51. Old4failednative attempts stayfailed. |
-| Banach / Execution | r5fb63 futuredirectreader READY/0actualreads. Monitorcb4277 Source/runtime31checks PASS/e200available, NOTdeployed: oldfinancialgraphs incompatible. NewOSreader-pair idea SUPERSEDED before actors/root/definitions; no extra schedule/gate. Public974 primary. |
-| Darwin / Execution | Minimal3module NET25 port/positive native and fresh20289fullPASS COMPLETE. NEW current-nov9-net25-native-owner-runtime-preparation-20261106-v1 prepares versioned SAMEowner/bank SDK/controller graph;0actual financialdeployment. |
-| Godel / Data then Strategy | Parser-recoveryed055/READYef94 COMPLETE/onebuild0retry; oldfaileddebits retained. NEW current-fixed-expiry-hold-exit-offer-20261106-v1 is source-only dedup/data-availability offer for fresh H2/H1 hold decisions at originalH3expiry, not numerical dispatch. |
+| Arendt / Engine and sole Steward | Replacement COMPLETE/no repeat. New saved-head fixed-expiry exit COMPLETE4CUDAforwards/0fits/8books: informative growthFAILboth/DDPASS, no Paper swap. All8CIDsclosed; next DLinear sourceoffer only, not running training. |
+| Ptolemy / invoked Infra | Identity721d COMPLETE/actuallyinstalled72eb. Nov9NET25 finitepair schema ready but Source/native/install0; actual quiet financialhost/action qualification still needed, no placeholder proof. |
+| Banach / Execution closed | r5reader READY/0actualreads; monitorcb42 NOTdeployed. Console1048614d bounded7remainingtasks allcurrentlydisabled/0instances;4source calls lacklocalquietflags, popuporigin UNOBSERVED/0OSchanges. |
+| Darwin / Execution | Repo port COMPLETE20289PASS. Original2nativegraphs FAILED_CLOSED/071f. New79e44694 warmPhase/transport component PASSca30bad2/onegraph/8actualtransportcases/allclosed; Parent58ownpinsPASS. NEW actual-owner quiet finitehost source/native preparation,0financialdeployment. |
+| Godel / Data then Strategy | Late-inputs4f31/READYbab237d2 ONEbuild COMPLETE13:25:32/2176queries/allknown/e1zreused. Saved-head offer consumed, no rebuild. NEW DLinear/flat-linear matchedH123 source-only dedup/offer, not numerical dispatch. |
 | Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
@@ -163,8 +163,34 @@ Primary growthFAILboth; no promotion/rerank/repeatedfit. ACCOUNTING-v2 is partia
 not exact full-active-clock or budgetPASS. Oldnative1 keyword-only TypeError,
 oldprojection1130elapsed/180upper/0build and consumedattempts remainfailed.
 Separate Datarecoveryed055/READYef94 made ONE build with originalkeys/masks/
-20purge and66prefixcohorts, no wholecache rebuild. New hold/exit offer is only
-source/data feasibility, not permission to repeat this closed family.
+20purge and66prefixcohorts, no wholecache rebuild. No repeated replacement fit.
+Separate saved-head fixed-expiry exit is now COMPLETE_HEURISTIC_ONLY:
+A/research/current-saved-head-fixed-expiry-exit-development-20261106-v1/native-repair2/API.json.
+READOUT-SOURCE1cdde93c/resultdd20f235/sealc8248bf9. FourCUDAforwards/0fits/
+onejointseal/eightbooks. DEVprimary+3.028788%/DD.571370% vs blind+3.601215%/
+.650455% and simple+3.252656%; recentprimary+.235601%/.544454% vs blind+.244454%
+/.544454% and simple-.033186%. Changedcohorts5+3, informativegrowthFAILboth/
+DDPASS, no promotion/Paper swap. All8CIDs/Jobsclosed. Linkedaccounting242.236s
+counts sharednative once, incomplete review-I/O ledger is NOT budgetPASS.
+Data4f31/READYbab237d2 ONEbuild2176latequeries/allknown/e1zreused; oldsource
+and marks unchanged. Native1 failed because the causal fixture perturbed a later
+cohort's legitimate past; native2a3c404ca passed, not evidence of model leakage.
+
+Warm account component79e44694/nativeca30bad2 is COMPLETE, not installed:
+A/execution/current-nov9-net25-transport-abi-recovery-20261106-v1/HANDOFF.json.
+Parent58ownsmallpins and independently repeated8source-format transport tests
+PASS (verification/current-net25-sdk-integration-20261106-v1/external-warmcomponent-check-1345).
+These used0OSchildren/private/broker/model calls, not another nativegraph/fit.
+Eight original actualtransportparse-return cases, one full Source72
+positive->SDK->BankLeg/CapsuleVisit graph/14.778s/allclosed. Existing byte-identical
+Phase/factory reused insideONEcapsule, original8visits/4orderPOST/1tokenPOST/
+128requests unchanged. Coldrestart still honors60s guard/pendingreservations.
+Originalba625/071f twofailedgraphs and lostproducer-output limitation remain;
+transportstatus was missing and coldpervisit lifetime was a REAL throughputgap.
+Current source preserves producerbytes beforehosttail;43.509combined measured
+workerwall/840conservative debit, not exactCPU spend. No17-target completion
+claim or financialadmission. Actual quiet financialhost/action preparation is
+separate and source-ready futurepoint hash remains UNKNOWN.
 
 | Completed scope | Actual evidence |
 | --- | --- |

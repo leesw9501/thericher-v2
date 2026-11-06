@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC12:52 / KST21:52.
+Updated Nov6UTC13:30 / KST22:30.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
@@ -46,8 +46,22 @@ Synchronouscommands closed; OSbirth not retained/no JobObject, no OSorigin claim
 Readinessfdb39/15native31bindings/241.170active is ancestry; oldprojection1130elapsed/
 180upper/0builds and nativekeyword-only TypeError remainfailed, no caprefund.
 Consumer replacementtwofits/14books is COMPLETE, do not rebuild these inputs.
-Next Godel source-only fixed-expiry hold/exit offer checks exact e1/e2 x/z context
-availability and duplicate families before any new market projection/forecast.
+Godel source-only fixed-expiry offer0ae1/ec7e COMPLETE, Parent35pins/5tests PASS;
+e1rawx/e2rawx+z8 missing, not recoverable from old saved role rows. New separate
+current-saved-head-fixed-expiry-late-inputs-20261106-v1 gets600active1800elapsed/
+cleanup90/<=2nativeattempts/ONEbuild0retry/<=2176queryrows, noacquisition-fit.
+Exact actual producer->parser->savedH2/H1->stopDTO->subsetbook native must pass
+first, all799+289keys/source/masks retained. Reuse e1z8 only with byte/key/source
+equality; unknown input never chooses a HOLD/SELL/default subset. Arendt exact
+zero-fit consumer has fourforward/onejointseal/eightbook caps, directcallback.
+Actual projection COMPLETE13:25:32: Source4f31fcca/READYbab237d2/closedbuild
+d7a10ce4, ONEbuild/.340s/0retry/allchildrenclosed.2176latequeries, DEV799each
+shift/RECENT289each, allinputknown/0conditional; e1zreused799+289. Frozenprefix
+ABI genuinely requires all19x60OHLC even though perrow formula uses own/SPYQQQ;
+DEPENDENCY-NOTE preserves that scoped limitation, not a companywide gate.
+Engine native2Source30b4/proofa3c4 is actual fullchainPASS; originalnative1failed
+and allcaps/debits unchanged. Marketmodel predictions/readout are separate;
+DATAREADY is not a qualified dataset/Paperinput/independentperformance claim.
 
 Previous intradayreadiness COMPLETE a161fcb7/READY8386fe07:
 A/data/current-intraday-short-hold-readiness-20261106-v1/API.json.

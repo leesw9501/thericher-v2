@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC12:52 / KST21:52. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC13:43 / KST22:43. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -44,7 +44,13 @@ ACCOUNTING-v2 only partialactive ledger, no exactfullactive/budgetPASS claim.
 Native1keyword-only TypeError/oldData2failedattempts and oldprojectiondebits
 remainfailed. NewDataed055/READYef94 onebuild COMPLETE, no originalclockrefund.
 No currently active optimizer or duplicate completed fit queued for occupancy.
-Next source-only hold/exit offer is not yet a ready numerical GPU campaign.
+Saved-head fixed-expiry campaign COMPLETE_HEURISTIC_ONLY/Source1cdde93c:
+actualCUDA4forwards/0fits/updates/8books/onejointseal/readout, informativegrowth
+FAILboth/DDPASS. All8CIDs/Jobsclosed; no duplicate model call or activeoptimizer.
+Linkedaccounting242.236s includes sharednativeonce, incomplete review-I/O ledger
+is not budgetPASS. Data4f31/READYbab onebuild2176queries knownall, no repeat.
+Next DLinear/flat-linear source-only offer is not a ready fitting campaign;
+officialbenchmark claims are not stockalpha. GPUpriority/permission unchanged.
 
 Ptolemy OOF7b285a5d COMPLETE14CPUfits/121trees/2574updates/20books,
 652.464inclusiveactive/allclosed. Old7vs6native breach/style caveat retained.

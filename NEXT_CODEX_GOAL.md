@@ -17,7 +17,7 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-Actual Nov6UTC12:52: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+Actual Nov6UTC13:43: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
 unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
 native constructor4surfaces and separate fullXML/API7ACL readback PASS;
 both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
@@ -76,13 +76,23 @@ replay either Apply. Installation is not submit/fill/financial admission.
    Minimal3module NET25 profile port and positive actualreader/native path pass
    fresh20289full tests, not installed financial SDK/runtime deployment. Darwin
    next prepares versioned SAMEowner/bank NET25 delivery graph under separate
-   current-nov9-net25-native-owner-runtime-preparation-20261106-v1; preserve
-   all exact identities/reservations/exits and effecttime admission checks.
+   current-nov9-net25-actual-host-preparation-20261106-v1; preserve all exact
+   identities/reservations/exits and effecttime admission checks. Original071f
+   twofailednativegraphs are CLOSED. New79e44694/nativeca30bad2 component
+   PASS/8actualtransportcases/onegraph/allclosed: existing retainedPhase reuses
+   bearer withinONEcapsule, original8visits4orders1token128requests unchanged.
+   No17-targetcoverage guarantee/coldrestartcache or actual financialdeployment.
+   Ptolemy pairdefinitions remain schema/prewire, no Source/native/install yet.
 5. Darwin fixedH3 Transformer194023 COMPLETE14books/0modelcalls; primaryDEV
    +3.059492%/recent+.252446%, frozenFAILboth/no repeat. Godel cost/turnover
    offercfc8 COMPLETE13tests/Parent38pins; parser-recoveryed055/READYef94
    onebuild COMPLETE. Next fixed-expiry hold/exit source-only offer checks
-   e1/e2 context availability/dedup; no numerical dispatch or newGPU claim.
+   e1/e2 context availability/dedup offer was consumed. Actual lateData4f31/
+   READYbab237d2 ONEbuild2176queries/allknown COMPLETE. Saved-head exit
+   COMPLETE4CUDAforwards/0fits/8books: DEV+3.028788% vs blind+3.601215%, recent
+   +.235601% vs+.244454%; informativegrowthFAILboth/DDPASS, no rerun/swap.
+   Next DLinear/flat-linear matchedH123 source-only offer must dedup oldlinear
+   studies first; no numerical dispatch or GPUtraining claim from that offer.
    FIT-onlysupportb1ec3f09 COMPLETE H30 1898positive/63382negative; support
    is not predictability/oracleprofit or permission to regrade old25bps studies.
 6. Quiet audit638a COMPLETE160tasks/139enabled/0OSchanges; popuporiginUNKNOWN.
