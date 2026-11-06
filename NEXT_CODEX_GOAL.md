@@ -164,12 +164,25 @@ Updated Nov6UTC01:40 / Nov6KST10:40.
    lexical kis_paper_private. New Godel close21 source-attested market role and
    Banach current-w25-close21-role-risk-readout-20261106-v1 are separate bounded
    inputs/consumer, same recipe/criteria/no fits/one readout, no old retry/regrade.
+   Data is now READYf0ecd21b/Sourceb1ab0177:47cohorts799keys16779CLOSE cells,
+   missing0/conditional0/onebuild0labels/10native checks/Parent16refs verified.
+   New paired book COMPLETEDdcacc146:0fits/one3bookreadout, IVOL3.38813%/DD.56529
+   versusW253.60121%/.65045; frozenFAIL/risk-growthtradeoff/no dominance. Parent72
+   refs/allclosed93.261newactive+old360. Banach prepares frozen-forward usability,
+   Planck prepares explicit W25proposal->originalB10 native risk bridge only.
 18. Planck Windows full Guard.check invented-boundary PASS6.63362s/initialsource
    6.74799s,0private/CIM/Task/broker; actual financial latency stays unknown.
-   Next finite exact-manifest preparation for strict297reader, no prewindowreads.
+   Finite exact-manifest Source-R2 9c6a78cb READY/Parent15tests20refs/prewindow
+   NOT_DUE0reads0enumerations PASS, actual one-shot only afterUTC15:20. No future
+   manifest/fill claim, no latestfile selection/recurring worker.
    Godel completed Korean static snapshot0ce3bd3d from three exact adoptions,
    Parent19refs/7native/desktop-mobile visualPASS;8788 not deployed/financialUNKNOWN.
    These bounded technical packages do not hold independent Paper or research.
+19. Conditional current-runtime test at g6-20261106 shows8admissions at6.6336204s
+   exceed55remaining by.568963s; zero inventedwireacceptances, unknownorderheld.
+   Actualfinanciallatency remainsUNKNOWN. Godel now source-throughput readiness:
+   remove redundant immutable proof cost with equivalent full checks, no source/
+   deadline/SDK/risk waiver, private API or actualTask migration yet.
    Directqualified role callbacks; no extraParentlaunchapproval/globalPaperhold.
    Exact write sets and callbacks live in agents/orchestration.md.
 

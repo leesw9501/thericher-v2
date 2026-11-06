@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated 2026-11-06 UTC01:51 / KST10:51.
+Updated 2026-11-06 UTC02:28 / KST11:28.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Expanded history is in pushed fe94797d and immutable artifacts, not active commands.
@@ -27,9 +27,12 @@ evidence. No manual Task.Run merely to inspect a result.
   failure preserved, not a Windows deployment defect. Windows-r1 actual complete
   Guard.check on invented boundaries PASS6.63362s, initial source6.74799s;
  0private/CIM/Task/broker calls. Actual financial/55s feasibility still UNKNOWN.
-- Planck next after closing probe: current-intc-297-exact-manifest-readiness-
-  20261106-v1. Finite set-discovery -> exact manifest -> strict public reader,
-  not latest-file selection. Actual reads NOT_DUE until UTC15:20; no new worker.
+- Closed Planck: current-intc-297-exact-manifest-readiness-20261106-v1/API.json.
+  Source-R2 9c6a78cb: finite set-discovery -> manifest -> unchanged strict e5b
+  parser, including actual result-NNN layout without selecting it as effects.
+  Parent15tests/20refs/pinnedNOT_DUE0reads0enumerations PASS;4producer smokes.
+  90active/841.096elapsed/allclosed. Actual one-shot eligible afterUTC15:20 only,
+  no latest-file selection/future manifest claim/new recurring worker.
 - Closed Godel: current-korean-monitor-admission-compatibility-20261106-v1.
   Three actual adoption records -> existing Korean parser/renderer -> STATIC
   snapshot. Parent19refs/7native tests and desktop1440/mobile390 visual checks
@@ -39,13 +42,28 @@ evidence. No manual Task.Run merely to inspect a result.
   intake denied solely lexical kis_paper_private in approved canonical market
   paths.0CLOSEbytes/0books, cached oldDEV payoffs opened.360debit/alljobsclosed;
   no more retries under those scopes, not strategy failure/zero profit.
-- Godel now Data: current-w25-close21-canonical-role-20261106-v1. Source-attest
-  approved market data vs financial custody and materialize exact47cohort/799key
-  prior21 source CLOSE/masks/calendar/proxy/capture clocks,0labels/acquisition.
-- Banach now Engine: current-w25-close21-role-risk-readout-20261106-v1. Separate
-  new role consumer, same fixed IVOL/W25/fees/criteria,0fits/one3bookreadout only
-  after DataREADY/native handoff. Prior360debit linked/not refunded, seenDEV
-  adaptive. No private-custody/credential path exception or old source mutation.
+- Closed Godel Data: current-w25-close21-canonical-role-20261106-v1.
+  Sourceb1ab0177/READYf0ecd21b,47cohorts/799keys/16779CLOSE cells complete,
+  missing0/conditional0,0labels/acquisition. Ten actual producer/parser/path
+  native checks PASS; Parent16refs verified/0payload decodes. Source basis is
+  MODE1 vendor-price proxy, not adjusted/raw/PIT/actual-arrival certification.
+- Closed Banach Engine: current-w25-close21-role-risk-readout-20261106-v1,
+  Sourcedcacc146/0fits/one3bookreadout. IVOL+3.38813%/DD.56529%/turn2.12414 vs
+  W25+3.60121%/.65045%/2.12855,3allocation-cohorts differ. FrozenFAIL, genuine
+  growth-risk tradeoff/no Pareto dominance, not discard-all or autoPaper swap.
+  Parent72refs/0payloaddecode PASS;93.261newactive+old360/767.334elapsed/allclosed.
+- Planck Execution: current-w25-proposal-to-native-budget-readiness-20261106-v1.
+  Source/native bridge only, untrusted W25 proposal -> existing ONE originalB10
+  native sizing/risk/whole-share plan. Explicit units, no analyticalNAV/account
+  identity/profit refill/forced1share. No actual input/bank/deployment claim.
+- Godel Infra: current-intc-transitive-source-check-throughput-20261106-v1.
+  Profile/deduplicate repeated immutable source proof with full original checks;
+  never skip dynamic account/owner/unknown/risk or persist a stale source cache.
+- Banach Engine: current-w25-ivol20-frozen-forward-readiness-20261106-v1.
+  New source/native future allocation consumer,0fits/inference/marketreadouts;
+  actual future W25 point/hash UNKNOWN, Paper/B10 authority remains separate.
+Role callbacks require full agent UUIDs. Parent corrected an abbreviated target;
+direct qualified handoff needs no additional launch approval.
 - Darwin and all completed numerical workers are closed. No optimizer currently
   claimed active; never repeat completed fits for utilization. Current exact
   callbacks and scoped blocks are in agents/orchestration.md.
@@ -83,6 +101,17 @@ CLI Inspect failed after readonly work on an existing CreateNew ACTUAL-INSPECT
 receipt. Original unchanged; independent pure Snapshot proved installation.
 Never replay Apply/record/consumed writers. Optional Full17 stats migration is
 deferred after PSUTIL_SOURCE_UNKNOWN; not proof of the installed runtime fault.
+
+Conditional deadline kill found BEFORE actual effects:
+A/execution/g6-20261106/PARENT-READOUT.json. Current unchanged runtime/SDK,
+invented5s initial offset and6.6336204s EACH owner reply -> newentry/retainedexit
+8admissions55.568963s, remaining-.568963s, zero invented wire acceptances.
+Unknown-buy exit remains pending/reconcile_unknown, reservation unchanged.
+Three cases complete/exit0/22source refs unchanged;95activeupper including two
+earlier long-scratch seed failures. Same cases passed seed from short root;
+exact OS reason not retained. This is a CONDITIONAL counterexample, not actual
+financial latency/broker failure. No deadline/quoteTTL/SDK/guard waiver/deployment
+change. Godel's source-throughput work addresses measured redundant proof cost.
 
 ## Consumed Private Read
 

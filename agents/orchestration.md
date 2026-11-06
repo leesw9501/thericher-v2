@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC02:04 / Nov6KST11:04.
+Updated Nov6UTC02:28 / Nov6KST11:28.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Company Outcome
@@ -31,7 +31,7 @@ and all original exits. A package/commit/installation is not company completion.
 | Closed Godel / temporary Throughput |15native scenarios prove positive post-read guard delay violates decision<=read-start |Parentbf245f49 pre-read constant-signal repair15casesPASS; actual Guard latencyUNKNOWN, no source/job/SDK/TTL/window waiver. |
 | Closed Parent / actual Execution migration |297/8ac originalEXITonly migrated01:10/onewrite/freshownerproof/independentlibrary fullXML_API7ACLPROPOSED/enabled/0active | Nov6UTC15:10..<15:11/hard15:20 unchanged. Parentadoptionf18382c8; CLIInspect receiptcollision preserved/no setterreplay/no financialeffect. |
 | Closed Planck / Execution publicreader |e5b65555 current-intc-297-public-outcome-reader-20261106-v1 | Parent32refs/13inventedtests/prewindowNOT_DUE0reads PASS; future15:20eligible exactmanifest, no independent current-custody claim. |
-| Planck / Execution-Infra integration | windows-r1 actual completeGuard.check syntheticPASS6.63362s/initialsource6.74799s |0privateCIMTaskbroker; originalLinuxfailure preserved, notWindowsdeploymentfailure. Actualfinancial/55sfeasibilityUNKNOWN. Next separately scoped exactmanifest producer. |
+| Closed Planck / Execution-Infra | windows-r1 completeGuard.check syntheticPASS6.63362s/initialsource6.74799s; exactmanifest-R2 9c6a78cbREADY | Parent15tests/20refs/pinnedNOT_DUE0reads0enum PASS; after15:20 onefinite read, no latestselection/financial claim. Probe244.45active, manifest90active/allclosed. |
 | Closed Banach / Engine CPU |9da2e99a fixed.5 mix4.1341%/DD.7936%/turn2.13920; growth/DDpass, fixedturnoverFAIL, only1of47 | All18Jobs2CIDsclosed86.24active/558.08elapsed/Parent6refs27members verified. No oldfailure regrade/Paperpromotion. |
 | Closed Banach / Engine savedconsumer |c198ac07 oneinventedcapsule/16negatives/allclosed100active/895elapsed |0fits/inference/marketreadouts/Tasks; futurepoint/hashUNKNOWN, PaperadapterUNQUALIFIED/no B10map. |
 | Closed Darwin / Strategy | samegrossrisk sourceoffer16tests/35.63active/756.84elapsedREADY | No marketcomparison dispatched. Preserve proof/rawCLOSE availability requirement. |
@@ -40,8 +40,11 @@ and all original exits. A package/commit/installation is not company completion.
 | Closed Darwin / Engine-Steward |01e89c74 activity-proxy repair1: GRU14epochs1638updates/HGB96warmtrees/2fits9books | Primary1.20375%/DD1.39996/turn4.40988 DEVELOPMENT_FAIL; allclosed428.245active. Parent70refs/actualCIDabsence verified; redundant continuation withdrawn. |
 | Closed Darwin / Strategy source offer |1320f1e4 distributional-target offer | Quantile mechanism covered in earlier completed project studies; exact Net25 tuple duplicate NOT established.0market/fits/dispatch,8checks/35.01active, Parent24refsPASS. |
 | Closed Banach / old IVOL attempts |r2nativePASS but canonical market path lexicaldenial,0sourceCLOSE/0books/360debit | Old/r1/r2 immutable/closed/no retry; seenDEV payoffsopened, not strategyfailure. |
-| Godel / Data | current-w25-close21-canonical-role-20261106-v1 | Source-attested exact marketCLOSE21/masks/clocks/47cohorts799keys,0labels/acquisition; real path admission before market, no privatebank exception. |
-| Banach / Engine CPU | current-w25-close21-role-risk-readout-20261106-v1 | Separate new Data-role consumer/same recipe-fees-criteria,0fits/one3bookreadout only after exact DataREADY/nativehandoff; prior360linked/adaptiveDEV. |
+| Closed Godel / Data |b1ab0177/READYf0ecd21b exact marketCLOSE21 |47cohorts799keys16779cells/missing0/conditional0/onebuild0labels;10native checks/Parent16refs PASS, finiteclosed. OriginalMODE1/PIT/finality limits kept. |
+| Closed Banach / Engine CPU |dcacc146 one archive/readout3books/0fits | IVOL3.38813%/DD.56529/turn2.12414 vsW253.60121/.65045/2.12855, frozenFAIL/risk-growthtradeoff/no dominance; Parent72refs/allclosed93.261newactive+old360. |
+| Planck / Execution native bridge | current-w25-proposal-to-native-budget-readiness-20261106-v1 | Explicit candidate-fraction -> ORIGINAL sharedB10 -> existing native sizing/risk, no analyticalNAV/account equivalence/newbank/realdeployment. |
+| Godel / Infra source-throughput | current-intc-transitive-source-check-throughput-20261106-v1 | Preserve full source/dynamic checks; dedup redundant immutable proof cost, no persistent stale cache/guardwaiver/actualmigration. |
+| Banach / Engine frozen-forward | current-w25-ivol20-frozen-forward-readiness-20261106-v1 |0fits/inference/marketreadouts/GPU; realfuturepoint/hashUNKNOWN, concrete Executionunit handoff directly toPlanck. |
 | Parent / account facts |17:20 holdings4/noINTC;18:10 terminal history0rows | As-of broker observations only; no exact original custody/fill/PnL or reservation release. |
 
 An assignment/MD is not proof of a running worker. Parent checks actual actors

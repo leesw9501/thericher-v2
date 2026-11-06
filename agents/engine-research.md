@@ -38,11 +38,18 @@ Final r2 nativePASS/16offer tests/11negatives/3invented fee books; actual market
 intake denied by lexical kis_paper_private in canonical market CSV paths.
 0sourceCLOSE bytes/0archives/books, cached DEV payoffs opened;360debit preserved.
 No further retry under those scopes, no economic failure/zero-profit claim.
-New Data-owned close21 role Godel positively classifies approved market data
-without private-bank/credential reads. Banach's separate current-w25-close21-
-role-risk-readout-20261106-v1 consumes only qualified new DataREADY/real native
-handoff; same recipe/kernel/47keys799/fees/criteria,0fits/one3bookreadout/no
-marketretry. Old360debit linked, DEV reuse adaptive, no guard or source mutation.
+New Data close21 sourceb1ab0177/READYf0ecd21b qualified all47/799/16779cells.
+Separate current-w25-close21-role-risk-readout-20261106-v1 is now COMPLETE:
+Sourcedcacc146/0fits/one archive/intake/readout3books/no retry. IVOLgrowth3.38813%/
+DD.56529%/turn2.12414 versus W253.60121%/.65045%/2.12855; unchanged W25 metrics
+exact,3allocation cohorts differ. FrozenFAIL (growth<W25 and DD>EW), not Pareto
+dominance: lower growth/lower drawdown is a useful conditional alternative.
+Parent72refs verified;93.261newactive+old360/767.334elapsed/allJobsclosed. No
+independent alpha/automatic Paper model swap or original failure regrade.
+Banach now prepares current-w25-ivol20-frozen-forward-readiness-20261106-v1,
+source/native only/0market-fits-inference-readouts/GPU. Actual future W25 point
+and exact output hash UNKNOWN. Native-u/f funding units stay separate from
+Planck's new explicit B10 proposal-conversion policy/native risk authority.
 
 | Completed study | Actual work | Result / next action |
 | --- | --- | --- |

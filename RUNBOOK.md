@@ -38,6 +38,21 @@ No manual Task.Run/strategy invocation merely to inspect evidence.
   This reader is public operational provenance/worker-reported ASOF only, not
   independent current custody, broker holdings, fees, settlement or net PnL.
 
+- Qualified finite INTC297 receipt discovery, eligible ONLY after Nov6UTC15:20:
+  D:/thericher-v2/model-artifacts/execution/current-intc-297-exact-manifest-readiness-20261106-v1/API.json.
+  Use the source-pinned synchronous command, not Task.Run:
+
+  ```powershell
+  & 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-intc-297-exact-manifest-readiness-20261106-v1/app_r2.py' --source 9c6a78cbf99f849d49081e188733d0d2e6b6052dd7fac0dd29ab64a825f726c4 --phase exit
+  ```
+
+  Parent15inventedtests/20refs/pinnedprewindowNOT_DUE0reads0enumerations PASS.
+  It creates ONE consumed attempt before bounded set enumeration, retains exact
+  manifest/hash, then calls unchanged e5b strict parser. Never repeat a consumed
+  due attempt, latest-select records or infer current custody/PnL. Missing/partial/
+  ambiguous/unstable remains UNKNOWN. Do not rerun tests_r2.py __main__ CreateNew
+  report writer; repeat tests by library loading unittest, preserving old records.
+
 - HALF24ab/f611 original pair actually updated18:48, EXIT before ENTRY:
   D:/thericher-v2/model-artifacts/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json.
   EntryNov6UTC14:31..<14:35/exitNov11UTC14:30, original model25c8/B10/ops unchanged.

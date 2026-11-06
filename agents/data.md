@@ -2,7 +2,16 @@
 
 ## Current Work
 
-Nov6UTC02:04: Godel owns current-w25-close21-canonical-role-20261106-v1.
+Nov6UTC02:14: Godel completed current-w25-close21-canonical-role-20261106-v1.
+Sourceb1ab0177/READYf0ecd21b,47cohorts/799keys/16779CLOSE cells complete,
+missing0/conditional0,0labels/payoffs/scores. One actual build/no postpayload
+retry/ten native producer-parser-path checks/RuffPASS. Parent16refs verified
+without payload decoding. Finite workers exited/no children/GPU/services.
+Initial exact archive-root preflight failure and one narrow repair preserved.
+MODE1 vendor-price proxy is not raw/split-adjusted/PIT/finality certification.
+Full Engine UUID corrected after abbreviated callback target was rejected;
+direct source/schema/readiness handoff does not need a new Parent approval.
+
 Consumer is Banach's new cost-aware IVOL20 paired book. Exact retained Data
 source CLOSE/known/conditional/calendar/proxy-vs-capture clocks, original47DEV
 cohorts/799keys/17symbols, one build/0labels/acquisition. Old numerical consumer
@@ -11,7 +20,7 @@ test is not evidence of account/order/credential content. New Data role must
 positively source-attest market schema/roots/refs, not conceal unknown custody.
 No private-bank/credential/API access or original research guard mutation.
 Market payload M/us_equities/research_inputs/current-w25-close21-canonical-role-
-20261106-v1; source/proof A/data/same-name. Actual DataREADY not yet claimed.
+20261106-v1; source/proof A/data/same-name. Actual DataREADY is now verified.
 
 Updated Nov6UTC01:34. Godel completed ONE retained native-TVOL activity-proxy
 materialization, no acquisition/labels/training. DATAREADY c097a902 / Source
