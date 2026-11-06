@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC15:52 / Nov7KST00:52.
+Updated Nov6UTC17:57 / Nov7KST02:57.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -26,13 +26,20 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data closed | Capture0f9c INSTALLED21:30; clock-bound publisher72eb/native26checks COMPLETE and ACTUALLY INSTALLED21:47 via721d. ActualREADY/point UNKNOWN. Samebest10/IND8, one futureforward; old4b11 SUPERSEDED beforeeffects. |
-| Arendt / Engine and sole Steward | RobustH123 COMPLETE5c0f/5a3e/bee99f9b:2CPUfits23epochs each/best11/5060updates/4forwards/16books. Measured tinyCPU fasterthanCUDA; primarygrowthFAILboth/no swap/no activeoptimizer. Nextcross-sectional ranking source-only dedup. |
+| Planck / Data closed | SPY693d andRAW12018b148/READY4edf COMPLETE/consumedonce, allstockrows retained/last60byteparity. Publicreaderb580 repairedonlysentinel/27checks. Tonight0f9/72eb unchanged/futureactualREADY-pointUNKNOWN. |
+| Arendt / Engine and sole Steward | LSTM120 and market/residual COMPLETE/no repeat. Warm0ea1 FAILED AdamW init/0updates/GPUinitPASS; new recovery-r1 restores bounded temp support, <=72same-family synthetic updates/0marketfits. No timing result yet. |
 | Ptolemy / invoked Infra closed | Futurepairprep CLOSED_WITHHELD exact host qualification absent; schema retained/0native/0Taskeffects. Duration hypothesis DISPROVEN, no oldTaskrerun. |
-| Banach / Execution closed | INTC8583 diagnosis proves out-of-window diagnostic poisoned readerjoin; actualadmissionfault separate/underlyingpredicate UNKNOWN. Repaired reader288cf5ab passes16inventedchecks,0actualnewdiscovery. |
-| Darwin / Execution | Exportfix passes106loader+34ownerchecks, fullgraph88bd FAILED missingpinned membership_retention. NEW explicitpinnedbootstrap preflight+onegraph; no actual effects/install readiness yet. |
-| Godel / temporary Execution | Robustoffer39528375 CONSUMED. NEW bounded exactHALF24ab provider/owner-helper diagnosis; no consumedTaskrerun/private/KIS/model work. |
+| Banach / Execution | MSErepair2 notadopted; repair3 found opaque-root census omission. repair4-plan08f2 COMPLETE; new repair4-source minimal relevant-writer producer correction/0actualreads. No financial-success gate or globalhold. |
+| Darwin / Execution | Batch3 CLOSED8b0d:mini exchange PASS/2owner requests but both SDKfixtures FAILED warm visit/36callbacks;2probes/0fullgraph. New exact sdk-visit-first-cause diagnostic, Planck independent source review; not deployready. |
+| Godel / Execution and Review | Query-scope-r2 COMPLETE0abff/ca318e9d:1OAuth+5GET/all2xx/0orders, holdings4/noCSCO/open0/current-dayhistory0 sequentialASOF. New independent relevant-writer scope review; original queries neverreplayed. |
 | Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
+
+ActualCSCO repairedpublicreaderb580 at17:01/17:06 parsed source-bound technical
+ValueError/not_retained for BOTHentry16:21:52 andexit16:50:40. Fullprivate/native
+chainpartial: no acceptance/fill/currentowned/flat/fees/settlement/PnL claim.
+Readercoveragebug fixed ONLYunknownreason sentinel, not production/Task/risk.
+27refs/27nativechecks PASS. Old9742 UNKNOWN unchanged; no r5private read andold
+windows expired. Exact currentpublic command/pointers are in RUNBOOK.
 
 16:00 MSE reader5cb1317a validated BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY:
 10actualoutcomereads/2linkedvisits, PAIR-RESULTb0901c1b/nativeclosure19c50053.
@@ -48,6 +55,21 @@ post-start approval barrier. Source revisions are not numerical dispatch counts.
 Current MDs are context, not immutable runtime dependencies.
 
 ## Actual Read-Only Probe And Fresh Data Installation
+
+Latest read-only broker query is COMPLETE and consumed:
+A/execution/current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2.
+Source0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee;
+RESULTca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d.
+Actual17:44:24..17:44:34UTC:1OAuthPOST/5GET/all2xx/0retry/0orders/0Taskchanges.
+Four holdings/noCSCO/zero US open orders/zero current-ET-day history rows are
+complete sequential/non-atomic ASOF, not owned custody/exactfill/fullrisk/PnL.
+Configured source-account binding matches; broker identity echo UNPROVEN.
+No reservationrelease/foreignadoption/unknown-request closure. All actors closed.
+21nativechecks admit UNKNOWN peerfinancial report while rejecting held token,
+wrong host and order endpoints. A read-only broker GET does not require peer
+strategy success or financial-ASOF; private-custody readers remain separately
+subject to relevant-writer/stability checks. Old9af10/ba0737 failures unchanged;
+do not rerun any consumed query or search credentials/token stores.
 
 INTC finite reader9c6a78cb ran after15:20, consumed ONE discovery: UNKNOWN,
 EXACT_SET_OR_CHAIN_WITHHELD/3outcome_reads/manifestnull. No acceptance/fill/flat
@@ -134,11 +156,11 @@ A/execution/current-half-24ab-entry-first-cause-20261106-v1.
 Source-defined startup frame scheduled.py:provider:25 calls owner.ps1 through
 metadata.call. A source-filtered entryLAUNCH and startup exist, but full causal
 reattachment is still required; missingpointer alone never proves zeroeffects.
-Pure exactconstructor reproduces0x80041318/UTF16 namespacevalid; actualfault
-causality not proven by that probe alone. Source defect: InvokeOwner's p lacks
-execution_time_limit while Readback consumes it. A new bounded pureconstructor
-candidate/impactcheck is prepared under current-half-owner-duration-parameter-
-repair-20261106-v1. OriginalSource24ab/f611/bank/identities stayunchanged.
+The proposed duration-field defect was DISPROVEN by the exact24ab literalPT7M
+and corrected DateKindString constructor. Existing COM materialization also
+restores canonical XML equality; prior current-getter mismatch was RETRACTED.
+No duration/owner patch or historical financial-cause conclusion is qualified.
+OriginalSource24ab/f611/bank/identities stayunchanged.
 
 ## Eligible Result Readers
 

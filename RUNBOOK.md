@@ -2,12 +2,41 @@
 
 ## Current Authority
 
-Updated Nov6UTC15:52 / Nov7KST00:52. Company outcome UNFINISHED.
+Updated Nov6UTC17:57 / Nov7KST02:57. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
 Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
 No manual Task.Run/strategy invocation merely to inspect evidence.
+
+CURRENT CSCO public reader is repairb580dc71, not old9742. Parent verified27refs/
+27nativechecks and exactonly reasonaddition not_retained. Productione6/release3155
+unchanged. Actual17:01entry and17:06lifecycle parsed source-bound callback
+ValueError/not_retained at16:21:52 and16:50:40, with exactfault/terminal pointers.
+Fullnativechain remainspartial: submit/acceptance/fill/currentcustody/flat/PnL
+UNKNOWN, no reservationrelease. Honest-host source markers, not cryptographic
+OS-origin proof. No actual r5custody read; its old narrow windows have expired.
+
+```powershell
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-csco-entry-public-first-cause-20261106-v1/reader-repair1/reader.py' --source b580dc712fbad898260b5691f5bc9eb558203f747d41eb205e79765933549639 --phase lifecycle
+```
+
+This repeatablePUBLIC-only command does not admit privatecustody or brokercalls.
+No automatictask/order or replacement follow-up. Old9742 UNKNOWN stayshistorical.
+MSErepair2/9c172 native25checks PASS but its actualcommand is NOT ADOPTED:
+requires peerfinancial-ASOF instead of actualprivatewriterclosure. Parent has
+assigned repair4-source relevant-writer producer correction after repair3 found
+opaque relevant-root omissions; do not consume actual-c79-once merely
+to hit this knownfalse prerequisite. No actual MSEcustodyread yet.
+Separate current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2
+is COMPLETE/CONSUMED, not a runnable pending job. Source0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee;
+RESULTca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d.
+17:44:24..17:44:34UTC:1OAuthPOST/5GET/all2xx/0retry/0orders, allactorsclosed.
+Holdings4/noCSCO/USopen0/currentETdayhistory0 are sequentialASOF, not owned
+custody/exactfill/fullrisk/settlement/PnL or unknown-reservation release.
+21nativechecks PASS. Broker GET uses its own token/client/request checks, not
+successful peer strategy/financial-ASOF. Never replay this query, original488,
+or failed canonical-r1 attempt; no duplicateissuance/retry.
 
 ActualMSE5cbreader16:00: BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY/10reads/2linkedvisits,
 PAIR-RESULTb0901c1b/closure19c50053 under current-mse-retained-owned-exit-outer-

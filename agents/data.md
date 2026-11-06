@@ -1,11 +1,45 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC13:30 / KST22:30.
+Updated Nov6UTC17:44 / Nov7KST02:44.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
 
 ## Current Owner And Consumer
+
+LatestRAW120 input-onlysidecar is COMPLETE18b14819/READY4edf722f:
+A/data/current-h123-raw120-input-sidecar-20261106-v1/API.json.
+Alloriginalrows/keys/index/context/decision clocks andIND8 retained; exactlast60
+rawtoken parity on every120knownrow. FITknown12025738/37077,1020prefixmissing,
+4029old60known->120unknown; INNER8143/DEV799/RECENT289 fullyknown. Unknownx120
+remainallNaN, no padding/imputation/features/stocktargets/scalers rebuilt.
+Arendtactuallyconsumedonebuild/strictnative for completedLSTM120study, no repeat.
+Rawpayloads M/us_equities/research_inputs/current-h123-raw120-input-sidecar-20261106-v1.
+No newprovider/credential/Task call or tonight0f9/72eb change.
+InvokedExecutionpublicdiagnosis945cf560 andreaderrepairb580 are also CLOSED:
+27nativechecks/0actualreads inchild; Parentlaterreadentry/lifecycle, both show
+callbackValueError/not_retained withallfinancialUNKNOWN, not newDataauthority.
+
+Planck completed the NEW target-only sidecar, not repeatcapture:
+A/data/current-spy-open4-h123-target-sidecar-20261106-v1.
+Consumer Arendt's conditional SPYmarket/residual H123 offer280991a5 and exact
+DATA-HANDOFF41940dc9. Preserve Data5b01/parser075e/stockrows/calendar/features;
+verify compatible source/rawOPEN units/vintage including RECENT before anyREADY.
+SPY e0..3 targets only, same original role order/globalindices/known/provenance/
+capture/scheduledclocks; no inputinversion/imputation/source-splice. Marketpayload
+under M/us_equities/kis_paper_market/current-spy-open4-h123-target-sidecar-20261106-v1;
+code/headers/proofs underA.900active2400elapsed/cleanup120/<=2natives/ONEbuild
+0retry/provider/credentials/Tasks/models/GPU. Tinyactualproducer->strictparser/
+join/endpointpurge20 native BEFOREbuild. Directqualifiedcallback toArendt;
+Actual r2Source693d108b/READY6c186fd4/APIcceb55a4/closure9e858085 COMPLETE.
+ONEbuild0retry/27nativechecks across2smokes; failedfirstsmoke retained.
+SPYdatesFIT2181/INNER479/DEV47/RECENT17, everySPYhead known. Exactoldstock
+endpoint/masks/capture/calendar/vintage compatibility passed, allstockrows
+retained37077/8143/799/289. FITjointstock support29747/29737/29727; otherroles
+8143/799/289 eachhead. SameOct17captureMODE1proxy, notPIT/CA/finality upgrade.
+Actualclosure16:30/92.283active/1030elapsed/allJobsclosed; directArendtcallback
+sent. No newdownload/provider/model/credential/Task call or oldfeature rebuild.
+This does not change tonight's alreadyinstalled0f9/72eb tasks below.
 
 Planck (01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0) completed
 A/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1.

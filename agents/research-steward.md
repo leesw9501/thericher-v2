@@ -1,12 +1,29 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC15:52 / Nov7KST00:52. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC17:44 / Nov7KST02:44. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
 ## Current Resource Owner
 
 Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea remains sole GPU coordinator.
+LatestLSTM12060f47/cd6fa420 COMPLETE1CPU20epochs/best8/1900updates/67.875s/
+2forwards/12books/3syntheticupdates/oneNative/allclosed. Frozenprimarygrowth
+FAILDEV/PASSRECENT, no repeat/rerank/Paperswap. Market/residual3d74/d91a COMPLETE
+2CPU16/23epochs/4290updates/16books/growthFAILboth/all9CIDs77Jobsclosed.
+No currentlyactive optimizer inferred. Nativecoldshape choseCPU, notGPU
+permission/driverfailure; prior timing claims remain their measuredscope.
+Original warm calibration0ea1 CLOSED_FAILED at AdamW initialization/0updates:
+GPU context initialized, no warm measurement. Leading writabletemp omission
+is not an observed inner-library frame. New recovery-r1 has300NEWactive/
+1200elapsed/cleanup60/ONEworker/<=72same-family synthetic updates,0marketdata-
+fits-oldweights/private-KIS-Tasks. Bounded writabletemp from existing lifecycle
+and real optimizer constructor first; oldsource/debits/hard18:02:10 unchanged.
+Fixedactual LSTM60/LSTM120/MLP shapes, CPU2threads/CUDA andpredeclaredmemorymodes;
+measurecoldstartup separately,2warm+6timed synchronization/distributions/VRAM/
+co-tenancy. May recalibrate FUTUREbackendchoice, never rerunclosedmarketfit or
+claim economicperformance/productionGPUadvantage fromtoymeasurements alone.
+
 Latest robustH123 campaign COMPLETE5c0f6a3b/5a3eb9b0/bee99f9b:
 2CPUfits23epochs each/best11/5060marketupdates/4forwards/16books/allclosed.
 Native measured actual272row update CPU10.88ms/CUDA121.55ms StudentT,
@@ -15,8 +32,13 @@ checks ran; both marketfitsCPU7.341s/6.195s,0reservedVRAM. Free22,235MiB/
 desktopreserve4096/projected2048/co-tenancy, not a permission/GPUenvironmenthold
 or isolatedbenchmark. Do not repeatcompletedfits foroccupancy. Primarygrowth
 FAILboth, no swap; onegraph/sixsyntheticupdates, allactors/Jobs closed. Full
-accounting/budgetPASS not claimed. Nextcross-sectional ranking SOURCE-ONLY
-dedup/offer300active1200elapsed; no numericaldispatch or activeoptimizer claim.
+accounting/budgetPASS not claimed. Genericranking offer rejected08d68c, not a
+global novelty gate. New market/residual offer280991a5 prebound3600active/
+5400elapsed/hard17:43:55/2natives6syntheticupdates/2fits0retry/4forwards/16books.
+Data693d/READY6c18 nowCOMPLETE; actor/source-ready nativejoin beforemarketfits,
+no oldLSTMforwards or source-only GPUclaim. Backendactualshape measurement
+beforemarket; unrecognizeduserapps remain no permissionhold. No activeoptimizer
+is inferred fromthis prebind, see actualCURRENT/actor/counter records.
 
 Paired LSTM/TCN run1 is FAILED_CLOSED, not currently training: LSTM22epochs/
 2420updates/best10/32.069s complete; TCN11epochs1210updates/best9/1257.695s,

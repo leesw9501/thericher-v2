@@ -1,10 +1,33 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC13:43 / KST22:43. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC16:15 / Nov7KST01:15. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
 ## Current Handoff
+
+Latest conditional offer280991a5 is CLOSED source-only:
+A/research/current-market-residual-h123-decomposition-offer-20261106-v1/API.json.
+SPY-market+stock-residual H123 supervision versus identical31174parameter
+direct-sumMSE, fixedsameLSTMhalf compositions. Targetidentity reconstructs
+absoluteNet25 but conditionalforecast equality/noisereduction is NOT guaranteed;
+differentconditioning is an explicit falsifier, no hedgedtrade/secondfee.
+Data5b01 contains stocktargets only. Separate SPY-OPEN4 sidecar/source/calendar/
+unit/vintage compatibility (especiallyRECENT) is required, no normalizedinput
+inversion or oldfeature/stocktarget rebuild. Planck Data scope and Arendt Engine
+preparation are separately prebound; no marketfit until positiveDataREADY/native.
+No operatorapproval/globalhold or requirement of publicationnovelty.
+
+Genericrankretag offer08d68c/699a44a5 is REJECTED, not all ranking/futuretargets:
+12priorcontracts cover margin/list/rank/buffer/memory/OOF/directallocation;
+identicalconstantfees do not change pairwise ordering. Controlled newdata/target/
+feature studies remain allowed when useful. No numericalcalls inthat offer.
+RobustStudentT/MSE5c0f/5a3e completed2CPUfits/4forwards/16books, primarygrowth
+FAILboth. DLinear/FLAT6050updates and JSONrecovery32lifetimebooks are COMPLETE.
+No rerun/secondaryswap or independentalpha fromthese adaptive reusedstudies.
+
+Godel currently invoked source-only ExecutionReview, not a running StrategyLLM.
+Arendt proposed the latest offer; source/MD presence alone proves no runningjob.
 
 Fixed-expiry source-only offer0ae1e5dc/ec7ea2d2 is COMPLETE:
 A/research/current-fixed-expiry-hold-exit-offer-20261106-v1/API.json.
@@ -20,8 +43,8 @@ The separately dispatched saved-head campaign is now COMPLETE4CUDAforwards/
 0fits/8books: DEVprimary+3.028788% vs blind+3.601215%; recent+.235601% vs+.244454%.
 Changedcohorts5+3/informative, growthFAILboth/DDPASS, no rerun/Paperswap. Data4f31/
 READYbab onebuild2176queries/allknown COMPLETE; olded055/replacement2fits remain
-closed. New Godel source-only DLinear/flat-linear H123 offer checks exactprior
-linear/Ridge contracts before suggesting oneexperiment; no numericalauthority.
+closed. DLinear/flat-linear H123 offer is consumed/completed; original exactprior
+linear/Ridge checks and publishedmechanism sources remain references only.
 Official LTSF primary paper https://arxiv.org/abs/2205.13504 and officialrepo
 https://github.com/cure-lab/LTSF-Linear (Apache-2.0 LICENSE checked by ParentNov6)
 are mechanism references, not stockprofits/novelty. Exact revision/hash required

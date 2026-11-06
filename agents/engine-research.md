@@ -1,11 +1,36 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC15:52 / Nov7KST00:52. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC17:44 / Nov7KST02:44. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
 
 ## Ready / Owned
+
+Latest LSTM120 context study COMPLETE60f47d7c/resultcd6fa420:
+A/research/current-h123-lstm120-context-development-20261106-v1/API.json.
+ONEnewCPUfit20epochs/best8/1900updates/67.875s,2newforwards/0saved60calls/
+onejointseal/readout12books/oneNative/3syntheticupdates/allactorsclosed.
+Primaryhalf120+cached60 DEV+.753357%/DD1.910113% versus saved60+.993207%/
+1.977482%; RECENT+.388765%/.849563% versus+.288886%/.825314%.
+Changedcohorts12/4/informative; growthFAILDEV/PASSRECENT, DD+turnPASSboth.
+OverallfrozenprimaryFAIL, not independentalpha/causalwindowproof/Paperswap.
+Data18b148/READY4edf COMPLETE1inputbuild: FITknown12025738/37077, old60known
+lost4029/prefix1020; INNER8143/DEV799/RECENT289 fullyknown, last60byteparity/
+originalIND8 unchanged. Whole-recipeFITsupport limitation retained, no60refit.
+Steward warm-throughput calibration now SOURCE/probe preparation only:
+300active1200elapsed/ONEworker/<=72syntheticsteps/0marketdata-fits-oldweights.
+Coldstart separated from warm synchronized CPU/CUDA timings; no performance
+advantage inferred before actual results, no model training for occupancy.
+
+Market/residual study3d74e4ca/resultd91a88f2 also COMPLETE2CPUfits:
+COMPONENT16epochs/best4/1760updates/6.381s; DIRECT23/best11/2530updates/7.402s.
+4forwards/16books/oneNative/sixsyntheticupdates/0savedLSTMcall/all9CIDs+77Jobs
+closed. PrimaryDEV+.335994%/DD1.695147%, recent+.087198%/.932411%, lessgrowth
+than matchedDIRECT-half+1.353647%/+.144471% and savedLSTM+.993207%/+.288886%.
+Informative34/11changedcohorts/growthFAILboth/DD+turnPASS. No rerank/refit/swap.
+Recorded241.306s linkedaccounting includes180s preparationupper, remainspartial
+notbudgetPASS; Data92.283 chargedseparately/olddebits neverrefunded.
 
 RobustH123 matched-location study is COMPLETE, not a running optimizer:
 A/research/current-robust-h123-location-scale-development-20261106-v1.
@@ -22,8 +47,17 @@ versus-.200483%/.959184% and+.288886%/.825314%. SameOPEN+CLOSE proxy marks,
 25bps EACHleg. Informative32/13changedcohorts; growthFAILboth/DD+turnPASS.
 Wholelocation-scale recipe, not loss-only/tailcausal/calibratedconfidence or
 independentalpha. No secondaryrerank/Paperswap. BudgetPASS not claimed.
-Next source-only cross-sectional ranking/relative-strength offer first dedups
-oldNAS100/Memory/H20/Joint/OOF/ranker contracts; no newfit/marketpayload authority.
+Generic cross-sectional ranking offer08d68c/699a44a5 was REJECTED as retag,
+not a global novelty gate. New controlled SPYmarket/residualH123 offer280991a5
+accepted: SAME31174parameter direct-sumMSE control, samecachedLSTMhalf policy.
+DataSPY-OPEN4 sidecar693d/READY6c18 COMPLETE1build/27checks/allstockrows preserved,
+nativeactualproducer-consumer join remains required before marketfits. Family
+prebound3600active5400elapsed/hard17:43:55/twonatives-sixsyntheticsteps-twofits
+0retry-fourforwards-nooldLSTM-onejointseal-onereadout16books. ExactSource/data/
+units/calendar/sourcecompatibility and originalFIT_H3RMS/known/purge20 apply.
+Conditionalforecast decomposition need not reconstruct trueconditionalmean;
+wholefixedrecipe, no guaranteednoisereduction/hedge/secondfee or Paperswap.
+Actual numericalactors/Source/phase are in its CURRENT, not inferred fromprebind.
 
 ### Arendt: Paired Models And Resource Steward
 

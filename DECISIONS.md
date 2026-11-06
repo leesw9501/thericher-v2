@@ -10779,3 +10779,21 @@ finished fits or hot-swap RAW8fd/INTCb63 identities. A fresh dated input and
 actual native risk/account checks remain necessary at financial effects.
 Claude GO_WITH_LIMITS for this bounded target/cost/claim interpretation:
 D:/thericher-v2/model-artifacts/research/current-cost-aware-selective-entry-campaign-readiness-20261105-v1/REVIEW.json.
+
+## 2026-11-06 Broker GET Versus Private Custody Admission
+
+Consumer: prompt Paper connectivity/holdings/open-order/history diagnosis.
+A scoped read-only broker query is not a private financial-state reader or a
+broker writer. Apply its virtual-host, Paper credential, token/client, endpoint,
+request and pacing controls; do not require another strategy's successful
+financial-ASOF, submit/fill or Task result. Private-custody reads still require
+actual relevant-writer admission and before/after stability. Neither path can
+release an unknown request's reservation from absent holdings/open orders.
+
+Query-scope-r2 removed that erroneous peer-result prerequisite and completed
+1OAuthPOST/5GET/all2xx/0orders with21native checks. Four holdings/noCSCO/zero US
+open orders/zero current-day history are sequential ASOF, not owned fills,
+settlement, full risk or net PnL. Original failed and consumed jobs stay closed.
+Evidence: D:/thericher-v2/model-artifacts/execution/current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2/RESULT.json
+(ca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d).
+This clarifies standing authority, not a new approval or weaker order risk.
