@@ -103,6 +103,14 @@ old13ealias, private fallback, TaskRun or consumed installer replay.
 
 ## Research
 
+Latest completed masked-transfer CUDA family is consumed, never rerun:
+D:/thericher-v2/model-artifacts/research/current-net25-domain-masked-transfer-development-20261105-v1/VERIFIED.json.
+63SSL+13FTepochs/8892updates/1archive-readout5books/0baseline reruns;
+transfer-.25474%/DD1.69556%/turn2.80510, all financial testsFAIL/allactorsclosed.
+Native checkpoint/readiness filename collision fixed by0update coldrestore/
+publication, olddebitunchanged. No activeoptimizer. Fixedallocationblend CPU and
+samegrossrisk sourceoffer are separate scopes in orchestration.md.
+
 Actual directutility CPU campaign is COMPLETE/PRIMARY_FAIL; actual post-checkpoint
 Chronos2 CUDA campaign is COMPLETE_FORECAST_ONLY/DEVELOPMENT_FAIL:
 D:/thericher-v2/model-artifacts/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.

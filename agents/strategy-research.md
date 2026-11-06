@@ -2,6 +2,17 @@
 
 ## Current Handoff
 
+Latest Nov6UTC00:35: Darwin owns ONE samegross20session inversevol/capped
+longonly source/native offer,0marketarrays/fits/GPU:
+A/research/current-w25-samegross-risk-allocation-offer-20261106-v1.
+Small duplicatecheck/native known-mask/availability/funding tests; no new risk
+authority/readinglist/MD. Banach's fixed.5 rank/W25 allocation blend is a
+separate CPU experiment, not averaging rank and return units.
+Previous masked offer was consumed by actual63epochSSL+13epochFT, reconstruction
+passed but costed transfer-.25474%/DD1.69556%/turn2.80510 FAILED/allclosed. No
+repeat/fine-tune rescue or rejection of all reconstruction models. Exact Engine
+VERIFIED/r1API586a7235 preserves original filenamecollision/debit/0update repair.
+
 Updated Nov6UTC00:04. Darwin CLOSED source/native duplicate check and one
 masked-transfer offer at
 A/research/current-net25-domain-masked-transfer-offer-20261105-v1.

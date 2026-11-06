@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov6UTC00:04 / Nov6KST09:04.
+Updated Nov6UTC00:35 / Nov6KST09:35.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -106,25 +106,40 @@ Updated Nov6UTC00:04 / Nov6KST09:04.
    failed, originalmissing enabledreceipt not forged. Nov6UTC14:10/hard14:20
    CPU-only nonfinancial savedforward, no bank/Paper/GPU authority. Exact adoption
    A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
-12. Darwin's masked-transfer offer is DISTINCT within4namedpriors/16nativeCPU
-   tests; Parent repeated16. New current-net25-domain-masked-transfer-development-
-   20261105-v1 owns2fitsMAX: FIT-input-only masked reconstruction, then conditional
-   same-native signedNet25 fine-tune only if both fixed reconstruction controls
-   beaten. Cached controls/no old fit reruns; actual CUDA/role/DTO/book smoke
-   first. No actual optimizer yet evidenced. Claude review_unavailable, not hold.
+12. Masked-transfer current-net25-domain-masked-transfer-development-20261105-v1
+   COMPLETE/FAIL: actualCUDA SSL63epochs7371updates/best53 then FT13epochs1521
+   updates/best1; reconstructioncontrolsPASS but transfer-.25474%/DD1.69556%
+   /turn2.80510 fails all financial tests.1archive/readout5books/0baseline reruns,
+   allactorsclosed522.49active/1293.24elapsed. r1API586a7235/VERIFIED; Parent9refs
+   +51Source+8repairmembersPASS. Original nativefilenamecollision86.04debit
+   unchanged; repair0optimizerreplay. No convergence/alpha/Paper swap or rerun.
 13. e414 reader is CLOSED/0actualprivate: before/afterread admission passed but
    guestfailure lost as KeyError_source; underlying guestreasonUNKNOWN. All49
    processes/CIDclosed,558.75active. Parent717d new bounderror/finitecapture
    recovery completed SAME real5phase invented capsule then ONE actualprivate
    read/all5phases/stabilityPASS. Exact localINTC plan absent means financial
    UNKNOWN, not nointent/flat. API83425105/all104processes+2CIDsclosed/1393.08
-   active includes old558.75once. Consumed/no replay/F9 held. Godel now tests
-   original deadline/quote-age feasibility with pure synthetic latency scenarios,
-   not actual financialGuard timing or permission waiver.
+   active includes old558.75once. Consumed/no replay/F9 held. Godel's15native
+   timing scenarios COMPLETE: post-read proposalclock violates native chronology,
+   not actual financialGuard measurement or quoteTTL waiver.
 14. Separate savedChronos native-funding descriptive readout2be65c54 COMPLETE,
    680rows14cohorts3books/0fits-newforecasts;+.91845%/fourOPEN DD.77237% versus
    persistence/cash0 atdifferentexposure. Not alpha/intradayDD/PaperPnL; original
    forecastfailure/debitunchanged. Parent8refs20membersPASS/all4Jobsclosed.
+15. Parent constant-engineering pre-read decisionclock repair bf245f49 passes
+   SAME15native scenarios:1/5s buy+exit,10snoPOSTonexpiry,30sduplexreject,
+   unknownentrypending/noPOST. Source/SDK/TTL/windows/oldintents unchanged.
+   current-engineering-decision-clock-native-repair-20261106-v1/VERIFIED.json.
+   Planck owns full production/native future originalEXIT-only readiness in
+   current-intc-pre-read-decision-runtime-readiness-20261106-v1. Not deployed,
+   no consumedENTRY replay or actualorder claim. Claude review_unavailable.
+16. Fixed.5 allocation blend9da2e99a COMPLETE4.1341%/DD.7936%/turn2.13920,
+   growth/DDpass but fixedturnoverFAIL/only1of47/all18Jobs2CIDsclosed. No old
+   failure regrade/Paperpromotion. Banach now prepares saved-forward usability,
+   0fits/inference/marketreadouts/Tasks, actualfuturepoint/hashUNKNOWN and no
+   implicit analyticalfunding to broker-B10 mapping. Darwin owns ONE20session inversevol capped
+   samegross Strategy source/native offer,0market/GPU. No relative-score/return
+   average, oldfailure rescue or autoPaper promotion.
    Exact write sets and callbacks live in agents/orchestration.md.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/

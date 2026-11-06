@@ -36,15 +36,25 @@ Measured actual admission29.68..34.83s, including actualafter_read34.83s. This
 calibrates only the new finite interval, not original unretained guest cause or
 all financial-guard latency. Exact guest capture timestamp was not retained;
 this is current local-reader evidence, not original-trigger or freshbroker fact.
-Darwin's16test source offer is accepted as distinct only within four checked
-families; Parent independent16PASS with explicit-source bootstrap after initial
--I ModuleNotFoundError. Darwin now owns new same-native masked-transfer finite
-family: current-net25-domain-masked-transfer-development-20261105-v1,2fitsMAX,
-pretrain reconstruction kill BEFORE conditional fine-tune, no old baseline fits.
-Its first CUDA-native smoke failed WORKER_NONZERO before any market fit and
-closed all actors86.04active; original Source6b20548a/API/debit preserved. One
-pre-market native adapter repair inside unchanged caps is delegated, not a new
-market retry. No actual optimizer claimed until native-ready PID callback.
+Masked-transfer family is now COMPLETE/DEVELOPMENT_FAIL, not active GPU work:
+A/research/current-net25-domain-masked-transfer-development-20261105-v1/VERIFIED.json;
+r1/API.json hash586a7235. Actual CUDA SSL63epochs7371updates/INNERbest53,
+reconstruction.19035 beats interpolation.24458/persistence.39018. Then conditional
+FT13epochs1521updates/best1,1archive/1readout/5books,0baseline reruns. Transfer
+-.25474%/DD1.69556%/turnover2.80510 fails all financial tests versus W25.
+FIT-input-only29767 versus supervised29727 disclosed; no label-conditioned SSL.
+All actors/leases closed522.49active/1293.24elapsed; old native86.04debit retained.
+Native checkpoint NATIVE.json collided with final readiness filename; narrow
+publisher/coldrestore repair replayed0optimizerupdates, not a market retry.
+Parent9APIrefs+51Source+8repairmembers verified. No convergence/alpha/Paper swap.
+No optimizer currently active. Fixed50:50 allocation blend9da2e99a is COMPLETE:
+0fits/1readout4books,4.1341%growth/DD.7936%/turnover2.13920 versus W25
+3.6012%/.6505%/2.12855. DD/growth tests passed but fixed turnover test FAILED;
+only1of47cohorts changed, no Pareto dominance/alpha or automatic Paper promotion.
+All18Jobs/twoCIDs closed86.24active/558.08elapsed; Parent6refs27members PASS:
+A/research/current-w25-rank-allocation-halfblend-development-20261106-v1/API.json.
+Darwin prepares samegross inverse-vol source/native offer; Banach now prepares
+saved-forward halfblend usability only,0newfits/inference/market readouts/Tasks.
 Claude current challenges unavailable/exit1, not agreement or global hold.
 
 Saved post-checkpoint Chronos forecasts now have a separate native-funding
@@ -488,11 +498,22 @@ Old INTC15:25 A+B disabled; original observer restoration unproven.
 
 Current24ab/c79 public readers and saved-rank forward installation are complete.
 Parent717d native/actual custody read is CLOSED/consumed, financialUNKNOWN.
-Darwin owns distinct masked-transfer native repair/conditional GPU fits. Godel
-owns temporary source/pure deadline-feasibility tests in
-A/execution/current-finite-paper-deadline-feasibility-20261106-v1.
-Offline33s admission is a latency scenario, not measured financial Guard speed;
-no actual private/broker/Task effects or original source/job changes there.
+Godel's deadline test is CLOSED: actual frozen engineering runtime constructs
+decision AFTER immutable snapshot+guard, violating native decision<=read-start
+for any positive delay. Not a quoteTTL failure. Parent pre-read constant-signal
+clock repair bf245f49 passed15native synthetic cases:1/5s buy+exit,10s noPOST
+on expiry,30s unchanged13sduplexreject, unknownentry stayspending/noPOST:
+A/execution/current-engineering-decision-clock-native-repair-20261106-v1/VERIFIED.json.
+No original SDK/window/quoteTTL/bank/intent changed or actual effect/deployment.
+Planck owns full production/native readiness in
+A/execution/current-intc-pre-read-decision-runtime-readiness-20261106-v1.
+Original futureEXIT only; consumedENTRY never replayed. New actual production
+Guard latency remains unknown; readonly33s measurement is not transferable.
+Banach owns current-w25-rank-halfblend-frozen-forward-readiness-20261106-v1,
+0fits/inference/marketreadouts/Tasks, not relative-score/return averaging or
+implicit analytical-f to broker-B10 mapping. Actual future point/hash UNKNOWN.
+Darwin owns
+current-w25-samegross-risk-allocation-offer-20261106-v1, source/native only.
 Banach/Planck/Godel/Carver and all earlier completed numerical fits are closed.
 Parent owns Git/integration/current goal. Completed or failed earlier role
 deliveries are closed, not active GPU/LLM daemons. Current matrix is

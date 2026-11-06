@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC00:12 / Nov6KST09:12.
+Updated Nov6UTC00:34 / Nov6KST09:34.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Company Outcome
@@ -23,12 +23,16 @@ and all original exits. A package/commit/installation is not company completion.
 | Closed Darwin / Strategy | Pure boundary-rank offer14tests; Parent independent14tests/fullruntimeRuff/14refs PASS | Consumed by actual Engine fit below; no active Strategy fit. |
 | Closed Banach / Engine-Infra | b89 future forward Task ACTUALLYENABLED,9b16612f two independent exact fullXML/nativeAPI7ACL readbacks/14negatives;0additionalsetters | Nov6UTC14:10/hard14:20 savedCPU-only nonfinancial forecast. OriginalEnableCLI failure/missingoldreceipt preserved. FuturepointUNKNOWN, no model/bank swap. |
 | Closed Godel / Execution public reader |5cb1317a c79-only technical reader9tests/fullRuff/ParentactualprewindowNOT_DUE0reads | Exact command afterNov6UTC16:00. Financial/observed-timing/root-exit/observer facts remain unknown, no old13ealias or rawlatestscan. |
-| Darwin / Engine-Steward | Source offer DISTINCT within4namedpriors/16nativeCPUtests/Parent16PASS; new current-net25-domain-masked-transfer-development-20261105-v1 |2fitsMAX, FIT-only masked reconstruction then conditional fine-tune, preserve cachedcontrols; no actual optimizer claimed before callback. |
+| Closed Darwin / Engine-Steward | Masked transfer actual CUDA63SSL+13FTepochs/8892updates/5books/0baselinereruns |DEVELOPMENT_FAIL-.25474%/DD1.69556/turn2.80510; allactorsclosed/522.49active/1293.24elapsed. Native filename collision fixed with0updatereplay; olddebit unchanged. |
 | Closed Banach / Engine consumer |2be65c54 savedChronos native funding parity/readout:680rows14cohorts3books/0fits;+.91845%/fourOPEN DD.77237% | Descriptive adaptive/exposure-dependent, not alpha/PaperPnL; all4Jobsclosed/Parent8refs20members verified. |
 | Closed GPU workers | Chronos2, intraday GRU30/120 and crossasset attention fit closed; no optimizer currently claimed active | New work only after distinct frozen/native-ready campaign and measured headroom, never occupancy reruns. |
 | Closed descriptive consumer | e6b310:0fits/1readout6books; newexpert-2.9888%, fixed.25blend1.6173%, W25 3.6012% | Do not promote this blend; original strict-clock failure/old debit unchanged. |
 | Closed Parent / scoped private read |717d native5phasePASS then ONE actualprivate5phasePASS; NO_EXACT_PLAN_RETAINED, financialUNKNOWN |API83425105/all104processes+2CIDsclosed/1393.08active incl old558.75once/946.76elapsed; consumed/no replay/F9held. |
-| Godel / temporary Throughput-Execution | current-finite-paper-deadline-feasibility-20261106-v1 | Source/pure native timing scenarios against original windows/quoteTTL; offline33s NOT measured financialGuard speed. No broker/private/Task/source migration. |
+| Closed Godel / temporary Throughput |15native scenarios prove positive post-read guard delay violates decision<=read-start |Parentbf245f49 pre-read constant-signal repair15casesPASS; actual Guard latencyUNKNOWN, no source/job/SDK/TTL/window waiver. |
+| Planck / Execution-Infra | current-intc-pre-read-decision-runtime-readiness-20261106-v1 | Fullnew production graph/native cold fixture/futureexit-only readiness; no actualmigration/TaskRun/private/broker. |
+| Closed Banach / Engine CPU |9da2e99a fixed.5 mix4.1341%/DD.7936%/turn2.13920; growth/DDpass, fixedturnoverFAIL, only1of47 | All18Jobs2CIDsclosed86.24active/558.08elapsed/Parent6refs27members verified. No oldfailure regrade/Paperpromotion. |
+| Banach / Engine savedconsumer | current-w25-rank-halfblend-frozen-forward-readiness-20261106-v1 |0fits/inference/marketreadouts/Tasks; actual futurepoint/hashUNKNOWN, allocation-unit/B10 boundary explicit. |
+| Darwin / Strategy | current-w25-samegross-risk-allocation-offer-20261106-v1 | One20session inversevol/capped longonly/samegross native offer; no market arrays/GPU/fit, duplicatecheck first. |
 | Parent / account facts |17:20 holdings4/noINTC;18:10 terminal history0rows | As-of broker observations only; no exact original custody/fill/PnL or reservation release. |
 
 An assignment/MD is not proof of a running worker. Parent checks actual actors
@@ -59,9 +63,11 @@ before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
 
 ## Throughput Review
 
-00:12: Parent's native+actual custody read is CLOSED, source-safe exact request
-plan absent/financialUNKNOWN. Ready work is Darwin's pre-market native repair
-and Godel's deterministic original-window/quote-age timing test. Saved Chronos readout
+00:34: Parent's native+actual custody read is CLOSED, source-safe exact request
+plan absent/financialUNKNOWN. Real positive-latency native test exposed a producer
+chronology defect, now repaired locally; Planck prepares full production binding.
+Banach fixedblend and Darwin samegross-risk offer are independent CPU work.
+MaskedSSL+FT actually finished/failed, no repeated fit or occupancy training. Saved Chronos readout
 completed0refits. Parent completed MSE and nonfinancial forward installations and integrates
 completed data/research and validates the actual Windows native interface.
 No foreground market wait or operator-approval dependency. Parent's tested

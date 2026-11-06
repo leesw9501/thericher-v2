@@ -3,6 +3,17 @@
 
 ## Current Resource State
 
+Latest Nov6UTC00:35: actual masked-transfer CUDA family is CLOSED2fits,
+SSL63epochs7371updates/best53/103.87fitseconds/552MiBreserved; conditional
+FT13epochs1521updates/best1/526MiBreserved.1archive/readout5books/0baseline
+reruns, transfer-.25474%/DD1.69556%/turn2.80510 DEVELOPMENT_FAIL.522.49active/
+1293.24elapsed/allCIDsJobsleasesclosed; nativefilenamecollision86.04debit kept,
+publisher/coldrestore repair0optimizerreplay. No new GPU fit underway. Exact
+VERIFIED.json/r1API586a7235 at current-net25-domain-masked-transfer-development-
+20261105-v1. Parent9refs+51Source+8repairmembers PASS. Banach's fixedblendCPU
+readout and Darwin's samegrossinversevol sourceoffer are ready work, not GPU
+utilization training. Existing priority/concurrency authority unchanged.
+
 Updated Nov5UTC23:48. Pairwise641e9 actual CUDA fit is now CLOSED17epochs/
 2329updates/INNERbest7/13.812s/200MiBreserved. Native8checks/1readout5books,
 4createdCIDs/35Jobs/GPUleaseclosed22:23:47.180.375/1800active/1247.376elapsed.

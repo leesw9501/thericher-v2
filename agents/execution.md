@@ -2,6 +2,17 @@
 
 ## Current Work
 
+Latest Nov6UTC00:35: Parent engineering pre-read constant-signal clock repair
+bf245f49 is SYNTHETIC_NATIVE_VERIFIED15cases; originalpost-read decision violates
+SDKdecision<=readstarted at any positiveguarddelay.1/5s native buy+exit nowpass;
+10s expired noPOST/30s original13sduplexreject/unknownentrypending noPOST remain.
+A/execution/current-engineering-decision-clock-native-repair-20261106-v1/VERIFIED.json.
+No modelretag/SDK/TTL/window/bank/intent change or actual financial effect.
+Planck owns full source/native GUI+cold production binding for original future
+INTC EXIT-only at current-intc-pre-read-decision-runtime-readiness-20261106-v1,
+NOT deployed. Original consumedENTRYneverreplay; actual Guard speedUNKNOWN.
+Existing local book has no exact oldplan, not flat/nointent/permissionrelease.
+
 Updated Nov5UTC23:48. MSE c79 ACTUALLY ENABLED22:55 through exact recovery83959851,
 independent full nativeXML/API7ACL readbacks beforeTrue/beforeEnable/afterEnable:
 A/execution/current-mse-retained-exit-zero-delay-recovery-20261105-v1/PARENT-ADOPTION.json.
@@ -98,6 +109,12 @@ closure. Collector actually completed19GET1POST/DATAREADY; no broker orders or
 privatebank change. Parent restoration duty resolved, old MSE flag left intact.
 
 ## Closed Evidence
+
+Reusable clock lesson: snapshot timestamps are immutable samples, not live
+clock references. A new constant engineering signal must capture its actual
+decision time before snapshot I/O; later quote is execution sizing only. Use
+positive elapsed I/O/admission in regression fixtures, retaining expired-window
+and unknown-request no-submit cases. Never retag a model or move read timestamps.
 
 | Installed definition | Entry / owned exit UTC | Evidence |
 | --- | --- | --- |

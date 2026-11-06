@@ -3,7 +3,7 @@
 
 ## Current Research Update
 
-Updated Nov5UTC23:48 / Nov6KST08:48. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC00:34 / Nov6KST09:34. A=D:/thericher-v2/model-artifacts.
 All listed numerical workers are CLOSED; no optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
 
@@ -16,6 +16,7 @@ Results below are adaptive development, not independent alpha/Paper PnL.
 | Crossasset Conv+attention47ce |1actualCUDAfit14full epochs1931updates/best7; raw receptivefield7bars | Strict300s clock failed300.0755; original readout withheld by900SUM runway. Old748.269debit unchanged. |
 | Frozen descriptive consumere6b310 |0fits/updates/retries;1archive/readout6books;32.735newactive | Newexpert-2.9888%/DD3.5808%/turnover18.7373; fixed.25blend1.6173%/1.2426%/3.6507 versus W25 3.6012%/.6505%/2.1286. All blend diagnostic checks FAIL; no qualified selection. |
 | Boundary pairwise rank641e9 |1CUDAfit17epochs2329updates/best7/13.812s;1readout5books | Ranktop3+4.6670%/DD.93593% versus W25+3.6012%/.65045%; fixed.81307% DDlimit FAIL. Only1of47cohorts differs; no alpha/model swap. |
+| Same-native masked transfer6b20/a15f | CUDA SSL63epochs7371updates/best53 then FT13epochs1521updates/best1;1archive/readout5books | Reconstruction controls passed, transfer-.25474%/DD1.69556/turnover2.80510 fails all financial tests;0baseline reruns/allclosed. |
 
 Exact current APIs:
 - A/research/current-direct-net-utility-one-fit-20261105-v1/out/RESULT.json.
@@ -58,12 +59,18 @@ replayed/forged. Future point/hash/inference remain unknown; no GPU authority.
 
 Darwin's source offer is DISTINCT within4checkedpriorfamilies/16nativeCPUtests;
 Parent independently repeated16 with explicit bootstrap after failed direct-I
-ModuleNotFoundError. No immutable source changed. Darwin now owns new family
+ModuleNotFoundError. No immutable source changed. Darwin completed new family
 A/research/current-net25-domain-masked-transfer-development-20261105-v1.
 FIT-input-known-only masked reconstruction, then ONE signedNet25 fine-tune only
 if nonzero-best INNER reconstruction beats both same-support controls. Two fits
 MAX/0marketretry/onearchive-readout/5books, cachedscratch+W25 no baseline reruns,
-exact CUDA/producer/checkpoint/DTO/book smoke first. No optimizer yet evidenced.
+exact CUDA/producer/checkpoint/DTO/book smoke and two actual market fits completed.
+VERIFIED_COMPLETE_DEVELOPMENT_FAIL/r1API586a7235;522.49active/1293.24elapsed,
+old86.04native failure retained. Checkpoint sidecar/final readiness filename
+collision fixed by coldrestore/publication only,0optimizer replay. Input-only
+SSL29767FIT versus supervised29727 disclosed. Parent9refs+51Source+8repair
+members PASS. Reconstruction improvement did not transfer to costed profit;
+no convergence/alpha/Paper claim and no automatic new fit after closure.
 Claude current challenge review_unavailable, not agreement/global hold.
 
 Saved Chronos now has a separate descriptive native-funding readout, not refit:
@@ -73,6 +80,18 @@ A/research/current-postcheckpoint-chronos2-native-funding-descriptive-readout-20
 W25 headline comparison/alpha/intradayDD/PaperPnL. Native f->u funding parity
 1e-12 unchanged, Parent8refs20members verified/all4Jobsclosed84.29newactive.
 Original forecast-fail and269.01debit unchanged; one unused frozen harness import.
+
+Fixed.5 W25/ranktop3 ALLOCATION blend9da2e99a COMPLETE,0fits/1readout4books:
+growth4.1341%/DD.7936%/turn2.13920. W25growth3.6012%/DD.6505%/turn2.12855;
+growth/DD tests passed, fixedturnoverFAIL. Only1of47cohorts differs, no Pareto
+dominance/alpha or Paperpromotion. All18Jobs/twoCIDsclosed86.24active/558.08elapsed,
+Parent6refs27members PASS. Same entryfunding gross; markedgross slightly differs:
+A/research/current-w25-rank-allocation-halfblend-development-20261106-v1/API.json.
+Banach now prepares saved-forward usability only, no market/inference/fit/Task,
+not implicit analytical-f/postfee-u to brokerB10 mapping. ActualpointUNKNOWN.
+Rank relative scores never become absolute returns. Darwin prepares ONE20session inversevol samegross/capped
+allocation source/native offer, no market inputs/fit. Exact write sets in
+orchestration. No optimizer currently claimed active; future Paper independent.
 
 Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
 closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain
@@ -85,6 +104,10 @@ Steward with measured headroom; private-custody/MSE repair does not globally
 block it. Parent prioritizes actual Paper runtime/attribution in parallel.
 
 ## Closed Evidence
+
+Reusable lesson: native checkpoint metadata and final readiness need distinct
+filenames. Preserve completed optimizer/checkpoint evidence after publication
+failure; qualify coldrestore/publication without automatically replaying updates.
 
 OOF family is now COMPLETE_VERIFIED / DEVELOPMENT_FAIL, Parent integrated:
 A/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
