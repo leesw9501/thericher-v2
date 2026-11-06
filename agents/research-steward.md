@@ -3,6 +3,16 @@
 
 ## Current Resource State
 
+Nov6UTC05:42: no active optimizer/GPU worker claimed. Recent99e30c88 COMPLETE:
+saved3Patch CUDA inference plus CPU experts,0fits/onearchive/sixbooks, allclosed
+177.467active includingverification. Consensus e8022369 COMPLETE/0GPU-modelcalls/
+fits,allclosed181.682active; do not repeat either. Parent110/66unique refs PASS.
+Darwin soleSteward now prepares current-short-swing-horizon-expert-preparation-
+20261106-v1,300active/1800elapsed/cleanup60,0marketfits. New1-3session contract/
+nativeoptimizer/actual data readiness before a separately frozen useful CUDA
+campaign. Existing GPU priority/concurrency authority unchanged, no app-name
+veto/occupancy-only training. Godel's causal-routing offer is separate0GPU work.
+
 Nov6UTC04:42: new Patch seedfamily COMPLETE6ac123f9,2CUDAfits18/15epochs/
 3861marketupdates/best6/3,39.238/36.249co-tenant seconds/526MiBreserved each.
 2DEVforecasts/onearchive/sixbooks/0oldmodelcalls. Primary3.365409%<oldW253.601215%,
@@ -10,11 +20,9 @@ DD+turnPASS/growthFAIL; allactors/leasesclosed301.773active/1650.734elapsed,
 Parent79refs PASS. Failedroot88.245carried once; host's cumulativeACTIVE vs
 parallel critical-path ELAPSED reservation corrected, not a longer originalhard
 or duplicated fit. Six timing checks were postdispatch diagnostics only.
-Current Darwin soleSteward/Engine package current-w25-recent-open4-saved-
-evaluation-20261106-v1 is source/native preparation for289newkeys/0fits/saved
-weights/one sixbook readout. ActualDataREADY and measuredheadroom before useful
-inference. No optimizer/GPU job currently claimed active. Do not repeat closed
-training for utilization. Data fixedcalendar7f461257 is not actualpayloads.
+That recent replay is now COMPLETE above, not queued source preparation. Do not
+repeat closed training for utilization. Data47698983 is actual payload readiness;
+fixedcalendar7f461257 alone was only calendar readiness.
 
 Nov6UTC04:08: TimesFM46c8735d is COMPLETE/allactorsclosed, not still queued.
 Actual nativeCPU+CUDA4calls and oneCUDA680rowforecast40forwards;0fits/updates/

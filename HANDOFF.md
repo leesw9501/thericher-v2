@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated 2026-11-06 UTC04:42 / KST13:42.
+Updated 2026-11-06 UTC05:42 / KST14:42.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Expanded history is in pushed fe94797d and immutable artifacts, not active commands.
@@ -22,6 +22,43 @@ Installation/Task exit/worker-reported ASOF are not independent current financia
 evidence. No manual Task.Run merely to inspect a result.
 
 ## Ready / Owned
+
+- CSCO future pair ACTUALLY INSTALLED05:38 through prolog-only recoverybc71ebab/
+  Plana077bfb0, unchanged productione6a9/release315535. Parent29refs, actual
+  four-surface Build/New-NormalDefinition PASS, fresh exactabsence, one newApply
+  exit0 and separate-process fullXML/API7ACL readback PASS: both enabled/0instances.
+  EntryNov6UTC16:20..<16:24/hard16:35; exit16:50..<16:54/hard17:05 (KSTNov7
+  01:20/01:50). SAME native account owner/originalB10/at-most1share, not a new
+  bank or unknown INTC/F9 substitute. Actual effect-time risk/identity/quote/
+  orderability/reconciliation checks remain authoritative. No TaskRun or broker
+  call by installation; actual acceptance/fill/current owned/PnL UNKNOWN.
+  Exact Parent record:
+  A/execution/current-csco-actual-registration-recovery-20261106-v1/parent-installed-readback.json.
+  Oldbf311080 Apply05:10 remains FAILED/CONSUMED, never replay. Actual native
+  evidence isolates UTF8 declaration vs Unicode COM input; unchanged elementbody
+  passes declarationless. Neither schema/settings/ACL matcher nor clocks weakened.
+- Claude native2.1.311 auth is loggedIn/exit0; actual tool-disabled structured
+  review05:08 failed QUOTA, not a current login failure/agreement/globalhold:
+  A/execution/current-csco-actual-registration-recovery-20261106-v1/parent-claude-review.json.
+- Data47698983/READY4bfaac45 COMPLETE onebuild/289complete keys/17cohorts,
+  all4OPEN andinputs known. CaptureOct17, not observed historical arrival;
+  230.94active/1314elapsed/allclosed. Recent replay99e30c88 completed0fits:
+  W25+.244454%/OPEN-DD.535078%, seed3+.396043%/.535078%, HALF-.247763%/.699639%,
+  third+.344846%/.535078%, matchedEW-.062973%/.292442%. Frozen growth/DDFAIL
+  for PRIMARY, not unprofitable/independent/PaperPnL. Parent62Data/110replay unique
+  path/hash refs PASS,0array decodes/reruns. Do not rerun either package.
+- Fixed consensus DAG is COMPLETE/e8022369:0fits/inference/GPU,2archives/12books.
+  OldDEV+.382658%/DD.340856% with3/47active cohorts; recent0effects/0of17active.
+  Both frozen growth criteria FAIL, not a blanket profitability failure. Same
+  architecture seeds are not independent votes/confidence. Parent66unique refs
+  PASS/allclosed181.682active; no post-outcome threshold rescue or Paper swap.
+- Darwin Engine/Steward now prepares current-short-swing-horizon-expert-
+  preparation-20261106-v1: target/data/native contract for1-3session holds,
+  0marketfits until actual producer/consumer readiness. Godel Strategy owns
+  current-cost-aware-causal-expert-routing-offer-20261106-v1, one pure causal
+  routing mechanism using only previously matured outcomes,0market/GPU work.
+  Banach receives public-only CSCO reader preparation; delivery/status must be
+  confirmed, not inferred from this MD. No optimizer currently claimed active.
 
 - Closed Planck: current-intc-full-guard-synthetic-latency-20261106-v1. Linux bootstrap
   failure preserved, not a Windows deployment defect. Windows-r1 actual complete

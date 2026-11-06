@@ -17,49 +17,31 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-1. Planck Execution: current-csco-finite-installer-readiness-20261106-v1.
-   Prepare one independent CSCO operational buy/owned-exit through the SAME
-   account-owned native controller and original sharedB10. Proposed Nov6UTC
-   16:20..<16:24 entry/hard16:35 and16:50..<16:54 exit/hard17:05. No substitute
-   unknown INTC/F9 request, new peer bank writer, foreign adoption or forced
-   quantity. Source/native preparation is not installation or financial admission.
-   Sourcee6a9/315535 native components passed actual GUI caller/full Guard and
-   nine invented lifecycle cases. Trace the inconsistent ancestry annotation:
-   actual Source.files/CODE-SOURCE identity differs from its legacy summary.
-   Do not change consumed Sources or trust a summary as a runtime identity gate.
-   Qualify a future-definition-only installer/complete XML/API7ACL readback,
-   exit-before-entry enable/no TaskRun, before actual installation is claimed.
-   Existing HALF/INTC/MSE and all original exits remain unchanged. Prior TLT
-   preparation is CLOSED/NOT_READY: stock runtime excludes that ETF; no TLT
-   intent/installation occurred. Use supported stock route, not an ETF exception.
-2. Darwin Engine/Steward: current-w25-recent-open4-saved-evaluation-20261106-v1.
-   Prepare recent fixed17cohort/289key adaptive replay from SAVED originalW25,
-   fixedseed3/HALF/third/cash/samegrossEW,6books/0fits. Same actual Net25 quantity/
-   funding/costs; native producer/parser/model/fee before market, input-only
-   inference, joint forecast/policy seal before targetOPEN4 readout. Actual
-   DataREADY/support required, never a placeholder/old799forecasts reindex.
-   Two NEW Patch seeds are COMPLETE:18/15epochs3861updates/best6/3, primary
-   3.365409% versus oldW253.601215%, growthFAIL/DD+turnPASS. Source6ac123f9,
-   Parent79refs, allclosed301.773active; original timing-reservation failure
-   preserved, no fit/native/oldmodel replay. Completed TimesFM46c8735d:
-   one680row CUDA forecast40forwards/0fits, primary+.22483% versus Chronos+.91845%,
-   growth/DD fail; all workers closed. Preserve old config failures/debits.
-3. Godel Data: current-w25-open4-recent-evaluation-inputs-20261106-v1.
-   Calendar7f461257 READY/Parent32refs: fixed Aug3-Oct9 entries/Oct14 exits,
-   17cohorts289keys,571native-verified records/four sealed contracts disjoint.
-   Original generic e+23 loader stays unchanged. NEW target-specific e..e+3
-   fourOPEN role needs only used endpoint marks, not23unused future days; keep
-   all keys/missing masks, no waiver/imputation/silent six-cohort subset.
-   Native real Data producer -> Darwin input parser passed before first build.
-   One materialization into M, source/manifest A, no acquisition/custody mutation.
-   ADAPTIVE not independent/PIT/CA/finality or Paper-input qualification.
-4. Integrate completed components, not repeated numerical work. W25 native
-   budget bridge95d9570d passed47invented checks/Parent93refs; IVOL forward98566dcd
-   passed13negatives/Parent60refs. Both are readiness, not deployed writers or
-   actual future points. Source-throughput31810dbe is CLOSED/WITHHELD because
-   it loses a second reparse observation; do not deploy it or weaken guards.
-   Conditional INTC60s timing counterexample is not a global Paper hold or proof
-   HALF's4minute opportunity fails. Actual financial latency remains UNKNOWN.
+Actual Nov6UTC05:42: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
+native constructor4surfaces and separate fullXML/API7ACL readback PASS;
+both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
+replay either Apply. Installation is not submit/fill/financial admission.
+
+1. Execution: preserve original HALF/INTC/MSE/all exits and new CSCO Nov6UTC
+   16:20..<16:24 entry/hard16:35,16:50..<16:54 exit/hard17:05. Prepare strict
+   public-only source-qualified CSCO reader with real invented parse-return
+   tests, honest pre-due/missing/partial/ambiguous results, no private recovery
+   or Task.Run. Inspect actual effects only through the named eligible paths.
+2. Engine/Steward Darwin: current-short-swing-horizon-expert-preparation-
+   20261106-v1. Qualify1-3session target/data/model contract and tiny native
+   producer/consumer/optimizer before a separately frozen useful CUDA campaign.
+   No completed fit replay or numerical dispatch from a placeholder DataREADY.
+3. Strategy Godel: current-cost-aware-causal-expert-routing-offer-20261106-v1.
+   One pure decision-DAG mechanism beyond unanimity, using only previously
+   matured expert outcomes or proper chronological OOF, not future/in-sample
+   performance. Concrete executable proposal or rejection,0market fits/GPU.
+4. Integrate completed work without reruns: Data47698983/READY4bfaac45 has all
+   289keys/17cohorts; recent replay99e30c88 gives W25+.244454%/OPEN-DD.535078%
+   andseed3+.396043%, adaptive not independent/PaperPnL. Fixed consensus e8022369
+   gives oldDEV+.382658% with3/47active cohorts and recent0effects; both frozen
+   growth criteria FAIL. Parent62/110/66 unique references PASS. Completed
+   Patch seedfits6ac123f9 and TimesFM46c8735d remain closed, not queued training.
 
 Scopes/caps/actual owners/evidence are in agents/orchestration.md. Use full agent
 UUIDs for callbacks. Check exact terminal API and its named derivative before

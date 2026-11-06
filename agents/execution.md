@@ -2,6 +2,23 @@
 
 ## Current Work
 
+Nov6UTC05:38 ACTUAL: CSCO future pair INSTALLED via recoverybc71ebab/a077bfb0.
+Parent29refs and actual Build/New-NormalDefinition four-surfaces PASS; fresh
+exactabsence, one newApply exit0, separate-process twice-stable fullXML/API7ACL
+readback confirms both enabled/0instances. Entry16:20..<16:24/hard16:35,
+exit16:50..<16:54/hard17:05 UTC (KSTNov7 01:20/01:50). Sourcee6a9/release315535/
+cycle/originalB10 unchanged/at-most1share. No TaskRun/broker/private calls during
+installation; actual acceptance/fill/current owned/PnL UNKNOWN. Parent record:
+A/execution/current-csco-actual-registration-recovery-20261106-v1/parent-installed-readback.json.
+Oldbf311080 Apply05:10 remains FAILED/CONSUMED; newbc71 Constructor/Apply also
+consumed. Never replay them. Native0x8004131A isolated UTF8 declaration vs COM
+Unicode input; same elementbody declarationless passes. No schema/settings/ACL/
+clocks/risk weakening. Existing Tasks/F9/pending/reservations/all exits preserved.
+Banach assigned separately scoped public-only CSCO reader preparation; actual
+delivery/actor status needs confirmation, not this MD. No private custody access.
+Current Claude authtrue; proper structuredreviewfailedQUOTA, advisoryunavailable
+notagreement or relogin/globalhold. Exactreceipt in Parent recovery scope.
+
 Nov6UTC04:42: CSCO component preparation e6a9a75d/release315535ef CLOSED,
 real GUI caller/BankLeg/fullGuard on invented external metadata and9native
 lifecycle cases passed. At6.634s owner replies entry/exit simulate82.103s within
@@ -9,13 +26,10 @@ lifecycle cases passed. At6.634s owner replies entry/exit simulate82.103s within
 2015.453elapsed; oldTLT234.991separate.0actualprivate-broker-CIM-Task calls.
 Inherited native_runtime_unchanged_sha256 annotation claims oldbf245bytes, while
 Source.files/CODE-SOURCE correctly pin actual78ac AST-equivalent runtime.
-Current Planck current-csco-finite-installer-readiness-20261106-v1 must independently
-trace whether annotation affects any identity/authority path. If unused, Parent
-may correct interpretation outside consumed exactSource rather than reformat/
-rehash/reprove an unchanged executable just for display metadata. If used, keep
-withheld/report callsite; no runtime/risk bypass. Old Sources/API remain unchanged.
-Future-definition-only installer/fullXML/API7ACL/mockScheduler qualification
-pending; no installcommand/actualTask or financial admission from staticXML.
+Tracecb9d4ca1 proved the annotation is unused on semantic/identity paths;
+Source.files/CODE-SOURCE real78ac pin remains authoritative. Interpretation stays
+outside immutable Source, no formatting-only retag. Installer native/mocks and
+actual installation are complete above; neither staticXML nor install is a fill.
 Manual GUI source/PID proof is NOT OS Scheduler origin proof. Wholeaccount/
 LinuxBridge new-CSCO end-to-end wasn't exercised by this GUI component branch.
 Fresh common compatibility:20239PASS/26knownWindowsSKIP/8of8[20265]/helper0/

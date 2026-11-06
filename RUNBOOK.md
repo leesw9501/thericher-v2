@@ -2,23 +2,35 @@
 
 ## Current Authority
 
-Updated Nov6UTC04:42 / Nov6KST13:42. Company outcome UNFINISHED.
+Updated Nov6UTC05:42 / Nov6KST14:42. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
 Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
 No manual Task.Run/strategy invocation merely to inspect evidence.
 
-Current source-only CSCO engineering preparation is NOT installed:
-D:/thericher-v2/model-artifacts/execution/current-csco-engineering-native-owner-preparation-20261106-v1.
-Do not invoke a provisional launcher/installer from directory presence. Prior TLT
-preparation is CLOSED/NOT_READY; no TLT Task or financial intent was installed.
+IMPORTANT Nov6UTC05:38: CSCO future pair ACTUALLY INSTALLED via declaration-only
+recoverybc71ebab/Plana077bfb0. Both enabled/0instances after separate-process
+fullXML/API7ACL readback;0TaskRun. Original productione6a9/release315535 unchanged.
+EntryNov6UTC16:20..<16:24/hard16:35 and exit16:50..<16:54/hard17:05 (KSTNov7
+01:20/01:50). SAME original native owner/B10/at-most1share. Effect-time native
+risk/identity/unknown/quote/orderability/emergency checks remain required.
+Actual acceptance/fill/current owned/PnL UNKNOWN. Exact Parent installation record:
+D:/thericher-v2/model-artifacts/execution/current-csco-actual-registration-recovery-20261106-v1/parent-installed-readback.json.
+Oldbf311080 Apply is FAILED/CONSUMED; newbc71 Constructor/Apply are also consumed.
+Never replay either Apply or its create/enable stages. In-memory native evidence
+isolated UTF8 declaration vs Unicode COM input; only declaration removed, no
+schema/action/clocks/settings/ACL weakening. Future public reader is separate;
+directory presence/installation/task exit do not prove financial results.
+Prior TLT preparation is CLOSED/NOT_READY; no TLT Task or intent was installed.
 TimesFM OPEN4 recovery is COMPLETE; do not rerun host.py/forecasts:
 D:/thericher-v2/model-artifacts/research/current-timesfm-open4-config-abi-recovery-20261106-v1/API.json.
 New Patch seedfits are COMPLETE (continuation-r1/API.json), never rerun root:
 D:/thericher-v2/model-artifacts/research/current-net25-patch-seed-ensemble-development-20261106-v1.
-Recent saved-model replay and new target-specific OPEN4 Data role are preparation,
-not an actual inference/build/deployment claim or an executable current command.
+Recent saved-model replay99e30c88, Data47698983 and consensus e8022369 are COMPLETE,
+not active numerical commands. Parent62/110/66unique refs checked without array
+decoding/reruns. New short-swing target preparation/causal-routing offer are
+source/native tasks, not an actual market fit or Paper deployment.
 
 ## Actual Deployments
 

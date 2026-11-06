@@ -2,6 +2,19 @@
 
 ## Current Handoff
 
+Nov6UTC05:42: Godel owns current-cost-aware-causal-expert-routing-offer-
+20261106-v1, one executable causal allocation/DAG proposal beyond unanimity.
+Only previously matured expert outcomes or proper chronological OOF may route;
+no in-sample/future payoff leakage, confidence claims or broker-risk authority.
+240active/1200elapsed/cleanup60, pure kernel/invented nativeDTO/book only,
+0market arrays/labels/models/weights/GPU/fits. Direct schema callback to Engine;
+Parent owns scope/Git. No permanent role/indicator platform.
+
+Prior fixed-consensus offer COMPLETE/consumed in Enginee8022369: oldDEV3/47active
+and recent0/17active, frozen growthFAIL. No post-outcome threshold rescue; new
+mechanism is a separately frozen adaptive study, not independent-performance
+promotion. Same-architecture seeds remain correlated votes, not confidence.
+
 Latest Nov6UTC01:50: no Strategy worker currently active. Darwin's source-only
 distributional-target offer1320f1e4 is CLOSED/REJECT_ALREADY_COVERED_MECHANISM:
 earlier MLP/Transformer studies already trained ordered pinball quantiles. Exact

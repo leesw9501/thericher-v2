@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC04:42 / Nov6KST13:42.
+Updated Nov6UTC05:42 / Nov6KST14:42.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Earlier projections/history stay in pushed41cdcb8a and immutable artifacts.
 
@@ -14,18 +14,28 @@ and all original exits. A package/commit/installation is not company completion.
 
 ## Ready / Owned
 
+CSCO pair ACTUALLY INSTALLED05:38 via prolog-only recoverybc71ebab/a077bfb0,
+same productione6a9/315535/bank/clocks. Parent29refs, actual four-surface native
+constructor and separate fullXML/API7ACL readback PASS/both enabled/0instances/
+0TaskRun. Oldbf311 Apply FAILED/CONSUMED and newApply consumed, never replay.
+Actual acceptance/fill/current owned/PnL UNKNOWN. Data476/replay99e/consensuse802
+COMPLETE/closed/Parent62+110+66unique refs PASS/0arraydecode/numericalreruns.
+Claude authtrue/currentQUOTA, not a login/approval/globalhold.
+
 | Owner | Current package | Actual state / next consumer |
 | --- | --- | --- |
-| Planck / Execution | current-csco-finite-installer-readiness-20261106-v1 | e6a9/315535 realGUI/fullGuard/native components passed; trace legacy summary vs actualidentity and qualify future-only installer/readback. Consumed Source unchanged/no actualTask install. Proposed Nov6UTC16:20/16:50, sameB10/old duties. |
-| Darwin / Engine + sole Steward | current-w25-recent-open4-saved-evaluation-20261106-v1 | Seedfits COMPLETE; prepare savedW25/fixedseed3/HALF/third/cash/samegrossEW6books on289recentkeys/0fits. Real input-only parser shared with Data, no inference before actualDataREADY, archive before targets. |
-| Godel / Data | current-w25-open4-recent-evaluation-inputs-20261106-v1 | Calendar7f461257 READY17cohorts289keys/32refs; NEW target-specific e..e+3 role, not olde+23 waiver. Actual producer->Darwin parser smoke10checksPASS; onebuild not yetclaimed, no reservedrelease. |
-| Parent / integration | Completed components/results below |79newseed refs/32calendar refs PASS. Fresh full20239/26knownSKIP/8of8/helper0/cleanup/serial289/Ruff/4Compose, exact1437+AGENTS unchanged. Pushed168c0c6b; newmaterialresults pendingintegration. |
+| Planck / Execution | current-csco-registration-failure-diagnosis-20261106-v1 | Preparation closed; Parent actual installation/readback PASS. Preserve old and new consumed gates, all original duties. No Task.Run or current financial claim. |
+| Darwin / Engine + sole Steward | current-short-swing-horizon-expert-preparation-20261106-v1 | NEW1-3session target/model/data/native readiness,300active/1800elapsed/cleanup60.0marketfits, no repeated oldmodel. |
+| Godel / Strategy | current-cost-aware-causal-expert-routing-offer-20261106-v1 | One pure mature-outcome/OOF routing mechanism beyond unanimity,240active/1200elapsed/cleanup60,0market-fits-GPU. Direct exact schema callback to Engine. |
+| Banach / temporary Execution reader | current-csco-e6-public-outcome-reader-20261106-v1 | Source-only strict public reader/invented parse-return preparation assigned, delivery/status confirmation pending. No actual future result/private calls. |
+| Parent / integration | Current material installation/research | Installation evidence and62Data/110recent/66consensus unique refs PASS. Fresh full20239/26knownSKIP/8of8/helper0/cleanup/serial289; reuse only1437+AGENTS unchanged. Last pushed723ba0db; current MD integration pending. |
 
 Assignments and MDs are not active-worker proof. Full role UUID callbacks:
 Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0;
 Darwin01a1adb5-b486-7801-9fdf-1378d733bfce;
-Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
-Banach is closed. No repeated completed fits or occupancy-only jobs.
+Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec;
+Banach01a1adbc-ded7-7461-ae59-549f18ca4988.
+No repeated completed fits or occupancy-only jobs.
 
 ## Owned Due
 
@@ -38,6 +48,7 @@ No manually running existing Tasks/strategy/collector merely to inspect results.
 | HALF24ab/f611 | Actually migrated original pair; Nov6entry14:31..<14:35/exitNov11UTC14:30. Model25c8/original bank/input unchanged. |
 | INTC297/8ac | Original EXIT only actually migrated01:10, Nov6UTC15:10..<15:11/hard15:20. Consumed ENTRY unchanged. Reader9c6a78cb eligible after15:20; prewindow NOT_DUE0reads0enumerations. |
 | MSEc79 | Actually enabled83959851. Nov6UTC15:40trigger/15:45exit/15:52reconcile/hard16:00. Reader5cb1317a separately eligible after16:00. |
+| CSCOe6a9/315535 | Actually installedbc71/a07705:38, entryNov6UTC16:20..<16:24/hard16:35, exit16:50..<16:54/hard17:05. Same nativeB10/at-most1share/no forced spend. Actual effects UNKNOWN. |
 | Other exits | H3AMDNov6UTC20:45; Full17Nov6UTC20:54/hard21:07; GOOGLNov9UTC20:55; RAWNov10UTC14:30; memoryNov20; H20Dec1. No duty removed. |
 | Data/research | NAS8Nov6UTC21:10/hard21:25; savedGRU/Ridge21:35; W25Nov10/13UTC21:30/hard21:45. No reserved-label release or old refit. |
 
@@ -53,8 +64,11 @@ No manually running existing Tasks/strategy/collector merely to inspect results.
   calendar; newtarget-specific OPEN4role keeps allkeys without olde+23 waiver.
 - CSCO e6a9/315535 components passactualGUI/fullGuard/9invented runtimecases,
   82.103simulatedseconds at6.634reply delay; actualfinanciallatency UNKNOWN.
-  Sourcefilesactual78ac vslegacybf245 summary discrepancy under scoped trace,
-  not a companyhold; futureinstaller not yetqualified/installed.
+  Trace proves legacybf245 annotation unused; actual78ac realidentity preserved.
+  Actual prolog-only future installation complete above, not financial proof.
+- Recent replay99e: W25+.244454%/OPEN-DD.535078%, seed3+.396043%; primaryFAIL
+  not unprofitable/independent/PaperPnL. Fixedconsensuse802: old+.382658%/3of47
+  active, recent0effects/0of17active; growthFAIL, no threshold rescue/model swap.
 - Data independent-input audit523eb92c NOT_READY: exact untouched custody not
   proven.52refs unchanged/two mutable role-context pins drifted from Parent
   edits; no blanket54refsPASS. Nine tests/180active, original elapsed compliance
@@ -97,7 +111,13 @@ No manually running existing Tasks/strategy/collector merely to inspect results.
 
 ## Throughput Review
 
-04:42: Ready independent Execution, Engine and Data packages dispatched. Parent fixes
+05:42: Actual CSCO deployment unblocked by exact native prolog diagnosis, not
+another abstract guard. Constructor exercised actual complete Build before
+registration; fresh absence/create-disabled/exit-first/readback preserved.
+New independent short-swing target and causal-routing packages dispatched while
+original opportunities are future. Completed models/replays remain closed;
+no GPU occupancy work or company-wide missing-input hold. Earlier lessons:
+Parent fixes
 stale task assignments instead of repeating closed numerical work. Reversible
 improvements: tiny SDK config-signature check BEFORE expensive weight loads;
 reuse supported STOCK route rather than adding an ETF branch for a diagnostic;
@@ -116,10 +136,10 @@ by.569s; actual financial latency UNKNOWN. This does not prove HALF's4minute
 opportunity fails or block all Paper. A faster candidate lost an OS observation
 and was rejected rather than treated as equivalent.
 
-Ready alternatives while original opportunities are future: finish same-owner
-CSCO finite installer readiness; recent saved-model replay with target-specific
-Data inputs; integrate W25
-component for a separately bound future release. No foreground market wait,
+Ready alternatives while original opportunities are future: strict CSCO public
+reader preparation; NEW1-3session target/native qualification; causal expert
+routing pure offer. W25 budget component remains qualified future readiness,
+not an automatic model swap. No foreground market wait,
 substitute unknown intent, reset, forced deployment or new operator hold.
 Fresh full A/verification/current-csco-native-compatibility-20261106-v1/RESULT.json,
 20239PASS/26knownSKIP/8of8[20265items]/guardedcleanup/serial289, can be reused

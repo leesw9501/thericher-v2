@@ -3,9 +3,31 @@
 
 ## Current Research Update
 
-Updated Nov6UTC04:42 / Nov6KST13:42. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC05:42 / Nov6KST14:42. A=D:/thericher-v2/model-artifacts.
 Earlier numerical workers are CLOSED; no new optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
+
+Recent saved-model replay99e30c88 is COMPLETE/0fits/one289key jointarchive/
+sixbooks. W25+.244454%/OPEN-DD.535078%, fixedseed3+.396043%/.535078%, HALF
+-.247763%/.699639%, third+.344846%/.535078%, samegrossEW-.062973%/.292442%.
+Primary frozen growth/DDFAIL, not unprofitable. Parent110unique refs PASS;
+allclosed177.467active including15postclosureverification, no numerical repeat.
+Data47698983/READY4bfaac45 all289keys17cohorts complete/Parent62refs. Actual
+captureOct17, not November/historical decision-time arrival. All DD marks here
+are retained official OPEN, not intraday/CLOSE or measured Paper equity.
+
+Fixed consensus e8022369 COMPLETE/0fits-modelcalls-GPU/2archives/12books:
+oldDEV+.382658%/DD.340856%/turn.358056 with3/47active cohorts; recent0effects/
+0of17active. Both frozen growth criteria FAIL, not evidence all fusion fails.
+Allthree Patch seeds correlated/not independent confidence; no majority/threshold
+rescue or Paper swap. Parent66unique refs PASS/allclosed181.682active.
+
+CURRENT Darwin/soleSteward owns current-short-swing-horizon-expert-preparation-
+20261106-v1: qualify one NEW1-3session multihead target/model contract, actual
+Data/native producer-consumer/optimizer and duplicate check before market fits.
+300active/1800elapsed/cleanup60;0marketfits/readout now. Godel separately prepares
+causal expert-routing pure offer; no extra readout delegated yet. Useful CUDA
+work begins only with actual readiness/headroom, never repeated completed fits.
 
 TimesFM OPEN4 comparison is COMPLETE in current-timesfm-open4-config-abi-
 recovery-20261106-v1, Source46c8735d. NativeCPU/CUDA4calls then ONE CUDA680row
@@ -36,7 +58,7 @@ Six timing tests POSTdispatch only, never claimed as prelaunch proof.
 Official mechanism https://proceedings.neurips.cc/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html;
 native scratch adaptation, no benchmark/calibration/financial guarantee.
 
-CURRENT Darwin Engine/Steward: current-w25-recent-open4-saved-evaluation-
+COMPLETE Darwin Engine/Steward: current-w25-recent-open4-saved-evaluation-
 20261106-v1,0fits. Fixed17cohorts289new keys, saved originalW25/fixedseed3/HALF/
 third/cash/primary-samegrossEW,one6bookreadout. Direct Godel schema/parser native
 handoff before actualData build, source/model/fee smoke before market; input-only

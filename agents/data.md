@@ -2,16 +2,28 @@
 
 ## Current Work
 
-Nov6UTC04:42: adaptive calendar7f461257 READY/Parent32refs PASS,17cohorts289keys
+Nov6UTC05:42: target-specific OPEN4 Data is COMPLETE/CLOSED, Source47698983/
+READY4bfaac45 at A/data/current-w25-open4-recent-evaluation-inputs-20261106-v1.
+One actualbuild,289/289input+target-known/17cohorts,0payloadretry/acquisition/
+registrymutation. Parent62unique path/hash refs PASS without array decoding.
+Native canonicalCSV->Bar/panel->actual Engine parse-return and fourOPEN targets
+passed before build; role preserves allkeys and old e+23 loader unchanged.
+Retained captureOct17, materializedNov6; not observed historical arrival/PIT/
+CA/finality or independent qualification. Allclosed230.941active/1314elapsed.
+Consumer recent99e30c88 and consensus e8022369 also COMPLETE; do not rebuild.
+No active Data worker currently claimed. Next scoped data dependency is Engine's
+actual1-3session target/schema request, not a company-wide missing-data hold.
+
+Closed calendar7f461257 READY/Parent32refs PASS,17cohorts289keys
 Aug3-Oct9 entry/Oct14 last exit. Actual native verifier571records/four byte-bound
 sealedcontracts disjoint;5tests/allclosed112.99active/582elapsed,0payload reads.
 Original genericlabel e+23 would reject6cohorts; calendar kept intact, no waiver.
-CURRENT Godel current-w25-open4-recent-evaluation-inputs-20261106-v1:
+Completed Godel current-w25-open4-recent-evaluation-inputs-20261106-v1:
 NEW explicit target-specific fourOPEN[e..e+3] evaluation-role plus original60raw12/
 ind8, all289keys/masks. Old genericloader/studies unchanged; unused23future days
 not a new minimumhorizon requirement. Actual invented canonicalCSV->DataProducer
 ->Darwin named input parser->4OPENtargetparse smoke10checks passed beforebuild.
-One actualbuild/no payloadretry not yet claimed; sourceA/payloadM.600active/
+One actualbuild/no payloadretry completed; sourceA/payloadM.600active/
 1800elapsed/reserve90, no acquisition/credentials/KIS/GPU/private/registrymutation.
 Adaptive vendorproxy/nonPIT/CA/finality/actualhistoricalarrival limitations remain.
 
