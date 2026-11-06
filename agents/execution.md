@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC06:25 / KST15:25.
+Updated Nov6UTC08:07 / KST17:07.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
@@ -35,10 +35,22 @@ A/execution/current-csco-parent-public-reader-check-20261106-v1/RESULT.json.
 Initial Parent fixture omitted SOURCE.json; preserved FAILED-check.py/29checks.
 Repaired own synthetic fixture passed38; producer/reader bytes unchanged.
 
-Banach01a1adbc-ded7-7461-ae59-549f18ca4988 is assigned NEW source-only
-A/execution/current-csco-native-custody-reader-preparation-20261106-v1.
-Reuse existing strict pure native book/state parsers with invented fixtures.
-0actual private/outcome/KIS/Scheduler/credential calls now; readiness not claimed.
+Banach01a1adbc-ded7-7461-ae59-549f18ca4988 closed native custody-kernel preparation:
+A/execution/current-csco-native-custody-reader-preparation-20261106-v1,
+Sourced63c2ff0/53invented checks/11jobsclosed/240active/1507elapsed,
+0actual private/outcome/KIS/Scheduler/credential reads/calls. Old717d admission
+is pinned INTC/a3, not CSCO/e6; no actual-read command is qualified yet.
+Source-only admission binding work:
+A/execution/current-csco-custody-admission-binding-20261106-v1,
+base374 CLOSED_WITHHELD/2nativeattempts consumed, formatting pinned ancestors
+correctly rejected; preserve original failure. r1e8f5472e repaired exact ancestry
+and collector schema, sevencomponent checksPASS/twojobsclosed/0actualcapture;
+fullfivephase current-census/transport and allRO/network-none guest proof absent.
+NEWr2 completes that exact chain with invented fixtures,900NEWactive/2400elapsed/
+cleanup90/max3nativeattempts before spawn.0actualprivate/CIM/Scheduler/KIS now.
+Reuse frozen r1 bytes/existing admission ABI, no broad matcher/ownership waiver,
+copied-source repin or replay of717d. A qualified future command is the consumer,
+not permission to execute a read in this source-only package.
 Future custody read needs its own exact source/actual relevant financial-writer
 admission/network-none/allRO mounts/exact joins and before-after stability.
 Do not make Data/research actors or all-positions-flat a reader admission gate.

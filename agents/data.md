@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC06:25 / KST15:25.
+Updated Nov6UTC08:14 / KST17:14.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
@@ -8,15 +8,32 @@ AGENTS.md owns authority. This stateboard is context, not a runtime hash depende
 ## Current Owner And Consumer
 
 Planck (01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0) owns
-A/data/current-short-swing-h123-target-projection-20261106-v1.
-Consumer: Darwin's new1/2/3-session horizon model and costed holding book.
+A/data/current-intraday-short-hold-readiness-20261106-v1.
+Consumer: next genuinely intraday Engine study, separate from daily H123 swing.
+Bounded exact existing1m manifests/cursors/old3716c/NAS8 coverage and causal
+window inventory, no fullrecursive scan/acquisition/API/GPU/modelcalls.
+Propose fixed5/15/30minute same-session targets and finite30/120lookbacks, not a
+new sweep.600active/1800elapsed/cleanup90/2nativeattempts BEFOREspawn. At most
+one existing native-qualified readiness/materialization; missing contract gets
+an exact gap/alternative, not invented availability or holdout release.
+No active collector is inferred from this assignment.
+
+Previous A/data/current-short-swing-h123-target-projection-20261106-v1:
 Actual projection is COMPLETE/closed06:18, Sourceae4c68e8/READYe23875f9,
 onebuild/0retry/0feature recomputes. Parent74unique refs PASS without array
 decoding/reruns. FIT supervised H1/H2/H3=29747/29737/29727; INNER8143each,
 DEV799each/RECENT289each.34feature-array byte checks preserved original x/z.
 Closed129.293newactive+102.405readiness=231.698combined,869.3newelapsed;
 previous216.517+1debit remains separate. No active build worker remains.
-Next consumer is Darwin's exact Data/CUDA qualification and predelegated1fit.
+Consumed by completed GRUH123, LSTM/TCN and technicalHGB studies; do not rebuild.
+
+Planck completed saved LSTM-H3 shadow handoff715b8f79 at08:10:
+A/research/current-lstm-h3-shadow-point-preparation-20261106-v1/API.json.
+Exact Nov5Data83963/READY551a90fb, oneCPUforward17known/7positive/10knowncash,
+onepoint3898054d/seal9b21812e/15nativechecks/202.970active/allclosed/0fits.
+H3_FIXED is provisional, not originalargmaxH123 result/Paper authority.
+Shadow validity Nov6UTC13:55..<14:05 is not financial entry14:31 admission;
+do not extend/retag it or replace the existing HALF point/bank.
 
 - Entry OPEN[e], exits OPEN[e+1/e+2/e+3]. Four marks already mean three
   held intervals; this is not a new longer maximum hold.

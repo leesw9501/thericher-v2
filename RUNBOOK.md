@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC06:25 / Nov6KST15:25. Company outcome UNFINISHED.
+Updated Nov6UTC08:07 / Nov6KST17:07. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -29,11 +29,17 @@ New Patch seedfits are COMPLETE (continuation-r1/API.json), never rerun root:
 D:/thericher-v2/model-artifacts/research/current-net25-patch-seed-ensemble-development-20261106-v1.
 Recent saved-model replay99e30c88, Data47698983 and consensus e8022369 are COMPLETE,
 not active numerical commands. Parent62/110/66unique refs checked without array
-decoding/reruns. New short-swing source preparationcddef12b is closed/nativeCPU
-ready, actual CUDA pending. Minimal target projectionae4c68e8/READYe23875f9 is
-COMPLETE/onebuild/Parent74refs. New GPU campaign and causal specialist CPU
-consumer have disjoint scopes; no new market fit/Paper model deployment
-is inferred from source directories. Compact role history is in pushed12e5e906.
+decoding/reruns. Target projectionae4c68e8/READYe23875f9 is COMPLETE/onebuild/
+Parent74refs. GRUH123fit/readout58e50e9f, LSTM/cappedTCN0dc1f803 and CPU-TCN
+continuation03b104fa are COMPLETE, never rerun their hosts/forwards. CPU-TCN's
+bestadditional0 gives no improvement. TechnicalHGB8b9b15cd is COMPLETE9heads/
+400trees, not another queuedfit. Causal specialist diagnosis84ca is closed,
+actualfailure unresolved/no automatic market retry. Current new disjoint work:
+fixed technicalTransformer development, saved-forecast fixed-fusion and saved
+LSTM-H3 shadowpoint. Exact scopes/caps in Engine/Orchestration; CURRENT.json
+discovers the derivative only, not dispatch/runtime authority. No Paper model
+deployment or running GPU is inferred from source directories. Compact prior
+history is in pushed12e5e906/7c581fb6.
 
 ## CSCO Public Outcome Reader
 

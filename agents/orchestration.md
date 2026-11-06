@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC06:25 / KST15:25.
+Updated Nov6UTC08:10 / KST17:10.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier state/history: pushed12e5e906 and immutable sources.
 
@@ -14,36 +14,46 @@ all original exits. Package/commit/installation is not company completion.
 
 ## Ready / Owned
 
-| Owner | Disjoint package / current state |
+| Owner | Disjoint current scope / actual state |
 | --- | --- |
-| Planck Data | A/data/current-short-swing-h123-target-projection-20261106-v1 COMPLETE06:18, Sourceae4c68e8/READYe23875f9/Parent74refs/onebuild0retry/34featurebytechecks. FIT29747/29737/29727 supervisedheads, INNER8143each/DEV799each/RECENT289each. Closed231.698combinedDataactive; direct callback to Darwin, no redundant x/z rebuild. |
-| Darwin Engine / sole Steward | A/research/current-short-swing-horizon-expert-development-20261106-v1 originalroot FAILED_CLOSED: native3CUDAupdates then checkpoint/proof JSONcollision,0marketfits/allclosed306.927active. Filename-only derivative in original caps/hard/remaining native attempt, no oldroot replay/market retry. Dataae4c complete, actual market optimizer not evidenced. |
-| Godel temporary CPU Engine | A/research/current-cost-aware-causal-specialist-development-20261106-v1. Offercf19cdba ready/Parent27refs+10tests. Fixed regimeHedge on saved expert allocations,0fits/models/GPU. Oneprequentialpass/2archives/16logicalbooks/onejointreadout; no duplicate consumer by Darwin. |
-| Banach temporary Execution | A/execution/current-csco-native-custody-reader-preparation-20261106-v1. Pure source/invented native-reader prep only,0actualprivate/API/Scheduler reads/calls; readiness not yet proven. Public974 reader alreadyclosed/ready. |
-| Parent | Actual CSCO pair installation adopted05:38; public reader independent38tests/30refs/NOT_DUE0access PASS. Compact current memory/integrate/verify/Git. Last pushed12e5e906, current owned MD integration pending. |
+| Arendt Engine/sole Steward | A/research/current-h123-lstm-tcn-comparison-20261106-v1. Capped-finalization0dc1f803 and CPUcontinuation03b104fa COMPLETE/no improvement from12extraTCNepochs. NEWtransformer-development PREPARATION02a95170/0marketfits-nativeattempts at08:02, source/native/backend freeze first. One new boundedfit delegated; no GPU running claim from preparation. |
+| Ptolemy CPU Engine | A/research/current-h123-technical-feature-view-comparison-20261106-v1. r1 COMPLETE8b9b15cd/9HGBheads400trees/14books/allclosed726.180newactive. NEWfixed-fusion uses saved LSTM/technical forecasts, three fixedblends/primaryhalfLSTM-RAW_PLUS/20books/0fits-inferences-GPU. |
+| Banach Execution | A/execution/current-csco-custody-admission-binding-20261106-v1/r2 source-only fivephase collector/transport/guest proof. r1e8f5472e sevencomponentPASS/2attemptsclosed, fullchain absent. Old374 preserved/0actualprivate-CIM-KIS, public974/installedPaper unaffected. |
+| Planck Data | LSTM-H3 shadow715b8f79 COMPLETE/oneCPUforward17known7positive10cash/onepoint/15nativechecks/0fits. NEW A/data/current-intraday-short-hold-readiness-20261106-v1 exact existing1m coverage/causalwindow/custody readiness, no fullscan/API/GPU/fit. Actualae4c68e8 Data build already COMPLETE/Parent74refs, no duplicate. |
+| Darwin closed | GRUH123fit/readout COMPLETE58e50e9f,Parent46refs/419.463combinedactive. DEV-1.561353%/DD2.728150%, recent+.502763%/OPEN-DD.715539%, frozen growthFAIL.0refit/reforecast. |
+| Godel closed | Router4be69technicalFAIL/noeconresult,firstcause84ca unresolvedmissinginput/guard. Synthetic1ULPcaperror not exactcause.7native/fivecomplete, ceiling2 unencodedbindingambiguous, no authorityupgrade/marketretry. |
+| Parent | ActualCSCOinstallation/publicreaderintegration/nativewidebookb161; current memory/verification/Git. Lastpushed7c581fb6. No new actualbroker effect observed. |
 
-Full callback UUIDs:
-Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0;
-Darwin01a1adb5-b486-7801-9fdf-1378d733bfce;
-Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec;
+Callbacks: Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea;
+Ptolemy01a1afab-9fdf-75c1-b191-c89288d1056e;
 Banach01a1adbc-ded7-7461-ae59-549f18ca4988.
-Assignments/directories are not active-process proof; actual actor callbacks
-and exact resources govern running claims.
+Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0.
+Closed reference UUIDs:
+Darwin01a1adb5-b486-7801-9fdf-1378d733bfce;
+Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
+No running agent/optimizer is inferred from an MD/directory/old failed-root API.
 
-## Scope And Resource Caps
+## New Scope Caps
 
-- Data readiness0build closed; NEW materialization<=1build/0retry/600active/
-  1800elapsed/cleanup90. Original inputs reused, source/native handoff beforepayload.
-- New horizon campaign1fit/120epochs/14040updates max, INNERearly12/LR/safe-best/
-  curves;1DEV+1RECENT inference/onejointseal/readout8books/0retry/1800active/
-  3600elapsed/readout200+cleanup120. NativeCUDA and measured headroom first.
-- Causal specialist0fits-modelcalls-GPU,60feedbackupdates max/2episodes/
-  onepass/2archives/16books INCLUDING shadows/onejointreadout/0retry/
-  900active/2400elapsed/readout200+cleanup90. No optional recost/rate search.
-- New custody-reader preparation0actualprivate-state reads,300active/
-  2400elapsed/cleanup60; no locks/recovery/Scheduler/broker authority.
-- Prior debit/closed clocks preserved once. CPU/queue/LLM/orchestration and GPU
-  spend remain distinct. No useful completed fit is repeated for utilization.
+- Transformer:1fit/120epochs14040updates/1800NEWactive/3600elapsed/native2attempts,
+  0marketretry/readout200/cleanup120. Source02a95170 is PREPARATION only, final
+  marketSource/backend after actual tiny native timing/feature/checkpoint/book.
+  PrimaryhalfTransformer-LSTM, oneDEV+oneRECENTforecast/16books,0oldmodelcalls.
+- Fixedfusion:3predeclaredblends/20books/onejointreadout/0fits-inferences-GPU,
+  600NEWactive/1800elapsed/native120/readout180/cleanup90/2nativeattempts.
+  Reused inputs/outcomes/explicitadaptive; primary cannot change after results.
+- IntradayData:600active/1800elapsed/cleanup90/native2attempts/max1qualified
+  readinessbuild/0API-acquisition-modelcalls-GPU. Existing manifest/cursor
+  scope only; proposed5/15/30minute targets and30/120lookbacks, not training.
+- LSTM-H3shadow COMPLETE202.970active. Valid13:55..<14:05, not actual entry
+  admission or a retaggable replacement HALF input;0financialeffects.
+- Admissionbinding r2:0actualcapture/private/CIM/Scheduler/KIS calls,
+  900NEWactive/2400elapsed/cleanup90/3syntheticnativeattempts BEFOREspawn;
+  consume frozenr1/reuse7components, allfivephase/guest proof missing only.
+- Cappedfinalization/CPUcontinuation/technicalr1 are COMPLETE; never reopen caps.
+- New budgets do not erase oldfailures/debits. Chargeleafworkerwallonce plus
+  nonoverlappingcontrollerI/O; queue/LLM distinct. Nativeattempt counters bind
+  before every spawn, including bootstrap; source preparation is not a fit.
 
 ## Owned Due
 
@@ -62,7 +72,17 @@ Never manually Run an existing Task merely to inspect.
 
 ## Throughput Review
 
-06:14: all ready independent packages dispatched, Parent integrates. Actual
+08:10: actual model/profile evidence changes allocation: TCN is much faster on
+CPU, LSTM CUDA faster. Do not equate GPU occupancy with throughput. New CPU-TCN
+continuation and one-call HGB validation avoid known slow kernels/repeated weighted
+binning, without changing old frozen runs. Sources/checkpoints remain recoverable.
+Root callback latency caused Parent to miss the already completed differently
+named Darwin readout and create an extra widebook regression component; retain
+both as separate evidence, not a source replacement. Next callbacks lead with
+exact current root/Source/status before long summaries. Inactive oldAPI is not
+the only current result. Restore pinned ancestor bytes, never format/repin away
+a real Source check. Original lessons:
+Actual
 CSCO XML/BSTR rootcause repaired with native constructor proof, not another
 abstract approval/guard. New source is installed, old consumed Apply preserved.
 Data/Engine direct qualifying callback can launch inside predeclared scope
@@ -76,9 +96,16 @@ FIT/INNER purge does not silently remove recent eligible cohorts. Complete outpu
 path preflight includes checkpoint's automatic siblingJSON so result/proof files
 cannot collide after a successful optimizer/book smoke. Preserve original failures.
 
+Parent overly broad transitive ancestry hashing was stopped without evidence;
+bounded two-link metadata integration checked13/135/145/90smallrefs for probe/
+finalization/CPU-TCN/technical with0mismatch, no arraydecode/numerical repeat.
+Large/older dependencies were explicitly deferred, not counted as verified.
+Use existing native/own checks for external code, not an expensive history scan.
+
 Actual financial runtime evidence is still the company bottleneck, not missing
-permission or model profitability. Ready alternatives are target/CUDA readiness,
-causal CPU routing and exact native reader preparation. Unknown source/capability
+permission or model profitability. Ready alternatives are technicalTransformer,
+saved-output fusion, LSTM shadow handoff and exact native reader completion.
+Unknown source/capability
 withholds its named package only; no substitute request/reset/forceddeployment.
 Claude authenticated QUOTA is review_unavailable, not agreement/globalhold.
 

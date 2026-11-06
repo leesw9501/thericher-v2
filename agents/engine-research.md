@@ -1,62 +1,138 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC06:25 / KST15:25. A=D:/thericher-v2/model-artifacts.
-Historical family details/failed attempts: pushed12e5e906 and immutable sources.
-Current product: cost-aware intraday/1-to-several-day swing proposals; Paper
-permission is independent of research profitability. No new optimizer is
-currently evidenced active.
+Updated Nov6UTC08:07 / KST17:07. A=D:/thericher-v2/model-artifacts.
+History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
+intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
+is rerun for utilization. Actual source/PID/counters govern running claims.
 
 ## Ready / Owned
 
-Darwin (01a1adb5-b486-7801-9fdf-1378d733bfce), Engine/sole GPU Steward:
-A/research/current-short-swing-horizon-expert-development-20261106-v1.
-New source preparation is present, not actual CUDA training. Actual Dataae4c68e8/
-READYe23875f9 now CLOSED/onebuild/Parent74refs; Engine preparation Parent51refs.
-FIT H1/H2/H3 supervised29747/29737/29727, INNER8143each/DEV799each/RECENT289each.
-No Parent acknowledgement barrier remains; actual native CUDA chain still needed.
-Original development root is now FAILED_CLOSED06:19: CUDA native3updates and
-checkpoint/book ran, then final proof NATIVE.json collided with checkpoint's
-same-name JSON sidecar.0marketfits/forecasts, all actors/lease closed306.927active.
-Darwin owns a separately bound filename-only derivative within ORIGINAL hard/caps;
-at most one remaining native attempt/total8updates, no market retry/debit refund.
-Preserve failed source/output/closure, never overwrite/replay old root.
-Durable implementation lesson: checkpoint .safetensors owns sibling .json;
-preflight the complete checkpoint/proof output path set before dispatch.
+### Arendt: Paired Models And Resource Steward
 
-- Closed preparation: current-short-swing-horizon-expert-preparation-20261106-v1,
-  Sourcecddef12b/API.json.12invented native checks: actual Data parser, allhead
-  gradients, CPU optimizer/checkpoint cold-next-update, H3 native book parity,
-  H1/H2 early sale/cash until next cohort.43.557active/1282.535elapsed.
-- One NEW shared GRU32 encoder/three absolute net25 heads, scratchseed20261106.
-  H1/2/3=OPEN[e] to OPEN[e+1/e+2/e+3], not four-day maximum.
-- Existing60x12 raw+ind8/FIT-only scaler; no old refit/warm start. Original splits/
-  entry sets, FIT/INNER20purge, DEV/RECENT0 extra purge. No target masks in input.
-- Policy chooses largest positive raw expected net return at entry, tie shortest
-  hold, nativeu=.5/17; precommitted exit/no intra-cohort reinvestment/refill.
-- Actual Planck source/targets/native handoff plus tiny native CUDA optimizer/
-  checkpoint/book and measured headroom required before market fit.
-- NEW frozen campaign caps:1fit,120maxepochs/14040updates, INNERearly12/LRplateau/
-  safe-best restore/curves;1DEV+1RECENT inference/onejointseal/readout8books,
-  0marketretry/1800active/3600elapsed/readout200+cleanup120. Preserve prior debits.
-- Each period: primary growth beats cash/same-entry-gross H3/samegrossEW,
-  DD<=1.25matchedH3 and turnover<=1.05matchedH3, positive effects and H1/H2
-  holding change required. Same original cohort cadence/fees/pricepath.
-- Parent predelegation removes an ACK wait, not technical predicates. Exact
-  actual DataREADY/PID/birth/CID/lease callbacks before active training claims.
+Owner01a1af96-209a-72f2-8cf9-e698e483f5ea:
+A/research/current-h123-lstm-tcn-comparison-20261106-v1.
 
-Godel (01a1ad7a-f750-7383-947e-2d7a3bc9bbec), temporary disjoint CPU Engine:
-A/research/current-cost-aware-causal-specialist-development-20261106-v1.
-OfferSourcecf19cdba, Parent27refs/10tests PASS. One fixed SPY21 two-regime
-specialist router reuses existing Hedge rate.1/uniform priors over saved
-PATCH-mean3/THIRD native allocations.0fits/modelcalls/GPU.
-Only earlier matured cohort feedback (availability CLOSE[e+3] < decision)
-may update; reset per episode. Original capture dates are not logical arrival.
-Predeclared2episodes/oneprequentialpass/2archives/onejointreadout16logicalbooks
-INCLUDING shadow experts/60updates max/0retry/900active/2400elapsed/
-readout200+cleanup90. Compare globalHedge/fixedhalf/W25/cash/samegrossEW;
-missing regime support or aliases are NONINFORMATIVE, never a novel win.
-Both periods must beat cash/global/fixed/W25 growth; DD<=1.25W25,
-turn<=1.05max(W25/fixed/global), >=2changed cohorts overall. No recost search.
+Original run1 Source209ed83e FAILED_CLOSED, not queued:
+LSTM22epochs2420updates/best10/32.069s complete; TCN11epochs1210updates/best9
+hit1260s guard before final best export.0forecasts/books, no oldGRU calls.
+All Jobs/sixCIDs/leases closed. Recorded active upper3969.829>3600 includes
+controller/nestedCLI/guest waits; preserve raw debit/breach, not compute-time claim.
+FINAL-API.json holds exact safe checkpoints and failed-source evidence.
+
+Separate exact-shape probe COMPLETE: TCN CPU2threads21.44x faster training/
+62.82x inference than frozenCUDA (slow_conv_dilated2d); disablingcuDNN did not
+help. LSTM CUDA faster. Use measured backend suitability, not GPU occupancy.
+
+Capped-finalization/run1 COMPLETE Source0dc1f803/API/result06012434:
+0fits/updates, fournewforwards/onejointseal1ea9ed56/16books/readout00dd1f36.
+39.781newactive, allclosed, old3969.829 unrefunded. Cost25bps EACHleg:
+LSTM DEV+.993207%/DD1.977482%, recent+.288886%/OPEN-DD.683334%; cappedTCN
++.432980%/2.372833% and-.060755%/.662455%; primarymean3+1.103198%/2.068594%
+and-.053680%/.660140%. Primary identical to sameentryH3 both periods, growthFAIL.
+
+cpu-tcn-continuation COMPLETE Source03b104fa: oneNEW CPUcontinuedfit frombest9,
+12additionalepochs1320marketupdates/45.754fitseconds, bestadditionalepoch0.
+Three synthetic updates/new1323total, cumulative2533includesold1210; old10/11
+overlap explicit. No improved checkpoint; early12 is not convergence. TwoTCN
+forwards/one16bookreadout, metrics identical to capped results.93.044newactive/
+535.956elapsed/allclosed. No furtherTCN fit is queued. Never refund olddebits.
+
+NEW transformer-development delegated from source-only readiness4b295fcd:
+one fixed d32/head4/layer2/preLN Transformer with raw60x12 + technical19,
+seed20261106.120epoch/14040update max/INNERearly12/LRplateau4/safebest,
+1800NEWactive/3600elapsed/native2attempts/0marketretry. Actual feature->adapter->
+optimizer/checkpoint->policy/widebook native chain and measured CPU/CUDA timing
+before market. Avoid own-rt versus immutable feature-rt module collision.
+OneDEV+oneRECENT forecast/seal then16books, primary fixedhalfTransformer/LSTM;
+all controls rebooked on one exact source. No other model forward/refit.
+Source/contract/current actor qualifies launch, not MD or Parent ACK.
+
+### Ptolemy: Technical Feature Comparison
+
+Owner01a1afab-9fdf-75c1-b191-c89288d1056e:
+A/research/current-h123-technical-feature-view-comparison-20261106-v1.
+
+RAW720 / fixed technical-only / raw+technical, H1/H2/H3=9HGBheads, not one fit.
+Features fixed before payload: original8 plus BB/MACD/ADX/stochastic/volatility/
+candle context as actually sourced/native-tested, no unavailable volume/VWAP.
+Original family stopped technically:1head attempted/3increments, weighted
+binning about54s EACH repeated warm-fit call, no completed models/forecasts/books;
+market curves not persisted. Allclosed395.262active; no feature-value conclusion.
+
+Efficient r1 COMPLETE8b9b15cd, final/API938d504e:9newHGBheads/400trees,
+18forwards/14books/onejointseal-readout,0GRUcalls/GPU. Onefit/head uses real
+sklearn1.9.1 chronologicalX_val/earlystop/periteration curves/bestprefix;
+53.266s representative singlebinning probe, not54s repeated everyincrement.
+One nativeattempt/18syntheticmodels/36nativefitAPIs,726.180newactive/allclosed;
+old395.262debit retained. RAW_PLUS DEV+1.206408%/DD.921982% versus indicatoronly
++1.843158%/1.007072%; recent+.433898%/OPEN-DD.040741% versus+.321327%/.464720%.
+Primary frozen growthFAILboth, not all unprofitable or universal indicator benefit.
+
+NEW fixed-fusion reuses saved LSTM/RAW_PLUS/INDICATOR_ONLY forecasts only.
+Three candidates fixed before outcomes: primary halfLSTM/halfRAW_PLUS, secondary
+halfLSTM/halfINDICATOR_ONLY, third equal3. Same original H123/net25 policy.
+20books/twoperiods/onejointreadout/0fits-inferences-GPU,600NEWactive/1800elapsed/
+native2attempts/cleanup90. Exact row/unit/known/availability/payoff/cost binding
+and actual native fusion->policy->book first; one source for all controls.
+Primary growth must beat cash/bothsingleexperts/indicator/matchedH3/EW in EACH
+period, DD<=1.25matchedH3 andturn<=1.05matchedH3, positive/2changedcohorts.
+Secondary descriptive, no posthoc primary swap. Direct feature handoff already
+sent to Arendt; no Parent/result approval relay.
+
+### Planck: Saved LSTM To Shadow Recommendation
+
+Owner01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0:
+A/research/current-lstm-h3-shadow-point-preparation-20261106-v1.
+Use exact savedbest10 and Nov5-asof Data83963/READY551a90fb for oneCPU17row
+forward/onepoint,600active/1800elapsed/0fits. H3_FIXED positiveNet25 ->encoded
+nativefloor.5/17, otherwise knowncash; unknown stays unknown. This new provisional
+fixedH3 is not original argmaxH123 performance or Paper promotion. Actual
+invented model-only safeloader/feature/DTO/95d9570d consumer first; no implicit
+CUDA-RNG restoration on CPU. No rawprices public, financial authority or data retag.
+Actual COMPLETE08:10 Source715b8f79, point3898054d/seal9b21812e:
+17known/7positive/10cash, oneCPUforward/onepublication/15nativechecks,
+202.970active/allclosed. Valid13:55..<14:05, not entry14:31 permission.
+Planck now owns separate existing1m intraday readiness; no repeated forward.
+
+### Closed GRU And Router
+
+Darwin01a1adb5-b486-7801-9fdf-1378d733bfce is closed/parked.
+GRU H123 repair2 COMPLETE28epochs3080updates/best16/15.555s/277MiBreserved.
+Saved forecasts/seal retained, never refit/reforecast. Readout int8 overflow was
+repaired in A/research/current-short-swing-h123-index64-readout-recovery-20261106-v1,
+Source58e50e9f:1new8bookreadout/0fits-forwards-GPU, lifetime2attempts incl failure.
+Parent46refs/allclosed419.463combinedactive. DEV-1.561353%/DD2.728150% vs
+sameentriesH3-1.348947%; RECENT+.502763%/OPEN-DD.715539%, allH3/noearlyholds.
+Frozen growthFAILboth, not all unprofitable. No old-criterion regrade.
+
+Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec first-cause diagnosis is closed:
+A/research/current-causal-specialist-firstcause-20261106-v1/RESULT.json.
+Original router4be69e7b failed after38seals/37matureexposures, no complete
+archives/readout/economic result. Actual failing input/guard not retained;
+clock alternative unsupported. Parent997synthetic simplex cases reproduce44
+NATIVE_CAPS failures at1ULP, NOT proof of actual failure. No automatic market retry.
+Seven native dispatches/five complete pipelines preserved; proposed2 ceiling
+was not encoded in actual ORIGIN/CONTRACT, so governing binding is ambiguous,
+not a retrospective pass or categorical proven five unauthorized attempts.
+Offercf19cdba Parent27refs/10tests remains immutable, no new router dispatch.
+
+## Data And Implementation Knowledge
+
+Dataae4c68e8/READYe23875f9 CLOSED/onebuild/Parent74refs/34feature byte checks.
+FIT supervised H1/H2/H3=29747/29737/29727, INNER8143each/DEV799each/RECENT289each.
+FIT/INNER20purge, DEV/RECENT0; all keys, same original x/z/scaler retained.
+Four OPEN marks are three held intervals, not four-day maximum.
+No target masks in input or reconstructed prices from scalar y.
+
+Checkpoint.safetensors owns sibling.json: preflight the whole output set.
+Temporal session indices need int64 BEFORE adding compact int8 horizon labels;
+tiny7day tests missed overflow. Parent independent sourceb1616c1f at
+A/research/current-h123-wide-calendar-book-component-20261106-v1 passed5wide
+calendars0/126/128/255/2960 plus H1/H2/H3/mixed/cash/actual H3fee parity.
+This separate component is not a retroactive replacement of frozen74ed.
+New family comparisons use ONE resolved book source for ALL rebooked controls.
+Copied pinned ancestor code is byte-immutable; format only new owned adapters.
+Real isolated(-I) import/solver/checkpoint/producer-consumer must run before data.
 
 ## Completed Results: Do Not Rerun
 

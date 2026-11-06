@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC06:25 / KST15:25.
+Updated Nov6UTC08:07 / KST17:07.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -25,11 +25,13 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data | A/data/current-short-swing-h123-target-projection-20261106-v1 COMPLETE06:18, Sourceae4c68e8/READYe23875f9, onebuild/0retry/0feature recomputes/34bytechecks, Parent74refs. FIT H1/H2/H3=29747/29737/29727, INNER8143each/DEV799each/RECENT289each. All jobs closed231.698combinedData active. |
-| Darwin / Engine and sole Steward | A/research/current-short-swing-horizon-expert-development-20261106-v1 originalroot FAILED_CLOSED06:19: nativeCUDA3updates, proof NATIVE.json collides with checkpoint siblingJSON.0marketfits/forecasts/allclosed306.927active. Separately bound filename-only derivative preserves original hard/caps/debit, remaining native attempt only; no market retry/oldroot replay. Dataae4c/READY e238 complete. |
-| Godel / temporary CPU Engine | A/research/current-cost-aware-causal-specialist-development-20261106-v1. Offercf19cdba ready/Parent27refs+10tests; fixed two-regime mature-feedback allocation router,0fits/GPU/models. Separate predeclared causal readout, no duplication by Darwin. |
-| Banach / temporary Execution reader | A/execution/current-csco-native-custody-reader-preparation-20261106-v1. New pure-source/invented native custody-reader preparation,0actual private/KIS/Scheduler reads/calls; readiness not yet proven. Public974 reader already CLOSED/ready. |
-| Parent / integration | CSCO actual installation/public-reader adoption and compact current memory. Last pushed12e5e906; new owned MD integration pending. |
+| Planck / Data | SavedLSTM-H3 shadow715b8f79 COMPLETE08:10/oneCPUforward17known7positive10cash/onepoint/15nativechecks/202.970active/allclosed/0fits. NEW A/data/current-intraday-short-hold-readiness-20261106-v1 inventories exact existing1m coverage/contracts for a distinct intraday study, no API/acquisition/GPU/fit. Dataae4c68e8 remains COMPLETE, never duplicate. |
+| Arendt / Engine and sole Steward | A/research/current-h123-lstm-tcn-comparison-20261106-v1. Capped-finalization/run1 COMPLETE0dc1f803/4forwards16books0fits. CPUcontinuation03b104fa COMPLETE/12newTCNepochs1320updates/bestadditional0/no improvement. NEW fixed technicalTransformer delegated from4b295fcd, actual producer/checkpoint/native and CPU-CUDA probe before one bounded fit. No running GPU claim from readiness alone. |
+| Ptolemy / CPU Engine | A/research/current-h123-technical-feature-view-comparison-20261106-v1/r1 COMPLETE8b9b15cd/9HGBheads400trees/18forwards14books/allclosed726.180newactive. NEW fixed-fusion: three predeclared LSTM/technical blends, primary halfLSTM/halfRAW_PLUS;0fits-forwards-GPU/20books. |
+| Banach / Execution | Native custody kerneld63 closed53checks/0actualread. Base374WITHHELD; r1e8f5472e byte-exact repair/sevencomponentsPASS/2attemptsclosed, fullfivephase/guest proof still missing. NEWsource-onlyr2 finishes that chain;0actualprivate/CIM/KIS, public974/schedules unaffected. |
+| Darwin / closed | GRUH123 COMPLETE28ep3080updates/best16; readout recovery58e50e9f COMPLETE/Parent46refs. DEV-1.561353%/DD2.728150%, recent+.502763%/OPEN-DD.715539%; growthFAILboth, not all unprofitable. No repeatedfit/forecast. |
+| Godel / closed | Router4be69e7b TECHNICAL_FAILED/no economicresult. Firstcause84ca7c6f cannot resolve actual missingguard/input; synthetic cap1ULP is not exactcause. Native7dispatches/fivefull; proposed2 binding unencoded/ambiguous, no historicalpass upgrade. |
+| Parent / integration | CSCO installed/publicreader38checks/30refs, shared wide-index componentb161 native5calendar tests. Earlier Darwin74ed already qualified before late callback; Parent extra component is independent regression, not frozen-source replacement. Last pushed7c581fb6; current MD integration/metadata checks pending. |
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
 exact frozen schema/ready callbacks directly; Parent acknowledgement is not a
@@ -112,6 +114,10 @@ or actual Paper PnL. Do not repeat completed fits/forecasts/readouts.
 
 | Completed scope | Actual evidence |
 | --- | --- |
+| LSTM/TCN capped0dc1f803 |Fourforwards/16books/0fits. Cost25bps eachleg: DEV LSTM+.993207%/DD1.977482%, TCN+.432980%/2.372833%, three-modelmean+1.103198%/2.068594%; recent LSTM+.288886%/OPEN-DD.683334%, TCN-.060755%/.662455%, mean-.053680%/.660140%. Primary growthFAILboth; original budget breach remains. |
+| CPU-TCN03b104fa |One new continuedfit frombest9,12additionalepochs1320updates/45.754s; bestadditional0, no improvement. Twoforecasts/16books reproduce cappedTCN metrics,93.044newactive/allclosed. Never repeat for occupancy. |
+| TechnicalHGB8b9b15cd |Nineheads/400trees/14books. RAW_PLUS DEV+1.206408%/DD.921982%, recent+.433898%/OPEN-DD.040741%; indicatoronly+1.843158%/1.007072% and+.321327%/.464720%. Frozen primarygrowthFAIL, no universal winner. Allclosed726.180newactive,395.262olddebit separate. |
+| LSTM_H3_FIXED shadow715b8f79 |Exact savedbest10/Nov5Data83963 ->17known/7positive/10cash/oneCPUforward/onepoint3898054d, seal9b21812e. ValidNov6UTC13:55..<14:05, not entry14:31 admission or a replacement HALF bank/point. Provisional only; no financial effect. |
 | Data47698983/READY4bfaac45 |Onebuild289complete input/fourOPEN keys17cohorts; captureOct17/materializedNov6, not historical arrival. Parent62unique refs/allclosed230.941active. |
 | Recent99e30c88 |0fits/onearchive/sixbooks. W25+.244454%/OPEN-DD.535078%, seed3+.396043%/.535078%, HALF-.247763%/.699639%, THIRD+.344846%/.535078%, samegrossEW-.062973%/.292442%. Primarygrowth/DDFAIL, not unprofitable; Parent110refs/allclosed177.467active. |
 | Consensus e8022369 |0fits-modelcalls-GPU/2archives/12books. OldDEV+.382658%/DD.340856% with3of47active; recent0effects/0of17active. Frozen growthFAILboth, Parent66refs/allclosed181.682active. |
@@ -151,6 +157,10 @@ and diff checks passed. A mistaken research override filename failed before
 correct research-profile config passed; no runtime/config change.
 Docs/external-only reuse requires exact protected source match; external code
 needs its OWN native/focused evidence. No repeated full suite validates D code.
+Parent bounded model metadata integration13/135/145/90smallrefs and shadow36refs
+has0mismatch;
+larger/deeper/outside-scope ancestry explicitly deferred, not full native proof:
+A/verification/current-csco-native-compatibility-20261106-v1/PARENT-H123-MODEL-INTEGRATION.json.
 
 Claude native2.1.311 loggedIn/exit0; actual structured review05:08 failed QUOTA.
 A/execution/current-csco-actual-registration-recovery-20261106-v1/parent-claude-review.json.

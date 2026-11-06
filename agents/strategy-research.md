@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC06:25 / KST15:25. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC08:10 / KST17:10. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
@@ -21,9 +21,21 @@ logical replay availability. Fee factors require native shadow-book parity.
 
 The offer is consumed by a separately frozen temporary Engine CPU package:
 A/research/current-cost-aware-causal-specialist-development-20261106-v1.
-Godel owns that disjoint implementation now; no separate Strategy worker/next
-market readout is queued here. Darwin retains model contracts/final integration
-and sole GPU coordination. Parent scope/Git remains unchanged.
+That consumer4be69e7b is now CLOSED/TECHNICAL_FAILED_NO_RETRY:38seals/37mature
+exposures, no completed readout/economic result; failure is not strategy loss.
+Godel first-cause84ca is CLOSED/actualguard unresolved because exact failing
+input/frame was not retained. Parent synthetic997cases found44nativecap1ULP
+failures, NOT proof of actualcause. No router marketretry/readout is queued.
+Arendt coordinates new technicalTransformer readiness; Darwin GRUH123 saved
+readout is already COMPLETE, not a ready repair. Parent scope/Git unchanged.
+
+Fixed technicalkernel e8611491/RTb2559495 and handoff1565c9de were actually
+consumed by Ptolemy's ninehead comparison8b9b15cd: RAW_PLUS DEV+1.206408% and
+recent+.433898%, indicatoronly+1.843158%/+.321327%, primary growthFAILboth.
+These reused results motivate a NEW predeclared fixedLSTM/technical fusion,
+not indicator proof/independentalpha. Threefixedblends/oneprimary/no fits or
+newmodelcalls, samebook/rowkeys/payoff/cost. Learned gating still requires
+chronological OOF rather than fitting on these seen evaluation forecasts.
 
 Mechanism references, not stock profitability or theorem-transfer evidence:
 https://proceedings.mlr.press/v28/joulani13.pdf

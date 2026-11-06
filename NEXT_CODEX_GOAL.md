@@ -17,7 +17,7 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-Actual Nov6UTC06:25: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+Actual Nov6UTC08:07: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
 unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
 native constructor4surfaces and separate fullXML/API7ACL readback PASS;
 both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
@@ -28,29 +28,38 @@ replay either Apply. Installation is not submit/fill/financial admission.
    public-only reader9742ae68 is READY, Parent38invented checks/30refs and
    pre-due0access PASS. RUNBOOK exact commands: entry after16:35, exit/lifecycle
    after17:05. Missing/partial/ambiguous stays UNKNOWN, worker ASOF not fresh
-   custody/holdings. Banach separately prepares pure native custody reader,
-   0actual private/API calls now, no recovery-capable observe()/Task.Run.
-2. Engine/Steward Darwin: current-short-swing-horizon-expert-development-
-   20261106-v1. Closed preparationcddef12b/12CPU native checks qualifies source,
-   not actual CUDA. Planck current-short-swing-h123-target-projection-
-   20261106-v1 is COMPLETE/ae4c68e8/READYe23875f9/Parent74refs/onebuild0retry,
-   reusing existing x/z and recent476. Exact native CUDA first, then ONE
-   predeclared new1/2/3-session fit without Parent ACK wait. Original root failed
-   native proof/checkpoint JSONcollision after3tinyCUDAupdates/0marketfits;
-   filename-only derivative uses remaining predeclared native attempt/original
-   hard/caps, never oldroot replay/debit refund/market retry. Never duplicate old
-   training or dispatch from a placeholder DataREADY.
-3. Temporary CPU Engine Godel: current-cost-aware-causal-specialist-development-
-   20261106-v1. Sourcecf19cdba offer/Parent27refs+10tests READY; one fixed
-   two-regime Hedge allocation router using strictly earlier mature feedback.
-   0fits/models/GPU, oneprequentialpass/2archives/16logicalbooks including shadows/
-   onejointreadout, frozen controls/caps. Reused adaptive, no Paper model swap.
-4. Integrate completed work without reruns: Data47698983/READY4bfaac45 has all
-   289keys/17cohorts; recent replay99e30c88 gives W25+.244454%/OPEN-DD.535078%
-   andseed3+.396043%, adaptive not independent/PaperPnL. Fixed consensus e8022369
-   gives oldDEV+.382658% with3/47active cohorts and recent0effects; both frozen
-   growth criteria FAIL. Parent62/110/66 unique references PASS. Completed
-   Patch seedfits6ac123f9 and TimesFM46c8735d remain closed, not queued training.
+   custody/holdings. Banach source-only r2 finishes the missing five-phase
+   admission/transport/native guest proof; no actual private/API calls now.
+   r1e8f5472e passed seven components but is not an actual-read command.
+2. Engine/Steward Arendt: current-h123-lstm-tcn-comparison-20261106-v1.
+   LSTM22epochs/best10 complete. Capped-finalization/run1 is COMPLETE0dc1f803:
+   four saved-model forwards/16books/0fits. CPU-TCN continuation03b104fa is also
+   COMPLETE:12new epochs1320updates, bestadditional0, no improvement over saved
+   best9. Never repeat these fits/forecasts. A NEW fixed technical Transformer
+   campaign is delegated from readiness4b295fcd, onefit/120epochs14040updates/
+   1800NEWactive/3600elapsed; actual native producer/feature/checkpoint/book proof
+   and measured CPU/CUDA suitability precede market payloads. No Parent ACK gate.
+3. Temporary CPU Engine Ptolemy: current-h123-technical-feature-view-comparison-
+   20261106-v1/r1 COMPLETE8b9b15cd, nineHGBheads/400trees/18forwards/14books.
+   RAW_PLUS development+1.206408%/recent+.433898%, frozen growthFAIL; indicator
+   only+1.843158%/+.321327%, not independent performance. NEW fixed-fusion uses
+   saved LSTM/technical forecasts only: three predeclared blends, primary
+   .5LSTM+.5RAW_PLUS,20books/onejointreadout/0fits-inferences-GPU. No reranking
+   the primary or tuning on the reused evaluation results.
+4. Planck: LSTM-H3 shadow715b8f79 COMPLETE17known/7positive/10cash/oneCPUforward/
+   onepoint3898054d/15nativechecks/0fits. Exact savedbest10/Nov5Data83963,
+   provisional fixedH3 policy, not oldargmax result or Paper model-bank swap.
+   Shadowvalid13:55..<14:05 is NOT entry14:31 admission; never stale retag.
+   NEW current-intraday-short-hold-readiness-20261106-v1 inventories exact
+   existing1m coverage/custody/causal windows for a distinct intraday study:
+   proposed5/15/30minute targets, finite30/120lookbacks,600active/1800elapsed/
+   2nativeattempts/0API-acquisition-modelcalls-GPU. Missing source/schema is
+   a scoped gap/alternative, not invented availability or another permission.
+
+Darwin GRUH123/readout58e50e9f, Planck Dataae4c68e8/READYe23875f9 and Godel
+router first-cause84ca are CLOSED. Do not redispatch them from old failed-root
+APIs. All results above are adaptive reused development, not fresh replication,
+independent alpha or actual Paper PnL. Source-only readiness is not running CUDA.
 
 Scopes/caps/actual owners/evidence are in agents/orchestration.md. Use full agent
 UUIDs for callbacks. Check exact terminal API and its named derivative before
@@ -100,7 +109,8 @@ New close21 Data sourceb1ab0177/READYf0ecd21b:47cohorts/799keys/16779complete ce
 IVOLgrowth3.38813%/DD.56529 vsW253.60121%/.65045. FrozenFAIL/no Pareto dominance;
 keep the risk-growth alternative without reranking old evidence or autoPaper
 promotion. Prior failed attempts/debits stay preserved. New activity-proxy GRU/
-HGB already trained/closed; no optimizer currently claimed active.
+HGB already trained/closed. Consult current discovery pointers and exact actor
+evidence before claiming any optimizer is active.
 
 Korean static snapshot0ce3bd3d is available via RUNBOOK; it is stale public
 adoption metadata, not live custody/control. Existing8787 stays,8788 NOTdeployed.
