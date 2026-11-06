@@ -2,6 +2,17 @@
 
 ## Current Work
 
+Nov6UTC02:04: Godel owns current-w25-close21-canonical-role-20261106-v1.
+Consumer is Banach's new cost-aware IVOL20 paired book. Exact retained Data
+source CLOSE/known/conditional/calendar/proxy-vs-capture clocks, original47DEV
+cohorts/799keys/17symbols, one build/0labels/acquisition. Old numerical consumer
+denied market CSVs solely because folder token kis_paper_private; that lexical
+test is not evidence of account/order/credential content. New Data role must
+positively source-attest market schema/roots/refs, not conceal unknown custody.
+No private-bank/credential/API access or original research guard mutation.
+Market payload M/us_equities/research_inputs/current-w25-close21-canonical-role-
+20261106-v1; source/proof A/data/same-name. Actual DataREADY not yet claimed.
+
 Updated Nov6UTC01:34. Godel completed ONE retained native-TVOL activity-proxy
 materialization, no acquisition/labels/training. DATAREADY c097a902 / Source
 9cc176c9 at A/data/current-net25-retained-volume-input-materialization-20261106-v1.

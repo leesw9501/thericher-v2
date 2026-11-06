@@ -2,12 +2,22 @@
 
 ## Current Handoff
 
-Latest Nov6UTC00:35: Darwin owns ONE samegross20session inversevol/capped
-longonly source/native offer,0marketarrays/fits/GPU:
-A/research/current-w25-samegross-risk-allocation-offer-20261106-v1.
-Small duplicatecheck/native known-mask/availability/funding tests; no new risk
-authority/readinglist/MD. Banach's fixed.5 rank/W25 allocation blend is a
-separate CPU experiment, not averaging rank and return units.
+Latest Nov6UTC01:50: no Strategy worker currently active. Darwin's source-only
+distributional-target offer1320f1e4 is CLOSED/REJECT_ALREADY_COVERED_MECHANISM:
+earlier MLP/Transformer studies already trained ordered pinball quantiles. Exact
+Net25/data/role/cost duplicate was NOT established; no claim that all quantile
+research is exhausted or unprofitable. A quantile is not a mean-return score.
+Eight checks/35.01active/0market-fits-inference; Parent24refs verified:
+A/research/current-net25-distributional-target-offer-20261106-v1/OFFER.json.
+
+The fixed20session inversevol/capped same-W25-gross offer is READY/closed,
+16native tests/0market. Banach's distinct conditional research consumer first
+stopped before market on synthetic floating-point reference layout; its one
+arithmetic-reference successor preserves kernel/criteria/original clocks/debits.
+No financial tolerance/risk authority changed. Fixed.5 rank/W25 allocation blend
+completed4.1341%/DD.7936% but turnoverFAIL/only1of47; saved consumer c198 READY,
+not a Paper adapter or mean/relative-rank score average. Current Engine owns
+actual comparisons and all data-reuse/performance interpretation.
 Previous masked offer was consumed by actual63epochSSL+13epochFT, reconstruction
 passed but costed transfer-.25474%/DD1.69556%/turn2.80510 FAILED/allclosed. No
 repeat/fine-tune rescue or rejection of all reconstruction models. Exact Engine

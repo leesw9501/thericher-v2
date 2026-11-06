@@ -22,15 +22,27 @@ corrected after finding completed repair1. Newly queued continuation-r1 withdraw
 no duplicate fit. Closed code/results/criteria are not reopened. Data input-common
 29767/8143/799 is not target eligibility; actual native handoff passed before fits.
 Exact scope: current-net25-retained-volume-experts-development-20261106-v1.
-Darwin's next distributional-target offer is source-only, not a market campaign
-or active GPU worker; bounded duplicate check precedes any proposal.
+Darwin's distributional-target offer1320f1e4 is CLOSED/REJECT_ALREADY_COVERED:
+ordered quantiles were trained in earlier project MLP/Transformer studies. Exact
+same Net25 tuple duplicate was NOT established; no claim quantiles cannot help.
+0market/fits/inference/dispatch,8checks/35.01active, Parent24refsPASS. A quantile
+is not an expected-return score or permission to average into the W25 mean ABI.
 
 Banach now owns current-w25-ivol20-conditional-risk-development-20261106-v1:
 0fits/inference/GPU, one original47-cohort/799-key archive and three-book readout.
 One fixed20-return inverse-vol allocation, same W25 membership/native-u gross,
 1bp floor/2x-equal cap. A NEW conditional past-close proxy contract is explicit;
 it cannot relabel the immutable strict-availability offer as qualified/PIT.
-Missing source support withholds only that study. No numerical result yet.
+Old scope/r1/r2 now CLOSED: reference layout and generated-UP034 failures kept.
+Final r2 nativePASS/16offer tests/11negatives/3invented fee books; actual market
+intake denied by lexical kis_paper_private in canonical market CSV paths.
+0sourceCLOSE bytes/0archives/books, cached DEV payoffs opened;360debit preserved.
+No further retry under those scopes, no economic failure/zero-profit claim.
+New Data-owned close21 role Godel positively classifies approved market data
+without private-bank/credential reads. Banach's separate current-w25-close21-
+role-risk-readout-20261106-v1 consumes only qualified new DataREADY/real native
+handoff; same recipe/kernel/47keys799/fees/criteria,0fits/one3bookreadout/no
+marketretry. Old360debit linked, DEV reuse adaptive, no guard or source mutation.
 
 | Completed study | Actual work | Result / next action |
 | --- | --- | --- |

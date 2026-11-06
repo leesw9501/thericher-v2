@@ -11,6 +11,12 @@ No manual Task.Run/strategy invocation merely to inspect evidence.
 
 ## Actual Deployments
 
+- Korean static snapshot (NOT a deployed/live dashboard):
+  D:/thericher-v2/model-artifacts/execution/current-korean-monitor-admission-compatibility-20261106-v1/PAPER-STATIC-SNAPSHOT.html.
+  Three exact HALF/INTC/MSE adoption records, all financialUNKNOWN/stale and
+  controls disabled. Parent desktop/mobile visual/19refs/seven native checks PASS.
+  Source0ce3bd3d. Do not rerun consumed snapshot.py or launch8788 from this evidence.
+
 - Current INTC originalEXIT upgraded again01:10 to297ca58e/release8ac4b374:
   D:/thericher-v2/model-artifacts/execution/current-intc-pre-read-clock-parent-adoption-20261106-v1/PARENT-ADOPTION.json.
   OneApply/fresh actualownerproof; separateprocess purelibrary fullXML/API7ACL

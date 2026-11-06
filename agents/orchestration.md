@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC01:40 / Nov6KST10:40.
+Updated Nov6UTC02:04 / Nov6KST11:04.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Company Outcome
@@ -31,15 +31,17 @@ and all original exits. A package/commit/installation is not company completion.
 | Closed Godel / temporary Throughput |15native scenarios prove positive post-read guard delay violates decision<=read-start |Parentbf245f49 pre-read constant-signal repair15casesPASS; actual Guard latencyUNKNOWN, no source/job/SDK/TTL/window waiver. |
 | Closed Parent / actual Execution migration |297/8ac originalEXITonly migrated01:10/onewrite/freshownerproof/independentlibrary fullXML_API7ACLPROPOSED/enabled/0active | Nov6UTC15:10..<15:11/hard15:20 unchanged. Parentadoptionf18382c8; CLIInspect receiptcollision preserved/no setterreplay/no financialeffect. |
 | Closed Planck / Execution publicreader |e5b65555 current-intc-297-public-outcome-reader-20261106-v1 | Parent32refs/13inventedtests/prewindowNOT_DUE0reads PASS; future15:20eligible exactmanifest, no independent current-custody claim. |
-| Planck / Execution-Infra timing | current-intc-full-guard-synthetic-latency-20261106-v1 | One complete actual Guard.check invented-custody probe, no actual private/Task/census/broker. Synthetic boundary and real financial latency remain distinct. |
+| Planck / Execution-Infra integration | windows-r1 actual completeGuard.check syntheticPASS6.63362s/initialsource6.74799s |0privateCIMTaskbroker; originalLinuxfailure preserved, notWindowsdeploymentfailure. Actualfinancial/55sfeasibilityUNKNOWN. Next separately scoped exactmanifest producer. |
 | Closed Banach / Engine CPU |9da2e99a fixed.5 mix4.1341%/DD.7936%/turn2.13920; growth/DDpass, fixedturnoverFAIL, only1of47 | All18Jobs2CIDsclosed86.24active/558.08elapsed/Parent6refs27members verified. No oldfailure regrade/Paperpromotion. |
 | Closed Banach / Engine savedconsumer |c198ac07 oneinventedcapsule/16negatives/allclosed100active/895elapsed |0fits/inference/marketreadouts/Tasks; futurepoint/hashUNKNOWN, PaperadapterUNQUALIFIED/no B10map. |
 | Closed Darwin / Strategy | samegrossrisk sourceoffer16tests/35.63active/756.84elapsedREADY | No marketcomparison dispatched. Preserve proof/rawCLOSE availability requirement. |
 | Godel / Data delivery | c097a902/9cc176c9 materialized input-common29767/8143/799 | Nine native checks; Parent32refs+4semantic links PASS,0labels/network. Original economic volume maskfalse/NaN unchanged. |
-| Godel / Infra compatibility | current-korean-monitor-admission-compatibility-20261106-v1 | Source-only exact e200 readonly-monitor recognition in actual financial classifiers; no installedsource/Task/private/service edits or deployment yet. |
+| Closed Godel / Infra static fallback |0ce3bd3d exact3adoption Korean snapshot/7checks/Parent19refs | Desktop1440/mobile390 visualPASS,0overflow/network/enabledcontrols. No8788service/guard/private/Task edits; notlive/currentfinancialfacts. |
 | Closed Darwin / Engine-Steward |01e89c74 activity-proxy repair1: GRU14epochs1638updates/HGB96warmtrees/2fits9books | Primary1.20375%/DD1.39996/turn4.40988 DEVELOPMENT_FAIL; allclosed428.245active. Parent70refs/actualCIDabsence verified; redundant continuation withdrawn. |
-| Darwin / Strategy source offer | current-net25-distributional-target-offer-20261106-v1 | Source-only distinctness/primary-source target proposal,0market/fit/inference; not an active GPU campaign. |
-| Banach / Engine CPU | current-w25-ivol20-conditional-risk-development-20261106-v1 | One fixed same-W25-gross allocation/0fits-inference-GPU/three books; conditional planned-close proxy explicit before market, original strict offer unchanged. |
+| Closed Darwin / Strategy source offer |1320f1e4 distributional-target offer | Quantile mechanism covered in earlier completed project studies; exact Net25 tuple duplicate NOT established.0market/fits/dispatch,8checks/35.01active, Parent24refsPASS. |
+| Closed Banach / old IVOL attempts |r2nativePASS but canonical market path lexicaldenial,0sourceCLOSE/0books/360debit | Old/r1/r2 immutable/closed/no retry; seenDEV payoffsopened, not strategyfailure. |
+| Godel / Data | current-w25-close21-canonical-role-20261106-v1 | Source-attested exact marketCLOSE21/masks/clocks/47cohorts799keys,0labels/acquisition; real path admission before market, no privatebank exception. |
+| Banach / Engine CPU | current-w25-close21-role-risk-readout-20261106-v1 | Separate new Data-role consumer/same recipe-fees-criteria,0fits/one3bookreadout only after exact DataREADY/nativehandoff; prior360linked/adaptiveDEV. |
 | Parent / account facts |17:20 holdings4/noINTC;18:10 terminal history0rows | As-of broker observations only; no exact original custody/fill/PnL or reservation release. |
 
 An assignment/MD is not proof of a running worker. Parent checks actual actors
@@ -70,13 +72,19 @@ before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
 
 ## Throughput Review
 
-01:40: Parent's native+actual custody read is CLOSED, source-safe exact request
+02:04: Parent's native+actual custody read is CLOSED, source-safe exact request
 plan absent/financialUNKNOWN. Real positive-latency native test exposed a producer
 chronology defect, now actually deployed297originalEXIT with independentproof.
 Planck's current publicreader is qualified; Godel completed retained source-activity
 features and Darwin already completed both new experts in repair1. Parent's root
 API-only status missed the completed derivative; corrected, queued continuation
 withdrawn. Read callback/result derivative before redispatch, never repeat fits.
+IVOL reference/style tests nowpass; actual source fault is a folder-token ban on
+approved market CSVs, not missing price data/private account risk. Preserve old
+closed attempts/debits and use a Data-owned source-attested close21 input. New
+consumer checks actual path admission before cached payoff intake, not another
+market retry or generic private-data exemption. This is the reversible throughput
+improvement; all candidate/financial criteria remain unchanged.
 Banach independently evaluates fixed same-gross risk allocation, no new model fit.
 Planck probes full guard rather than constructor-only timing; Godel scopes exact
 readonly-monitor classifier compatibility without launching a conflicting service.
