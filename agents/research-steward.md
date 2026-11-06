@@ -3,6 +3,18 @@
 
 ## Current Resource State
 
+Nov6UTC03:34: Darwin owns ONE ready-source TimesFM2.5 OPEN60/H4 family at
+A/research/current-postcheckpoint-timesfm-open4-development-20261106-v1.
+ZERO fits/updates; oneCUDA680rowforecast/max40coreforwards/one6bookreadout,
+no oldChronos restore/inference. Exact cached safe weights/release-before-targets/
+SDK/Torch2.7 image; no downloads or runtime replacement. Native altered60/H4 path
+and producer/parser/funding proof first; nativeCPU1+CUDA1 model loads/max4calls,
+one premarket source/schema repair within unchanged numerical caps. Old results
+and Source67.02debit carried once,1200active/3600elapsed; readout200+cleanup120
+reserved beforemarket. Fresh resourceowner/actualVRAM/desktopreserve/duplicate
+lease check, no personal-GPU-app veto or killing. No activeGPU worker claimed
+until actualPID/birth/CID callback; this is inference research, not training.
+
 Latest Nov6UTC01:37: activity-proxy expert family already COMPLETED in repair1,
 not training now. Actual CUDA GRU14epochs1638updates/best2, HGB96warm additions/
 best84;2fits/one archive/readout9books, DEVELOPMENT_FAIL. All Jobs/CIDs/lease

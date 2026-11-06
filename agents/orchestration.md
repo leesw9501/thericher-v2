@@ -1,127 +1,86 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC02:28 / Nov6KST11:28.
+Updated Nov6UTC03:47 / Nov6KST12:47.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Earlier projections/history stay in pushed41cdcb8a and immutable artifacts.
 
 ## Company Outcome
 
 coexistent-native-paper-execution-runtime-v1 -- UNFINISHED.
-No new exact acceptance, linked fill, current-owned reconciliation or net PnL
+No new actual acceptance, linked fill, current-owned reconciliation or net PnL
 proven. Parent owns shared policy/integration/Git. No operator decision pending.
 Preserve ONE initial B/10, F9 UNKNOWN-HELD, exact pending/reservations/costs/losses
 and all original exits. A package/commit/installation is not company completion.
 
-## Ready / Owned / Due
+## Ready / Owned
 
-| Owner | Actual state | Next consumer |
+| Owner | Current package | Actual state / next consumer |
 | --- | --- | --- |
-| Parent / integration | Data83963 actually completed21:30:19GET/1POST/0failed/42s; four exact DATAREADY refs verified | HALFpoint5bf Nov6UTC13:30, thirdshadow13:45, W25shadow13:55 remain future/unobserved. |
-| Closed Parent control | One manual observer Disable21:21:38 and exact Restore21:32:08; original XML/API7/enabled restored | No remaining duty. Never replay consumed setters or original collector. |
-| Parent / installed Execution | HALF24ab/f611 original pair migrated18:48; INTC2dab/8fd686 original exit18:16 | HALF Nov6UTC14:31 entry/Nov11UTC14:30 exit; INTC Nov6UTC15:10/hard15:20. Installation is not a fill. |
-| Parent completed / Godel closed | MSE c79 ACTUALLYENABLED22:55 through83959851; exact independent fullnativeXML/API7ACL, no TaskRun/broker effect | Nov6UTC15:40trigger/15:45exit/15:52reconcile/hard16:00. Original03db partial/CLOSEDmissing preserved, no replay or fill claim. |
-| Closed Planck / Execution offline reader | e414 fixed ownedtransport ordering; actual native before_read/after_read PASS, then error-envelope KeyError_source/underlying guestreasonUNKNOWN;0actualprivate/49processes+CIDsclosed |558.75active/1311.48elapsed. Parent717d owns boundfailure+measuredfinitecapture native repair, old scopes/debits unchanged. |
-| Closed Darwin / Strategy | Pure boundary-rank offer14tests; Parent independent14tests/fullruntimeRuff/14refs PASS | Consumed by actual Engine fit below; no active Strategy fit. |
-| Closed Banach / Engine-Infra | b89 future forward Task ACTUALLYENABLED,9b16612f two independent exact fullXML/nativeAPI7ACL readbacks/14negatives;0additionalsetters | Nov6UTC14:10/hard14:20 savedCPU-only nonfinancial forecast. OriginalEnableCLI failure/missingoldreceipt preserved. FuturepointUNKNOWN, no model/bank swap. |
-| Closed Godel / Execution public reader |5cb1317a c79-only technical reader9tests/fullRuff/ParentactualprewindowNOT_DUE0reads | Exact command afterNov6UTC16:00. Financial/observed-timing/root-exit/observer facts remain unknown, no old13ealias or rawlatestscan. |
-| Closed Darwin / Engine-Steward | Masked transfer actual CUDA63SSL+13FTepochs/8892updates/5books/0baselinereruns |DEVELOPMENT_FAIL-.25474%/DD1.69556/turn2.80510; allactorsclosed/522.49active/1293.24elapsed. Native filename collision fixed with0updatereplay; olddebit unchanged. |
-| Closed Banach / Engine consumer |2be65c54 savedChronos native funding parity/readout:680rows14cohorts3books/0fits;+.91845%/fourOPEN DD.77237% | Descriptive adaptive/exposure-dependent, not alpha/PaperPnL; all4Jobsclosed/Parent8refs20members verified. |
-| Closed GPU workers | Chronos2, intraday GRU30/120 and crossasset attention fit closed; no optimizer currently claimed active | New work only after distinct frozen/native-ready campaign and measured headroom, never occupancy reruns. |
-| Closed descriptive consumer | e6b310:0fits/1readout6books; newexpert-2.9888%, fixed.25blend1.6173%, W25 3.6012% | Do not promote this blend; original strict-clock failure/old debit unchanged. |
-| Closed Parent / scoped private read |717d native5phasePASS then ONE actualprivate5phasePASS; NO_EXACT_PLAN_RETAINED, financialUNKNOWN |API83425105/all104processes+2CIDsclosed/1393.08active incl old558.75once/946.76elapsed; consumed/no replay/F9held. |
-| Closed Godel / temporary Throughput |15native scenarios prove positive post-read guard delay violates decision<=read-start |Parentbf245f49 pre-read constant-signal repair15casesPASS; actual Guard latencyUNKNOWN, no source/job/SDK/TTL/window waiver. |
-| Closed Parent / actual Execution migration |297/8ac originalEXITonly migrated01:10/onewrite/freshownerproof/independentlibrary fullXML_API7ACLPROPOSED/enabled/0active | Nov6UTC15:10..<15:11/hard15:20 unchanged. Parentadoptionf18382c8; CLIInspect receiptcollision preserved/no setterreplay/no financialeffect. |
-| Closed Planck / Execution publicreader |e5b65555 current-intc-297-public-outcome-reader-20261106-v1 | Parent32refs/13inventedtests/prewindowNOT_DUE0reads PASS; future15:20eligible exactmanifest, no independent current-custody claim. |
-| Closed Planck / Execution-Infra | windows-r1 completeGuard.check syntheticPASS6.63362s/initialsource6.74799s; exactmanifest-R2 9c6a78cbREADY | Parent15tests/20refs/pinnedNOT_DUE0reads0enum PASS; after15:20 onefinite read, no latestselection/financial claim. Probe244.45active, manifest90active/allclosed. |
-| Closed Banach / Engine CPU |9da2e99a fixed.5 mix4.1341%/DD.7936%/turn2.13920; growth/DDpass, fixedturnoverFAIL, only1of47 | All18Jobs2CIDsclosed86.24active/558.08elapsed/Parent6refs27members verified. No oldfailure regrade/Paperpromotion. |
-| Closed Banach / Engine savedconsumer |c198ac07 oneinventedcapsule/16negatives/allclosed100active/895elapsed |0fits/inference/marketreadouts/Tasks; futurepoint/hashUNKNOWN, PaperadapterUNQUALIFIED/no B10map. |
-| Closed Darwin / Strategy | samegrossrisk sourceoffer16tests/35.63active/756.84elapsedREADY | No marketcomparison dispatched. Preserve proof/rawCLOSE availability requirement. |
-| Godel / Data delivery | c097a902/9cc176c9 materialized input-common29767/8143/799 | Nine native checks; Parent32refs+4semantic links PASS,0labels/network. Original economic volume maskfalse/NaN unchanged. |
-| Closed Godel / Infra static fallback |0ce3bd3d exact3adoption Korean snapshot/7checks/Parent19refs | Desktop1440/mobile390 visualPASS,0overflow/network/enabledcontrols. No8788service/guard/private/Task edits; notlive/currentfinancialfacts. |
-| Closed Darwin / Engine-Steward |01e89c74 activity-proxy repair1: GRU14epochs1638updates/HGB96warmtrees/2fits9books | Primary1.20375%/DD1.39996/turn4.40988 DEVELOPMENT_FAIL; allclosed428.245active. Parent70refs/actualCIDabsence verified; redundant continuation withdrawn. |
-| Closed Darwin / Strategy source offer |1320f1e4 distributional-target offer | Quantile mechanism covered in earlier completed project studies; exact Net25 tuple duplicate NOT established.0market/fits/dispatch,8checks/35.01active, Parent24refsPASS. |
-| Closed Banach / old IVOL attempts |r2nativePASS but canonical market path lexicaldenial,0sourceCLOSE/0books/360debit | Old/r1/r2 immutable/closed/no retry; seenDEV payoffsopened, not strategyfailure. |
-| Closed Godel / Data |b1ab0177/READYf0ecd21b exact marketCLOSE21 |47cohorts799keys16779cells/missing0/conditional0/onebuild0labels;10native checks/Parent16refs PASS, finiteclosed. OriginalMODE1/PIT/finality limits kept. |
-| Closed Banach / Engine CPU |dcacc146 one archive/readout3books/0fits | IVOL3.38813%/DD.56529/turn2.12414 vsW253.60121/.65045/2.12855, frozenFAIL/risk-growthtradeoff/no dominance; Parent72refs/allclosed93.261newactive+old360. |
-| Planck / Execution native bridge | current-w25-proposal-to-native-budget-readiness-20261106-v1 | Explicit candidate-fraction -> ORIGINAL sharedB10 -> existing native sizing/risk, no analyticalNAV/account equivalence/newbank/realdeployment. |
-| Godel / Infra source-throughput | current-intc-transitive-source-check-throughput-20261106-v1 | Preserve full source/dynamic checks; dedup redundant immutable proof cost, no persistent stale cache/guardwaiver/actualmigration. |
-| Banach / Engine frozen-forward | current-w25-ivol20-frozen-forward-readiness-20261106-v1 |0fits/inference/marketreadouts/GPU; realfuturepoint/hashUNKNOWN, concrete Executionunit handoff directly toPlanck. |
-| Parent / account facts |17:20 holdings4/noINTC;18:10 terminal history0rows | As-of broker observations only; no exact original custody/fill/PnL or reservation release. |
+| Planck / Execution | current-tlt-engineering-paper-preparation-20261106-v1 | Preparing one operational TLT buy/owned-exit through SAME account-owned native controller/originalB10. Proposed Nov6UTC16:20/16:50, four-minute effect windows/hard16:35/17:05. No installation or actual broker effect yet. |
+| Darwin / Engine + sole Steward | current-postcheckpoint-timesfm-open4-development-20261106-v1 | Preparing cached dated TimesFM2.5 OPEN60/H4,0fits/one680row CUDA forecast/one6book readout with saved Chronos.1200active/3600elapsed including67.02offer once. No actual GPU start claimed until PID/birth/CID/lease callback. |
+| Parent / integration | Qualified completed components below |93W25 source/native/closure refs independently checked; original1437protected+AGENTS unchanged. Refresh current projections, fresh Ruff/fourCompose and commit/push owned docs. |
 
-An assignment/MD is not proof of a running worker. Parent checks actual actors
-before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
+Assignments and MDs are not active-worker proof. Full role UUID callbacks:
+Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0;
+Darwin01a1adb5-b486-7801-9fdf-1378d733bfce.
+Banach/Godel are closed. No repeated completed fits or occupancy-only jobs.
 
-## Exact Evidence
+## Owned Due
 
-- Actual Data and restoration:
-  A/data/current-net25-nov5-ohlc19-forward-input-preparation-20261105-v1/revision-v2/actual/publication/DATAREADY.json;
-  A/execution/current-parent-data83963-quiet-window-20261105-v1/owned-window/RESTORE-RESULT.json.
-- HALF and INTC actual installation:
-  A/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json;
-  A/execution/current-intc-exit-owner-factory-completion-20261105-v1/PARENT-ADOPTION.json.
-- MSE first cause, no observer mutation/new native leg:
-  A/execution/current-mse-observer-output-route-diagnosis-20261105-v1/RESULT.json.
-- Consumed metadata-only diagnostic:
-  A/execution/current-intc-lineage-diagnostic-only-20261105-v1/NATIVE.json.
-  Root parent/child/source match, but raw command-line heuristic rejected it;
-  collector had one extra child. Neither is permission to ignore unknown actors.
-- Saved-weight descriptive research:
-  A/research/current-crossasset-frozen-descriptive-consumer-20261105-v1/API.json.
-  Exact source/contract/result refs independently verified. Historical result
-  details remain in HANDOFF/Engine/immutable artifacts, not another backlog.
-- Full compatibility:
-  A/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.json.
-  20239PASS/26knownWindowsSKIP/created8of8/8workers[20265items]/cleanup16:49.
-  Reuse only with1437protected+AGENTS unchanged; D code needs its own native tests.
+All clocks UTC, KST=UTC+9. Exact source/adoption references are in HANDOFF/RUNBOOK.
+No manually running existing Tasks/strategy/collector merely to inspect results.
+
+| Path | Preserved opportunity / dependency |
+| --- | --- |
+| HALF input | Actual Nov5Data83963 captured19x60OHLC. Nov6halfpoint13:30/third13:45/W2513:55/rank14:10hard14:20 installed; future point/hash UNKNOWN. |
+| HALF24ab/f611 | Actually migrated original pair; Nov6entry14:31..<14:35/exitNov11UTC14:30. Model25c8/original bank/input unchanged. |
+| INTC297/8ac | Original EXIT only actually migrated01:10, Nov6UTC15:10..<15:11/hard15:20. Consumed ENTRY unchanged. Reader9c6a78cb eligible after15:20; prewindow NOT_DUE0reads0enumerations. |
+| MSEc79 | Actually enabled83959851. Nov6UTC15:40trigger/15:45exit/15:52reconcile/hard16:00. Reader5cb1317a separately eligible after16:00. |
+| Other exits | H3AMDNov6UTC20:45; Full17Nov6UTC20:54/hard21:07; GOOGLNov9UTC20:55; RAWNov10UTC14:30; memoryNov20; H20Dec1. No duty removed. |
+| Data/research | NAS8Nov6UTC21:10/hard21:25; savedGRU/Ridge21:35; W25Nov10/13UTC21:30/hard21:45. No reserved-label release or old refit. |
+
+## Integrated / Closed
+
+- W25 budget component95d9570d:47invented native checks/42SDK origins/11plans,
+  all5Jobs/CIDclosed. Parent93refs PASS. Explicit encoded public18 recommendations
+  against ORIGINAL B10, encoded positive floor0.5/17 NOT2x. Source/native only,
+  no deployed writer/actual point/bank/quote/fees/PnL. Exact evidence:
+  A/execution/current-w25-native-budget-fixture-enum-closure-20261106-v1/PARENT-INDEPENDENT-CHECK.json.
+- IVOL forward98566dcd: actual producer/parser/fee-book13negative checks/13module
+  origins, Parent60refs PASS. Allclosed60newactive+90old; real point UNKNOWN,
+  analyticalu/f not automatically broker recommendations. Source:
+  A/research/current-w25-ivol20-native-handoff-repair-20261106-v1/READY.json.
+- IVOL costed3book readoutdcacc146/0fits:3.38813%growth/.56529%DD versus
+  W253.60121%/.65045. FrozenFAIL/risk-growth tradeoff, not Pareto dominance or
+  automatic Paper swap. Data close21b1ab0177 has799complete keys/16779cells.
+- Activity experts01e89c74repair1: actual GRU14epochs1638updates/HGB96warmtrees,
+  twofits/ninebooks, primary1.20375%growth/1.39996%DD DEVELOPMENT_FAIL. Allclosed,
+  Parent70refs checked. Failed-root-only status corrected; duplicate continuation
+  withdrawn before any repeated fit. Preserve old scopes/debits.
+- Source throughput31810dbe WITHHELD:2.473scontrol/2.116candidate source-only;
+  candidate loses second reparse observation, equivalence unproved. Never deploy
+  or waive checks. Fixture junction retained safely after blocked cleanup.
+- Consumed private717d read found NO_EXACT_PLAN_RETAINED, not no-intent/flat.
+  Financial UNKNOWN/F9held; never repeat/release. Korean0ce3bd3d STATIC snapshot
+  PC/mobile visual PASS, not live/current custody;8787 remains/8788notdeployed.
 
 ## Throughput Review
 
-02:04: Parent's native+actual custody read is CLOSED, source-safe exact request
-plan absent/financialUNKNOWN. Real positive-latency native test exposed a producer
-chronology defect, now actually deployed297originalEXIT with independentproof.
-Planck's current publicreader is qualified; Godel completed retained source-activity
-features and Darwin already completed both new experts in repair1. Parent's root
-API-only status missed the completed derivative; corrected, queued continuation
-withdrawn. Read callback/result derivative before redispatch, never repeat fits.
-IVOL reference/style tests nowpass; actual source fault is a folder-token ban on
-approved market CSVs, not missing price data/private account risk. Preserve old
-closed attempts/debits and use a Data-owned source-attested close21 input. New
-consumer checks actual path admission before cached payoff intake, not another
-market retry or generic private-data exemption. This is the reversible throughput
-improvement; all candidate/financial criteria remain unchanged.
-Banach independently evaluates fixed same-gross risk allocation, no new model fit.
-Planck probes full guard rather than constructor-only timing; Godel scopes exact
-readonly-monitor classifier compatibility without launching a conflicting service.
-Dataset alreadyexists; no acquisition/permission wait or actual optimizer claimed.
-MaskedSSL+FT actually finished/failed, no repeated fit or occupancy training. Saved Chronos readout
-completed0refits. Parent completed MSE and nonfinancial forward installations and integrates
-completed data/research and validates the actual Windows native interface.
-No foreground market wait or operator-approval dependency. Parent's tested
-manual window let the original collector finish and restored the observer;
-the rejected autonomous-preparer proposal was never installed.
+03:47: Ready independent Execution and Engine packages dispatched. Parent fixes
+stale task assignments instead of repeating closed numerical work. Reversible
+improvement: compact this current stateboard and NEXT; history stays in Git.
+Unknown-request/budget/risk facts remain effect-time checks, not research gates.
 
-Current company bottleneck is financial runtime evidence/attribution, not GPU
-permission. New ranking fit used actualCUDA, reserved readout/cleanup and closed
-within all caps; no occupancy rerun. Native self-command-line measurement and
-exact old-guard console rule replace false denials without actor/source waivers.
-Reversible improvement: native materialization is necessary but not sufficient
-for REGISTER serialization. Actual registered-only zeroRandomDelay omission was
-measured against every other full native field; exact optionalzero edition18cases
-allowed recovery without weakening other settings/ACL or replaying Create.
-Private exact parent closure is now proven, no opaque-PWSH whitelist. Next
-reversible improvement is exercise SAME actual5phase admission/census/attach on
-invented private fixtures; prior transport smoke replaced admission with a fake
-True and missed a legitimate-owned Dockerattach being checked too early.
-Source/PID/birth/executable/argv/exactCID/image/mount/network proof precedes the
-full child predicate; no blanket child/name grant. Old612.89/600failure retained.
-Claude11379575 GO_WITH_LIMITS on future definitions-only plan: enable last,
-no catchup/demand/repetition; source/digests/nativeXML+ACL exact, effect-time fresh
-relevant owners/account/budget/unknown/observer/risk mandatory. No Task.Run.
+Current bottleneck: actual financial runtime evidence/attribution. INTC's60s
+conditional test g6 shows eight synthetic6.634s replies miss55remaining seconds
+by.569s; actual financial latency UNKNOWN. This does not prove HALF's4minute
+opportunity fails or block all Paper. A faster candidate lost an OS observation
+and was rejected rather than treated as equivalent.
 
-If one recovery remains blocked, continue another named package: current24ab
-public reader readiness, source-bound Data/publisher validation, or a distinct
-cost-aware Engine campaign after native handoff. No repeated broken schedule,
-substitute unknown request, global hold or new report/platform.
-
-Preserve H3AMD Nov6UTC20:45, Full17 Nov6UTC20:54/hard21:07, GOOGLNov9UTC20:55,
-RAWNov10UTC14:30, HALFNov11UTC14:30, memoryNov20, H20Dec1 and every original exit.
-UI8787 only; Korean8788 not deployed. No public exposure or follow-up chain.
+Ready alternatives while original opportunities are future: finish same-owner
+TLT native/runtime readiness; finish distinct TimesFM comparison; integrate W25
+component for a separately bound future release. No foreground market wait,
+substitute unknown intent, reset, forced deployment or new operator hold.
+Full authority20239PASS/26knownSKIP/8of8[20265items]/guardedcleanup can be reused
+ONLY with exact1437protected+AGENTS unchanged. External code needs native checks.
+Claude review_unavailable is not agreement or a global hold.

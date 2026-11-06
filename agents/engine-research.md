@@ -3,7 +3,7 @@
 
 ## Current Research Update
 
-Updated Nov6UTC01:40 / Nov6KST10:40. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC03:47 / Nov6KST12:47. A=D:/thericher-v2/model-artifacts.
 Earlier numerical workers are CLOSED; no new optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
 
@@ -28,7 +28,7 @@ same Net25 tuple duplicate was NOT established; no claim quantiles cannot help.
 0market/fits/inference/dispatch,8checks/35.01active, Parent24refsPASS. A quantile
 is not an expected-return score or permission to average into the W25 mean ABI.
 
-Banach now owns current-w25-ivol20-conditional-risk-development-20261106-v1:
+Closed Banach work current-w25-ivol20-conditional-risk-development-20261106-v1:
 0fits/inference/GPU, one original47-cohort/799-key archive and three-book readout.
 One fixed20-return inverse-vol allocation, same W25 membership/native-u gross,
 1bp floor/2x-equal cap. A NEW conditional past-close proxy contract is explicit;
@@ -46,10 +46,28 @@ exact,3allocation cohorts differ. FrozenFAIL (growth<W25 and DD>EW), not Pareto
 dominance: lower growth/lower drawdown is a useful conditional alternative.
 Parent72refs verified;93.261newactive+old360/767.334elapsed/allJobsclosed. No
 independent alpha/automatic Paper model swap or original failure regrade.
-Banach now prepares current-w25-ivol20-frozen-forward-readiness-20261106-v1,
-source/native only/0market-fits-inference-readouts/GPU. Actual future W25 point
-and exact output hash UNKNOWN. Native-u/f funding units stay separate from
-Planck's new explicit B10 proposal-conversion policy/native risk authority.
+Banach forwardoldscope failedfee-before-bootstrap import; preserved/no regrade.
+New current-w25-ivol20-native-handoff-repair-20261106-v1 is QUALIFIED98566dcd:
+actualData/parser/W25point/IVOL/fee-book,13negatives/13resolved modules/one native
+attempt/0market-fits-inference. Parent60refs PASS/allclosed60newactive+90old.
+Actual futurepoint/hash UNKNOWN; analyticalu/f not automaticallybrokerweights.
+Planck W25component95d9570d separately passed47native checks/Parent93refs; encodedpublic18
+slot is floored0.5/17 (not2x), NEW explicit OriginalB10 recommendations policy,
+not analyticaccountNAV/fees/PnL equivalence or actual deployment.
+
+Darwin now Engine+Steward owns ONE new source-ready foundation comparison:
+A/research/current-postcheckpoint-timesfm-open4-development-20261106-v1.
+Source offer current-postcheckpoint-foundation-next-candidate-20261106-v1 chose
+cached official safetensors TimesFM2.5 weight2f776efe, datedOct1,2025 BEFORE all
+bound targets; exact SDK/Torch2.7 image already cached. Unknown full pretraining
+coverage/revised history/reusedDEV remain disclosed; no independent alpha.
+New OPEN60/H4 (not oldCLOSE63/H5)0fits, one680row CUDA forecast/max40forwards,
+onejointarchive then one6bookreadout14cohorts. PRIMARY fixed50:50 OPENLEVELproxy
+with exact SAVED Chronos forecasts, not mixturequantile/expected return. Native
+producer/parser/actualmodel/funding/fee beforemarket, targetvalues onlyafterseal,
+MSE diagnostic not readoutgate. No oldChronos inference or unalignedW25scalar.
+1200active/3600elapsed,67.02sourceoffer chargeONCE, reserve200readout+120cleanup.
+Currently preparation only; actual GPU start requires PID/birth/CID/lease callback.
 
 | Completed study | Actual work | Result / next action |
 | --- | --- | --- |
