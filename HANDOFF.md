@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC13:43 / KST22:43.
+Updated Nov6UTC15:30 / Nov7KST00:30.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -27,11 +27,11 @@ integration/Git; role MDs and directories are not running-process proof.
 | Owner | Current work / actual state |
 | --- | --- |
 | Planck / Data closed | Capture0f9c INSTALLED21:30; clock-bound publisher72eb/native26checks COMPLETE and ACTUALLY INSTALLED21:47 via721d. ActualREADY/point UNKNOWN. Samebest10/IND8, one futureforward; old4b11 SUPERSEDED beforeeffects. |
-| Arendt / Engine and sole Steward | Replacement COMPLETE/no repeat. New saved-head fixed-expiry exit COMPLETE4CUDAforwards/0fits/8books: informative growthFAILboth/DDPASS, no Paper swap. All8CIDsclosed; next DLinear sourceoffer only, not running training. |
-| Ptolemy / invoked Infra | Identity721d COMPLETE/actuallyinstalled72eb. Nov9NET25 finitepair schema ready but Source/native/install0; actual quiet financialhost/action qualification still needed, no placeholder proof. |
-| Banach / Execution closed | r5reader READY/0actualreads; monitorcb42 NOTdeployed. Console1048614d bounded7remainingtasks allcurrentlydisabled/0instances;4source calls lacklocalquietflags, popuporigin UNOBSERVED/0OSchanges. |
-| Darwin / Execution | Repo port COMPLETE20289PASS. Original2nativegraphs FAILED_CLOSED/071f. New79e44694 warmPhase/transport component PASSca30bad2/onegraph/8actualtransportcases/allclosed; Parent58ownpinsPASS. NEW actual-owner quiet finitehost source/native preparation,0financialdeployment. |
-| Godel / Data then Strategy | Late-inputs4f31/READYbab237d2 ONEbuild COMPLETE13:25:32/2176queries/allknown/e1zreused. Saved-head offer consumed, no rebuild. NEW DLinear/flat-linear matchedH123 source-only dedup/offer, not numerical dispatch. |
+| Arendt / Engine and sole Steward | DLINEAR/FLAT CPUfits27/best15 and28/best16 COMPLETE6050updates/4forwards. JSON-only recovery2c78/result ee21579c COMPLETE/16newbooks/32lifetime: informativegrowthFAILboth, no Paper swap. No activeoptimizer; robustloss sourceoffer only. |
+| Ptolemy / invoked Infra | Duration hypothesis DISPROVEN: exact24ab uses literalPT7M; prior constructor harness lacked DateKindString. Source-only future pair installer adaptation waits for qualified new host, no oldTaskrerun. |
+| Banach / Execution | Actual INTC reader consumed: UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads. Bounded first-cause diagnosis only, no repeateddiscovery/private/broker calls. r5custody0actualreads; popuporigin UNOBSERVED. |
+| Darwin / Execution | Exact source-loader cause CONFIRMED: Assert-Nov9DefinitionApi lost after Initialize-Owner; old Build-Xml survived. Three script: exports fixed106checks/one diagnostic. NEW separately bound one full native qualification, not yet installable. |
+| Godel / Strategy | DLinear correctedoffer4ec63/19a8 consumed. NEW robustStudentT location/scale vsMSE source-only dedup/offer; no payload/model/numericalcalls or newruntime/dependency authority. |
 | Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
@@ -40,6 +40,24 @@ post-start approval barrier. Source revisions are not numerical dispatch counts.
 Current MDs are context, not immutable runtime dependencies.
 
 ## Actual Read-Only Probe And Fresh Data Installation
+
+INTC finite reader9c6a78cb ran after15:20, consumed ONE discovery: UNKNOWN,
+EXACT_SET_OR_CHAIN_WITHHELD/3outcome_reads/manifestnull. No acceptance/fill/flat
+or reservation-release conclusion. First-cause work must not replay discovery.
+Old HALF duration diagnosis7ea2fb27/RESULT1fe1c3af disproves proposed patch:
+actual24ab literalPT7M, phase rows have no duration field. Correct DateKindString
+constructor harness passes both phases;0newCOMcalls. Bounded sourceaudit finds
+CSCO/INTC/MSE use different declared duration paths, not a proven shared defect.
+Actual HALF startup cause/financial outcome remain unresolved.
+New Nov9 owner export diagnosis3a60bb57/proofab6826b9/candidate65a2f525 is
+source-only tested. Runtime integration and installer each have separate finite
+scopes; no actual Task/financial effects or oldcap refund.
+
+W25 reader04f0933b at14:05 validated research-only public point62fb4dec:
+17rows/4nativeexpertcalls/0fits, observed13:55:01UTC. Sourceff38300e/retained
+DataREADY70360190/INPUT551a90fb, local availability not providerfinality/PIT.
+No independent rawmarket rehash/OS-origin proof, HALF input unchanged; this is
+not new Source72 future point or financial deployment.
 
 Probe root A/execution/current-pre-session-kis-paper-readiness-20261106-v1:
 native-repair1 Source488354a90d798b20d881f5129342eb10d93e2bcafc86ef6ee33bc3be65b8011f,
@@ -95,6 +113,24 @@ Actual0x8004131A isolated UTF8 declaration vs Unicode COM input; unchanged
 document element passes declarationless/UTF16. No schema/settings/ACL/clocks/
 risk weakening. Decorative ancestrybf245 annotation is unused; actual78ac source
 pin stays authoritative, no formatting-only Source retag.
+
+## Actual HALF Entry Limitation
+
+Task thericher-net25-fixedhalf-once-entry-20261106-v1 LastRunNov6UTC14:31,
+observedReady3/0instances14:32, LastTaskResult20 at14:35. These are Taskfacts,
+not submit/fill. Readera446 at14:34 returns UNKNOWN/MISSING_ATTEMPT_POINTER;
+all financial fields remainUNKNOWN/no reservation release. No Taskrerun.
+Source-only firstcause root:
+A/execution/current-half-24ab-entry-first-cause-20261106-v1.
+63own+130directhost dependencies match; no direct production/testpin mismatch.
+Source-defined startup frame scheduled.py:provider:25 calls owner.ps1 through
+metadata.call. A source-filtered entryLAUNCH and startup exist, but full causal
+reattachment is still required; missingpointer alone never proves zeroeffects.
+Pure exactconstructor reproduces0x80041318/UTF16 namespacevalid; actualfault
+causality not proven by that probe alone. Source defect: InvokeOwner's p lacks
+execution_time_limit while Readback consumes it. A new bounded pureconstructor
+candidate/impactcheck is prepared under current-half-owner-duration-parameter-
+repair-20261106-v1. OriginalSource24ab/f611/bank/identities stayunchanged.
 
 ## Eligible Result Readers
 
@@ -191,6 +227,19 @@ Current source preserves producerbytes beforehosttail;43.509combined measured
 workerwall/840conservative debit, not exactCPU spend. No17-target completion
 claim or financialadmission. Actual quiet financialhost/action preparation is
 separate and source-ready futurepoint hash remains UNKNOWN.
+
+DLinear matched-affine study: correctedoffer4ec63/19a8, original twoCPUfits
+27/best15/2970updates/11.979s and28/best16/3080updates/5.345s, fourforecasts.
+Firstreadout7968 calculated16books but TypeError NumPybool at JSON boundary
+lost completeoutput. Separate serializer-only recovery2c78/result ee21579c
+casts FOURcriterion flags toPythonbool; math/criteria/writer/forecasts unchanged.
+A/research/current-decomposed-linear-h123-json-readout-recovery-20261106-v1/API.json.
+Oneactualwriterroundtrip +16additionalbooks, lifetime32calculations/twoattempts,
+0newfits-forwards-GPUcalls,196priorfiles unchanged/allJobsclosed. PrimaryDEV
+-.954242%/DD2.751640%, recent+1.446967%/.645683%; informativegrowthFAILboth,
+DD/turnPASS, changedcohorts37/8. No reranking/Paperswap/nonlinearalpha claim.
+Known linked49.978s is partialaccounting, not budgetPASS. Newrobustloss offer is
+source-only, not permission to repeat these fits.
 
 | Completed scope | Actual evidence |
 | --- | --- |

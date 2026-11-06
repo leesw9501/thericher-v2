@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC13:43 / Nov6KST22:43. Company outcome UNFINISHED.
+Updated Nov6UTC15:30 / Nov7KST00:30. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -29,6 +29,21 @@ defer while preserving unknownrequests. NEVER use launch_native/native_host as
 actualfinancialactions. Qualified actualhost/quietfuturepair preparation is under
 D:/thericher-v2/model-artifacts/execution/current-nov9-net25-actual-host-preparation-20261106-v1.
 No actualhost/install CLI yet. Old071f/ba625 failedSources remainfailed/closed.
+de940actualhost also CLOSED_WITHHELD; ownerqualification3309/derivative failed
+twoNative attempts. Source-export diagnosis3a60bb57/proofab6826b9 CONFIRMED
+Assert-Nov9DefinitionApi lost after Initialize-Owner; old Build-Xml survived.
+Candidate65a2f525 adds three script: exports/106checks, not runtime readiness.
+New separately bound one-graph runtime integration precedes installer adoption;
+no owner/ACL/account/risk weakening or old failedgraph regrading.
+
+ActualHALFentry14:31Task returned20/Ready0instances. Qualifieda446reader
+UNKNOWN/MISSING_ATTEMPT_POINTER, no financialconclusion/unknownrelease/rerun.
+D:/thericher-v2/model-artifacts/execution/current-half-24ab-entry-first-cause-20261106-v1.
+Source-defined startup provider→owner.ps1 failure and unchanged63own/130deps;
+duration hypothesis DISPROVEN by exact audit7ea2fb27/result1fe1c3af: actual
+literalPT7M; prior COMharness omitted DateKindString, corrected phasesPASS.
+No patch qualified; actualstartup cause/financialoutcome UNKNOWN. Original
+24ab/f611 duties unchanged; bounded CSCO/INTC/MSE sourcepaths differ.
 
 IMPORTANT Nov6UTC05:38: CSCO future pair ACTUALLY INSTALLED via declaration-only
 recoverybc71ebab/Plana077bfb0. Both enabled/0instances after separate-process
@@ -68,7 +83,11 @@ Saved-head fixed-expiry exit also COMPLETE4CUDAforwards/0fits/8books/allclosed:
 D:/thericher-v2/model-artifacts/research/current-saved-head-fixed-expiry-exit-development-20261106-v1/native-repair2/API.json.
 Primary informativegrowthFAILboth, DDpass; no rerun/Paperswap. LateData4f31/
 READYbab237d2 onebuild2176rows COMPLETE, no newprojection. Exact nextcurrent
-owners/source-only DLinear offer are in stateboards, not a CLI training queue.
+owners/research sourceoffers are in stateboards, not a CLI training queue.
+DLinear sourceoffer is CONSUMED/twoCPUfits COMPLETE6050updates. JSON
+serializer-only recovery COMPLETE; never repeat fits/forwards/readouts:
+D:/thericher-v2/model-artifacts/research/current-decomposed-linear-h123-json-readout-recovery-20261106-v1/API.json.
+16additional/32lifetimebookcalculations, informativegrowthFAILboth, no Paperswap.
 LSTM-H3 shadow715b8f79 is COMPLETE/valid13:55..<14:05, not financial entry14:31
 admission; H3policyvalidation5aa7 matches savedLSTM allocations, no alpha gain.
 Its oldfailedattempt1 has TWO brokenbindings (workercontent/identity and recreated
@@ -224,9 +243,10 @@ do not invoke launcher merely to inspect or extend expiredNov6point validity.
   This reader is public operational provenance/worker-reported ASOF only, not
   independent current custody, broker holdings, fees, settlement or net PnL.
 
-- Qualified finite INTC297 receipt discovery, eligible ONLY after Nov6UTC15:20:
+- CONSUMED finite INTC297 receipt discovery, actual postNov6UTC15:20:
   D:/thericher-v2/model-artifacts/execution/current-intc-297-exact-manifest-readiness-20261106-v1/API.json.
-  Use the source-pinned synchronous command, not Task.Run:
+  Actual result UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3outcome_reads/manifestnull.
+  Do NOT execute the consumed command below again; retained exact provenance:
 
   ```powershell
   & 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-intc-297-exact-manifest-readiness-20261106-v1/app_r2.py' --source 9c6a78cbf99f849d49081e188733d0d2e6b6052dd7fac0dd29ab64a825f726c4 --phase exit

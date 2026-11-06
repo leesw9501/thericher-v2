@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC13:43 / KST22:43. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC15:15 / Nov7KST00:15. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -112,9 +112,23 @@ growthFAILboth/DDPASS, no rerun/rerank/Paperswap. All8CIDs/Jobsclosed.
 Linkedaccounting242.236s/sharednativeonce; review-I/O ledger incomplete, no
 budgetPASS. Firstnative causal fixture changed a latercohort's legitimatepast;
 real e1byte guard rejected correctly. Native2fixed the fixture, not a modelleak.
-Next Godel DLinear/flat-linear matchedH123 sourceoffer must dedup oldlinear/Ridge
-contracts and exactApache2code/version before any newnumericcontract. Paper
-research benchmarks do not prove tradingreturns. No current optimizer is queued.
+Godel DLinear/flat-linear matchedH123 sourceoffer is CONSUMED after oldfamily
+dedup and exactApache2code/version checks. Published benchmarks do not prove
+tradingreturns. No current optimizer is queued.
+DLinear corrected4ec63/19a8 was adopted as matched-affine optimization/control,
+not nonlinearinformation. OriginalCPU DLINEAR27epochs/best15/2970updates/11.979s,
+FLAT28/best16/3080updates/5.345s,4forwards/1jointseal COMPLETE. Firstreadout7968
+performed16bookcalculations thenNumPyboolJSON TypeError; not a model-loss result.
+Separate exact serializer recovery2c78/result ee21579c/nativewriter568461a4
+casts4criterion flags toPythonbool, writer/math/criteria/forecasts unchanged.
+16newbooks/32lifetimecalculations/tworeadoutattempts,0newfits-forwards-GPU,
+196priorfiles unchanged/allJobsclosed. PrimaryDEV-.954242%/DD2.751640%, recent
++1.446967%/.645683%, informativegrowthFAILboth/DD+turnPASS; changedcohorts37/8.
+No rerank/automaticPaperswap. Known49.978s linkedaccounting is partial/no budgetPASS.
+NextStudentTlocation-scale vsMSE source-only offer checks priorfamilyduplication
+first. ExistingPyTorch/no newframework, no numericaldispatch. A native smoke
+must exercise the final actualmetric JSONwriter/strictparse, not only Python
+return values; charge within nativecaps ratherthan anotherapproval/platform.
 
 Clockless4b11 superseded BEFOREeffects. Clock-bound72eb/native26checks is
 ACTUALLY INSTALLED/enabled21:47 by Parent721d; actualREADY/pointUNKNOWN.

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC13:43 / KST22:43.
+Updated Nov6UTC15:30 / Nov7KST00:30.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier state/history: pushed12e5e906 and immutable sources.
 
@@ -16,12 +16,12 @@ all original exits. Package/commit/installation is not company completion.
 
 | Owner | Disjoint current scope / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward | Saved-head exit COMPLETE4CUDAforwards/0fits/8books/growthFAILboth/DDPASS/informative; all8CIDsclosed/no activeoptimizer. Await source-only DLinear offer, no newnumericdispatch. |
-| Ptolemy invokedInfra closed | Identity721d COMPLETE/actuallyinstalled72eb. Nov9pair prewire closed/schemaREADY/FINAL3f57a506, Source/native/install0; qualification awaits exact actualquietfinancialhost/action, not component-only79proof. No originalcapreset. |
-| Banach invokedQuietOperations closed | Source1048614d bounded7remainingtargets allcurrentlydisabled/0instances;4source callsites lacklocalquietflags but popuporigin UNOBSERVED.0OSchanges; exactvisiblePID/birth/parent correlation missing. |
+| Arendt Engine/sole Steward closed | DLINEAR/FLAT CPUfits6050updates/4forwards COMPLETE. JSON recovery2c78/ee21 COMPLETE/32lifetimebookcalculations/growthFAILboth/no swap/allclosed. No optimizer queued; robustoffer only. |
+| Ptolemy Execution | Duration hypothesis DISPROVEN exact24ab literalPT7M/DateKind harness corrected. NEW future installer adaptation waits for positive qualified host callback;0actualTask/private/KIS. |
+| Banach Execution | INTC consumedreader UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads. NEW bounded firstcause/source-link diagnosis; no replay. Future readerc801 ready/0actualprivate reads, popuporigin1048 UNOBSERVED. |
 | Planck Data closed | Capture0f9c INSTALLED21:30; clock-boundpublisher72eb/native26checks ACTUALLY INSTALLED21:47. ActualREADY/point UNKNOWN. Old4b11 superseded beforeeffects, onefutureforward. |
-| Darwin Execution | Original071f FAILED_CLOSED; new79e446/nativeca30 component PASS/onegraph/8transportcases/Parent58pins/allclosed, warmPhase unchangedcaps. NEW actual-owner quiet finitehost preparation,0actualenv-KIS-Task-effects; futurepointUNKNOWN. |
-| Godel Strategy | Late-inputs4f31/READYbab onebuild COMPLETE and consumed/0repeat. NEW decomposed-linear H123 source-only offer/dedup against oldlinear/Ridge; no model/payload/numericcalls. |
+| Darwin Execution | Source-loader cause CONFIRMED/three script: exports/106checks. NEW separate900active1800elapsed ONE full runtime graph integrating exactcandidate65a2; no actualprivate/KIS/Task effects or install readiness claim yet. |
+| Godel Strategy | DLinear correctedoffer consumed, no repeatedData/models. NEW StudentTlocation-scale vsMSE source-only dedup/offer;0numerics/market/private/KIS/Tasks. |
 | Parent | Integration/Git; fresh58+177serial/20289fullPASS/1440protected+AGENTS stable/Ruff4Compose. Actual publisher installed12:51, source-produced positive repo native PASS. Companyfinancialresult UNKNOWN. |
 
 Callbacks: Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea;
@@ -36,13 +36,30 @@ No running agent/optimizer is inferred from an MD/directory/old failed-root API.
 
 The ready/owned table, not the word NEW in an old reference below, determines
 current work. Completed sources/debits never reopen from these recorded caps.
-- ACTIVE Darwin actual-owner quiet host preparation900NEWactive2700elapsed/
+- ACTIVE Darwin owner-export integration900active1800elapsed/cleanup90/
+  ONEfullnativegraph/0actualTask-private-KIS-effects. Exact testedcandidate,
+  warm79/typed72 contract, loaderassertions/owner/private-origin/timeoutcleanup.
+- ACTIVE Ptolemy owner-export pairinstaller600active1800elapsed/cleanup60/
+  <=1inventedgraph ONLY after qualified host callback;0actualTask/private/KIS.
+- ACTIVE Banach INTCfirstcause600active1200elapsed/cleanup60/<=16publicartifacts,
+  source-defined set only;0actualdiscovery replay/TaskRun-private-KIS effects.
+- CLOSED durationcandidate7ea2 disproves proposed patch; actualliteralPT7M,
+  corrected DateKindString constructorPASS. No actual runtimecause inferred.
+- CLOSED helper-export diagnosis3a60/ab6826:106checks/oneinvocation, candidate
+  three script: exports. Separate runtime qualification is not oldcap reopening.
+- ACTIVE Godel robustH123location-scale offer300active1200elapsed/0numerics.
+  DedupexactoldStudentT/robust/hurdle/quantile scopes; existingPyTorchAPI only,
+  no newframework/weights. One concreteoffer/rejection, no fittingauthority.
+- CLOSED DLinear2fits/fourforwards/native5updates; firstreadout16calculations
+  failed NumPyboolJSON. Separate recovery600active1800elapsed/nativewriter1/
+  one16bookreadout0fits-forwards,32lifetimecalculations. No oldcaprefund/regrade.
+- CLOSED Darwin actual-owner quiet host preparation900NEWactive2700elapsed/
   cleanup120/<=2nativegraphs under current-nov9-net25-actual-host-preparation-
   20261106-v1. Existing79warmcomponent+same originalowner/quietlauncher patterns,
   typedinputpersist-before-effects/retainedinputexit, source-bound realclock/
   unknown/budget/quote/orderability/risk/observer checks;0actualenv/private/KIS/
   Taskwrites. FuturepointUNKNOWN, no fixture/native launcher as actual action.
-- ACTIVE Godel decomposed-linear H123 offer300active1200elapsed/0numerics,
+- CLOSED Godel decomposed-linear H123 offer300active1200elapsed/0numerics,
   exactofficial Apache2 source/license/version and boundedpriorfamily dedup.
   AtmostONE executableoffer orrejection, no trainingauthority/Executionimport.
 - CLOSED 79warmcomponent recovery600active1800elapsed/ONEgraph0retry:
@@ -148,6 +165,18 @@ Never manually Run an existing Task merely to inspect.
 | Nov9H3publisher |72eb task Nov6UTC21:47/laststart<21:52/hard22:00 installed/enabled12:51. ActualpointUNKNOWN,0financialdeployment. |
 
 ## Throughput Review
+
+15:30 review: INTC exactreader consumed/UNKNOWN; MSE15:40/CSCO16:20 remain
+ownedfutureopportunities. Prioritize exact observed technical faults, not
+Taskexit/orphanfiles asfinancialproof. Direct63+130 pins match disproved guessed
+mutable-source interference. Exact24ab audit also DISPROVED missingduration:
+literalPT7M, prior COMharness DateKind error; no patch qualified. NewNov9 loader
+cause is now positively identified and three script: exports tested106checks.
+Reversible improvement: assert literal exports at real loader boundaries and
+test actual result serialization before wholegraph/marketwork. One new full
+runtime graph only after knownfix, not another blindretry or operatorgate.
+Independentresearch/sourceoffer and source-only installer preparation continue;
+no completedfit/forecast rerun or foreground marketwait.
 
 13:30 review: actualData built13:25:32 before originalhard; Engine native2Source
 30b4d8e1/proofa3c404ca passed and marketforecasts/readout are next, not another

@@ -17,15 +17,22 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-Actual Nov6UTC13:43: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+Actual Nov6UTC15:30: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
 unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
 native constructor4surfaces and separate fullXML/API7ACL readback PASS;
 both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
 replay either Apply. Installation is not submit/fill/financial admission.
 
 1. Execution: preserve original HALF/INTC/MSE/all exits and new CSCO Nov6UTC
-   16:20..<16:24 entry/hard16:35,16:50..<16:54 exit/hard17:05. The strict
-   public-only reader9742ae68 is READY, Parent38invented checks/30refs and
+   16:20..<16:24 entry/hard16:35,16:50..<16:54 exit/hard17:05.
+   ActualHALF14:31Task endedcode20; publicreaderUNKNOWN/MISSING_ATTEMPT_POINTER,
+   not no-intent/zeroeffects. Prioritize exact startup/owner-helper firstcause:
+   63own+130deps unchanged. Duration hypothesis is DISPROVEN: actual24ab uses
+   literalPT7M; earlier COMprobe used wrong DateKind. Correct harness passes.
+   No source patch qualified; actual startup cause remains unresolved.
+   INTC due reader9c6 consumed ONE discovery: UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD,
+   3publicreads/manifestnull. Diagnose exact first cause without replay/release.
+   The strict public-only reader9742ae68 is READY, Parent38invented checks/30refs and
    pre-due0access PASS. RUNBOOK exact commands: entry after16:35, exit/lifecycle
    after17:05. Missing/partial/ambiguous stays UNKNOWN, worker ASOF not fresh
    custody/holdings. Banach r5fb63aa6b fullfivephase native/6negatives PASS,
@@ -82,7 +89,10 @@ replay either Apply. Installation is not submit/fill/financial admission.
    PASS/8actualtransportcases/onegraph/allclosed: existing retainedPhase reuses
    bearer withinONEcapsule, original8visits4orders1token128requests unchanged.
    No17-targetcoverage guarantee/coldrestartcache or actual financialdeployment.
-   Ptolemy pairdefinitions remain schema/prewire, no Source/native/install yet.
+   Exact Nov9 loader cause now confirmed: missing Assert-Nov9DefinitionApi after
+   Initialize-Owner scope exits; three script: exports pass106checks. Separate
+   one-graph runtime integration and future pair installer adaptation proceed;
+   no actualhost/install success inferred from this source-only fix.
 5. Darwin fixedH3 Transformer194023 COMPLETE14books/0modelcalls; primaryDEV
    +3.059492%/recent+.252446%, frozenFAILboth/no repeat. Godel cost/turnover
    offercfc8 COMPLETE13tests/Parent38pins; parser-recoveryed055/READYef94
@@ -91,8 +101,11 @@ replay either Apply. Installation is not submit/fill/financial admission.
    READYbab237d2 ONEbuild2176queries/allknown COMPLETE. Saved-head exit
    COMPLETE4CUDAforwards/0fits/8books: DEV+3.028788% vs blind+3.601215%, recent
    +.235601% vs+.244454%; informativegrowthFAILboth/DDPASS, no rerun/swap.
-   Next DLinear/flat-linear matchedH123 source-only offer must dedup oldlinear
-   studies first; no numerical dispatch or GPUtraining claim from that offer.
+   DLinear/FLAT twoCPUfits COMPLETE27/28epochs/6050updates,4forwards. Separate
+   JSON-only recovery2c78/ee21579c COMPLETE16newbooks/32lifetimecalculations;
+   primaryDEV-.954242%/recent+1.446967%, informativegrowthFAILboth/DD+turnPASS.
+   No refit/forecastrun/Paperswap. NextrobustStudentT/MLP-MSE source-only offer
+   firstdedups olddistributional studies; no numericaldispatch or GPUclaim yet.
    FIT-onlysupportb1ec3f09 COMPLETE H30 1898positive/63382negative; support
    is not predictability/oracleprofit or permission to regrade old25bps studies.
 6. Quiet audit638a COMPLETE160tasks/139enabled/0OSchanges; popuporiginUNKNOWN.
@@ -118,7 +131,7 @@ Task/collector/strategy merely to inspect it; preserve active-owner exclusivity.
 
 | Existing owned path | Opportunity / actual state |
 | --- | --- |
-| HALF input/points |Nov5Data83963 already captured19x60OHLC. Nov6halfpoint13:30, thirdshadow13:45, W25shadow13:55, saved rank14:10/hard14:20 are installed, future inference/point UNKNOWN. |
+| HALF input/points |Nov5Data83963 captured19x60OHLC. W25publicshadow62fb4dec validated14:05/17rows/4expertcalls/0fits, research-only; HALFfinancialinput unchanged. Other exactresults remain whatever their bound readers prove. |
 | HALF Paper24ab/f611 |Actually migrated original pair. Nov6entry14:31..<14:35 (KST23:31..<23:35), exitNov11UTC14:30. Current model25c8/original bank/input unchanged. |
 | INTC297/8ac |OriginalEXIT only actually migrated01:10. Nov6UTC15:10..<15:11/hard15:20 (KSTNov7 00:10..<00:11/hard00:20). ConsumedENTRY untouched. |
 | MSEc79 |Actually enabled via83959851. Nov6UTC15:40trigger/15:45exit/15:52reconcile/hard16:00. Installation/old failure are not a fill. |
@@ -128,8 +141,9 @@ Task/collector/strategy merely to inspect it; preserve active-owner exclusivity.
 | Fresh19 daily input |Newquiet0f9c task Nov6UTC21:30/laststart<21:40/hard21:45 enabled. Nov6asof->Nov9decision; actualREADY/payload UNKNOWN, no automatic publisher/Paper activation. |
 | Nov9LSTM H3 publisher |New72eb task Nov6UTC21:47/laststart<21:52/hard22:00 installed/enabled12:51. ActualREADY/point UNKNOWN, no financialdeployment. |
 
-After Nov6UTC15:20 only, the finite exact-set reader Source-R2 9c6a78cb may inspect
-the bound INTC public outcome through the RUNBOOK pinned command. Parent15tests/
+The finite exact-set reader Source-R2 9c6a78cb is now CONSUMED: actual post15:20
+result UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads/manifestnull. Never replay
+its pinned command. Parent15tests/
 20refs/prewindowNOT_DUE0reads0enumerations PASS. Discovery creates one consumed
 attempt, validates an exact manifest through unchanged strict e5b parser, and
 never latest-selects or infers financial effects from Task exit. Missing/partial/

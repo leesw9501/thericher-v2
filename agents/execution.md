@@ -1,11 +1,28 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC13:43 / KST22:43.
+Updated Nov6UTC15:30 / Nov7KST00:30.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
 
 ## Current Owner And Ready Readers
+
+PRIORITYactualHALF:14:31TaskLastResult20/Ready3/0instances; a446readerUNKNOWN/
+MISSING_ATTEMPT_POINTER. No financialoutcome/unknownreservation release/rerun.
+Ptolemy source-only firstcause:63own+130directdeps unchanged, exactsource-defined
+STARTUPscheduled.py:provider:25 callsowner.ps1, boundedentryLAUNCHhaschildclosed/
+hostterminal. Fullchainreattachment remainsunqualified, notzeroeffects.
+Duration hypothesis DISPROVEN: exact24ab consumes literalPT7M, not proposed
+phase field. Earlier constructor harness lacked DateKindString; corrected
+entry/exitPASS. Source7ea2fb27/result1fe1c3af/0newCOMcalls/0patch; bounded
+CSCO/INTC/MSE audit finds different durationpaths. Actual startup cause remains
+unresolved, old24ab/f611/bank untouched; no rerun or currentholdings claim.
+INTC9c6 due reader is CONSUMED: UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads/
+manifestnull. Banach bounded firstcause diagnosis, no repeatedactualdiscovery.
+Nov9 source-export cause CONFIRMED3a60bb57/ab6826b9: missing helper after loader
+scope exits; exact three script: candidate65a2f525 passes106checks. Darwin new
+runtime qualification and Ptolemy future installer prep are separate finite
+scopes; source-only fix is not financial admission/install/readiness.
 
 NET25 additive3module/twotest port COMPLETE; recorded5installed frozenruntime/
 attestation graphs disjoint, no installedSDKoverwrite. Fresh58+177serial and

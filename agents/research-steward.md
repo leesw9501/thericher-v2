@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC13:43 / KST22:43. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC15:15 / Nov7KST00:15. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -49,8 +49,13 @@ actualCUDA4forwards/0fits/updates/8books/onejointseal/readout, informativegrowth
 FAILboth/DDPASS. All8CIDs/Jobsclosed; no duplicate model call or activeoptimizer.
 Linkedaccounting242.236s includes sharednativeonce, incomplete review-I/O ledger
 is not budgetPASS. Data4f31/READYbab onebuild2176queries knownall, no repeat.
-Next DLinear/flat-linear source-only offer is not a ready fitting campaign;
-officialbenchmark claims are not stockalpha. GPUpriority/permission unchanged.
+Matched-affine DLinear/FLAT fits are now COMPLETE onCPU:27/best15/2970updates/
+11.979s and28/best16/3080updates/5.345s, fournewforecasts/no savedLSTMcall.
+Originalreadout serialized NumPybool incorrectly after16books. Separate JSON-only
+recovery2c78 COMPLETE/16newbooks/32lifetime/0fits-forward-GPU, allJobs+CIDsclosed,
+196priorfiles unchanged. InformativegrowthFAILboth, no rerun/Paperswap.
+Known49.978s old+new accounting partial, no budgetPASS. No optimizer is active;
+source-only robustloss offer is not fitting readiness. GPUpermission unchanged.
 
 Ptolemy OOF7b285a5d COMPLETE14CPUfits/121trees/2574updates/20books,
 652.464inclusiveactive/allclosed. Old7vs6native breach/style caveat retained.
@@ -58,7 +63,7 @@ Planck Nov9clock-bound72eb COMPLETE26checks/allclosed/0currentmarketforwards,
 ACTUALLY INSTALLED21:47 by Parent721d; futureactualpointUNKNOWN. Old4b11
 superseded beforeeffects, no dualforward;
 Darwin fixedH3 Transformer COMPLETE14books/0modelcalls/68.901active;
-Godel cost/turnover offercfc8/Dataed055 COMPLETE, now fixed-expiry sourceoffer. Banachr5nativeclosed,
+Godel fixed-expiry/DLinear offers are CONSUMED; new robustloss sourceoffer only. Banachr5nativeclosed,
 actual custody read not performed. These are not active GPU jobs or holds on
 future ready frozen campaigns. Original checkpoints/splits/debits remain.
 
