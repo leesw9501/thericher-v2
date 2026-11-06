@@ -17,21 +17,43 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-1. Planck Execution: current-tlt-engineering-paper-preparation-20261106-v1.
-   Prepare one independent TLT operational buy/owned-exit through the SAME
+1. Planck Execution: current-csco-finite-installer-readiness-20261106-v1.
+   Prepare one independent CSCO operational buy/owned-exit through the SAME
    account-owned native controller and original sharedB10. Proposed Nov6UTC
    16:20..<16:24 entry/hard16:35 and16:50..<16:54 exit/hard17:05. No substitute
    unknown INTC/F9 request, new peer bank writer, foreign adoption or forced
    quantity. Source/native preparation is not installation or financial admission.
-   Existing HALF/INTC/MSE and all original exits remain unchanged.
-2. Darwin Engine/Steward: current-postcheckpoint-timesfm-open4-development-
-   20261106-v1. Cached dated TimesFM2.5, new OPEN60/H4 zero-fit CUDA forecast,
-   fixed50:50 OPEN-level proxy with SAVED aligned Chronos forecasts. Native
-   producer/parser/model/funding/fee smoke before market; one680row forecast,
-   one archive/readout6books,1200active/3600elapsed including67.02offer once.
-   No old-model refit/inference, target intake before seal or unaligned scalar
-   comparison. Actual GPU activity requires PID/birth/CID/lease evidence.
-3. Integrate completed components, not repeated numerical work. W25 native
+   Sourcee6a9/315535 native components passed actual GUI caller/full Guard and
+   nine invented lifecycle cases. Trace the inconsistent ancestry annotation:
+   actual Source.files/CODE-SOURCE identity differs from its legacy summary.
+   Do not change consumed Sources or trust a summary as a runtime identity gate.
+   Qualify a future-definition-only installer/complete XML/API7ACL readback,
+   exit-before-entry enable/no TaskRun, before actual installation is claimed.
+   Existing HALF/INTC/MSE and all original exits remain unchanged. Prior TLT
+   preparation is CLOSED/NOT_READY: stock runtime excludes that ETF; no TLT
+   intent/installation occurred. Use supported stock route, not an ETF exception.
+2. Darwin Engine/Steward: current-w25-recent-open4-saved-evaluation-20261106-v1.
+   Prepare recent fixed17cohort/289key adaptive replay from SAVED originalW25,
+   fixedseed3/HALF/third/cash/samegrossEW,6books/0fits. Same actual Net25 quantity/
+   funding/costs; native producer/parser/model/fee before market, input-only
+   inference, joint forecast/policy seal before targetOPEN4 readout. Actual
+   DataREADY/support required, never a placeholder/old799forecasts reindex.
+   Two NEW Patch seeds are COMPLETE:18/15epochs3861updates/best6/3, primary
+   3.365409% versus oldW253.601215%, growthFAIL/DD+turnPASS. Source6ac123f9,
+   Parent79refs, allclosed301.773active; original timing-reservation failure
+   preserved, no fit/native/oldmodel replay. Completed TimesFM46c8735d:
+   one680row CUDA forecast40forwards/0fits, primary+.22483% versus Chronos+.91845%,
+   growth/DD fail; all workers closed. Preserve old config failures/debits.
+3. Godel Data: current-w25-open4-recent-evaluation-inputs-20261106-v1.
+   Calendar7f461257 READY/Parent32refs: fixed Aug3-Oct9 entries/Oct14 exits,
+   17cohorts289keys,571native-verified records/four sealed contracts disjoint.
+   Original generic e+23 loader stays unchanged. NEW target-specific e..e+3
+   fourOPEN role needs only used endpoint marks, not23unused future days; keep
+   all keys/missing masks, no waiver/imputation/silent six-cohort subset.
+   Native real Data producer -> Darwin input parser passed before first build.
+   One materialization into M, source/manifest A, no acquisition/custody mutation.
+   ADAPTIVE not independent/PIT/CA/finality or Paper-input qualification.
+4. Integrate completed components, not repeated numerical work. W25 native
    budget bridge95d9570d passed47invented checks/Parent93refs; IVOL forward98566dcd
    passed13negatives/Parent60refs. Both are readiness, not deployed writers or
    actual future points. Source-throughput31810dbe is CLOSED/WITHHELD because
@@ -99,9 +121,9 @@ relevant positive closure remain the company completion condition. An owned
 package/commit/deployment or completed research never substitutes for runtime
 evidence or permits marking this goal complete.
 
-Full authority: A/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.json.
+Fresh full authority: A/verification/current-csco-native-compatibility-20261106-v1/RESULT.json.
 20239PASS/26knownWindowsSKIP/8of8[20265items]/native+helper0/guardedcleanup;
-changed-path serial108PASS. Reuse only with exact1437protected+AGENTS unchanged.
+changed-path serial289PASS,437.09seconds. Reuse only1437protected+AGENTS unchanged.
 D code needs its own focused/native evidence; repeated repo tests cannot validate
 external code. Fresh Ruff/fourCompose(.env.example)/diff before integration
 commit/push. Use uv --no-env-file, no implicit .env.

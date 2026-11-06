@@ -2,6 +2,40 @@
 
 ## Current Work
 
+Nov6UTC04:42: adaptive calendar7f461257 READY/Parent32refs PASS,17cohorts289keys
+Aug3-Oct9 entry/Oct14 last exit. Actual native verifier571records/four byte-bound
+sealedcontracts disjoint;5tests/allclosed112.99active/582elapsed,0payload reads.
+Original genericlabel e+23 would reject6cohorts; calendar kept intact, no waiver.
+CURRENT Godel current-w25-open4-recent-evaluation-inputs-20261106-v1:
+NEW explicit target-specific fourOPEN[e..e+3] evaluation-role plus original60raw12/
+ind8, all289keys/masks. Old genericloader/studies unchanged; unused23future days
+not a new minimumhorizon requirement. Actual invented canonicalCSV->DataProducer
+->Darwin named input parser->4OPENtargetparse smoke10checks passed beforebuild.
+One actualbuild/no payloadretry not yet claimed; sourceA/payloadM.600active/
+1800elapsed/reserve90, no acquisition/credentials/KIS/GPU/private/registrymutation.
+Adaptive vendorproxy/nonPIT/CA/finality/actualhistoricalarrival limitations remain.
+
+Nov6UTC04:19: Godel's independent-evaluation audit523eb92c CLOSED/NOT_READY.
+Later daily dates exist but exact untouched target-key custody unproven; missing
+metadata is not untouchedness. No model/array/label/payoff reads or custody edits.
+Nine tests/full ownRuff/format;180charged active, exactfirst-action unavailable,
+conservative1223.9elapsed/1200 cap compliance NOTattested. Parent52metadata refs
+unchanged; two source pins to mutable Engine/Steward MDs drifted after Parent
+updates04:08. Context drift is not changed Data/registry, but no blanket54refsPASS
+or current Source upgrade. Keep original immutable failed QA/resource facts.
+A/data/current-w25-independent-evaluation-readiness-20261106-v1/RESULT.json.
+
+Closed Godel: current-w25-adaptive-recent-calendar-readiness-20261106-v1.
+Prepare fixed Aug3-Oct13,2026 three-session-stride calendar for unchanged W25,
+ADAPTIVE reused-data replay not independent evaluation. Existing signed custody
+verification and exact interval joins; no outcomes/arrays/labels/model reads,
+custody mutation/reserved release/acquisition/API/GPU. OPENED/reused may be
+adaptive input, not independent. Unknown sealed overlaps withhold only their
+exact affected scope; no invented global protected-date embargo/Paper hold.
+Compact calendar/exclusions/next existing-role materializer contract only,
+240newactive/1200elapsed/40cleanup, old180linked separately. Role MDs are context,
+not frozen runtime dependencies. Exact immutable data/contract/record refs govern.
+
 Nov6UTC02:14: Godel completed current-w25-close21-canonical-role-20261106-v1.
 Sourceb1ab0177/READYf0ecd21b,47cohorts/799keys/16779CLOSE cells complete,
 missing0/conditional0,0labels/payoffs/scores. One actual build/no postpayload

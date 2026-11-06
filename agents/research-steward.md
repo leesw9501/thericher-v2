@@ -3,6 +3,31 @@
 
 ## Current Resource State
 
+Nov6UTC04:42: new Patch seedfamily COMPLETE6ac123f9,2CUDAfits18/15epochs/
+3861marketupdates/best6/3,39.238/36.249co-tenant seconds/526MiBreserved each.
+2DEVforecasts/onearchive/sixbooks/0oldmodelcalls. Primary3.365409%<oldW253.601215%,
+DD+turnPASS/growthFAIL; allactors/leasesclosed301.773active/1650.734elapsed,
+Parent79refs PASS. Failedroot88.245carried once; host's cumulativeACTIVE vs
+parallel critical-path ELAPSED reservation corrected, not a longer originalhard
+or duplicated fit. Six timing checks were postdispatch diagnostics only.
+Current Darwin soleSteward/Engine package current-w25-recent-open4-saved-
+evaluation-20261106-v1 is source/native preparation for289newkeys/0fits/saved
+weights/one sixbook readout. ActualDataREADY and measuredheadroom before useful
+inference. No optimizer/GPU job currently claimed active. Do not repeat closed
+training for utilization. Data fixedcalendar7f461257 is not actualpayloads.
+
+Nov6UTC04:08: TimesFM46c8735d is COMPLETE/allactorsclosed, not still queued.
+Actual nativeCPU+CUDA4calls and oneCUDA680rowforecast40forwards;0fits/updates/
+oldChronos calls, modelworker9.827s/982MiBreserved. One6bookreadout primary
+growth/DDFAIL, Parent71refs/archive seal PASS.245.878linkedactive includes old
+153.667failuredebit once; initialRuff/configABI failures not regraded.
+New Darwin soleSteward assignment current-net25-patch-seed-ensemble-development-
+20261106-v1: two NEW seed workers20261106/20261107, old20261105 forecasts reused.
+3000active/3600elapsed,2fits/0marketretry/onearchive/sixbooks; native proof then
+measured VRAM/4GiBdesktopreserve permits concurrency. No new activefit claimed
+until actual PID/birth/CID/lease. Godel's independent Data metadata audit cannot
+release outcomes or mutate registry/custody; it is not another GPU coordinator.
+
 Nov6UTC03:34: Darwin owns ONE ready-source TimesFM2.5 OPEN60/H4 family at
 A/research/current-postcheckpoint-timesfm-open4-development-20261106-v1.
 ZERO fits/updates; oneCUDA680rowforecast/max40coreforwards/one6bookreadout,

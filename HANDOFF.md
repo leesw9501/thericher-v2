@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated 2026-11-06 UTC03:47 / KST12:47.
+Updated 2026-11-06 UTC04:42 / KST13:42.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Expanded history is in pushed fe94797d and immutable artifacts, not active commands.
@@ -71,18 +71,65 @@ evidence. No manual Task.Run merely to inspect a result.
   20261106-v1, Source98566dcd/13native negatives/13resolved modules/oneinvented
   attempt. Parent60refs PASS;60newactive+90old/allclosed. Real futurepoint UNKNOWN,
   analytical u/f not broker weights. Old import-order failure stays WITHHELD.
-- Planck now Execution: current-tlt-engineering-paper-preparation-20261106-v1.
-  Independent operational1share TLT baseline readiness, not unknownINTC substitute
-  or profit claim. Same ONE bank/B10/nativecontroller; proposedNov6UTC16:20entry/
-  16:50ownedexit,4min effect windows/hard16:35/17:05. No actual calls/installation
-  yet; refuse another peer writer/foreign adoption/unknown release/forced budget.
-- Darwin Engine/Steward: current-postcheckpoint-timesfm-open4-development-
-  20261106-v1. Cached official TimesFM2.5 releaseOct1,2025 before every target,
-  new OPEN60/H4 zero-fit CUDA forecast680rows/40forwards, fixed50:50 OPEN-level
-  proxy with SAVED aligned Chronos; one archive/readout6books. No old Chronos
-  calls/fit or W25 scalar comparison. Native/data/bootstrap/headroom before
-  market;1200active/3600elapsed, all67.02offer debit carried once. Currently
-  preparing, no GPU worker/market inference claimed active until actual callback.
+- Closed Planck TLT preparation API97ab10bb: NOT_READY_FOR_INSTALLATION. Actual
+  stock runtime rejects reserved ETF TLT; do not add an exception to force it.
+  Observed68invented checks/54SDK origins are not host admission. Revision1 was
+  prep-only,2..4 three native dispatches; source4>max3 metadata ambiguity remains
+  WITHHELD/unchanged. All15Jobs/3CIDs closed234.991active/1517.997elapsed;
+  0actual private/broker/Task calls, no installed TLT/retained financial intent.
+- Closed Planck native: current-csco-engineering-native-owner-preparation-
+  20261106-v1, sourcee6a9/release315535. Independent operational1share CSCO through existing STOCK native
+  controller/ONE originalB10, not another peer bank writer or unknown-request
+  substitute. ProposedNov6UTC16:20/16:50,4min windows/hard16:35/17:05. Source
+  route/real GUI caller/whole Guard and nine invented lifecycle cases passed,
+  simulated6.634s replies fit4min in82.103s, not actual financial latency. No
+  wholeaccount/LinuxBridge end-to-end or installer proof from this branch.
+  All3Jobs closed280.024newactive/2015.453elapsed/TLT234.991separate. Inherited
+  summary claims oldbf245bytes though actual runtime78ac is AST-identical;
+  actual Source.files/CodeSource pinned78ac. Annotation use trace pending,
+  no Source edit/regrade/installation or financial admission claimed.
+- Planck now current-csco-finite-installer-readiness-20261106-v1: prove annotation
+  cannot affect identity/authority, then qualify existing future-definition-only
+  installer/fullXML/API7ACL/readback/noRun/exit-before-entry enable. No original
+  Tasks/bank/unknowns changed. Actual effect-time owner/risk checks remain.
+- Closed Darwin TimesFM recovery46c8735d: actual nativeCPU/CUDA4calls then ONE
+  CUDA680row market forecast40forwards/one6book readout,0fits/updates/oldChronos
+  calls. Primary fixed-half+.22483%/DD.72719%; TimesFM+.02706%/DD1.07922%; saved
+  Chronos+.91845%/.77237%. Primary growth/DDFAIL, turnoverPASS,13cohorts changed.
+  All actors/lease closed245.878linkedactive/1503.331elapsed; Parent71refs/archive
+  seal PASS. Raw model worker9.827s/982MiBreserved, not long GPU training.
+  Root535/repair191b failures preserved; source diagnosis isolated loader-only
+  torch_compile from ForecastConfig. No market retry, historical regrade or alpha.
+- Closed Darwin seed ensemble6ac123f9: TWO actual new CUDA fits18/15epochs,
+  2106/1755updates/best6/3,39.238/36.249co-tenant fitseconds/526MiBreserved EACH.
+  Initial parameter/Torch/shuffle seeds differ; savedold seed not rerun. Primary
+  fixedmean3W25+3.365409%/DD.650454%/turn1.999506 versus oldW25+3.601215%/
+  .650454%/2.128555. GrowthFAIL/DD+turnPASS,4cohorts changed, no alpha/autoPaper.
+  One6bookreadout/2DEVforecasts/allclosed301.773active/1650.734elapsed including
+  failedroot88.245once. Parent79refs PASS; original reservation mixed ACTIVE
+  SUM with parallel critical-path ELAPSED, fixed before firstfit without native
+  repeat. Six timing tests were POSTdispatch only, not prelaunch proof.
+- Darwin now current-w25-recent-open4-saved-evaluation-20261106-v1: saved W25,
+  fixedseed3/HALF/third/cash/samegrossEW sixbook recent289key replay,0fits.
+  Native input-role/parser/source/model/book first, actual DataREADY before
+  numerical use; forecast/policy seal before targetOPEN4. Preparing only,
+  no new inference/GPU actor claimed. Adaptive, not independent/Paper PnL.
+- Closed Godel independent-input audit523eb92c: later daily dates exist but exact
+  untouched target-key custody UNPROVEN/NOT_READY; no outcomes/arrays opened.
+  Nine tests/full ownRuff/format;180active charged/first-action clock unavailable,
+  conservative1223.9elapsed/1200 compliance NOTattested. Parent52refs unchanged,
+  two role-MD context pins drifted from Parent04:08 updates, not Data/registry
+  mutation; no blanket54refsPASS or current-Source qualification. Original
+  Nov6/11/16 W25 protocol51planned keys remains future/unknown, no new wait.
+- Closed Godel calendar7f461257:17cohorts289keys, Aug3-Oct9 entries/Oct14 exits,
+  571native-verified registry records/four byte-bound seals disjoint; Parent32refs
+  PASS/five tests/allclosed112.99active/582elapsed. Not payload readiness.
+- Godel now current-w25-open4-recent-evaluation-inputs-20261106-v1: NEW minimal
+  target-specific fourOPEN role avoids needing unused e+23 fields, keeping old
+  loader/studies unchanged/all289keys/masks. Data producer -> actual Darwin
+  parser native smoke10checks passed, actual build not yet claimed.600active/
+  1800elapsed/onebuild0payloadretry. Adaptive/sourcebasis limits remain, no
+  reserved-target release/custody mutation/Paper gate.
 Role callbacks require full agent UUIDs. Parent corrected an abbreviated target;
 direct qualified handoff needs no additional launch approval.
 - Earlier numerical workers are closed. Darwin's new assigned campaign above
@@ -213,10 +260,10 @@ due or proof of popup cause; none erased/original exit duties discarded.
 
 ## Verification / Resume
 
-Full authority A/verification/current-native-paper-recovery-compatibility-20261105-v1:
+Fresh full authority A/verification/current-csco-native-compatibility-20261106-v1:
 20239PASS/26knownWindowslinkSKIP/8of8workers[20265items], native/helper0/guarded
-scratch+lease cleanup; changed-path serial108PASS. RESULT SHA:
-e60c606f5b2d895060355912bd15fbbebc3f2393ad6c56440ae37dda65377245.
+scratch+lease cleanup; changed-path serial289PASS/1.97s, full437.09s. RESULT SHA:
+062fa8f9f7e52e6f2fdfc13608dc22c63534cec7376067bec2dc4af4843b3098.
 Parent rechecked1437protected file digests/AGENTS c88a8442 unchanged. Docs/external
 updates may reuse only exact full authority. Fresh Ruff/fourCompose(.env.example)/
 diff PASS. New D code has separate native/focused proof; repo tests do not qualify

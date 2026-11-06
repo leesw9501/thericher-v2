@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC03:47 / Nov6KST12:47.
+Updated Nov6UTC04:42 / Nov6KST13:42.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Earlier projections/history stay in pushed41cdcb8a and immutable artifacts.
 
@@ -16,14 +16,16 @@ and all original exits. A package/commit/installation is not company completion.
 
 | Owner | Current package | Actual state / next consumer |
 | --- | --- | --- |
-| Planck / Execution | current-tlt-engineering-paper-preparation-20261106-v1 | Preparing one operational TLT buy/owned-exit through SAME account-owned native controller/originalB10. Proposed Nov6UTC16:20/16:50, four-minute effect windows/hard16:35/17:05. No installation or actual broker effect yet. |
-| Darwin / Engine + sole Steward | current-postcheckpoint-timesfm-open4-development-20261106-v1 | Preparing cached dated TimesFM2.5 OPEN60/H4,0fits/one680row CUDA forecast/one6book readout with saved Chronos.1200active/3600elapsed including67.02offer once. No actual GPU start claimed until PID/birth/CID/lease callback. |
-| Parent / integration | Qualified completed components below |93W25 source/native/closure refs independently checked; original1437protected+AGENTS unchanged. Refresh current projections, fresh Ruff/fourCompose and commit/push owned docs. |
+| Planck / Execution | current-csco-finite-installer-readiness-20261106-v1 | e6a9/315535 realGUI/fullGuard/native components passed; trace legacy summary vs actualidentity and qualify future-only installer/readback. Consumed Source unchanged/no actualTask install. Proposed Nov6UTC16:20/16:50, sameB10/old duties. |
+| Darwin / Engine + sole Steward | current-w25-recent-open4-saved-evaluation-20261106-v1 | Seedfits COMPLETE; prepare savedW25/fixedseed3/HALF/third/cash/samegrossEW6books on289recentkeys/0fits. Real input-only parser shared with Data, no inference before actualDataREADY, archive before targets. |
+| Godel / Data | current-w25-open4-recent-evaluation-inputs-20261106-v1 | Calendar7f461257 READY17cohorts289keys/32refs; NEW target-specific e..e+3 role, not olde+23 waiver. Actual producer->Darwin parser smoke10checksPASS; onebuild not yetclaimed, no reservedrelease. |
+| Parent / integration | Completed components/results below |79newseed refs/32calendar refs PASS. Fresh full20239/26knownSKIP/8of8/helper0/cleanup/serial289/Ruff/4Compose, exact1437+AGENTS unchanged. Pushed168c0c6b; newmaterialresults pendingintegration. |
 
 Assignments and MDs are not active-worker proof. Full role UUID callbacks:
 Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0;
-Darwin01a1adb5-b486-7801-9fdf-1378d733bfce.
-Banach/Godel are closed. No repeated completed fits or occupancy-only jobs.
+Darwin01a1adb5-b486-7801-9fdf-1378d733bfce;
+Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
+Banach is closed. No repeated completed fits or occupancy-only jobs.
 
 ## Owned Due
 
@@ -41,6 +43,35 @@ No manually running existing Tasks/strategy/collector merely to inspect results.
 
 ## Integrated / Closed
 
+- Newseed ensemble6ac123f9:2actualCUDAfits18/15epochs3861updates/best6/3,
+ 39.238/36.249co-tenant seconds/526MiBreserved each. One6book readout primary
+ 3.365409%/DD.650454%/turn1.999506 vsW253.601215%/.650454%/2.128555;growthFAIL,
+  DD+turnPASS/4cohorts changed. Allclosed301.773active incl failed88.245once;
+  Parent79refs PASS, no oldfit/native replay. Six timing tests POSTdispatch only.
+- Calendar7f461257:571nativeverified records/four seals disjoint,17cohorts289keys,
+  5tests/Parent32refs/allclosed112.99active/582elapsed. No payloadreadiness from
+  calendar; newtarget-specific OPEN4role keeps allkeys without olde+23 waiver.
+- CSCO e6a9/315535 components passactualGUI/fullGuard/9invented runtimecases,
+  82.103simulatedseconds at6.634reply delay; actualfinanciallatency UNKNOWN.
+  Sourcefilesactual78ac vslegacybf245 summary discrepancy under scoped trace,
+  not a companyhold; futureinstaller not yetqualified/installed.
+- Data independent-input audit523eb92c NOT_READY: exact untouched custody not
+  proven.52refs unchanged/two mutable role-context pins drifted from Parent
+  edits; no blanket54refsPASS. Nine tests/180active, original elapsed compliance
+  NOTattested. No outcomes/arrays/custody writes. Reused-data adaptive research
+  does not require independent-performance qualification; preserve exact sealed
+  targets and use correctly scoped claims instead of waiting for Nov19 globally.
+- TimesFM OPEN4 recovery46c8735d: one680row CUDA forecast40forwards/0fits/one
+  sixbookreadout; primary+.22483%/DD.72719% versus savedChronos+.91845%/.77237%.
+  Growth/DDFAIL/13cohorts changed, no alpha or Paper swap. Allclosed245.878active
+  including old153.667once/1503.331elapsed; Parent71refs/archive seal PASS.
+  A/research/current-timesfm-open4-config-abi-recovery-20261106-v1/API.json.
+- TLT operational prep97ab10bb NOT_READY: current stock route excludes ETF.
+ 68native checks/54SDKorigins not whole host proof; historicalSource4>max3
+  metadata qualification WITHHELD despite exactlythree actualnative dispatches.
+  All15Jobs/3CIDsclosed234.991active/0actualprivate-broker-Task; no TLT installation
+  or retained financial intent. CSCO is new source-only engineering selection,
+  not substitute unknown INTC/F9 or waiver of ETF guard.
 - W25 budget component95d9570d:47invented native checks/42SDK origins/11plans,
   all5Jobs/CIDclosed. Parent93refs PASS. Explicit encoded public18 recommendations
   against ORIGINAL B10, encoded positive floor0.5/17 NOT2x. Source/native only,
@@ -66,9 +97,17 @@ No manually running existing Tasks/strategy/collector merely to inspect results.
 
 ## Throughput Review
 
-03:47: Ready independent Execution and Engine packages dispatched. Parent fixes
+04:42: Ready independent Execution, Engine and Data packages dispatched. Parent fixes
 stale task assignments instead of repeating closed numerical work. Reversible
-improvement: compact this current stateboard and NEXT; history stays in Git.
+improvements: tiny SDK config-signature check BEFORE expensive weight loads;
+reuse supported STOCK route rather than adding an ETF branch for a diagnostic;
+separate source-revision from actual dispatch counters. Mutable role MDs are
+context, not immutable runtime hash dependencies. Completed newseed depth failed
+growth, so next work is recent saved-model replay rather than another repeated
+fit. Data needs used e+3 marks, not unused23day outcomes in the oldgenericloader.
+Trace decorative ancestry annotations separately from real executable identity
+gates; never bypass the latter or mint a new Source for formatting alone.
+History stays in Git.
 Unknown-request/budget/risk facts remain effect-time checks, not research gates.
 
 Current bottleneck: actual financial runtime evidence/attribution. INTC's60s
@@ -78,9 +117,11 @@ opportunity fails or block all Paper. A faster candidate lost an OS observation
 and was rejected rather than treated as equivalent.
 
 Ready alternatives while original opportunities are future: finish same-owner
-TLT native/runtime readiness; finish distinct TimesFM comparison; integrate W25
+CSCO finite installer readiness; recent saved-model replay with target-specific
+Data inputs; integrate W25
 component for a separately bound future release. No foreground market wait,
 substitute unknown intent, reset, forced deployment or new operator hold.
-Full authority20239PASS/26knownSKIP/8of8[20265items]/guardedcleanup can be reused
+Fresh full A/verification/current-csco-native-compatibility-20261106-v1/RESULT.json,
+20239PASS/26knownSKIP/8of8[20265items]/guardedcleanup/serial289, can be reused
 ONLY with exact1437protected+AGENTS unchanged. External code needs native checks.
 Claude review_unavailable is not agreement or a global hold.

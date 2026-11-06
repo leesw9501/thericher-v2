@@ -3,9 +3,48 @@
 
 ## Current Research Update
 
-Updated Nov6UTC03:47 / Nov6KST12:47. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC04:42 / Nov6KST13:42. A=D:/thericher-v2/model-artifacts.
 Earlier numerical workers are CLOSED; no new optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
+
+TimesFM OPEN4 comparison is COMPLETE in current-timesfm-open4-config-abi-
+recovery-20261106-v1, Source46c8735d. NativeCPU/CUDA4calls then ONE CUDA680row
+forecast40forwards/0fits/updates/one6book readout. Primary fixedhalf+.22483%/
+DD.72719%, TimesFM+.02706%/1.07922%, savedChronos+.91845%/.77237%; growth/DDFAIL,
+turnoverPASS/13cohorts different. Allclosed245.878linkedactive/1503.331elapsed,
+Parent71refs/archive seal PASS; modelworker9.827s/982MiBreserved. Root535 and
+repair191b failures kept: loader-only torch_compile was wrongly in ForecastConfig,
+ABI projection repaired without model/data/cost changes or market retry.
+
+COMPLETE Darwin family: current-net25-patch-seed-ensemble-development-
+20261106-v1. Two NEW seeds20261106/20261107, never repeat old20261105; fixed
+mean of allthree saved/new Patch predictions, primary.25meanPatch3+.75savedthird.
+Same FIT29727/INNER8143/DEV799, signedNet25/60x12+ind8/nativebook; no bestseed
+selection or DEV epoch tuning.120maxepochs/14040updates EACH, early12/LRplateau/
+safe INNER-best restore/full curves. Two disjoint GPU workers under ONE Steward
+after native proof and measuredheadroom;3000active/3600elapsed,2fits/0retry/
+2DEVforecasts/onejointseal/readout6books,200readout+120cleanup reserved.
+Primary growth>oldW25/matchedEW/cash, DD<=1.25oldW25,turn<=1.05oldW25, changed
+allocation required. Reused DEV/adaptive only. Actual continuation-r1 Source
+6ac123f9 COMPLETE: new18/15epochs3861updates/best6/3,39.238/36.249co-tenant fit
+seconds/526MiBreserved each,2forecasts/1archive/readout6books. Primary3.365409%/
+DD.650454%/turn1.999506 vsW253.601215%/.650454%/2.128555,4cohorts changed.
+GrowthFAIL/DD+turnPASS, no bestseed selection. Allclosed301.773active including
+failedroot88.245once/1650.734elapsed; Parent79refs PASS. ACTIVE SUM vs parallel
+critical-path ELAPSED reservation bug fixed before firstfit; no native repeat.
+Six timing tests POSTdispatch only, never claimed as prelaunch proof.
+Official mechanism https://proceedings.neurips.cc/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html;
+native scratch adaptation, no benchmark/calibration/financial guarantee.
+
+CURRENT Darwin Engine/Steward: current-w25-recent-open4-saved-evaluation-
+20261106-v1,0fits. Fixed17cohorts289new keys, saved originalW25/fixedseed3/HALF/
+third/cash/primary-samegrossEW,one6bookreadout. Direct Godel schema/parser native
+handoff before actualData build, source/model/fee smoke before market; input-only
+inference then joint forecast/policy seal BEFORE targetOPEN4. ActualDataREADY
+and full known support required for numerical use; no placeholder/799reindex.
+1200active/3600elapsed/readout200+cleanup120, finite inference caps beforelaunch;
+no oldtrainingrepeat. Distinct adaptive recent replay, not independent/PIT/actual
+arrival or PaperPnL. No active inference/GPU worker claimed until actual actor.
 
 Darwin's raw+activity-proxy GRU/HGB family is COMPLETE/DEVELOPMENT_FAIL in
 repair1, Source01e89c74. Initial freeze failed before payload on nonexistent
@@ -55,7 +94,7 @@ Planck W25component95d9570d separately passed47native checks/Parent93refs; encod
 slot is floored0.5/17 (not2x), NEW explicit OriginalB10 recommendations policy,
 not analyticaccountNAV/fees/PnL equivalence or actual deployment.
 
-Darwin now Engine+Steward owns ONE new source-ready foundation comparison:
+Closed Darwin Engine+Steward source-ready foundation comparison:
 A/research/current-postcheckpoint-timesfm-open4-development-20261106-v1.
 Source offer current-postcheckpoint-foundation-next-candidate-20261106-v1 chose
 cached official safetensors TimesFM2.5 weight2f776efe, datedOct1,2025 BEFORE all
@@ -67,7 +106,7 @@ with exact SAVED Chronos forecasts, not mixturequantile/expected return. Native
 producer/parser/actualmodel/funding/fee beforemarket, targetvalues onlyafterseal,
 MSE diagnostic not readoutgate. No oldChronos inference or unalignedW25scalar.
 1200active/3600elapsed,67.02sourceoffer chargeONCE, reserve200readout+120cleanup.
-Currently preparation only; actual GPU start requires PID/birth/CID/lease callback.
+This old preparation is superseded by the completed recovery above; never rerun.
 
 | Completed study | Actual work | Result / next action |
 | --- | --- | --- |

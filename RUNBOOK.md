@@ -2,12 +2,23 @@
 
 ## Current Authority
 
-Updated Nov5UTC23:48 / Nov6KST08:48. Company outcome UNFINISHED.
+Updated Nov6UTC04:42 / Nov6KST13:42. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
 Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
 No manual Task.Run/strategy invocation merely to inspect evidence.
+
+Current source-only CSCO engineering preparation is NOT installed:
+D:/thericher-v2/model-artifacts/execution/current-csco-engineering-native-owner-preparation-20261106-v1.
+Do not invoke a provisional launcher/installer from directory presence. Prior TLT
+preparation is CLOSED/NOT_READY; no TLT Task or financial intent was installed.
+TimesFM OPEN4 recovery is COMPLETE; do not rerun host.py/forecasts:
+D:/thericher-v2/model-artifacts/research/current-timesfm-open4-config-abi-recovery-20261106-v1/API.json.
+New Patch seedfits are COMPLETE (continuation-r1/API.json), never rerun root:
+D:/thericher-v2/model-artifacts/research/current-net25-patch-seed-ensemble-development-20261106-v1.
+Recent saved-model replay and new target-specific OPEN4 Data role are preparation,
+not an actual inference/build/deployment claim or an executable current command.
 
 ## Actual Deployments
 
@@ -213,13 +224,14 @@ replay or completed fit repeated. Full source refs in Engine/HANDOFF.
 
 ## Verification
 
-Fresh C full16:49:
-D:/thericher-v2/model-artifacts/verification/current-native-paper-recovery-compatibility-20261105-v1/RESULT.json.
+Fresh C full Nov6UTC04:30, RESULT recorded04:32:
+D:/thericher-v2/model-artifacts/verification/current-csco-native-compatibility-20261106-v1/RESULT.json.
 20239PASS/26knownWindowsSKIP/8of8[20265items]/helper+native0/guardedcleanup,
-serialbudget108PASS. Reuse only1437protected+AGENTS unchanged. D external code
+serialstock289PASS/1.97s/full437.09s. Reuse only1437protected+AGENTS unchanged. D external code
 has its own focused/native checks. Use uv --no-env-file:
 
 ```powershell
+./scripts/run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot -PytestArgs @('--maxfail=1', '--durations=15')
 uv run --no-env-file --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet
