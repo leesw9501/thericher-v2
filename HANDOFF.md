@@ -2,7 +2,7 @@
 
 ## Current Integration
 
-Latest Nov6UTC01:23 / KST10:23: INTC original future EXIT is ACTUALLY migrated
+Latest Nov6UTC01:40 / KST10:40: INTC original future EXIT is ACTUALLY migrated
 to pre-read-clock Source297ca58e/release8ac4b374, one update01:10UTC. Fresh
 source-bound relevant-owner proof preceded write; separate process pure library
 Context/Future/Snapshot confirms fullXML/API7ACL/twice-stable PROPOSED/enabled/
@@ -28,11 +28,16 @@ only explicitly named unqualified activity-proxy ratios, never qualifiedshares.
 A/data/current-net25-daily-volume-capability-readiness-20261106-v1/RESULT.json.
 Godel completed one exact-key/known-mask materialization under M: c097a902/9cc176c9,
 input-common29767/8143/799, DEV47full17. Parent32refs+4semanticlinks verified.
-Darwin's new raw+activity-proxy GRU/HGB initial freeze failed before firstpayload,
-nonexistent Data/CONTRACT.json/0fits; FAILED_CLOSED57.827active/1076.149elapsed.
-ONE narrow continuation-r1 carries all original caps/debits/models/criteria.
+Darwin's raw+activity-proxy GRU/HGB COMPLETED in repair1 Source01e89c74 after
+one pre-payload filename repair. Actual GRU14epochs1638updates/best2, HGB96warm
+additions/best84;2fits/1archive/readout9books. Primary1.20375%/DD1.39996% versus
+W253.60121%/.65045%, DEVELOPMENT_FAIL/allclosed428.245active incl oldfailure.
+Parent70refs/current campaignCIDabsence verified. Initial failed root retained;
+Parent corrected its root-only status and withdrew redundant continuation-r1.
 Banach independently prepares one fixed same-W25-gross conditional IVOL20 readout,
 0fits/inference/GPU; no numerical result or source-grade upgrade yet.
+Planck now probes full Guard.check with invented custody; Godel source-checks
+exact Korean8788/e200 compatibility. Neither is financial admission/deployment.
 Source/schema callbacks direct between roles; no Parentpoststartapproval. Existing
 Paper/price-only path independent. No newdata/modelrights or public use granted.
 
@@ -550,7 +555,8 @@ c198ac07/16native negatives/oneinventedcapsule/allclosed/100active/895elapsed,
 0fits/inference/marketreadouts/Tasks. No analytical-f/native-u to broker-B10
 mapping, PaperadapterUNQUALIFIED. Actual futurepoint/hashUNKNOWN. Darwin's
 current-w25-samegross-risk-allocation-offer-20261106-v1 is source/nativeREADY,
-16tests/35.63active, no marketcomparison. Its numeric consumer is not dispatched.
+16tests/35.63active, no marketcomparison in THAT offer. Banach's new conditional
+numeric consumer is assigned above, not a mutation of the strict offer.
 Banach/Planck/Godel/Carver and all earlier completed numerical fits are closed.
 Parent owns Git/integration/current goal. Completed or failed earlier role
 deliveries are closed, not active GPU/LLM daemons. Current matrix is

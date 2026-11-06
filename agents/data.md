@@ -12,8 +12,9 @@ volume mask stays false/NaN; unit consistency/CA/PIT/finality remain unknown.
 SEMANTIC-QUALIFICATION binds these as UNQUALIFIED_NATIVE_TVOL_ACTIVITY_PROXY_RATIO,
 not share volume. Parent32 exact refs +4 semantic links PASS/0 payload decodes.
 Nine invented producer/parser/60x15 handoff checks passed before the one build.
-Darwin's new expert consumer failed before first payload on a nonexistent source
-filename; one narrow continuation carries all original caps/debits, no fit replay.
+Darwin's new expert consumer first failed before payload on a nonexistent source
+filename, then completed its permitted repair1 and both fits; total428.245active,
+DEVELOPMENT_FAIL/allclosed, no replay. Parent corrected its failed-root-only status.
 Banach separately prepares the original W25 same-gross risk comparison; raw
 source CLOSE and conditional past-close availability must remain explicit.
 

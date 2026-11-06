@@ -3,19 +3,27 @@
 
 ## Current Research Update
 
-Updated Nov6UTC01:34 / Nov6KST10:34. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC01:40 / Nov6KST10:40. A=D:/thericher-v2/model-artifacts.
 Earlier numerical workers are CLOSED; no new optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
 
-Darwin's new raw+activity-proxy GRU/HGB family failed during freeze before first
-payload: FileNotFoundError host.freeze line145, nonexistent Data/CONTRACT.json.
-Original FAILED_CLOSED API retains57.827active/1076.149elapsed/0marketfits and
-positive closure. ONE narrow continuation-r1 may correct exact existing Data
-SOURCE/READY/semantic bindings, carrying original ORIGIN/HARD/caps/debits and
-frozen models/seed/splits/criteria. No market retry, old fit rerun or failure rescue.
-Data c097a902/9cc176c9 is materialized; input-common29767/8143/799 is not target
-eligibility. Actual producer/parser/concat/CUDA checkpoint/HGB smoke precedes fits.
+Darwin's raw+activity-proxy GRU/HGB family is COMPLETE/DEVELOPMENT_FAIL in
+repair1, Source01e89c74. Initial freeze failed before payload on nonexistent
+Data/CONTRACT.json; narrow repair read existing SOURCE.contract, carrying all
+original caps/debits/models/criteria. Initial FAILED_CLOSED stays preserved.
+Actual CUDA GRU14epochs1638updates/best2; HGB96warm API/tree additions/best84,
+no best-refit/reset. One archive/readout/nine books, all Jobs/CIDs/lease closed.
+Primary fixed-half growth1.20375%/DD1.39996%/turn4.40988 versus W253.60121%/
+.65045%/2.12855; all primary tests FAIL. Secondary2.66527% fails growth/turnover.
+Cumulative428.245active includes failed prep/verification/metadata. Parent70refs
+and current exact campaign-container absence independently checked.
+Parent initially inspected only failed root API and reported pre-fit recovery;
+corrected after finding completed repair1. Newly queued continuation-r1 withdrawn,
+no duplicate fit. Closed code/results/criteria are not reopened. Data input-common
+29767/8143/799 is not target eligibility; actual native handoff passed before fits.
 Exact scope: current-net25-retained-volume-experts-development-20261106-v1.
+Darwin's next distributional-target offer is source-only, not a market campaign
+or active GPU worker; bounded duplicate check precedes any proposal.
 
 Banach now owns current-w25-ivol20-conditional-risk-development-20261106-v1:
 0fits/inference/GPU, one original47-cohort/799-key archive and three-book readout.
