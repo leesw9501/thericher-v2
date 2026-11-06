@@ -1,449 +1,85 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC21:03 / Nov7KST06:03. A=D:/thericher-v2/model-artifacts.
-History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
-intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
-is rerun for utilization. Actual source/PID/counters govern running claims.
+Updated Nov6UTC22:20 / Nov7KST07:20. A=D:/thericher-v2/model-artifacts.
+Detailed closed contracts/curves/caps/debits: Git01f23a13 and immutable APIs.
+No completed fit/forward/evaluation is rerun for GPU occupancy.
+All figures here are adaptive after-cost DEV / RECENT replay, not independent
+alpha, qualified selection, prospective profit or broker PnL.
 
 ## Ready / Owned
 
-Latest seed-ensemble campaign COMPLETE, never repeat:
-A/research/current-lstm-h3-two-seed-ensemble-development-20261106-v1/FINAL-API.json.
-FITf3470be7/native7f14fed3/resultf66f00b9,2CUDAfits36/best24/3960updates and
-25/best13/2750updates,27.814/22.121s/316MiB each;4forwards/0savedcalls/16books.
-Primarymean3 DEV-.264452%/DD2.565449%, RECENT-.502835%/.981572%, growth-DDFAIL
-both/turnPASS; diagnostics not a selected winner. All9CIDs86Jobsclosed,636.316
-recordedpartial/debits including failed prep preserved/no BudgetPASS.
-Parent182memberbindings+6proofs/E9PASS; updated recipe not pure seed causality.
+Arendt is Engine and sole GPU coordinator; Ptolemy's twoCUDA fits are complete,
+not an active optimizer. NEWfixedthreephaseH3 cash-sleeve CPU study is assigned
+from Source7b4c187c/contractb917e651:0fit/restore/forward/GPU/newDataBuild,
+1200active/3600elapsed/cleanup120/readout180/<=2nativeattempts/16actualsynthetic
+books/onejointcached-intake-sealBEFOREmarks/onejointreadout/12logicalANDactual
+marketbooks/2wrappers. Exact archive+all17/H3scale/input-only known/newentry
+query+3 expiry/terminal mask/parser/funding conservation must qualify first.
+Same native fees25bp eachside, fixed1/3 initialcash compartments/no transfers/
+netting/newbanks. No bestphase selection, old-model rerun or primary rescue.
+Frozen b917 kill remains; new market result is not yet present.
+Use CPU for measured faster smallMLP, CUDA for useful LSTM work; no app-name
+permission hold. Source-only intent is not an available numerical campaign.
 
-Minimum-unit study run1 COMPLETE718d44b0/result2eb8eb42/native37e2292f:
-A/research/current-netlog-h3-minunit-feasibility-20261106-v1/run1/API.json.
-ONE native/8books/0modelcalls; DEV+.399473%, RECENT no admitted modeled orders
-at fixed synthetic10000priceunits. NONINFORMATIVE, not actual brokerlot/account
-funds/tradability proof. Original formatterfailure and246.672partialdebit retained;
-Parent26bindings+4proofs/E9PASS. No retries/regrading of the old preparation.
+## Recent Closed Comparisons
 
-HeldAGE2 comparison COMPLETE, never repeat:
-A/research/current-h3-age2-cash-vs-ratio-development-20261106-v1/API.json.
-FIT0ad2f826/native1d34d633/result1c01d76b/closure9e7cc3fd; two concurrentCUDA
-matched LSTM60+IND8+causalstate critics, each20epochs/best8/2180updates,
-16.952/17.032s/312MiBreserved. One native/4syntheticupdates/4newforwards/
-0savedcalls/onejointseal-readout/10books,4wrapperbatches/10actualsf_replays.
-DIRECT_D DEV+.634237%/DD2.181790%, ratio+.436603%/DD2.185990%, blindH3+.993207%/
-1.977482%; RECENT direct=ratio+.349755%/.684969% versus blind+.288886%/.825314%.
-Frozen primarygrowthFAILboth (RECENT ties ratio), DD+turnPASSboth; changed9/2.
-This is useful target comparison, not a winner/independentalpha/Paper swap.
-All22actors194Jobsclosed;284.401finalrecordedpartial/noBudgetPASS. Literal10
-actualsf_replays exceeded4call cap;4wrappers do not cure it. Parent181bindings/
-E9PASS. Exact OLD60_H3 entries, fixedage1HOLD/e3expiry/age2only; D original-entry-
-cash denominator versus fee-inverted ratio, not expectedratio==expectedcash.
-Input-only native mounts and FIT-state stats preserve targets/clocks separately;
-commonqueryOPEN consumption does not fabricate historicalarrival/PIT/finality.
-COMPLETE current-h3-crossasset-state-critic-development-20261106-v1:
-1800active5400elapsed/cleanup180/readout180/2newfits0retry/seed20261110/
-120epochs14040updates each/soft600hard660/<=2nativegraphs6syntheticupdates/
-4forwards0savedcalls/onejointseal-readout6logicalbooks AND6actualsf_replays,
-<=4wrapperbatches. Own-stockMLP versus same-date DeepSets-style pooledcontext,
-sameheldD/OLD60_H3/age1HOLD/age2only/e3expiry. ReuseData, freezearchitecture/
-counts/criteria beforefits; actualnativepermutation/perturbation/optimizer/
-checkpoint/input-only parse-return and book parity first. No novelty/optimal
-portfolio or independent-alpha claim. Mechanism https://arxiv.org/abs/1703.06114,
-not authorcode/weight reuse or financial evidence. New sources/native readiness
-are not inferred from assignment. Batch input-only forecasts where isolation
-permits to reduce22-container/194-Job overhead; never merge target trust boundaries.
-Actual FIT2c457974/native96922514/resultbd5d3f6c:POOLED growth+1.438200%/
-.388483%, DD1.383656%/.720263%, frozen growth/DD/turnPASSboth/changed12+5.
-Pointwise+.911085%/.288886%; blind+.993207%/.288886%. Extra1024parameters:
-not purecontext causality. CPU21/best9/2289updates/4.184s and15/best3/1635/
-2.821s,0VRAM; INNERpatience12/bestrestore/notconvergence.6actualreplays/6books/
-2batches/4forwards0savedcalls; all8containers68Jobsclosed.95.473recordedpartial/
-1107elapsed/noBudgetPASS. Parent94bindings/E9+criteria arithmeticPASS.
-NEW current-h3-crossasset-capacity-ensemble-development-20261106-v1:
-1200active3600elapsed/cleanup120/readout180/2freshfits0retry/seed20261111/
-120epochs14040updates each/soft450hard510/2native6syntheticupdates/4forwards/
-0savedcalls/onejointseal-readout8logicalAND8actualreplays/<=2wrapperbatches.
-NewPOOLED versusSELF_CONTEXT uses same1024parameter branch onownembedding
-instead of17-mean, exactcapacity/init; fixedmean2 cachedold/newPOOLED is a
-predeclared diagnostic, never rescueprimaryfailure. SameData/OLD60_H3/age2D/
-e3/nativefundedlots. Reusedadaptive data, no independent replication/Paper swap.
-
-Latest LSTM120 context study COMPLETE60f47d7c/resultcd6fa420:
-A/research/current-h123-lstm120-context-development-20261106-v1/API.json.
-ONEnewCPUfit20epochs/best8/1900updates/67.875s,2newforwards/0saved60calls/
-onejointseal/readout12books/oneNative/3syntheticupdates/allactorsclosed.
-Primaryhalf120+cached60 DEV+.753357%/DD1.910113% versus saved60+.993207%/
-1.977482%; RECENT+.388765%/.849563% versus+.288886%/.825314%.
-Changedcohorts12/4/informative; growthFAILDEV/PASSRECENT, DD+turnPASSboth.
-OverallfrozenprimaryFAIL, not independentalpha/causalwindowproof/Paperswap.
-Data18b148/READY4edf COMPLETE1inputbuild: FITknown12025738/37077, old60known
-lost4029/prefix1020; INNER8143/DEV799/RECENT289 fullyknown, last60byteparity/
-originalIND8 unchanged. Whole-recipeFITsupport limitation retained, no60refit.
-Warm calibration recovery-r1 COMPLETE: Source61e4065b/result13736993,
-72synthetic updates/8cases/272rows,0market/oldweights. Resident warm median
-LSTM60 CPU13.835ms/CUDA5.392ms (2.566x); LSTM12025.458/3.893ms (6.540x).
-SmallMLP CPU1.407ms/CUDA3.334ms; per-step pageable H2D/normalization makes CUDA
-LSTM1207.291ms/MLP4.353ms. Six timed samples/fixedorder/co-tenancy, not economic
-evidence or a full-market throughput guarantee. Cold one-step timing is NOT
-steady training speed; use representative warm end-to-end work for FUTURE
-backend choice, no oldfit rerun/regrade. Parent16members+3proofs/E9 checks PASS.
-Original0ea1 temp-init failure/0updates preserved; recovery all13Jobs/CIDclosed.
-NETLOG-vsMSE H3 is COMPLETE, not a running fit:
-A/research/current-cost-aware-netlog-mse-h3-development-20261106-v1.
-FIT3b6fb7be/READOUT7d5f3674/result9f894e81/closure137f8ab1/native6801b660.
-Two CUDA fits overlapped18:43:32..18:43:46UTC: NETLOG18epochs/best6/1962updates/
-14.829s, MSE34/best22/3706updates/21.800s;320MiB each, not isolated timings.
-Same7233parameter initialization/support/decoder, rawNet25 logwealth versus
-normalizedmeanMSE. Native1/4syntheticupdates/2fits/5668marketupdates/4forwards/
-0oldmodelcalls/onejointseal+readout16books/4batches. All10actors/94Jobsclosed.
-NETLOG DEV+.904938%/DD.389804%/turn1.026021 versus MSE-2.731049%/4.136637%
-and cached60+.993207%/1.977482%; RECENT+.049355%/.115308% versus MSE-.378707%/
-1.469211% and cached60+.288886%/.825314%. Fixedhalf-.922153%/-.163918%.
-Informative64changedcohorts; growthFAILboth/recentDDFAIL/turnPASSboth. Positive
-after-cost replay is not an independent alpha/Paper result or automatic swap.
-Low mean entrycash1.078%/0.2735% is not itself alpha or share-lot deployability.
-Parent160memberbindings+5proofs/E9/independentcriteria recomputation PASS.
-Recorded326.749active is partialledger/notBudgetPASS; olddebits preserved.
-Next source-only inventory/forced-expiry/friction feasibility check requested,
-300active900elapsed/0fits-oldforwards initially; dedup prior holding studies.
-
-Market/residual study3d74e4ca/resultd91a88f2 also COMPLETE2CPUfits:
-COMPONENT16epochs/best4/1760updates/6.381s; DIRECT23/best11/2530updates/7.402s.
-4forwards/16books/oneNative/sixsyntheticupdates/0savedLSTMcall/all9CIDs+77Jobs
-closed. PrimaryDEV+.335994%/DD1.695147%, recent+.087198%/.932411%, lessgrowth
-than matchedDIRECT-half+1.353647%/+.144471% and savedLSTM+.993207%/+.288886%.
-Informative34/11changedcohorts/growthFAILboth/DD+turnPASS. No rerank/refit/swap.
-Recorded241.306s linkedaccounting includes180s preparationupper, remainspartial
-notbudgetPASS; Data92.283 chargedseparately/olddebits neverrefunded.
-
-RobustH123 matched-location study is COMPLETE, not a running optimizer:
-A/research/current-robust-h123-location-scale-development-20261106-v1.
-FIT5c0f6a3b/READOUT5a3eb9b0/resultbee99f9b, Parent66readoutmembers unchanged.
-StudentT5 learned-scale versus matchedMSE smallMLP: twoCPU23epoch fits/best11,
-2530updates each/5060total,7.341s and6.195s. Invented272row actualoptimizer
-timing selectedCPU beforemarket: update10.88ms vsCUDA121.55ms StudentT,
-4.12ms vsCUDA98.70ms MSE; co-tenancy noted, not isolated productionbenchmark.
-GPU headroom22,235MiB/reserve4096, no permission/environmenthold. No rerun.
-One fullnative/sixsyntheticupdates,4newforwards/0savedLSTMcall/16books/allclosed.
-PrimaryhalfStudentT+cachedLSTM DEV-.006856%/DD2.598008% versus matchedMSEhalf
-+.628940%/2.503481% and savedLSTM+.993207%/1.977482%; recent+.168905%/.718900%
-versus-.200483%/.959184% and+.288886%/.825314%. SameOPEN+CLOSE proxy marks,
-25bps EACHleg. Informative32/13changedcohorts; growthFAILboth/DD+turnPASS.
-Wholelocation-scale recipe, not loss-only/tailcausal/calibratedconfidence or
-independentalpha. No secondaryrerank/Paperswap. BudgetPASS not claimed.
-Generic cross-sectional ranking offer08d68c/699a44a5 was REJECTED as retag,
-not a global novelty gate. New controlled SPYmarket/residualH123 offer280991a5
-accepted: SAME31174parameter direct-sumMSE control, samecachedLSTMhalf policy.
-DataSPY-OPEN4 sidecar693d/READY6c18 COMPLETE1build/27checks/allstockrows preserved,
-nativeactualproducer-consumer join remains required before marketfits. Family
-prebound3600active5400elapsed/hard17:43:55/twonatives-sixsyntheticsteps-twofits
-0retry-fourforwards-nooldLSTM-onejointseal-onereadout16books. ExactSource/data/
-units/calendar/sourcecompatibility and originalFIT_H3RMS/known/purge20 apply.
-Conditionalforecast decomposition need not reconstruct trueconditionalmean;
-wholefixedrecipe, no guaranteednoisereduction/hedge/secondfee or Paperswap.
-Actual numericalactors/Source/phase are in its CURRENT, not inferred fromprebind.
-
-### Arendt: Paired Models And Resource Steward
-
-Owner01a1af96-209a-72f2-8cf9-e698e483f5ea:
-A/research/current-h123-lstm-tcn-comparison-20261106-v1.
-
-Original run1 Source209ed83e FAILED_CLOSED, not queued:
-LSTM22epochs2420updates/best10/32.069s complete; TCN11epochs1210updates/best9
-hit1260s guard before final best export.0forecasts/books, no oldGRU calls.
-All Jobs/sixCIDs/leases closed. Recorded active upper3969.829>3600 includes
-controller/nestedCLI/guest waits; preserve raw debit/breach, not compute-time claim.
-FINAL-API.json holds exact safe checkpoints and failed-source evidence.
-
-Separate exact-shape probe COMPLETE: TCN CPU2threads21.44x faster training/
-62.82x inference than frozenCUDA (slow_conv_dilated2d); disablingcuDNN did not
-help. LSTM CUDA faster. Use measured backend suitability, not GPU occupancy.
-
-Capped-finalization/run1 COMPLETE Source0dc1f803/API/result06012434:
-0fits/updates, fournewforwards/onejointseal1ea9ed56/16books/readout00dd1f36.
-39.781newactive, allclosed, old3969.829 unrefunded. Cost25bps EACHleg:
-LSTM DEV+.993207%/DD1.977482%, recent+.288886%/OPEN-DD.683334%; cappedTCN
-+.432980%/2.372833% and-.060755%/.662455%; primarymean3+1.103198%/2.068594%
-and-.053680%/.660140%. Primary identical to sameentryH3 both periods, growthFAIL.
-
-cpu-tcn-continuation COMPLETE Source03b104fa: oneNEW CPUcontinuedfit frombest9,
-12additionalepochs1320marketupdates/45.754fitseconds, bestadditionalepoch0.
-Three synthetic updates/new1323total, cumulative2533includesold1210; old10/11
-overlap explicit. No improved checkpoint; early12 is not convergence. TwoTCN
-forwards/one16bookreadout, metrics identical to capped results.93.044newactive/
-535.956elapsed/allclosed. No furtherTCN fit is queued. Never refund olddebits.
-
-Transformerrepair1 COMPLETE Sourceb77b3e55/API41d557ba/result82678030:
-fixed d32/head4/layer2/preLN/raw60x12+technical19/seed20261106,20CUDAepochs/
-2200updates/best8/20.821fitseconds/280MiBreserved. INNERearly12, no convergence
-claim. Twoforecasts/16books/onejointseal-readout/78.9999newactive/allclosed.
-Standalone DEV+2.335075%/DD.937501%, recent+.356454%/OPEN-DD.338733%; fixedhalf
-LSTM+3.172552%/1.025153% and+.252446%/.388521%. Frozen primarygrowthFAIL:
-DEVmatchedH3+3.245656%, recentLSTM+.288886%. Positives are exploratory, no regrade.
-Old6049 root doubleconfigure wrote RESOURCE twice; f710 omitted pinned
-/prior/BACKEND.json from fit mounts. Both pre-fit0updates/0marketfits,
-56.969oldactive preserved. Repair uses oneconfiguration/full resolved mounts,
-actual fit-entry/forecast/book proof before market, not overwrites or check waivers.
-
-Intraday-lstm-h51530 COMPLETE Sourceaa96a470/API61ec7669/result5e3fc98a:
-twoLSTMh32/layer1 fits windows30CPU66.427s/120CUDA38.516s, joint5/15/30heads,
-31epochs EACH/best19/3968updates.2DEVforecasts/onejointseal/6books, ALLCASH/
-0effects/NONINFORMATIVE, not positive alpha/zero-risk evidence. Exact Dataa161/
-READY8386/16FIT4INNER4DEV, targetmature END[e+h]/retrospective/noPIT claim.
-350.967active/4368.584elapsed/allclosed,2nativeattempts/10syntheticupdates<=12.
-SCOPE-NOTEb8a83774 retains sharedruffcache outside assignedroot; future use
---no-cache/owncache. No oldGRU call/retry/duplicate fit.
-
-New distinct H30hurdle COMPLETE Sourceff295182/API7ab781ef/result2de1250a:
-oneLSTM120/h32/layer1 CUDA18epochs/best6/1152updates, threeheads are positive
-probability/positiveconditionalmean/nonpositiveconditionalmagnitude, NOT horizons.
-FIT-onlyRMS and classconditionalloss, expectednet policy/no duplicatefee.
-1nativeattempt/5syntheticupdates/oneDEVforecast4books/0oldmodelcalls,
-134.314active/1673.736elapsed/allclosed. Again ALLCASH/0effects/NONINFORMATIVE;
-Brier/CE are not calibratedconfidence claims or evidence of profitable selection.
-No samefamily retry/architecture-only queue. Next cost/holding hypothesis must
-be distinct, source-backed and frozen before fitting.
-
-Replacement recovery2 is COMPLETE_EXPLORATORY_ONLY/all8CIDsclosed:
-A/research/current-maturity-matched-replacement-development-20261106-v1/recovery2/FINAL-API-v2.json.
-FIT-SOURCEe89caf9d/READOUT-SOURCE4d7eb6a9/native2Source3e3d1383;
-Ridge1.060s plus CUDA MLP64/32 17epochs/1870updates/best5/18.543s/88MiBpeak.
-Sameoptional e+1switch/originale3exit/cachedW25gate/24causalfeatures,475420FIT/
-130288INNERpairs,5syntheticsteps/2graphs/2fits/fourforwards/14books.
-Jointsealf46b3b8c/readout9ad5f5dc: DEVboth/blindH3+3.601215%/DD.650455%/
-0switches/NONINFORMATIVE. RecentRidge-.150545%/.792542%/3switches versus
-blindH3/MLP+.244454%/.544454%/0switches. PrimarygrowthFAILboth, recentDDFAIL;
-no incremental benefit, promotion/secondaryrerank or repeatedfit. ACCOUNTING-v2
-is partial, not exact cumulativeactive or budgetPASS. Oldnative1bc1999 keyword-
-onlyTypeError/0steps and oldprojection1130elapsed/180upper/0build remainfailed.
-Dataed055/READYef94 ONEbuild complete; no oldW25modelcalls or source/capreset.
-
-Strategy offer0ae1/ec7e is COMPLETE/Parent35pins5testsPASS. New separate campaign:
-A/research/current-saved-head-fixed-expiry-exit-development-20261106-v1.
-Freshremaining H2/H1 at e1/e2, originalW25entries/quantities/e3expiry;0fits/
-<=4forwards/onejointseal beforetargetreads/8books/1readout.1800active3600elapsed/
-cleanup120/readout180/<=2nativegraphs inclbootstrap/<=6syntheticsteps. Native
-canonical->keywordparser->savedmodel->stopDTO->selectedlotbook mustpass before
-Data'soneprojection/forwards. Frozenbest10/FITstats/sharedH3scale, exact25bps
-eachactualleg. Compare blindH3/simpleCLOSE<=entryOPEN/cash. Primarygrowthbeats
-all eachperiod/DD<=1.25blind, <2changedcohorts ornoneineither=>NONINFORMATIVE.
-Ratioexpectation is not expectedcashadvantage; H2 is not Bellmanvalue of H1:
-heuristic only/no optimality/independentalpha/Paperswap. Unknowninput withholds,
-no silentHOLD/SELL/subset. Fresh13:01 Claude review_unavailable, notagreement.
-ActualreadyData/native required; no new optimizer or occupancy-only training.
-Actual native2Source30b4d8e1/proofa3c404ca PASS/native-repair2; lifetimegraphs2,
-0optimizerupdates/marketfits. Data4f31/READYbab237d2 ONEbuild COMPLETE13:25:32,
-2176latequeries/allknown/e1zbyte-reused; consume exact qualified callback directly,
-not await ParentACK or finalLLMreport. New marketforwards/seal/eightbook readout
-remain separately evidenced, not inferred from readiness. CONTRACT-v2 preserves
-v1 and narrows coverage BEFORE payloads: unknown unheld/already-sold rows remain
-reported but are not policyconsumers; unknownactualheld decision withholds entire
-primary period, never imputation/evaluatedsubset selection. Alloldcriteria/caps
-and source all19 producer dependency unchanged.
-Actual COMPLETE_HEURISTIC_ONLY/READOUT-SOURCE1cdde93c/resultdd20f235/sealc8248bf9:
-fourCUDAforwards/0fits/8books/onejointreadout. DEVprimary+3.028788%/DD.571370%
-vs blind+3.601215%/.650455%, simple+3.252656%; recent+.235601%/.544454% versus
-blind+.244454%/.544454%, simple-.033186%. Changedcohorts5+3/informative;
-growthFAILboth/DDPASS, no rerun/rerank/Paperswap. All8CIDs/Jobsclosed.
-Linkedaccounting242.236s/sharednativeonce; review-I/O ledger incomplete, no
-budgetPASS. Firstnative causal fixture changed a latercohort's legitimatepast;
-real e1byte guard rejected correctly. Native2fixed the fixture, not a modelleak.
-Godel DLinear/flat-linear matchedH123 sourceoffer is CONSUMED after oldfamily
-dedup and exactApache2code/version checks. Published benchmarks do not prove
-tradingreturns. No current optimizer is queued.
-DLinear corrected4ec63/19a8 was adopted as matched-affine optimization/control,
-not nonlinearinformation. OriginalCPU DLINEAR27epochs/best15/2970updates/11.979s,
-FLAT28/best16/3080updates/5.345s,4forwards/1jointseal COMPLETE. Firstreadout7968
-performed16bookcalculations thenNumPyboolJSON TypeError; not a model-loss result.
-Separate exact serializer recovery2c78/result ee21579c/nativewriter568461a4
-casts4criterion flags toPythonbool, writer/math/criteria/forecasts unchanged.
-16newbooks/32lifetimecalculations/tworeadoutattempts,0newfits-forwards-GPU,
-196priorfiles unchanged/allJobsclosed. PrimaryDEV-.954242%/DD2.751640%, recent
-+1.446967%/.645683%, informativegrowthFAILboth/DD+turnPASS; changedcohorts37/8.
-No rerank/automaticPaperswap. Known49.978s linkedaccounting is partial/no budgetPASS.
-NextStudentTlocation-scale vsMSE source-only offer checks priorfamilyduplication
-first. ExistingPyTorch/no newframework, no numericaldispatch. A native smoke
-must exercise the final actualmetric JSONwriter/strictparse, not only Python
-return values; charge within nativecaps ratherthan anotherapproval/platform.
-
-Clockless4b11 superseded BEFOREeffects. Clock-bound72eb/native26checks is
-ACTUALLY INSTALLED/enabled21:47 by Parent721d; actualREADY/pointUNKNOWN.
-Samebest10/IND8, actual localadmission/inference intervals V2sealed; onefuture
-forward. ThreeNET25repo modules+tests passed fresh58+177serial/20289fullPASS/
-1440protected+AGENTS unchanged. Positive sourcepublication->realreader->repo
-controller proof44cadb77 is invented only, not financialSDK/runtimedeployment.
-Darwin prepares versioned SAMEowner/bank futuregraph separately.
-
-FIT-onlysupport diagnostic Sourceb1ec3f09/RESULT64769b81 COMPLETE:
-A/research/current-intraday-net25-h30-support-diagnostic-20261106-v1/API.json.
-65,280knownFITlabels eachhorizon. PositiveNet25 countsH5=88/H15=736/H30=1898,
-H30negative63382/mean-.498830%/positiveconditional+.225235%/negative-.520513%.
-Minimum50/classFIT passes; support is not predictability/oracleprofit. No
-INNER/DEV/RECENT reads/fit/forward.66.255active/allclosed/separatedebit.
-
-### Ptolemy: Technical Feature Comparison
-
-Owner01a1afab-9fdf-75c1-b191-c89288d1056e:
-A/research/current-h123-technical-feature-view-comparison-20261106-v1.
-
-RAW720 / fixed technical-only / raw+technical, H1/H2/H3=9HGBheads, not one fit.
-Features fixed before payload: original8 plus BB/MACD/ADX/stochastic/volatility/
-candle context as actually sourced/native-tested, no unavailable volume/VWAP.
-Original family stopped technically:1head attempted/3increments, weighted
-binning about54s EACH repeated warm-fit call, no completed models/forecasts/books;
-market curves not persisted. Allclosed395.262active; no feature-value conclusion.
-
-Efficient r1 COMPLETE8b9b15cd, final/API938d504e:9newHGBheads/400trees,
-18forwards/14books/onejointseal-readout,0GRUcalls/GPU. Onefit/head uses real
-sklearn1.9.1 chronologicalX_val/earlystop/periteration curves/bestprefix;
-53.266s representative singlebinning probe, not54s repeated everyincrement.
-One nativeattempt/18syntheticmodels/36nativefitAPIs,726.180newactive/allclosed;
-old395.262debit retained. RAW_PLUS DEV+1.206408%/DD.921982% versus indicatoronly
-+1.843158%/1.007072%; recent+.433898%/OPEN-DD.040741% versus+.321327%/.464720%.
-Primary frozen growthFAILboth, not all unprofitable or universal indicator benefit.
-
-Fixedfusion COMPLETEed168151/finalAPIed7c1273:20books/onejointseal-readout,
-0fits-inferences-GPU,99.178active/723.813elapsed/allclosed/11420ownchecks.
-Primary halfLSTM/RAW_PLUS DEV+.569665%/recent-.320471%; secondaryhalfLSTM/IND
-+1.172222%/-.280079%; equal3+1.978843%/-.197813%. PrimarygrowthFAILboth,
-DD/turn/effectsPASS. No posthoc primary swap or bestblend promotion.
-
-OOFreadinessabedcc80 COMPLETE111.594active/oneinventednative/0marketdecode:
-3syntheticLSTMfits6updates/9HGBfits27trees/2gates, actual join/codec/book passed.
-OOF namespace-native-recovery/run1 COMPLETE Source7b285a5d/finalAPI2183e1f5:
-3expanding FIT-only folds/original20purge,3CPU-LSTM+9HGB+Ridge+depth2tree=
-14completedfits/121trees/2574updates/20books. Actual OOF/finalseals and physical
-foldisolation retained. Existing fullFIT finalexperts reused/0finalexpertforwards.
-PrimaryRidge DEV-1.650824% vsHGB+1.843158%; recent+.099100% vs+.321327%,
-frozen growthFAILboth/riskPASS, no secondary rescue.652.464inclusiveactive/
-5639.786elapsed/allclosed. Newnamespace fixes code/checkpoint mountoverlap;
-old Dockerfailure/categoryUNKNOWN and old7updates vs6native cap violation remain.
-FrozenwrapperUP034 prevents fullstaticPASS, not another failedmarketfit/retry.
-No repeat/rerank/independent-alpha claim; foldscaler shift/reused evaluation explicit.
-
-### Planck: Saved LSTM To Shadow Recommendation
-
-Owner01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0:
-A/research/current-lstm-h3-shadow-point-preparation-20261106-v1.
-Use exact savedbest10 and Nov5-asof Data83963/READY551a90fb for oneCPU17row
-forward/onepoint,600active/1800elapsed/0fits. H3_FIXED positiveNet25 ->encoded
-nativefloor.5/17, otherwise knowncash; unknown stays unknown. This new provisional
-fixedH3 is not original argmaxH123 performance or Paper promotion. Actual
-invented model-only safeloader/feature/DTO/95d9570d consumer first; no implicit
-CUDA-RNG restoration on CPU. No rawprices public, financial authority or data retag.
-Actual COMPLETE08:10 Source715b8f79, point3898054d/seal9b21812e:
-17known/7positive/10cash, oneCPUforward/onepublication/15nativechecks,
-202.970active/allclosed. Valid13:55..<14:05, not entry14:31 permission.
-IntradayDataa161/READY8386 COMPLETE24sessions/163.855active; nextfresh0f9c
-19x60 capture ACTUALLY INSTALLED forNov6UTC21:30, actual futureREADY UNKNOWN.
-Old current-nov9-lstm-h3-point-publisher-preparation-20261106-v1/4b11 is
-SUPERSEDED beforeinstallation/forward; its25checks/722.590active stayhistorical.
-Actual installed successor72eb records admission/inference clocks V2, same
-17row/Nov9valid14:25..<14:35/Nov12exit/RAW60x12+IND8 NOTTransformer19.
-One futureforward requires actualREADY/payload/Source/PLAN/closure. No
-placeholderhash/Nov6shadowretag/model-bank swap. Parent installed publisher,
-Darwin separately prepares SAMEowner native financialdelivery, not another bank.
-
-Godel's frozen H3policyvalidation5aa7 COMPLETE10books/0modelcalls, exactH3
-aliases savedLSTM in both periods: no new historical benefit/alpha. Current
-worker3dbcc771 bytes/identity match/current46members valid. Failedattempt1 has
-TWO broken oldbindings (worker content/identity and recreatedcontractidentity),
-73distinct identityassertions not69PASS; SOURCE-INTEGRITY-NOTE preserves facts.
-No oldmanifest rewrite/currentworker restore or numerical repeat to hide it.
-
-### Closed GRU And Router
-
-Darwin01a1adb5-b486-7801-9fdf-1378d733bfce completed GRU scope below.
-TemporaryValidation current-transformer-fixed-h3-policy-readout-20261106-v1
-COMPLETE native-parity-r1 Source194023ad/finalAPI4e6ae9e7. Saved b77b/0dc1
-forecasts, onejointreadout14books/0modelcalls/68.901active/allclosed. Primary
-fixedH3 DEV+3.059492%/DD1.025153%/turn4.058462/fees1.014615%initialNAV;
-recent+.252446%/OPEN-DD.388521%/turn1.479996/fees.369999%. FrozenFAILboth:
-DEVriskyDD fails/recentgrowth trailsLSTM. OneDEVcohort loses twoH2selected
-positions vs originalhalf+3.172552%, recentidentical; not holding improvement.
-Firstnativeparityfailure preserved/2attempts/55Parentpins0mismatch4deferred.
-No refit/forecast/oldFAILregrade/Paper promotion. Darwin closed, no repeat.
-GRU H123 repair2 COMPLETE28epochs3080updates/best16/15.555s/277MiBreserved.
-Saved forecasts/seal retained, never refit/reforecast. Readout int8 overflow was
-repaired in A/research/current-short-swing-h123-index64-readout-recovery-20261106-v1,
-Source58e50e9f:1new8bookreadout/0fits-forwards-GPU, lifetime2attempts incl failure.
-Parent46refs/allclosed419.463combinedactive. DEV-1.561353%/DD2.728150% vs
-sameentriesH3-1.348947%; RECENT+.502763%/OPEN-DD.715539%, allH3/noearlyholds.
-Frozen growthFAILboth, not all unprofitable. No old-criterion regrade.
-
-Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec first-cause diagnosis is closed:
-A/research/current-causal-specialist-firstcause-20261106-v1/RESULT.json.
-Original router4be69e7b failed after38seals/37matureexposures, no complete
-archives/readout/economic result. Actual failing input/guard not retained;
-clock alternative unsupported. Parent997synthetic simplex cases reproduce44
-NATIVE_CAPS failures at1ULP, NOT proof of actual failure. No automatic market retry.
-Seven native dispatches/five complete pipelines preserved; proposed2 ceiling
-was not encoded in actual ORIGIN/CONTRACT, so governing binding is ambiguous,
-not a retrospective pass or categorical proven five unauthorized attempts.
-Offercf19cdba Parent27refs/10tests remains immutable, no new router dispatch.
-
-## Data And Implementation Knowledge
-
-Dataae4c68e8/READYe23875f9 CLOSED/onebuild/Parent74refs/34feature byte checks.
-FIT supervised H1/H2/H3=29747/29737/29727, INNER8143each/DEV799each/RECENT289each.
-FIT/INNER20purge, DEV/RECENT0; all keys, same original x/z/scaler retained.
-Four OPEN marks are three held intervals, not four-day maximum.
-No target masks in input or reconstructed prices from scalar y.
-
-Checkpoint.safetensors owns sibling.json: preflight the whole output set.
-Temporal session indices need int64 BEFORE adding compact int8 horizon labels;
-tiny7day tests missed overflow. Parent independent sourceb1616c1f at
-A/research/current-h123-wide-calendar-book-component-20261106-v1 passed5wide
-calendars0/126/128/255/2960 plus H1/H2/H3/mixed/cash/actual H3fee parity.
-This separate component is not a retroactive replacement of frozen74ed.
-New family comparisons use ONE resolved book source for ALL rebooked controls.
-Copied pinned ancestor code is byte-immutable; format only new owned adapters.
-Real isolated(-I) import/solver/checkpoint/producer-consumer must run before data.
-The actual entrypoint's mounts/Source verification/exclusive output lifecycle
-must be covered, not only an easier native-only command. Duplicate init can
-fail before any update; distinguish fit launch from actual optimizer work.
-
-New repo module research/short_swing_technical_features.py (commit4bea08fc)
-provides the11pure OHLC features without artifactrt imports/AST extraction.
-25serialtests/601syntheticrows parity to e861/oldEMA; degenerate ratios stayNaN,
-invalid OHLC is rejected, exclusiveentry reads only60priorbars. Future consumers
-must qualify their actual imports/schema; no frozen kernel/image was replaced.
-
-## Completed Results: Do Not Rerun
-
-All are adaptive reused development, not independent alpha or actual Paper PnL.
-Growth/DD percentages below retain each study's own aligned price marks/costs.
-
-| Family / source | Actual outcome |
+| Campaign under A/research | Actual work / result |
 | --- | --- |
-| Recent saved replay99e30c88 |0fits/289keys17cohorts/onearchive/sixbooks. W25+.244454%/OPEN-DD.535078%; seed3+.396043%/.535078%; HALF-.247763%/.699639%; THIRD+.344846%/.535078%; samegrossEW-.062973%/.292442%. Primary frozen growth/DDFAIL, not unprofitable. Parent110unique refs/allclosed177.467active including verification. |
-| Fixed consensus e8022369 |0fits-modelcalls-GPU/2archives/12books. OldDEV+.382658%/DD.340856%/turn.358056,3of47active; recent0effects/0of17active. Frozen growthFAILboth; no threshold rescue. Parent66unique refs/allclosed181.682active. |
-| Two new Patch seeds6ac123f9 continuation-r1 |18/15epochs3861updates/best6/3,39.238/36.249co-tenant fit seconds/526MiBreserved each. Primary3.365409%/DD.650454% vsW253.601215%/.650454%; growthFAIL/DD+turnPASS. Parent79refs/allclosed301.773active incl old88.245once. No oldseed refit. Six timing checks were POSTdispatch only. |
-| TimesFM46c8735d OPEN4 |One680rowCUDA forecast40forwards/0fits. Fixedhalf+.22483%/DD.72719%, TimesFM+.02706%/1.07922%, savedChronos+.91845%/.77237%; growth/DDFAIL. Parent71refs/allclosed245.878linkedactive. Loader/config ABI failure preserved, no forecast retry. |
-| Activity GRU/HGB01e89c74 repair1 |14GRUepochs1638updates/best2;96HGBwarm additions/best84. Primary1.20375%/DD1.39996% frozenFAIL. Parent70refs/allclosed428.245active; initial failed-root-only report corrected, redundant continuation withdrawn. |
-| IVOL dcacc146 |0fits/one3bookreadout,3.38813%/DD.56529% versusW253.60121%/.65045. FrozenFAIL but genuine growth-risk tradeoff, not Pareto dominance. Parent72refs/allclosed93.261new+360old. |
-| Masked transfer586a7235 |SSL63epochs7371updates/best53 plusFT13epochs1521updates/best1; costed transfer-.25474%/DD1.69556%, frozenFAIL/allclosed. Old filename failure/repair debits retained. |
-| Pairwise641e9 |17CUDAepochs2329updates/best7,13.812s/200MiBreserved. Top3growth4.6670%/DD.93593% fails frozenDD, only1of47cohorts differs. Saved forwardb89 installed, not another fit. |
+| current-held-d-weighted-bce-lstm-development-20261106-v1/FINAL-API.json | 2actualCUDA fits: MSE32epochs/best20/3488updates/25.966s; weightedBCE34/best22/3706/25.231s.384MiB each. BCE+.585736%/+.429935%; MSE+.485886%/+.400851%; blindH3+.993207%/+.288886%. PrimaryFAILDEV/PASSRECENT, DD/turnPASSboth. All8containers71Jobs closed. |
+| current-h3-crossasset-capacity-ensemble-development-20261106-v1/API.json | 2CPU4033updates, same1024branch capacity/init. Newpool+.983036%/+.288886%, RECENT0changed => primaryNONINFORMATIVE. SELF_CONTEXT+1.587842%/+.297790%; fixedmean2+1.189906%/+.369845%, ensembleFAIL. All8containers68Jobs closed. |
+| current-h3-crossasset-state-critic-development-20261106-v1/API.json | 2CPU3924updates, pooled+1.438200%/+.388483%, adaptivegrowth/DD/turnPASSboth. Extra1024parameters prevent pure context attribution. All8containers68Jobs closed. |
+| current-h3-age2-cash-vs-ratio-development-20261106-v1/FINAL-API.json | 2CUDA20epochs/best8/4360updates,16.952/17.032s/312MiB. DirectD+.634237%/+.349755%; ratio+.436603%/+.349755%. PrimarygrowthFAILboth (recenttie), DD/turnPASS.10literalreplay calls>4cap retained/noBudgetPASS. All22actors194Jobs closed. |
+| current-lstm-h3-two-seed-ensemble-development-20261106-v1/FINAL-API.json | 2CUDA36/25epochs/6710updates,27.814/22.121s/316MiB. mean3-.264452%/-.502835%, growth-DDFAILboth, all9CIDs86Jobs closed. |
+| current-cost-aware-netlog-mse-h3-development-20261106-v1 | 2CUDA18/34epochs/5668updates,14.829/21.800s/320MiB. NETLOG+.904938%/+.049355%, growthFAILboth/recentDDFAIL. All10actors94Jobs closed. |
 
-Exact roots use the corresponding names in HANDOFF/pushed12e5e906; APIs/VERIFIED
-are immutable. Same-architecture seeds are correlated, not calibrated confidence
-or independent votes. Lower exposure alone is not alpha. No failed criterion
-regrade, head/epoch/seed rescue or automatic Paper model/bank swap.
+Latest FITc94770855746656c504ac43620488ecf7439c1e4c0d39000298565a884ca2820;
+nativeb0de408328b3942e544dfc2488f0e9294cd7f8dc3652c1f39f63fe15f2ccca53;
+resultb3ffb5b57f6f9db7bd579322e85d9b21dc8704ed42419bc359f3cdfe72df0feb;
+closure55d2ecf81076153cf5cb850b611fd8f8e669ca66d1b93c00d55c7ddc2825ea59.
+FINAL-API45cc0059486e586f9361fc3dc6c45cf14708653de8e30d33e54862da0cae906a.
+Parent43references match/F821-F822-F823-E9PASS, no numerical rerun.
+Weighted BCE labelsD>0/sampleweightabs(D)/FITscale.022328514153263188,
+not classpos_weight; sigmoid is not calibrated winning probability. HOLDlogit>0.
+Same8289parameter init, chronological INNER earlystop12/best restore, no
+convergence claim.4forwards/8actualmarket books+8separate native books/2wrappers/
+oneNative6syntheticupdates/0savedcalls. Partial accounting is not BudgetPASS.
 
-## Forward Consumers And Claim Limits
+## Provisional Paper-Learning Proposal
 
-- Data47698983/READY4bfaac45:289complete recent keys/17cohorts, captureOct17 not
-  historical arrival; current-listed MODE1 proxy/nonPIT/CA/finality unknown.
-- W25 budget component95d9570d/47checks/Parent93refs: qualified future
-  recommendation adapter, not deployed. Positive slot floor.5/17, NOT2x;
-  analytical NAV/fees/PnL not automatically broker risk units.
-- IVOL forward98566dcd/13negatives/Parent60refs: actual futurepoint UNKNOWN.
-- Nov6 HALF/third/W25/rank saved-inference opportunities are future, no training.
-- Existing prospective W25 Nov6/11/16 targets mature Nov19; do not release
-  sealed outcomes or make them a company-wide research/Paper wait.
-- Public foundation weights remain isolated/trusted/dated; unknown corpus
-  coverage cannot support independent-performance claims. No public code in
-  Execution or framework replacement from a mechanism paper.
+A/research/current-held-age2-mean2-proposal-preparation-20261106-v1/API.json
+Sourcef49d477302bdf9c94248cb3777a7a59ad6f50311af88e9fb382dd7e16fceb1bc;
+bundled6a6c940cd6f57d68bf6277cec859e335c17939be73fd590c6e0bc4283ec20ea;
+nativef1ad08e7400fd0a1f751db26cd8e309a4e7ece2e900e12eea177ed9275d22a4e.
+COMPLETE0fits/0marketforecasts/2saved-checkpoint synthetic forwards/1native/
+0books/allclosed. Fixedmean2 old/new pooled correlated seeds, ensembleFAIL is
+retained. Known/unknown examples reject missing inputs, never UNKNOWN=HOLD/SELL.
+Source intentionally rejects market payloads; NOT a qualified production caller.
+Existing fixed capability2f1f zero-asset placement is not proof of largeFIT asset
+compatibility or concurrent frozen GPU-lock behavior.
+Conditional future Data: Nov10asof->Nov11age2decision/e0Nov9/e3Nov12, NOT source
+entryexpiryNov16. Exact future payload/feature parity and Execution-owned actual
+cohort join still absent. Preserve installed LSTM entry/Nov12exit and bank.
 
-Next numerical work is only the named frozen campaigns above. Short breadth and
-longer depth queues remain distinct; a ready useful deeper campaign can use
-GPU resources, but no duplicate/dummy job exists for utilization.
+## Data And Interpretation
+
+AGE2d99c/READYfe41 complete21producer-consumer checks/oneprojection. All
+37077/8143/799/289keys retained;34missingquerypointers perFIT/INNER unknown.
+Whole17supervisedFIT1743/INNER477;DEV799/RECENT289 fully known. Rawx/z byref,
+causal priorCLOSE[e1]/entryOPEN[e0] state, P2/P3 targets separate. Original query
+OPEN and LateCLOSE+60 clocks retained; no arrival/PIT/CA/finality invention.
+Current-listed MODE1 reused data, no independent-alpha promotion. New campaigns
+may explore fusion despite losing experts; learned gates require chronological
+OOF, no in-sample prediction leakage or final evaluation checkpoint choice.
+
+Older LSTM120/robustStudentT/decomposition/DLinear/GRU/TCN/Transformer/Patch/
+SSL/HGB/OOF/linear/foundation studies are closed in Git/immutable APIs. Window/
+indicator/ensemble exploration has occurred; do not claim only GRU/Ridge or only
+16epochs. New direction must address a concrete residual failure, not a model
+name checklist. Unknown foundation pretraining scope limits claims/consumers.
+
+## Actual Forward Preparation
+
+Existing savedbest10 LSTM60+IND8 publisherSource72 actually ran once21:47:03:
+17known/4positive_H3/point4a602d3b, validity Nov9UTC14:25..<14:35. Parent exact
+reader passed, no retrain/oldcall. Installed R4 entry14:31/exitNov12 14:30 is
+Execution-owned, not a research profitability reward. No acceptance/fill claim.

@@ -1,161 +1,110 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC21:03 / Nov7KST06:03.
-A=D:/thericher-v2/model-artifacts. Historical scopes remain in Git/artifacts.
-Company runtime outcome UNFINISHED; no new actual acceptance/exactfill/current
-owned/settlement/netPnL proven. AGENTS.md owns standing Paper authority/risk.
+Updated Nov6UTC22:20 / Nov7KST07:20.
+A=D:/thericher-v2/model-artifacts. Detailed scopes: Git01f23a13 and artifacts.
+Company runtime outcome UNFINISHED; no new accepted submit/exactfill/current
+owned/terminal/fees/settlement/netPnL proven. AGENTS.md owns Paper authority.
 
-## Current Work
+## Installed Nov9 Pair And Actual Input
 
-CURRENT futurehost is A/execution/n9h3-1106-r4/repair1:
-Source30bbe174/native923a6d1c, actualWindowswriters and full109.689s positive
-entry/cold-owned-exit PASS. Original absolute private/input/token/emergency/
-control paths unchanged; Parent204members+134deps/E9PASS. Parent ACTUALLY
-INSTALLED20:17..20:18UTC with qualified4531/08dc:disabled create/independent
-fullXML/API7ACL, EXIT enable before ENTRY, final both enabled/0instances.
-No Task.Run/financial effect; exact adoption current-nov9-r4-parent-installation-
-20261106-v1/PARENT-ADOPTION.json. Never replay consumed Create/Enable.
-R3Source5121 native-only adoptiond2e3 remains scoped; its actualtelemetry260-261
-path gap prevents using that placement as an installation shortcut. New
-qualified installer must bind R4Source/release/actions, not failed3247. No
-placeholderpoint: action latebinds actualSource72 at effects; point stillUNKNOWN.
+CURRENT future host A/execution/n9h3-1106-r4/repair1:
+Source30bbe174e50842c583580c87d9c81823e90bd975f407a7efa72da1989a7615b4,
+native923a6d1c/full109.689s actualWindowswriters+entry/coldexit PASS.
+Parent204members+134deps/E9, original absolute private/input/bank/token/emergency
+paths unchanged. Qualified installer4531/08dc actually installed20:17..20:18:
+disabled create/independent fullXML/API7ACL/exit-first enable/final both enabled/
+0instances. No Task.Run/financial effect. Adoption48df0d07:
+A/execution/current-nov9-r4-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+Never replay consumed Create/Enable/Apply or long R3 placement.
 
-R7Source94e91/Nativea766 qualified after full Mounts normalization by unique
-Destination, preserving all fields. Parent actual SPEC8456 once19:54:44..50UTC
-returned20/actual_transport_closure; outerJobactive0/joined/closed, START PID+
-Source match, no complete strict financial result. Attempt/nonce consumed;
-source-safe bound transport metadata diagnosis only, no rerun/observe or zero
-private-read/effect inference. All financial/currentowned/PnL claims unchanged.
-Exact Parent artifacts: A/execution/current-mse-c79-parent-actual-read-20261106-v1.
-Bound transport empty, actual inner phase/first predicate UNKNOWN. Separate
-closure/env ABI source defect reproduced but not proven actual first fault.
-CLOSED repair8-closure-env source/native:4focused/10negatives/oneinventedgraph,
-sameenv-exactcallback actual/native and retainedinnerphase diagnostics. Strict
-census/decoder/legacy and consumedR7 preserved. Its lateractualattempt is below.
-R8 is NOW CLOSED/CONSUMED:Source7e43/SPECa783 actual20:33:32..38/child20,
-before_create unknown_custody_capability/no create/start/consumer/11Jobsclosed.
-Exactactor/innernativecodeunretained. Follow-onprobe8b69 closedAssertionError/
-frameunretained, notattribution. Parentactualhost-only6929/bcac20:57:39 complete/
-oneexactprivate-free diagnostic deniedactor_unregistered/unknown_relevant0,
-no ownexemptions/private/Task/KIS/Docker. NewASOFonly, oldactorstillUNKNOWN.
-R4samepinnedscopegap confirmedbyDarwin; qualifiedfixedworkers maypass, notall
-research blocks. Exactcapabilityattestation/knownownedcaller, no broadexception.
-NEWR9same-caller realmetadata preflight/directownedlaunch preparation600active/
-1800elapsed/4focused+1inventedgraph; planned1actualmetadata+1actualread still
-UNASSIGNED/no command. Existingfixedresearch2f1f reuse source audit separate.
+Entry thericher-net25-lstm-h3-nov9-entry-20261109-v1:
+Nov9UTC14:31..<14:35/hard14:37. Owned exit
+thericher-net25-lstm-h3-nov9-owned-exit-20261112-v1:
+Nov12UTC14:30..<14:35/hard14:37. Quiet pythonw/no demand/catchup/repeat.
 
-R4futurepublicreader7f506317/36checks COMPLETE/Parent18pins/E9; normalchain
-LAUNCH/CHILD-STARTED/HOST-TERMINAL/CHILD-CLOSED/immutablelinks. ExactphaseATTEMPT
-locator/noenumeration; afterNov9/12UTC14:37 only. Not actualfinancialadmission.
-OriginalH3AMD/Full17 publicreader29d5/aefb/22checks ready afterNov6UTC21:07;
-Parent52pins/E9/source-onlyzero reads. Scheduler20:39actions/clocks/settings
-match/bothenabled0instances(d927/4680), notoutcome. Exactcommands RUNBOOK.
+Source72 actual point published21:47:03.960191,17known/4positive_H3, Parent
+exactreader21:48:46 PASS/PUBLISHED_SHADOW_NOT_YET_VALID/zero payloadreads.
+POINT4a602d3bf4db4e800a8ee82edd8c06650f93702464f046f777f8d8e91511b7a5,
+CLOCKS1f36092d990de563cc4899156a9487da97b5e6c9487b7ff4c9c5632006bf0555.
+Valid only Nov9UTC14:25..<14:35. Data0f9/PLAN47 validated by source-bound
+publisher, not independent providerfinality/PIT/raw rehash. Late-bound runtime
+still checks all actual owner/account/budget/unknown/quote/orderability/input/
+model/clock gates before effects. Positive signal is not an order or fill.
+Source-ready public selector7f506317/36checks/Parent18pins/E9; after respective
+hard ends only, exact ATTEMPT/LAUNCH/CHILD-STARTED/HOST-TERMINAL/CHILD-CLOSED.
+RUNBOOK has full commands; no latest scan/Task exit/standalone startup inference.
 
-The closed diagnostic chain below is ancestry, not ready dispatch instructions.
+## Native Coexistence Fault
 
-- Darwin firstcause7eaa/85ba COMPLETE:one actual invented SDK diagnostic exposed
-  FileNotFoundError at canary._write_evidence:2751/destination.parent.mkdir.
-  Actual fixture parent262chars/file276; short138PASS/normal262FAIL/extendedsame
-  physicaltargetPASS/normalstillFAIL. Source-pinned4primitive proof, no Linux or
-  historicalCSCO cause claim. Shortnamespace proposalff1d COMPLETE/Parent17pins
-  andE9PASS. Shortnative7a75 then entryPASS/coldexit failed because synthetic
-  snapshot timestamps violate actual DTO ordering;0fullgraphs/allclosed.
-  New r2 minimaltestproducer fix900active2700elapsed/cleanup120/<=8focused+
-  <=2fullpositivegraphs, counted deterministic technical retry only. Freshshort
-  NVMe/pathmax220/realUTC+TTL/seedONCE/cold exactownedexit remain. No qualification.
-- Banach repair4-source375181c6 COMPLETE29boundary/41complete source checks,
-  7declared source actors including CSCO; not measured current membership or a
-  usable actual command. repair5-wrapper476a CLOSED/full20 after mixed Job-event
-  joined-key mismatch; native decode components positive, not completeauthority.
-  New repair6-job-abi600active1800elapsed/cleanup90/<=8focused+<=2freshinvented
-  graphs. Source-bound TWO typed event ABIs preserve positive join/close proof;
-  unknownschema denies, no defaulttrue or oldfailedregrade.0actualprivate-KIS-
-  broker-TaskRun/readconsumption. Relevant unknown writers deny only that read.
-- Godel source review closed; current model-interpretation challenge is separate
-  advisory work. Account query below consumed, no new account/order call assigned.
-- Parent: exact adoption/integration/Git. No current actual MSE custody command
-  adopted. repair2/9c172 native25PASS still has erroneous CSCO-financial-ASOF
-  gate; do not consume actual-c79-once merely to hit that known false condition.
+R4 admission.py88..113 discards fresh fixed.decide peer proof before capabilities/
+actor classification. Existing fixed2f1f returns current source/PID/birth/argv/
+CID/packet-derived rules, not a permanent exemption. Exact fresh proof propagation
+R5 is source-implemented but NOT qualified or installed.
+A/execution/n9h3-coexist-r5/fixture-r4/repair1/API.json:
+Sourcec0b839c4f508ceebe4ef75397c868e1002744f06bd4fe061bf4538db84a2a9db,
+3focused/1full consumed; synthetic entry46callbacks PASS, full135s timeout,
+coldexit incomplete.422.892new/695.078linked debit, all11Jobs/native CIDs closed.
+Retained audit proves coldexit began40callbacks/41begin,105.614owner seconds
+overlap the combined135s graph. NEWphase-pair-r5 qualification assigned:
+900active/2700elapsed/<=3focused/ONEpair0retry, entry<=135 andcoldexit<=135,
+same invented savedlifecycle/input/no reseed/unchanged coreguards. Not yet
+qualified or installed. Old combined ceiling/result/debits remain unchanged.
+Any future migration must separately qualify installer/current-owner closure,
+preserve same tasks/clocks/bank/unknowns and independent exit-first readback.
 
-## Actual Read-Only Account Observation
+## Exact Custody Reader Recovery
 
-COMPLETE/CONSUMED: current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2.
-Source0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee;
-RESULTca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d.
-Actual17:44:24..17:44:34UTC:1OAuthPOST/5GET/all2xx/0retry/0orders/0Taskchanges.
-Holdings4/noCSCO/USopen0/currentETdayhistory0 are complete sequential/non-atomic
-ASOF. Configured source-account binding matched; broker identity echo UNPROVEN.
-Not current owned inventory/exactfills/fullrisk/settlement/PnL. Missing CSCO,
-open orders or history do not release unknown requests/reservations. All jobs
-closed; actual once identity consumed.21nativechecks PASS,23source refs match.
+Family A/execution/current-mse-c79-exact-financial-reader-preparation-20261106-v1.
+R7 actual19:54 consumed/transportempty/innerpredicateUNKNOWN. R8actual20:33
+before_create unknown_custody_capability/no create/start/consumer. Source-only
+closure/defaults defects are not proof of those old actual causes.
+R9direct same-caller metadata21:24:58 ownidentityPASS then scoped.decide55
+descriptorcount!=1; exact old object/count unretained. No private read.
+Current container metadata21:36 only webbe48running/57total; not oldR9 attribution.
+Known webdescriptorf562 is disjoint-control-write, not blanket RO. Preserve its
+exact source/argv/mount/security/loopback rules; inactive needs positive native
+two-snapshot evidence, not Runningfalse alone.
 
-Scoped broker GET applies its own virtual-host/Paper-client/token/endpoint/
-request/pacing checks, not successful peer financial-ASOF or Task results.
-Private-custody readers instead require actual relevant-writer admission,
-network-none/private-sourceRO/no recovery/no lock and before/after stability.
-Neither requirement becomes a company-wide approval hold. Never call recovery-
-capable observe() as an offline reader. Do not repeat old488/9af10/ba0737 queries.
+R10 A/execution/mse-c79-meta-r10/c1, Source543f8e71307a05bc79831cfcbf51c6227042386e032eeb09d8c755f615124df6:
+actual21:57 own4identityPASS, nonownedhost actor_unregistered/native.actor143,
+maskedscoped29; container admission not reached. All closed,1metadata/0private
+reads, no readnonce. Banach source-only exact retained entry path/source/lineage
+resolution found no exact match/deeperownerrefs unknown. No arbitrary
+project-script exemption, actual metadata retry or
+unqualified private command. R7/R8/R9/R10 consumed scopes remain consumed.
+Strict reader needs actual relevant custody-writer admission, networknone/RO,
+exact account/basis/input/policy/intent/fill joins, no observe()/locks/recovery,
+before-after file stability. Unrelated Data/Research waits are not admission.
 
-## Exact Existing Outcomes
+## Original Runtime Outcomes And Duties
 
-CSCO original e6a9/315535 cycleengineering-csco-one-share-20261106-v1:
-entry16:20..<16:24/hard16:35 and exit16:50..<16:54/hard17:05 have elapsed.
-Public readerb580 (current-csco-entry-public-first-cause-20261106-v1/reader-repair1)
-parsed ValueError/not_retained at16:21:52.489214 and16:50:40.779552.27refs and
-27nativechecks PASS; repaired only reason sentinel, production source unchanged.
-Exact fault/terminal paths and repeatable PUBLIC-only command: RUNBOOK.md.
-Missing/partial native-private chain leaves acceptance/fill/currentowned/flat/
-fees/settlement/PnL UNKNOWN. Honest-host markers, not cryptographic OS origin.
-Old974 reader UNKNOWN stays historical; no actual r5 private read and its narrow
-phase windows expired. Do not replay expired reads or either consumed Apply.
+H3AMD exact public TECHNICAL_FAILURE20:45:40.658400Z/3files; source-qualified
+firstcause Denied/actor_identity/admission.py204/nativeNOT_ENTERED. Predicate
+matches OR no identity_misses does not identify actor/subcondition or financial
+effects. Full17 exact declared public root ABSENT/errno2; producer cause unknown.
+A/execution/current-original-exit-parent-results-20261106-v1 and
+A/execution/current-original-exit-public-firstcause-20261106-v1 (Source3f3904d0).
+Both actual diagnostic reads consumed; no alternative private/root discovery.
 
-MSE originalmemory20-nas100-nextday-exit-20261105-v1: public5cb at16:00 proves
-BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY/10reads/2linkedvisits, PAIR-RESULTb0901c1b/
-closure19c50053 under current-mse-retained-owned-exit-outer-successor-20261106-v1.
-Observerrestoreobligationfalse; restoration not independently proven. No root
-exit/currentowned/exactfill/PnL conclusion or reservation release. repair1/2/3
-native failures and opaque-root audit stay immutable, not repeatable actual reads.
+CSCO public entry16:21:52/exit16:50:40 ValueError/not_retained; readerb580 fixed
+reason coverage only, not production. MSE5cb bound public operational pair only,
+not financial/rootexit. HALF duration/getter causes DISPROVEN, actual fault
+unknown. INTC finite discovery consumed/UNKNOWN; no substitution or release.
+Preserve original GOOGLNov9UTC20:55/RAWNov10UTC14:30/HALFNov11UTC14:30/
+memoryNov20/H20Dec1 exits, all pending F9 identities and reservations.
 
-HALF24ab/f611: Task20/publicMISSING_ATTEMPT_POINTER, actual startup cause UNKNOWN.
-Duration-field defect DISPROVEN (literalPT7M/corrected DateKindString), current
-XML-getter mismatch RETRACTED (existing COM materialization gives equality).
-No owner patch from those hypotheses; original exit remains installed.
-INTC finite9c6 discovery is CONSUMED/UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3reads.
-Out-of-phase diagnostic poisoned join; actual admission.py74 fault predicate
-still unproven. Pure288cf5 repair/16nativechecks is not a new actual discovery.
-Never infer zero effects or rerun an old Task to discover what happened.
+Latest broker query0abff/ca318e9d at17:44:24..34 COMPLETE/CONSUMED:
+1OAuthPOST+5GET/all2xx/0retry/0orders.4holdings/noCSCO/USopen0/currentETdayhistory0,
+sequential/non-atomic, sourceaccountbinding matched/brokeridentityechoUNPROVEN.
+Not owned fills/fullrisk/fees/settlement/PnL/release. Never rerun this query.
 
-## Preserved Duties
+## Operating Boundaries
 
-All dates UTC; KST=UTC+9. Full source/adoption/commands in RUNBOOK/HANDOFF.
-
-| Duty | Existing opportunity / state |
-| --- | --- |
-| H3AMD / Full17 exits | Nov6UTC20:45 and20:54/hard21:07 |
-| GOOGL / RAW / HALF exits | Nov9UTC20:55 / Nov10UTC14:30 / Nov11UTC14:30 |
-| Memory / H20 exits | Nov20 / Dec1, unchanged |
-| Data0f9 / publisher72eb | Nov6UTC21:30/hard21:45 and21:47/hard22:00; installed/enabled, future actual input/point UNKNOWN |
-| Proposed Nov9LSTM pair | Entry14:31..<14:35/hard14:37, ownedexitNov12 14:30..<14:35/hard14:37. Not installed; actual host qualification and sealed fresh point still absent. |
-
-Preserve ONE original initial virtual-cash B/10, F9 UNKNOWN-HELD, exact pending
-identities/reservations/entry costs/realized losses/bank/token/emergency and all
-original exit duties. No profit refill, foreign inventory adoption, unknown
-reservation release or substitute request. Old consumed717d NO_EXACT_PLAN_RETAINED
-is not no-intent/flat. Current broker holdings are separate ASOF facts.
-Never read/route KIS_LIVE_* or print secret/raw private account/order values.
-
-## Monitor And Quiet Operation
-
-Existing loopback http://127.0.0.1:8787 remains; Korean8788 unstarted.
-Korean static adoption snapshot at current-korean-monitor-admission-compatibility-
-20261106-v1/PAPER-STATIC-SNAPSHOT.html is stale/unknown, not live custody/control.
-cb4277 monitor source/runtime31checks PASS, NOT deployed: actual old RAW8fd/
-INTC297/Full17131e financial consumers reject stateless e200internalnetwork.
-No name allowlist/risk bypass or public exposure. It is a scoped technical issue.
-
-Quiet audit638a COMPLETE160projectTasks/139enabled/19console-capable/10enabled
-clock-exhausted inactive;0OSchanges. Popup origin UNKNOWN; no source-proven
-exhausted nonfinancial task eligible for removal. Never delete an owned exit to
-quiet the desktop. New CSCO/Data/publisher paths use qualified pythonw launch.
-No manual Task.Run/strategy/collector merely to inspect, new reader Task or app
-follow-up chain. Changed execution code needs native proof; source is not deploy.
+ONE original initial virtual-cash B/10, not per model/order. Preserve costs,
+losses/pending buys/current buying-power/unknown requests across restart. No
+profit refill/foreign inventory/unknown substitute/reservation release from
+missing holdings. Never read/route KIS_LIVE_* or print private/raw values.
+Model/provisional mean2 output is untrusted proposal, not a private-bank writer.
+No manual Task.Run or recovery-capable observe() merely to inspect.
+Legacy Korean monitor8787/be48 remains, not new current-cohort UI deployment;
+runtimeRO/emergencyRW/operationsRO, new8788unstarted/no public exposure.

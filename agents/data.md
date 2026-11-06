@@ -1,212 +1,71 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC21:03 / Nov7KST06:03.
+Updated Nov6UTC22:20 / Nov7KST07:20.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Historical state and recovery details: pushed12e5e906 and immutable linked sources.
-AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
+Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
+Planck LLM is CLOSED; independently owned installed tasks are not cancelled.
 
-## Current Owner And Consumer
+## Actual Fresh Input And Consumer
 
-HeldAGE2 Data COMPLETE, consumed by the completed Engine comparison:
-A/data/current-h3-held-age2-input-target-projection-20261106-v1/dtype-repair-r1/API.json.
-Sourced99c4158/READYfe41a45b/native1f182e3e:21actual producer-consumer checks,
-ONEsmallprojection/0retry/allJobsclosed. Old2/2dtype failures/debits preserved;
-newrepair63.434activeupper/194elapsed atverification, cumulative184.115.
-Parent60bindings/E9PASS. All37077/8143/799/289e0keys retained;34missingquery
-pointers perFIT/INNER stayunknown. Complete17-date supervisedFIT1743/INNER477;
-DEV799/RECENT289 fullyinput/state/targetknown. No x/z/barcache/scaler rebuild.
-Separate input/target headers+payloads, causalpriorCLOSE[e1]/entryOPEN0 state;
-noP2/P3/target mount in forecasters. CommonqueryOPEN consumption retains original
-queryOPEN/LateCLOSE+60 sourceclocks and unknown historicalarrival/PIT/finality.
-Do not rerun completed builds. Fresh scheduledData0f9/Source72point remain future
-and separate, not automatically qualified from this research projection.
-Source-only installed-input result readiness COMPLETE8537283f:
-300active1200elapsed/oneoptional diagnosticpreflight,0actualfuturepayload/
-provider/Taskcalls. Parent37sourcebindings0mismatch. The extra smoke failed
-beforeproducer/consumer because its source-suffix filter omitted.pyw; preserve
-that failure, NOT a productiongate or failure of unchangedqualifiedSource72.
-No newrepair/smoke just to make this optionalhandoffgreen.
-A/data/current-nov9-installed-input-result-readiness-20261106-v1.
-Exact Source/Plan/READY/seal/currentreader commands, directDarwin callback; no
-newprojection or qualification merely from future definition installation.
-
-Existing-marks compatibility for new NETLOG/MSE H3 campaign44d7 is COMPLETE:
-A/data/current-netlog-h3-existing-marks-compatibility-20261106-v1.
-Source236cfce44fca0918c51df85e1ae76e67deafe516881809fc0eda9acfab4a9f31;
-RESULT15b9b26364080e6f2d4effd536c3cc8851b6bddf41f11dce51cfef1a40b7dcb1.
-Full799DEV/289RECENT keys/endpoints and OPEN+CLOSE canonical bytes/provenance
-matched; whole17 H3 supportFIT1739/INNER479, original20purge. No newbuild/copy/
-provider/credentials/Tasks/models/weights/performance,60.715active/allclosed.
-Direct Arendt callback includes WIDE74ed ABI/localindex/globalbridge; quantity/
-funding/finalNAV parity still Engine native responsibility, not this Data claim.
-Tonight0f9/72eb and all completed builds remain untouched.
-
-LatestRAW120 input-onlysidecar is COMPLETE18b14819/READY4edf722f:
-A/data/current-h123-raw120-input-sidecar-20261106-v1/API.json.
-Alloriginalrows/keys/index/context/decision clocks andIND8 retained; exactlast60
-rawtoken parity on every120knownrow. FITknown12025738/37077,1020prefixmissing,
-4029old60known->120unknown; INNER8143/DEV799/RECENT289 fullyknown. Unknownx120
-remainallNaN, no padding/imputation/features/stocktargets/scalers rebuilt.
-Arendtactuallyconsumedonebuild/strictnative for completedLSTM120study, no repeat.
-Rawpayloads M/us_equities/research_inputs/current-h123-raw120-input-sidecar-20261106-v1.
-No newprovider/credential/Task call or tonight0f9/72eb change.
-InvokedExecutionpublicdiagnosis945cf560 andreaderrepairb580 are also CLOSED:
-27nativechecks/0actualreads inchild; Parentlaterreadentry/lifecycle, both show
-callbackValueError/not_retained withallfinancialUNKNOWN, not newDataauthority.
-
-Planck completed the NEW target-only sidecar, not repeatcapture:
-A/data/current-spy-open4-h123-target-sidecar-20261106-v1.
-Consumer Arendt's conditional SPYmarket/residual H123 offer280991a5 and exact
-DATA-HANDOFF41940dc9. Preserve Data5b01/parser075e/stockrows/calendar/features;
-verify compatible source/rawOPEN units/vintage including RECENT before anyREADY.
-SPY e0..3 targets only, same original role order/globalindices/known/provenance/
-capture/scheduledclocks; no inputinversion/imputation/source-splice. Marketpayload
-under M/us_equities/kis_paper_market/current-spy-open4-h123-target-sidecar-20261106-v1;
-code/headers/proofs underA.900active2400elapsed/cleanup120/<=2natives/ONEbuild
-0retry/provider/credentials/Tasks/models/GPU. Tinyactualproducer->strictparser/
-join/endpointpurge20 native BEFOREbuild. Directqualifiedcallback toArendt;
-Actual r2Source693d108b/READY6c186fd4/APIcceb55a4/closure9e858085 COMPLETE.
-ONEbuild0retry/27nativechecks across2smokes; failedfirstsmoke retained.
-SPYdatesFIT2181/INNER479/DEV47/RECENT17, everySPYhead known. Exactoldstock
-endpoint/masks/capture/calendar/vintage compatibility passed, allstockrows
-retained37077/8143/799/289. FITjointstock support29747/29737/29727; otherroles
-8143/799/289 eachhead. SameOct17captureMODE1proxy, notPIT/CA/finality upgrade.
-Actualclosure16:30/92.283active/1030elapsed/allJobsclosed; directArendtcallback
-sent. No newdownload/provider/model/credential/Task call or oldfeature rebuild.
-This does not change tonight's alreadyinstalled0f9/72eb tasks below.
-
-Planck (01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0) completed
+DataSource0f9c4e8c85dcd12e4d3f5a71cb972e3d6cd714d93ca8b1d4328dfa6eb237b4b0,
+PLAN47f1a54b817c798a9302f998b921cdf6d85a818b2fb8476df6eb3a8221b0d0c8:
 A/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1.
-Source0f9c4e8c/PLAN47f1a54b: fresh Nov6-asof19x60OHLC ->Nov9decision,
-17targets+SPYQQQ/exact83963ABI.35Data native checks/2Scheduler mocks passed.
-Parent ACTUALLY INSTALLED/enabled quiet pythonw task
-thericher-kis-paper-nextsession-input-20261107 for Nov6UTC21:30, laststart<21:40,
-hard21:45 (KSTNov7 06:30).19GET/<=1initialPOST/0retry, no demand/catchup/repeat.
-Named collection/cache/token gates/actual identity/storage checks still apply.
-Only this new scope uses60s initialPOST floor; old300s/frozen clients unchanged.
-Actual capture/READY/payload UNKNOWN. Exact future READY:
-A/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1/actual/publication/DATAREADY.json.
-Payload M/us_equities/kis_paper_market/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1/actual/INPUT.npz.
-Parent96pins/nativeconstructor/disabledreadback passed; EnableCLI failed AFTER
-effect, independent fresh-process strict fullXML/API7ACL twice PASS/enabled/
-0instances/stable. No missingreceipt fabrication/replay; exactCLI fault unknown.
-A/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+Owned thericher-kis-paper-nextsession-input-20261107 opportunity Nov6UTC21:30,
+hard21:45. Exact ACTUAL-ONCE/actual/publication/DATAREADY/MANIFEST/SEAL and
+CLOSED/OWNER-CLOSED/captureRESULT are now present. Presence alone was not Data
+qualification; existing source-qualified publisher subsequently validated bound
+DataREADY/input and published. No independent current raw rehash or provider
+finality/PIT/arrival/OS-origin assertion. No rerun of consumed install/capture.
 
-Planck clock-bound publisher72eb95e3/native8cf73456 COMPLETE26checks/allclosed:
-A/research/current-nov9-lstm-h3-clock-bound-publisher-20261106-v1.
-Same savedbest10/RAW60x12+IND8 (notTransformer19), Nov9valid14:25..<14:35 and
-originalNov12exit. Actual localinput-admission/inference-start/end are V2sealed;
-localread time is not provider finality/PIT. ONE futureforward acrosssuccessors.
-Parent ACTUALLY INSTALLED/enabled12:51 with721d/qualificationfa46/candidateb002,
-separate disabled840adc48/enabledc78cd18c fullXML/API7ACL attestations/0instances/
-0TaskRun. Quietpythonw Nov6UTC21:47/laststart<21:52/hard22:00. ActualREADY/point
-UNKNOWN; no automatic financialbank swap. Exact Parentadoption in RUNBOOK.
-Oldclockless4b11 SUPERSEDED before installation/forward, neverretag oldclocks.
+PublisherSource72eb95e32abfdc96bb7e72c1628177a51633fbf5da74c74be5f77d35bcdbd4d5
+at A/research/current-nov9-lstm-h3-clock-bound-publisher-20261106-v1 actually
+published Nov6UTC21:47:03.960191,17known/4positive_H3. Parent exact existing
+reader21:48:46 returned PUBLISHED_SHADOW_NOT_YET_VALID/zero payload reads.
+POINT4a602d3bf4db4e800a8ee82edd8c06650f93702464f046f777f8d8e91511b7a5;
+CLOCKS1f36092d990de563cc4899156a9487da97b5e6c9487b7ff4c9c5632006bf0555.
+Validity Nov9UTC14:25..<14:35. Savedbest10 one forward,0training; no placeholder,
+stale retag, financial input consumption or fill inferred from publication.
+A/research/current-nov9-publication-parent-read-20261106-v1/RESULT.json.
+Installed R4 entryNov9 14:31/ownedexitNov12 14:30 validates all native gates at
+actual effects. Data availability is not financial admission.
 
-Godel parser-recovery is COMPLETE, not queued:
-A/data/current-maturity-matched-replacement-parser-recovery-20261106-v1.
-Sourceed055914/READYef94a06c/API251e13b9/RESULT6ecd86b7, ONEbuild/0retry.
-Original row countsFIT37077/INNER8143/DEV799/RECENT289; inputknown29767/8143/
-799/289, samekeys/roles/20purge/maturity/causalmasks.66prefixcohorts (64evaluation
-+2training missing e+1 contexts), not wholebarcache rebuild. Exact payload root
-M/us_equities/research_inputs/current-maturity-matched-replacement-parser-recovery-20261106-v1.
-Synchronouscommands closed; OSbirth not retained/no JobObject, no OSorigin claim.
-Readinessfdb39/15native31bindings/241.170active is ancestry; oldprojection1130elapsed/
-180upper/0builds and nativekeyword-only TypeError remainfailed, no caprefund.
-Consumer replacementtwofits/14books is COMPLETE, do not rebuild these inputs.
-Godel source-only fixed-expiry offer0ae1/ec7e COMPLETE, Parent35pins/5tests PASS;
-e1rawx/e2rawx+z8 missing, not recoverable from old saved role rows. New separate
-current-saved-head-fixed-expiry-late-inputs-20261106-v1 gets600active1800elapsed/
-cleanup90/<=2nativeattempts/ONEbuild0retry/<=2176queryrows, noacquisition-fit.
-Exact actual producer->parser->savedH2/H1->stopDTO->subsetbook native must pass
-first, all799+289keys/source/masks retained. Reuse e1z8 only with byte/key/source
-equality; unknown input never chooses a HOLD/SELL/default subset. Arendt exact
-zero-fit consumer has fourforward/onejointseal/eightbook caps, directcallback.
-Actual projection COMPLETE13:25:32: Source4f31fcca/READYbab237d2/closedbuild
-d7a10ce4, ONEbuild/.340s/0retry/allchildrenclosed.2176latequeries, DEV799each
-shift/RECENT289each, allinputknown/0conditional; e1zreused799+289. Frozenprefix
-ABI genuinely requires all19x60OHLC even though perrow formula uses own/SPYQQQ;
-DEPENDENCY-NOTE preserves that scoped limitation, not a companywide gate.
-Engine native2Source30b4/proofa3c4 is actual fullchainPASS; originalnative1failed
-and allcaps/debits unchanged. Marketmodel predictions/readout are separate;
-DATAREADY is not a qualified dataset/Paperinput/independentperformance claim.
+## Held-State Research Data Complete
 
-Previous intradayreadiness COMPLETE a161fcb7/READY8386fe07:
-A/data/current-intraday-short-hold-readiness-20261106-v1/API.json.
-Exact17symbols/24selectedsessions16FIT4INNER4DEV, original3716keys/trials;
-159120priceknownminutes/97920common plannedwindows,65280/16320/16320perrole,
-30/120prefixes and5/15/30minute exits. Same-session target maturity END[e+h].
-11nativechecks/123ownrefs,163.855active/allclosed/0materializations-modelcalls.
-29sourceinventorysessions/26complete17-symbolsessions, not allnew/untouched.
-ActualcaptureOct28-Nov5 versus retrospective targets, canonicalNY grid with
-inheritedKorea headers/recordedclockdefects,0publicationPITknown. No silent
-clock repair/finality/live admission or FirstRate/NAS8 splice. Arendt's new
-bounded intradayLSTM may consume exactREADY without repeating oldGRU studies.
+A/data/current-h3-held-age2-input-target-projection-20261106-v1/dtype-repair-r1/API.json.
+Sourced99c4158/READYfe41a45b/native1f182e3e,21actual checks/ONEprojection/0retry/
+allJobsclosed, Parent60bindings/E9. Old two dtype failures/debits retained.
+All37077/8143/799/289keys retained;34missingquerypointers perFIT/INNER unknown.
+Whole17supervisedFIT1743/INNER477;DEV799/RECENT289 fully known. No x/z/barcache/
+scaler rebuild. Separate inputs/targets, causal priorCLOSE[e1]/entryOPEN[e0], no
+futureP2/P3 in forecasters. Common queryOPEN preserves source queryOPEN/LateCLOSE
++60 clocks, no earlier availability/PIT/CA/finality upgrade. Already consumed
+by completed D/ratio, context/capacity and weightedBCE/MSE campaigns, no rebuild.
 
-Previous A/data/current-short-swing-h123-target-projection-20261106-v1:
-Actual projection is COMPLETE/closed06:18, Sourceae4c68e8/READYe23875f9,
-onebuild/0retry/0feature recomputes. Parent74unique refs PASS without array
-decoding/reruns. FIT supervised H1/H2/H3=29747/29737/29727; INNER8143each,
-DEV799each/RECENT289each.34feature-array byte checks preserved original x/z.
-Closed129.293newactive+102.405readiness=231.698combined,869.3newelapsed;
-previous216.517+1debit remains separate. No active build worker remains.
-Consumed by completed GRUH123, LSTM/TCN and technicalHGB studies; do not rebuild.
+Earlier marks236cfce4 verified799/289keys/OPEN+CLOSE bytes/provenance; RAW120
+18b14819/READY4edf retains exactlast60+IND8, FITknown12025738/37077 with1020prefix
+and4029old60known->unknown; other roles fully known. SPYtarget693d/READY6c18
+completed27checks/onebuild and MODE1 proxy constraints. All completed, not ready
+jobs to rerun. Payloads stay M, code/headers/proofs stay A.
 
-Planck completed saved LSTM-H3 shadow handoff715b8f79 at08:10:
-A/research/current-lstm-h3-shadow-point-preparation-20261106-v1/API.json.
-Exact Nov5Data83963/READY551a90fb, oneCPUforward17known/7positive/10knowncash,
-onepoint3898054d/seal9b21812e/15nativechecks/202.970active/allclosed/0fits.
-H3_FIXED is provisional, not originalargmaxH123 result/Paper authority.
-Shadow validity Nov6UTC13:55..<14:05 is not financial entry14:31 admission;
-do not extend/retag it or replace the existing HALF point/bank.
+## Next Age2 Paper Input Feasibility
 
-- Entry OPEN[e], exits OPEN[e+1/e+2/e+3]. Four marks already mean three
-  held intervals; this is not a new longer maximum hold.
-- Original FIT/INNER/DEV role contains scalar H3 labels, not recoverable raw
-  OPEN1/2. Project only required canonical endpoints/masks/clocks/capture.
-- Reuse completed x/z; input-only repackaging may isolate labels, never recompute
-  features or reconstruct prices from normalized x/scalar y.
-- Preserve original splits/entry sets. FIT/INNER original20-session purge;
-  DEV/RECENT0 extra purge, actual endpoint support/maturity required.
-- Existing recent476 role already has all289fourOPEN keys; reuse it.
-- After closed preparation, separate predelegated materialization freezes source/
-  contract/origin before payload: at most1build/0retry/600active/1800elapsed,
-  cleanup90. Native exact producer -> Engine parser first. No Parent ACK barrier.
-- Callback exact source/ready/key/mask/count facts directly to Darwin and Parent.
-  No acquisition/private/credentials/KIS/GPU/registry writes in this package.
+A/data/current-held-age2-paper-input-feasibility-20261106-v1/API.json:
+SOURCE_FEASIBLE_CONDITIONAL_FUTURE_INPUT_UNKNOWN; source-only,0acquisition/
+projection/model/credential/Task calls. Concrete consumer is mean2 proposal
+f49d/d6a6, not installed production caller.
+Required public date binding: Nov10asof->Nov11decision, age2e0Nov9/e3Nov12;
+source fresh-entryexpiryNov16 MUST NOT replace held expiry. Original RAW60x12/
+IND8/frozenstats/query clocks and public e0OPEN causal state need a new tiny
+actual producer-consumer native before future payload use. Source references
+do not prove future capture/feature parity or Execution's exact owned fills.
+No actual future task/payload installed by this feasibility package.
 
-## Qualified Inputs
+## Boundaries
 
-| Scope | Evidence / actual result |
-| --- | --- |
-| Intraday short-hold |A/data/current-intraday-short-hold-readiness-20261106-v1/API.json. Sourcea161fcb7/READY8386fe07,24sessions17symbols/11nativechecks/123ownrefs/163.855active/allclosed. Parent32smallrefsPASS; larger/outside/deeper ancestry explicitly not independently rehashed. |
-| H123 actual endpoints | A/data/current-short-swing-h123-target-projection-20261106-v1/API.json. Sourceae4c68e8/READYe23875f9, actual producer/consumer native first/onebuild/0retry; Parent74refs. All original keys and recent289 retained. |
-| H123 source/native readiness | A/data/current-short-swing-horizon-data-readiness-20261106-v1/API.json. Source-r2 b689454d, fixed Engine parser075e9c5d, invented native chain PASS.0marketbuilds/reads. Closed102.405active/914.642elapsed. Initial read-audit AssertionError preserved; do not claim its unretained denied path. |
-| Recent OPEN4 | A/data/current-w25-open4-recent-evaluation-inputs-20261106-v1/HANDOFF.json. Source47698983/READY4bfaac45, onebuild289/289input+target-known/17cohorts,0retry. Parent62unique refs PASS, allclosed230.941active/1314elapsed. |
-| Recent calendar | A/data/current-w25-adaptive-recent-calendar-readiness-20261106-v1. Source7f461257, Aug3-Oct9 entries/Oct14 last exit,17cohorts289keys.571native-verified custody records/four sealed contracts disjoint; Parent32refs. |
-| Close21 | A/data/current-w25-close21-canonical-role-20261106-v1. Sourceb1ab0177/READYf0ecd21b,47cohorts799keys16779complete CLOSE cells,0labels/acquisition;10nativechecks/Parent16refs. |
-| Independent-evaluation audit | Source523eb92c NOT_READY: exact untouched target custody unproven.52refs unchanged/two mutable role-context pins drifted, not changed market/custody. No blanket54PASS or historical cap regrade. |
-
-Recent source capture is Oct17, materialization Nov6, not observed historical
-decision-time arrival. MODE1 vendor-price proxy/current-listed survivor,
-non-PIT/corporate-action/finality limitations remain. Adaptive research
-readiness is not independent alpha or Paper-input qualification. Old e+23
-producer/studies remain immutable; unused future marks are not a global hold.
-
-## Owned Data Opportunities
-
-All times UTC; KST=UTC+9. Do not manually Run existing Tasks to inspect.
-
-- Nov5 Data83963 completed19x60OHLC/1140rows,19GET/1initialPOST/0failed/42s;
-  DATAREADY551a90fb. Observer restored exact original definition21:32:08.
-- Nov5 NAS8 READY699f9552:8symbols390/390minutes/3120rows.
-- Nov6 HALF point13:30, third13:45, W25shadow13:55, rank14:10/hard14:20:
-  installed future inputs/results UNKNOWN, no reserved-label release.
-- Nov6 NAS8 capture21:10/hard21:25; savedGRU/Ridge21:35.
-- Later W25 captures Nov10/13UTC21:30/hard21:45.
-- New19-symbol input task0f9c Nov6UTC21:30/laststart<21:40/hard21:45 is enabled;
-  actual DATAREADY/payload UNKNOWN. No duplicate oldData83963 capture.
-
-Keep data M/models A, original cursors and measured pacing. Fresh-session work
-precedes backfill. Follow AGENTS.md token/resource/storage policy, not stale
-historical projections. No active collector is inferred from this MD.
+Latest broker read-only account query0abff at17:44 is Execution-owned/consumed,
+not Data acquisition or current custody proof. Original query failures do not
+block independent data. Existing W25Nov10/13UTC21:30/hard21:45 duties unchanged.
+Use useful lawful free inputs, no paid data. Keep M/A storage separation,
+15percent D:floor/warn20; latest measured32.8percent free. KIS data/cache/token
+gates remain named-owned. Missing required input stays unknown, not imputed.
+Source-limited closes only its exact cursor, not all history/endpoints.
