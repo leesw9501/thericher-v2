@@ -15,8 +15,46 @@ source/definition/clocks/ACL,14negatives,0setters. Original receipt namespace:
 A/research/current-net25-pairwise-forward-native-installation-20261105-v1/installation.
 Never repeat InstallDisabled/EnableReadOnly. Banach's scoped repair is CLOSED;
 58.37active/350.21elapsed/allJobsclosed. Existing MSE/HALF Paper/bank unchanged.
-Only Planck's phase-owned private-read repair and Darwin's source/native masked-
-transfer duplicate-check offer are active; no GPU optimizer currently claimed.
+Planck e414 is CLOSED/0actualprivate: real before_read/after_read admission
+passed, guest failure envelope became KeyError_source before fifthphase. Original
+guest reason NOT_RETAINED, not assumed CAPTURE_BOUND. All49processes/CID closed;
+558.75active/1311.48elapsed qualified, old612.89/600 failure unchanged.
+Parent now owns current-intc-guest-return-timing-recovery-20261105-v1 Source717d23d4:
+bound categorical failure parser, explicit finite120s whole-capture probe with
+unchanged30s EACH scan and all membership/identity/mtime/bytes/source checks.
+3parser+5timing+32source/ownership tests/emittedF821/E9 PASS. SAME real5phase
+allRO/networknone invented fixture PASSED, then ONE actualprivate read also
+PASSED all5phases/stable source+private membership/identity/mtime/bytes. Actual
+local INTC book has NO_EXACT_PLAN_RETAINED_NOT_NOINTENT_OR_FLAT; submit/accept/
+fill/currentowned/terminal remain UNKNOWN, no inference from absent plan.
+Consumed API83425105 at
+A/execution/current-intc-guest-return-timing-recovery-20261105-v1/API.json.
+All104recordedprocesses/twoCIDs positively closed;1393.08/2400active includes
+old558.75once,946.76/2700elapsed. No replay of native or actual read. Broker
+holdings/fees/settlement/PnL UNKNOWN, F9UNKNOWN_HELD/reservations unchanged.
+Measured actual admission29.68..34.83s, including actualafter_read34.83s. This
+calibrates only the new finite interval, not original unretained guest cause or
+all financial-guard latency. Exact guest capture timestamp was not retained;
+this is current local-reader evidence, not original-trigger or freshbroker fact.
+Darwin's16test source offer is accepted as distinct only within four checked
+families; Parent independent16PASS with explicit-source bootstrap after initial
+-I ModuleNotFoundError. Darwin now owns new same-native masked-transfer finite
+family: current-net25-domain-masked-transfer-development-20261105-v1,2fitsMAX,
+pretrain reconstruction kill BEFORE conditional fine-tune, no old baseline fits.
+Its first CUDA-native smoke failed WORKER_NONZERO before any market fit and
+closed all actors86.04active; original Source6b20548a/API/debit preserved. One
+pre-market native adapter repair inside unchanged caps is delegated, not a new
+market retry. No actual optimizer claimed until native-ready PID callback.
+Claude current challenges unavailable/exit1, not agreement or global hold.
+
+Saved post-checkpoint Chronos forecasts now have a separate native-funding
+descriptive readout,0fits/newforecasts/1archive/3books/680rows/14cohorts:
+A/research/current-postcheckpoint-chronos2-native-funding-descriptive-readout-20261105-v1/API.json.
+Source2be65c54/native parity unchanged1e-12; +.91845%/fourOPEN DD.77237%/
+82modeled effects versus persistence/cash0. Different exposure, not alpha,
+intradayDD or PaperPnL; original forecast failure/269.01debit stay unchanged.
+Parent8APIrefs+20members PASS, all4Jobs closed,84.29newactive/426.52elapsed.
+Frozen extended lint has one unused import; focused runtime lint passed.
 
 Parent-closed INTC read50aeb did close its exact opaque launching parents and
 start an allRO/networknone guest. It still stopped BEFORE private-read release:
@@ -448,9 +486,14 @@ Old INTC15:25 A+B disabled; original observer restoration unproven.
 
 ## Current Owners And Recovery
 
-Current24ab readera446 is complete; Carver fee bridge6tests/22subtests passed.
-Only current assignment: new isolated directutility1fit campaign under Carver,
-not a claim that a numerical worker has actually started.
+Current24ab/c79 public readers and saved-rank forward installation are complete.
+Parent717d native/actual custody read is CLOSED/consumed, financialUNKNOWN.
+Darwin owns distinct masked-transfer native repair/conditional GPU fits. Godel
+owns temporary source/pure deadline-feasibility tests in
+A/execution/current-finite-paper-deadline-feasibility-20261106-v1.
+Offline33s admission is a latency scenario, not measured financial Guard speed;
+no actual private/broker/Task effects or original source/job changes there.
+Banach/Planck/Godel/Carver and all earlier completed numerical fits are closed.
 Parent owns Git/integration/current goal. Completed or failed earlier role
 deliveries are closed, not active GPU/LLM daemons. Current matrix is
 agents/orchestration.md; do not dispatch stale historical assignments.
@@ -458,7 +501,7 @@ No private-ready command from233. Four blocker actors were observed at that
 specific probe, not asserted still running. New caller/actor proof must be fresh,
 source-qualified and stable; no consumed read replay or writer waiver.
 Korean8788 and optional Full17 migration remain deferred; current8787 only.
-No new training currently claimed. Preserve all old failed sources/caps/debits.
+No active optimizer yet proven. Preserve all old failed sources/caps/debits.
 
 ## Verification
 

@@ -2,12 +2,13 @@
 
 ## Current Handoff
 
-Updated Nov5UTC23:48. Darwin now owns source/native duplicate check and one
+Updated Nov6UTC00:04. Darwin CLOSED source/native duplicate check and one
 masked-transfer offer at
 A/research/current-net25-domain-masked-transfer-offer-20261105-v1.
-Compare prior masked-pretraining/frozen-probe/scratch-patch families. If distinct,
-test one FIT-only reconstruction kernel/actual checkpoint-consumer on invented
-tensors; if duplicate, reject concretely. No market/GPU fit or paper authority.
+Distinct within4namedpriors, not exhaustive novelty;16nativeCPUtests/Parent16
+with explicit bootstrap PASS. Engine consumed it as a separately frozen new
+two-fit family (reconstruction then conditional fine-tune), not Strategy fit
+authority. Actual CUDA/schema/checkpoint/DTO/role smoke still required there.
 
 Darwin's prior pure boundary-regret pairwise-rank kernel and
 real invented native DTO/book smoke are CLOSED14nativeCPUtests. Parent repeated

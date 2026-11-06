@@ -12,8 +12,13 @@ nativecapsule/10Jobs/51row CPU-CUDAparity/0fits/readouts; Parent55members PASS.
 Its finite nonfinancial forward Task b89 is ACTUALLY ENABLED for Nov6UTC14:10,
 hard14:20; independent9b readbacks twice prove exact native definition/ACL.
 No optimizer active or GPU need invented for utilization. Darwin's separate
-source/native masked-transfer duplicate check may yield one ready campaign;
-it has0market fits/GPU authority and cannot repeat completed SSL by relabeling.
+source/native masked-transfer offer is DISTINCT within4namedpriors/16tests and
+now consumed by a NEW finite Engine/Steward family with2attemptedfitsMAX:
+A/research/current-net25-domain-masked-transfer-development-20261105-v1.
+Reconstruction kill before conditional fine-tune; no cachedbaseline reruns,
+actual native CUDA/source/producer/checkpoint/DTO first. Actual PID/lease/phase
+callback required before claiming runningtraining. Private readerrepair isnot
+a global GPU hold; no externalappveto or duplicatecompletedSSL.
 Actual full-coverage Chronos2 CUDA fit is CLOSED:
 8epochs/488updates/969rows each/56.18s, peak2.606GiB reserved, INNER-best0.
 All6containers/70Jobs/GPUlease closed19:43; cumulative269.01/2400SUM includes

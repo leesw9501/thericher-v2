@@ -11,7 +11,20 @@ Original03db singleCreate partial/CLOSEDmissing remains unchanged. Only measured
 registered omission of requested RandomDelayPT0S is normalized;18focused/native
 cases, exact other fields and ACL. Installation is not runtime admission/fill.
 
-Planck owns NEW parent-closed offline INTC launch,0actualprivate reads so far.
+Current update Nov6UTC00:12: Parent717d native AND actual private reads are now
+CLOSED, each real5phasePASS/source+private stability. Exact current localINTC
+plan not retained; acceptance/fill/owned/terminal remain UNKNOWN, not nointent/
+flat. API83425105/all104processes+2CIDsclosed/1393.08active incl old558.75once/
+946.76elapsed. Consumed/no replay/F9reservationsheld. Actualafter_read34.83s
+calibrates new finite120capture/30eachscan, not old guestcause or all financial
+guard speed. Godel's new temporary pure timing tests do not call private/API/
+Task or change original windows/quoteTTL. Exact reader:
+A/execution/current-intc-guest-return-timing-recovery-20261105-v1/API.json.
+
+Historical predecessor: Planck e414 CLOSED/0actualprivate, real
+before_read/after_read admission passed but parser lost guestfault asKeyError.
+OriginalguestreasonUNKNOWN/all49processes+CIDclosed/558.75active. Parent owns
+new717d bounderror/finitecapture recovery above; no actor/stability waiver.
 That50aeb scope is now CLOSED: exactparentclosure succeeded, but early console
 child contract rejected legitimate Dockerattach before existing ownedtransport
 loop. Before_read denied/0private/CIDabsent/all16processesclosed;612.89active

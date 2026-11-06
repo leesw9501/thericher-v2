@@ -56,11 +56,23 @@ A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PA
 Original EnableCLI failure and missing enabled receipt stay preserved, never
 replayed/forged. Future point/hash/inference remain unknown; no GPU authority.
 
-Darwin owns source-only/native masked-transfer offer in sibling
-A/research/current-net25-domain-masked-transfer-offer-20261105-v1.
-Check prior masked/pretraining families before proposing FIT-only masked-patch
-pretraining then signedNet25 fine-tuning. Reuse completed scratch/W25 controls;
-no new market fit until a distinct native-ready finite campaign exists.
+Darwin's source offer is DISTINCT within4checkedpriorfamilies/16nativeCPUtests;
+Parent independently repeated16 with explicit bootstrap after failed direct-I
+ModuleNotFoundError. No immutable source changed. Darwin now owns new family
+A/research/current-net25-domain-masked-transfer-development-20261105-v1.
+FIT-input-known-only masked reconstruction, then ONE signedNet25 fine-tune only
+if nonzero-best INNER reconstruction beats both same-support controls. Two fits
+MAX/0marketretry/onearchive-readout/5books, cachedscratch+W25 no baseline reruns,
+exact CUDA/producer/checkpoint/DTO/book smoke first. No optimizer yet evidenced.
+Claude current challenge review_unavailable, not agreement/global hold.
+
+Saved Chronos now has a separate descriptive native-funding readout, not refit:
+A/research/current-postcheckpoint-chronos2-native-funding-descriptive-readout-20261105-v1/API.json.
+2be65c54/680rows14cohorts3books/0fits-newforecasts; +.91845%/fourOPEN DD.77237%/
+82modeled effects. Persistence and cash0 at different exposure, no unaligned
+W25 headline comparison/alpha/intradayDD/PaperPnL. Native f->u funding parity
+1e-12 unchanged, Parent8refs20members verified/all4Jobsclosed84.29newactive.
+Original forecast-fail and269.01debit unchanged; one unused frozen harness import.
 
 Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
 closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain

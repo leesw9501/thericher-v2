@@ -157,8 +157,9 @@ Boundary-rank fit641e9 CLOSED17CUDAepochs2329updates/best7/13.812s/200MiB;
 D:/thericher-v2/model-artifacts/research/current-net25-pairwise-ranking-development-20261105-v1/FINAL-API.json.
 All4CIDs/35Jobs/GPUleaseclosed; no fit rerun/model swap. Savedd7 forward consumer
 CLOSED51row native parity/0fits/readouts/onecapsule10Jobs. FutureW25hashUNKNOWN.
-Banach prepares exact finite nonfinancial Windows definition/installer only;
-it is not installed yet. Full runtime details/source refs are in Engine/HANDOFF.
+That finite nonfinancial Windows definition IS now actually enabled with two
+independent native readbacks; see Actual Deployments above. No consumed setter
+replay or completed fit repeated. Full source refs in Engine/HANDOFF.
 
 ## Verification
 

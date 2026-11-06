@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov5UTC23:48 / Nov6KST08:48.
+Updated Nov6UTC00:04 / Nov6KST09:04.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -106,9 +106,25 @@ Updated Nov5UTC23:48 / Nov6KST08:48.
    failed, originalmissing enabledreceipt not forged. Nov6UTC14:10/hard14:20
    CPU-only nonfinancial savedforward, no bank/Paper/GPU authority. Exact adoption
    A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
-12. Darwin checks prior masked/pretrained families for one useful distinct same-
-   architecture signedNet25 transfer mechanism/native offer,0marketfits. Do not
-   repeat completedSSL if duplicate; no model or utilization-only activity.
+12. Darwin's masked-transfer offer is DISTINCT within4namedpriors/16nativeCPU
+   tests; Parent repeated16. New current-net25-domain-masked-transfer-development-
+   20261105-v1 owns2fitsMAX: FIT-input-only masked reconstruction, then conditional
+   same-native signedNet25 fine-tune only if both fixed reconstruction controls
+   beaten. Cached controls/no old fit reruns; actual CUDA/role/DTO/book smoke
+   first. No actual optimizer yet evidenced. Claude review_unavailable, not hold.
+13. e414 reader is CLOSED/0actualprivate: before/afterread admission passed but
+   guestfailure lost as KeyError_source; underlying guestreasonUNKNOWN. All49
+   processes/CIDclosed,558.75active. Parent717d new bounderror/finitecapture
+   recovery completed SAME real5phase invented capsule then ONE actualprivate
+   read/all5phases/stabilityPASS. Exact localINTC plan absent means financial
+   UNKNOWN, not nointent/flat. API83425105/all104processes+2CIDsclosed/1393.08
+   active includes old558.75once. Consumed/no replay/F9 held. Godel now tests
+   original deadline/quote-age feasibility with pure synthetic latency scenarios,
+   not actual financialGuard timing or permission waiver.
+14. Separate savedChronos native-funding descriptive readout2be65c54 COMPLETE,
+   680rows14cohorts3books/0fits-newforecasts;+.91845%/fourOPEN DD.77237% versus
+   persistence/cash0 atdifferentexposure. Not alpha/intradayDD/PaperPnL; original
+   forecastfailure/debitunchanged. Parent8refs20membersPASS/all4Jobsclosed.
    Exact write sets and callbacks live in agents/orchestration.md.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/
