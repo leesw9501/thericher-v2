@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC08:07 / Nov6KST17:07. Company outcome UNFINISHED.
+Updated Nov6UTC10:47 / Nov6KST19:47. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -35,11 +35,29 @@ continuation03b104fa are COMPLETE, never rerun their hosts/forwards. CPU-TCN's
 bestadditional0 gives no improvement. TechnicalHGB8b9b15cd is COMPLETE9heads/
 400trees, not another queuedfit. Causal specialist diagnosis84ca is closed,
 actualfailure unresolved/no automatic market retry. Current new disjoint work:
-fixed technicalTransformer development, saved-forecast fixed-fusion and saved
-LSTM-H3 shadowpoint. Exact scopes/caps in Engine/Orchestration; CURRENT.json
+Transformerrepair1b77b3e55 and fixedfusioned168151 are also COMPLETE, never
+rerun. IntradayLSTMaa96/H30hurdleff295 and OOF7b285a5d are now COMPLETE,
+not queued commands. Both intradaypolicies allcash/NONINFORMATIVE; OOFprimary
+growthFAILboth. Current NEW scopes are Nov9fixedH3 savedpoint source preparation,
+TransformerfixedH3 cachedforecast validation and official cost/holding review.
+LSTM-H3 shadow715b8f79 is COMPLETE/valid13:55..<14:05, not financial entry14:31
+admission; H3policyvalidation5aa7 matches savedLSTM allocations, no alpha gain.
+Its oldfailedattempt1 has TWO brokenbindings (workercontent/identity and recreated
+contractidentity); current46members valid, historicalancestry not fullyverified.
+Exact scopes/caps in Engine/Orchestration; CURRENT.json
 discovers the derivative only, not dispatch/runtime authority. No Paper model
 deployment or running GPU is inferred from source directories. Compact prior
 history is in pushed12e5e906/7c581fb6.
+Pure11technicalfeatures now live in tracked research/short_swing_technical_features.py
+(4bea08fc), no artifactrt or executable-source extraction. Future consumers need
+their own actual import/schema native proof; no frozen model/feature/image swap.
+
+Current fresh repo authority:
+D:/thericher-v2/model-artifacts/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json.
+20264PASS/26knownWindowsSKIP/8of8[20290items]/native+helper0/427.89s/
+guarded same-child+lease cleanup; serial25PASS/601syntheticrow parity.
+Reuse only1439protected code/test/config/dependency/script + AGENTS unchanged.
+External code keeps its own focused/native checks, not another fullrepo rerun.
 
 ## CSCO Public Outcome Reader
 
@@ -62,8 +80,64 @@ Exact API/HANDOFF:
 D:/thericher-v2/model-artifacts/execution/current-csco-e6-public-outcome-reader-20261106-v1/HANDOFF.json.
 Parent proof:
 D:/thericher-v2/model-artifacts/execution/current-csco-parent-public-reader-check-20261106-v1/RESULT.json.
-New custody-reader preparation is separately source-only, NOT an actual private
-read command. Never replay consumed717d or call recovery-capable observe().
+Custody reader r5 below is separately source/native-qualified, actualprivate
+read not performed. Never replay consumed717d or call recovery-capable observe().
+
+## CSCO Exact Offline Custody Reader
+
+Sourcefb63aa6bb5a59888cb5852b28d65e4429fb099ad171fef8e98a54515745356b0:
+D:/thericher-v2/model-artifacts/execution/current-csco-custody-admission-binding-20261106-v1/r5/FUTURE-READ-SPEC.json,
+SHA b6d7b13e718d5abb8a494ab1a161596bf5eba55739be531851d6a0cff8cb9e20.
+One invented real fivephase chain/6negatives/32Jobsclosed/RuffF821-E9 PASS;
+Parent136smallpins0mismatch,4large/outside deferred. Actualprivate reads0.
+Do not run before positive exact public974 phase/childowner closure and fresh
+actual relevant financial-writer admission. Network-none/allprivate-sourceRO,
+exact account/basis/input/policy/intent/fill joins and before-after complete
+membership/identity/mtime/bytes stability remain mandatory. No recovery/locks,
+bank reset/reservation release/foreign adoption or Data/research/global-flat veto.
+
+The entry effective start is Nov6UTC16:35:00..16:37:30 INCLUSIVE; exit effective
+start17:05:00..17:07:30 INCLUSIVE, because540seconds must remain before hard
+16:46:30/17:16:30. The nominal16:45/17:15 bounds alone are insufficient.
+Each actual one-attempt read creates its own source-created output; NEVER replay
+a consumed read or fabricate zero/flat on withheld/unknown. At the eligible
+time only, use the exact pinned command (entry shown):
+
+```powershell
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-csco-custody-admission-binding-20261106-v1/r5/host.py' --source fb63aa6bb5a59888cb5852b28d65e4429fb099ad171fef8e98a54515745356b0 --phase entry --execute
+```
+
+For exit use --phase exit within its own effective window/positive closure.
+This is offline custody observed at actual readtime, not fresh broker holdings,
+settledcash/fees/netPnL or cryptographic OS Scheduler origin. Source readiness
+does not pre-prove future admission/stability; failed admission withholds only
+this read. Existing Paper/strict public974 have separate unchanged authority.
+
+## New Read-Only Probe And Input Task
+
+Actual probe is COMPLETE/consumed, NEVER rerun its launcher:
+D:/thericher-v2/model-artifacts/execution/current-pre-session-kis-paper-readiness-20261106-v1/RESULT.json.
+ActualSource488354a9/result4d59a693,1POST/6GET/all2xx/0retry/0orders/modeoff.
+Four deduplicated holdings are sequential ASOF/not exact owned custody;
+quote/orderability usable then, not regularsession/settledcash/fullrisk/PnL.
+Configuredbinding true/brokeridentityecho unproven. No bank/reservation/exit change.
+
+New19symbol input task thericher-kis-paper-nextsession-input-20261107 is INSTALLED/
+enabled forNov6UTC21:30(KSTNov7 06:30), laststart<21:40/hard21:45, quietpythonw,
+no demand/catchup/repeat. Source0f9c4e8c/PLAN47f1a54b. Parent96pins/native
+constructor/disabled strictreadback passed. EnableCLI failed AFTER effect;
+freshprocess LibraryOnly Read-Source/Read-Owned twice passed unchanged complete
+XML/API7ACL/enabled/0instances/stable. Exact postenablefault unresolved, missing
+receipt NOTforged, never replay Install/Enable/CLIreadback stages.
+D:/thericher-v2/model-artifacts/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+FutureDATAREADY/payload UNKNOWN; exact pointer:
+D:/thericher-v2/model-artifacts/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1/actual/publication/DATAREADY.json.
+Actualworker still checks named collection/cache/token ownership/shared60s
+initialPOST floor/ownclient/15percentreserve.<=19GET/1initialPOST/0retry,
+old300s/frozencontracts unchanged. Official KIS token1/min source:
+https://github.com/koreainvestment/open-trading-api/blob/main/README.md?plain=1.
+No manual Task.Run/capture merely to inspect. NewNov9savedLSTM publisher is
+source/native preparation only, not installed/knownpoint/financialmodel swap.
 
 ## Actual Deployments
 

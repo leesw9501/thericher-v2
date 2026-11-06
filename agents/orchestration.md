@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC08:10 / KST17:10.
+Updated Nov6UTC10:47 / KST19:47.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier state/history: pushed12e5e906 and immutable sources.
 
@@ -16,41 +16,46 @@ all original exits. Package/commit/installation is not company completion.
 
 | Owner | Disjoint current scope / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward | A/research/current-h123-lstm-tcn-comparison-20261106-v1. Capped-finalization0dc1f803 and CPUcontinuation03b104fa COMPLETE/no improvement from12extraTCNepochs. NEWtransformer-development PREPARATION02a95170/0marketfits-nativeattempts at08:02, source/native/backend freeze first. One new boundedfit delegated; no GPU running claim from preparation. |
-| Ptolemy CPU Engine | A/research/current-h123-technical-feature-view-comparison-20261106-v1. r1 COMPLETE8b9b15cd/9HGBheads400trees/14books/allclosed726.180newactive. NEWfixed-fusion uses saved LSTM/technical forecasts, three fixedblends/primaryhalfLSTM-RAW_PLUS/20books/0fits-inferences-GPU. |
-| Banach Execution | A/execution/current-csco-custody-admission-binding-20261106-v1/r2 source-only fivephase collector/transport/guest proof. r1e8f5472e sevencomponentPASS/2attemptsclosed, fullchain absent. Old374 preserved/0actualprivate-CIM-KIS, public974/installedPaper unaffected. |
-| Planck Data | LSTM-H3 shadow715b8f79 COMPLETE/oneCPUforward17known7positive10cash/onepoint/15nativechecks/0fits. NEW A/data/current-intraday-short-hold-readiness-20261106-v1 exact existing1m coverage/causalwindow/custody readiness, no fullscan/API/GPU/fit. Actualae4c68e8 Data build already COMPLETE/Parent74refs, no duplicate. |
-| Darwin closed | GRUH123fit/readout COMPLETE58e50e9f,Parent46refs/419.463combinedactive. DEV-1.561353%/DD2.728150%, recent+.502763%/OPEN-DD.715539%, frozen growthFAIL.0refit/reforecast. |
-| Godel closed | Router4be69technicalFAIL/noeconresult,firstcause84ca unresolvedmissinginput/guard. Synthetic1ULPcaperror not exactcause.7native/fivecomplete, ceiling2 unencodedbindingambiguous, no authorityupgrade/marketretry. |
-| Parent | ActualCSCOinstallation/publicreaderintegration/nativewidebookb161; current memory/verification/Git. Lastpushed7c581fb6. No new actualbroker effect observed. |
+| Arendt Engine/sole Steward | Intradayaa96 COMPLETE2fits/31epochs each/3968updates/6books/allcash; H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates/4books/allcash. Both NONINFORMATIVE/allclosed. No new numerical dispatch yet; next mechanism from cost/holding review, not duplicate architecture. |
+| Ptolemy CPU Engine | OOF7b285a5d COMPLETE14fits/121trees/2574updates/20books, primarygrowthFAILboth/allclosed. FullFIT finalexperts not rerun. FrozenUP034 style caveat/oldnative7vs6 violation preserved; no numeric recovery needed. |
+| Banach Execution | Custodyr5fb63aa6b SOURCE_NATIVE_READY, one fullchain/6negatives/32Jobsclosed.0actualprivate/CIM/KIS. Effective future read16:35..16:37:30 and17:05..17:07:30 with positive phaseclosure/fresh relevant census/stability; no actual read assigned yet. |
+| Planck Data | New0f9c capture ACTUALLY INSTALLED/enabled for21:30/hard21:45, futureREADY UNKNOWN. NEW current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 source/native preparation, one future savedLSTM point only;0currentmarketforward/financialswap. |
+| Darwin temporaryValidation | Scoped actualreadonlyprobe488354a9 COMPLETE1POST/6GET/0orders/holdings4ASOFnotowned; consumed identity neverrepeats. NEW current-transformer-fixed-h3-policy-readout-20261106-v1 cachedforecast singlecomparison,0fits-forwards. |
+| Godel Strategy | FIT-onlysupportb1ec3f09 COMPLETE65280labels/H30positive1898, supportnotpredictability. NEW current-short-swing-cost-turnover-research-20261106-v1 official-source review/atmost2 executable offers, no numerical work. |
+| Parent | Current protected1439 source authority20264fullPASS/25serial/601parity; integration/Git. Positive Data independent fullXML/API7ACL readbacks despite consumedEnableCLI failure, no replay. CSCO original pair/public974 unchanged; no new submit/fill proof. |
 
 Callbacks: Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea;
 Ptolemy01a1afab-9fdf-75c1-b191-c89288d1056e;
 Banach01a1adbc-ded7-7461-ae59-549f18ca4988.
 Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0.
-Closed reference UUIDs:
-Darwin01a1adb5-b486-7801-9fdf-1378d733bfce;
-Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
+Godel Strategy01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
+Darwin temporaryValidation01a1adb5-b486-7801-9fdf-1378d733bfce.
 No running agent/optimizer is inferred from an MD/directory/old failed-root API.
 
-## New Scope Caps
+## Current Scope Caps
 
-- Transformer:1fit/120epochs14040updates/1800NEWactive/3600elapsed/native2attempts,
-  0marketretry/readout200/cleanup120. Source02a95170 is PREPARATION only, final
-  marketSource/backend after actual tiny native timing/feature/checkpoint/book.
-  PrimaryhalfTransformer-LSTM, oneDEV+oneRECENTforecast/16books,0oldmodelcalls.
-- Fixedfusion:3predeclaredblends/20books/onejointreadout/0fits-inferences-GPU,
-  600NEWactive/1800elapsed/native120/readout180/cleanup90/2nativeattempts.
-  Reused inputs/outcomes/explicitadaptive; primary cannot change after results.
-- IntradayData:600active/1800elapsed/cleanup90/native2attempts/max1qualified
-  readinessbuild/0API-acquisition-modelcalls-GPU. Existing manifest/cursor
-  scope only; proposed5/15/30minute targets and30/120lookbacks, not training.
+- Nov9 LSTM-H3 publisher preparation:1200NEWactive3600elapsed/cleanup120/
+  <=2actual native attempts/0fits-updates-currentmarketforwards. One future
+  17row forward only with exact actual0f9c Source/PLAN/READY/payload/closure.
+  Propose Nov6UTC21:47/laststart<21:52/hard22:00; source/native only now,
+  actual definition remains Parent-owned. Nov9valid14:25..<14:35/exitNov12,
+  no Nov6shadow retag/Paper bank swap.
+- FixedH3 Transformer validation:600NEWactive1800elapsed/native<=2/0updates/
+  readout180cleanup90. One cachedforecast jointreadout/0modelcalls, same
+  keys/payoff/costs/nativebook. New provisionalpolicy not oldH123 regrade.
+- Strategy cost/turnover review:600active1800elapsed/0numerics, atmost2
+  source-backed executable proposals, one recommendation. Actual fee plan
+  unknown; no retroactive25bps change/alpha or Paper-fee measurement claim.
+- H30hurdle COMPLETE134.314active/1673.736elapsed/1fit/5nativeupdates/1attempt;
+  intradayLSTM COMPLETE350.967active/4368.584elapsed; OOF COMPLETE652.464
+  inclusiveactive/5639.786elapsed. Never reopen caps or repeat numerical work.
 - LSTM-H3shadow COMPLETE202.970active. Valid13:55..<14:05, not actual entry
   admission or a retaggable replacement HALF input;0financialeffects.
-- Admissionbinding r2:0actualcapture/private/CIM/Scheduler/KIS calls,
-  900NEWactive/2400elapsed/cleanup90/3syntheticnativeattempts BEFOREspawn;
-  consume frozenr1/reuse7components, allfivephase/guest proof missing only.
-- Cappedfinalization/CPUcontinuation/technicalr1 are COMPLETE; never reopen caps.
+- Custodybindingr5 SOURCE/NATIVE COMPLETE:one fullchain attempt/allfivephases/
+  6negatives/32Jobsclosed, conservative600debit. Actual readnotperformed;
+  540s remaining/freshactual admission/before-after stability at futureeffect.
+- Cappedfinalization/CPUcontinuation/technicalr1/Transformerrepair1/fixedfusion/
+  intradayreadiness are COMPLETE; never reopen their clocks/caps.
 - New budgets do not erase oldfailures/debits. Chargeleafworkerwallonce plus
   nonoverlappingcontrollerI/O; queue/LLM distinct. Nativeattempt counters bind
   before every spawn, including bootstrap; source preparation is not a fit.
@@ -69,10 +74,30 @@ Never manually Run an existing Task merely to inspect.
 | CSCOe6a9/315535 |Actually installedbc71/a07705:38, Nov6entry16:20..<16:24/hard16:35, exit16:50..<16:54/hard17:05. Same nativeB10/at-most1share. Public974 read entry after16:35, exit/lifecycle after17:05. |
 | Original exits |H3AMDNov6UTC20:45;Full17Nov6UTC20:54hard21:07;GOOGLNov9UTC20:55;RAWNov10UTC14:30;memoryNov20;H20Dec1. |
 | Data/research |NAS8Nov6UTC21:10hard21:25/savedGRU-Ridge21:35;W25Nov10/13UTC21:30hard21:45. No sealed-label release. |
+| Fresh19 input |0f9c quiet task Nov6UTC21:30/laststart<21:40/hard21:45 installed/enabled. ActualREADY/payload unknown. |
 
 ## Throughput Review
 
-08:10: actual model/profile evidence changes allocation: TCN is much faster on
+10:47 review: ready/owned are Nov9 futurepoint preparation, cachedfixedH3
+comparison and cost/turnover mechanism review. Completed intradayMSE/hurdle are
+allcash at25bpseachleg; FIT H30support only1898positive of65280 does not prove
+predictability. Stop architecture-only reruns and prioritize distinct cost/holding
+mechanisms. GPU has no currently evidenced optimizer after completedhurdle;
+availability is not a permission block. Data task is actually enabled; missing
+postenableCLI receipt was resolved by independent unchanged strict purelibrary
+readback, NOT replay, fault-cause claim or fabricated receipt.
+
+08:36/09:01 review: next actual
+Paper opportunities remain HALF14:31/INTC15:10/MSE15:40/CSCO16:20UTC. Parent8worker
+fulltest ran during role preparation and closed, not a foreground market wait.
+Reversible improvement: pure core11features (4bea08fc) removes repeated artifact
+rt/EMA-source extraction for future consumers, with601rowparity/25tests. Current
+frozenSources remain unchanged. Actualfitentry/mounts/exclusiveoutput lifecycle
+must be smoked, not a simpler nativeonly command. A completed Source package
+does not need another long finalreport before an already prebound next launch;
+Parent redirected closed Arendt/Ptolemy at08:54 without duplicating actors.
+
+Earlier model/profile evidence changed allocation: TCN is much faster on
 CPU, LSTM CUDA faster. Do not equate GPU occupancy with throughput. New CPU-TCN
 continuation and one-call HGB validation avoid known slow kernels/repeated weighted
 binning, without changing old frozen runs. Sources/checkpoints remain recoverable.
@@ -103,14 +128,14 @@ Large/older dependencies were explicitly deferred, not counted as verified.
 Use existing native/own checks for external code, not an expensive history scan.
 
 Actual financial runtime evidence is still the company bottleneck, not missing
-permission or model profitability. Ready alternatives are technicalTransformer,
-saved-output fusion, LSTM shadow handoff and exact native reader completion.
+permission or model profitability. Ready alternatives are cost/holding research,
+cached fixedH3 comparison and fresh future point preparation.
 Unknown source/capability
 withholds its named package only; no substitute request/reset/forceddeployment.
 Claude authenticated QUOTA is review_unavailable, not agreement/globalhold.
 
 Fresh common full authority:
-A/verification/current-csco-native-compatibility-20261106-v1/RESULT.json.
-20239PASS/26knownWindowsSKIP/8of8[20265]/native+helper0/guardedcleanup/serial289.
-Reuse ONLY1437protected+AGENTS unchanged; external code gets own focused/native
+A/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json.
+20264PASS/26knownWindowsSKIP/8of8[20290]/native+helper0/guardedcleanup/serial25.
+Reuse ONLY1439protected+AGENTS unchanged; external code gets own focused/native
 tests. No new framework, permanent team platform, recurring report or approval.

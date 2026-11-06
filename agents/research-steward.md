@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC08:07 / KST17:07. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC10:47 / KST19:47. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -24,22 +24,34 @@ Capped-finalization/run1 COMPLETE0dc1f803:0fits/updates/fourforwards/16books,
 Old3969.829 and114.094probe/finalization/continuation debits remain separate.
 Never trainTCNonGPU merely for occupancy after measured CPU advantage.
 
-NEW fixed raw+technical Transformer development delegated from readiness4b295fcd:
-1800NEWactive/3600elapsed/onefit/120epochs14040updates/native2attempts,
-0marketretry, suitable INNERearlystop/LRschedule/safebest. Actual feature-adapter-
-optimizer-checkpoint-book native and CPU/CUDA timing precede market. No running
-GPU claim from source readiness or an MD. Current discovery pointer gives exact
-phase/Source/API/actor, not financial or numerical authority by itself.
+Transformerrepair1 COMPLETEb77b3e55:20CUDAepochs2200updates/best8,
+20.821fitseconds/280MiBreserved/78.9999newactive/allclosed. Oldtwo launches
+were0marketfits/updates because duplicateRESOURCE creation and missing pinned
+backend mount; old56.969active remains. No duplicate completed fit/forecast.
+Intraday-lstm-h51530 COMPLETEaa96:2fits/31epochs each/best19/3968updates,
+window30CPU66.427s/window120CUDA38.516s,2forecasts6books/allcash/NONINFORMATIVE.
+350.967active/4368.584elapsed/allclosed; Data85.683 chargedonce/sharedruffcache
+scope exception explicit. H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates,
+oneforecast4books/allcash/NONINFORMATIVE/134.314active/1673.736elapsed/allclosed.
+5nativeupdates/1attempt, no doublefee or calibratedconfidence/convergence claim.
+No currently evidenced optimizer after these terminal results; no duplicate fit
+to fill GPU. Next distinct cost/holding hypothesis awaits concrete source offer,
+not GPU permission. Historical completed CUDA activity is not a running claim.
 
-Ptolemy9HGBhead r1 is COMPLETE726.180newactive; next fixed-fusion has0fits,
-forwards orGPU. Planck savedLSTM-H3 shadow has oneCPUforward/no fitting.
-Banach source-only admissionr2 is separate; Godel/Darwin closed. Those do not
-own GPU resources or block a ready qualified Transformer worker.
+Ptolemy OOF7b285a5d COMPLETE14CPUfits/121trees/2574updates/20books,
+652.464inclusiveactive/allclosed. Old7vs6native breach/style caveat retained.
+Planck Nov9 futurepoint source/native preparation/0currentmarketforwards;
+Darwin fixedH3 Transformer cachedforecast comparison/0modelcalls;
+Godel cost/turnover officialsource review/0numerics. Banachr5nativeclosed,
+actual custody read not performed. These are not active GPU jobs or holds on
+future ready frozen campaigns. Original checkpoints/splits/debits remain.
 
 New accounting charges leaf worker wall once plus nonoverlapping controller
 I/O; log queue/LLM separately. Preserve ALL old inclusive counters unchanged.
 No age-reclaim/unknown-app veto, duplicate completed fits or invented active jobs.
 Exact campaign/actor/mount/lease and measured headroom govern any next GPU use.
+Parent fresh8worker repo suite completed20264PASS/26knownSKIP427.89s; helper0/
+guardedcleanup. It was sharedCPU co-tenancy, not an isolated modelbenchmark.
 
 ## Completed GPU Work
 

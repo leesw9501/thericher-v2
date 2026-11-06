@@ -1,10 +1,21 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC08:10 / KST17:10. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC10:47 / KST19:47. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
 ## Current Handoff
+
+NEW Godel owns current-short-swing-cost-turnover-research-20261106-v1:
+official KIS USstock fees plus1-2primary cost/turnover/holding papers, bounded
+existing-offer deduplication, atmost2executable proposals/one recommendation.
+600active1800elapsed/0fits-forwards-marketoutcomedecode-GPU-private-broker.
+Consumer: next distinct cost-aware1-to-fewday Engine campaign, not readinglist.
+Actual account fee plan remains unknown; no retroactive25bpseachleg change.
+Intraday MSEaa96 and H30hurdleff295 both allcash/NONINFORMATIVE. FIT-onlysupport
+b1ec3f09 found H30positive1898/65280 andmean-.498830% afterfees. This supports
+examining cost/holding burden, NOT lackofallpredictability/oracleprofit or a
+license to retune old thresholds. No new model fit until a distinct contract.
 
 Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec completed
 A/research/current-cost-aware-causal-expert-routing-offer-20261106-v1.
@@ -32,10 +43,11 @@ readout is already COMPLETE, not a ready repair. Parent scope/Git unchanged.
 Fixed technicalkernel e8611491/RTb2559495 and handoff1565c9de were actually
 consumed by Ptolemy's ninehead comparison8b9b15cd: RAW_PLUS DEV+1.206408% and
 recent+.433898%, indicatoronly+1.843158%/+.321327%, primary growthFAILboth.
-These reused results motivate a NEW predeclared fixedLSTM/technical fusion,
-not indicator proof/independentalpha. Threefixedblends/oneprimary/no fits or
-newmodelcalls, samebook/rowkeys/payoff/cost. Learned gating still requires
-chronological OOF rather than fitting on these seen evaluation forecasts.
+Fixedfusioned168151 is COMPLETE primarygrowthFAILboth; OOF7b285a5d is also
+COMPLETE14fits/20books/primarygrowthFAILboth. No queuedfusion/oldfinalexpert
+rerun. These results are reuseddevelopment, not indicator proof/independent
+alpha or evidence all ensembles fail. Next offer must change a concrete
+mechanism, not relabel the same blend or fit on seen evaluation forecasts.
 
 Mechanism references, not stock profitability or theorem-transfer evidence:
 https://proceedings.mlr.press/v28/joulani13.pdf

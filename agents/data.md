@@ -1,22 +1,48 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC08:14 / KST17:14.
+Updated Nov6UTC10:47 / KST19:47.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
 
 ## Current Owner And Consumer
 
-Planck (01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0) owns
-A/data/current-intraday-short-hold-readiness-20261106-v1.
-Consumer: next genuinely intraday Engine study, separate from daily H123 swing.
-Bounded exact existing1m manifests/cursors/old3716c/NAS8 coverage and causal
-window inventory, no fullrecursive scan/acquisition/API/GPU/modelcalls.
-Propose fixed5/15/30minute same-session targets and finite30/120lookbacks, not a
-new sweep.600active/1800elapsed/cleanup90/2nativeattempts BEFOREspawn. At most
-one existing native-qualified readiness/materialization; missing contract gets
-an exact gap/alternative, not invented availability or holdout release.
-No active collector is inferred from this assignment.
+Planck (01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0) completed
+A/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1.
+Source0f9c4e8c/PLAN47f1a54b: fresh Nov6-asof19x60OHLC ->Nov9decision,
+17targets+SPYQQQ/exact83963ABI.35Data native checks/2Scheduler mocks passed.
+Parent ACTUALLY INSTALLED/enabled quiet pythonw task
+thericher-kis-paper-nextsession-input-20261107 for Nov6UTC21:30, laststart<21:40,
+hard21:45 (KSTNov7 06:30).19GET/<=1initialPOST/0retry, no demand/catchup/repeat.
+Named collection/cache/token gates/actual identity/storage checks still apply.
+Only this new scope uses60s initialPOST floor; old300s/frozen clients unchanged.
+Actual capture/READY/payload UNKNOWN. Exact future READY:
+A/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1/actual/publication/DATAREADY.json.
+Payload M/us_equities/kis_paper_market/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1/actual/INPUT.npz.
+Parent96pins/nativeconstructor/disabledreadback passed; EnableCLI failed AFTER
+effect, independent fresh-process strict fullXML/API7ACL twice PASS/enabled/
+0instances/stable. No missingreceipt fabrication/replay; exactCLI fault unknown.
+A/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+
+NEW Planck owns A/research/current-nov9-lstm-h3-point-publisher-preparation-20261106-v1:
+source/native for one future savedLSTM_H3_FIXED point/Nov9valid14:25..<14:35/
+Nov12exit.1200NEWactive3600elapsed/cleanup120/<=2nativeattempts/0fits-updates/
+0currentmarketforwards. One future17rowforward requires actual qualified READY/
+payload/source/PLAN/closure; no placeholderhash/Nov6shadowretag/automaticPaper
+swap. Future21:47 readonly definition proposal only; actual install Parent-owned.
+Direct exact schema callbacks to Arendt, no ParentACK barrier.
+
+Previous intradayreadiness COMPLETE a161fcb7/READY8386fe07:
+A/data/current-intraday-short-hold-readiness-20261106-v1/API.json.
+Exact17symbols/24selectedsessions16FIT4INNER4DEV, original3716keys/trials;
+159120priceknownminutes/97920common plannedwindows,65280/16320/16320perrole,
+30/120prefixes and5/15/30minute exits. Same-session target maturity END[e+h].
+11nativechecks/123ownrefs,163.855active/allclosed/0materializations-modelcalls.
+29sourceinventorysessions/26complete17-symbolsessions, not allnew/untouched.
+ActualcaptureOct28-Nov5 versus retrospective targets, canonicalNY grid with
+inheritedKorea headers/recordedclockdefects,0publicationPITknown. No silent
+clock repair/finality/live admission or FirstRate/NAS8 splice. Arendt's new
+bounded intradayLSTM may consume exactREADY without repeating oldGRU studies.
 
 Previous A/data/current-short-swing-h123-target-projection-20261106-v1:
 Actual projection is COMPLETE/closed06:18, Sourceae4c68e8/READYe23875f9,
@@ -54,6 +80,7 @@ do not extend/retag it or replace the existing HALF point/bank.
 
 | Scope | Evidence / actual result |
 | --- | --- |
+| Intraday short-hold |A/data/current-intraday-short-hold-readiness-20261106-v1/API.json. Sourcea161fcb7/READY8386fe07,24sessions17symbols/11nativechecks/123ownrefs/163.855active/allclosed. Parent32smallrefsPASS; larger/outside/deeper ancestry explicitly not independently rehashed. |
 | H123 actual endpoints | A/data/current-short-swing-h123-target-projection-20261106-v1/API.json. Sourceae4c68e8/READYe23875f9, actual producer/consumer native first/onebuild/0retry; Parent74refs. All original keys and recent289 retained. |
 | H123 source/native readiness | A/data/current-short-swing-horizon-data-readiness-20261106-v1/API.json. Source-r2 b689454d, fixed Engine parser075e9c5d, invented native chain PASS.0marketbuilds/reads. Closed102.405active/914.642elapsed. Initial read-audit AssertionError preserved; do not claim its unretained denied path. |
 | Recent OPEN4 | A/data/current-w25-open4-recent-evaluation-inputs-20261106-v1/HANDOFF.json. Source47698983/READY4bfaac45, onebuild289/289input+target-known/17cohorts,0retry. Parent62unique refs PASS, allclosed230.941active/1314elapsed. |
@@ -78,6 +105,8 @@ All times UTC; KST=UTC+9. Do not manually Run existing Tasks to inspect.
   installed future inputs/results UNKNOWN, no reserved-label release.
 - Nov6 NAS8 capture21:10/hard21:25; savedGRU/Ridge21:35.
 - Later W25 captures Nov10/13UTC21:30/hard21:45.
+- New19-symbol input task0f9c Nov6UTC21:30/laststart<21:40/hard21:45 is enabled;
+  actual DATAREADY/payload UNKNOWN. No duplicate oldData83963 capture.
 
 Keep data M/models A, original cursors and measured pacing. Fresh-session work
 precedes backfill. Follow AGENTS.md token/resource/storage policy, not stale

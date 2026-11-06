@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC08:07 / KST17:07. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC10:47 / KST19:47. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -37,15 +37,43 @@ overlap explicit. No improved checkpoint; early12 is not convergence. TwoTCN
 forwards/one16bookreadout, metrics identical to capped results.93.044newactive/
 535.956elapsed/allclosed. No furtherTCN fit is queued. Never refund olddebits.
 
-NEW transformer-development delegated from source-only readiness4b295fcd:
-one fixed d32/head4/layer2/preLN Transformer with raw60x12 + technical19,
-seed20261106.120epoch/14040update max/INNERearly12/LRplateau4/safebest,
-1800NEWactive/3600elapsed/native2attempts/0marketretry. Actual feature->adapter->
-optimizer/checkpoint->policy/widebook native chain and measured CPU/CUDA timing
-before market. Avoid own-rt versus immutable feature-rt module collision.
-OneDEV+oneRECENT forecast/seal then16books, primary fixedhalfTransformer/LSTM;
-all controls rebooked on one exact source. No other model forward/refit.
-Source/contract/current actor qualifies launch, not MD or Parent ACK.
+Transformerrepair1 COMPLETE Sourceb77b3e55/API41d557ba/result82678030:
+fixed d32/head4/layer2/preLN/raw60x12+technical19/seed20261106,20CUDAepochs/
+2200updates/best8/20.821fitseconds/280MiBreserved. INNERearly12, no convergence
+claim. Twoforecasts/16books/onejointseal-readout/78.9999newactive/allclosed.
+Standalone DEV+2.335075%/DD.937501%, recent+.356454%/OPEN-DD.338733%; fixedhalf
+LSTM+3.172552%/1.025153% and+.252446%/.388521%. Frozen primarygrowthFAIL:
+DEVmatchedH3+3.245656%, recentLSTM+.288886%. Positives are exploratory, no regrade.
+Old6049 root doubleconfigure wrote RESOURCE twice; f710 omitted pinned
+/prior/BACKEND.json from fit mounts. Both pre-fit0updates/0marketfits,
+56.969oldactive preserved. Repair uses oneconfiguration/full resolved mounts,
+actual fit-entry/forecast/book proof before market, not overwrites or check waivers.
+
+Intraday-lstm-h51530 COMPLETE Sourceaa96a470/API61ec7669/result5e3fc98a:
+twoLSTMh32/layer1 fits windows30CPU66.427s/120CUDA38.516s, joint5/15/30heads,
+31epochs EACH/best19/3968updates.2DEVforecasts/onejointseal/6books, ALLCASH/
+0effects/NONINFORMATIVE, not positive alpha/zero-risk evidence. Exact Dataa161/
+READY8386/16FIT4INNER4DEV, targetmature END[e+h]/retrospective/noPIT claim.
+350.967active/4368.584elapsed/allclosed,2nativeattempts/10syntheticupdates<=12.
+SCOPE-NOTEb8a83774 retains sharedruffcache outside assignedroot; future use
+--no-cache/owncache. No oldGRU call/retry/duplicate fit.
+
+New distinct H30hurdle COMPLETE Sourceff295182/API7ab781ef/result2de1250a:
+oneLSTM120/h32/layer1 CUDA18epochs/best6/1152updates, threeheads are positive
+probability/positiveconditionalmean/nonpositiveconditionalmagnitude, NOT horizons.
+FIT-onlyRMS and classconditionalloss, expectednet policy/no duplicatefee.
+1nativeattempt/5syntheticupdates/oneDEVforecast4books/0oldmodelcalls,
+134.314active/1673.736elapsed/allclosed. Again ALLCASH/0effects/NONINFORMATIVE;
+Brier/CE are not calibratedconfidence claims or evidence of profitable selection.
+No samefamily retry/architecture-only queue. Next cost/holding hypothesis must
+be distinct, source-backed and frozen before fitting.
+
+FIT-onlysupport diagnostic Sourceb1ec3f09/RESULT64769b81 COMPLETE:
+A/research/current-intraday-net25-h30-support-diagnostic-20261106-v1/API.json.
+65,280knownFITlabels eachhorizon. PositiveNet25 countsH5=88/H15=736/H30=1898,
+H30negative63382/mean-.498830%/positiveconditional+.225235%/negative-.520513%.
+Minimum50/classFIT passes; support is not predictability/oracleprofit. No
+INNER/DEV/RECENT reads/fit/forward.66.255active/allclosed/separatedebit.
 
 ### Ptolemy: Technical Feature Comparison
 
@@ -68,16 +96,24 @@ old395.262debit retained. RAW_PLUS DEV+1.206408%/DD.921982% versus indicatoronly
 +1.843158%/1.007072%; recent+.433898%/OPEN-DD.040741% versus+.321327%/.464720%.
 Primary frozen growthFAILboth, not all unprofitable or universal indicator benefit.
 
-NEW fixed-fusion reuses saved LSTM/RAW_PLUS/INDICATOR_ONLY forecasts only.
-Three candidates fixed before outcomes: primary halfLSTM/halfRAW_PLUS, secondary
-halfLSTM/halfINDICATOR_ONLY, third equal3. Same original H123/net25 policy.
-20books/twoperiods/onejointreadout/0fits-inferences-GPU,600NEWactive/1800elapsed/
-native2attempts/cleanup90. Exact row/unit/known/availability/payoff/cost binding
-and actual native fusion->policy->book first; one source for all controls.
-Primary growth must beat cash/bothsingleexperts/indicator/matchedH3/EW in EACH
-period, DD<=1.25matchedH3 andturn<=1.05matchedH3, positive/2changedcohorts.
-Secondary descriptive, no posthoc primary swap. Direct feature handoff already
-sent to Arendt; no Parent/result approval relay.
+Fixedfusion COMPLETEed168151/finalAPIed7c1273:20books/onejointseal-readout,
+0fits-inferences-GPU,99.178active/723.813elapsed/allclosed/11420ownchecks.
+Primary halfLSTM/RAW_PLUS DEV+.569665%/recent-.320471%; secondaryhalfLSTM/IND
++1.172222%/-.280079%; equal3+1.978843%/-.197813%. PrimarygrowthFAILboth,
+DD/turn/effectsPASS. No posthoc primary swap or bestblend promotion.
+
+OOFreadinessabedcc80 COMPLETE111.594active/oneinventednative/0marketdecode:
+3syntheticLSTMfits6updates/9HGBfits27trees/2gates, actual join/codec/book passed.
+OOF namespace-native-recovery/run1 COMPLETE Source7b285a5d/finalAPI2183e1f5:
+3expanding FIT-only folds/original20purge,3CPU-LSTM+9HGB+Ridge+depth2tree=
+14completedfits/121trees/2574updates/20books. Actual OOF/finalseals and physical
+foldisolation retained. Existing fullFIT finalexperts reused/0finalexpertforwards.
+PrimaryRidge DEV-1.650824% vsHGB+1.843158%; recent+.099100% vs+.321327%,
+frozen growthFAILboth/riskPASS, no secondary rescue.652.464inclusiveactive/
+5639.786elapsed/allclosed. Newnamespace fixes code/checkpoint mountoverlap;
+old Dockerfailure/categoryUNKNOWN and old7updates vs6native cap violation remain.
+FrozenwrapperUP034 prevents fullstaticPASS, not another failedmarketfit/retry.
+No repeat/rerank/independent-alpha claim; foldscaler shift/reused evaluation explicit.
 
 ### Planck: Saved LSTM To Shadow Recommendation
 
@@ -92,11 +128,31 @@ CUDA-RNG restoration on CPU. No rawprices public, financial authority or data re
 Actual COMPLETE08:10 Source715b8f79, point3898054d/seal9b21812e:
 17known/7positive/10cash, oneCPUforward/onepublication/15nativechecks,
 202.970active/allclosed. Valid13:55..<14:05, not entry14:31 permission.
-Planck now owns separate existing1m intraday readiness; no repeated forward.
+IntradayDataa161/READY8386 COMPLETE24sessions/163.855active; nextfresh0f9c
+19x60 capture ACTUALLY INSTALLED forNov6UTC21:30, actual futureREADY UNKNOWN.
+Planck NEW current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 qualifies
+one future savedLSTM_H3_FIXED17rowpoint/Nov9valid14:25..<14:35/exitNov12.
+1200NEWactive3600elapsed/<=2nativeattempts/0fits-updates-currentmarketforwards;
+one futureforward only with exact actualREADY/payload/Source/PLAN/closure.
+No placeholderhash/Nov6shadowretag/model-bank swap. Actual Task Parent-owned.
+
+Godel's frozen H3policyvalidation5aa7 COMPLETE10books/0modelcalls, exactH3
+aliases savedLSTM in both periods: no new historical benefit/alpha. Current
+worker3dbcc771 bytes/identity match/current46members valid. Failedattempt1 has
+TWO broken oldbindings (worker content/identity and recreatedcontractidentity),
+73distinct identityassertions not69PASS; SOURCE-INTEGRITY-NOTE preserves facts.
+No oldmanifest rewrite/currentworker restore or numerical repeat to hide it.
 
 ### Closed GRU And Router
 
-Darwin01a1adb5-b486-7801-9fdf-1378d733bfce is closed/parked.
+Darwin01a1adb5-b486-7801-9fdf-1378d733bfce completed GRU scope below.
+NEW temporaryValidation current-transformer-fixed-h3-policy-readout-20261106-v1
+uses saved b77b/0dc1 forecasts/0fits-forwards/onejointreadout only. Primary
+halfLSTMTransformer fixedH3 vs alignedLSTM/Transformer/sameentryH3EW/cash,
+600NEWactive1800elapsed/native<=2/readout180cleanup90. Native inventedbook/
+index64/widecalendar and exactkey/payoff/cost alignment first; no oldFAILregrade
+or Paper promotion. Godel official cost/turnover review is a separate ready
+Strategy package, not permission for another numerical campaign.
 GRU H123 repair2 COMPLETE28epochs3080updates/best16/15.555s/277MiBreserved.
 Saved forecasts/seal retained, never refit/reforecast. Readout int8 overflow was
 repaired in A/research/current-short-swing-h123-index64-readout-recovery-20261106-v1,
@@ -133,6 +189,15 @@ This separate component is not a retroactive replacement of frozen74ed.
 New family comparisons use ONE resolved book source for ALL rebooked controls.
 Copied pinned ancestor code is byte-immutable; format only new owned adapters.
 Real isolated(-I) import/solver/checkpoint/producer-consumer must run before data.
+The actual entrypoint's mounts/Source verification/exclusive output lifecycle
+must be covered, not only an easier native-only command. Duplicate init can
+fail before any update; distinguish fit launch from actual optimizer work.
+
+New repo module research/short_swing_technical_features.py (commit4bea08fc)
+provides the11pure OHLC features without artifactrt imports/AST extraction.
+25serialtests/601syntheticrows parity to e861/oldEMA; degenerate ratios stayNaN,
+invalid OHLC is rejected, exclusiveentry reads only60priorbars. Future consumers
+must qualify their actual imports/schema; no frozen kernel/image was replaced.
 
 ## Completed Results: Do Not Rerun
 

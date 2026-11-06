@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC08:07 / KST17:07.
+Updated Nov6UTC10:47 / KST19:47.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -10,7 +10,8 @@ immutable artifacts. This file is current reality, not a diary.
 
 Company outcome coexistent-native-paper-execution-runtime-v1 is UNFINISHED:
 interpretable native KIS Paper acceptance, exact linked fill and owned-position
-reconciliation. This continuation proves installation/research/readiness,
+reconciliation. This continuation proves installation/research/readiness and
+one actual scoped read-only KIS probe,
 NOT a new actual submit/acceptance/fill/current owned/net PnL.
 No operator decision blocks ready private work.
 
@@ -25,18 +26,41 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data | SavedLSTM-H3 shadow715b8f79 COMPLETE08:10/oneCPUforward17known7positive10cash/onepoint/15nativechecks/202.970active/allclosed/0fits. NEW A/data/current-intraday-short-hold-readiness-20261106-v1 inventories exact existing1m coverage/contracts for a distinct intraday study, no API/acquisition/GPU/fit. Dataae4c68e8 remains COMPLETE, never duplicate. |
-| Arendt / Engine and sole Steward | A/research/current-h123-lstm-tcn-comparison-20261106-v1. Capped-finalization/run1 COMPLETE0dc1f803/4forwards16books0fits. CPUcontinuation03b104fa COMPLETE/12newTCNepochs1320updates/bestadditional0/no improvement. NEW fixed technicalTransformer delegated from4b295fcd, actual producer/checkpoint/native and CPU-CUDA probe before one bounded fit. No running GPU claim from readiness alone. |
-| Ptolemy / CPU Engine | A/research/current-h123-technical-feature-view-comparison-20261106-v1/r1 COMPLETE8b9b15cd/9HGBheads400trees/18forwards14books/allclosed726.180newactive. NEW fixed-fusion: three predeclared LSTM/technical blends, primary halfLSTM/halfRAW_PLUS;0fits-forwards-GPU/20books. |
-| Banach / Execution | Native custody kerneld63 closed53checks/0actualread. Base374WITHHELD; r1e8f5472e byte-exact repair/sevencomponentsPASS/2attemptsclosed, fullfivephase/guest proof still missing. NEWsource-onlyr2 finishes that chain;0actualprivate/CIM/KIS, public974/schedules unaffected. |
-| Darwin / closed | GRUH123 COMPLETE28ep3080updates/best16; readout recovery58e50e9f COMPLETE/Parent46refs. DEV-1.561353%/DD2.728150%, recent+.502763%/OPEN-DD.715539%; growthFAILboth, not all unprofitable. No repeatedfit/forecast. |
-| Godel / closed | Router4be69e7b TECHNICAL_FAILED/no economicresult. Firstcause84ca7c6f cannot resolve actual missingguard/input; synthetic cap1ULP is not exactcause. Native7dispatches/fivefull; proposed2 binding unencoded/ambiguous, no historicalpass upgrade. |
-| Parent / integration | CSCO installed/publicreader38checks/30refs, shared wide-index componentb161 native5calendar tests. Earlier Darwin74ed already qualified before late callback; Parent extra component is independent regression, not frozen-source replacement. Last pushed7c581fb6; current MD integration/metadata checks pending. |
+| Planck / Data | Fresh19x60 capture-ready-r1 Source0f9c4e8c ACTUALLY INSTALLED/enabled by Parent for Nov6UTC21:30. Future DATAREADY/payload UNKNOWN. NEW current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 source/native preparation only; no oldshadow retag/model-bank swap. |
+| Arendt / Engine and sole Steward | Intradayaa96 COMPLETE2fits/windows30CPU120CUDA/31epochs each/3968updates/6books, ALL_CASH/NONINFORMATIVE. H30hurdleff295 also COMPLETE1CUDAfit18epochs/best6/1152updates/oneforecast4books/134.314active/allclosed, ALL_CASH/NONINFORMATIVE. No queued duplicate fit. |
+| Ptolemy / CPU Engine | OOF7b285a5d COMPLETE14fits/121trees/2574updates/20books/652.464inclusiveactive/allclosed. PrimaryRidge DEV-1.650824%/recent+.099100%, growthFAILboth vs technicalHGB; no secondary swap. Frozen wrapper UP034 style caveat and old7vs6native breach retained. |
+| Banach / Execution | r5fb63aa6b SOURCE_NATIVE_READY: actual fullfivephase invented chain/6negatives/32Jobsclosed/0actualcustody-CIM-KIS. Exact future read spec qualified; fresh actual relevant-writer admission/closure/stability still needed at due read. Public974/installed duties unchanged. |
+| Darwin / temporary Validation | Actual KIS probe488354a9 COMPLETE1POST/6GET/0retry/0orders; four sequential-ASOF account holdings, not owned custody. Once identity consumed. NEW current-transformer-fixed-h3-policy-readout-20261106-v1 cached forecast readout only/0fits-forwards. |
+| Godel / Strategy Research | FIT-onlysupportb1ec3f09 COMPLETE65,280 H30labels/1,898positive/63,382negative; support not predictability. NEW current-short-swing-cost-turnover-research-20261106-v1 official-source executable hypothesis review, no numerical work. OldH3integrity note complete. |
+| Parent / integration | Pure11feature core pushed4bea08fc/25tests/601syntheticparity/20264fullPASS. New external bounded31/54/136/35/33smallpins0mismatch; deferred ancestry/binaries explicitly not independently qualified. Company runtime outcome still unfinished. |
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
 exact frozen schema/ready callbacks directly; Parent acknowledgement is not a
 post-start approval barrier. Source revisions are not numerical dispatch counts.
 Current MDs are context, not immutable runtime dependencies.
+
+## Actual Read-Only Probe And Fresh Data Installation
+
+Probe root A/execution/current-pre-session-kis-paper-readiness-20261106-v1:
+native-repair1 Source488354a90d798b20d881f5129342eb10d93e2bcafc86ef6ee33bc3be65b8011f,
+RESULT4d59a6939d1e449c91e4aca31a18eeb89679751485976daeedf076a52284ca15.
+One initial tokenPOST/sixGET/all2xx/0retry/0orders/modeoff. Quote/orderability
+schema usable at actual read time; neither regular-session proof nor settled cash.
+Four deduplicated holdings are sequential-ASOF, not exact owned custody/fills;
+configured binding true, broker identity echo unproven. Never rerun consumed probe.
+
+Fresh input task thericher-kis-paper-nextsession-input-20261107 is INSTALLED and
+enabled for Nov6UTC21:30 (KSTNov7 06:30), laststart<21:40/hard21:45. Quiet
+pythonw/no demand-catchup-repeat,19GET/<=1initialPOST/0retry,17targets+SPYQQQ,
+Nov6asof->Nov9decision. Source0f9c4e8c/PLAN47f1a54b and Parent96pins/native
+constructor/disabled/fullXML/API7ACL checks passed. EnableCLI failed AFTER effect;
+independent fresh-process strict Read-Owned twice PASS/enabled/0instances/stable.
+Missing ENABLED-READBACK is not forged; exact postenable fault unresolved.
+Do not replay Install/Enable. Actual capture/READY/payload UNKNOWN, not due.
+A/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+Only these new scoped clients use measured/documented60second initialPOST floor;
+shared atomic/legacy timing gates remain. Old300second/frozen contracts unchanged.
+Nov9 point source preparation is separate; no actual publisher/financial swap yet.
 
 ## Actual CSCO Installation
 
@@ -75,6 +99,14 @@ exit/lifecycle after17:05; exact repeatable command in RUNBOOK.md.
 No actual future result has been read. Missing/partial/unbound/ambiguous/unstable
 is UNKNOWN, not zero/no-intent/flat.
 
+Source/native custody reader r5fb63aa6b is separately READY, not actually read:
+A/execution/current-csco-custody-admission-binding-20261106-v1/r5/FUTURE-READ-SPEC.json.
+Conjunctive540s-remaining check makes effective starts16:35..16:37:30 and
+17:05..17:07:30 inclusive, not the nominal later start bounds. Use RUNBOOK
+command only after positive exact phase/owner closure and fresh actual custody
+writer census; network-none/allRO/exact joins/before-after stability mandatory.
+No Data/research/global-flat veto, no replay of consumed717d, no observe().
+
 Public output is source-bound worker-reported ASOF under an assumed-honest host,
 not independent current custody/fresh holdings/cryptographic OS Scheduler origin.
 Fees/settlement/settled cash/net PnL remain unknown without exact evidence.
@@ -100,6 +132,7 @@ All times UTC; KST=UTC+9. Full source/adoption references are in RUNBOOK.md.
 | Original exits |H3AMDNov6UTC20:45; Full17Nov6UTC20:54/hard21:07; GOOGLNov9UTC20:55; RAWNov10UTC14:30; memoryNov20; H20Dec1. |
 | Input/forward points |HALFNov6UTC13:30/third13:45/W25shadow13:55/rank14:10hard14:20; future inference/points UNKNOWN. |
 | Data |NAS8Nov6UTC21:10hard21:25/savedGRU-Ridge21:35; laterW25Nov10/13UTC21:30hard21:45. |
+| Fresh19 daily input |New0f9c task Nov6UTC21:30/laststart<21:40/hard21:45 installed/enabled; actual DATAREADY UNKNOWN. |
 
 No source/test/installation guarantees a trade. Private717d consumed read found
 NO_EXACT_PLAN_RETAINED, not no-intent/flat. Nov5holdings4/noINTC and history0rows
@@ -118,6 +151,12 @@ or actual Paper PnL. Do not repeat completed fits/forecasts/readouts.
 | CPU-TCN03b104fa |One new continuedfit frombest9,12additionalepochs1320updates/45.754s; bestadditional0, no improvement. Twoforecasts/16books reproduce cappedTCN metrics,93.044newactive/allclosed. Never repeat for occupancy. |
 | TechnicalHGB8b9b15cd |Nineheads/400trees/14books. RAW_PLUS DEV+1.206408%/DD.921982%, recent+.433898%/OPEN-DD.040741%; indicatoronly+1.843158%/1.007072% and+.321327%/.464720%. Frozen primarygrowthFAIL, no universal winner. Allclosed726.180newactive,395.262olddebit separate. |
 | LSTM_H3_FIXED shadow715b8f79 |Exact savedbest10/Nov5Data83963 ->17known/7positive/10cash/oneCPUforward/onepoint3898054d, seal9b21812e. ValidNov6UTC13:55..<14:05, not entry14:31 admission or a replacement HALF bank/point. Provisional only; no financial effect. |
+| Transformerb77b3e55 |OneCUDAfit20epochs2200updates/best8/280MiBreserved/early12 not convergence. DEV standalone+2.335075%/DD.937501%, halfLSTM+3.172552%/1.025153%; recent+.356454%/OPEN-DD.338733% and+.252446%/.388521%. Frozen primarygrowthFAIL vs matchedH3/LSTM, still useful exploratory positives; no regrade/Paper swap. |
+| Fixedfusioned168151 |ThreefixedLSTM/technical blends/20books/0fits-modelcalls. Primary+.569665%/recent-.320471%; secondary+1.172222%/-.280079%; third+1.978843%/-.197813%. PrimarygrowthFAILboth/99.178active/allclosed; no reranking. |
+| IntradayLSTMaa96 |Twofits30CPU/120CUDA,31epochs each/best19/3968updates,2forecasts6books/350.967active/allclosed. Allcash/0effects/NONINFORMATIVE, not zero-risk alpha. Sharedruffcache scope exception retained. |
+| IntradayH30hurdleff295 |OneCUDA18epochfit/best6/1152updates, oneforecast/4books/134.314active/allclosed. Class support passes, expected-net policy allcash/0effects/NONINFORMATIVE. No double fee or calibrated-confidence claim. |
+| OOFgate7b285a5d |ThreeCPU-LSTM/nineHGB/twogates=14fits,121trees/2574updates/20books. Ridgeprimary DEV-1.650824%/recent+.099100% vsHGB+1.843158%/+.321327%; growthFAILboth. No finalexpert rerun/secondary swap; oldnative7vs6 breach and UP034 style caveat retained. |
+| FixedH3validation5aa7c83f |10books/0fits-inferences. H3_FIXED aliases originalLSTM allocations bothperiods: +.993207%/DD1.977482% and+.288886%/OPEN-DD.683334%, no incrementaldurationbenefit. CurrentSource valid; oldfailedworker ancestry was overwritten and is explicitly not fully recoverable provenance. |
 | Data47698983/READY4bfaac45 |Onebuild289complete input/fourOPEN keys17cohorts; captureOct17/materializedNov6, not historical arrival. Parent62unique refs/allclosed230.941active. |
 | Recent99e30c88 |0fits/onearchive/sixbooks. W25+.244454%/OPEN-DD.535078%, seed3+.396043%/.535078%, HALF-.247763%/.699639%, THIRD+.344846%/.535078%, samegrossEW-.062973%/.292442%. Primarygrowth/DDFAIL, not unprofitable; Parent110refs/allclosed177.467active. |
 | Consensus e8022369 |0fits-modelcalls-GPU/2archives/12books. OldDEV+.382658%/DD.340856% with3of47active; recent0effects/0of17active. Frozen growthFAILboth, Parent66refs/allclosed181.682active. |
@@ -147,11 +186,14 @@ TLT prep NOT_READY because stock route excludes ETF; no TLT Task/intent installe
 ## Verification, Tools And Monitor
 
 Fresh full compatibility authority:
-A/verification/current-csco-native-compatibility-20261106-v1/RESULT.json,
-SHA062fa8f9f7e52e6f2fdfc13608dc22c63534cec7376067bec2dc4af4843b3098.
-20239PASS/26knownWindowsSKIP/8of8workers[20265items]/native+helper0/
-437.09s/guarded current-child+lease cleanup; serialstock289PASS.
-Parent rehashed1437production/test/script/config pins and AGENTS unchanged.
+A/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json,
+SHA66803d77811ba5d0eb39c6d51670247aa44499370f4f201ff11ada6834522950.
+20264PASS/26knownWindowsSKIP/8of8workers[20290items]/native+helper0/
+427.89s/guarded current-child+lease cleanup; changed-path serial25PASS/601synthetic
+rows match oldkernel,0marketrows.1439production/test/script/config pins plus
+AGENTS unchanged before/after. Old CSCO062fa full/serial289 remains ancestry,
+not current1439source authority. Current purekernel commit4bea08fc is not a
+Docker/Paper deployment or a replacement of frozen e861feature inputs.
 Fresh Ruff/default/research-profile/accounting/monitor Compose(.env.example)
 and diff checks passed. A mistaken research override filename failed before
 correct research-profile config passed; no runtime/config change.
@@ -161,10 +203,18 @@ Parent bounded model metadata integration13/135/145/90smallrefs and shadow36refs
 has0mismatch;
 larger/deeper/outside-scope ancestry explicitly deferred, not full native proof:
 A/verification/current-csco-native-compatibility-20261106-v1/PARENT-H123-MODEL-INTEGRATION.json.
+New bounded model metadata and explicit failedancestry exception (currentH3
+46members valid, historical73identity assertions include TWO failed bindings):
+A/verification/current-technical-feature-core-integration-20261106-v1/MODEL-METADATA.json.
+Further bounded external31/54/136/35/33smallpins0mismatch, no transitive/native
+authority claim:
+A/verification/current-technical-feature-core-integration-20261106-v1/INTEGRATION-1048.json.
 
 Claude native2.1.311 loggedIn/exit0; actual structured review05:08 failed QUOTA.
 A/execution/current-csco-actual-registration-recovery-20261106-v1/parent-claude-review.json.
 Review unavailable, not agreement/operator authority/login failure/global hold.
+09:42 token-floor challenge also quota_unavailable; categorical receipt:
+A/verification/current-technical-feature-core-integration-20261106-v1/CLAUDE-TOKEN-FLOOR.json.
 No repeated auth/quota chase or paid upgrade.
 
 Existing loopback http://127.0.0.1:8787 remains; Korean8788 NOT deployed.

@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC08:07 / KST17:07.
+Updated Nov6UTC10:47 / KST19:47.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
@@ -35,25 +35,29 @@ A/execution/current-csco-parent-public-reader-check-20261106-v1/RESULT.json.
 Initial Parent fixture omitted SOURCE.json; preserved FAILED-check.py/29checks.
 Repaired own synthetic fixture passed38; producer/reader bytes unchanged.
 
-Banach01a1adbc-ded7-7461-ae59-549f18ca4988 closed native custody-kernel preparation:
-A/execution/current-csco-native-custody-reader-preparation-20261106-v1,
-Sourced63c2ff0/53invented checks/11jobsclosed/240active/1507elapsed,
-0actual private/outcome/KIS/Scheduler/credential reads/calls. Old717d admission
-is pinned INTC/a3, not CSCO/e6; no actual-read command is qualified yet.
-Source-only admission binding work:
-A/execution/current-csco-custody-admission-binding-20261106-v1,
-base374 CLOSED_WITHHELD/2nativeattempts consumed, formatting pinned ancestors
-correctly rejected; preserve original failure. r1e8f5472e repaired exact ancestry
-and collector schema, sevencomponent checksPASS/twojobsclosed/0actualcapture;
-fullfivephase current-census/transport and allRO/network-none guest proof absent.
-NEWr2 completes that exact chain with invented fixtures,900NEWactive/2400elapsed/
-cleanup90/max3nativeattempts before spawn.0actualprivate/CIM/Scheduler/KIS now.
-Reuse frozen r1 bytes/existing admission ABI, no broad matcher/ownership waiver,
-copied-source repin or replay of717d. A qualified future command is the consumer,
-not permission to execute a read in this source-only package.
+Banach admission binding r5 is SOURCE_NATIVE_READY:
+A/execution/current-csco-custody-admission-binding-20261106-v1/r5/API.json,
+Sourcefb63aa6bb5a59888cb5852b28d65e4429fb099ad171fef8e98a54515745356b0.
+One real fullchain attempt/allfivephases/6negatives/32Jobsclosed, ownCIDabsent,
+RuffF821/E9 PASS, conservative600debit. Parent136smallpins0mismatch/4larger
+outside-scope deferred.0actualcustody/CIM/Scheduler/KIS/credentials/state.
+Oldr1ancestry/r2binary/r3bootstrap/r4uncapturedfullchain failures preserved;
+no broad matcher/global8MiB weakening/copyrepin or consumed717d replay.
+FUTURE-READ-SPEC is qualified but actual read NOT performed. Conjunctive540s
+remaining rule makes effective entry starts16:35..16:37:30 andexit17:05..17:07:30
+inclusive. Use exact RUNBOOK command only with positive phaseownerclosure and
+fresh actual relevant custody-writer admission. Source readiness is not admission.
 Future custody read needs its own exact source/actual relevant financial-writer
 admission/network-none/allRO mounts/exact joins and before-after stability.
 Do not make Data/research actors or all-positions-flat a reader admission gate.
+
+Actual pre-session KIS read-only probe COMPLETE:
+A/execution/current-pre-session-kis-paper-readiness-20261106-v1/RESULT.json,
+actualSource488354a9/RESULT4d59a693.1POST/6GET/all2xx/0retry/0orders/modeoff,
+native bootstrap repair/21checks PASS/allclosed. Configuredaccountbinding true,
+brokeridentityecho unproven. Holdings4deduplicated/COMPLETE_SEQUENTIAL_ASOF_NOT_OWNERSHIP;
+quote/orderability usable atactualreadtime, notregularsession/settledcash/fullrisk.
+No privatecustody/bank/reservation/exit changes. Consumed once identity NEVERrepeats.
 
 ## Actual Owned Opportunities
 
@@ -100,6 +104,9 @@ A/execution/current-korean-monitor-admission-compatibility-20261106-v1/PAPER-STA
 is a Korean STATIC stale/unknown adoption snapshot, not current custody/live
 controls. Parent19refs/seven native tests/desktop-mobile visual PASS.
 New CSCO uses qualified pythonw GUI caller; no interactive Task.Run.
+NewData0f9c task forNov6UTC21:30 also usesqualifiedpythonw; enableCLI failed
+aftereffect but independent strict fullXML/API7ACL readbacks positive. No replay,
+actual capture UNKNOWN. See Parent installation adoption in HANDOFF/RUNBOOK.
 Earlier audit155project tasks/134enabled/11expired console-capable was not proof
 of popup origin. Never delete an unknown/owned exit merely to quiet the desktop.
 
