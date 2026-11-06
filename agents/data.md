@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC11:36 / KST20:36.
+Updated Nov6UTC12:52 / KST21:52.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
@@ -24,31 +24,30 @@ effect, independent fresh-process strict fullXML/API7ACL twice PASS/enabled/
 0instances/stable. No missingreceipt fabrication/replay; exactCLI fault unknown.
 A/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
 
-Planck publisher SOURCE_NATIVE_READY4b11c9b4/25checks/722.590active/allclosed:
-A/research/current-nov9-lstm-h3-point-publisher-preparation-20261106-v1/API.json.
-Exact savedLSTM_H3_FIXED/RAW60x12+IND8 (notTransformer19), Nov9valid14:25..<14:35/
-Nov12exit.2nativeattempts/0fits-updates-currentmarketforwards. One future17rowforward requires actual qualified READY/
-payload/source/PLAN/closure; no placeholderhash/Nov6shadowretag/automaticPaper
-swap. Future21:47 readonly definition proposal only; Ptolemy prepares installer,
-actual install Parent-owned. Darwin separately qualifies existing-owner typed
-consumer,0financial/private effects now. Parentprewindow publicreader independently
-NOT_DUE/0outcomereads/0directoryenumeration/0marketreads PASS.
-Direct exact schema callbacks to Arendt, no ParentACK barrier.
+Planck clock-bound publisher72eb95e3/native8cf73456 COMPLETE26checks/allclosed:
+A/research/current-nov9-lstm-h3-clock-bound-publisher-20261106-v1.
+Same savedbest10/RAW60x12+IND8 (notTransformer19), Nov9valid14:25..<14:35 and
+originalNov12exit. Actual localinput-admission/inference-start/end are V2sealed;
+localread time is not provider finality/PIT. ONE futureforward acrosssuccessors.
+Parent ACTUALLY INSTALLED/enabled12:51 with721d/qualificationfa46/candidateb002,
+separate disabled840adc48/enabledc78cd18c fullXML/API7ACL attestations/0instances/
+0TaskRun. Quietpythonw Nov6UTC21:47/laststart<21:52/hard22:00. ActualREADY/point
+UNKNOWN; no automatic financialbank swap. Exact Parentadoption in RUNBOOK.
+Oldclockless4b11 SUPERSEDED before installation/forward, neverretag oldclocks.
 
-Godel temporaryData (01a1ad7a-f750-7383-947e-2d7a3bc9bbec) separately owns
-A/data/current-maturity-matched-replacement-input-readiness-20261106-v1.
-Consumer Arendt's new cost-net e+1replacement/originale3expiry family, not
-another barcache or oldfeature rebuild.600NEWactive1800elapsed/cleanup90/
-<=2nativeattempts/0marketmaterialization-targetdecode-fit-acquisition-GPU now.
-Check exact existing (e+1,symbol) z8 byte reuse only if calendar/role/feature
-source proves it; otherwise narrow originalproducer binding. Counts are not
-coverage proof, no rawprice reconstruction fromnormalizedx/scalary. Actual
-producer->consumer parse-return native oninventedformat and exactcausalmasks/
-marks/20purge/role support first. Separate oneprojection root prebound:
-A/data/current-maturity-matched-replacement-projection-20261106-v1,
-300active1200elapsed/cleanup90/<=1build0retry, ONLY after readiness and actual
-Enginecontract/parserABI/source match. DirectREADY callback permits fit without
-ParentACK; no runtime/label readiness inferred from this assignment.
+Godel parser-recovery is COMPLETE, not queued:
+A/data/current-maturity-matched-replacement-parser-recovery-20261106-v1.
+Sourceed055914/READYef94a06c/API251e13b9/RESULT6ecd86b7, ONEbuild/0retry.
+Original row countsFIT37077/INNER8143/DEV799/RECENT289; inputknown29767/8143/
+799/289, samekeys/roles/20purge/maturity/causalmasks.66prefixcohorts (64evaluation
++2training missing e+1 contexts), not wholebarcache rebuild. Exact payload root
+M/us_equities/research_inputs/current-maturity-matched-replacement-parser-recovery-20261106-v1.
+Synchronouscommands closed; OSbirth not retained/no JobObject, no OSorigin claim.
+Readinessfdb39/15native31bindings/241.170active is ancestry; oldprojection1130elapsed/
+180upper/0builds and nativekeyword-only TypeError remainfailed, no caprefund.
+Consumer replacementtwofits/14books is COMPLETE, do not rebuild these inputs.
+Next Godel source-only fixed-expiry hold/exit offer checks exact e1/e2 x/z context
+availability and duplicate families before any new market projection/forecast.
 
 Previous intradayreadiness COMPLETE a161fcb7/READY8386fe07:
 A/data/current-intraday-short-hold-readiness-20261106-v1/API.json.

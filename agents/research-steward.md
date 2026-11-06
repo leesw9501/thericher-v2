@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC11:36 / KST20:36. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC12:52 / KST21:52. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -34,21 +34,25 @@ window30CPU66.427s/window120CUDA38.516s,2forecasts6books/allcash/NONINFORMATIVE.
 scope exception explicit. H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates,
 oneforecast4books/allcash/NONINFORMATIVE/134.314active/1673.736elapsed/allclosed.
 5nativeupdates/1attempt, no doublefee or calibratedconfidence/convergence claim.
-No currently evidenced optimizer after these terminal results; no duplicate fit
-to fill GPU. NEW current-maturity-matched-replacement-development-20261106-v1
-prebound Ridgeprimary/MLP64-32secondary beforelabels,3000NEWactive5400elapsed/
-<=2marketattempts0retry/<=2nativeattempts<=6syntheticupdates. Native measured
-backend/resources and exactGodelData/book chain first; MLP inclusion native/
-resource feasibility only, no outcome selection.120maxepochs20000updates/
-INNERearly12/LRplateau4/safebest,fitsoft600hard720. Preparation is not running
-GPU; permission is not the dependency. Original studies/debits never refunded.
+Replacement recovery2 COMPLETE_EXPLORATORY_ONLY/all8CIDsclosed:
+A/research/current-maturity-matched-replacement-development-20261106-v1/recovery2/FINAL-API-v2.json.
+Ridge1.060487s and CUDA MLP64/32 17epochs/1870updates/best5/18.543040s,
+88MiBpeak; INNERearly12/LRschedule/bestrestoration, not convergenceproof.
+Twofits/fourperiodforwards/14books,5syntheticsteps/2Enginegraphs. DEV0switches/
+NONINFORMATIVE; recentRidge worse than blindH3/MLP, no numericalretry/rerank.
+ACCOUNTING-v2 only partialactive ledger, no exactfullactive/budgetPASS claim.
+Native1keyword-only TypeError/oldData2failedattempts and oldprojectiondebits
+remainfailed. NewDataed055/READYef94 onebuild COMPLETE, no originalclockrefund.
+No currently active optimizer or duplicate completed fit queued for occupancy.
+Next source-only hold/exit offer is not yet a ready numerical GPU campaign.
 
 Ptolemy OOF7b285a5d COMPLETE14CPUfits/121trees/2574updates/20books,
 652.464inclusiveactive/allclosed. Old7vs6native breach/style caveat retained.
-Planck Nov9 futurepoint4b11c9 SOURCE_NATIVE_READY/25checks/allclosed/
-0currentmarketforwards, futureactualpointUNKNOWN;
+Planck Nov9clock-bound72eb COMPLETE26checks/allclosed/0currentmarketforwards,
+ACTUALLY INSTALLED21:47 by Parent721d; futureactualpointUNKNOWN. Old4b11
+superseded beforeeffects, no dualforward;
 Darwin fixedH3 Transformer COMPLETE14books/0modelcalls/68.901active;
-Godel cost/turnover offercfc8 COMPLETE, nowDatareadiness/projection. Banachr5nativeclosed,
+Godel cost/turnover offercfc8/Dataed055 COMPLETE, now fixed-expiry sourceoffer. Banachr5nativeclosed,
 actual custody read not performed. These are not active GPU jobs or holds on
 future ready frozen campaigns. Original checkpoints/splits/debits remain.
 
@@ -56,8 +60,11 @@ New accounting charges leaf worker wall once plus nonoverlapping controller
 I/O; log queue/LLM separately. Preserve ALL old inclusive counters unchanged.
 No age-reclaim/unknown-app veto, duplicate completed fits or invented active jobs.
 Exact campaign/actor/mount/lease and measured headroom govern any next GPU use.
-Parent fresh8worker repo suite completed20264PASS/26knownSKIP427.89s; helper0/
-guardedcleanup. It was sharedCPU co-tenancy, not an isolated modelbenchmark.
+Parent freshNET25repo authority20289PASS/26knownSKIP/8of8workers[20315items]/
+419.15s/helper0/guardedcleanup, serial58+177PASS.1440protected+AGENTS stable;
+old20264 is ancestry only. Isolated fake-state serial177 overlapped initialfull,
+not an isolated speedbenchmark. Code authority is not financialdeployment or
+externalworker proof; independent ready GPUwork needs its own frozen contract.
 
 ## Completed GPU Work
 

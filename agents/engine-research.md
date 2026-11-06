@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC11:36 / KST20:36. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC12:52 / KST21:52. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -68,19 +68,33 @@ Brier/CE are not calibratedconfidence claims or evidence of profitable selection
 No samefamily retry/architecture-only queue. Next cost/holding hypothesis must
 be distinct, source-backed and frozen before fitting.
 
-NEW current-maturity-matched-replacement-development-20261106-v1/ORIGIN.json:
-acceptedcfc8 source offer, one cost-net optional e+1held->unheld switch retaining
-originale3exit/cachedW25initialgate. Causal24features[z_h8,z_j8,diff8], cohort
-equalweights/allorderedpairs/originalroles20purge/targetmaturity/knownmasks.
-Ridgealpha1 primary plus MLP64/32/GELU/drop.1/seed20261106 secondary prebound
-beforelabels; secondary inclusion depends ONLY on native/resources, never outcomes.
-MLP120maxepochs20000updates/INNERearly12/LRplateau4/safebest/fitsoft600hard720.
-Atmost2fitattempts/0retry/3000NEWactive5400elapsed/cleanup180/readout300/
-<=2nativeattempts<=6TOTALsyntheticupdates checkedbeforelaunch/steps/14books.
-One combinedDEV-RECENT archive/readout, no oldW25fits/forwards/primaryswap.
-Godel separate Datareadiness/projection and actual producer->parser->solver/
-checkpoint->chooser->exactquantity25bpsbook native first; no incompatible
-weight-target resizing/10bpsbook alias. No currentGPU/fit claim frompreparation.
+Replacement recovery2 is COMPLETE_EXPLORATORY_ONLY/all8CIDsclosed:
+A/research/current-maturity-matched-replacement-development-20261106-v1/recovery2/FINAL-API-v2.json.
+FIT-SOURCEe89caf9d/READOUT-SOURCE4d7eb6a9/native2Source3e3d1383;
+Ridge1.060s plus CUDA MLP64/32 17epochs/1870updates/best5/18.543s/88MiBpeak.
+Sameoptional e+1switch/originale3exit/cachedW25gate/24causalfeatures,475420FIT/
+130288INNERpairs,5syntheticsteps/2graphs/2fits/fourforwards/14books.
+Jointsealf46b3b8c/readout9ad5f5dc: DEVboth/blindH3+3.601215%/DD.650455%/
+0switches/NONINFORMATIVE. RecentRidge-.150545%/.792542%/3switches versus
+blindH3/MLP+.244454%/.544454%/0switches. PrimarygrowthFAILboth, recentDDFAIL;
+no incremental benefit, promotion/secondaryrerank or repeatedfit. ACCOUNTING-v2
+is partial, not exact cumulativeactive or budgetPASS. Oldnative1bc1999 keyword-
+onlyTypeError/0steps and oldprojection1130elapsed/180upper/0build remainfailed.
+Dataed055/READYef94 ONEbuild complete; no oldW25modelcalls or source/capreset.
+
+Next source-only Strategy Godel offer:
+A/research/current-fixed-expiry-hold-exit-offer-20261106-v1.
+Freshremaining H2/H1 at e1/e2, ORIGINAL e3expiry, no doublefee/resethorizon.
+Dedup exact oldG99 and check context availability first;0numericaldispatch now.
+Do not train an architecture clone simply to fill GPU.
+
+Clockless4b11 superseded BEFOREeffects. Clock-bound72eb/native26checks is
+ACTUALLY INSTALLED/enabled21:47 by Parent721d; actualREADY/pointUNKNOWN.
+Samebest10/IND8, actual localadmission/inference intervals V2sealed; onefuture
+forward. ThreeNET25repo modules+tests passed fresh58+177serial/20289fullPASS/
+1440protected+AGENTS unchanged. Positive sourcepublication->realreader->repo
+controller proof44cadb77 is invented only, not financialSDK/runtimedeployment.
+Darwin prepares versioned SAMEowner/bank futuregraph separately.
 
 FIT-onlysupport diagnostic Sourceb1ec3f09/RESULT64769b81 COMPLETE:
 A/research/current-intraday-net25-h30-support-diagnostic-20261106-v1/API.json.
@@ -144,14 +158,13 @@ Actual COMPLETE08:10 Source715b8f79, point3898054d/seal9b21812e:
 202.970active/allclosed. Valid13:55..<14:05, not entry14:31 permission.
 IntradayDataa161/READY8386 COMPLETE24sessions/163.855active; nextfresh0f9c
 19x60 capture ACTUALLY INSTALLED forNov6UTC21:30, actual futureREADY UNKNOWN.
-Planck current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 is SOURCE/
-NATIVE_READY4b11c9b4/25checks/722.590active/allclosed; future savedLSTM_H3_FIXED
-17rowpoint/Nov9valid14:25..<14:35/exitNov12, RAW60x12+IND8 NOTTransformer19.
-2nativeattempts/0fits-updates-currentmarketforwards;
-one futureforward only with exact actualREADY/payload/Source/PLAN/closure.
-No placeholderhash/Nov6shadowretag/model-bank swap. Ptolemy installer and Darwin
-existing-owner typedconsumer are separate source/native scopes, no actualTask/
-private/financial effects. Actual Task Parent-owned.
+Old current-nov9-lstm-h3-point-publisher-preparation-20261106-v1/4b11 is
+SUPERSEDED beforeinstallation/forward; its25checks/722.590active stayhistorical.
+Actual installed successor72eb records admission/inference clocks V2, same
+17row/Nov9valid14:25..<14:35/Nov12exit/RAW60x12+IND8 NOTTransformer19.
+One futureforward requires actualREADY/payload/Source/PLAN/closure. No
+placeholderhash/Nov6shadowretag/model-bank swap. Parent installed publisher,
+Darwin separately prepares SAMEowner native financialdelivery, not another bank.
 
 Godel's frozen H3policyvalidation5aa7 COMPLETE10books/0modelcalls, exactH3
 aliases savedLSTM in both periods: no new historical benefit/alpha. Current

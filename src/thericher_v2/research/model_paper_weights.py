@@ -48,9 +48,17 @@ MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE = (
 MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE = (
     "model-weights-us-cash-raw-open-elapsed3-open5-2026-v1"
 )
+MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE = (
+    "model-weights-us-cash-net25-open-elapsed3-open5-2026-v1"
+)
+_US_CASH_OPEN_ELAPSED3_PROFILES = (
+    MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE,
+    MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE,
+)
 _US_CASH_OPEN5_PROFILES = (
     MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
     MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE,
+    MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE,
 )
 MODEL_PAPER_US_CASH_H3_OPS_ROUTES = (
     "AAPL/NAS", "AMD/NAS", "AMZN/NAS", "GOOGL/NAS", "META/NAS", "MSFT/NAS",
@@ -93,6 +101,10 @@ RAW_OPEN_ELAPSED3_EXECUTION_BASIS = (
     "RELATIVE_SIGN_ONLY_NON_PARITY_research_OPEN_e_to_OPEN_e_plus_3_excess_EW17_"
     "native_entry_OPEN5_owned_exit_elapsed3_OPEN5_not_OPEN_fills_fees_settlement"
 )
+NET25_OPEN_ELAPSED3_EXECUTION_BASIS = (
+    "ABSOLUTE_NET25_PROVISIONAL_NON_PARITY_research_OPEN_e_to_OPEN_e_plus_3_cost_reference_not_API_fee_"
+    "native_entry_OPEN5_owned_exit_elapsed3_OPEN5_not_OPEN_fills_fees_settlement"
+)
 
 
 def _need(value, reason):
@@ -103,7 +115,7 @@ def _need(value, reason):
 def model_paper_weights_horizon_profile(profile):
     """Map only explicit weight profiles; never infer a horizon from dates."""
     _need(type(profile) is str, "weights_profile_invalid")
-    if profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE:
+    if profile in _US_CASH_OPEN_ELAPSED3_PROFILES:
         return MODEL_PAPER_ELAPSED_H3_PROFILE
     if profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE:
         return MODEL_PAPER_3_SESSION_PROFILE
@@ -173,6 +185,7 @@ class ModelPaperWeightRow:
                 MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
                 MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
                 MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE,
+                MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE,
             )
             and self.feature_known
             and self.route.endswith(("/NAS", "/NYS"))
@@ -328,7 +341,7 @@ def _validate_cash_profile(metadata, profile):
             and slots == (17,),
             "weights_us_cash_h3_ops_axis_invalid",
         )
-        if profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE:
+        if profile in _US_CASH_OPEN_ELAPSED3_PROFILES:
             _need(all(row.feature_known for row in metadata.rows), "weights_raw_open_unknown")
         # Compare the supplied CASH value; never add or repair a missing residual.
         derived = append_derived_cash_h3_row(metadata.rows[:17])
@@ -396,6 +409,7 @@ def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE
         MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
         MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
         MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE,
+        MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE,
     )
     namespace = "us" if us_profile else "nas"
     valid_until = (
@@ -429,7 +443,10 @@ def _weight_targets(metadata, entry_session, profile=MODEL_PAPER_WEIGHTS_PROFILE
             valid_until,
             metadata.feature_window_end,
             (
-                "RELATIVE_SIGN_ONLY_NON_PARITY_RAW_OPEN_e_to_OPEN_e_plus_3_"
+                "ABSOLUTE_NET25_PROVISIONAL_NON_PARITY_NET25_OPEN_e_to_OPEN_e_plus_3_"
+                "untrusted_weight_gross_ceiling_native_risk_may_reduce_not_alpha"
+                if profile == MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
+                else "RELATIVE_SIGN_ONLY_NON_PARITY_RAW_OPEN_e_to_OPEN_e_plus_3_"
                 "untrusted_weight_gross_ceiling_native_risk_may_reduce_not_alpha"
                 if profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
                 else "untrusted_weight_gross_ceiling_native_risk_may_reduce_not_replay_or_alpha"
@@ -465,7 +482,9 @@ def prepare_model_paper_weights_input(
         exit_session,
         profile=profile,
         execution_basis=(
-            RAW_OPEN_ELAPSED3_EXECUTION_BASIS
+            NET25_OPEN_ELAPSED3_EXECUTION_BASIS
+            if profile == MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
+            else RAW_OPEN_ELAPSED3_EXECUTION_BASIS
             if profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
             else US_CASH_H3_OPS_EXECUTION_BASIS
             if profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
@@ -486,7 +505,9 @@ def validate_model_paper_weights_input(value):
     early = value.profile == MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE
     elapsed = value.profile in _ELAPSED_WEIGHT_PROFILES
     basis = (
-        RAW_OPEN_ELAPSED3_EXECUTION_BASIS
+        NET25_OPEN_ELAPSED3_EXECUTION_BASIS
+        if value.profile == MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
+        else RAW_OPEN_ELAPSED3_EXECUTION_BASIS
         if value.profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
         else US_CASH_H3_OPS_EXECUTION_BASIS
         if value.profile == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
@@ -519,7 +540,7 @@ def validate_model_paper_weights_input(value):
         and value.metadata.exit_not_before
         == (
             last.open_ts
-            if value.profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
+            if value.profile in _US_CASH_OPEN_ELAPSED3_PROFILES
             else last.close_ts - timedelta(minutes=45 if early else 15)
         ),
         "weights_session_clocks_invalid",
@@ -555,7 +576,7 @@ def model_paper_us_cash_h3_ops_window(value, *, operational_session=None):
         and session.open_ts >= value.exit_session.open_ts,
         "weights_sessions_invalid",
     )
-    raw_open = value.profile == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
+    raw_open = value.profile in _US_CASH_OPEN_ELAPSED3_PROFILES
     return ModelPaperCashH3Window(
         value.entry_session.open_ts,
         value.entry_session.open_ts + timedelta(minutes=5),
@@ -668,6 +689,7 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
             MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
             MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE,
+            MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE,
             MODEL_PAPER_WEIGHTS_CASH_5_SESSION_PROFILE,
             MODEL_PAPER_WEIGHTS_H20_EARLY_EXIT_PROFILE,
             *_ELAPSED_WEIGHT_PROFILES,
@@ -675,7 +697,9 @@ def load_model_paper_weights_input(payload, *, expected_sha256, expected_policy_
         and document["weight_units"] == WEIGHT_UNITS
         and document["execution_basis"]
         == (
-            RAW_OPEN_ELAPSED3_EXECUTION_BASIS
+            NET25_OPEN_ELAPSED3_EXECUTION_BASIS
+            if document["profile"] == MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
+            else RAW_OPEN_ELAPSED3_EXECUTION_BASIS
             if document["profile"] == MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
             else US_CASH_H3_OPS_EXECUTION_BASIS
             if document["profile"] == MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE

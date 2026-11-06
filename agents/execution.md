@@ -1,11 +1,26 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC11:36 / KST20:36.
+Updated Nov6UTC12:52 / KST21:52.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
 
 ## Current Owner And Ready Readers
+
+NET25 additive3module/twotest port COMPLETE; recorded5installed frozenruntime/
+attestation graphs disjoint, no installedSDKoverwrite. Fresh58+177serial and
+20289fullPASS/26knownSKIP/8workers/1440protected+AGENTS stable. Positive72eb
+inventedpublication->strictreader->repo native controller/cohort PASS44cadb77;
+oldchild MAX_PATH/wrapperfailures remainfailed. This is not financialdeployment.
+Darwin now owns current-nov9-net25-native-owner-runtime-preparation-20261106-v1:
+versioned SAMEaccount owner/bank SDK+BankLeg/CapsuleVisit delivery graph,
+1200active3600elapsed/cleanup120/<=2nativegraphs,0actualprivate-KIS-Task-effects.
+Do not reuse engineeringCSCO identity for LSTM; retain originalB10/F9/exits/
+operations and actualeffect risk/admission checks. Actualpoint hashUNKNOWN.
+Clock-bound72eb publisher ACTUALLY INSTALLED12:51 via721d/fa46/b002, independent
+disabled840a/enabledc78c fullXML/API7ACL PASS/0instances/0TaskRun. Nov6UTC21:47/
+laststart<21:52/hard22:00; actualREADY/pointUNKNOWN. Old4b11 neverinstalled,
+old4failednativeattempts stayfailed. No newoperatorhold or riskweakening.
 
 Parent owns actual integration/Git/deployment. New CSCO future pair is
 ACTUALLY INSTALLED05:38 via recoverybc71ebab/Plana077bfb0:

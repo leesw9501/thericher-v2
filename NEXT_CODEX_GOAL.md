@@ -17,7 +17,7 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-Actual Nov6UTC11:36: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+Actual Nov6UTC12:52: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
 unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
 native constructor4surfaces and separate fullXML/API7ACL readback PASS;
 both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
@@ -44,11 +44,12 @@ replay either Apply. Installation is not submit/fill/financial admission.
    COMPLETE2fits/windows30CPU120CUDA/31epochs each/3968updates/6books,
    allcash/NONINFORMATIVE. H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates,
    oneforecast4books/allcash/NONINFORMATIVE. No duplicate completed fit or
-   GPU-utilization-only work. NEW current-maturity-matched-replacement-
-   development-20261106-v1: cost-net e+1crossasset switch/originale3exit,
-   Ridgeprimary/MLPsecondary prebound beforelabels/atmost2fits/3000NEWactive/
-   5400elapsed/<=2nativeattempts<=6syntheticupdates/14books. Actual Data/native
-   exactquantity25bpsbook handoff first, no GPUrunningclaim from preparation.
+   GPU-utilization-only work. Replacement recovery2 COMPLETE_EXPLORATORY_ONLY:
+   Ridge1fit/CUDA MLP17epochs/best5/1870updates/14books/all8CIDsclosed. DEV
+   +3.601215%/DD.650455% aliases blindH3 with0switches/NONINFORMATIVE; recent
+   Ridge-.150545%/3switches vs blindH3/MLP+.244454%/0switches. No demonstrated
+   benefit/promotion/rerank/repeatedfit. Partial ACCOUNTING-v2 is not budgetPASS.
+   Dataed055/READYef94 onebuild COMPLETE; all original failuredebits unchanged.
 3. Temporary CPU Engine Ptolemy: current-h123-technical-feature-view-comparison-
    20261106-v1/r1 COMPLETE8b9b15cd, nineHGBheads/400trees/18forwards/14books.
    RAW_PLUS development+1.206408%/recent+.433898%, frozen growthFAIL; indicator
@@ -67,15 +68,21 @@ replay either Apply. Installation is not submit/fill/financial admission.
    capture-ready-r1 Source0f9c4e8c ACTUALLY INSTALLED/enabled for Nov6UTC21:30,
    laststart<21:40/hard21:45, actual DATAREADY/payload UNKNOWN. Parent independent
    strict readbacks positive despite failed postenableCLI; never replay stages.
-   Nov9publisher4b11c9b4 is SOURCE_NATIVE_READY/25checks/722.590active/allclosed,
-   correct RAW60x12+IND8/0currentmarketforwards/pointUNKNOWN. Ptolemy prepares
-   qualified21:47 future installer; Darwin prepares exactsealedpoint->existing
-   ONEaccount-owner input/typedproposal. No actualpublisherinstallation/newbank/
-   financialmodel swap yet; native Source alone is not futureeffects.
+   Clocklesspublisher4b11 prototype is SUPERSEDED before any install/forward:
+   it lacks actual inference clocks. NEW clock-bound72eb/native26checks is
+   ACTUALLY INSTALLED/enabled12:51 via721d/qualificationfa46/candidateb002,
+   separate disabled840adc48/enabledc78cd18c attestations/fullXML/API7ACL PASS.
+   Samebest10/IND8/Data/future21:47; actualREADY/point UNKNOWN, one futureforward.
+   Minimal3module NET25 profile port and positive actualreader/native path pass
+   fresh20289full tests, not installed financial SDK/runtime deployment. Darwin
+   next prepares versioned SAMEowner/bank NET25 delivery graph under separate
+   current-nov9-net25-native-owner-runtime-preparation-20261106-v1; preserve
+   all exact identities/reservations/exits and effecttime admission checks.
 5. Darwin fixedH3 Transformer194023 COMPLETE14books/0modelcalls; primaryDEV
    +3.059492%/recent+.252446%, frozenFAILboth/no repeat. Godel cost/turnover
-   offercfc8 COMPLETE13tests/Parent38pins; now owns e+1 input readiness plus
-   a separate onebuild projection only after actualconsumerABI/native binding.
+   offercfc8 COMPLETE13tests/Parent38pins; parser-recoveryed055/READYef94
+   onebuild COMPLETE. Next fixed-expiry hold/exit source-only offer checks
+   e1/e2 context availability/dedup; no numerical dispatch or newGPU claim.
    FIT-onlysupportb1ec3f09 COMPLETE H30 1898positive/63382negative; support
    is not predictability/oracleprofit or permission to regrade old25bps studies.
 6. Quiet audit638a COMPLETE160tasks/139enabled/0OSchanges; popuporiginUNKNOWN.
@@ -109,6 +116,7 @@ Task/collector/strategy merely to inspect it; preserve active-owner exclusivity.
 | Other original exits |H3AMDNov6UTC20:45; Full17Nov6UTC20:54/hard21:07; GOOGLNov9UTC20:55; RAWNov10UTC14:30; memoryNov20; H20Dec1. Keep every exact original duty. |
 | Data / observation |NAS8Nov6UTC21:10/hard21:25, savedGRU/Ridge21:35; laterW25Nov10/13UTC21:30/hard21:45. Future inputs/outcomes UNKNOWN, no reserved-label release or repeated fit. |
 | Fresh19 daily input |Newquiet0f9c task Nov6UTC21:30/laststart<21:40/hard21:45 enabled. Nov6asof->Nov9decision; actualREADY/payload UNKNOWN, no automatic publisher/Paper activation. |
+| Nov9LSTM H3 publisher |New72eb task Nov6UTC21:47/laststart<21:52/hard22:00 installed/enabled12:51. ActualREADY/point UNKNOWN, no financialdeployment. |
 
 After Nov6UTC15:20 only, the finite exact-set reader Source-R2 9c6a78cb may inspect
 the bound INTC public outcome through the RUNBOOK pinned command. Parent15tests/
@@ -152,11 +160,13 @@ relevant positive closure remain the company completion condition. An owned
 package/commit/deployment or completed research never substitutes for runtime
 evidence or permits marking this goal complete.
 
-Fresh full authority: A/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json.
-20264PASS/26knownWindowsSKIP/8of8[20290items]/native+helper0/guardedcleanup;
-changed-path serial25PASS/601syntheticrowparity/427.89seconds.
-Reuse only1439protected+AGENTS unchanged. Pure11feature kernel pushed4bea08fc
-removes file/rt extraction for future consumers, not frozen-campaign replacement.
+Current full authority: A/verification/current-net25-sdk-integration-20261106-v1/RESULT.json.
+SHAf4a92ea442ace4177c1480479222121627f9da4eb6c497eac0c654f6f0700a57;
+20289PASS/26knownWindowsSKIP/8of8[20315items]/native+helper0/419.15s/guarded
+same-child+lease cleanup; changed/legacy serial58+177PASS. Reuse only1440protected
+production/test/config/dependency/script+AGENTS unchanged. New positive source72eb
+publication->strictreader->repo native path is invented proof only. Old20264pass
+is ancestry, not current source or external authority. No old failedchild regrade.
 D code needs its own focused/native evidence; repeated repo tests cannot validate
 external code. Fresh Ruff/fourCompose(.env.example)/diff before integration
 commit/push. Use uv --no-env-file, no implicit .env.

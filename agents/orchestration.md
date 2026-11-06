@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC11:36 / KST20:36.
+Updated Nov6UTC12:52 / KST21:52.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier state/history: pushed12e5e906 and immutable sources.
 
@@ -16,13 +16,13 @@ all original exits. Package/commit/installation is not company completion.
 
 | Owner | Disjoint current scope / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward | Intradayaa96/ff295 COMPLETE/allcash/NONINFORMATIVE. NEW current-maturity-matched-replacement-development-20261106-v1 source/native preparation, Ridgeprimary/MLPsecondary prebound beforelabels. No fit/GPUrunning claim; Data/book dependency first. |
-| Ptolemy invokedInfra | Audit638a COMPLETE160tasks139enabled/0OSchanges/33.550active. NEW current-nov9-lstm-h3-publisher-installer-preparation-20261106-v1, source/native future21:47 GUI installer only; actualcreation Parent. |
+| Arendt Engine/sole Steward closed | Replacement recovery2 COMPLETE/twofits incl CUDA MLP17epochs/best5/1870updates/14books/all8CIDsclosed. DEV0switches/NONINFORMATIVE; recentRidge3switches worse than blindhold. No active optimizer. |
+| Ptolemy invokedInfra closed | Identity721d/fa46/41nativechecks COMPLETE. Parent ACTUALLY INSTALLED72eb publisher12:51; create-disabled/separate840a/enable/separatec78c fullXML/API7ACL PASS. Old4failednativeattempts unchanged. |
 | Banach Execution closed | r5directreader READY/0actualreads; monitorcb4277 COMPLETE31nativeHTTP/parser checks/e200exists, NOTdeployed/oldfinancialgraphblock. ProposednewOSreaderpair SUPERSEDED with0actors/root/definitions; no newschedule/gate. |
-| Planck Data closed | Capture0f9c INSTALLED21:30, actualREADY UNKNOWN. Nov9publisher4b11c9 SOURCE_NATIVE_READY25checks/722.590active/allclosed/0currentmarketforward. CorrectLSTMIND8, no point/model-bank swap. |
-| Darwin Execution | Validation194023/probe4883 closed, no repeat. NEW current-nov9-lstm-h3-paper-consumer-readiness-20261106-v1 exactfuturesealedpoint->existingONEaccount-owner typedproposal, no newwriter/private/financialeffects. |
-| Godel temporaryData | Cost/turnoveroffercfc8 COMPLETE13tests/33ownrefs/Parent38pins. New e+1inputreadiness and separatelyprebound oneprojection, actualArendtABI/source/native needed beforebuild.0fits/acquisition/GPU. |
-| Parent | Current protected1439 source authority20264fullPASS/25serial/601parity; integration/Git. Positive Data independent fullXML/API7ACL readbacks despite consumedEnableCLI failure, no replay. CSCO original pair/public974 unchanged; no new submit/fill proof. |
+| Planck Data closed | Capture0f9c INSTALLED21:30; clock-boundpublisher72eb/native26checks ACTUALLY INSTALLED21:47. ActualREADY/point UNKNOWN. Old4b11 superseded beforeeffects, onefutureforward. |
+| Darwin Execution | NET25 repo port/positive native/fresh20289fullPASS COMPLETE. NEW versioned SAMEowner/bank native delivery graph preparation, no actual financialdeployment. |
+| Godel Data thenStrategy | Dataed055/READYef94 COMPLETE/onebuild; oldfaileddebits unchanged. NEW fixed-expiry hold/exit source-only offer checks duplicate families/e1-e2context availability;0numericaldispatch. |
+| Parent | Integration/Git; fresh58+177serial/20289fullPASS/1440protected+AGENTS stable/Ruff4Compose. Actual publisher installed12:51, source-produced positive repo native PASS. Companyfinancialresult UNKNOWN. |
 
 Callbacks: Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea;
 Ptolemy01a1afab-9fdf-75c1-b191-c89288d1056e;
@@ -34,6 +34,28 @@ No running agent/optimizer is inferred from an MD/directory/old failed-root API.
 
 ## Current Scope Caps
 
+- NEW Darwin versioned sameowner NET25 native-runtime preparation1200active/
+  3600elapsed/cleanup120/<=2nativegraphs, D-only/0private-env-KIS-Tasks-GPU-
+  modelforwards. Producer72eb strictreader -> existingaccount BankLeg/CapsuleVisit
+  graph with inventedpositive entry/exit/unknownrestart. Preserve actualbank/F9/
+  journals/risk/operations; actual futurepoint hashUNKNOWN, no deployment yet.
+- NEW Godel fixed-expiry hold/exit offer300active1200elapsed/0numericaldecode-
+  fits-forwards-private-GPU-KIS. Dedup G99, e1/e2 RAW60x12+z8availability, one
+  executable offer or rejection. This is not a repeated replacementfit authority.
+- Parser-recovery Data600NEWactive1800elapsed/cleanup90/ONEsharednative+ONE
+  build0retry, same hypothesis/split/data/seed/cost. Engine remaininggraph2/
+  sixsyntheticsteps/2fits/globalhard12:42:17 unchanged. OldData2native/0build
+  and Engine1native/0steps remainfailed, no retroactiveauthority.
+- NET25repo integration1200active3600elapsed/cleanup120/<=2nativegraphs,
+  only3named modules+focusedtests. Installedruntime ANDsource-attestation pins
+  disjoint checked;0private/KIS/Task/market/modeleffects. Parentfreshfull after.
+- New clock-boundpublisher600active1800elapsed/cleanup90/<=2native, same
+  best10/IND8/Data/future21:47;0currentmarketforwards/onefutureforward total.
+  Old4b11 supersededbeforeeffects, neverdualjobs/fabricateoldtimestamps.
+- Principal-identity repair600active1800elapsed/cleanup90/<=2nativegraphs,
+  actualCOMpureconstructors/allmutatorsmocked/0Taskqueries-writes. Resolve
+  nativealias to EXACTdeclared+currentSID, unknownfails;Logon3/LUA0/fullXML/
+  API7ACL/action/clocks unchanged. Bindnewclock-boundcandidate only.
 - Nov9 installer preparation600active1800elapsed/cleanup90/<=2nativeattempts;
   realCOMconstructor pure surfaces only, allmutators mocked/0actualTaskqueries-
   registration-enable-Run. Source/candidate/native/executable/clock/fullXML/API7ACL
@@ -90,8 +112,29 @@ Never manually Run an existing Task merely to inspect.
 | Original exits |H3AMDNov6UTC20:45;Full17Nov6UTC20:54hard21:07;GOOGLNov9UTC20:55;RAWNov10UTC14:30;memoryNov20;H20Dec1. |
 | Data/research |NAS8Nov6UTC21:10hard21:25/savedGRU-Ridge21:35;W25Nov10/13UTC21:30hard21:45. No sealed-label release. |
 | Fresh19 input |0f9c quiet task Nov6UTC21:30/laststart<21:40/hard21:45 installed/enabled. ActualREADY/payload unknown. |
+| Nov9H3publisher |72eb task Nov6UTC21:47/laststart<21:52/hard22:00 installed/enabled12:51. ActualpointUNKNOWN,0financialdeployment. |
 
 ## Throughput Review
+
+12:52 review: full20289/1440source authority is now fresh, not the old20264
+pre-port proof. Newpublisher72eb ACTUALLY INSTALLED; numericalreplacement closed
+and integrated rather than redispatched. Ready independent work is versioned
+sameowner nativeNET25graph and distinct fixed-expiry hold/exit data/source offer.
+Reversible improvement: retain one existing accountcontroller graph and reuse
+savedmodel contexts only when exactavailability matches; no repeated fit/GPU
+occupancy job or extra custody-reader schedule. OriginalPaperdue times unchanged.
+Fullsuite passed once aftereditclosure; subsequent docs/external work uses exact
+source checks and ownnative proof, not another whole-suite foreground hold.
+
+12:15 review: ready/owned are NET25repository port, clock-boundproducer,
+principalidentity fix and parser-recovery->oneData projection->twofits. The
+actualbasePaper clocks remain unchanged. Reversible improvement: staticbind
+actual parser signatures before the remaining nativegraph; actual0.05s COMfacet
+probe distinguished displayalias fromSID and avoided another blind wholelifecycle
+retry. Source-only clocklessprototype neverinstalled, so supersede beforeeffects
+and keepONE futureforward ratherthan twojobs. Current old20264test authority
+cannotvalidate changed3modules; runfreshfull once editclosure, not perexternal
+helper. No foreground marketwait, GPUdummywork or operatorhold.
 
 11:23 review: newreplacement source/native and causale+1Data readiness run
 disjoint from Nov9point preparation; completedstudy callbacks are integrated,
@@ -161,7 +204,8 @@ withholds its named package only; no substitute request/reset/forceddeployment.
 Claude authenticated QUOTA is review_unavailable, not agreement/globalhold.
 
 Fresh common full authority:
-A/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json.
-20264PASS/26knownWindowsSKIP/8of8[20290]/native+helper0/guardedcleanup/serial25.
-Reuse ONLY1439protected+AGENTS unchanged; external code gets own focused/native
+A/verification/current-net25-sdk-integration-20261106-v1/RESULT.json.
+SHAf4a92ea442ace4177c1480479222121627f9da4eb6c497eac0c654f6f0700a57;
+20289PASS/26knownWindowsSKIP/8of8[20315]/native+helper0/419.15s/guardedcleanup/
+serial58+177. Reuse ONLY1440protected+AGENTS unchanged; external code gets own focused/native
 tests. No new framework, permanent team platform, recurring report or approval.

@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC11:36 / KST20:36.
+Updated Nov6UTC12:52 / KST21:52.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -26,13 +26,13 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data closed | Fresh19x60 capture0f9c INSTALLED/enabled21:30, actual futureREADY UNKNOWN. Nov9publisher4b11c9b4 SOURCE_NATIVE_READY/25checks/722.590active/allclosed;0currentmarketforwards/pointUNKNOWN. Exact LSTM RAW60x12+IND8, not Transformer19. Ptolemy prepares installer; Darwin prepares existing-owner typedconsumer, no bank/model swap. |
-| Arendt / Engine and sole Steward | Intradayaa96/ff295 COMPLETE/allcash/NONINFORMATIVE. NEW current-maturity-matched-replacement-development-20261106-v1 preparing one cost-net e+1switch with originale3exit; Ridgeprimary/MLPsecondary prebound beforelabels. Data/native/book readiness first, no runningGPU claim. |
-| Ptolemy / invoked Infra | Audit638a closed160tasks/139enabled/0OSchanges. NEW current-nov9-lstm-h3-publisher-installer-preparation-20261106-v1, source/native future21:47 installer only; Parent actualcreation. No readerTask/reportchain. |
+| Planck / Data closed | Capture0f9c INSTALLED21:30; clock-bound publisher72eb/native26checks COMPLETE and ACTUALLY INSTALLED21:47 via721d. ActualREADY/point UNKNOWN. Samebest10/IND8, one futureforward; old4b11 SUPERSEDED beforeeffects. |
+| Arendt / Engine and sole Steward closed | Replacement recovery COMPLETE: Ridge1fit + CUDA MLP17epochs/best5/1870updates;14books/all8CIDsclosed. DEV0switches/NONINFORMATIVE; recentRidge3switches worse than blindhold. No active optimizer or repeat queued. |
+| Ptolemy / invoked Infra closed | Identity repair721d/qualificationfa46/41nativechecks COMPLETE; actual Parent create-disabled/independentreadback/enable/independentreadback PASS12:51. Old4failednative attempts stayfailed. |
 | Banach / Execution | r5fb63 futuredirectreader READY/0actualreads. Monitorcb4277 Source/runtime31checks PASS/e200available, NOTdeployed: oldfinancialgraphs incompatible. NewOSreader-pair idea SUPERSEDED before actors/root/definitions; no extra schedule/gate. Public974 primary. |
-| Darwin / Execution | Probe4883 consumed/validation194023 closed. NEW current-nov9-lstm-h3-paper-consumer-readiness-20261106-v1 qualifies futuresealedpoint -> existingONEaccount owner typedproposal.0private/broker/GPU/marketforwards/deployment, not newbank or financialadmission. |
-| Godel / temporary Data | Cost/turnoveroffercfc8 COMPLETE13inventedtests/33ownrefs/Parent38pins. New current-maturity-matched-replacement-input-readiness-20261106-v1, source/native e+1causalinput/marks binding; one separate projection prebound only after consumerABI qualifies.0fits/acquisition/GPU. |
-| Parent / integration | Pure11feature core pushed4bea08fc/25tests/601syntheticparity/20264fullPASS. New external bounded31/54/136/35/33smallpins0mismatch; deferred ancestry/binaries explicitly not independently qualified. Company runtime outcome still unfinished. |
+| Darwin / Execution | Minimal3module NET25 port/positive native and fresh20289fullPASS COMPLETE. NEW current-nov9-net25-native-owner-runtime-preparation-20261106-v1 prepares versioned SAMEowner/bank SDK/controller graph;0actual financialdeployment. |
+| Godel / Data then Strategy | Parser-recoveryed055/READYef94 COMPLETE/onebuild0retry; oldfaileddebits retained. NEW current-fixed-expiry-hold-exit-offer-20261106-v1 is source-only dedup/data-availability offer for fresh H2/H1 hold decisions at originalH3expiry, not numerical dispatch. |
+| Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
 exact frozen schema/ready callbacks directly; Parent acknowledgement is not a
@@ -60,7 +60,14 @@ Do not replay Install/Enable. Actual capture/READY/payload UNKNOWN, not due.
 A/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
 Only these new scoped clients use measured/documented60second initialPOST floor;
 shared atomic/legacy timing gates remain. Old300second/frozen contracts unchanged.
-Nov9 point source preparation is separate; no actual publisher/financial swap yet.
+Clock-bound publisher72eb is ACTUALLY INSTALLED/enabled for Nov6UTC21:47,
+laststart<21:52/hard22:00 (KSTNov7 06:47), quietpythonw/PT8M/no demand-catchup-
+repeat. Installer721d/qualificationfa46 binds candidateb002/native8cf73456;
+separate-process disabled840adc48/enabledc78cd18c attestations and repeatable
+readback PASS/fullXML/API7ACL/0instances/0TaskRun. No financial model-bank swap.
+A/research/current-nov9-publisher-principal-identity-repair-20261106-v1/repair2/PARENT-ADOPTION.json.
+Actual source-admission/inference clocks are required by publication V2; local
+input read is not provider finality/PIT. Actual futureREADY/point still UNKNOWN.
 
 ## Actual CSCO Installation
 
@@ -133,6 +140,7 @@ All times UTC; KST=UTC+9. Full source/adoption references are in RUNBOOK.md.
 | Input/forward points |HALFNov6UTC13:30/third13:45/W25shadow13:55/rank14:10hard14:20; future inference/points UNKNOWN. |
 | Data |NAS8Nov6UTC21:10hard21:25/savedGRU-Ridge21:35; laterW25Nov10/13UTC21:30hard21:45. |
 | Fresh19 daily input |New0f9c task Nov6UTC21:30/laststart<21:40/hard21:45 installed/enabled; actual DATAREADY UNKNOWN. |
+| Nov9LSTM H3 publisher |New72eb task Nov6UTC21:47/laststart<21:52/hard22:00 installed/enabled12:51; actualpoint UNKNOWN. One futureforward, not financialdeployment. |
 
 No source/test/installation guarantees a trade. Private717d consumed read found
 NO_EXACT_PLAN_RETAINED, not no-intent/flat. Nov5holdings4/noINTC and history0rows
@@ -145,15 +153,18 @@ No unknown reservation release. Observer Nov5quiet window was positively restore
 These are correctly scoped reused adaptive development, not independent alpha
 or actual Paper PnL. Do not repeat completed fits/forecasts/readouts.
 
-New replacement family owns A/research/current-maturity-matched-replacement-development-20261106-v1/ORIGIN.json:
-one optional cross-asset switch at e+1, originale+3 liquidation/no expiry reset;
-cached W25 initialgate, exact25bps quantitybook, causal24pairfeatures.
-Ridgeprimary/MLP64-32secondary frozen beforelabels, atmost2fits/0retry,
-3000NEWactive5400elapsed/<=2nativeattempts<=6syntheticupdates/14books.
-Original roles/20purge/causal input masks/marks and actual producer-parser-book
-handoff must qualify before payload/fits. Godel owns separate readiness plus
-one prebound300active1200elapsed projection; no rebuild/refit from old failed APIs.
-This cannot cure an allcash entry gate or change Paper authority/bank.
+Replacement family recovery2 is COMPLETE_EXPLORATORY_ONLY/all8CIDsclosed:
+A/research/current-maturity-matched-replacement-development-20261106-v1/recovery2/FINAL-API-v2.json.
+Ridge1.060s and CUDA MLP64/32 17epochs/1870updates/best5/18.543s/88MiBpeak;
+twofits/fourperiodforwards/14books. DEV both/blindH3+3.601215%/DD.650455% with
+ZERO switches: NONINFORMATIVE, no demonstrated replacement benefit. RecentRidge
+-.150545%/DD.792542%/3switches versus blindH3/MLP+.244454%/.544454%/0switches.
+Primary growthFAILboth; no promotion/rerank/repeatedfit. ACCOUNTING-v2 is partial,
+not exact full-active-clock or budgetPASS. Oldnative1 keyword-only TypeError,
+oldprojection1130elapsed/180upper/0build and consumedattempts remainfailed.
+Separate Datarecoveryed055/READYef94 made ONE build with originalkeys/masks/
+20purge and66prefixcohorts, no wholecache rebuild. New hold/exit offer is only
+source/data feasibility, not permission to repeat this closed family.
 
 | Completed scope | Actual evidence |
 | --- | --- |
@@ -196,15 +207,22 @@ TLT prep NOT_READY because stock route excludes ETF; no TLT Task/intent installe
 
 ## Verification, Tools And Monitor
 
-Fresh full compatibility authority:
-A/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json,
-SHA66803d77811ba5d0eb39c6d51670247aa44499370f4f201ff11ada6834522950.
-20264PASS/26knownWindowsSKIP/8of8workers[20290items]/native+helper0/
-427.89s/guarded current-child+lease cleanup; changed-path serial25PASS/601synthetic
-rows match oldkernel,0marketrows.1439production/test/script/config pins plus
-AGENTS unchanged before/after. Old CSCO062fa full/serial289 remains ancestry,
-not current1439source authority. Current purekernel commit4bea08fc is not a
-Docker/Paper deployment or a replacement of frozen e861feature inputs.
+NET25 additive profile is model-weights-us-cash-net25-open-elapsed3-open5-2026-v1.
+Three tracked modules plus two focusedtests preserve legacy RAW/H5/inclusive3
+and native risk/bank behavior. Five installed frozen runtime/validator graphs
+do not depend on these mutable files; no old SDK/image was overwritten.
+Current full compatibility authority:
+A/verification/current-net25-sdk-integration-20261106-v1/RESULT.json,
+SHAf4a92ea442ace4177c1480479222121627f9da4eb6c497eac0c654f6f0700a57.
+58+177changed/legacy serialPASS;20289PASS/26knownWindowsSKIP/8of8workers
+[20315items]/native+helper0/419.15s.1440protected+AGENTS unchanged. Helper guarded
+nonreparse cleanup removed exact r-46030dc7 child/lease; no manual cleanup or
+inactive-sibling deletion. Serial177 overlapped full with isolated scratch/state,
+not an isolated speed benchmark. Source-produced positive72eb publication->real
+reader->repo native controller/cohort PASS44cadb77, invented only/0financialeffects.
+Child oldnative1 MAX_PATH and native2 wrapper pins/files errors remainfailed;
+separate Parent verification is not a retroactive child-pass or extra old attempt.
+Old66803/20264/1439 is ancestry only. Code/tests are not financial deployment.
 Fresh Ruff/default/research-profile/accounting/monitor Compose(.env.example)
 and diff checks passed. A mistaken research override filename failed before
 correct research-profile config passed; no runtime/config change.
@@ -231,6 +249,9 @@ A/verification/current-technical-feature-core-integration-20261106-v1/CLAUDE-TOK
 No repeated auth/quota chase or paid upgrade.
 Fresh11:03 replacement challenge review_unavailable/exit1, not agreement:
 A/research/current-short-swing-cost-turnover-research-20261106-v1/PARENT-CLAUDE-CHALLENGE.json.
+Fresh12:04 SDK adoption challenge also review_unavailable/exit1, not agreement
+or a diagnosed authentication/quota cause:
+A/review/current-net25-sdk-input-adoption-20261106-v1/RESULT.json.
 
 Existing loopback http://127.0.0.1:8787 remains; Korean8788 NOT deployed.
 Korean static snapshot:

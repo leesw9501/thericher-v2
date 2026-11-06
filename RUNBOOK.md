@@ -2,12 +2,24 @@
 
 ## Current Authority
 
-Updated Nov6UTC11:36 / Nov6KST20:36. Company outcome UNFINISHED.
+Updated Nov6UTC12:52 / Nov6KST21:52. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
 Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
 No manual Task.Run/strategy invocation merely to inspect evidence.
+
+IMPORTANT: old4b11 clockless Nov9publisher is SUPERSEDED BEFOREinstallation/
+futureforward. Its readback is historicalprototype only; NEVERinstall/run its
+launcher. New clock-bound72eb/native8cf73456 publisher ACTUALLY INSTALLED12:51
+for Nov6UTC21:47/laststart<21:52/hard22:00, quietpythonw/PT8M/no demand-catchup-
+repeat. Installer721d/qualificationfa46/candidateb002, independent disabled840a/
+enabledc78c fullXML/API7ACL attestations PASS/0instances/0TaskRun. Installation
+does not prove futurepoint or financialdeployment. ONEfutureforward total.
+D:/thericher-v2/model-artifacts/research/current-nov9-publisher-principal-identity-repair-20261106-v1/repair2/PARENT-ADOPTION.json.
+ExistingData0f9task21:30/allPaperduties unchanged; actualREADY/point UNKNOWN.
+NET253module/twotest port passed fresh58+177serial/20289full/Ruff/fourCompose;
+not a swap of installed financialSDK. Sameowner futuregraph preparation separate.
 
 IMPORTANT Nov6UTC05:38: CSCO future pair ACTUALLY INSTALLED via declaration-only
 recoverybc71ebab/Plana077bfb0. Both enabled/0instances after separate-process
@@ -40,8 +52,10 @@ rerun. IntradayLSTMaa96/H30hurdleff295 and OOF7b285a5d are now COMPLETE,
 not queued commands. Both intradaypolicies allcash/NONINFORMATIVE; OOFprimary
 growthFAILboth. Current NEW scopes are Nov9fixedH3 savedpoint source preparation,
 TransformerfixedH3 validation194023/costoffer cfc8 are also COMPLETE; never
-rerun their readouts. Newreplacement Ridge/MLP family and causale+1Data are
-source/native preparation, not ready CLI/fit/GPU. Exactcurrentowners in stateboards.
+rerun their readouts. Replacement recovery2 and Dataed055/READYef94 are COMPLETE:
+twofits includingCUDA MLP17epochs/1870updates/best5,14books/allactorsclosed.
+DEV0switches/NONINFORMATIVE; recentRidge worse than blindhold. Do not repeat fits.
+Exactcurrentowners and source-only hold/exit offer are in stateboards.
 LSTM-H3 shadow715b8f79 is COMPLETE/valid13:55..<14:05, not financial entry14:31
 admission; H3policyvalidation5aa7 matches savedLSTM allocations, no alpha gain.
 Its oldfailedattempt1 has TWO brokenbindings (workercontent/identity and recreated
@@ -55,10 +69,12 @@ Pure11technicalfeatures now live in tracked research/short_swing_technical_featu
 their own actual import/schema native proof; no frozen model/feature/image swap.
 
 Current fresh repo authority:
-D:/thericher-v2/model-artifacts/verification/current-technical-feature-core-integration-20261106-v1/RESULT.json.
-20264PASS/26knownWindowsSKIP/8of8[20290items]/native+helper0/427.89s/
-guarded same-child+lease cleanup; serial25PASS/601syntheticrow parity.
-Reuse only1439protected code/test/config/dependency/script + AGENTS unchanged.
+D:/thericher-v2/model-artifacts/verification/current-net25-sdk-integration-20261106-v1/RESULT.json.
+SHAf4a92ea442ace4177c1480479222121627f9da4eb6c497eac0c654f6f0700a57;
+20289PASS/26knownWindowsSKIP/8of8[20315items]/native+helper0/419.15s/
+guarded same-child+lease cleanup; serial58+177PASS. Positive72eb publication to
+repo native proof44cadb77 is invented/0financialeffects. Oldchildfailures preserved.
+Reuse only1440protected code/test/config/dependency/script + AGENTS unchanged.
 External code keeps its own focused/native checks, not another fullrepo rerun.
 
 ## CSCO Public Outcome Reader
@@ -143,15 +159,14 @@ Actualworker still checks named collection/cache/token ownership/shared60s
 initialPOST floor/ownclient/15percentreserve.<=19GET/1initialPOST/0retry,
 old300s/frozencontracts unchanged. Official KIS token1/min source:
 https://github.com/koreainvestment/open-trading-api/blob/main/README.md?plain=1.
-No manual Task.Run/capture merely to inspect. NewNov9savedLSTM publisher is
-SOURCE_NATIVE_READY4b11c9b4/25checks/722.590active/allclosed, not installed/
-knownpoint/financialmodel swap. Correct LSTM RAW60x12+IND8, notTransformer19.
-Ptolemyinstaller and Darwinexisting-owner consumer are source/native scopes,
-actualTaskcreation remains Parent-owned. Qualified repeatable publicreader,
-prewindow independently NOT_DUE/0reads0enumeration:
+No manual Task.Run/capture merely to inspect. NewNov9savedLSTM publisher72eb
+is INSTALLED/enabled21:47, actualfuturepoint UNKNOWN. Correct LSTM RAW60x12+IND8,
+notTransformer19. Actual localinput-admission/inference clocks are sealed V2,
+not providerfinality/PIT. Qualified repeatable PUBLIC reader below is read-only;
+it never invokes the launcher/forward. Old4b11 reader is historical only.
 
 ```powershell
-& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/research/current-nov9-lstm-h3-point-publisher-preparation-20261106-v1/readback.py' --source 4b11c9b4e2f9aa739c326a5dceac853f85609b5de50b52e8bfc7adab5a2717f5
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/research/current-nov9-lstm-h3-clock-bound-publisher-20261106-v1/readback.py' --source 72eb95e32abfdc96bb7e72c1628177a51633fbf5da74c74be5f77d35bcdbd4d5
 ```
 
 Actualfuturepublication only after exactDataREADY/payload/source/PLAN/closure;

@@ -60,6 +60,7 @@ from thericher_v2.research.model_paper_weights import (
     MODEL_PAPER_WEIGHTS_PROFILE,
     MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE,
     MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE,
+    MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE,
     MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE,
     ModelPaperWeightRow,
     ModelPaperWeightsInput,
@@ -116,6 +117,9 @@ class StockCycleProfile(Enum):
     MODEL_WEIGHTS_US_H5 = MODEL_PAPER_WEIGHTS_US_5_SESSION_PROFILE
     MODEL_WEIGHTS_US_CASH_H3_OPS = MODEL_PAPER_WEIGHTS_US_CASH_3_SESSION_OPS_PROFILE
     MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3 = MODEL_PAPER_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3_PROFILE
+    MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3 = (
+        MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
+    )
     MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3 = MODEL_PAPER_WEIGHTS_CASH_ELAPSED_H3_PROFILE
 
 
@@ -128,6 +132,7 @@ _MODEL_INPUT_TYPES = {
     StockCycleProfile.MODEL_WEIGHTS_US_H5: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3: ModelPaperWeightsInput,
+    StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3: ModelPaperWeightsInput,
     StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3: ModelPaperWeightsInput,
 }
 
@@ -140,12 +145,14 @@ _MODEL_WEIGHT_PROFILES = frozenset(
         StockCycleProfile.MODEL_WEIGHTS_US_H5,
         StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
         StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
+        StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
         StockCycleProfile.MODEL_WEIGHTS_NAS_CASH_ELAPSED_H3,
     )
 )
 _US_OPEN5_WEIGHT_PROFILES = frozenset({
     StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
     StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
+    StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
 })
 _H5_NO_ORDER_SIZING_REASONS = frozenset({"target_already_satisfied", "whole_share_capacity_zero"})
 _US_WEIGHT_PROFILES = frozenset(
@@ -153,6 +160,7 @@ _US_WEIGHT_PROFILES = frozenset(
         StockCycleProfile.MODEL_WEIGHTS_US_H5,
         StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
         StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
+        StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
     )
 )
 # Retain the legacy name for the shared native no-order completion protocol.
@@ -162,6 +170,7 @@ _H5_STOCK_PROFILES = frozenset(
         StockCycleProfile.MODEL_WEIGHTS_US_H5,
         StockCycleProfile.MODEL_WEIGHTS_US_CASH_H3_OPS,
         StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
+        StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
     )
 )
 _H5_STOCK_PROFILE_VALUES = frozenset(profile.value for profile in _H5_STOCK_PROFILES)
@@ -572,7 +581,10 @@ def _validate_model_input(value, at, profile=StockCycleProfile.MODEL_PROPOSAL_NA
             or value.metadata.exit_not_before
             == (
                 value.exit_session.open_ts
-                if profile is StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3
+                if profile in {
+                    StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
+                    StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
+                }
                 else value.exit_session.close_ts - timedelta(
                     minutes=(
                         45 if profile is StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT else 15
@@ -1598,7 +1610,10 @@ def run_kis_paper_current_stock_cycle(
                     decided_at=decided_at,
                     valid_until=(
                         cash_window.exit_end
-                        if profile is StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3
+                        if profile in {
+                            StockCycleProfile.MODEL_WEIGHTS_US_CASH_RAW_OPEN_ELAPSED3,
+                            StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
+                        }
                         else early_window.exit_end if early else session.close_ts
                     ),
                 )
