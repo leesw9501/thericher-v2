@@ -1,11 +1,29 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC15:15 / Nov7KST00:15. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC15:52 / Nov7KST00:52. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
 
 ## Ready / Owned
+
+RobustH123 matched-location study is COMPLETE, not a running optimizer:
+A/research/current-robust-h123-location-scale-development-20261106-v1.
+FIT5c0f6a3b/READOUT5a3eb9b0/resultbee99f9b, Parent66readoutmembers unchanged.
+StudentT5 learned-scale versus matchedMSE smallMLP: twoCPU23epoch fits/best11,
+2530updates each/5060total,7.341s and6.195s. Invented272row actualoptimizer
+timing selectedCPU beforemarket: update10.88ms vsCUDA121.55ms StudentT,
+4.12ms vsCUDA98.70ms MSE; co-tenancy noted, not isolated productionbenchmark.
+GPU headroom22,235MiB/reserve4096, no permission/environmenthold. No rerun.
+One fullnative/sixsyntheticupdates,4newforwards/0savedLSTMcall/16books/allclosed.
+PrimaryhalfStudentT+cachedLSTM DEV-.006856%/DD2.598008% versus matchedMSEhalf
++.628940%/2.503481% and savedLSTM+.993207%/1.977482%; recent+.168905%/.718900%
+versus-.200483%/.959184% and+.288886%/.825314%. SameOPEN+CLOSE proxy marks,
+25bps EACHleg. Informative32/13changedcohorts; growthFAILboth/DD+turnPASS.
+Wholelocation-scale recipe, not loss-only/tailcausal/calibratedconfidence or
+independentalpha. No secondaryrerank/Paperswap. BudgetPASS not claimed.
+Next source-only cross-sectional ranking/relative-strength offer first dedups
+oldNAS100/Memory/H20/Joint/OOF/ranker contracts; no newfit/marketpayload authority.
 
 ### Arendt: Paired Models And Resource Steward
 

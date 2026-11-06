@@ -1,12 +1,23 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC15:15 / Nov7KST00:15. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC15:52 / Nov7KST00:52. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
 ## Current Resource Owner
 
 Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea remains sole GPU coordinator.
+Latest robustH123 campaign COMPLETE5c0f6a3b/5a3eb9b0/bee99f9b:
+2CPUfits23epochs each/best11/5060marketupdates/4forwards/16books/allclosed.
+Native measured actual272row update CPU10.88ms/CUDA121.55ms StudentT,
+CPU4.12ms/CUDA98.70ms MSE, soCPU selected beforemarket. ActualCUDA synthetic
+checks ran; both marketfitsCPU7.341s/6.195s,0reservedVRAM. Free22,235MiB/
+desktopreserve4096/projected2048/co-tenancy, not a permission/GPUenvironmenthold
+or isolatedbenchmark. Do not repeatcompletedfits foroccupancy. Primarygrowth
+FAILboth, no swap; onegraph/sixsyntheticupdates, allactors/Jobs closed. Full
+accounting/budgetPASS not claimed. Nextcross-sectional ranking SOURCE-ONLY
+dedup/offer300active1200elapsed; no numericaldispatch or activeoptimizer claim.
+
 Paired LSTM/TCN run1 is FAILED_CLOSED, not currently training: LSTM22epochs/
 2420updates/best10/32.069s complete; TCN11epochs1210updates/best9/1257.695s,
 guarded before best export.0forecasts/books/GRUcalls. All Jobs/sixCIDs/leases

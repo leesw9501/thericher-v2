@@ -1,11 +1,20 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC15:30 / Nov7KST00:30.
+Updated Nov6UTC15:52 / Nov7KST00:52.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
 
 ## Current Owner And Ready Readers
+
+Actual MSE publicreader5cb at16:00: BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY,
+10outcomereads/2linkedoperationalvisits, PAIR-RESULTb0901c1b/closure19c50053.
+Originalmemory20-nas100-nextday-exit-20261105-v1 duty. Observerrestoreobligation
+false/restoration notindependentlyproven. Allfinancialclaims/currentowned/
+rootexit/fees/settlement/netPnL UNKNOWN; no reservationrelease or Taskexit inference.
+Banach new exactMSE financialreaderprep600active1800elapsed/oneinventedgraph/
+0actualcustodyreads: reuse strictparser, freshrelevantfinancialwriteradmission,
+networknone/private-sourceRO/stability/exactjoins, not a newpretradegate.
 
 PRIORITYactualHALF:14:31TaskLastResult20/Ready3/0instances; a446readerUNKNOWN/
 MISSING_ATTEMPT_POINTER. No financialoutcome/unknownreservation release/rerun.
@@ -19,10 +28,18 @@ CSCO/INTC/MSE audit finds different durationpaths. Actual startup cause remains
 unresolved, old24ab/f611/bank untouched; no rerun or currentholdings claim.
 INTC9c6 due reader is CONSUMED: UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads/
 manifestnull. Banach bounded firstcause diagnosis, no repeatedactualdiscovery.
+Diagnosis8583651c/4df8e917 confirms out-of-phase early00:38wrongargv poisoned
+actual15:10terminaljoin. Actualterminal-bound FAULT at15:11:07 is separate
+admission.py74/self.census(active), reason/nativeStage notretained; missing
+exact richer-sink path/hash prevents predicate conclusion. Reader288cf5ab/
+16nativechecks READY pureconsumer/0actualnewdiscovery; financialUNKNOWN stays.
 Nov9 source-export cause CONFIRMED3a60bb57/ab6826b9: missing helper after loader
 scope exits; exact three script: candidate65a2f525 passes106checks. Darwin new
 runtime qualification and Ptolemy future installer prep are separate finite
 scopes; source-only fix is not financial admission/install/readiness.
+New88bd fullchain CLOSED_FAILED at missingcanonical membership_retention after
+34ownerchecks PASS. Next separately bounded explicitpinnedbootstrap preflight+
+onegraph; oldscope immutable. Futurepairprep closed WITHHELD/noSource/0native.
 
 NET25 additive3module/twotest port COMPLETE; recorded5installed frozenruntime/
 attestation graphs disjoint, no installedSDKoverwrite. Fresh58+177serial and

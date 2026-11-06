@@ -17,7 +17,7 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-Actual Nov6UTC15:30: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+Actual Nov6UTC15:52: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
 unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
 native constructor4surfaces and separate fullXML/API7ACL readback PASS;
 both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
@@ -31,7 +31,12 @@ replay either Apply. Installation is not submit/fill/financial admission.
    literalPT7M; earlier COMprobe used wrong DateKind. Correct harness passes.
    No source patch qualified; actual startup cause remains unresolved.
    INTC due reader9c6 consumed ONE discovery: UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD,
-   3publicreads/manifestnull. Diagnose exact first cause without replay/release.
+   3publicreads/manifestnull. Diagnosis8583 proves olddiagnostic outsidephase
+   poisonedjoin; actualadmission.py74 fault is separate/underlyingpredicate
+   UNKNOWN. Repairedpureconsumer288cf5/16nativechecks,0actualnewdiscovery.
+   MSE5cb actual16:00 BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY/10reads/2linkedvisits;
+   submit/accept/fill/currentowned/rootexit UNKNOWN. Exactfinancialreaderprep
+   separate, no reservationrelease/Taskexit inference/pretradepermissiongate.
    The strict public-only reader9742ae68 is READY, Parent38invented checks/30refs and
    pre-due0access PASS. RUNBOOK exact commands: entry after16:35, exit/lifecycle
    after17:05. Missing/partial/ambiguous stays UNKNOWN, worker ASOF not fresh
@@ -91,8 +96,9 @@ replay either Apply. Installation is not submit/fill/financial admission.
    No17-targetcoverage guarantee/coldrestartcache or actual financialdeployment.
    Exact Nov9 loader cause now confirmed: missing Assert-Nov9DefinitionApi after
    Initialize-Owner scope exits; three script: exports pass106checks. Separate
-   one-graph runtime integration and future pair installer adaptation proceed;
-   no actualhost/install success inferred from this source-only fix.
+   integration88bd passed34ownerchecks but FAILED at unboundmembership_retention,
+   not installable. NEW canonicalpinnedbootstrap preflight+onefullgraph proceeds;
+   priorpairinstaller CLOSED_WITHHELD/noSource/noNative, no actualinstall claim.
 5. Darwin fixedH3 Transformer194023 COMPLETE14books/0modelcalls; primaryDEV
    +3.059492%/recent+.252446%, frozenFAILboth/no repeat. Godel cost/turnover
    offercfc8 COMPLETE13tests/Parent38pins; parser-recoveryed055/READYef94
@@ -104,8 +110,12 @@ replay either Apply. Installation is not submit/fill/financial admission.
    DLinear/FLAT twoCPUfits COMPLETE27/28epochs/6050updates,4forwards. Separate
    JSON-only recovery2c78/ee21579c COMPLETE16newbooks/32lifetimecalculations;
    primaryDEV-.954242%/recent+1.446967%, informativegrowthFAILboth/DD+turnPASS.
-   No refit/forecastrun/Paperswap. NextrobustStudentT/MLP-MSE source-only offer
-   firstdedups olddistributional studies; no numericaldispatch or GPUclaim yet.
+   No refit/forecastrun/Paperswap. RobustStudentT/MSE pairedstudy5c0f/5a3e/bee99f9b
+   now COMPLETE2CPUfits23epochs each/best11/5060updates/4forwards/16books.
+   Native measuredCPU fasterthanCUDA; no GPUpermission/environmenthold. Primary
+   DEV-.006856%/recent+.168905%, informativegrowthFAILboth/DD+turnPASS. No rerun/
+   rerank/Paperswap. Next cross-sectional ranking source-only dedup/offer,
+   no fittingauthority until a distinct frozen campaign; no activeoptimizer.
    FIT-onlysupportb1ec3f09 COMPLETE H30 1898positive/63382negative; support
    is not predictability/oracleprofit or permission to regrade old25bps studies.
 6. Quiet audit638a COMPLETE160tasks/139enabled/0OSchanges; popuporiginUNKNOWN.

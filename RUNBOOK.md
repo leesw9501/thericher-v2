@@ -2,12 +2,19 @@
 
 ## Current Authority
 
-Updated Nov6UTC15:30 / Nov7KST00:30. Company outcome UNFINISHED.
+Updated Nov6UTC15:52 / Nov7KST00:52. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
 Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
 No manual Task.Run/strategy invocation merely to inspect evidence.
+
+ActualMSE5cbreader16:00: BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY/10reads/2linkedvisits,
+PAIR-RESULTb0901c1b/closure19c50053 under current-mse-retained-owned-exit-outer-
+successor-20261106-v1/runtime/public-control-results/paired-exit. Financialall
+UNKNOWN/rootexit notproven; no reservationrelease. Observerrestoreobligation
+false, restoration notindependentlyproven. New exactMSEprivate-reader preparation
+is not actualcustodyadmission or a command readytoinvoke.
 
 IMPORTANT: old4b11 clockless Nov9publisher is SUPERSEDED BEFOREinstallation/
 futureforward. Its readback is historicalprototype only; NEVERinstall/run its
@@ -35,6 +42,10 @@ Assert-Nov9DefinitionApi lost after Initialize-Owner; old Build-Xml survived.
 Candidate65a2f525 adds three script: exports/106checks, not runtime readiness.
 New separately bound one-graph runtime integration precedes installer adoption;
 no owner/ACL/account/risk weakening or old failedgraph regrading.
+Integration88bd CLOSED_FAILED:106loader+34ownerchecks PASS; fullchain failed
+before guard/census on missingcanonical membership_retention binding. Noactual
+effects. NEW pinnedbootstrap completion is source-only/preflight+onegraph, not
+actualdeployment. Futurepairprep closed WITHHELD/noSource/noNative; no Apply CLI.
 
 ActualHALFentry14:31Task returned20/Ready0instances. Qualifieda446reader
 UNKNOWN/MISSING_ATTEMPT_POINTER, no financialconclusion/unknownrelease/rerun.
@@ -246,6 +257,10 @@ do not invoke launcher merely to inspect or extend expiredNov6point validity.
 - CONSUMED finite INTC297 receipt discovery, actual postNov6UTC15:20:
   D:/thericher-v2/model-artifacts/execution/current-intc-297-exact-manifest-readiness-20261106-v1/API.json.
   Actual result UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3outcome_reads/manifestnull.
+  Diagnosis8583651c/4df8e917: old00:38diagnostic was outsideactual15:10phase/argv
+  yet poisoned invocationjoin. Separate exactterminal-bound admission.py:74
+  fault, underlyingpredicate notretained. Repairedpureconsumer288cf5ab/16checks
+  is source-only;0actualnewdiscovery, oldconsumedUNKNOWN not regraded.
   Do NOT execute the consumed command below again; retained exact provenance:
 
   ```powershell

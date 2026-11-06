@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC15:30 / Nov7KST00:30.
+Updated Nov6UTC15:52 / Nov7KST00:52.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier state/history: pushed12e5e906 and immutable sources.
 
@@ -16,12 +16,12 @@ all original exits. Package/commit/installation is not company completion.
 
 | Owner | Disjoint current scope / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward closed | DLINEAR/FLAT CPUfits6050updates/4forwards COMPLETE. JSON recovery2c78/ee21 COMPLETE/32lifetimebookcalculations/growthFAILboth/no swap/allclosed. No optimizer queued; robustoffer only. |
-| Ptolemy Execution | Duration hypothesis DISPROVEN exact24ab literalPT7M/DateKind harness corrected. NEW future installer adaptation waits for positive qualified host callback;0actualTask/private/KIS. |
-| Banach Execution | INTC consumedreader UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads. NEW bounded firstcause/source-link diagnosis; no replay. Future readerc801 ready/0actualprivate reads, popuporigin1048 UNOBSERVED. |
+| Arendt Engine/sole Steward | Robust5c0f/5a3e/bee99f9b COMPLETE2CPUfits/5060updates/16books, measuredCPU faster, growthFAILboth/allclosed/no activeoptimizer. Newranking source-only dedup/offer. |
+| Ptolemy Execution closed | Futureinstallerprep CLOSED_WITHHELD/noSource/0native while exacthost notqualified. Duration hypothesis DISPROVEN, no oldTaskrerun. |
+| Banach Execution | INTC8583/288cf5 closed/actualfinancialUNKNOWN. NEW exactMSE financialreaderprep after16:00publicpairclosure;0actualcustodyreads, no permissiongate. |
 | Planck Data closed | Capture0f9c INSTALLED21:30; clock-boundpublisher72eb/native26checks ACTUALLY INSTALLED21:47. ActualREADY/point UNKNOWN. Old4b11 superseded beforeeffects, onefutureforward. |
-| Darwin Execution | Source-loader cause CONFIRMED/three script: exports/106checks. NEW separate900active1800elapsed ONE full runtime graph integrating exactcandidate65a2; no actualprivate/KIS/Task effects or install readiness claim yet. |
-| Godel Strategy | DLinear correctedoffer consumed, no repeatedData/models. NEW StudentTlocation-scale vsMSE source-only dedup/offer;0numerics/market/private/KIS/Tasks. |
+| Darwin Execution | Exportfix106loader+34ownerPASS, full88bd FAILED missingpinnedmembership_retention. NEW canonicalbootstrap preflight+onegraph;0actualTask/private/KISeffects, not deployready. |
+| Godel temporary Execution | HALFproviderdiag CLOSED/fixturefailed/historicalcauseUNKNOWN. CurrentquiescentpaircanonicalXMLgetters differ/descriptor+ACL pass. NEW structuredfielddifference diagnosis only, no Taskmutation/privatecalls. |
 | Parent | Integration/Git; fresh58+177serial/20289fullPASS/1440protected+AGENTS stable/Ruff4Compose. Actual publisher installed12:51, source-produced positive repo native PASS. Companyfinancialresult UNKNOWN. |
 
 Callbacks: Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea;
@@ -36,18 +36,32 @@ No running agent/optimizer is inferred from an MD/directory/old failed-root API.
 
 The ready/owned table, not the word NEW in an old reference below, determines
 current work. Completed sources/debits never reopen from these recorded caps.
-- ACTIVE Darwin owner-export integration900active1800elapsed/cleanup90/
+- ACTIVE Darwin pinnedbootstrap completion600active1800elapsed/cleanup90/
+  <=1coldconstructorpreflight+ONEfullnativegraph, canonicalhash preload only;
+  0actualTask/private/KIS/model. No broadsys.path or weakened risk/token rules.
+- ACTIVE Banach exactMSEfinancialreaderprep600active1800elapsed/cleanup60/
+  <=1inventedgraph/0actualcustodyread-private-env-KIS-TaskRun. Source/exactjoins/
+  relevantfinancialwriteradmission/networknone/allRO/stability beforeParentread.
+- ACTIVE Godel HALFcanonicalgetterdiff600active1800elapsed/cleanup60/
+  <=1actualtwoTaskquiescentCOMsnapshot+1inventedXMLfixture; publicnodepaths/
+  diffcategories/hashes only,0TaskRun-mutation-private-env-KIS-CIM-model.
+- CLOSED Godel HALFproviderfirstcause600active1800elapsed/cleanup60/
+  <=1syntheticdiagnostic/0TaskRun-mutations-private-KIS-market-model. Exact
+  oldtwoTasks readonly fullXML/API7ACL comparison categoricalonly permitted.
+- ACTIVE Arendt cross-sectionalranking sourceoffer300active1200elapsed/
+  0marketpayload-numericalcalls; firstdedup oldrank/Memory/H20/Joint/OOF contracts.
+- CLOSED Darwin owner-export integration900active1800elapsed/cleanup90/
   ONEfullnativegraph/0actualTask-private-KIS-effects. Exact testedcandidate,
   warm79/typed72 contract, loaderassertions/owner/private-origin/timeoutcleanup.
-- ACTIVE Ptolemy owner-export pairinstaller600active1800elapsed/cleanup60/
+- CLOSED Ptolemy owner-export pairinstaller600active1800elapsed/cleanup60/
   <=1inventedgraph ONLY after qualified host callback;0actualTask/private/KIS.
-- ACTIVE Banach INTCfirstcause600active1200elapsed/cleanup60/<=16publicartifacts,
+- CLOSED Banach INTCfirstcause600active1200elapsed/cleanup60/<=16publicartifacts,
   source-defined set only;0actualdiscovery replay/TaskRun-private-KIS effects.
 - CLOSED durationcandidate7ea2 disproves proposed patch; actualliteralPT7M,
   corrected DateKindString constructorPASS. No actual runtimecause inferred.
 - CLOSED helper-export diagnosis3a60/ab6826:106checks/oneinvocation, candidate
   three script: exports. Separate runtime qualification is not oldcap reopening.
-- ACTIVE Godel robustH123location-scale offer300active1200elapsed/0numerics.
+- CLOSED Godel robustH123location-scale offer300active1200elapsed/0numerics.
   DedupexactoldStudentT/robust/hurdle/quantile scopes; existingPyTorchAPI only,
   no newframework/weights. One concreteoffer/rejection, no fittingauthority.
 - CLOSED DLinear2fits/fourforwards/native5updates; firstreadout16calculations

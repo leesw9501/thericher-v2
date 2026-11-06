@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC15:30 / Nov7KST00:30.
+Updated Nov6UTC15:52 / Nov7KST00:52.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -27,12 +27,20 @@ integration/Git; role MDs and directories are not running-process proof.
 | Owner | Current work / actual state |
 | --- | --- |
 | Planck / Data closed | Capture0f9c INSTALLED21:30; clock-bound publisher72eb/native26checks COMPLETE and ACTUALLY INSTALLED21:47 via721d. ActualREADY/point UNKNOWN. Samebest10/IND8, one futureforward; old4b11 SUPERSEDED beforeeffects. |
-| Arendt / Engine and sole Steward | DLINEAR/FLAT CPUfits27/best15 and28/best16 COMPLETE6050updates/4forwards. JSON-only recovery2c78/result ee21579c COMPLETE/16newbooks/32lifetime: informativegrowthFAILboth, no Paper swap. No activeoptimizer; robustloss sourceoffer only. |
-| Ptolemy / invoked Infra | Duration hypothesis DISPROVEN: exact24ab uses literalPT7M; prior constructor harness lacked DateKindString. Source-only future pair installer adaptation waits for qualified new host, no oldTaskrerun. |
-| Banach / Execution | Actual INTC reader consumed: UNKNOWN/EXACT_SET_OR_CHAIN_WITHHELD/3publicreads. Bounded first-cause diagnosis only, no repeateddiscovery/private/broker calls. r5custody0actualreads; popuporigin UNOBSERVED. |
-| Darwin / Execution | Exact source-loader cause CONFIRMED: Assert-Nov9DefinitionApi lost after Initialize-Owner; old Build-Xml survived. Three script: exports fixed106checks/one diagnostic. NEW separately bound one full native qualification, not yet installable. |
-| Godel / Strategy | DLinear correctedoffer4ec63/19a8 consumed. NEW robustStudentT location/scale vsMSE source-only dedup/offer; no payload/model/numericalcalls or newruntime/dependency authority. |
+| Arendt / Engine and sole Steward | RobustH123 COMPLETE5c0f/5a3e/bee99f9b:2CPUfits23epochs each/best11/5060updates/4forwards/16books. Measured tinyCPU fasterthanCUDA; primarygrowthFAILboth/no swap/no activeoptimizer. Nextcross-sectional ranking source-only dedup. |
+| Ptolemy / invoked Infra closed | Futurepairprep CLOSED_WITHHELD exact host qualification absent; schema retained/0native/0Taskeffects. Duration hypothesis DISPROVEN, no oldTaskrerun. |
+| Banach / Execution closed | INTC8583 diagnosis proves out-of-window diagnostic poisoned readerjoin; actualadmissionfault separate/underlyingpredicate UNKNOWN. Repaired reader288cf5ab passes16inventedchecks,0actualnewdiscovery. |
+| Darwin / Execution | Exportfix passes106loader+34ownerchecks, fullgraph88bd FAILED missingpinned membership_retention. NEW explicitpinnedbootstrap preflight+onegraph; no actual effects/install readiness yet. |
+| Godel / temporary Execution | Robustoffer39528375 CONSUMED. NEW bounded exactHALF24ab provider/owner-helper diagnosis; no consumedTaskrerun/private/KIS/model work. |
 | Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
+
+16:00 MSE reader5cb1317a validated BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY:
+10actualoutcomereads/2linkedvisits, PAIR-RESULTb0901c1b/nativeclosure19c50053.
+Originalmemory20-nas100-nextday-exit-20261105-v1 duty; observer restoreobligation
+false, restoration notindependentlyproven. Submit/acceptance/exactfill/current
+owned/rootexit/fees/settlement/netPnL allUNKNOWN; no reservationrelease. Task
+Ready3/0instances/last0 at15:58 is diagnostic only. Banach exactMSEfinancialreader
+preparation is separate/0actualcustodyreads, not another Paperpermissiongate.
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
 exact frozen schema/ready callbacks directly; Parent acknowledgement is not a
