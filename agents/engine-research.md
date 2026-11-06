@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC10:47 / KST19:47. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC11:36 / KST20:36. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -68,6 +68,20 @@ Brier/CE are not calibratedconfidence claims or evidence of profitable selection
 No samefamily retry/architecture-only queue. Next cost/holding hypothesis must
 be distinct, source-backed and frozen before fitting.
 
+NEW current-maturity-matched-replacement-development-20261106-v1/ORIGIN.json:
+acceptedcfc8 source offer, one cost-net optional e+1held->unheld switch retaining
+originale3exit/cachedW25initialgate. Causal24features[z_h8,z_j8,diff8], cohort
+equalweights/allorderedpairs/originalroles20purge/targetmaturity/knownmasks.
+Ridgealpha1 primary plus MLP64/32/GELU/drop.1/seed20261106 secondary prebound
+beforelabels; secondary inclusion depends ONLY on native/resources, never outcomes.
+MLP120maxepochs20000updates/INNERearly12/LRplateau4/safebest/fitsoft600hard720.
+Atmost2fitattempts/0retry/3000NEWactive5400elapsed/cleanup180/readout300/
+<=2nativeattempts<=6TOTALsyntheticupdates checkedbeforelaunch/steps/14books.
+One combinedDEV-RECENT archive/readout, no oldW25fits/forwards/primaryswap.
+Godel separate Datareadiness/projection and actual producer->parser->solver/
+checkpoint->chooser->exactquantity25bpsbook native first; no incompatible
+weight-target resizing/10bpsbook alias. No currentGPU/fit claim frompreparation.
+
 FIT-onlysupport diagnostic Sourceb1ec3f09/RESULT64769b81 COMPLETE:
 A/research/current-intraday-net25-h30-support-diagnostic-20261106-v1/API.json.
 65,280knownFITlabels eachhorizon. PositiveNet25 countsH5=88/H15=736/H30=1898,
@@ -130,11 +144,14 @@ Actual COMPLETE08:10 Source715b8f79, point3898054d/seal9b21812e:
 202.970active/allclosed. Valid13:55..<14:05, not entry14:31 permission.
 IntradayDataa161/READY8386 COMPLETE24sessions/163.855active; nextfresh0f9c
 19x60 capture ACTUALLY INSTALLED forNov6UTC21:30, actual futureREADY UNKNOWN.
-Planck NEW current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 qualifies
-one future savedLSTM_H3_FIXED17rowpoint/Nov9valid14:25..<14:35/exitNov12.
-1200NEWactive3600elapsed/<=2nativeattempts/0fits-updates-currentmarketforwards;
+Planck current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 is SOURCE/
+NATIVE_READY4b11c9b4/25checks/722.590active/allclosed; future savedLSTM_H3_FIXED
+17rowpoint/Nov9valid14:25..<14:35/exitNov12, RAW60x12+IND8 NOTTransformer19.
+2nativeattempts/0fits-updates-currentmarketforwards;
 one futureforward only with exact actualREADY/payload/Source/PLAN/closure.
-No placeholderhash/Nov6shadowretag/model-bank swap. Actual Task Parent-owned.
+No placeholderhash/Nov6shadowretag/model-bank swap. Ptolemy installer and Darwin
+existing-owner typedconsumer are separate source/native scopes, no actualTask/
+private/financial effects. Actual Task Parent-owned.
 
 Godel's frozen H3policyvalidation5aa7 COMPLETE10books/0modelcalls, exactH3
 aliases savedLSTM in both periods: no new historical benefit/alpha. Current
@@ -146,13 +163,15 @@ No oldmanifest rewrite/currentworker restore or numerical repeat to hide it.
 ### Closed GRU And Router
 
 Darwin01a1adb5-b486-7801-9fdf-1378d733bfce completed GRU scope below.
-NEW temporaryValidation current-transformer-fixed-h3-policy-readout-20261106-v1
-uses saved b77b/0dc1 forecasts/0fits-forwards/onejointreadout only. Primary
-halfLSTMTransformer fixedH3 vs alignedLSTM/Transformer/sameentryH3EW/cash,
-600NEWactive1800elapsed/native<=2/readout180cleanup90. Native inventedbook/
-index64/widecalendar and exactkey/payoff/cost alignment first; no oldFAILregrade
-or Paper promotion. Godel official cost/turnover review is a separate ready
-Strategy package, not permission for another numerical campaign.
+TemporaryValidation current-transformer-fixed-h3-policy-readout-20261106-v1
+COMPLETE native-parity-r1 Source194023ad/finalAPI4e6ae9e7. Saved b77b/0dc1
+forecasts, onejointreadout14books/0modelcalls/68.901active/allclosed. Primary
+fixedH3 DEV+3.059492%/DD1.025153%/turn4.058462/fees1.014615%initialNAV;
+recent+.252446%/OPEN-DD.388521%/turn1.479996/fees.369999%. FrozenFAILboth:
+DEVriskyDD fails/recentgrowth trailsLSTM. OneDEVcohort loses twoH2selected
+positions vs originalhalf+3.172552%, recentidentical; not holding improvement.
+Firstnativeparityfailure preserved/2attempts/55Parentpins0mismatch4deferred.
+No refit/forecast/oldFAILregrade/Paper promotion. Darwin closed, no repeat.
 GRU H123 repair2 COMPLETE28epochs3080updates/best16/15.555s/277MiBreserved.
 Saved forecasts/seal retained, never refit/reforecast. Readout int8 overflow was
 repaired in A/research/current-short-swing-h123-index64-readout-recovery-20261106-v1,

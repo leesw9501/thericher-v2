@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC10:47 / KST19:47. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC11:36 / KST20:36. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -35,14 +35,20 @@ scope exception explicit. H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates
 oneforecast4books/allcash/NONINFORMATIVE/134.314active/1673.736elapsed/allclosed.
 5nativeupdates/1attempt, no doublefee or calibratedconfidence/convergence claim.
 No currently evidenced optimizer after these terminal results; no duplicate fit
-to fill GPU. Next distinct cost/holding hypothesis awaits concrete source offer,
-not GPU permission. Historical completed CUDA activity is not a running claim.
+to fill GPU. NEW current-maturity-matched-replacement-development-20261106-v1
+prebound Ridgeprimary/MLP64-32secondary beforelabels,3000NEWactive5400elapsed/
+<=2marketattempts0retry/<=2nativeattempts<=6syntheticupdates. Native measured
+backend/resources and exactGodelData/book chain first; MLP inclusion native/
+resource feasibility only, no outcome selection.120maxepochs20000updates/
+INNERearly12/LRplateau4/safebest,fitsoft600hard720. Preparation is not running
+GPU; permission is not the dependency. Original studies/debits never refunded.
 
 Ptolemy OOF7b285a5d COMPLETE14CPUfits/121trees/2574updates/20books,
 652.464inclusiveactive/allclosed. Old7vs6native breach/style caveat retained.
-Planck Nov9 futurepoint source/native preparation/0currentmarketforwards;
-Darwin fixedH3 Transformer cachedforecast comparison/0modelcalls;
-Godel cost/turnover officialsource review/0numerics. Banachr5nativeclosed,
+Planck Nov9 futurepoint4b11c9 SOURCE_NATIVE_READY/25checks/allclosed/
+0currentmarketforwards, futureactualpointUNKNOWN;
+Darwin fixedH3 Transformer COMPLETE14books/0modelcalls/68.901active;
+Godel cost/turnover offercfc8 COMPLETE, nowDatareadiness/projection. Banachr5nativeclosed,
 actual custody read not performed. These are not active GPU jobs or holds on
 future ready frozen campaigns. Original checkpoints/splits/debits remain.
 

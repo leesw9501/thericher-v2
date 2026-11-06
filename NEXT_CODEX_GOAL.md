@@ -17,7 +17,7 @@ ready private work. Expanded former work list is preserved in pushed41cdcb8a.
 
 ## Current Priorities
 
-Actual Nov6UTC10:47: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
+Actual Nov6UTC11:36: CSCO pair is INSTALLED via recoverybc71ebab/a077bfb0,
 unchanged productione6a9/release315535/cycle/bank/clocks. Parent29refs, actual
 native constructor4surfaces and separate fullXML/API7ACL readback PASS;
 both enabled/0instances/0TaskRun. Oldbf311 Apply remains FAILED/CONSUMED, never
@@ -44,8 +44,11 @@ replay either Apply. Installation is not submit/fill/financial admission.
    COMPLETE2fits/windows30CPU120CUDA/31epochs each/3968updates/6books,
    allcash/NONINFORMATIVE. H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates,
    oneforecast4books/allcash/NONINFORMATIVE. No duplicate completed fit or
-   GPU-utilization-only work. Choose next distinct cost/holding hypothesis from
-   source review, not another unchanged MSE architecture.
+   GPU-utilization-only work. NEW current-maturity-matched-replacement-
+   development-20261106-v1: cost-net e+1crossasset switch/originale3exit,
+   Ridgeprimary/MLPsecondary prebound beforelabels/atmost2fits/3000NEWactive/
+   5400elapsed/<=2nativeattempts<=6syntheticupdates/14books. Actual Data/native
+   exactquantity25bpsbook handoff first, no GPUrunningclaim from preparation.
 3. Temporary CPU Engine Ptolemy: current-h123-technical-feature-view-comparison-
    20261106-v1/r1 COMPLETE8b9b15cd, nineHGBheads/400trees/18forwards/14books.
    RAW_PLUS development+1.206408%/recent+.433898%, frozen growthFAIL; indicator
@@ -64,14 +67,22 @@ replay either Apply. Installation is not submit/fill/financial admission.
    capture-ready-r1 Source0f9c4e8c ACTUALLY INSTALLED/enabled for Nov6UTC21:30,
    laststart<21:40/hard21:45, actual DATAREADY/payload UNKNOWN. Parent independent
    strict readbacks positive despite failed postenableCLI; never replay stages.
-   NEW current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 qualifies
-   one savedLSTM future point, no currentmarketforward/broker/model-bank swap.
-5. Darwin temporaryValidation: current-transformer-fixed-h3-policy-readout-
-   20261106-v1, one cachedforecast comparison/0fits-forwards, exact alignedkeys/
-   costs/nativebook first. Godel Strategy: current-short-swing-cost-turnover-
-   research-20261106-v1 official-source review/atmost2 executable proposals,
-   no fitting/evaluation-data decode. FIT-onlysupportb1ec3f09 COMPLETE H30
-   1898positive/63382negative; support is not predictability or oracle profit.
+   Nov9publisher4b11c9b4 is SOURCE_NATIVE_READY/25checks/722.590active/allclosed,
+   correct RAW60x12+IND8/0currentmarketforwards/pointUNKNOWN. Ptolemy prepares
+   qualified21:47 future installer; Darwin prepares exactsealedpoint->existing
+   ONEaccount-owner input/typedproposal. No actualpublisherinstallation/newbank/
+   financialmodel swap yet; native Source alone is not futureeffects.
+5. Darwin fixedH3 Transformer194023 COMPLETE14books/0modelcalls; primaryDEV
+   +3.059492%/recent+.252446%, frozenFAILboth/no repeat. Godel cost/turnover
+   offercfc8 COMPLETE13tests/Parent38pins; now owns e+1 input readiness plus
+   a separate onebuild projection only after actualconsumerABI/native binding.
+   FIT-onlysupportb1ec3f09 COMPLETE H30 1898positive/63382negative; support
+   is not predictability/oracleprofit or permission to regrade old25bps studies.
+6. Quiet audit638a COMPLETE160tasks/139enabled/0OSchanges; popuporiginUNKNOWN.
+   Monitorcb4277 source/runtime31checks PASS, NOTdeployed because actual old
+   financialgraphs do not recognize e200. No newreaderTasks: that idea was
+   superseded before actors/definitions. Existingpublic974 primary; optional
+   directr5 needs originalwindow/admission, not another mandatory companygate.
 
 Prior Darwin GRUH123/readout58e50e9f, Planck Dataae4c68e8/READYe23875f9 and Godel
 router first-cause84ca are CLOSED. Do not redispatch them from old failed-root

@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC10:47 / KST19:47.
+Updated Nov6UTC11:36 / KST20:36.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier state/history: pushed12e5e906 and immutable sources.
 
@@ -16,24 +16,39 @@ all original exits. Package/commit/installation is not company completion.
 
 | Owner | Disjoint current scope / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward | Intradayaa96 COMPLETE2fits/31epochs each/3968updates/6books/allcash; H30hurdleff295 COMPLETE1CUDA18epochs/best6/1152updates/4books/allcash. Both NONINFORMATIVE/allclosed. No new numerical dispatch yet; next mechanism from cost/holding review, not duplicate architecture. |
-| Ptolemy CPU Engine | OOF7b285a5d COMPLETE14fits/121trees/2574updates/20books, primarygrowthFAILboth/allclosed. FullFIT finalexperts not rerun. FrozenUP034 style caveat/oldnative7vs6 violation preserved; no numeric recovery needed. |
-| Banach Execution | Custodyr5fb63aa6b SOURCE_NATIVE_READY, one fullchain/6negatives/32Jobsclosed.0actualprivate/CIM/KIS. Effective future read16:35..16:37:30 and17:05..17:07:30 with positive phaseclosure/fresh relevant census/stability; no actual read assigned yet. |
-| Planck Data | New0f9c capture ACTUALLY INSTALLED/enabled for21:30/hard21:45, futureREADY UNKNOWN. NEW current-nov9-lstm-h3-point-publisher-preparation-20261106-v1 source/native preparation, one future savedLSTM point only;0currentmarketforward/financialswap. |
-| Darwin temporaryValidation | Scoped actualreadonlyprobe488354a9 COMPLETE1POST/6GET/0orders/holdings4ASOFnotowned; consumed identity neverrepeats. NEW current-transformer-fixed-h3-policy-readout-20261106-v1 cachedforecast singlecomparison,0fits-forwards. |
-| Godel Strategy | FIT-onlysupportb1ec3f09 COMPLETE65280labels/H30positive1898, supportnotpredictability. NEW current-short-swing-cost-turnover-research-20261106-v1 official-source review/atmost2 executable offers, no numerical work. |
+| Arendt Engine/sole Steward | Intradayaa96/ff295 COMPLETE/allcash/NONINFORMATIVE. NEW current-maturity-matched-replacement-development-20261106-v1 source/native preparation, Ridgeprimary/MLPsecondary prebound beforelabels. No fit/GPUrunning claim; Data/book dependency first. |
+| Ptolemy invokedInfra | Audit638a COMPLETE160tasks139enabled/0OSchanges/33.550active. NEW current-nov9-lstm-h3-publisher-installer-preparation-20261106-v1, source/native future21:47 GUI installer only; actualcreation Parent. |
+| Banach Execution closed | r5directreader READY/0actualreads; monitorcb4277 COMPLETE31nativeHTTP/parser checks/e200exists, NOTdeployed/oldfinancialgraphblock. ProposednewOSreaderpair SUPERSEDED with0actors/root/definitions; no newschedule/gate. |
+| Planck Data closed | Capture0f9c INSTALLED21:30, actualREADY UNKNOWN. Nov9publisher4b11c9 SOURCE_NATIVE_READY25checks/722.590active/allclosed/0currentmarketforward. CorrectLSTMIND8, no point/model-bank swap. |
+| Darwin Execution | Validation194023/probe4883 closed, no repeat. NEW current-nov9-lstm-h3-paper-consumer-readiness-20261106-v1 exactfuturesealedpoint->existingONEaccount-owner typedproposal, no newwriter/private/financialeffects. |
+| Godel temporaryData | Cost/turnoveroffercfc8 COMPLETE13tests/33ownrefs/Parent38pins. New e+1inputreadiness and separatelyprebound oneprojection, actualArendtABI/source/native needed beforebuild.0fits/acquisition/GPU. |
 | Parent | Current protected1439 source authority20264fullPASS/25serial/601parity; integration/Git. Positive Data independent fullXML/API7ACL readbacks despite consumedEnableCLI failure, no replay. CSCO original pair/public974 unchanged; no new submit/fill proof. |
 
 Callbacks: Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea;
 Ptolemy01a1afab-9fdf-75c1-b191-c89288d1056e;
 Banach01a1adbc-ded7-7461-ae59-549f18ca4988.
 Planck01a1ad8a-77f5-7e71-a7f4-db65e6dfc6a0.
-Godel Strategy01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
+Godel temporaryData01a1ad7a-f750-7383-947e-2d7a3bc9bbec.
 Darwin temporaryValidation01a1adb5-b486-7801-9fdf-1378d733bfce.
 No running agent/optimizer is inferred from an MD/directory/old failed-root API.
 
 ## Current Scope Caps
 
+- Nov9 installer preparation600active1800elapsed/cleanup90/<=2nativeattempts;
+  realCOMconstructor pure surfaces only, allmutators mocked/0actualTaskqueries-
+  registration-enable-Run. Source/candidate/native/executable/clock/fullXML/API7ACL
+  exact; Parent futureCreate-disabled/readback/Enable only after qualification.
+- Nov9 existing-owner consumer900active2700elapsed/cleanup120/<=2nativeattempts/
+  0optimizersteps-fits-forwards-private-env-KIS-Task-effects. Actualproducer ->
+  strictreader -> currentSDK typedproposal native, not a newbank/financialpass.
+- Replacementfamily:3000NEWactive5400elapsed/cleanup180/readout300,
+  <=2fitattempts0retry/fitsoft600hard720/<=2nativeattempts<=6TOTALsyntheticsteps,
+  14books/onecombinedarchive-readout. Ridgealpha1primary/MLP64-32secondary
+  native-resourcefeasibility only/120epochs20000updates/INNERearly12/LRplateau4.
+  Exactroles20purge/cachedW25/nooldmodelcalls/quantity25bpsnativebook first.
+- GodelData readiness600active1800elapsed/cleanup90/<=2nativeattempts/0builds,
+  then separateprebound oneprojection300active1200elapsed/<=1build0retry ONLY
+  whenactualproducer-consumer ABI/native/source qualifies. No ParentACK barrier.
 - Nov9 LSTM-H3 publisher preparation:1200NEWactive3600elapsed/cleanup120/
   <=2actual native attempts/0fits-updates-currentmarketforwards. One future
   17row forward only with exact actual0f9c Source/PLAN/READY/payload/closure.
@@ -77,6 +92,17 @@ Never manually Run an existing Task merely to inspect.
 | Fresh19 input |0f9c quiet task Nov6UTC21:30/laststart<21:40/hard21:45 installed/enabled. ActualREADY/payload unknown. |
 
 ## Throughput Review
+
+11:23 review: newreplacement source/native and causale+1Data readiness run
+disjoint from Nov9point preparation; completedstudy callbacks are integrated,
+not redispatched. NewOSr5readerpair was superseded before actor/root/definition
+creation: existingnativeworker/public974 primary plus optionaldirectr5 is the
+simpler financial evidence path, no extra receipt/scheduler platform or mandatory
+independent-reader gate. Actualsource-boundfinancialfacts stillrequired.
+Monitor31hosttests/e200availability do NOT solve oldfinancialgraph recognition;
+avoid activating it before originalPaperduties. Quietaudit160/139 produced no
+qualifiedremoval, not fabricatedpopupfix. FreshClaude11:03review_unavailable,
+notagreement/globalhold. No currently evidenced newoptimizer from preparation.
 
 10:47 review: ready/owned are Nov9 futurepoint preparation, cachedfixedH3
 comparison and cost/turnover mechanism review. Completed intradayMSE/hurdle are

@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC10:47 / Nov6KST19:47. Company outcome UNFINISHED.
+Updated Nov6UTC11:36 / Nov6KST20:36. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -39,7 +39,9 @@ Transformerrepair1b77b3e55 and fixedfusioned168151 are also COMPLETE, never
 rerun. IntradayLSTMaa96/H30hurdleff295 and OOF7b285a5d are now COMPLETE,
 not queued commands. Both intradaypolicies allcash/NONINFORMATIVE; OOFprimary
 growthFAILboth. Current NEW scopes are Nov9fixedH3 savedpoint source preparation,
-TransformerfixedH3 cachedforecast validation and official cost/holding review.
+TransformerfixedH3 validation194023/costoffer cfc8 are also COMPLETE; never
+rerun their readouts. Newreplacement Ridge/MLP family and causale+1Data are
+source/native preparation, not ready CLI/fit/GPU. Exactcurrentowners in stateboards.
 LSTM-H3 shadow715b8f79 is COMPLETE/valid13:55..<14:05, not financial entry14:31
 admission; H3policyvalidation5aa7 matches savedLSTM allocations, no alpha gain.
 Its oldfailedattempt1 has TWO brokenbindings (workercontent/identity and recreated
@@ -112,6 +114,11 @@ This is offline custody observed at actual readtime, not fresh broker holdings,
 settledcash/fees/netPnL or cryptographic OS Scheduler origin. Source readiness
 does not pre-prove future admission/stability; failed admission withholds only
 this read. Existing Paper/strict public974 have separate unchanged authority.
+This optional direct read is not a mandatory new companygate. Proposed OS
+readerpair was superseded with0actors/root/definitions; no additional Task or
+followupchain. Source-bound nativeworker phase/reconciliation evidence through
+public974 is primary; scope conclusions to its actualASOF, not independent
+custody/fresh broker/PnL when not proven.
 
 ## New Read-Only Probe And Input Task
 
@@ -137,9 +144,30 @@ initialPOST floor/ownclient/15percentreserve.<=19GET/1initialPOST/0retry,
 old300s/frozencontracts unchanged. Official KIS token1/min source:
 https://github.com/koreainvestment/open-trading-api/blob/main/README.md?plain=1.
 No manual Task.Run/capture merely to inspect. NewNov9savedLSTM publisher is
-source/native preparation only, not installed/knownpoint/financialmodel swap.
+SOURCE_NATIVE_READY4b11c9b4/25checks/722.590active/allclosed, not installed/
+knownpoint/financialmodel swap. Correct LSTM RAW60x12+IND8, notTransformer19.
+Ptolemyinstaller and Darwinexisting-owner consumer are source/native scopes,
+actualTaskcreation remains Parent-owned. Qualified repeatable publicreader,
+prewindow independently NOT_DUE/0reads0enumeration:
+
+```powershell
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/research/current-nov9-lstm-h3-point-publisher-preparation-20261106-v1/readback.py' --source 4b11c9b4e2f9aa739c326a5dceac853f85609b5de50b52e8bfc7adab5a2717f5
+```
+
+Actualfuturepublication only after exactDataREADY/payload/source/PLAN/closure;
+do not invoke launcher merely to inspect or extend expiredNov6point validity.
 
 ## Actual Deployments
+
+- Monitorcb4277 source/runtime31inventedHTTP/parser checks PASS/e200available,
+  NOTdeployed. OldRAW8fd/INTC297/Full17131e actual financialgraphs lack e200
+  internal-network recognition; newmonitorprofile alone is insufficient.
+  Exactdependency and minimalfuturemigration, not an activationcommand:
+  D:/thericher-v2/model-artifacts/execution/current-korean-monitor-local-runtime-readiness-20261106-v1/ACTIVATION-PLAN.json.
+  Keep8788unstarted/Paperduties first; no fakewritepaths/bridge/imageallowlist
+  workaround. Newquietaudit638a found160tasks/139enabled/0OSchanges and no
+  source-proven removable diagnostic; popuporiginUNKNOWN:
+  D:/thericher-v2/model-artifacts/execution/current-quiet-scheduler-refresh-20261106-v1/API.json.
 
 - Korean static snapshot (NOT a deployed/live dashboard):
   D:/thericher-v2/model-artifacts/execution/current-korean-monitor-admission-compatibility-20261106-v1/PAPER-STATIC-SNAPSHOT.html.

@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC10:47 / KST19:47.
+Updated Nov6UTC11:36 / KST20:36.
 A=D:/thericher-v2/model-artifacts. Historical failures/recovery: pushed12e5e906.
 Company native runtime outcome is UNFINISHED; no new actual acceptance/fill/
 current-owned/PnL is proven in this continuation.
@@ -50,6 +50,11 @@ fresh actual relevant custody-writer admission. Source readiness is not admissio
 Future custody read needs its own exact source/actual relevant financial-writer
 admission/network-none/allRO mounts/exact joins and before-after stability.
 Do not make Data/research actors or all-positions-flat a reader admission gate.
+Directr5 is optional additional custody evidence, not a new companywidegate.
+Proposed OSreaderpair preparation was SUPERSEDED before root/actors/native/
+definitions existed. No extra reader Tasks/followupchain; existingpublic974
+nativeworker phase/reconciliation evidence remains primary. Actual required
+financial facts stay unknown until positively source-bound, never inferred.
 
 Actual pre-session KIS read-only probe COMPLETE:
 A/execution/current-pre-session-kis-paper-readiness-20261106-v1/RESULT.json,
@@ -109,6 +114,21 @@ aftereffect but independent strict fullXML/API7ACL readbacks positive. No replay
 actual capture UNKNOWN. See Parent installation adoption in HANDOFF/RUNBOOK.
 Earlier audit155project tasks/134enabled/11expired console-capable was not proof
 of popup origin. Never delete an unknown/owned exit merely to quiet the desktop.
+New638a read-onlyaudit COMPLETE160projecttasks/139enabled/19console-capable/
+10enabled clock-exhausted inactive, two stabledefinition snapshots/0OSchanges.
+No source-proven exhausted nonfinancial diagnostic eligible for removal;
+popuporiginUNKNOWN. Eightfocusedchecks/33.550active/558.769elapsed/allclosed:
+A/execution/current-quiet-scheduler-refresh-20261106-v1/API.json.
+
+Newmonitor readiness Sourcecb4277/API38c8b8aa COMPLETE31actual inventedHTTP/
+parser tests plus exacte200imageinspect; allprocessesclosed/0servicescreated.
+600allowance charged/2attempts/1255elapsed, NOTdeployed. OldRAW8fd/INTC297/
+Full17131e financialgraphs reject stateless e200internalnetwork. Newmonitor
+profile alone cannot upgrade actualconsumers; separate capability/sourcegraph
+qualification and applicablefuturebindings needed. No fakewritepaths/bridge/
+nameallowlist bypass, keep8788unstarted/Paperduties first. This is a scoped
+implementationdependency, not operatorapproval or research/Paperhold.
+A/execution/current-korean-monitor-local-runtime-readiness-20261106-v1/ACTIVATION-PLAN.json.
 
 AGENTS.md owns Paper authority/risk/privacy. Never read or route KIS_LIVE_*,
 print account/order IDs/private amounts/raw broker bodies, or invoke a

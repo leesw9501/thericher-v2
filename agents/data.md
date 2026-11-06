@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC10:47 / KST19:47.
+Updated Nov6UTC11:36 / KST20:36.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
@@ -24,13 +24,31 @@ effect, independent fresh-process strict fullXML/API7ACL twice PASS/enabled/
 0instances/stable. No missingreceipt fabrication/replay; exactCLI fault unknown.
 A/execution/current-nextsession-data-parent-installation-20261106-v1/PARENT-ADOPTION.json.
 
-NEW Planck owns A/research/current-nov9-lstm-h3-point-publisher-preparation-20261106-v1:
-source/native for one future savedLSTM_H3_FIXED point/Nov9valid14:25..<14:35/
-Nov12exit.1200NEWactive3600elapsed/cleanup120/<=2nativeattempts/0fits-updates/
-0currentmarketforwards. One future17rowforward requires actual qualified READY/
+Planck publisher SOURCE_NATIVE_READY4b11c9b4/25checks/722.590active/allclosed:
+A/research/current-nov9-lstm-h3-point-publisher-preparation-20261106-v1/API.json.
+Exact savedLSTM_H3_FIXED/RAW60x12+IND8 (notTransformer19), Nov9valid14:25..<14:35/
+Nov12exit.2nativeattempts/0fits-updates-currentmarketforwards. One future17rowforward requires actual qualified READY/
 payload/source/PLAN/closure; no placeholderhash/Nov6shadowretag/automaticPaper
-swap. Future21:47 readonly definition proposal only; actual install Parent-owned.
+swap. Future21:47 readonly definition proposal only; Ptolemy prepares installer,
+actual install Parent-owned. Darwin separately qualifies existing-owner typed
+consumer,0financial/private effects now. Parentprewindow publicreader independently
+NOT_DUE/0outcomereads/0directoryenumeration/0marketreads PASS.
 Direct exact schema callbacks to Arendt, no ParentACK barrier.
+
+Godel temporaryData (01a1ad7a-f750-7383-947e-2d7a3bc9bbec) separately owns
+A/data/current-maturity-matched-replacement-input-readiness-20261106-v1.
+Consumer Arendt's new cost-net e+1replacement/originale3expiry family, not
+another barcache or oldfeature rebuild.600NEWactive1800elapsed/cleanup90/
+<=2nativeattempts/0marketmaterialization-targetdecode-fit-acquisition-GPU now.
+Check exact existing (e+1,symbol) z8 byte reuse only if calendar/role/feature
+source proves it; otherwise narrow originalproducer binding. Counts are not
+coverage proof, no rawprice reconstruction fromnormalizedx/scalary. Actual
+producer->consumer parse-return native oninventedformat and exactcausalmasks/
+marks/20purge/role support first. Separate oneprojection root prebound:
+A/data/current-maturity-matched-replacement-projection-20261106-v1,
+300active1200elapsed/cleanup90/<=1build0retry, ONLY after readiness and actual
+Enginecontract/parserABI/source match. DirectREADY callback permits fit without
+ParentACK; no runtime/label readiness inferred from this assignment.
 
 Previous intradayreadiness COMPLETE a161fcb7/READY8386fe07:
 A/data/current-intraday-short-hold-readiness-20261106-v1/API.json.
