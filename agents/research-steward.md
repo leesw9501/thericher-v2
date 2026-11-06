@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC20:30 / Nov7KST05:30. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC21:03 / Nov7KST06:03. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -15,9 +15,12 @@ each20epochs/best8/2180updates/16.952-17.032s/312MiBreserved,4360updates total.
 Frozen growthFAILboth/DD+turnPASSboth/all22actors194Jobsclosed; no duplicate fit.
 One native4syntheticupdates/4forwards/10books/4batches/10actualsf_replays,
 284.401finalrecordedpartial/noBudgetPASS;literal10>4replaycap breach retained.
-NEW crossassetstate2fit campaign assigned1800active5400elapsed/6logicalAND6actual
-replays; no extra trials or completedfit reruns. Native/source readiness first,
-actual worker/PID/counters needed before claiming an optimizer is running.
+Crossasset2c45/bd5d COMPLETE2CPUfits21/15epochs/3924updates/4.184+2.821s/0VRAM;
+adaptivegrowth/DD/turnPASSboth/all8containers68Jobsclosed/6actualreplays.
+95.473recordedpartial/1107elapsed, notGPUtime/noBudgetPASS. Newcapacitymatched
+SELF_CONTEXT/newPOOLED/fixedmean2 assigned1200active3600elapsed/2fits0retry/
+8logicalAND8actualreplays. Reuse kernels/batchedroles/trustsplit; no completed
+fit reruns or optimizer-running claims from a directory/currentassignment.
 One coordinator may
 overlap independent useful workers with measured headroom; no dummy occupancy.
 

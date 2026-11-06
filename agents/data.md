@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC20:30 / Nov7KST05:30.
+Updated Nov6UTC21:03 / Nov7KST06:03.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
@@ -20,8 +20,12 @@ noP2/P3/target mount in forecasters. CommonqueryOPEN consumption retains origina
 queryOPEN/LateCLOSE+60 sourceclocks and unknown historicalarrival/PIT/finality.
 Do not rerun completed builds. Fresh scheduledData0f9/Source72point remain future
 and separate, not automatically qualified from this research projection.
-New assigned source-only installed-input result readiness:300active1200elapsed/
-<=1inventedproducer-consumer smoke,0actualfuturepayload/provider/Taskcalls.
+Source-only installed-input result readiness COMPLETE8537283f:
+300active1200elapsed/oneoptional diagnosticpreflight,0actualfuturepayload/
+provider/Taskcalls. Parent37sourcebindings0mismatch. The extra smoke failed
+beforeproducer/consumer because its source-suffix filter omitted.pyw; preserve
+that failure, NOT a productiongate or failure of unchangedqualifiedSource72.
+No newrepair/smoke just to make this optionalhandoffgreen.
 A/data/current-nov9-installed-input-result-readiness-20261106-v1.
 Exact Source/Plan/READY/seal/currentreader commands, directDarwin callback; no
 newprojection or qualification merely from future definition installation.

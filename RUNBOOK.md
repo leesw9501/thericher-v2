@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC20:30 / Nov7KST05:30. Company outcome UNFINISHED.
+Updated Nov6UTC21:03 / Nov7KST06:03. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -31,9 +31,31 @@ ExactSource94e91/Nativea766/SPEC8456/GUIargv/Job76da; START PID+Source match.
 Child20/allclosed, actual_transport_closure withheld; no strictfinancialresult.
 Bound transport was empty; actual inner phase/first predicate remains UNKNOWN.
 Closure/env ABI defect is separately source-reproduced, not actual-cause proof.
-New repair8 is source/native preparation only, not a new actual command.
+R8Source7e43/SPECa783 was separately attempted20:33:32..38UTC and is NOW
+CONSUMED. Before_create deniedunknown_custody_
+capability, no guestcreate/start/consumer; exactnonownedactor unretained.
+Never rerun R8, Parent current-mse-c79-parent-r8-actual-read-20261106-v1/run.py,
+or oldR7. NEWR9source/native prep has no assignedactualwindow/command yet.
+Currenthost-only probe6929/bcac at20:57:39 classifiedONEexactdiagnosticprocess
+asactor_unregistered; no private/Task/KIS/Docker, not oldactor attribution.
 Do not re-run SPEC or original Parent run.py. Existing safe diagnostics only;
 no private-body, latest-file, Taskexit, freshholdings or reservation-release claim.
+
+CURRENT original H3AMD/Full17 repeatable PUBLIC-only readers, eligible only after
+Nov6UTC21:07/Nov7KST06:07. Source29d5/aefb,22inventedchecks/Parent52pins/E9+
+twoSourceOnlyCLI0publicreads. ActualSchedulerfacts20:39(d927/4680) matched exact
+actions/clocks/settings/bothenabled0instances, NOT financialeffects.
+
+```powershell
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-original-exit-public-readers-20261106-v1/reader.py' --source 29d5fbd6824005d2e69d482460629d35542a4a073789b7ba9335ab91f88cd7f3 --target h3amd --read-public
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/execution/current-original-exit-public-readers-20261106-v1/reader.py' --source 29d5fbd6824005d2e69d482460629d35542a4a073789b7ba9335ab91f88cd7f3 --target full17 --read-public
+```
+
+Bounded exact-root closure enumeration, unique immutable run/source/release/
+phase/time/hash joins, no latest selection/private/control references. Output
+is public operationalreport only; acceptance/fill/currentowned/terminal/PnL
+remainUNKNOWN. Assumedhonesthost, not authenticated Schedulerorigin. Do not
+invoke either scheduledstrategy/Task to inspect these results.
 
 CURRENT CSCO public reader is repairb580dc71, not old9742. Parent verified27refs/
 27nativechecks and exactonly reasonaddition not_retained. Productione6/release3155

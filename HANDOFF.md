@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC20:30 / Nov7KST05:30.
+Updated Nov6UTC21:03 / Nov7KST06:03.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -27,11 +27,11 @@ integration/Git; role MDs and directories are not running-process proof.
 | Owner | Current work / actual state |
 | --- | --- |
 | Planck / Data | HeldAGE2d99c/fe41 COMPLETE21nativechecks/oneprojection/no retry; allkeysretained/34missingpointers perFIT-INNER unknown/DEV799-RECENT289 fullyknown. ConsumedbyEngine, no provider/cache rebuild. |
-| Arendt / Engine and sole Steward | AGE2 0ad2/1c01 COMPLETE2CUDA20epochs/best8 each/4360updates; primarygrowthFAILboth/DD+turnPASS, all22actors194Jobsclosed. Earlier4CUDAfits12378updates also closed/no repeat. |
+| Arendt / Engine and sole Steward | Crossasset2c45/bd5d COMPLETE/adaptivePASSboth/2CPUfits3924updates/all8actors68Jobsclosed; extra1024params confound retained. NEWcapacity-matchedSELF_CONTEXT/newseed+fixedmean2 comparison, no completedfit rerun. |
 | Ptolemy / invoked Infra closed | Futurepairprep CLOSED_WITHHELD exact host qualification absent; schema retained/0native/0Taskeffects. Duration hypothesis DISPROVEN, no oldTaskrerun. |
-| Banach / Execution | R7actualonceconsumed/emptytransport/firstpredicateUNKNOWN. NEW repair8 closure/env ABI/source-native and safeinnerphase diagnostics only; no actualread retry. |
-| Darwin / Execution | Qualifiedinstaller4531/08dc COMPLETE37mockchecks; Parent ACTUALLY INSTALLED R4 pair20:17..20:18/fullindependentreadback. Now source-only futureR4 publicresult readiness. |
-| Godel / Strategy and Review | Original H3AMD/Full17 exactbindings64da COMPLETE/reader gapsidentified. NEW minimal current public-reader adapters/producer-consumer tests, no actualread yet. |
+| Banach / Execution | R8actualonce20:33 consumed/before_create unknown_custody_capability/no gueststart. Ownnewprobe assertionunretained/closed. NEWR9same-caller realmetadata preflight/directownedlaunch source-native preparation, no actualread assigned. |
+| Darwin / Execution | R4publicreader7f50/36checks COMPLETE, Parent18pins/E9. Actual originalexitSchedulerfacts20:39 match/bothenabled0instances. R4source scopegap confirmed; now existingfixedresearch capability reuse audit/sourceonly. |
+| Godel / Strategy and Review | Originalexitreader29d5/aefb/22checks COMPLETE, Parent52pins/E9/twosourceonly0reads. Actualread eligibleafter21:07. Claude classifierchallenge review_unavailable/exit1/unclassified, not agreement. |
 | Parent / integration | R4 actual futurepair installed20:17..20:18; adoption48df0d07. Source/MD integration and freshRuff4Compose/1440protected+AGENTS match. Company financial runtime outcome still unfinished. |
 
 ActualCSCO repairedpublicreaderb580 at17:01/17:06 parsed source-bound technical
@@ -86,9 +86,33 @@ Point remains UNKNOWN until Source72's actual publication; no placeholder.
 
 HeldAGE2 research FINAL-API records literal replay-call cap breach:10actualsf
 calls versus4, despite4wrapperbatches. No budgetPASS or oldcap reinterpretation.
-New crossasset-state comparison is separately assigned1800active5400elapsed/
-2freshfits/6logical AND6actualreplays, sameData/OLD60_H3/e3/age2D; no duplicate
-LSTM, extra marketpayload or automaticPaper swap. Native/source readiness first.
+Crossasset-state comparison is COMPLETE2c457974/native96922514/resultbd5d3f6c:
+POOLED DEV+1.438200%/DD1.383656%, RECENT+.388483%/.720263%; growth/DD/turnPASS
+both versuspointwise+blindH3, changed12/5. TwoCPUfits21/best9 and15/best3,
+3924updates/4.184+2.821s/0VRAM, sixactualreplays/6books/2batches. All8containers/
+68Jobsclosed;95.473recordedpartial/1107elapsed/noBudgetPASS. Parent94bindings/
+E9 and growth/DD/turn arithmetic match. Extra1024parameters preventpurecontext
+causality; reuseddata/adaptive screen, not independent alpha orPaper promotion.
+NEWcapacity-matchedSELF_CONTEXT versusnewPOOLED, seed20261111, plusfixedmean2
+withcachedoldPOOLED;2fits/8logicalAND8actualreplays/0savedcalls. No rerun.
+
+R8actualParentonce20:33:32..38UTC Source7e43/SPECa783/Job76da consumed.
+Retained234c/8230 proves before_create->unknown_custody_capability atscoped
+decide29; no create/start/consumer, ownedabsence/11innerJobsclosed. Actual
+nonownedactor/hiddennative.actor reason unretained, allfinancialUNKNOWN.
+Parent NEWmetadata-only diagnostic6929/bcac at20:57:39:completeCIM/oneactor,
+the exact private-free diagnostic itself, deniedactor_unregistered. Zeroown
+exemptions/unknown_relevant0/oneclosedJob/0Docker-private-Task-KIS. This is new
+ASOF evidence, NOT retrospective R7/R8actor attribution or custody admission.
+R4's own pinned path shares this scope gap; reviewed fixed-profile workers may
+pass, not all research blocks. Exactcapability attestation/knownownedcaller
+needed, never processname exemptions or unknownwriter waiver. R9preparation
+separates realmetadata preflight from actualreadnonce; both actual steps still
+unassigned. Exact Parent trace current-mse-c79-parent-r8-actual-read-20261106-v1.
+
+Original H3AMD/Full17 exits actuallyenabled/0instances at20:39, exactactions/
+clocks/settings matched(d927/4680). Opportunity is not result. Currentstrict
+publicreader29d5/aefb/22checks ready after21:07, no actualread yet; RUNBOOK.
 
 ## Actual Read-Only Probe And Fresh Data Installation
 

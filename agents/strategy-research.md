@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC20:30 / Nov7KST05:30. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC21:03 / Nov7KST06:03. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
@@ -27,8 +27,15 @@ versus4cap breach remains, no budgetPASS. No rerun or secondary winner.
 Next Engine assignment tests same-date causal crossasset context versus own-stock
 MLP with the sameAGE2D target; not a generic first-ranking novelty claim.
 DeepSets primary mechanism https://arxiv.org/abs/1703.06114, no publiccode/weights
-or new dependency. Current Godel sidecar is minimal exact H3AMD/Full17 public
-result-reader adaptation, source/synthetic only, not financial custody.
+or new dependency. Actualcrossasset2c45/bd5d completed2CPUfits3924updates:
+POOLED+1.438200%/.388483%, DD1.383656%/.720263%, adaptivegrowth/DD/turnPASSboth.
+Extra1024parameters prevent purecontext attribution; newcapacitymatchedself-
+context/newseed/fixedmean2 is a separatepredeclared Engine campaign, not rerun
+or independentreplication/Paperpromotion. All8containers68Jobsclosed.
+Godel originalexitreader29d5/aefb/22checks nowreadyafter21:07; noactualreadyet.
+CurrentclassifierClaudechallenge8a9c/9d65 unavailable/exit1/unclassified/2.02s,
+not agreement/auth-quota diagnosis. Exactpointer:
+A/review/current-relevant-custody-classifier-challenge-20261106-v1/API.json.
 
 Current coordinated offer44d7/Source0f613 and Godel e83f/2532 review COMPLETE:
 fresh matched LSTM60+IND8 NETLOG versus MSE through the SAME fixed sigmoid

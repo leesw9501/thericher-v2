@@ -18,7 +18,7 @@ not pending instructions to repeat completed fits or consumed reads.
 
 ## Current Priorities
 
-Updated Nov6UTC20:30 / Nov7KST05:30.
+Updated Nov6UTC21:03 / Nov7KST06:03.
 
 1. Repair the actual native host integration. Darwin's lineage-batch2 passed
    19identity/17frame/34owner checks but the full graph timed out after164owner
@@ -44,7 +44,12 @@ Updated Nov6UTC20:30 / Nov7KST05:30.
    child20/actual_transport_closure, no complete strict financial result.
    Source-safe diagnosis found empty bound transport; inner phase/first predicate
    remains UNKNOWN. A separately reproduced closure/env ABI defect is not proven
-   actual first cause. New repair8 preparation only; consumed read NEVER repeats.
+   actual first cause. R8actual20:33 also consumed:before_create unknown_custody_
+   capability/no create/start/consumer; exactactorunretained. Parent20:57complete
+   host-onlyprobe proves currentprivate-free diagnostic deniedactor_unregistered,
+   not oldactorattribution. R9same-caller realmetadata preflight preparation and
+   existingfixedresearch capability reuse audit; no unknownwriter exemption.
+   ConsumedR7/R8 never repeat; no new actual custody command adopted.
    Actual private-read phase/result remains unqualified; unknown relevant
    custody writers withhold that read's conclusions, not all lanes.
    Do not consume repair2's actual-c79-once against its known false ASOF gate.
@@ -76,10 +81,14 @@ Updated Nov6UTC20:30 / Nov7KST05:30.
    Data d99c/fe41 completed21nativechecks/oneprojection, no rebuild/retry.
    ExactcurrentOLD60_H3 entries/e3expiry; no independent-alpha/Paper swap.
    Literal10sf_replay calls>4cap retained/noBudgetPASS;4wrappers do not erase it.
-   NEW crossasset-state critic versus own-stockMLP assigned1800active5400elapsed/
-   2fits0retry/6logical AND6actualreplay calls. ReuseData/entry/age2D/e3, strict
-   input-only native beforefits, no duplicates/Paper swap/independent-alpha claim.
-5. Keep tonight's installed Data/publisher and all original exits unchanged.
+   Crossasset2c45/bd5d COMPLETE/adaptivePASSboth:POOLED+1.438200%/.388483% after
+   costs,2CPUfits3924updates/6actualreplays/all8actors68Jobsclosed. Extra1024
+   params confound retained. NEWmatched-capacitySELF_CONTEXT/newPOOLED seed
+   20261111 plusfixedmean2cached/new:2fits0retry/8logicalAND8actualreplays,
+   sameData/entry/age2D/e3; no duplicatefit or independent-alpha/Paper-swap claim.
+5. Originalexitpublicreader29d5/aefb qualifies H3AMD/Full17 after21:07 only,
+   Parent52pins/E9/sourceonly0reads/22inventedchecks. Missing/ambiguous remains
+   UNKNOWN, notfinancialclosure. Keep installedData/publisher/exits unchanged.
    Prepare source/native readiness while actual future input is unavailable;
    never placeholder-hash, stale-retag or force financial activation. New model
    research is not a substitute for an unknown original request.

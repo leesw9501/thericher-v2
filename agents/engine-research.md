@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC20:30 / Nov7KST05:30. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC21:03 / Nov7KST06:03. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -39,7 +39,7 @@ E9PASS. Exact OLD60_H3 entries, fixedage1HOLD/e3expiry/age2only; D original-entr
 cash denominator versus fee-inverted ratio, not expectedratio==expectedcash.
 Input-only native mounts and FIT-state stats preserve targets/clocks separately;
 commonqueryOPEN consumption does not fabricate historicalarrival/PIT/finality.
-NEW assigned current-h3-crossasset-state-critic-development-20261106-v1:
+COMPLETE current-h3-crossasset-state-critic-development-20261106-v1:
 1800active5400elapsed/cleanup180/readout180/2newfits0retry/seed20261110/
 120epochs14040updates each/soft600hard660/<=2nativegraphs6syntheticupdates/
 4forwards0savedcalls/onejointseal-readout6logicalbooks AND6actualsf_replays,
@@ -51,6 +51,21 @@ portfolio or independent-alpha claim. Mechanism https://arxiv.org/abs/1703.06114
 not authorcode/weight reuse or financial evidence. New sources/native readiness
 are not inferred from assignment. Batch input-only forecasts where isolation
 permits to reduce22-container/194-Job overhead; never merge target trust boundaries.
+Actual FIT2c457974/native96922514/resultbd5d3f6c:POOLED growth+1.438200%/
+.388483%, DD1.383656%/.720263%, frozen growth/DD/turnPASSboth/changed12+5.
+Pointwise+.911085%/.288886%; blind+.993207%/.288886%. Extra1024parameters:
+not purecontext causality. CPU21/best9/2289updates/4.184s and15/best3/1635/
+2.821s,0VRAM; INNERpatience12/bestrestore/notconvergence.6actualreplays/6books/
+2batches/4forwards0savedcalls; all8containers68Jobsclosed.95.473recordedpartial/
+1107elapsed/noBudgetPASS. Parent94bindings/E9+criteria arithmeticPASS.
+NEW current-h3-crossasset-capacity-ensemble-development-20261106-v1:
+1200active3600elapsed/cleanup120/readout180/2freshfits0retry/seed20261111/
+120epochs14040updates each/soft450hard510/2native6syntheticupdates/4forwards/
+0savedcalls/onejointseal-readout8logicalAND8actualreplays/<=2wrapperbatches.
+NewPOOLED versusSELF_CONTEXT uses same1024parameter branch onownembedding
+instead of17-mean, exactcapacity/init; fixedmean2 cachedold/newPOOLED is a
+predeclared diagnostic, never rescueprimaryfailure. SameData/OLD60_H3/age2D/
+e3/nativefundedlots. Reusedadaptive data, no independent replication/Paper swap.
 
 Latest LSTM120 context study COMPLETE60f47d7c/resultcd6fa420:
 A/research/current-h123-lstm120-context-development-20261106-v1/API.json.
