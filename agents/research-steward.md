@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC20:01 / Nov7KST05:01. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC20:30 / Nov7KST05:30. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -10,9 +10,15 @@ All NETLOG/MSE and two-seed fits are CLOSED:fourCUDAfits/12378updates combined,
 not continuous GPU utilization. Seedf347/7f14 twoCUDA36/25epochs/best24/13/
 6710updates/16books, all9CIDs86Jobsclosed; mean3 growth-DDFAILboth/no rerun.
 CPUminunit718d/2eb8 COMPLETE8books/0modelcalls, RECENT no modeled orders at
-synthetic10000 only. Next AGE2 cash-vs-ratio has2freshCUDA-eligible critics
-prebound2400active5400elapsed/120epoch14040updates each/0retry/4forwards/10books;
-Data/real native isolation/units/book readiness first. One coordinator may
+synthetic10000 only. AGE2 cash-vs-ratio is also COMPLETE0ad2/1c01:twoCUDA critics,
+each20epochs/best8/2180updates/16.952-17.032s/312MiBreserved,4360updates total.
+Frozen growthFAILboth/DD+turnPASSboth/all22actors194Jobsclosed; no duplicate fit.
+One native4syntheticupdates/4forwards/10books/4batches/10actualsf_replays,
+284.401finalrecordedpartial/noBudgetPASS;literal10>4replaycap breach retained.
+NEW crossassetstate2fit campaign assigned1800active5400elapsed/6logicalAND6actual
+replays; no extra trials or completedfit reruns. Native/source readiness first,
+actual worker/PID/counters needed before claiming an optimizer is running.
+One coordinator may
 overlap independent useful workers with measured headroom; no dummy occupancy.
 
 Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea remains sole GPU coordinator.

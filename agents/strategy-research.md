@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC20:01 / Nov7KST05:01. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC20:30 / Nov7KST05:30. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
@@ -20,6 +20,15 @@ availabilityearlier; keep allsource clocks/unknownarrival/CA-finality limitation
 No publicmodel/right/runtime replacement; ordinary PyTorch controlled target
 transfer, not alpha or automatic Paperpromotion. Execution source reviews of
 R3actualpathgap/R7Mounts normalization were separate, no private runtime claim.
+The separately qualified AGE2consumer0ad2/1c01 is now COMPLETE2CUDAfits/
+4360updates:primarygrowthFAILboth/DD+turnPASS; directcash exceeds matchedratio
+onlyDEV, RECENTties. Not optimalstopping/firstheldcash. Literal10actualreplays
+versus4cap breach remains, no budgetPASS. No rerun or secondary winner.
+Next Engine assignment tests same-date causal crossasset context versus own-stock
+MLP with the sameAGE2D target; not a generic first-ranking novelty claim.
+DeepSets primary mechanism https://arxiv.org/abs/1703.06114, no publiccode/weights
+or new dependency. Current Godel sidecar is minimal exact H3AMD/Full17 public
+result-reader adaptation, source/synthetic only, not financial custody.
 
 Current coordinated offer44d7/Source0f613 and Godel e83f/2532 review COMPLETE:
 fresh matched LSTM60+IND8 NETLOG versus MSE through the SAME fixed sigmoid

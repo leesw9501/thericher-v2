@@ -1,28 +1,30 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC20:01 / Nov7KST05:01.
+Updated Nov6UTC20:30 / Nov7KST05:30.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
 
 ## Current Owner And Consumer
 
-NEW heldAGE2 producer for Arendt cash-vs-ratio campaign:
-A/data/current-h3-held-age2-input-target-projection-20261106-v1.
-600active2400elapsed/cleanup120/<=2tinyactualproducer-consumer natives thenONE
-smallprojection0retry. Existing originaldailyFIT/INNER x/z and4f31evalshift2
-referenced, not rebuilt. Separate causalstate input from future-price targets;
-no P2/P3/target role mounted/read by forecasters. Original all37077/8143/799/289
-e0keys retained; 34boundary rows perFIT/INNER remainunknown wherequerymissing,
-loss-only20purge and interval grouping mustqualify, not imputed or dropped from
-headlines. Metadata-only source feasibility is NOT fresh payload/mask proof.
-Commonnewconsumptionclock=queryOPEN keeps originalqueryOPEN/LateCLOSE+60 source
-clocks and unknown actualarrival grades. State priorCLOSE[e1]/entryOPEN0 only;
-no currentOPEN feature. Freeze exact HELD-INPUT/TARGET roles/schema/API with
-Arendt and exercise tiny actual native BEFOREmarketprojection, directcallbacks.
-PayloadsM/us_equities/research_inputs; code/headersA. No acquisition, credentials,
-Task or model calls. PriorCLIadvisoryab439/f1e3 unavailable/UNKNOWNcause/closed,
-not another login request or a companyhold.
+HeldAGE2 Data COMPLETE, consumed by the completed Engine comparison:
+A/data/current-h3-held-age2-input-target-projection-20261106-v1/dtype-repair-r1/API.json.
+Sourced99c4158/READYfe41a45b/native1f182e3e:21actual producer-consumer checks,
+ONEsmallprojection/0retry/allJobsclosed. Old2/2dtype failures/debits preserved;
+newrepair63.434activeupper/194elapsed atverification, cumulative184.115.
+Parent60bindings/E9PASS. All37077/8143/799/289e0keys retained;34missingquery
+pointers perFIT/INNER stayunknown. Complete17-date supervisedFIT1743/INNER477;
+DEV799/RECENT289 fullyinput/state/targetknown. No x/z/barcache/scaler rebuild.
+Separate input/target headers+payloads, causalpriorCLOSE[e1]/entryOPEN0 state;
+noP2/P3/target mount in forecasters. CommonqueryOPEN consumption retains original
+queryOPEN/LateCLOSE+60 sourceclocks and unknown historicalarrival/PIT/finality.
+Do not rerun completed builds. Fresh scheduledData0f9/Source72point remain future
+and separate, not automatically qualified from this research projection.
+New assigned source-only installed-input result readiness:300active1200elapsed/
+<=1inventedproducer-consumer smoke,0actualfuturepayload/provider/Taskcalls.
+A/data/current-nov9-installed-input-result-readiness-20261106-v1.
+Exact Source/Plan/READY/seal/currentreader commands, directDarwin callback; no
+newprojection or qualification merely from future definition installation.
 
 Existing-marks compatibility for new NETLOG/MSE H3 campaign44d7 is COMPLETE:
 A/data/current-netlog-h3-existing-marks-compatibility-20261106-v1.

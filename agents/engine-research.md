@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC20:01 / Nov7KST05:01. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC20:30 / Nov7KST05:30. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -23,18 +23,34 @@ at fixed synthetic10000priceunits. NONINFORMATIVE, not actual brokerlot/account
 funds/tradability proof. Original formatterfailure and246.672partialdebit retained;
 Parent26bindings+4proofs/E9PASS. No retries/regrading of the old preparation.
 
-NEW current-h3-age2-cash-vs-ratio-development-20261106-v1 prebound2400active/
-5400elapsed/cleanup180/readout240/2freshmatchedcritics0retry/120epoch14040updates
-each/soft600hard660/<=2natives6syntheticupdates/4forwards/0oldcalls/10books.
-Exact CURRENT OLD60_H3 entry weights/quantities/e3expiry, fixedHOLD age1, optional
-age2 only. D=.9975(P3-P2)/(1.0025P0) versus fee-inverted ratioR, no new buyfee
-on held shares. Inputs RAW60+IND8+causalCLOSE[e1]/entryOPEN0 state only; no OPEN2
-feature. Planck small separated state/target projection/native actual ABI first.
-CommonqueryOPEN consumption keeps original source clocks/unknown arrival grades;
-no preclose availability fiction. Fit/INNER grouped e0..e3/20purge and common
-support, no target-mask inference eligibility. Conditional Source/native/Data
-qualification internally releases training under prebind, not another ParentACK.
-Not firstheldcash or optimalmultistage stopping; source5999/offer2cc is conditional.
+HeldAGE2 comparison COMPLETE, never repeat:
+A/research/current-h3-age2-cash-vs-ratio-development-20261106-v1/API.json.
+FIT0ad2f826/native1d34d633/result1c01d76b/closure9e7cc3fd; two concurrentCUDA
+matched LSTM60+IND8+causalstate critics, each20epochs/best8/2180updates,
+16.952/17.032s/312MiBreserved. One native/4syntheticupdates/4newforwards/
+0savedcalls/onejointseal-readout/10books,4wrapperbatches/10actualsf_replays.
+DIRECT_D DEV+.634237%/DD2.181790%, ratio+.436603%/DD2.185990%, blindH3+.993207%/
+1.977482%; RECENT direct=ratio+.349755%/.684969% versus blind+.288886%/.825314%.
+Frozen primarygrowthFAILboth (RECENT ties ratio), DD+turnPASSboth; changed9/2.
+This is useful target comparison, not a winner/independentalpha/Paper swap.
+All22actors194Jobsclosed;284.401finalrecordedpartial/noBudgetPASS. Literal10
+actualsf_replays exceeded4call cap;4wrappers do not cure it. Parent181bindings/
+E9PASS. Exact OLD60_H3 entries, fixedage1HOLD/e3expiry/age2only; D original-entry-
+cash denominator versus fee-inverted ratio, not expectedratio==expectedcash.
+Input-only native mounts and FIT-state stats preserve targets/clocks separately;
+commonqueryOPEN consumption does not fabricate historicalarrival/PIT/finality.
+NEW assigned current-h3-crossasset-state-critic-development-20261106-v1:
+1800active5400elapsed/cleanup180/readout180/2newfits0retry/seed20261110/
+120epochs14040updates each/soft600hard660/<=2nativegraphs6syntheticupdates/
+4forwards0savedcalls/onejointseal-readout6logicalbooks AND6actualsf_replays,
+<=4wrapperbatches. Own-stockMLP versus same-date DeepSets-style pooledcontext,
+sameheldD/OLD60_H3/age1HOLD/age2only/e3expiry. ReuseData, freezearchitecture/
+counts/criteria beforefits; actualnativepermutation/perturbation/optimizer/
+checkpoint/input-only parse-return and book parity first. No novelty/optimal
+portfolio or independent-alpha claim. Mechanism https://arxiv.org/abs/1703.06114,
+not authorcode/weight reuse or financial evidence. New sources/native readiness
+are not inferred from assignment. Batch input-only forecasts where isolation
+permits to reduce22-container/194-Job overhead; never merge target trust boundaries.
 
 Latest LSTM120 context study COMPLETE60f47d7c/resultcd6fa420:
 A/research/current-h123-lstm120-context-development-20261106-v1/API.json.

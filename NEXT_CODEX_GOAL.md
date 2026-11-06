@@ -18,7 +18,7 @@ not pending instructions to repeat completed fits or consumed reads.
 
 ## Current Priorities
 
-Updated Nov6UTC20:01 / Nov7KST05:01.
+Updated Nov6UTC20:30 / Nov7KST05:30.
 
 1. Repair the actual native host integration. Darwin's lineage-batch2 passed
    19identity/17frame/34owner checks but the full graph timed out after164owner
@@ -29,7 +29,10 @@ Updated Nov6UTC20:01 / Nov7KST05:01.
    required a shorter undeployed placement. CURRENT R4repair1 Source30bbe174/
    native923a6d1c qualifies actualWindowswriters and full109.689s entry/coldexit;
    original private/input/token/emergency paths unchanged. Finish qualified
-   future installer bound to R4, not failed3247 or long R3. No installation yet.
+   future installer4531/08dc bound to R4, not failed3247 or long R3. Parent
+   ACTUALLY INSTALLED20:17..20:18UTC:disabled create, independent fullXML/API7ACL,
+   EXIT enabled before ENTRY, final independent readback/both enabled/0instances.
+   No Task.Run or financial effect. Exact Parent adoption is in RUNBOOK.
    This is not a production Linux/historical CSCO cause. Do not blindly
    enlarge timeouts, cache fresh financial checks, or deploy component-only proof.
    Warm transport79 keeps one existing Phase/client within the original owner;
@@ -39,7 +42,9 @@ Updated Nov6UTC20:01 / Nov7KST05:01.
    Nativea766 passed after preserving all Mount fields while
    sorting by unique Destination. Parent exact actualonce19:54:44..50UTC,
    child20/actual_transport_closure, no complete strict financial result.
-   Source-safe bound transport diagnosis now; consumed actual read NEVER repeats.
+   Source-safe diagnosis found empty bound transport; inner phase/first predicate
+   remains UNKNOWN. A separately reproduced closure/env ABI defect is not proven
+   actual first cause. New repair8 preparation only; consumed read NEVER repeats.
    Actual private-read phase/result remains unqualified; unknown relevant
    custody writers withhold that read's conclusions, not all lanes.
    Do not consume repair2's actual-c79-once against its known false ASOF gate.
@@ -65,10 +70,15 @@ Updated Nov6UTC20:01 / Nov7KST05:01.
    16books, primary-.264452%/-.502835%, growth-DDFAILboth/no winnerselection.
    Minunit718d/2eb8 COMPLETE0modelcalls/8books/RECENTnoadmittedorders atfixed
    synthetic10000priceunits; NONINFORMATIVE, not actual brokerlot/account claim.
-   NEW held-AGE2 D-vs-ratio experiment prebound2freshcritics/0oldcalls, fixed
-   age1HOLD and exactcurrentOLD60_H3 entries/e3expiry. Small causalstate/input-
-   target separation projection plus actual native/book parity BEFOREfits;
-   commonqueryOPEN consumption retains original source clocks/unknown grades.
+   HeldAGE2 D-vs-ratio is also COMPLETE0ad2/1c01:2CUDA20epochs/best8 each/
+   4360updates,4forwards/10books. DirectDEV+.634237% versus blind+.993207%;
+   recent+.349755% ties ratio, frozen growthFAILboth/DD+turnPASS/allclosed.
+   Data d99c/fe41 completed21nativechecks/oneprojection, no rebuild/retry.
+   ExactcurrentOLD60_H3 entries/e3expiry; no independent-alpha/Paper swap.
+   Literal10sf_replay calls>4cap retained/noBudgetPASS;4wrappers do not erase it.
+   NEW crossasset-state critic versus own-stockMLP assigned1800active5400elapsed/
+   2fits0retry/6logical AND6actualreplay calls. ReuseData/entry/age2D/e3, strict
+   input-only native beforefits, no duplicates/Paper swap/independent-alpha claim.
 5. Keep tonight's installed Data/publisher and all original exits unchanged.
    Prepare source/native readiness while actual future input is unavailable;
    never placeholder-hash, stale-retag or force financial activation. New model
@@ -101,7 +111,7 @@ collectors or strategies merely to inspect. Respect active owners.
 | Other observations | NAS8Nov6UTC21:10/hard21:25, savedGRU/Ridge21:35; W25Nov10/13UTC21:30/hard21:45. No reserved-label release/repeated fit. |
 | Fresh19 input | Source0f9c4e8c installed/enabled Nov6UTC21:30/laststart<21:40/hard21:45. Nov6asof->Nov9decision; actualREADY/payload UNKNOWN. Never replay consumed Install/Enable. |
 | LSTM-H3 publisher | Source72eb95e3 installed/enabled12:51; Nov6UTC21:47/laststart<21:52/hard22:00. One future savedbest10 forward; actualREADY/point UNKNOWN, no financialdeployment. |
-| Proposed Nov9 successor | EntryNov9UTC14:31..<14:35/hard14:37; ownedexitNov12UTC14:30..<14:35/hard14:37. Not installed: qualified actual host and actual sealed future point still required. |
+| Installed Nov9 successor | EntryNov9UTC14:31..<14:35/hard14:37; ownedexitNov12UTC14:30..<14:35/hard14:37. Actual R4Source30bb/installer4531 installed20:17..20:18; both enabled/0instances/fullXML/API7ACL. Actual sealed point and all native financial gates still required at effects. |
 
 ## Boundaries And Completion
 

@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC20:01 / Nov7KST05:01.
+Updated Nov6UTC20:30 / Nov7KST05:30.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -26,13 +26,13 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data | Existingmarks236cf/15b9 COMPLETE. CLIlocal2.1.311 capabilityPASS but advisoryunavailable/noauthcauseclaim. New small held-age2 causalstate/separatetarget projection usingexisting x/z, commonqueryOPEN clock; no provider calls. |
-| Arendt / Engine and sole Steward | NETLOG2CUDAfits and seed2CUDAfits COMPLETE/12378combinedupdates/no repeat. Seedmean3 f347/f66f growth-DDFAILboth. Minunit718d/2eb8 COMPLETE8books/RECENTnoorders/syntheticnotional only. NEWAGE2 cash-vs-ratio preparation/fits conditionalonactualData/native. |
+| Planck / Data | HeldAGE2d99c/fe41 COMPLETE21nativechecks/oneprojection/no retry; allkeysretained/34missingpointers perFIT-INNER unknown/DEV799-RECENT289 fullyknown. ConsumedbyEngine, no provider/cache rebuild. |
+| Arendt / Engine and sole Steward | AGE2 0ad2/1c01 COMPLETE2CUDA20epochs/best8 each/4360updates; primarygrowthFAILboth/DD+turnPASS, all22actors194Jobsclosed. Earlier4CUDAfits12378updates also closed/no repeat. |
 | Ptolemy / invoked Infra closed | Futurepairprep CLOSED_WITHHELD exact host qualification absent; schema retained/0native/0Taskeffects. Duration hypothesis DISPROVEN, no oldTaskrerun. |
-| Banach / Execution | R7 94e91/a766 SOURCE_NATIVE_READY. Parent actualonce19:54:44..50/child20/allJobsclosed; actual_transport_closure withheld, financialfacts UNKNOWN. Source-safe exacttransport diagnosis only/no retry/nonceconsumed. |
-| Darwin / Execution | R3 5121 nativePASS but actualtelemetry260-261char risk. NEW short R4 repair1 30bbe174/923a6d1c actualWindowswriters+full109.689s PASS/privatepathsunchanged. Qualified installer repair pending; no installation. |
-| Godel / Strategy and Review | R3actualpathgapreview andR7mount-order fixreview COMPLETE; no native rerun/financialadmission. AGE2source5999/2cc conditional, no claimdirectcashlearningnew. Currentreview/rolecallbacks do not reopenclosed scopes. |
-| Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
+| Banach / Execution | R7actualonceconsumed/emptytransport/firstpredicateUNKNOWN. NEW repair8 closure/env ABI/source-native and safeinnerphase diagnostics only; no actualread retry. |
+| Darwin / Execution | Qualifiedinstaller4531/08dc COMPLETE37mockchecks; Parent ACTUALLY INSTALLED R4 pair20:17..20:18/fullindependentreadback. Now source-only futureR4 publicresult readiness. |
+| Godel / Strategy and Review | Original H3AMD/Full17 exactbindings64da COMPLETE/reader gapsidentified. NEW minimal current public-reader adapters/producer-consumer tests, no actualread yet. |
+| Parent / integration | R4 actual futurepair installed20:17..20:18; adoption48df0d07. Source/MD integration and freshRuff4Compose/1440protected+AGENTS match. Company financial runtime outcome still unfinished. |
 
 ActualCSCO repairedpublicreaderb580 at17:01/17:06 parsed source-bound technical
 ValueError/not_retained for BOTHentry16:21:52 andexit16:50:40. Fullprivate/native
@@ -59,9 +59,11 @@ Current future-host consumer is SHORT R4, not the longer R3 placement:
 A/execution/n9h3-1106-r4/repair1/SOURCE.json
 (30bbe174e50842c583580c87d9c81823e90bd975f407a7efa72da1989a7615b4).
 Native923a6d1c/full109.689s/actualWindowswriters/private-input-control paths
-unchanged; Parent204members+134dependencies/E9PASS. This is still NOT installed
-or financial admission. Old installer3247 remains failed; new qualified finite
-installer must bind actual R4Source/release/actions. Action uses source/release/
+unchanged; Parent204members+134dependencies/E9PASS. Parent ACTUALLY INSTALLED
+20:17..20:18UTC through installer4531/08dc:disabled create, independent fullXML/
+API7ACL, EXIT enabled before ENTRY, separate final readback both enabled with
+0instances. No Task.Run or financial admission. Old installer3247 remains failed.
+Action uses source/release/
 phase, not invented pointSHA: effect-free absent future definitions may precede
 the real Source72 point, which is still required/validated at actual effects.
 No Task.Run, existing-writer migration or private-state reset from this proof.
@@ -73,6 +75,20 @@ actual_transport_closure atwrapper.actual317; no complete strict result.
 Actual custody/acceptance/fill/currentowned remainUNKNOWN; do not infer no reads
 or zero effects from exit. Do not replay consumed actualonce or release F9.
 Exact Parent trace: A/execution/current-mse-c79-parent-actual-read-20261106-v1.
+Bound transport directory was empty; inner phase/first predicate UNKNOWN. A
+source-only closure/env ABI defect is separately reproduced, not actual-cause
+proof. New repair8 preparation never replays this consumed nonce.
+
+Actual Nov9 R4 installation/readback evidence:
+A/execution/current-nov9-r4-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+EntryNov9UTC14:31/exitNov12UTC14:30, quietpythonw/no demand-catchup-repeat.
+Point remains UNKNOWN until Source72's actual publication; no placeholder.
+
+HeldAGE2 research FINAL-API records literal replay-call cap breach:10actualsf
+calls versus4, despite4wrapperbatches. No budgetPASS or oldcap reinterpretation.
+New crossasset-state comparison is separately assigned1800active5400elapsed/
+2freshfits/6logical AND6actualreplays, sameData/OLD60_H3/e3/age2D; no duplicate
+LSTM, extra marketpayload or automaticPaper swap. Native/source readiness first.
 
 ## Actual Read-Only Probe And Fresh Data Installation
 
@@ -374,6 +390,11 @@ or a diagnosed authentication/quota cause:
 A/review/current-net25-sdk-input-adoption-20261106-v1/RESULT.json.
 
 Existing loopback http://127.0.0.1:8787 remains; Korean8788 NOT deployed.
+Parent safeformatted Docker metadata observed actualbe48 image/defaultnetwork,
+runtimeRO/emergencyRW/operationsRO and loopback8787 only; no Env/homepage/state/
+private reads or deployment. Previousinspect gap resolved for these fields only:
+A/execution/current-korean-monitor-parent-runtime-metadata-20261106-v1/OBSERVED.json.
+Legacy web remains NOT public-only; newimage/currentfinancialadmission unknown.
 Korean static snapshot:
 A/execution/current-korean-monitor-admission-compatibility-20261106-v1/PAPER-STATIC-SNAPSHOT.html.
 Stale adoption/unknown financials/disabled controls, not current custody.

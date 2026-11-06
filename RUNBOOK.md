@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC20:01 / Nov7KST05:01. Company outcome UNFINISHED.
+Updated Nov6UTC20:30 / Nov7KST05:30. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -15,8 +15,13 @@ ActualWindows publicwriters+full109.689s nativePASS; Parent204members+134deps/
 E9PASS. R3 5121 native proof remains valid only within its scope; its actual
 telemetry260-261char path budget was not qualified for deployment. No registry,
 private-state migration, original budget/exit change or failed-source regrade.
-Future installer3247 is failed; its Apply is NOT qualified. A separately source-
-qualified installer must bind R4 before any Parent-owned future definition write.
+Future installer3247 remains failed; never invoke its Apply. Qualified4531/08dc
+ACTUALLY INSTALLED R4 at20:17..20:18UTC, disabled create/fullXML/API7ACL then EXIT
+enable before ENTRY, independent final proof both enabled/0instances.
+D:/thericher-v2/model-artifacts/execution/current-nov9-r4-parent-installation-20261106-v1/PARENT-ADOPTION.json.
+Do not replay Create/Enable or manually Run these future tasks. Repeatable pure
+ReadbackLibrary is the qualified installer COMMANDS.json route, not an effect.
+EntryNov9UTC14:31/ownedexitNov12UTC14:30, quietpythonw/no demand-catchup-repeat.
 Actual sealed point remainsUNKNOWN; late-bound runtime still checks Source72/
 Data/model/clock/input before effects, never a placeholder hash.
 
@@ -24,6 +29,9 @@ R7 actual readonly once has been ATTEMPTED/CONSUMED, not ready to retry:
 A/execution/current-mse-c79-parent-actual-read-20261106-v1.
 ExactSource94e91/Nativea766/SPEC8456/GUIargv/Job76da; START PID+Source match.
 Child20/allclosed, actual_transport_closure withheld; no strictfinancialresult.
+Bound transport was empty; actual inner phase/first predicate remains UNKNOWN.
+Closure/env ABI defect is separately source-reproduced, not actual-cause proof.
+New repair8 is source/native preparation only, not a new actual command.
 Do not re-run SPEC or original Parent run.py. Existing safe diagnostics only;
 no private-body, latest-file, Taskexit, freshholdings or reservation-release claim.
 
