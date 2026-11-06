@@ -1,10 +1,19 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC18:29 / Nov7KST03:29. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC20:01 / Nov7KST05:01. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
 ## Current Resource Owner
+
+All NETLOG/MSE and two-seed fits are CLOSED:fourCUDAfits/12378updates combined,
+not continuous GPU utilization. Seedf347/7f14 twoCUDA36/25epochs/best24/13/
+6710updates/16books, all9CIDs86Jobsclosed; mean3 growth-DDFAILboth/no rerun.
+CPUminunit718d/2eb8 COMPLETE8books/0modelcalls, RECENT no modeled orders at
+synthetic10000 only. Next AGE2 cash-vs-ratio has2freshCUDA-eligible critics
+prebound2400active5400elapsed/120epoch14040updates each/0retry/4forwards/10books;
+Data/real native isolation/units/book readiness first. One coordinator may
+overlap independent useful workers with measured headroom; no dummy occupancy.
 
 Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea remains sole GPU coordinator.
 LatestLSTM12060f47/cd6fa420 COMPLETE1CPU20epochs/best8/1900updates/67.875s/
@@ -24,13 +33,15 @@ while smallMLP may remain CPU. Do not refit completed studies to fill VRAM.
 Source16members+3proofs/E9 independently PASS; result hash1373699301287f565a669aa14e502cb825e5a3be721bf87c95a8c1803bde8227.
 A/research/current-small-model-warm-throughput-calibration-20261106-v1/recovery-r1.
 Original0ea1 initialization failure/0updates/debits/hard18:02:10 unchanged.
-Warm worker closed. NEW NETLOG/MSE H3 campaign44d7/0f613 prebound2400active/
-3600elapsed/cleanup180/readout240,2fits/0retry/120epochs14040updates each/
-soft600hard660/<=2natives6syntheticupdates/4forwards/0oldcalls/16books.
-Arendt prepares actualSource/native/marks bindings; no active fit is inferred
-until actualPID/counters. Prefer measured useful CUDA for comparable sustained
-LSTM work, preserve desktop reserve and actual peak/co-tenancy. Planck owns
-independent existing-mark check; advisory Claude is not launch acknowledgement.
+NETLOG/MSE H3 COMPLETE3b6fb7be/7d5f3674/9f894e81:two concurrently owned CUDA
+fits, NETLOG18best6/1962updates/14.829s andMSE34best22/3706updates/21.800s,
+320MiB each. Actual fit intervals18:43:30.529..46.986 and18:43:32.073..55.331UTC;
+both removed/exit0,10actors94Jobsclosed. Timings co-tenant/not isolated.
+OneNative4syntheticupdates/2fits5668marketupdates/4forwards/0oldcalls/16books.
+No repeat; budgetPASS notclaimed frompartial326.749s recordedledger. Models
+were short useful workloads, not an environment/permission hold or proof of
+continuous GPU utilization. No active optimizer remains. Next source-only
+inventory/friction feasibility audit300active900elapsed/0numerics requested.
 
 Latest robustH123 campaign COMPLETE5c0f6a3b/5a3eb9b0/bee99f9b:
 2CPUfits23epochs each/best11/5060marketupdates/4forwards/16books/allclosed.

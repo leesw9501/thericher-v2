@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC18:29 / Nov7KST03:29.
+Updated Nov6UTC20:01 / Nov7KST05:01.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History: Git and immutable external sources, not reopened scope caps below.
 
@@ -15,11 +15,11 @@ Preserve ONE initialB/10/F9 UNKNOWN-HELD/all exact pending/reservations/exits.
 
 | Owner | Current assignment / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward | Warm61e4065b/13736993 COMPLETE72updates/LSTM CUDA faster. NEW44d7 NETLOG/MSE H3 campaign prebound2fits/0oldcalls, native/source preparation, no actual optimizer claimed before counters. |
-| Darwin Execution | Firstcause7eaa/85ba and proposalff1d COMPLETE. New shortnamespace positive runtime graph prebound900active1800elapsed/2cheap+ONEgraph;0actualfinancialeffects. |
-| Banach Execution | repair4-source375181c6 COMPLETE29boundary/41complete source-only checks. NEW repair5-wrapper/actualnamespace+invented offline guest integration;0actualprivate reads. |
-| Godel Strategy/Review closed | 44d7/e83f coordinatedoffer COMPLETE. CurrentClaudeae94 unavailable/ONECLIexit1/allclosed, notagreement/nohold; optionalcensusnote directBanach. Queryconsumed/neverreplayed. |
-| Planck Data closed | Marks236cfce4/15b9b263 COMPLETE:DEV799/RECENT289 fullcanonicalmarks, FIT1739/INNER479wholeH3;0build/provider/metrics/allclosed/directArendtcallback. |
+| Arendt Engine/sole Steward | FourCUDAfits NETLOG/MSE+2seeds COMPLETE/12378updates/no repeat; minunit8books NONINFORMATIVE. NEW AGE2cash-vs-ratio preparation/2freshcritics conditionalonData/native. |
+| Darwin Execution | SHORT R4repair1 30bbe174/923a actualWindowswriters+full109.689s PASS, originalprivatepaths unchanged. Qualified futureinstaller repair in progress; no actual installation. |
+| Banach Execution | R7 94e91/a766 SOURCE_NATIVE_READY. Parent actualonce19:54:44..50 child20/actual_transport_closure; source-safe exacttransportdiagnosis only, no retry/financialclaim. |
+| Godel Strategy/Review | R3actual260-261pathgap andR7mount-order correction source reviews closed. AGE2source5999/2cc conditional; no first-trained novelty or payload-qualification claim. |
+| Planck Data | Marks andlocalCLIcapability closed; actualCLIadvisory unavailable/UNKNOWNcause/noauthchase. New causalheldAGE2 state+separate targets fromexistingx/zrefs, one smallprojection/no provider. |
 | Ptolemy invoked Infra closed | Previous futurepairprep withheld/noSource/0native/0Tasks because actual host unqualified. Resume before any new assignment; not running. |
 | Parent | Integrate actual query, remove stale pending instructions/incorrect HALF hypotheses, verify owned MDs and commit/push. Full authority1440protected+AGENTS still unchanged. |
 
@@ -37,30 +37,44 @@ One owner per mutable set; Parent alone writes shared repo MD/Git.
 
 ## Current Bounded Scopes
 
-- CLOSED Darwin diagnostic7eaa:ONE actualSDK visit/4IO primitives/0fullgraphs,
-  native58.110s/primitive.266s/388.375newconservative debit, allclosed. Actual
-  _write_evidence mkdir at262char Windows path; no Linux/historicalCSCO claim.
-- CLOSED Darwin shortnamespace sourceproposalff1d:0SDK/IO/graphs, Parent17refs/
-  E9PASS, actualpointUNKNOWN. New runtimeprebind900active1800elapsed/cleanup120,
-  <=2cheap actualconsumer programs+ONE positive cold entry/ownedexitgraph0retry/
-  graphmax360s. C:/Users/Public/tn9p-1106 freshnonreparse-owned/pathmax220;
-  BOTH inventedUTC/executionmonotonic advance with realelapsed/TTL. SeedONCE,
-  exit restores exactnativeinput/book/brokerJSON, no stand-in position. Counts
-  <=64/case projectedatretained1.672s worst mustfit beforefullgraph. Negative
-  tests focused/exactnewcoverage; no productionrisk cache/clock/registry changes.
-- NEW Banach repair5-wrapper:900active/2700elapsed/cleanup120, <=2cheap real
-  adapter smokes+ONE invented offlineDockergraph. Source-safe actual actor/mount/
-  lifecycle inspection allowed to bind relevant set;0actualprivate/broker/KIS/
-  TaskRun/orders. Actual private once-read still requires separate adoption.
+- CLOSED R3 native512146e2/3f67PASS, actualtelemetry260-261char path gap. Native
+  remains scoped/no actualfinancialadmission, oldfailedscopes immutable.
+- CLOSED SHORT R4repair1 Source30bbe174/native923a6d1c:actualWindowswriters+
+  full109.689s/3focused+1graph/397.253newdebit/allJobs3CIDsclosed. Parent204own+
+  134deps/E9PASS. Originalprivate/input/control/token/emergency paths unchanged.
+- NEW Darwin qualifiedinstaller repair:600active1800elapsed/cleanup90,<=6focused
+  Source/member/constructor/readback checks+<=2mockSchedulergraphs. Noactual
+  Scheduler mutations/Run/KIS/private/env. BindactualR4Source/release/actions,
+  futureabsentdefinitions/disabledCreate/readback/EXITenabledfirst/noCatchup-
+  DemandRepeat. ParentownsactualApply. Source72pointlatebound/unknown, no fakeSHA.
+- CLOSED R7reader94e91/a766 after exact Mounts-by-Destination multiset fix.
+  Parent11own+4proofs/E9PASS, one actualSPEC attempt19:54:44..50/child20/
+  actual_transport_closure; consumed/Jobclosed/no strictfinancialresult.
+- NEW Banach source-safe actualtransport diagnosis300active900elapsed, exact
+  ACTUAL-ONCE/transport/source-defined metadata only/0newactualread-private-
+  broker-KIS-OSqueries. No latestselection or inference from created/exit0.
 - CLOSED Planck marks236cfce4:canonicalfull799/289 keys/OPEN+CLOSE;1739FIT/
   479INNERsupport,60.715active/0build-provider-model-performancemetrics/allclosed.
-- NEW Arendt NETLOG/MSE campaign:2400active/3600elapsed/cleanup180/readout240,
-  <=2nativegraphs/6syntheticupdates/2fits0retry/120epochs14040updates EACH/
-  soft600hard660each/4forwards/0oldcalls/onejointseal+readout16books. Exact44d7
-  units/whole17support/matchedinit/INNERselection/samegross controls/strict kills;
-  real native + fullOPEN/CLOSE compatibility BEFOREfit, internally launched
-  under prebound authority without post-start ParentACK. Source/actual counters
-  govern running status; no optimizer inferred from this prebind.
+- CLOSED Arendt NETLOG/MSE:2concurrentCUDAfits18/best6 and34/best22/5668updates,
+  oneNative4syntheticupdates/4forwards/0oldcalls/onejointseal-readout16books;
+  growthFAILboth/recentDDFAIL/10actors94Jobsclosed. Parent160members+5proofs/E9/
+  frozencriteria recomputationPASS. No repeat.
+- CLOSED seedf347/7f14:2CUDA36/25epochs/6710updates/4forwards/16books/0oldcalls,
+  primary-.264452%/-.502835% growth-DDFAILboth/all9CIDs86Jobsclosed. Parent182
+  memberbindings+6proofs/E9PASS;636.316recordedpartial/no BudgetPASS.
+- CLOSED minunit718d/37e2/2eb8:1native/8books/0modelcalls, RECENTno modeled
+  orders atsynthetic10000priceunits/NONINFORMATIVE. Parent26bindings+4proofs/E9.
+- NEW AGE2cash-vs-ratio Engine:2400active5400elapsed/cleanup180/readout240,
+  2fits0retry/120epoch14040updates EACH/soft600hard660/<=2natives6syntheticsteps/
+  4forwards0oldcalls/onejointseal-readout10books. ExactcurrentOLD60_H3 entries/
+  e3expiry/age1HOLD/onlyage2decision, commonqueryOPEN clock preserves sources.
+  ActualData/native/book parity beforefit, no expectedratio==expectedcash claim.
+- NEW PlanckAGE2 Data:600active2400elapsed/cleanup120/<=2nativeproducer-consumer
+  smokes+ONEsmallprojection0retry, payloadM/codeheadersA. Originalx/z byref,
+  causalCLOSE[e1]/entryOPEN0 input state separatefromfutureP2/P3targets; no provider/
+  credential/Task/modelcalls, no rawinput/barcache rebuild or silentclockretag.
+- CLOSED localCLI2.1.311 capabilityPASS; latestadvisoryab439/f1e3 unavailable/
+  UNKNOWNexit1 despiteenvelopesuccess, no agreement/auth-quota inference/retry.
 - CLOSED Godel interpretation453d/ae94:ONECLIexit1/2.678s/allclosed, unavailable
   notagreement/no authchase or globalhold. DirectArendtcallback/optionalcensusnote.
 - CLOSED warm recovery61e4065b:72updates/8cases/13Jobsclosed/CIDabsent/0market;
@@ -99,14 +113,15 @@ No manual Task.Run, foreground market wait or new follow-up chain.
 
 ## Throughput Review
 
-Nov6UTC18:29 completion/new-dispatch review:
-- Ready: shortnamespace native graph proposal, actual usable custody wrapper,
-  two-arm GPU campaign preparation and independent existing marks check.
+Nov6UTC20:01 completion/new-dispatch review:
+- Ready: qualifiedR4futureinstaller repair, exactfailedactual-read diagnostic,
+  heldAGE2Data/native prep and2newmatchedcritics. Four priorGPUfits closed.
 - Bottleneck: native host repeatedly fails after expensive full integrations;
   completed research/extra MDs cannot substitute for actual Paper effects.
-- Reversible improvement: short nonreparse NVMe fixture output after measured
-  Windows262char failure; production-shaped positive chain rather than five
-  repeated scenario suites per guest. Warm rather than cold-only GPU selection.
+- Reversible improvement: use short undeployed code/public-output placement
+  after actualWindowswriter audit, preserve privatepaths. Pre-Source formatter
+  failures are ordinary implementation QA, not extra fit/holdout trials; keep
+  counters/debits and failed evidence, iterate within the same unused ceilings.
 - Compacted this board and goal to current assignments. Historical failed scopes
   stay in Git/artifacts rather than misleading ACTIVE/NEW backlog entries.
 

@@ -10797,3 +10797,21 @@ settlement, full risk or net PnL. Original failed and consumed jobs stay closed.
 Evidence: D:/thericher-v2/model-artifacts/execution/current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2/RESULT.json
 (ca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d).
 This clarifies standing authority, not a new approval or weaker order risk.
+
+## 2026-11-06 Preparation QA And Experiment Attempts
+
+Consumer: useful model/native preparation without ending an experiment on an
+ordinary formatter or adapter mistake. Before Source freeze, routine formatting,
+syntax/name checks and focused implementation iteration remain normal coding
+inside the declared active/elapsed ceilings. A zero market-retry budget is not
+a ban on correcting pre-numerical style failures. Count actual native, fit and
+readout launches at their real boundaries; do not invent numerical results from
+preparation exits. Preserve failed bytes/results/debits and closed scopes.
+
+Named deterministic plumbing batches may predeclare finite technical retries;
+each revision stays source-bound and each failure counted. This never adds an
+undeclared fit/selection/holdout view, refunds spend, resets clocks, weakens risk
+or regrades a failed run. Actual producer/consumer and native readiness still
+precede market payloads/effects. Evidence includes preserved seed E501 and
+bootstrap failures followed by separately qualified Sourcef3470be7, and minunit
+preparation failure followed by run1/Source718d44b0. No extra operator approval.

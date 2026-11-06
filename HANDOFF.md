@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC18:29 / Nov7KST03:29.
+Updated Nov6UTC20:01 / Nov7KST05:01.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -11,7 +11,7 @@ immutable artifacts. This file is current reality, not a diary.
 Company outcome coexistent-native-paper-execution-runtime-v1 is UNFINISHED:
 interpretable native KIS Paper acceptance, exact linked fill and owned-position
 reconciliation. This continuation proves installation/research/readiness and
-one actual scoped read-only KIS probe,
+scoped read-only KIS observations,
 NOT a new actual submit/acceptance/fill/current owned/net PnL.
 No operator decision blocks ready private work.
 
@@ -26,12 +26,12 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data closed | Existingmarks236cfce4/15b9b263 COMPLETE:DEV799/RECENT289 canonicalfullmarks, FIT1739/INNER479wholeH3;0build/provider/metrics. DirectArendtcallback, tonight0f9/72eb unchanged. |
-| Arendt / Engine and sole Steward | Warm61e4065b/13736993 COMPLETE72synthetic updates/allclosed, LSTM CUDA faster/MLP CPU faster. New NETLOG-vsMSE H3 campaign prebound2fits/0oldcalls, Source/native preparation; no activefit claimed yet. |
+| Planck / Data | Existingmarks236cf/15b9 COMPLETE. CLIlocal2.1.311 capabilityPASS but advisoryunavailable/noauthcauseclaim. New small held-age2 causalstate/separatetarget projection usingexisting x/z, commonqueryOPEN clock; no provider calls. |
+| Arendt / Engine and sole Steward | NETLOG2CUDAfits and seed2CUDAfits COMPLETE/12378combinedupdates/no repeat. Seedmean3 f347/f66f growth-DDFAILboth. Minunit718d/2eb8 COMPLETE8books/RECENTnoorders/syntheticnotional only. NEWAGE2 cash-vs-ratio preparation/fits conditionalonactualData/native. |
 | Ptolemy / invoked Infra closed | Futurepairprep CLOSED_WITHHELD exact host qualification absent; schema retained/0native/0Taskeffects. Duration hypothesis DISPROVEN, no oldTaskrerun. |
-| Banach / Execution | repair4-source375181c6 COMPLETE29boundary/41complete source checks, actualadmissionUNQUALIFIED/0private reads. New repair5-wrapper builds usable namespace/full invented offline graph; no financial-success prerequisite. |
-| Darwin / Execution | Firstcause7eaa5d/85ba136d COMPLETE; shortnamespace proposalff1d COMPLETE/Parent17pins+E9PASS. NEW900active1800elapsed2cheap+ONEpositive nativegraph prebound; no actualfinancialqualification. |
-| Godel / Strategy and Review closed | Coordinated44d7/e83f challenge COMPLETE. CurrentClaudeae94/453d unavailable/1CLIexit1/2.678s/allclosed, notagreement/no launchhold. Accountquery0abff/ca318e consumed/neverreplayed. |
+| Banach / Execution | R7 94e91/a766 SOURCE_NATIVE_READY. Parent actualonce19:54:44..50/child20/allJobsclosed; actual_transport_closure withheld, financialfacts UNKNOWN. Source-safe exacttransport diagnosis only/no retry/nonceconsumed. |
+| Darwin / Execution | R3 5121 nativePASS but actualtelemetry260-261char risk. NEW short R4 repair1 30bbe174/923a6d1c actualWindowswriters+full109.689s PASS/privatepathsunchanged. Qualified installer repair pending; no installation. |
+| Godel / Strategy and Review | R3actualpathgapreview andR7mount-order fixreview COMPLETE; no native rerun/financialadmission. AGE2source5999/2cc conditional, no claimdirectcashlearningnew. Currentreview/rolecallbacks do not reopenclosed scopes. |
 | Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
 
 ActualCSCO repairedpublicreaderb580 at17:01/17:06 parsed source-bound technical
@@ -47,12 +47,32 @@ Originalmemory20-nas100-nextday-exit-20261105-v1 duty; observer restoreobligatio
 false, restoration notindependentlyproven. Submit/acceptance/exactfill/current
 owned/rootexit/fees/settlement/netPnL allUNKNOWN; no reservationrelease. Task
 Ready3/0instances/last0 at15:58 is diagnostic only. Banach exactMSEfinancialreader
-preparation is separate/0actualcustodyreads, not another Paperpermissiongate.
+source preparation is separate from actual custody admission, not another
+Paperpermissiongate. See the consumed Parent R7 attempt below.
 
 Full role UUIDs and caps are in agents/orchestration.md. Data/Engine exchange
 exact frozen schema/ready callbacks directly; Parent acknowledgement is not a
 post-start approval barrier. Source revisions are not numerical dispatch counts.
 Current MDs are context, not immutable runtime dependencies.
+
+Current future-host consumer is SHORT R4, not the longer R3 placement:
+A/execution/n9h3-1106-r4/repair1/SOURCE.json
+(30bbe174e50842c583580c87d9c81823e90bd975f407a7efa72da1989a7615b4).
+Native923a6d1c/full109.689s/actualWindowswriters/private-input-control paths
+unchanged; Parent204members+134dependencies/E9PASS. This is still NOT installed
+or financial admission. Old installer3247 remains failed; new qualified finite
+installer must bind actual R4Source/release/actions. Action uses source/release/
+phase, not invented pointSHA: effect-free absent future definitions may precede
+the real Source72 point, which is still required/validated at actual effects.
+No Task.Run, existing-writer migration or private-state reset from this proof.
+
+Parent R7 actual read attempt19:54:44..19:54:50UTC: SPEC8456/Source94e91/Nativea766, qualified
+GUI argv under pinned Job76da, internal ACTUAL-ONCE START PID+Source match.
+Childexit20/active0/joined/closed after6s, sourceallowlisted
+actual_transport_closure atwrapper.actual317; no complete strict result.
+Actual custody/acceptance/fill/currentowned remainUNKNOWN; do not infer no reads
+or zero effects from exit. Do not replay consumed actualonce or release F9.
+Exact Parent trace: A/execution/current-mse-c79-parent-actual-read-20261106-v1.
 
 ## Actual Read-Only Probe And Fresh Data Installation
 

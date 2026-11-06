@@ -18,23 +18,30 @@ not pending instructions to repeat completed fits or consumed reads.
 
 ## Current Priorities
 
-Updated Nov6UTC18:29 / Nov7KST03:29.
+Updated Nov6UTC20:01 / Nov7KST05:01.
 
 1. Repair the actual native host integration. Darwin's lineage-batch2 passed
    19identity/17frame/34owner checks but the full graph timed out after164owner
    callbacks/225.797callback seconds. Batch3 is CLOSED: mini exchange PASS but
    both SDKfixtures failed warm visit/2probes/0fullgraphs. Firstcause7eaa/85ba
    now proves Windows fixture262char evidence-path mkdir failure with4primitive
-   cases. Prepare short NVMe test namespace/production-shaped entry+exit graph;
-   this is not a production Linux/historical CSCO cause. Do not blindly
+   cases. R3 512146e2 fullnative passed but actualtelemetry path260-261char risk
+   required a shorter undeployed placement. CURRENT R4repair1 Source30bbe174/
+   native923a6d1c qualifies actualWindowswriters and full109.689s entry/coldexit;
+   original private/input/token/emergency paths unchanged. Finish qualified
+   future installer bound to R4, not failed3247 or long R3. No installation yet.
+   This is not a production Linux/historical CSCO cause. Do not blindly
    enlarge timeouts, cache fresh financial checks, or deploy component-only proof.
    Warm transport79 keeps one existing Phase/client within the original owner;
    it does not guarantee17-target completion or qualify a financial launcher.
 2. Recover exact MSE evidence without a successful-peer-trade prerequisite.
-   Public5cb proves only BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY. Banach repair4-source
-   375181c6 passed29boundary/41complete source-only checks; new repair5-wrapper
-   qualifies actual namespace/producer/guest integration. No actual private
-   read yet. Unknown actual custody writers withhold that read, not all lanes.
+   Public5cb proves only BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY. R7 Source94e91/
+   Nativea766 passed after preserving all Mount fields while
+   sorting by unique Destination. Parent exact actualonce19:54:44..50UTC,
+   child20/actual_transport_closure, no complete strict financial result.
+   Source-safe bound transport diagnosis now; consumed actual read NEVER repeats.
+   Actual private-read phase/result remains unqualified; unknown relevant
+   custody writers withhold that read's conclusions, not all lanes.
    Do not consume repair2's actual-c79-once against its known false ASOF gate.
 3. Integrate the completed read-only broker query, do not repeat it. Source
    0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee,
@@ -50,13 +57,18 @@ Updated Nov6UTC18:29 / Nov7KST03:29.
    Never repeat completed fits/forwards. Warm61e4065b/13736993 COMPLETE72synthetic
    updates: resident LSTM60/120 CUDA2.566x/6.540x faster, smallMLP CPU faster;
    fixed-order/six-sample/co-tenancy limits, no economic claim or oldfit regrade.
-   NEW NETLOG-vsMSE H3 campaign prebound from44d7/0f613:two fresh matched LSTM
-   fits/0oldmodelcalls, fixed typed entry-cost allocation and fixedhalf ensemble,
-   chronological INNER checkpoints/earlystop,2400active/3600elapsed/120epochs/
-   14040updates each/0retry/4forwards/onejointseal/16books. Full real native
-   parser/optimizer/bridge/book and existing fullOPEN+CLOSE compatibility before
-   fits; Planck independently checks source/keys/marks,0newbuild/provider calls.
-   Use measured GPU throughput/headroom, not cold-only backend selection.
+   NETLOG-vsMSE H3 COMPLETE3b6f/7d5f/9f89:two concurrentCUDAfits18/34epochs/
+   5668updates,0oldcalls/4forwards/onejointseal/16books. NETLOG+.904938%/.049355%
+   aftercost versus cached60+.993207%/.288886%, growthFAILboth/recentDDFAIL;
+   all10actors94Jobsclosed, no rerun/Paperswap/independentalpha claim.
+   Seedstability/mean3 f347/f66f also COMPLETE2CUDAfits36/25epochs/6710updates/
+   16books, primary-.264452%/-.502835%, growth-DDFAILboth/no winnerselection.
+   Minunit718d/2eb8 COMPLETE0modelcalls/8books/RECENTnoadmittedorders atfixed
+   synthetic10000priceunits; NONINFORMATIVE, not actual brokerlot/account claim.
+   NEW held-AGE2 D-vs-ratio experiment prebound2freshcritics/0oldcalls, fixed
+   age1HOLD and exactcurrentOLD60_H3 entries/e3expiry. Small causalstate/input-
+   target separation projection plus actual native/book parity BEFOREfits;
+   commonqueryOPEN consumption retains original source clocks/unknown grades.
 5. Keep tonight's installed Data/publisher and all original exits unchanged.
    Prepare source/native readiness while actual future input is unavailable;
    never placeholder-hash, stale-retag or force financial activation. New model

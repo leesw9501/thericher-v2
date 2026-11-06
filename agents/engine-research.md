@@ -1,11 +1,40 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC18:29 / Nov7KST03:29. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC20:01 / Nov7KST05:01. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
 
 ## Ready / Owned
+
+Latest seed-ensemble campaign COMPLETE, never repeat:
+A/research/current-lstm-h3-two-seed-ensemble-development-20261106-v1/FINAL-API.json.
+FITf3470be7/native7f14fed3/resultf66f00b9,2CUDAfits36/best24/3960updates and
+25/best13/2750updates,27.814/22.121s/316MiB each;4forwards/0savedcalls/16books.
+Primarymean3 DEV-.264452%/DD2.565449%, RECENT-.502835%/.981572%, growth-DDFAIL
+both/turnPASS; diagnostics not a selected winner. All9CIDs86Jobsclosed,636.316
+recordedpartial/debits including failed prep preserved/no BudgetPASS.
+Parent182memberbindings+6proofs/E9PASS; updated recipe not pure seed causality.
+
+Minimum-unit study run1 COMPLETE718d44b0/result2eb8eb42/native37e2292f:
+A/research/current-netlog-h3-minunit-feasibility-20261106-v1/run1/API.json.
+ONE native/8books/0modelcalls; DEV+.399473%, RECENT no admitted modeled orders
+at fixed synthetic10000priceunits. NONINFORMATIVE, not actual brokerlot/account
+funds/tradability proof. Original formatterfailure and246.672partialdebit retained;
+Parent26bindings+4proofs/E9PASS. No retries/regrading of the old preparation.
+
+NEW current-h3-age2-cash-vs-ratio-development-20261106-v1 prebound2400active/
+5400elapsed/cleanup180/readout240/2freshmatchedcritics0retry/120epoch14040updates
+each/soft600hard660/<=2natives6syntheticupdates/4forwards/0oldcalls/10books.
+Exact CURRENT OLD60_H3 entry weights/quantities/e3expiry, fixedHOLD age1, optional
+age2 only. D=.9975(P3-P2)/(1.0025P0) versus fee-inverted ratioR, no new buyfee
+on held shares. Inputs RAW60+IND8+causalCLOSE[e1]/entryOPEN0 state only; no OPEN2
+feature. Planck small separated state/target projection/native actual ABI first.
+CommonqueryOPEN consumption keeps original source clocks/unknown arrival grades;
+no preclose availability fiction. Fit/INNER grouped e0..e3/20purge and common
+support, no target-mask inference eligibility. Conditional Source/native/Data
+qualification internally releases training under prebind, not another ParentACK.
+Not firstheldcash or optimalmultistage stopping; source5999/offer2cc is conditional.
 
 Latest LSTM120 context study COMPLETE60f47d7c/resultcd6fa420:
 A/research/current-h123-lstm120-context-development-20261106-v1/API.json.
@@ -27,18 +56,24 @@ evidence or a full-market throughput guarantee. Cold one-step timing is NOT
 steady training speed; use representative warm end-to-end work for FUTURE
 backend choice, no oldfit rerun/regrade. Parent16members+3proofs/E9 checks PASS.
 Original0ea1 temp-init failure/0updates preserved; recovery all13Jobs/CIDclosed.
-NEW NETLOG-vsMSE H3 development is prebound from44d7/Source0f613, not yet a
-running-fit claim:two fresh7233parameter LSTM60+IND8 models, sameinit/support/
-decoder, rawNet25 logwealth objective versus normalizedmeanMSE; fixedhalf in
-typed entry-cost fractions beforeONE native bridge, cached60 control/0oldcalls.
-2400active3600elapsed/cleanup180/readout240, <=2natives6syntheticupdates,
-2fits0retry/120epoch14040updates EACH/soft600hard660/4forwards/onejointseal/
-onejointreadout16books in4<=4WIDE calls. INNER ownloss/early12/LR4/bestrestore;
-fullmarks/nativefunding+whole17support first. Planck independent marks check.
-Exactoffer A/research/current-cost-aware-factor-sequence-ensemble-offer-20261106-v1;
-campaign A/research/current-cost-aware-netlog-mse-h3-development-20261106-v1.
-Source/native-qualified worker may launch under prebound authority without PID
-ACK. Not first directutility, independent alpha or Paper sizing/deployment.
+NETLOG-vsMSE H3 is COMPLETE, not a running fit:
+A/research/current-cost-aware-netlog-mse-h3-development-20261106-v1.
+FIT3b6fb7be/READOUT7d5f3674/result9f894e81/closure137f8ab1/native6801b660.
+Two CUDA fits overlapped18:43:32..18:43:46UTC: NETLOG18epochs/best6/1962updates/
+14.829s, MSE34/best22/3706updates/21.800s;320MiB each, not isolated timings.
+Same7233parameter initialization/support/decoder, rawNet25 logwealth versus
+normalizedmeanMSE. Native1/4syntheticupdates/2fits/5668marketupdates/4forwards/
+0oldmodelcalls/onejointseal+readout16books/4batches. All10actors/94Jobsclosed.
+NETLOG DEV+.904938%/DD.389804%/turn1.026021 versus MSE-2.731049%/4.136637%
+and cached60+.993207%/1.977482%; RECENT+.049355%/.115308% versus MSE-.378707%/
+1.469211% and cached60+.288886%/.825314%. Fixedhalf-.922153%/-.163918%.
+Informative64changedcohorts; growthFAILboth/recentDDFAIL/turnPASSboth. Positive
+after-cost replay is not an independent alpha/Paper result or automatic swap.
+Low mean entrycash1.078%/0.2735% is not itself alpha or share-lot deployability.
+Parent160memberbindings+5proofs/E9/independentcriteria recomputation PASS.
+Recorded326.749active is partialledger/notBudgetPASS; olddebits preserved.
+Next source-only inventory/forced-expiry/friction feasibility check requested,
+300active900elapsed/0fits-oldforwards initially; dedup prior holding studies.
 
 Market/residual study3d74e4ca/resultd91a88f2 also COMPLETE2CPUfits:
 COMPONENT16epochs/best4/1760updates/6.381s; DIRECT23/best11/2530updates/7.402s.

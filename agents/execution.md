@@ -1,26 +1,49 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC18:29 / Nov7KST03:29.
+Updated Nov6UTC20:01 / Nov7KST05:01.
 A=D:/thericher-v2/model-artifacts. Historical scopes remain in Git/artifacts.
 Company runtime outcome UNFINISHED; no new actual acceptance/exactfill/current
 owned/settlement/netPnL proven. AGENTS.md owns standing Paper authority/risk.
 
 ## Current Work
 
+CURRENT futurehost is A/execution/n9h3-1106-r4/repair1:
+Source30bbe174/native923a6d1c, actualWindowswriters and full109.689s positive
+entry/cold-owned-exit PASS. Original absolute private/input/token/emergency/
+control paths unchanged; Parent204members+134deps/E9PASS. Not installed.
+R3Source5121 native-only adoptiond2e3 remains scoped; its actualtelemetry260-261
+path gap prevents using that placement as an installation shortcut. New
+qualified installer must bind R4Source/release/actions, not failed3247. No
+placeholderpoint: action latebinds actualSource72 at effects; point stillUNKNOWN.
+
+R7Source94e91/Nativea766 qualified after full Mounts normalization by unique
+Destination, preserving all fields. Parent actual SPEC8456 once19:54:44..50UTC
+returned20/actual_transport_closure; outerJobactive0/joined/closed, START PID+
+Source match, no complete strict financial result. Attempt/nonce consumed;
+source-safe bound transport metadata diagnosis only, no rerun/observe or zero
+private-read/effect inference. All financial/currentowned/PnL claims unchanged.
+Exact Parent artifacts: A/execution/current-mse-c79-parent-actual-read-20261106-v1.
+
+The closed diagnostic chain below is ancestry, not ready dispatch instructions.
+
 - Darwin firstcause7eaa/85ba COMPLETE:one actual invented SDK diagnostic exposed
   FileNotFoundError at canary._write_evidence:2751/destination.parent.mkdir.
   Actual fixture parent262chars/file276; short138PASS/normal262FAIL/extendedsame
   physicaltargetPASS/normalstillFAIL. Source-pinned4primitive proof, no Linux or
   historicalCSCO cause claim. Shortnamespace proposalff1d COMPLETE/Parent17pins
-  andE9PASS. New900active1800elapsed/cleanup120/2cheap+ONEpositivegraph0retry,
-  freshshortNVMe pathmax220/realelapsedUTC+TTL/seedONCE/cold exactownedexit;
-  focused negatives separately retain coverage. No actual host qualification yet.
+  andE9PASS. Shortnative7a75 then entryPASS/coldexit failed because synthetic
+  snapshot timestamps violate actual DTO ordering;0fullgraphs/allclosed.
+  New r2 minimaltestproducer fix900active2700elapsed/cleanup120/<=8focused+
+  <=2fullpositivegraphs, counted deterministic technical retry only. Freshshort
+  NVMe/pathmax220/realUTC+TTL/seedONCE/cold exactownedexit remain. No qualification.
 - Banach repair4-source375181c6 COMPLETE29boundary/41complete source checks,
   7declared source actors including CSCO; not measured current membership or a
-  usable actual command. New repair5-wrapper900active2700elapsed/cleanup120/
-  <=2realadapter smokes+ONE invented offlineDockergraph, source-safe actual actor/
-  mount/lifecycle binding only/0actualprivate-KIS-broker-TaskRun. Relevant unknown
-  writers deny that read, not all Data/research; no successful peer ASOF gate.
+  usable actual command. repair5-wrapper476a CLOSED/full20 after mixed Job-event
+  joined-key mismatch; native decode components positive, not completeauthority.
+  New repair6-job-abi600active1800elapsed/cleanup90/<=8focused+<=2freshinvented
+  graphs. Source-bound TWO typed event ABIs preserve positive join/close proof;
+  unknownschema denies, no defaulttrue or oldfailedregrade.0actualprivate-KIS-
+  broker-TaskRun/readconsumption. Relevant unknown writers deny only that read.
 - Godel source review closed; current model-interpretation challenge is separate
   advisory work. Account query below consumed, no new account/order call assigned.
 - Parent: exact adoption/integration/Git. No current actual MSE custody command

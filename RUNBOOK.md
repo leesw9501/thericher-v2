@@ -2,12 +2,30 @@
 
 ## Current Authority
 
-Updated Nov6UTC18:29 / Nov7KST03:29. Company outcome UNFINISHED.
+Updated Nov6UTC20:01 / Nov7KST05:01. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
 Preserve ONE initialB/10/F9UNKNOWN-HELD/pending/reservations/costs/losses/all exits.
 No manual Task.Run/strategy invocation merely to inspect evidence.
+
+CURRENT future financial-host placement is
+A/execution/n9h3-1106-r4/repair1 (Source30bbe174/native923a6d1c).
+ActualWindows publicwriters+full109.689s nativePASS; Parent204members+134deps/
+E9PASS. R3 5121 native proof remains valid only within its scope; its actual
+telemetry260-261char path budget was not qualified for deployment. No registry,
+private-state migration, original budget/exit change or failed-source regrade.
+Future installer3247 is failed; its Apply is NOT qualified. A separately source-
+qualified installer must bind R4 before any Parent-owned future definition write.
+Actual sealed point remainsUNKNOWN; late-bound runtime still checks Source72/
+Data/model/clock/input before effects, never a placeholder hash.
+
+R7 actual readonly once has been ATTEMPTED/CONSUMED, not ready to retry:
+A/execution/current-mse-c79-parent-actual-read-20261106-v1.
+ExactSource94e91/Nativea766/SPEC8456/GUIargv/Job76da; START PID+Source match.
+Child20/allclosed, actual_transport_closure withheld; no strictfinancialresult.
+Do not re-run SPEC or original Parent run.py. Existing safe diagnostics only;
+no private-body, latest-file, Taskexit, freshholdings or reservation-release claim.
 
 CURRENT CSCO public reader is repairb580dc71, not old9742. Parent verified27refs/
 27nativechecks and exactonly reasonaddition not_retained. Productione6/release3155
@@ -27,8 +45,9 @@ MSErepair2/9c172 native25checks PASS but its actualcommand is NOT ADOPTED:
 requires peerfinancial-ASOF instead of actualprivatewriterclosure. Parent has
 qualified repair4-source375181c6 source-only29/41checks after repair3 found
 opaque relevant-root omissions; repair5-wrapper is new integration preparation.
-No actual private command yet. Do not consume actual-c79-once merely
-to hit this knownfalse prerequisite. No actual MSEcustodyread yet.
+The old repair2 actual command remains unqualified. Do not consume its
+actual-c79-once merely to hit this knownfalse prerequisite. R7 was separately
+attempted/consumed as above; no complete financial result or successor command.
 Separate current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2
 is COMPLETE/CONSUMED, not a runnable pending job. Source0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee;
 RESULTca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d.
