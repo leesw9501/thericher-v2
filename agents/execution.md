@@ -1,27 +1,28 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC17:57 / Nov7KST02:57.
+Updated Nov6UTC18:29 / Nov7KST03:29.
 A=D:/thericher-v2/model-artifacts. Historical scopes remain in Git/artifacts.
 Company runtime outcome UNFINISHED; no new actual acceptance/exactfill/current
 owned/settlement/netPnL proven. AGENTS.md owns standing Paper authority/risk.
 
 ## Current Work
 
-- Darwin: sdk-visit-first-cause under current-nov9-financial-frame-contract-
-  completion-20261106-v1. Batch2 timed out164callbacks/225.797s; batch3 closed
-  after2probes/0fullgraphs:mini exchange PASS but SDK warmvisit failure predicate
-  not retained. New600active/1800elapsed/cleanup90/<=ONE minimal actual SDK
-  diagnostic,0fullgraphs initially; Planck independent source review.
-  No actual private/env/KIS/Tasks/install. Warm79 component alone
-  is not a qualified actual host or17-target completion guarantee.
-- Banach: repair4-source under current-mse-c79-exact-financial-reader-preparation-
-  20261106-v1. Plan08f2 ready; actual producer may omit opaque project runtime
-  roots while claiming complete. Correct relevant-writer universe/unknown records
-  and container lifecycle, not an all-desktop-app veto or peer financial-success
-  prerequisite.600NEWactive/1800elapsed/cleanup90, <=2cheap native probes+ONE
-  complete native test,0actualprivate/CIM/Scheduler/Docker/KIS/read consumption.
-- Godel: independent source-only review of that scope. Completed broker query
-  below stays consumed; no new account/order call assigned.
+- Darwin firstcause7eaa/85ba COMPLETE:one actual invented SDK diagnostic exposed
+  FileNotFoundError at canary._write_evidence:2751/destination.parent.mkdir.
+  Actual fixture parent262chars/file276; short138PASS/normal262FAIL/extendedsame
+  physicaltargetPASS/normalstillFAIL. Source-pinned4primitive proof, no Linux or
+  historicalCSCO cause claim. Shortnamespace proposalff1d COMPLETE/Parent17pins
+  andE9PASS. New900active1800elapsed/cleanup120/2cheap+ONEpositivegraph0retry,
+  freshshortNVMe pathmax220/realelapsedUTC+TTL/seedONCE/cold exactownedexit;
+  focused negatives separately retain coverage. No actual host qualification yet.
+- Banach repair4-source375181c6 COMPLETE29boundary/41complete source checks,
+  7declared source actors including CSCO; not measured current membership or a
+  usable actual command. New repair5-wrapper900active2700elapsed/cleanup120/
+  <=2realadapter smokes+ONE invented offlineDockergraph, source-safe actual actor/
+  mount/lifecycle binding only/0actualprivate-KIS-broker-TaskRun. Relevant unknown
+  writers deny that read, not all Data/research; no successful peer ASOF gate.
+- Godel source review closed; current model-interpretation challenge is separate
+  advisory work. Account query below consumed, no new account/order call assigned.
 - Parent: exact adoption/integration/Git. No current actual MSE custody command
   adopted. repair2/9c172 native25PASS still has erroneous CSCO-financial-ASOF
   gate; do not consume actual-c79-once merely to hit that known false condition.

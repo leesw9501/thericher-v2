@@ -18,20 +18,22 @@ not pending instructions to repeat completed fits or consumed reads.
 
 ## Current Priorities
 
-Updated Nov6UTC17:57 / Nov7KST02:57.
+Updated Nov6UTC18:29 / Nov7KST03:29.
 
 1. Repair the actual native host integration. Darwin's lineage-batch2 passed
    19identity/17frame/34owner checks but the full graph timed out after164owner
    callbacks/225.797callback seconds. Batch3 is CLOSED: mini exchange PASS but
-   both SDKfixtures failed warm visit/2probes/0fullgraphs. New first-cause scope
-   retains the exact lost predicate before another candidate/fullgraph. Do not blindly
+   both SDKfixtures failed warm visit/2probes/0fullgraphs. Firstcause7eaa/85ba
+   now proves Windows fixture262char evidence-path mkdir failure with4primitive
+   cases. Prepare short NVMe test namespace/production-shaped entry+exit graph;
+   this is not a production Linux/historical CSCO cause. Do not blindly
    enlarge timeouts, cache fresh financial checks, or deploy component-only proof.
    Warm transport79 keeps one existing Phase/client within the original owner;
    it does not guarantee17-target completion or qualify a financial launcher.
 2. Recover exact MSE evidence without a successful-peer-trade prerequisite.
    Public5cb proves only BOUND_PUBLIC_OPERATIONAL_PAIR_ONLY. Banach repair4-source
-   corrects the relevant-writer census producer after repair3 found an omitted
-   opaque-root case; Godel independently challenges scope. No actual private
+   375181c6 passed29boundary/41complete source-only checks; new repair5-wrapper
+   qualifies actual namespace/producer/guest integration. No actual private
    read yet. Unknown actual custody writers withhold that read, not all lanes.
    Do not consume repair2's actual-c79-once against its known false ASOF gate.
 3. Integrate the completed read-only broker query, do not repeat it. Source
@@ -45,12 +47,16 @@ Updated Nov6UTC17:57 / Nov7KST02:57.
 4. Engine/Steward: completed LSTM120, robust StudentT/MSE and market/residual
    comparisons are adaptive development, not independent alpha or Paper swaps.
    LSTM120 primary growth FAILDEV/PASSRECENT; robust/decomposition FAILboth.
-   Never repeat completed fits/forwards. Finish the already assigned finite
-   actual-shape warm CPU/CUDA throughput calibration. Original0ea1 failed AdamW
-   init/0updates/GPUinitializationPASS. New recovery-r1 supplies bounded writable
-   temp support under separately frozen clocks, same-family72updates. Separate cold startup,
-   transfer and synchronized steady steps. Zero market fits or old-weight calls;
-   use findings for future backend choice, not GPU occupancy or old regrading.
+   Never repeat completed fits/forwards. Warm61e4065b/13736993 COMPLETE72synthetic
+   updates: resident LSTM60/120 CUDA2.566x/6.540x faster, smallMLP CPU faster;
+   fixed-order/six-sample/co-tenancy limits, no economic claim or oldfit regrade.
+   NEW NETLOG-vsMSE H3 campaign prebound from44d7/0f613:two fresh matched LSTM
+   fits/0oldmodelcalls, fixed typed entry-cost allocation and fixedhalf ensemble,
+   chronological INNER checkpoints/earlystop,2400active/3600elapsed/120epochs/
+   14040updates each/0retry/4forwards/onejointseal/16books. Full real native
+   parser/optimizer/bridge/book and existing fullOPEN+CLOSE compatibility before
+   fits; Planck independently checks source/keys/marks,0newbuild/provider calls.
+   Use measured GPU throughput/headroom, not cold-only backend selection.
 5. Keep tonight's installed Data/publisher and all original exits unchanged.
    Prepare source/native readiness while actual future input is unavailable;
    never placeholder-hash, stale-retag or force financial activation. New model

@@ -1,22 +1,33 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC16:15 / Nov7KST01:15. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC18:29 / Nov7KST03:29. A=D:/thericher-v2/model-artifacts.
 History/source mechanisms: pushed12e5e906 and immutable offers.
 This role proposes executable hypotheses, not an endless reading list.
 
 ## Current Handoff
 
-Latest conditional offer280991a5 is CLOSED source-only:
+Current coordinated offer44d7/Source0f613 and Godel e83f/2532 review COMPLETE:
+fresh matched LSTM60+IND8 NETLOG versus MSE through the SAME fixed sigmoid
+entry-cost fraction decoder. Not first direct utility or publication novelty;
+genericMoE/OOF/recency alternatives were deduped, no broad novelty veto.
+Parent prebound a separate2fit Engine campaign with actual native/marks checks;
+Strategy offer itself performed0market/oldweight/numerical calls. Strongest kill:
+funding/unit/mask mismatch or no gain versus matchedMSE and samegrossEW at
+unchanged fees; lower exposure alone is not alpha. Fixedhalf mixes f beforeONE
+bridge, not logits/returns/native-u. All8controls/16books frozen before targets.
+Exact A/research/current-cost-aware-next-hypothesis-source-review-20261106-v1/API.json.
+Warm actual-shape runtime61e4065b proved comparable LSTM GPU advantage, not
+economic superiority or a reason to repeat completed fits.
+
+Conditional offer280991a5 and its actual study are CLOSED:
 A/research/current-market-residual-h123-decomposition-offer-20261106-v1/API.json.
 SPY-market+stock-residual H123 supervision versus identical31174parameter
 direct-sumMSE, fixedsameLSTMhalf compositions. Targetidentity reconstructs
 absoluteNet25 but conditionalforecast equality/noisereduction is NOT guaranteed;
 differentconditioning is an explicit falsifier, no hedgedtrade/secondfee.
-Data5b01 contains stocktargets only. Separate SPY-OPEN4 sidecar/source/calendar/
-unit/vintage compatibility (especiallyRECENT) is required, no normalizedinput
-inversion or oldfeature/stocktarget rebuild. Planck Data scope and Arendt Engine
-preparation are separately prebound; no marketfit until positiveDataREADY/native.
-No operatorapproval/globalhold or requirement of publicationnovelty.
+Separate SPY-OPEN4 sidecar693d/READY6c18 proved calendar/unit/vintage compatibility;
+actual3d74/d91a twoCPU fits/4290updates/16books COMPLETE, primarygrowthFAILboth.
+All actors closed, no Data rebuild/fit rerun or operatorapproval/globalhold.
 
 Genericrankretag offer08d68c/699a44a5 is REJECTED, not all ranking/futuretargets:
 12priorcontracts cover margin/list/rank/buffer/memory/OOF/directallocation;
@@ -26,8 +37,8 @@ RobustStudentT/MSE5c0f/5a3e completed2CPUfits/4forwards/16books, primarygrowth
 FAILboth. DLinear/FLAT6050updates and JSONrecovery32lifetimebooks are COMPLETE.
 No rerun/secondaryswap or independentalpha fromthese adaptive reusedstudies.
 
-Godel currently invoked source-only ExecutionReview, not a running StrategyLLM.
-Arendt proposed the latest offer; source/MD presence alone proves no runningjob.
+Source/MD presence alone proves no running worker; actual callbacks/counters
+govern work claims. Closed offers are not pending numerical instructions.
 
 Fixed-expiry source-only offer0ae1e5dc/ec7ea2d2 is COMPLETE:
 A/research/current-fixed-expiry-hold-exit-offer-20261106-v1/API.json.

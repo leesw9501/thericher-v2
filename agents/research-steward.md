@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC17:44 / Nov7KST02:44. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC18:29 / Nov7KST03:29. A=D:/thericher-v2/model-artifacts.
 History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
 An MD/source directory is not a running optimizer or resource lease.
 
@@ -13,16 +13,24 @@ FAILDEV/PASSRECENT, no repeat/rerank/Paperswap. Market/residual3d74/d91a COMPLET
 2CPU16/23epochs/4290updates/16books/growthFAILboth/all9CIDs77Jobsclosed.
 No currentlyactive optimizer inferred. Nativecoldshape choseCPU, notGPU
 permission/driverfailure; prior timing claims remain their measuredscope.
-Original warm calibration0ea1 CLOSED_FAILED at AdamW initialization/0updates:
-GPU context initialized, no warm measurement. Leading writabletemp omission
-is not an observed inner-library frame. New recovery-r1 has300NEWactive/
-1200elapsed/cleanup60/ONEworker/<=72same-family synthetic updates,0marketdata-
-fits-oldweights/private-KIS-Tasks. Bounded writabletemp from existing lifecycle
-and real optimizer constructor first; oldsource/debits/hard18:02:10 unchanged.
-Fixedactual LSTM60/LSTM120/MLP shapes, CPU2threads/CUDA andpredeclaredmemorymodes;
-measurecoldstartup separately,2warm+6timed synchronization/distributions/VRAM/
-co-tenancy. May recalibrate FUTUREbackendchoice, never rerunclosedmarketfit or
-claim economicperformance/productionGPUadvantage fromtoymeasurements alone.
+Warm recovery-r1 COMPLETE61e4065b/13736993:72updates,8cases,272syntheticrows,
+ONE worker/3.633s numericalworker/13Jobsclosed/CIDabsent/0market-oldweights.
+LSTM60/120 resident CUDA warm medians5.392/3.893ms versus CPU13.835/25.458ms;
+smallMLP CPU1.407ms versus CUDA3.334ms. LSTM120 pageable-H2D/normalization7.291ms.
+Peakreserved254MiB. Six timed samples/fixed order/co-tenancy, not isolated or
+full-market/economic throughput proof. Cold one-step timings cannot rank warm
+training; prefer this measured GPU advantage for future comparable LSTM work,
+while smallMLP may remain CPU. Do not refit completed studies to fill VRAM.
+Source16members+3proofs/E9 independently PASS; result hash1373699301287f565a669aa14e502cb825e5a3be721bf87c95a8c1803bde8227.
+A/research/current-small-model-warm-throughput-calibration-20261106-v1/recovery-r1.
+Original0ea1 initialization failure/0updates/debits/hard18:02:10 unchanged.
+Warm worker closed. NEW NETLOG/MSE H3 campaign44d7/0f613 prebound2400active/
+3600elapsed/cleanup180/readout240,2fits/0retry/120epochs14040updates each/
+soft600hard660/<=2natives6syntheticupdates/4forwards/0oldcalls/16books.
+Arendt prepares actualSource/native/marks bindings; no active fit is inferred
+until actualPID/counters. Prefer measured useful CUDA for comparable sustained
+LSTM work, preserve desktop reserve and actual peak/co-tenancy. Planck owns
+independent existing-mark check; advisory Claude is not launch acknowledgement.
 
 Latest robustH123 campaign COMPLETE5c0f6a3b/5a3eb9b0/bee99f9b:
 2CPUfits23epochs each/best11/5060marketupdates/4forwards/16books/allclosed.

@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC17:44 / Nov7KST02:44. A=D:/thericher-v2/model-artifacts.
+Updated Nov6UTC18:29 / Nov7KST03:29. A=D:/thericher-v2/model-artifacts.
 History: pushed12e5e906/7c581fb6 and immutable APIs. Current scope is cost-aware
 intraday/short-swing research, not independent alpha/Paper PnL. No completed fit
 is rerun for utilization. Actual source/PID/counters govern running claims.
@@ -18,10 +18,27 @@ OverallfrozenprimaryFAIL, not independentalpha/causalwindowproof/Paperswap.
 Data18b148/READY4edf COMPLETE1inputbuild: FITknown12025738/37077, old60known
 lost4029/prefix1020; INNER8143/DEV799/RECENT289 fullyknown, last60byteparity/
 originalIND8 unchanged. Whole-recipeFITsupport limitation retained, no60refit.
-Steward warm-throughput calibration now SOURCE/probe preparation only:
-300active1200elapsed/ONEworker/<=72syntheticsteps/0marketdata-fits-oldweights.
-Coldstart separated from warm synchronized CPU/CUDA timings; no performance
-advantage inferred before actual results, no model training for occupancy.
+Warm calibration recovery-r1 COMPLETE: Source61e4065b/result13736993,
+72synthetic updates/8cases/272rows,0market/oldweights. Resident warm median
+LSTM60 CPU13.835ms/CUDA5.392ms (2.566x); LSTM12025.458/3.893ms (6.540x).
+SmallMLP CPU1.407ms/CUDA3.334ms; per-step pageable H2D/normalization makes CUDA
+LSTM1207.291ms/MLP4.353ms. Six timed samples/fixedorder/co-tenancy, not economic
+evidence or a full-market throughput guarantee. Cold one-step timing is NOT
+steady training speed; use representative warm end-to-end work for FUTURE
+backend choice, no oldfit rerun/regrade. Parent16members+3proofs/E9 checks PASS.
+Original0ea1 temp-init failure/0updates preserved; recovery all13Jobs/CIDclosed.
+NEW NETLOG-vsMSE H3 development is prebound from44d7/Source0f613, not yet a
+running-fit claim:two fresh7233parameter LSTM60+IND8 models, sameinit/support/
+decoder, rawNet25 logwealth objective versus normalizedmeanMSE; fixedhalf in
+typed entry-cost fractions beforeONE native bridge, cached60 control/0oldcalls.
+2400active3600elapsed/cleanup180/readout240, <=2natives6syntheticupdates,
+2fits0retry/120epoch14040updates EACH/soft600hard660/4forwards/onejointseal/
+onejointreadout16books in4<=4WIDE calls. INNER ownloss/early12/LR4/bestrestore;
+fullmarks/nativefunding+whole17support first. Planck independent marks check.
+Exactoffer A/research/current-cost-aware-factor-sequence-ensemble-offer-20261106-v1;
+campaign A/research/current-cost-aware-netlog-mse-h3-development-20261106-v1.
+Source/native-qualified worker may launch under prebound authority without PID
+ACK. Not first directutility, independent alpha or Paper sizing/deployment.
 
 Market/residual study3d74e4ca/resultd91a88f2 also COMPLETE2CPUfits:
 COMPONENT16epochs/best4/1760updates/6.381s; DIRECT23/best11/2530updates/7.402s.

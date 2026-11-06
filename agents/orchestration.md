@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC17:57 / Nov7KST02:57.
+Updated Nov6UTC18:29 / Nov7KST03:29.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History: Git and immutable external sources, not reopened scope caps below.
 
@@ -15,11 +15,11 @@ Preserve ONE initialB/10/F9 UNKNOWN-HELD/all exact pending/reservations/exits.
 
 | Owner | Current assignment / actual state |
 | --- | --- |
-| Arendt Engine/sole Steward | All market studies COMPLETE/no repeat. Warm0ea1 FAILED AdamWinit/0updates/GPUinitPASS; recovery-r1 boundedtemp repair assigned, same-family72synthetic updates/0marketfits. No warm timing yet. |
-| Darwin Execution | lineage-batch3 CLOSED8b0d:mini exchange PASS, both SDKfixtures failed warmvisit/36callbacks/2probes/0fullgraphs. New sdk-visit-first-cause narrow diagnostic; no qualified actual host/install. |
-| Banach Execution | repair4-plan08f2 COMPLETE; repair4-source minimal relevant-writer producer coverage correction assigned. repair2 actual-c79-once not adopted/consumed. Zero actual private reads. |
-| Godel Execution/Review | query-scope-r2 COMPLETE1POST/5GET/all2xx/holdings4/noCSCO/open0/history0 sequentialASOF; all actors closed. New independent relevant-writer census scope review, zero private/API calls. |
-| Planck invoked source review | Independent SDK warmvisit first-cause source review, direct Darwin callback. SPY693d/RAW12018b148 completed; tonight0f9/72eb unchanged, no data rebuild/invocation. |
+| Arendt Engine/sole Steward | Warm61e4065b/13736993 COMPLETE72updates/LSTM CUDA faster. NEW44d7 NETLOG/MSE H3 campaign prebound2fits/0oldcalls, native/source preparation, no actual optimizer claimed before counters. |
+| Darwin Execution | Firstcause7eaa/85ba and proposalff1d COMPLETE. New shortnamespace positive runtime graph prebound900active1800elapsed/2cheap+ONEgraph;0actualfinancialeffects. |
+| Banach Execution | repair4-source375181c6 COMPLETE29boundary/41complete source-only checks. NEW repair5-wrapper/actualnamespace+invented offline guest integration;0actualprivate reads. |
+| Godel Strategy/Review closed | 44d7/e83f coordinatedoffer COMPLETE. CurrentClaudeae94 unavailable/ONECLIexit1/allclosed, notagreement/nohold; optionalcensusnote directBanach. Queryconsumed/neverreplayed. |
+| Planck Data closed | Marks236cfce4/15b9b263 COMPLETE:DEV799/RECENT289 fullcanonicalmarks, FIT1739/INNER479wholeH3;0build/provider/metrics/allclosed/directArendtcallback. |
 | Ptolemy invoked Infra closed | Previous futurepairprep withheld/noSource/0native/0Tasks because actual host unqualified. Resume before any new assignment; not running. |
 | Parent | Integrate actual query, remove stale pending instructions/incorrect HALF hypotheses, verify owned MDs and commit/push. Full authority1440protected+AGENTS still unchanged. |
 
@@ -37,26 +37,35 @@ One owner per mutable set; Parent alone writes shared repo MD/Git.
 
 ## Current Bounded Scopes
 
-- CLOSED Darwin lineage-batch3:2probes/0fullgraphs/364.619newconservative debit,
-  firstguest SOURCE/begin and2owner requests PASS; original164attribution incomplete.
-- NEW Darwin sdk-visit-first-cause:600active/1800elapsed/cleanup90, <=ONE minimal
-  real SDK warmvisit diagnostic/0fullgraphs initially. Retain native allowlisted
-  source/frame/category/predicate before generic failure collapse. Zero actual
-  env/private/KIS/market/Tasks/models. No financial fact cache/clock widening.
-- NEW Planck SDK source review:300active/900elapsed, source-only/0OSqueries.
-- Banach repair4-source:600NEWactive/1800elapsed/cleanup90, <=2invented boundary
-  probes+ONE complete native test. Zero actual private/CIM/Scheduler/Docker/KIS
-  queries/read consumption. Explicit current relevant custody-writer universe,
-  retained unknowns/lifecycle coverage, not all opaque desktop apps or successful
-  financial-ASOF. Parent owns actual once-read adoption.
-- Godel census review:300active/900elapsed, source-only/0actual private/Tasks/KIS.
-- CLOSED Arendt warm0ea1:FileNotFoundError at AdamW constructor/0updates,
-  CUDA context initialized/no warm result. Leading temp omission not inner-frame proof.
-- NEW Arendt recovery-r1:300active/1200elapsed/cleanup60, ONE worker and<=72
-  TOTAL synthetic updates, fixed actual LSTM60/LSTM120/MLP constructors/shapes,
-  CPU2threads/CUDA, cold versus warm/transfer distinctions. Zero market fits,
-  old-weight calls/private/API/Tasks. Restore bounded writabletemp/lifecycle,
-  actual AdamW constructor first; original origin/debits unchanged, no retry.
+- CLOSED Darwin diagnostic7eaa:ONE actualSDK visit/4IO primitives/0fullgraphs,
+  native58.110s/primitive.266s/388.375newconservative debit, allclosed. Actual
+  _write_evidence mkdir at262char Windows path; no Linux/historicalCSCO claim.
+- CLOSED Darwin shortnamespace sourceproposalff1d:0SDK/IO/graphs, Parent17refs/
+  E9PASS, actualpointUNKNOWN. New runtimeprebind900active1800elapsed/cleanup120,
+  <=2cheap actualconsumer programs+ONE positive cold entry/ownedexitgraph0retry/
+  graphmax360s. C:/Users/Public/tn9p-1106 freshnonreparse-owned/pathmax220;
+  BOTH inventedUTC/executionmonotonic advance with realelapsed/TTL. SeedONCE,
+  exit restores exactnativeinput/book/brokerJSON, no stand-in position. Counts
+  <=64/case projectedatretained1.672s worst mustfit beforefullgraph. Negative
+  tests focused/exactnewcoverage; no productionrisk cache/clock/registry changes.
+- NEW Banach repair5-wrapper:900active/2700elapsed/cleanup120, <=2cheap real
+  adapter smokes+ONE invented offlineDockergraph. Source-safe actual actor/mount/
+  lifecycle inspection allowed to bind relevant set;0actualprivate/broker/KIS/
+  TaskRun/orders. Actual private once-read still requires separate adoption.
+- CLOSED Planck marks236cfce4:canonicalfull799/289 keys/OPEN+CLOSE;1739FIT/
+  479INNERsupport,60.715active/0build-provider-model-performancemetrics/allclosed.
+- NEW Arendt NETLOG/MSE campaign:2400active/3600elapsed/cleanup180/readout240,
+  <=2nativegraphs/6syntheticupdates/2fits0retry/120epochs14040updates EACH/
+  soft600hard660each/4forwards/0oldcalls/onejointseal+readout16books. Exact44d7
+  units/whole17support/matchedinit/INNERselection/samegross controls/strict kills;
+  real native + fullOPEN/CLOSE compatibility BEFOREfit, internally launched
+  under prebound authority without post-start ParentACK. Source/actual counters
+  govern running status; no optimizer inferred from this prebind.
+- CLOSED Godel interpretation453d/ae94:ONECLIexit1/2.678s/allclosed, unavailable
+  notagreement/no authchase or globalhold. DirectArendtcallback/optionalcensusnote.
+- CLOSED warm recovery61e4065b:72updates/8cases/13Jobsclosed/CIDabsent/0market;
+  warmLSTM60/120 CUDA2.566x/6.540x faster, smallMLPCPUfaster. Sixsamples/fixedorder/
+  co-tenancy limits, no old-study regrade or full-market throughput claim.
 - Closed scopes/debits never reopen: MSErepair1/2/3, query original9af10/
   canonical-r1/actualquery-r2, CSCO original tasks and expired r5 read windows,
   all completed market studies. Exact artifacts preserve failures and clocks.
@@ -90,14 +99,14 @@ No manual Task.Run, foreground market wait or new follow-up chain.
 
 ## Throughput Review
 
-Nov6UTC17:57 resume/integration review:
-- Ready: host protocol diagnosis, relevant-writer census repair/review, finite
-  warm throughput audit; owned disjoint actors above. Future Data/point not due.
+Nov6UTC18:29 completion/new-dispatch review:
+- Ready: shortnamespace native graph proposal, actual usable custody wrapper,
+  two-arm GPU campaign preparation and independent existing marks check.
 - Bottleneck: native host repeatedly fails after expensive full integrations;
   completed research/extra MDs cannot substitute for actual Paper effects.
-- Reversible improvement: production-shaped cheap producer->Frame->Guard smoke
-  and stage/method counts before ONE full graph; remove erroneous peer financial
-  success dependencies from read-only GET and private reader admission.
+- Reversible improvement: short nonreparse NVMe fixture output after measured
+  Windows262char failure; production-shaped positive chain rather than five
+  repeated scenario suites per guest. Warm rather than cold-only GPU selection.
 - Compacted this board and goal to current assignments. Historical failed scopes
   stay in Git/artifacts rather than misleading ACTIVE/NEW backlog entries.
 

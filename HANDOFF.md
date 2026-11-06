@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC17:57 / Nov7KST02:57.
+Updated Nov6UTC18:29 / Nov7KST03:29.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Full earlier stateboards/recovery history are preserved in pushed12e5e906 and
@@ -26,12 +26,12 @@ integration/Git; role MDs and directories are not running-process proof.
 
 | Owner | Current work / actual state |
 | --- | --- |
-| Planck / Data closed | SPY693d andRAW12018b148/READY4edf COMPLETE/consumedonce, allstockrows retained/last60byteparity. Publicreaderb580 repairedonlysentinel/27checks. Tonight0f9/72eb unchanged/futureactualREADY-pointUNKNOWN. |
-| Arendt / Engine and sole Steward | LSTM120 and market/residual COMPLETE/no repeat. Warm0ea1 FAILED AdamW init/0updates/GPUinitPASS; new recovery-r1 restores bounded temp support, <=72same-family synthetic updates/0marketfits. No timing result yet. |
+| Planck / Data closed | Existingmarks236cfce4/15b9b263 COMPLETE:DEV799/RECENT289 canonicalfullmarks, FIT1739/INNER479wholeH3;0build/provider/metrics. DirectArendtcallback, tonight0f9/72eb unchanged. |
+| Arendt / Engine and sole Steward | Warm61e4065b/13736993 COMPLETE72synthetic updates/allclosed, LSTM CUDA faster/MLP CPU faster. New NETLOG-vsMSE H3 campaign prebound2fits/0oldcalls, Source/native preparation; no activefit claimed yet. |
 | Ptolemy / invoked Infra closed | Futurepairprep CLOSED_WITHHELD exact host qualification absent; schema retained/0native/0Taskeffects. Duration hypothesis DISPROVEN, no oldTaskrerun. |
-| Banach / Execution | MSErepair2 notadopted; repair3 found opaque-root census omission. repair4-plan08f2 COMPLETE; new repair4-source minimal relevant-writer producer correction/0actualreads. No financial-success gate or globalhold. |
-| Darwin / Execution | Batch3 CLOSED8b0d:mini exchange PASS/2owner requests but both SDKfixtures FAILED warm visit/36callbacks;2probes/0fullgraph. New exact sdk-visit-first-cause diagnostic, Planck independent source review; not deployready. |
-| Godel / Execution and Review | Query-scope-r2 COMPLETE0abff/ca318e9d:1OAuth+5GET/all2xx/0orders, holdings4/noCSCO/open0/current-dayhistory0 sequentialASOF. New independent relevant-writer scope review; original queries neverreplayed. |
+| Banach / Execution | repair4-source375181c6 COMPLETE29boundary/41complete source checks, actualadmissionUNQUALIFIED/0private reads. New repair5-wrapper builds usable namespace/full invented offline graph; no financial-success prerequisite. |
+| Darwin / Execution | Firstcause7eaa5d/85ba136d COMPLETE; shortnamespace proposalff1d COMPLETE/Parent17pins+E9PASS. NEW900active1800elapsed2cheap+ONEpositive nativegraph prebound; no actualfinancialqualification. |
+| Godel / Strategy and Review closed | Coordinated44d7/e83f challenge COMPLETE. CurrentClaudeae94/453d unavailable/1CLIexit1/2.678s/allclosed, notagreement/no launchhold. Accountquery0abff/ca318e consumed/neverreplayed. |
 | Parent / integration | Fresh58+177serial/20289fullPASS/1440protected+AGENTS unchanged/Ruff4Compose; positive72eb publication->repo native. Publisher ACTUALLY INSTALLED12:51; company financial runtime outcome still unfinished. |
 
 ActualCSCO repairedpublicreaderb580 at17:01/17:06 parsed source-bound technical
@@ -164,21 +164,17 @@ OriginalSource24ab/f611/bank/identities stayunchanged.
 
 ## Eligible Result Readers
 
-CSCO public reader Source9742ae68d76463e7542227f63d6a7eb115b7bedf0da0ec1a8b0e6cd4d722dfed:
-A/execution/current-csco-e6-public-outcome-reader-20261106-v1/HANDOFF.json.
-Parent independent38invented checks/30unique refs PASS; three prewindow modes
-NOT_DUE/0outcome enumeration/reads. Entry eligible afterNov6UTC16:35,
-exit/lifecycle after17:05; exact repeatable command in RUNBOOK.md.
-No actual future result has been read. Missing/partial/unbound/ambiguous/unstable
-is UNKNOWN, not zero/no-intent/flat.
+CURRENT CSCO public reader is b580dc712fbad898260b5691f5bc9eb558203f747d41eb205e79765933549639:
+A/execution/current-csco-entry-public-first-cause-20261106-v1/reader-repair1.
+Parent27refs/27nativechecks; actual17:01entry/17:06lifecycle parsed both technical
+faults, partialchain/allfinancialUNKNOWN. Exact repeatable PUBLIC-only command
+is in RUNBOOK. Old9742 result stays historical, not pending first observation.
 
-Source/native custody reader r5fb63aa6b is separately READY, not actually read:
-A/execution/current-csco-custody-admission-binding-20261106-v1/r5/FUTURE-READ-SPEC.json.
-Conjunctive540s-remaining check makes effective starts16:35..16:37:30 and
-17:05..17:07:30 inclusive, not the nominal later start bounds. Use RUNBOOK
-command only after positive exact phase/owner closure and fresh actual custody
-writer census; network-none/allRO/exact joins/before-after stability mandatory.
-No Data/research/global-flat veto, no replay of consumed717d, no observe().
+Custody reader r5fb63aa6b windows have EXPIRED without actual read. Do not use,
+extend or replay its FUTURE-READ-SPEC. MSErepair4 source-only qualification is
+separate; no actual private command adopted. Any new read must bind its current
+source/actual relevant writer admission/networknone/allRO/stability/exactjoins.
+No Data/research/global-flat veto, consumed717d replay or recovery observe().
 
 Public output is source-bound worker-reported ASOF under an assumed-honest host,
 not independent current custody/fresh holdings/cryptographic OS Scheduler origin.
@@ -188,10 +184,9 @@ A/execution/current-csco-parent-public-reader-check-20261106-v1/RESULT.json.
 Initial Parent invented fixture omitted SOURCE.json; FAILED-check.py and29check
 result preserved. Its fixture-only repair passed38; reader/producer unchanged.
 
-INTC9c6a78cb finite manifest reader eligible only afterNov6UTC15:20; its actual
-discovery consumes ONE attempt. MSE5cb1317a eligible afterUTC16:00.
-Use RUNBOOK exact source commands, never latest-file/task-exit inference or
-replay of a consumed private reader/recovery-capable observe().
+INTC9c6a78cb finite discovery is CONSUMED/UNKNOWN; never repeat. MSE5cb1317a
+actual16:00 read was operational pair only, not financial closure. Use only
+current named contracts, never latest-file/Taskexit or old-command inference.
 
 ## Other Preserved Owned Opportunities
 

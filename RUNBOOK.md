@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC17:57 / Nov7KST02:57. Company outcome UNFINISHED.
+Updated Nov6UTC18:29 / Nov7KST03:29. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -25,8 +25,9 @@ This repeatablePUBLIC-only command does not admit privatecustody or brokercalls.
 No automatictask/order or replacement follow-up. Old9742 UNKNOWN stayshistorical.
 MSErepair2/9c172 native25checks PASS but its actualcommand is NOT ADOPTED:
 requires peerfinancial-ASOF instead of actualprivatewriterclosure. Parent has
-assigned repair4-source relevant-writer producer correction after repair3 found
-opaque relevant-root omissions; do not consume actual-c79-once merely
+qualified repair4-source375181c6 source-only29/41checks after repair3 found
+opaque relevant-root omissions; repair5-wrapper is new integration preparation.
+No actual private command yet. Do not consume actual-c79-once merely
 to hit this knownfalse prerequisite. No actual MSEcustodyread yet.
 Separate current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2
 is COMPLETE/CONSUMED, not a runnable pending job. Source0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee;
@@ -173,7 +174,11 @@ D:/thericher-v2/model-artifacts/execution/current-csco-parent-public-reader-chec
 Custody reader r5 below is separately source/native-qualified, actualprivate
 read not performed. Never replay consumed717d or call recovery-capable observe().
 
-## CSCO Exact Offline Custody Reader
+## CSCO Exact Offline Custody Reader (Expired)
+
+HISTORICAL ONLY: both r5 effective windows below expired without actual read.
+Do not run/extend/replay this frozen command or treat its native proof as
+current admission. A new exact read requires its own named current contract.
 
 Sourcefb63aa6bb5a59888cb5852b28d65e4429fb099ad171fef8e98a54515745356b0:
 D:/thericher-v2/model-artifacts/execution/current-csco-custody-admission-binding-20261106-v1/r5/FUTURE-READ-SPEC.json,

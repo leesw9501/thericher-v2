@@ -1,11 +1,22 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC17:44 / Nov7KST02:44.
+Updated Nov6UTC18:29 / Nov7KST03:29.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Historical state and recovery details: pushed12e5e906 and immutable linked sources.
 AGENTS.md owns authority. This stateboard is context, not a runtime hash dependency.
 
 ## Current Owner And Consumer
+
+Existing-marks compatibility for new NETLOG/MSE H3 campaign44d7 is COMPLETE:
+A/data/current-netlog-h3-existing-marks-compatibility-20261106-v1.
+Source236cfce44fca0918c51df85e1ae76e67deafe516881809fc0eda9acfab4a9f31;
+RESULT15b9b26364080e6f2d4effd536c3cc8851b6bddf41f11dce51cfef1a40b7dcb1.
+Full799DEV/289RECENT keys/endpoints and OPEN+CLOSE canonical bytes/provenance
+matched; whole17 H3 supportFIT1739/INNER479, original20purge. No newbuild/copy/
+provider/credentials/Tasks/models/weights/performance,60.715active/allclosed.
+Direct Arendt callback includes WIDE74ed ABI/localindex/globalbridge; quantity/
+funding/finalNAV parity still Engine native responsibility, not this Data claim.
+Tonight0f9/72eb and all completed builds remain untouched.
 
 LatestRAW120 input-onlysidecar is COMPLETE18b14819/READY4edf722f:
 A/data/current-h123-raw120-input-sidecar-20261106-v1/API.json.
