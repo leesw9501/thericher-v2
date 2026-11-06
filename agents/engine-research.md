@@ -3,9 +3,26 @@
 
 ## Current Research Update
 
-Updated Nov6UTC00:34 / Nov6KST09:34. A=D:/thericher-v2/model-artifacts.
-All listed numerical workers are CLOSED; no optimizer currently claimed active.
+Updated Nov6UTC01:34 / Nov6KST10:34. A=D:/thericher-v2/model-artifacts.
+Earlier numerical workers are CLOSED; no new optimizer currently claimed active.
 Results below are adaptive development, not independent alpha/Paper PnL.
+
+Darwin's new raw+activity-proxy GRU/HGB family failed during freeze before first
+payload: FileNotFoundError host.freeze line145, nonexistent Data/CONTRACT.json.
+Original FAILED_CLOSED API retains57.827active/1076.149elapsed/0marketfits and
+positive closure. ONE narrow continuation-r1 may correct exact existing Data
+SOURCE/READY/semantic bindings, carrying original ORIGIN/HARD/caps/debits and
+frozen models/seed/splits/criteria. No market retry, old fit rerun or failure rescue.
+Data c097a902/9cc176c9 is materialized; input-common29767/8143/799 is not target
+eligibility. Actual producer/parser/concat/CUDA checkpoint/HGB smoke precedes fits.
+Exact scope: current-net25-retained-volume-experts-development-20261106-v1.
+
+Banach now owns current-w25-ivol20-conditional-risk-development-20261106-v1:
+0fits/inference/GPU, one original47-cohort/799-key archive and three-book readout.
+One fixed20-return inverse-vol allocation, same W25 membership/native-u gross,
+1bp floor/2x-equal cap. A NEW conditional past-close proxy contract is explicit;
+it cannot relabel the immutable strict-availability offer as qualified/PIT.
+Missing source support withholds only that study. No numerical result yet.
 
 | Completed study | Actual work | Result / next action |
 | --- | --- | --- |
@@ -87,11 +104,13 @@ growth/DD tests passed, fixedturnoverFAIL. Only1of47cohorts differs, no Pareto
 dominance/alpha or Paperpromotion. All18Jobs/twoCIDsclosed86.24active/558.08elapsed,
 Parent6refs27members PASS. Same entryfunding gross; markedgross slightly differs:
 A/research/current-w25-rank-allocation-halfblend-development-20261106-v1/API.json.
-Banach now prepares saved-forward usability only, no market/inference/fit/Task,
-not implicit analytical-f/postfee-u to brokerB10 mapping. ActualpointUNKNOWN.
-Rank relative scores never become absolute returns. Darwin prepares ONE20session inversevol samegross/capped
-allocation source/native offer, no market inputs/fit. Exact write sets in
-orchestration. No optimizer currently claimed active; future Paper independent.
+Banach completed saved-forward usability c198ac07, one invented capsule/16negative
+tests/allclosed100active/895elapsed, no market/inference/fit/Task. Paper adapter
+and analytical-f/postfee-u to brokerB10 mapping remain UNQUALIFIED; pointUNKNOWN.
+Rank relative scores never become absolute returns. Darwin completed the fixed
+20-session inversevol source/native offer,16tests/0market inputs/fit. Banach's
+separate conditional consumer above does not change that immutable offer.
+No optimizer currently claimed active; future Paper remains independent.
 
 Original Data83963 actually published19x60 OHLC for Nov6; Parent verified exact
 closure/manifest/payload/seal. Halfpoint5bf13:30/third13:45/W25shadow13:55 remain

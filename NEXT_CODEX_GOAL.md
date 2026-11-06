@@ -19,7 +19,7 @@ original exits. No refill/new bank/foreign adoption/substitute unknown request.
 
 ## Actual State And Next Work
 
-Updated Nov6UTC00:35 / Nov6KST09:35.
+Updated Nov6UTC01:23 / Nov6KST10:23.
 
 1. HALF ACTUALLY migrated18:48 to24ab/f611, original entryNov6UTC14:31..<14:35
    and exitNov11UTC14:30. EXIT first, one write each, fresh actual owner proof per
@@ -130,16 +130,36 @@ Updated Nov6UTC00:35 / Nov6KST09:35.
    SAME15native scenarios:1/5s buy+exit,10snoPOSTonexpiry,30sduplexreject,
    unknownentrypending/noPOST. Source/SDK/TTL/windows/oldintents unchanged.
    current-engineering-decision-clock-native-repair-20261106-v1/VERIFIED.json.
-   Planck owns full production/native future originalEXIT-only readiness in
-   current-intc-pre-read-decision-runtime-readiness-20261106-v1. Not deployed,
-   no consumedENTRY replay or actualorder claim. Claude review_unavailable.
+   Source297/release8ac ACTUALLY migrated01:10 originalEXITonly, independent
+   fullXML/API7ACL librarySnapshotPROPOSED/enabled/0instances/state3. Oneupdate,
+   originalclock/GUI/identity/bank preserved. Parentadoptionf18382c8 at
+   current-intc-pre-read-clock-parent-adoption-20261106-v1/PARENT-ADOPTION.json.
+   No entry/TaskRun/actualorder. CLIInspect fixedreceiptcollision preserved;
+   never replayApply/receiptwriters. Planck completed297-only publicreader
+   e5b65555; Parent32refs/13tests/NOT_DUE0reads PASS, eligible after15:20 only.
 16. Fixed.5 allocation blend9da2e99a COMPLETE4.1341%/DD.7936%/turn2.13920,
    growth/DDpass but fixedturnoverFAIL/only1of47/all18Jobs2CIDsclosed. No old
-   failure regrade/Paperpromotion. Banach now prepares saved-forward usability,
+   failure regrade/Paperpromotion. Banach completed c198ac07 saved-forward usability,
    0fits/inference/marketreadouts/Tasks, actualfuturepoint/hashUNKNOWN and no
-   implicit analyticalfunding to broker-B10 mapping. Darwin owns ONE20session inversevol capped
+   implicit analyticalfunding to broker-B10 mapping (PaperadapterUNQUALIFIED).
+   Darwin completed ONE20session inversevol capped
    samegross Strategy source/native offer,0market/GPU. No relative-score/return
    average, oldfailure rescue or autoPaper promotion.
+17. Retained nativeTVOL19x2965/56325source-known exists; original economicvolume
+   mask allfalse/NaN unchanged. Godel owns one raw source-activity-proxy ratio
+   materialization COMPLETE c097a902/9cc176c9 at current-net25-retained-volume-
+   input-materialization-20261106-v1 (marketfeatures M, code/proofs A).
+   Input-common29767/8143/799; Parent32refs+4semanticlinks verified.
+   Units/CA/finality/PIT remain
+   unknown, no qualifiedvolume/imputation/newacquisition. Darwin owns bounded
+   current-net25-retained-volume-experts-development-20261106-v1 preparation:
+   new60x15 raw+proxy GRU andHGB/twofitsMAX/no oldrawrefits/onearchive-readout,
+   initial freeze failed beforepayload/0fits, nonexistent Data contract filename.
+   ONE continuation-r1 carries original caps/debits/models/criteria; actualfit
+   ONLY after exactDataREADY/schema/commonkey/native smoke. No market retry.
+   Banach independently owns one fixed same-W25-gross conditional IVOL20 readout,
+   0fits/inference/GPU/three books; original strict source offer unchanged.
+   Directqualified role callbacks; no extraParentlaunchapproval/globalPaperhold.
    Exact write sets and callbacks live in agents/orchestration.md.
 
 Keep original MSE/H3AMD/Full17/GOOGL/RAW/INTC/HALF/memory/H20 exits, original bank/

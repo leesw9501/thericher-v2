@@ -11,6 +11,27 @@ No manual Task.Run/strategy invocation merely to inspect evidence.
 
 ## Actual Deployments
 
+- Current INTC originalEXIT upgraded again01:10 to297ca58e/release8ac4b374:
+  D:/thericher-v2/model-artifacts/execution/current-intc-pre-read-clock-parent-adoption-20261106-v1/PARENT-ADOPTION.json.
+  OneApply/fresh actualownerproof; separateprocess purelibrary fullXML/API7ACL
+  twice-stablePROPOSED/enabled/0instances. OriginalNov6UTC15:10..<15:11/hard15:20
+  unchanged, GUI/B10/F9/pending/oldexits unchanged,0TaskRun. Old2dab superseded
+  for THIS futureEXIT only, consumedENTRY untouched. No tradeproof.
+  Never rerun Apply/record.ps1 or CLIInspect's consumedACTUAL-INSPECT receipt.
+  CLIInspectcollision is an artifact error, not failedTaskinstallation; supported
+  LibraryOnly Context/Future/Snapshot gave independentreadonly proof. New297
+  publicreader is qualified below; olda3/2dab readers are not aliases.
+
+- INTC297 public-only reader Sourcee5b65555 is READY, Parent independently
+  verified32refs/13invented source-format tests; prewindowCLI NOT_DUE/0outcome
+  reads. After Nov6UTC15:20 only, use the exact source pin and explicit receipt
+  path/hash manifest, never a latest-file search:
+  D:/thericher-v2/model-artifacts/execution/current-intc-297-public-outcome-reader-20261106-v1/cli.py
+  with --source e5b65555ba26e147560e582285fa20bf70a7b3dbcdc774b7e7e52f94a224f11b
+  --phase exit --evidence-manifest <absolute exact receipt manifest>.
+  This reader is public operational provenance/worker-reported ASOF only, not
+  independent current custody, broker holdings, fees, settlement or net PnL.
+
 - HALF24ab/f611 original pair actually updated18:48, EXIT before ENTRY:
   D:/thericher-v2/model-artifacts/execution/current-net25-owner-parent-completion-20261105-v1/PARENT-ADOPTION.json.
   EntryNov6UTC14:31..<14:35/exitNov11UTC14:30, original model25c8/B10/ops unchanged.

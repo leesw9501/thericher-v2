@@ -2,6 +2,20 @@
 
 ## Current Work
 
+Latest Nov6UTC01:23: originalINTC futureEXIT ACTUALLY upgraded to297/8ac at01:10,
+singleApply after newsource-bound relevantowner proof. Independentseparateprocess
+LibraryOnly Context/Future/Snapshot confirms exact fullXML/API7ACL PROPOSED,
+enabled/state3/0instances. OnlyArguments+WorkingDirectory, originalGUI/clock/
+identity/B10/F9/privatepaths/oldexits unchanged. No TaskRun/entry/broker effects:
+A/execution/current-intc-pre-read-clock-parent-adoption-20261106-v1/PARENT-ADOPTION.json.
+CLIInspect itself writes fixed ACTUAL-INSPECT CreateNew and collided with prior
+receipt; failure preserved/no originalrecord forged. Repeatable pure Snapshot
+supported; never replayApply. Planck completed new297-only publicreader e5b65555,
+Parent32refs/13inventedtests/prewindowCLI NOT_DUE0reads PASS. Eligible after
+Nov6UTC15:20 with exact receipt-path/hash manifest, no oldsourcealias/latestscan.
+Worker-reported ASOF is not independently current custody. FinancialGuard
+speed/actualacceptance/fill/owned/PnL remain unknown.
+
 Latest Nov6UTC00:35: Parent engineering pre-read constant-signal clock repair
 bf245f49 is SYNTHETIC_NATIVE_VERIFIED15cases; originalpost-read decision violates
 SDKdecision<=readstarted at any positiveguarddelay.1/5s native buy+exit nowpass;

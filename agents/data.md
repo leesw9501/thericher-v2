@@ -2,6 +2,21 @@
 
 ## Current Work
 
+Updated Nov6UTC01:34. Godel completed ONE retained native-TVOL activity-proxy
+materialization, no acquisition/labels/training. DATAREADY c097a902 / Source
+9cc176c9 at A/data/current-net25-retained-volume-input-materialization-20261106-v1.
+Past60 own/SPY/QQQ ratios preserve original keys and missing masks: input-common
+FIT29767/INNER8143/DEV799; DEV47 full17 cohorts. FIT supervised target eligibility
+remains a separate Engine mask, not all input-known rows. Original economic
+volume mask stays false/NaN; unit consistency/CA/PIT/finality remain unknown.
+SEMANTIC-QUALIFICATION binds these as UNQUALIFIED_NATIVE_TVOL_ACTIVITY_PROXY_RATIO,
+not share volume. Parent32 exact refs +4 semantic links PASS/0 payload decodes.
+Nine invented producer/parser/60x15 handoff checks passed before the one build.
+Darwin's new expert consumer failed before first payload on a nonexistent source
+filename; one narrow continuation carries all original caps/debits, no fit replay.
+Banach separately prepares the original W25 same-gross risk comparison; raw
+source CLOSE and conditional past-close availability must remain explicit.
+
 Lorentz cached-data preparation is READY/closed20:30:44 (no network/training/GPU)
 for intraday GRU: window30 versus120 canonical1m bars, SAME causal decision keys
 and within-session nextOPEN->60minuteOPEN target. Actual24 usable pre-Oct30

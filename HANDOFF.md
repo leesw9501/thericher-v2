@@ -2,6 +2,40 @@
 
 ## Current Integration
 
+Latest Nov6UTC01:23 / KST10:23: INTC original future EXIT is ACTUALLY migrated
+to pre-read-clock Source297ca58e/release8ac4b374, one update01:10UTC. Fresh
+source-bound relevant-owner proof preceded write; separate process pure library
+Context/Future/Snapshot confirms fullXML/API7ACL/twice-stable PROPOSED/enabled/
+0instances/state3. Only Arguments+WorkingDirectory changed, original GUI command,
+Nov6UTC15:10..<15:11/hard15:20 (KSTNov7 00:10..<00:11/hard00:20), original
+account/bank/B10/F9/pending/costs/losses/all exits preserved. No TaskRun/order.
+Actual adoption f18382c8:
+A/execution/current-intc-pre-read-clock-parent-adoption-20261106-v1/PARENT-ADOPTION.json.
+CLI Inspect failed AFTER its readonly work because fixed ACTUAL-INSPECT.json
+CreateNew receipt already exists; original receipt unchanged. Parent initially
+reported expected independent success too early, withdrew it, then established
+the actual separate-process library proof bd0bbdbd. No setter/entry replay.
+Whole financialGuard latency/acceptance/fill/owned/PnL remain UNKNOWN.
+Planck completed297-only public reader Sourcee5b65555; Parent32refs/13invented
+tests/prewindowCLI NOT_DUE0reads PASS. Eligible only afterNov6UTC15:20 with exact
+receipt manifest; operational/worker-ASOF is not independent current custody.
+Olda3/2dab reader is not an alias. No future result is claimed.
+
+Useful retained input found, no acquisition: native raw tvol19symbols x2965
+sessions2015..2026/56325source-known cells, same original role date axis. Economic
+volume mask remains allfalse/NaN, units/adjustment/finality/PIT unproved. Use
+only explicitly named unqualified activity-proxy ratios, never qualifiedshares.
+A/data/current-net25-daily-volume-capability-readiness-20261106-v1/RESULT.json.
+Godel completed one exact-key/known-mask materialization under M: c097a902/9cc176c9,
+input-common29767/8143/799, DEV47full17. Parent32refs+4semanticlinks verified.
+Darwin's new raw+activity-proxy GRU/HGB initial freeze failed before firstpayload,
+nonexistent Data/CONTRACT.json/0fits; FAILED_CLOSED57.827active/1076.149elapsed.
+ONE narrow continuation-r1 carries all original caps/debits/models/criteria.
+Banach independently prepares one fixed same-W25-gross conditional IVOL20 readout,
+0fits/inference/GPU; no numerical result or source-grade upgrade yet.
+Source/schema callbacks direct between roles; no Parentpoststartapproval. Existing
+Paper/price-only path independent. No newdata/modelrights or public use granted.
+
 Checkpoint Nov5UTC23:38: saved-rank forward Task b89 is NOW ACTUALLY ENABLED,
 with two separate independent fullnativeXML/API7ACL readbacks under new9b16612f:
 A/research/current-net25-pairwise-forward-enabled-readback-repair-20261105-v1/PARENT-ADOPTION.json.
@@ -505,15 +539,18 @@ clock repair bf245f49 passed15native synthetic cases:1/5s buy+exit,10s noPOST
 on expiry,30s unchanged13sduplexreject, unknownentry stayspending/noPOST:
 A/execution/current-engineering-decision-clock-native-repair-20261106-v1/VERIFIED.json.
 No original SDK/window/quoteTTL/bank/intent changed or actual effect/deployment.
-Planck owns full production/native readiness in
-A/execution/current-intc-pre-read-decision-runtime-readiness-20261106-v1.
+Planck completed full production/native readiness in
+A/execution/current-intc-pre-read-decision-runtime-readiness-20261106-v1,
+now actually adopted above. Parent21productionmembers/19directproof refs and
+142migration/producer refs verified;49Scheduler+12factory tests passed.
 Original futureEXIT only; consumedENTRY never replayed. New actual production
 Guard latency remains unknown; readonly33s measurement is not transferable.
-Banach owns current-w25-rank-halfblend-frozen-forward-readiness-20261106-v1,
-0fits/inference/marketreadouts/Tasks, not relative-score/return averaging or
-implicit analytical-f to broker-B10 mapping. Actual future point/hash UNKNOWN.
-Darwin owns
-current-w25-samegross-risk-allocation-offer-20261106-v1, source/native only.
+Banach completed current-w25-rank-halfblend-frozen-forward-readiness-20261106-v1,
+c198ac07/16native negatives/oneinventedcapsule/allclosed/100active/895elapsed,
+0fits/inference/marketreadouts/Tasks. No analytical-f/native-u to broker-B10
+mapping, PaperadapterUNQUALIFIED. Actual futurepoint/hashUNKNOWN. Darwin's
+current-w25-samegross-risk-allocation-offer-20261106-v1 is source/nativeREADY,
+16tests/35.63active, no marketcomparison. Its numeric consumer is not dispatched.
 Banach/Planck/Godel/Carver and all earlier completed numerical fits are closed.
 Parent owns Git/integration/current goal. Completed or failed earlier role
 deliveries are closed, not active GPU/LLM daemons. Current matrix is

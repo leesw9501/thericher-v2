@@ -3,6 +3,15 @@
 
 ## Current Resource State
 
+Latest Nov6UTC01:34: new activity-proxy expert family is NOT training yet.
+Initial freeze failed before market payload on a nonexistent Data contract file;
+FAILED_CLOSED57.827active/1076.149elapsed/0fits/allownedclosed. ONE pre-payload
+continuation may repair the exact source enumeration inside unchanged original
+3600active/5400elapsed/two-fit caps, carrying every prior debit. DataREADY exists;
+real source/parser/CUDA/checkpoint/HGB smoke and fresh measured headroom precede
+launch. No duplicate old training or claimed GPU occupancy. Banach's independent
+same-gross IVOL20 comparison is CPU/0fits; not a second GPU coordinator.
+
 Latest Nov6UTC00:35: actual masked-transfer CUDA family is CLOSED2fits,
 SSL63epochs7371updates/best53/103.87fitseconds/552MiBreserved; conditional
 FT13epochs1521updates/best1/526MiBreserved.1archive/readout5books/0baseline

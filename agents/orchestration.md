@@ -1,6 +1,6 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov6UTC00:34 / Nov6KST09:34.
+Updated Nov6UTC01:34 / Nov6KST10:34.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Company Outcome
@@ -29,10 +29,14 @@ and all original exits. A package/commit/installation is not company completion.
 | Closed descriptive consumer | e6b310:0fits/1readout6books; newexpert-2.9888%, fixed.25blend1.6173%, W25 3.6012% | Do not promote this blend; original strict-clock failure/old debit unchanged. |
 | Closed Parent / scoped private read |717d native5phasePASS then ONE actualprivate5phasePASS; NO_EXACT_PLAN_RETAINED, financialUNKNOWN |API83425105/all104processes+2CIDsclosed/1393.08active incl old558.75once/946.76elapsed; consumed/no replay/F9held. |
 | Closed Godel / temporary Throughput |15native scenarios prove positive post-read guard delay violates decision<=read-start |Parentbf245f49 pre-read constant-signal repair15casesPASS; actual Guard latencyUNKNOWN, no source/job/SDK/TTL/window waiver. |
-| Planck / Execution-Infra | current-intc-pre-read-decision-runtime-readiness-20261106-v1 | Fullnew production graph/native cold fixture/futureexit-only readiness; no actualmigration/TaskRun/private/broker. |
+| Closed Parent / actual Execution migration |297/8ac originalEXITonly migrated01:10/onewrite/freshownerproof/independentlibrary fullXML_API7ACLPROPOSED/enabled/0active | Nov6UTC15:10..<15:11/hard15:20 unchanged. Parentadoptionf18382c8; CLIInspect receiptcollision preserved/no setterreplay/no financialeffect. |
+| Closed Planck / Execution publicreader |e5b65555 current-intc-297-public-outcome-reader-20261106-v1 | Parent32refs/13inventedtests/prewindowNOT_DUE0reads PASS; future15:20eligible exactmanifest, no independent current-custody claim. |
 | Closed Banach / Engine CPU |9da2e99a fixed.5 mix4.1341%/DD.7936%/turn2.13920; growth/DDpass, fixedturnoverFAIL, only1of47 | All18Jobs2CIDsclosed86.24active/558.08elapsed/Parent6refs27members verified. No oldfailure regrade/Paperpromotion. |
-| Banach / Engine savedconsumer | current-w25-rank-halfblend-frozen-forward-readiness-20261106-v1 |0fits/inference/marketreadouts/Tasks; actual futurepoint/hashUNKNOWN, allocation-unit/B10 boundary explicit. |
-| Darwin / Strategy | current-w25-samegross-risk-allocation-offer-20261106-v1 | One20session inversevol/capped longonly/samegross native offer; no market arrays/GPU/fit, duplicatecheck first. |
+| Closed Banach / Engine savedconsumer |c198ac07 oneinventedcapsule/16negatives/allclosed100active/895elapsed |0fits/inference/marketreadouts/Tasks; futurepoint/hashUNKNOWN, PaperadapterUNQUALIFIED/no B10map. |
+| Closed Darwin / Strategy | samegrossrisk sourceoffer16tests/35.63active/756.84elapsedREADY | No marketcomparison dispatched. Preserve proof/rawCLOSE availability requirement. |
+| Godel / Data delivery | c097a902/9cc176c9 materialized input-common29767/8143/799 | Nine native checks; Parent32refs+4semantic links PASS,0labels/network. Original economic volume maskfalse/NaN unchanged. |
+| Darwin / Engine-Steward recovery | current-net25-retained-volume-experts-development-20261106-v1 | Initial freeze FileNotFound before payload/0fits/allclosed57.827active. One narrow continuation-r1 carries unchanged original caps/debits/models/criteria, not market retry. |
+| Banach / Engine CPU | current-w25-ivol20-conditional-risk-development-20261106-v1 | One fixed same-W25-gross allocation/0fits-inference-GPU/three books; conditional planned-close proxy explicit before market, original strict offer unchanged. |
 | Parent / account facts |17:20 holdings4/noINTC;18:10 terminal history0rows | As-of broker observations only; no exact original custody/fill/PnL or reservation release. |
 
 An assignment/MD is not proof of a running worker. Parent checks actual actors
@@ -63,10 +67,14 @@ before effects. LaterData Nov10/13UTC21:30 is installed, not collected.
 
 ## Throughput Review
 
-00:34: Parent's native+actual custody read is CLOSED, source-safe exact request
+01:23: Parent's native+actual custody read is CLOSED, source-safe exact request
 plan absent/financialUNKNOWN. Real positive-latency native test exposed a producer
-chronology defect, now repaired locally; Planck prepares full production binding.
-Banach fixedblend and Darwin samegross-risk offer are independent CPU work.
+chronology defect, now actually deployed297originalEXIT with independentproof.
+Planck prepares current publicreader; Godel completed retained source-activity
+features. Darwin corrects a pre-payload nonexistent-file freeze failure within
+unchanged original caps/debits; source enumeration smoke must use actual filenames.
+Banach independently evaluates fixed same-gross risk allocation, no new model fit.
+Dataset alreadyexists; no acquisition/permission wait or actual optimizer claimed.
 MaskedSSL+FT actually finished/failed, no repeated fit or occupancy training. Saved Chronos readout
 completed0refits. Parent completed MSE and nonfinancial forward installations and integrates
 completed data/research and validates the actual Windows native interface.
