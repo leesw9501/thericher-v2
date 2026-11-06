@@ -1,179 +1,49 @@
 # Strategy Research Stateboard (전략 탐색)
 
+Updated Nov6UTC06:25 / KST15:25. A=D:/thericher-v2/model-artifacts.
+History/source mechanisms: pushed12e5e906 and immutable offers.
+This role proposes executable hypotheses, not an endless reading list.
+
 ## Current Handoff
 
-Nov6UTC05:42: Godel owns current-cost-aware-causal-expert-routing-offer-
-20261106-v1, one executable causal allocation/DAG proposal beyond unanimity.
-Only previously matured expert outcomes or proper chronological OOF may route;
-no in-sample/future payoff leakage, confidence claims or broker-risk authority.
-240active/1200elapsed/cleanup60, pure kernel/invented nativeDTO/book only,
-0market arrays/labels/models/weights/GPU/fits. Direct schema callback to Engine;
-Parent owns scope/Git. No permanent role/indicator platform.
+Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec completed
+A/research/current-cost-aware-causal-expert-routing-offer-20261106-v1.
+Sourcecf19cdbab6e5b7fee7fd36b7ac3d776b5e42815bdbda50fc10a9e4c10e196274.
+Parent27refs/10invented native tests PASS;0market/fits/modelcalls/GPU,
+allclosed189.18conservativeactive/1146elapsed.
 
-Prior fixed-consensus offer COMPLETE/consumed in Enginee8022369: oldDEV3/47active
-and recent0/17active, frozen growthFAIL. No post-outcome threshold rescue; new
-mechanism is a separately frozen adaptive study, not independent-performance
-promotion. Same-architecture seeds remain correlated votes, not confidence.
+One fixed SPY21 regime-specific allocation router reuses existing native Hedge,
+not a new general algorithm. PATCH-mean3/THIRD, rate.1/uniform priors per
+episode/regime, strict earlier mature feedback only. Availability at CLOSE[e+3]
+excludes same-open feedback. Fixed native allocation mix, no forced normalization
+or independent-vote/confidence claim. Actual retained capture stays separate from
+logical replay availability. Fee factors require native shadow-book parity.
 
-Latest Nov6UTC01:50: no Strategy worker currently active. Darwin's source-only
-distributional-target offer1320f1e4 is CLOSED/REJECT_ALREADY_COVERED_MECHANISM:
-earlier MLP/Transformer studies already trained ordered pinball quantiles. Exact
-Net25/data/role/cost duplicate was NOT established; no claim that all quantile
-research is exhausted or unprofitable. A quantile is not a mean-return score.
-Eight checks/35.01active/0market-fits-inference; Parent24refs verified:
-A/research/current-net25-distributional-target-offer-20261106-v1/OFFER.json.
+The offer is consumed by a separately frozen temporary Engine CPU package:
+A/research/current-cost-aware-causal-specialist-development-20261106-v1.
+Godel owns that disjoint implementation now; no separate Strategy worker/next
+market readout is queued here. Darwin retains model contracts/final integration
+and sole GPU coordination. Parent scope/Git remains unchanged.
 
-The fixed20session inversevol/capped same-W25-gross offer is READY/closed,
-16native tests/0market. Banach's distinct conditional research consumer first
-stopped before market on synthetic floating-point reference layout; its one
-arithmetic-reference successor preserves kernel/criteria/original clocks/debits.
-No financial tolerance/risk authority changed. Fixed.5 rank/W25 allocation blend
-completed4.1341%/DD.7936% but turnoverFAIL/only1of47; saved consumer c198 READY,
-not a Paper adapter or mean/relative-rank score average. Current Engine owns
-actual comparisons and all data-reuse/performance interpretation.
-Previous masked offer was consumed by actual63epochSSL+13epochFT, reconstruction
-passed but costed transfer-.25474%/DD1.69556%/turn2.80510 FAILED/allclosed. No
-repeat/fine-tune rescue or rejection of all reconstruction models. Exact Engine
-VERIFIED/r1API586a7235 preserves original filenamecollision/debit/0update repair.
+Mechanism references, not stock profitability or theorem-transfer evidence:
+https://proceedings.mlr.press/v28/joulani13.pdf
+https://doi.org/10.1145/258533.258616
+No external code/dependency/runtime was imported.
 
-Updated Nov6UTC00:04. Darwin CLOSED source/native duplicate check and one
-masked-transfer offer at
-A/research/current-net25-domain-masked-transfer-offer-20261105-v1.
-Distinct within4namedpriors, not exhaustive novelty;16nativeCPUtests/Parent16
-with explicit bootstrap PASS. Engine consumed it as a separately frozen new
-two-fit family (reconstruction then conditional fine-tune), not Strategy fit
-authority. Actual CUDA/schema/checkpoint/DTO/role smoke still required there.
+## Consumed Or Rejected Proposals
 
-Darwin's prior pure boundary-regret pairwise-rank kernel and
-real invented native DTO/book smoke are CLOSED14nativeCPUtests. Parent repeated
-14tests independently/full runtimeRuff/14source refs PASS:
-A/research/current-net25-pairwise-rank-offer-20261105-v1.
-Ranking is not absolute expected return; a separately supplied cash/absolute-edge
-gate remains necessary. Engine consumed this offer in one actual CUDA fit:
-17epochs2329updates/best7/13.812s. Ranktop3+4.6670%/DD.93593% exceeds W25growth
-but FAILS frozen.81307%DDlimit; only1of47cohorts differs, no alpha/Paper swap.
-All fit actors/lease closed. Saved-weight forward b89 Task is actually enabled,
-nonfinancial only, not another Strategy fit. Exact result in Engine/HANDOFF.
-Crossasset attention descriptive consumer closed: newexpert-2.9888%,fixed.25blend
-1.6173% versus W25 3.6012%; no model adoption. Do not repeat completed weights.
+| Mechanism | Concrete disposition |
+| --- | --- |
+| Fixed consensus |Consumed e8022369;3of47old/0of17recent active, frozen growthFAIL. Correlated seeds are not independent confidence; no threshold rescue. |
+| Global Hedge / chronological OOF gate |Already present in project; rejected as a newly invented mechanism. Current two-regime specialist is a bounded distinct contract, not global novelty. |
+| Distributional1320f1e4 |Ordered pinball quantiles already trained in earlier MLP/Transformer studies. Exact Net25 tuple duplication not established; no claim all quantile research is exhausted. |
+| Pairwise rank |Actual17epoch fit641e9; growth improved but frozenDD failed/only1changed cohort. Saved forward consumer installed, not a new Strategy fit. |
+| Masked transfer |Actual63epochSSL+13epochFT completed, costed development failed. No repeat/fine-tune rescue. |
+| Inverse volatility |Native offer consumed in dcacc146 paired book; lower growth/lowerDD, frozenFAIL but useful tradeoff, not Pareto dominance. |
+| Holding persistence |Native pure kernel consumed in costed memory replay; lower turnover/exposure is not alpha, no Paper swap. |
 
-Updated Nov5UTC20:05. Directutility proposal was consumed in one CPU fit:
-29epochs812updates/best17; growth3.7056% but DD1.3383%/turnover7.2376 failed
-its fixed controls. No frozen criterion rescue. Chronos2 full-coverage actual
-CUDA8epochs488updates selected best0; forecast worse than persistence,0books.
-Detailed evidence belongs in HANDOFF/Engine, not a source-profitability claim.
-Singer's turnover-aware action-persistence/no-trade offer is CLOSED17native
-tests/fullRuff, kernel69a1bd/SOURCE6558c0; actual singleW25 DTO/series-step and
-costed terminal reset delivered directly to Engine:
-A/research/current-turnover-aware-policy-offer-20261105-v1.
-Engine's first wrong-metadata attempt failed0books; Parent159ec corrected intake
-separately and completed1readout4books/0fits. MemoryON.5533% versusOFF.3067%,
-turnover.10612 versus.13821; exposure differs, signW25stronger3.7377%. No alpha
-or Paper swap claim; exact Engine evidence/limits in HANDOFF. Pure offer's6book
-proposal never expanded the Engine's actual4book frozen cap. No active Singer.
-
-## Prior Consumed Handoff
-
-Updated Nov5UTC18:51 / Nov6KST03:51. New distinct mechanism:
-A/research/current-cost-aware-next-mechanism-offer-20261105-v1/OFFER.json.
-Direct729parameter allocation utility instead of MSE forecast; signedNet25
-already costs BOTH legs, so no double charge. New action DTO is not a forecast.
-Own capped sparsemax/mean-variance kernel +10pure/nativeCPU checks PASS.
-Official mechanism sources: https://arxiv.org/abs/2005.13665v3 and
-https://proceedings.mlr.press/v48/martins16.html . No public code/weights reused,
-not their benchmark or evidence of project profitability.
-Actual existing fee/book parity required before a NEW one-fit campaign;
-allocation entry-cost-inclusive f differs from native post-fee NAV weight u.
-Curie's Engine preparation elapsed cap expired WITHOUT implementation/fit;
-no artificial readiness, freeze, GPU or external-block claim. Separate Carver
-implements only the small native fee/DTO bridge and invented tests. Parent
-Claude2d533b61 GO_WITH_LIMITS/advisory, no market launch yet. No Paper swap.
-
-## Earlier Snapshot: Consumed Handoff
-
-Updated Nov5UTC13:36 / KST22:36. A=D:/thericher-v2/model-artifacts.
-Rawls' Chronos2 Open-path proposal c2674620 is CLOSED and consumed by a
-separately scoped Engine campaign, not a Strategy GPU worker:
-A/research/current-net25-public-model-open-forecast-readiness-20261105-v1/READY.json.
-Cached exact checkpoint95a9710e/weightddcda3c7/Apache2 predates all targets;
-official commit Oct30,2025. Nine-family bounded duplicate check found no exact
-Open60/Open4 archive, not exhaustive novelty.16pure native checks passed.
-Open-only four-step medians are not absolute expected-return forecasts or the
-old close-to-open target; unknown corpus/context overlap still limits claims.
-No downloads/inference/GPU/market payload in that proposal.120worker upper,
-pre-first-record full elapsed not retained; no retroactive complete clock pass.
-Parent delegated actual Engine native/inference/readout separately10:35:46UTC.
-
-Popper CLOSED minute-rule consumer readiness Sourcefed81602/33native checks/
-Ruff/62refs,0market/GPU/financialeffects. Parent235refs/153unique stable across
-this offer and completed Chronos, plus five independent pure cases passed:
-A/research/current-native-minute-rule-consumer-readiness-20261105-v1/OFFER.json.
-627.385elapsed/1800,190conservativeSUM/450,allcommandsjoined. Claude auth
-unavailable, not agreement. Exact typed Data key/mask/provisionalclock/unknown
-CA/PIT/finality contract stays explicit. Rawls now owns separate Engine market
-benchmark, not Strategy fitting or evaluation authority.
-
-Chronos2 Open-path proposal was consumed: actualCUDA799forecasts/25forwards,
-Net25growth-1.6332%/DD2.0660%,FAIL versus half/third. No proposal/refit rescue.
-Supervised adaptation d11cc also failed Net25-2.5478%/DD3.1234% after250
-updates/0.00841FITepoch, not convergence or a general foundation rejection.
-Minute offer now consumed by05b0 complete24sessions/ORB-3.2526%,RSI-VWAP
--4.6345%,bothFAILat25eachleg; prefix optimization preserved5460 decisions.
-No threshold/holding-time change to rescue seen results. Frozen representation
-0b8f also failed: Net25-3.3795% versus raw-0.5243%,1209actualCUDAforwards/all
-resourcesclosed. Hurdle3fits/799proposals completed; index adapter failure left
-initially zero readouts; corrected metadata-only r3 now read ONCE: Net25-0.09422%,
-FAIL. No refits/archive regeneration; source/index/dateformat failures retained.
-Next distinct mechanism is scratch channel-independent patch attention, consumed
-by Harvey's bounded Engine campaign, not a new permanent Strategy worker:
-A/research/current-net25-patch-transformer-development-20261105-v1.
-Patch2abffa now completed17actualCUDAepochs/1989updates/best5/fullFITcoverage,
-Net25+2.1575%/DD1.8922%,vs third+1.8178%/.6433%; development-pass but higher
-exposure/turnover/risk. Frozenconsumer8a1 now CUDA-only qualified; fixed W25
-primary blend fedd achieved Net25+3.6012%/.6505%DD under predeclared .8042%DD
-limit, versus third+1.8178%/.6433%. W50diagnosticnotpromoted. Actual2evaluations/
-12books36views,0fits; no automatic live/Paper winner or independent claim.
-Mechanism is complementarity of compatible signed cost-aware experts, not a
-claim that individually good experts are required or that complex gates help.
-W25composition and source-only futureevaluation contract now owned by Engine.
-Parent checked official paper https://arxiv.org/abs/2211.14730 and official
-Apache2 repo https://github.com/yuqinie98/PatchTST . Temporal patches/shared
-channel weights are a mechanism hypothesis, not proof of trading returns or
-our adaptation reproducing the official forecasting benchmark. Native Torch,
-same exact input/target/cost baselines; no extra public-code runtime authority.
-
-Kant's source offer is CLOSED:
-A/research/current-net25-chronological-gate-candidate-20261105-v1.
-Sourcee3bb0338/OFFERbf6db24a,30native+9readback checks/Ruff/four synthetic gate
-updates, allactorsclosed.3OOFfolds/9historicalexpertfits+1convexgate proposed;
-fold-local FITstats/maturity+20purges, never fullFIT in-sample forecasts as OOF.
-Engine first f3e1 attempt withheld full-cohort input, then explicit maskedOOF
-24bb completed10fits with successful oldfits reused. Gate best0 ties fixedthird,
-no incremental gain; shallowtree a1de also failed incremental growth. No rescue/
-Paper swap. Strategy does not own fitting/custody/Paper risk.
-
-## Consumed Mechanisms
-
-- Selective absolute Net25 entry21d7,41native tests, consumed by Engine7eaa
-  HGB+CUDA GRU fixedhalf development-pass. Data60completedD1 own/SPY/QQQOHLC
-  plus8indicators, nextOPEN->e+3OPEN, no relative-score unit reinterpretation.
-- TCN d8bb/48de,25native+12focused/44pins, consumed by actual3c24:
-  32CPUepochs/best8/28.065s, fixedthird growth1.8178%/DD.6433% at25bps eachleg.
-  Reused DEV, low exposure, no independent alpha/Paper claim/hot-swap.
-- D1barrier20fe/be2fc,37tests: observe completedbar TP2/SL1, exit nextofficial
-  OPEN, e+3vertical; ambiguousSTOP not worst guaranteed delayedfill. Rule8870
-  failed incremental growth; learnedexit20a8 failed too. Do not repeat/rescue.
-- M1ea286/54tests remains pure source/daily-input mismatch, not actual M1 study.
-  New minute coverage can support a future separately scoped consumer after
-  exact availability/label/data contract, not old reserved-target release.
-
-## Next Useful Invocation
-
-Only propose a distinct executable mechanism for a named Engine consumer,
-not another reading list/indicator agent. Prefer common costs/book, causal
-feature/label availability and finite time/window/seed caps. Pure kernels may
-be implemented in assigned D: scope. Parent chooses useful next campaign using
-actual results, not GPUoccupancy. Record official source/version/license or
-not_disclosed; public model pretraining overlap limits performance claims.
-No broker/credentials/Task/privatebank/GPU/holdout-release authority in Strategy.
-Prior proposals/results remain Git/RUNBOOK/immutable sources, not duplicated diary.
+Next proposal must fill a concrete Engine need or yield to current work. No MD
+per indicator/permanent LLM team expansion. Engine owns targets/splits/costs/
+fitting/interpretation; Execution deterministic risk and broker state are not
+Strategy authority. Claude authenticated quota outage is review_unavailable,
+not agreement or a global hold; no repeated auth/quota chase.

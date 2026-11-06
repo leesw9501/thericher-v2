@@ -1,195 +1,64 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
+Updated Nov6UTC06:25 / KST15:25. A=D:/thericher-v2/model-artifacts.
+History/debit details: pushed12e5e906 and immutable APIs/VERIFIED.
+An MD/source directory is not a running optimizer or resource lease.
 
-## Current Resource State
+## Current Resource Owner
 
-Nov6UTC05:42: no active optimizer/GPU worker claimed. Recent99e30c88 COMPLETE:
-saved3Patch CUDA inference plus CPU experts,0fits/onearchive/sixbooks, allclosed
-177.467active includingverification. Consensus e8022369 COMPLETE/0GPU-modelcalls/
-fits,allclosed181.682active; do not repeat either. Parent110/66unique refs PASS.
-Darwin soleSteward now prepares current-short-swing-horizon-expert-preparation-
-20261106-v1,300active/1800elapsed/cleanup60,0marketfits. New1-3session contract/
-nativeoptimizer/actual data readiness before a separately frozen useful CUDA
-campaign. Existing GPU priority/concurrency authority unchanged, no app-name
-veto/occupancy-only training. Godel's causal-routing offer is separate0GPU work.
+Darwin01a1adb5-b486-7801-9fdf-1378d733bfce is sole GPU coordinator.
+Current source preparation:
+A/research/current-short-swing-horizon-expert-development-20261106-v1.
+Actual MARKET CUDA training NOT yet evidenced. Original native CUDA made3tiny
+updates before proof/checkpoint JSON filename collision; root FAILED_CLOSED,
+0marketfits/forecasts/allactors+leaseclosed306.927active. Filename-only derivative
+may use remaining predeclared native attempt within original hard/total8updates,
+not a market retry/refund or completed model repeat. Data projectionae4c68e8/
+READYe23875f9 is now COMPLETE/Parent74refs. Actual native CUDA chain/headroom/
+duplicate-lease checks precede one NEW market fit.
+Closed CPU preparation cddef12b passed12checks/43.557active/1282.535elapsed;
+its0fit result is not CUDA qualification.
 
-Nov6UTC04:42: new Patch seedfamily COMPLETE6ac123f9,2CUDAfits18/15epochs/
-3861marketupdates/best6/3,39.238/36.249co-tenant seconds/526MiBreserved each.
-2DEVforecasts/onearchive/sixbooks/0oldmodelcalls. Primary3.365409%<oldW253.601215%,
-DD+turnPASS/growthFAIL; allactors/leasesclosed301.773active/1650.734elapsed,
-Parent79refs PASS. Failedroot88.245carried once; host's cumulativeACTIVE vs
-parallel critical-path ELAPSED reservation corrected, not a longer originalhard
-or duplicated fit. Six timing checks were postdispatch diagnostics only.
-That recent replay is now COMPLETE above, not queued source preparation. Do not
-repeat closed training for utilization. Data47698983 is actual payload readiness;
-fixedcalendar7f461257 alone was only calendar readiness.
+Predelegated new campaign:1800active/3600elapsed/1fit/120maxepochs/
+14040updates/INNERearly12/LRplateau/safe-best restore/curves;1DEV+1RECENT
+forecast/onejointseal/readout8books/0marketretry/reserve200readout+120cleanup.
+Freeze actual source/data/split/seed/caps before numerical dispatch and carry
+prior preparation/build/failure debits once, never refund or reopen completed
+clocks. Parent callback is notification, not a new launch approval.
 
-Nov6UTC04:08: TimesFM46c8735d is COMPLETE/allactorsclosed, not still queued.
-Actual nativeCPU+CUDA4calls and oneCUDA680rowforecast40forwards;0fits/updates/
-oldChronos calls, modelworker9.827s/982MiBreserved. One6bookreadout primary
-growth/DDFAIL, Parent71refs/archive seal PASS.245.878linkedactive includes old
-153.667failuredebit once; initialRuff/configABI failures not regraded.
-New Darwin soleSteward assignment current-net25-patch-seed-ensemble-development-
-20261106-v1: two NEW seed workers20261106/20261107, old20261105 forecasts reused.
-3000active/3600elapsed,2fits/0marketretry/onearchive/sixbooks; native proof then
-measured VRAM/4GiBdesktopreserve permits concurrency. No new activefit claimed
-until actual PID/birth/CID/lease. Godel's independent Data metadata audit cannot
-release outcomes or mutate registry/custody; it is not another GPU coordinator.
+Godel's disjoint causal specialist consumer is CPU/0fits/GPU/modelcalls;
+Planck Data projection and Banach reader preparation are not other GPU owners.
 
-Nov6UTC03:34: Darwin owns ONE ready-source TimesFM2.5 OPEN60/H4 family at
-A/research/current-postcheckpoint-timesfm-open4-development-20261106-v1.
-ZERO fits/updates; oneCUDA680rowforecast/max40coreforwards/one6bookreadout,
-no oldChronos restore/inference. Exact cached safe weights/release-before-targets/
-SDK/Torch2.7 image; no downloads or runtime replacement. Native altered60/H4 path
-and producer/parser/funding proof first; nativeCPU1+CUDA1 model loads/max4calls,
-one premarket source/schema repair within unchanged numerical caps. Old results
-and Source67.02debit carried once,1200active/3600elapsed; readout200+cleanup120
-reserved beforemarket. Fresh resourceowner/actualVRAM/desktopreserve/duplicate
-lease check, no personal-GPU-app veto or killing. No activeGPU worker claimed
-until actualPID/birth/CID callback; this is inference research, not training.
+## Completed GPU Work
 
-Latest Nov6UTC01:37: activity-proxy expert family already COMPLETED in repair1,
-not training now. Actual CUDA GRU14epochs1638updates/best2, HGB96warm additions/
-best84;2fits/one archive/readout9books, DEVELOPMENT_FAIL. All Jobs/CIDs/lease
-closed and Parent exact campaign-container absence confirmed. Total428.245active
-includes original57.827 failed pre-payload freeze and later verification/metadata;
-no refund/reset/duplicate fits. Parent corrected its failed-root-only status and
-withdrew redundant continuation-r1. Banach's independent same-gross IVOL20 is
-CPU/0fits; Darwin's next distributional-target offer is source-only, not training.
+| Scope | Actual completed use / closure |
+| --- | --- |
+| Patch seeds6ac123f9 |2CUDAfits18/15epochs3861updates/best6/3;39.238/36.249co-tenant seconds/526MiBreserved each. Allclosed301.773active incl failed88.245once. |
+| Recent99e30c88 |Saved3Patch CUDA forwards plus CPU experts,0fits/onearchive/sixbooks. Allclosed177.467active incl verification. |
+| TimesFM46c8735d |NativeCPU/CUDA4calls then ONE680row forecast40forwards/0fits. Model9.827s/982MiBreserved; allclosed245.878linkedactive. |
+| Activity01e89c74 repair1 |GRU14epochs1638updates/best2 plusCPUHGB96warm additions. Allclosed428.245active, no duplicate continuation. |
+| Masked transfer586a7235 |SSL63epochs7371updates/best53 andFT13epochs1521updates/best1; all Jobs/CIDs/lease closed, old collision debit preserved. |
+| Pairwise641e9 |17epochs2329updates/best7/13.812s/200MiBreserved; all actors/lease closed. |
 
-Latest Nov6UTC00:35: actual masked-transfer CUDA family is CLOSED2fits,
-SSL63epochs7371updates/best53/103.87fitseconds/552MiBreserved; conditional
-FT13epochs1521updates/best1/526MiBreserved.1archive/readout5books/0baseline
-reruns, transfer-.25474%/DD1.69556%/turn2.80510 DEVELOPMENT_FAIL.522.49active/
-1293.24elapsed/allCIDsJobsleasesclosed; nativefilenamecollision86.04debit kept,
-publisher/coldrestore repair0optimizerreplay. No new GPU fit underway. Exact
-VERIFIED.json/r1API586a7235 at current-net25-domain-masked-transfer-development-
-20261105-v1. Parent9refs+51Source+8repairmembers PASS. Banach's fixedblendCPU
-readout and Darwin's samegrossinversevol sourceoffer are ready work, not GPU
-utilization training. Existing priority/concurrency authority unchanged.
+Do not repeat these fits/forwards for utilization. Source/native CPU checks,
+external verification, inference, fitting and orchestration/queue time are
+different facts; co-tenant timings are not isolated speed benchmarks.
 
-Updated Nov5UTC23:48. Pairwise641e9 actual CUDA fit is now CLOSED17epochs/
-2329updates/INNERbest7/13.812s/200MiBreserved. Native8checks/1readout5books,
-4createdCIDs/35Jobs/GPUleaseclosed22:23:47.180.375/1800active/1247.376elapsed.
-Parent15refs+37members PASS; fixedDDFAIL/only1distinctcohort/adaptiveDEV means
-no automatic promotion. No duplicate fit. Frozen-forward consumerd7 CLOSED one
-nativecapsule/10Jobs/51row CPU-CUDAparity/0fits/readouts; Parent55members PASS.
-Its finite nonfinancial forward Task b89 is ACTUALLY ENABLED for Nov6UTC14:10,
-hard14:20; independent9b readbacks twice prove exact native definition/ACL.
-No optimizer active or GPU need invented for utilization. Darwin's separate
-source/native masked-transfer offer is DISTINCT within4namedpriors/16tests and
-now consumed by a NEW finite Engine/Steward family with2attemptedfitsMAX:
-A/research/current-net25-domain-masked-transfer-development-20261105-v1.
-Reconstruction kill before conditional fine-tune; no cachedbaseline reruns,
-actual native CUDA/source/producer/checkpoint/DTO first. Actual PID/lease/phase
-callback required before claiming runningtraining. Private readerrepair isnot
-a global GPU hold; no externalappveto or duplicatecompletedSSL.
-Actual full-coverage Chronos2 CUDA fit is CLOSED:
-8epochs/488updates/969rows each/56.18s, peak2.606GiB reserved, INNER-best0.
-All6containers/70Jobs/GPUlease closed19:43; cumulative269.01/2400SUM includes
-pre-fit failure/debits. API daf3692f source / a600f97c result in HANDOFF.
-Directutility CPU29epochs812updates/best17 and saved consumer r1 also closed;
-no fit duplication or current optimizer claimed. Both studies failed their
-own declared development tests, not a ban on other GPU campaigns or Paper.
-Singer offer and Parent159ec continuous-book readout are now CLOSED,0newfits;
-memoryON versusOFF development tests passed, but different exposure/no alpha.
-Intraday Data3716c READY24sessions16/4/4 was consumed by the two actual fits
-below. MSE20:40 failed before native; Parent source-bound failure/owner proof
-lifted that scoped resource constraint, not a timer or Task-exit inference.
-Review91701054 GO_WITH_LIMITS retains4DEVday lowpower/adaptive selection limits.
-Existing GPU priority/concurrency authority remains, no external-app veto.
-Intraday familyb26d is actually CLOSED2CUDAfits/22epochs2464updates EACH/best14,
-fit9.15/10.05s/106/300MiB reserved; bothcash, PRIMARY_FAIL. No repetition.
-Planck new crossasset model47ce also CLOSED14full epochs1931updates/best7,
-partial15unselected/300.0755s strict300cap NOTpassed/peak218MiB reserved. All
-3CIDs removed; original evaluation withheld by900SUM runway,748.269finaldebit.
-No old archive/evaluation/books. Separate frozen descriptive consumere6b310
-CLOSED21:42:54/0fits/1readout6books/32.735newactive/781.005combineddebit. Newexpert
--2.9888% and fixed.25blend1.6173% underperform W25; descriptive only, no old
-pass regrade/promotion. Prevent repeat inefficiency by reserving evaluation/cleanup before
-the long fit, not merely rejecting the readout after spending its runway.
+## Operating Rules
 
-## Current Work
+AGENTS.md owns unchanged resource/trial/holdout authority:
+project is first GPU priority, useful concurrent workers allowed despite user
+apps. Measure actual free/projected peak VRAM and desktop/driver reserve.
+No application-name allowlist veto, app killing, driver change or dummy training.
+Exact campaign/PID/birth/lease resolves duplicate project work, not process name.
+Never age-reclaim a live/unknown owned lease.
 
-W25 saved inference is installed Nov6UTC13:55; source83963 DataREADY actually
-published21:30 and Parent independently verified four exact refs. Actual future
-inference/point UNKNOWN. Completed
-studies/leases stay closed. If a distinct frozen campaign becomes ready, choose
-CPU/GPU by useful throughput and fresh measured headroom. Source-only policy
-work is not optimizer activity. Parent Paper recovery is actually deployed,
-not another resource approval. Exact evidence/metrics are centralized in HANDOFF.
+Ready frozen work starts without Parent acknowledgement waits. Checkpoint/yield
+safely on actual OOM/thermal/driver instability or Execution need; preserve
+failures/debits and no silent retry. Market input/model/source mismatch defers
+only that campaign. No holdout release from a clock or storage path.
 
-## Closed Evidence
-
-Completed OOF training is COMPLETE and GPUlease released:
-D:/thericher-v2/model-artifacts/research/current-net25-masked-chronological-gate-development-20261105-v1/continuation-r2-native-repair/API.json.
-Source24bb:10completed/11attempted including ONE explicit failed-zero-updateTCN
-restart. Old successful HGB/GRU reused, never fitted again.9852expertupdates/
-1650gateupdates/64trees. Actual CUDA GRUs; CPU TCN/gate. Current numerical
-worker CLOSED, all3CIDs and owned Jobs freshly checked closed. No utilizationjob.
-Gate best0 exactly ties fixedthird, FAILincrementalgrowth; no further tuning.
-All old cap failures/debits remain; family cumulative below14400SUM/21600elapsed
-and closed before13:15UTC. Parent took over after LLM model-capacity failure,
-not a GPU/environment failure. Final native mixed-device checkpoint smoke
-proved negative no-capture and positive actual CUDA RNG restore without updates.
-
-Saved-third f0f ABI/799bitwise parity is CLOSED,0fits/CPUonly, all actors closed.
-Shadow c96 Task actually installed Nov6UTC13:45/hard13:50, inference only,
-not a current worker/GPU fit or financial authority. Shallow OOF tree a1de
-closed one CPU fit/development-fail/all3CIDsJobs closed. Runner25.69s/54.04SUM
-are narrower than fullscope elapsed, which remains UNKNOWN; no budget regrade.
-Ready resources alone are not a reason to duplicate completed fits.
-
-Prior unmasked OOFf3e1 CLOSED INPUT_UNAVAILABLE/0marketfits/758.76active,
-allJobs/CIDsclosed/noGPUlease. Old contracts/results/debits preserved, new
-conditional input admission is a separate declared scope, not oldpass/retry.
-Source masks support482/336/83cohorts; old full-cohort requirement not companyhold.
-Claude falsification/leakage challenge belongs to new interpretation.
-
-## Completed Training / Do Not Repeat
-
-- Supervised Chronosd11cc CLOSED250CUDAupdates/65.737s/6INNER/best100,
-  peak3.031GiB reserved; only250/29727samples (0.00841epoch), not convergence.
-  Net25-2.5478%/DD3.1234%,FAIL.494.41SUM/2400,2709.28elapsed; all original
-  numericalPIDs/CIDs/Jobs/leaseclosed,799archive not rerun:
-  A/research/current-net25-chronos2-supervised-actual-role-development-20261105-v1/API.json.
-  Synthetic readinesscd0462updates/93.85SUM remains separate, not market fit.
-- Minute05b0 CLOSED24sessioncommits/6books18views/0fits/GPU,516.90familySUM,
-  actualmarket host16.77s. Old125s timeout and343.90debit preserved. No need
-  GPU for the sequential Decimal prefix repair; no profitability rescue.
-- Chronos2 df3a CLOSED actualCUDA799rows/25forwards/0fits,forecast0.8088s,
-  peak495.35MiB allocated/562MiB reserved; nativebatch32CPU0.1829/CUDA0.0304s.
-  Six actual native API calls/group-mutation checks passed; Net25-1.6332%/
-  DD2.0660%,FAILincrementalgrowth.36Jobs/3CIDs/GPUlease closed11:06:11UTC,
- 340.53SUM/1200 and1825.23elapsed/3600. Do not repeat for occupancy:
-  A/research/current-net25-chronos2-open60-development-20261105-v1/API.json.
-- TCN3c24 CLOSED32CPUepochs/3744updates/28.065s/best8 restored,
-  207checks/allJobs+2CIDsclosed/noGPUlease. Cumulative1059.27active incl798.10old.
-  Native same-shape CPU6.53ms vsCUDA219.6ms; CPUchosen for throughput, not a
-  permission/environment failure. Development-third pass is not PaperPnL.
-  A/research/current-net25-tcn-first-market-run-20261105-v1/API.json.
-- HGB+GRU7eaa CLOSED84trees/.159s plus actualCUDA42epochs/best18/4914updates/
- 21.897s/311MiBallocated,328checks/allactorsclosed/lease released.
-  A/research/current-cost-aware-selective-entry-development-20261105-v1/API.json.
-- Inference7a8/799bitwise parity is0fits. Publisher5bf is scheduledCPUonly
-  Nov6UTC13:30; savedGRU/Ridge880d scheduledNov6UTC21:35 is0fits/2restores.
-- Earlier37bc/6d48/alignment preflight failures had0marketfits; immutable old
-  clocks/debits remain. Fresh3c24 succeeded without rerunning completedweights.
-- Prior20a8/43da/023e/2a36/1a03/92ac/0323/1fac completed; resource/economic
-  evidence remains Engine/RUNBOOK/Git/immutable callbacks, no occupancy reruns.
-
-## Resource Rules And Recovery
-
-Operator grants first GPUpriority including personal apps/concurrent useful
-training. Unknown desktop app is not approval hold. Measure actual free/projected
-peakVRAM and desktop/driver reserve; never kill user apps or change driver.
-Dated Nov4UTC22:39 snapshot:RTX4090/22404MiBfree/35C;D1244GiB33.4percentfree.
-Not current usage. Recheck at numerical launch. No all-GPU-idle requirement or
-age reclaim of live/unknown owned lease. ActualOOM/driver/emergencyExecution
-requires checkpoint/yield and preserved failure/debit, no silent retry.
-
-GPU utilization is not outcome. Current small models finish quickly; source/
-orchestration dominates. Prefer prepared proven native runner plus bounded
-executor, check real role support/ABI before market and launch without extra
-Parent poststartACK. No new resource/approval platform. No credential/broker/
-Task/privatecustody authority in research. ModelsA/dataM,15percentD reserve.
+Prior independent-input audit could not prove exact untouched custody;
+adaptive correctly scoped research continues. Prospective maturity is not a
+global compute hold or permission to reopen reserved outcomes. No new resource
+platform, per-agent database or permanent LLM daemon.

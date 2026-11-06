@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC05:42 / Nov6KST14:42. Company outcome UNFINISHED.
+Updated Nov6UTC06:25 / Nov6KST15:25. Company outcome UNFINISHED.
 A=D:/thericher-v2/model-artifacts. HANDOFF.md is current reality.
 No operator decision pending; AGENTS.md owns standing authority.
 Never read/route KIS_LIVE_* or output secret/raw private values.
@@ -29,8 +29,35 @@ New Patch seedfits are COMPLETE (continuation-r1/API.json), never rerun root:
 D:/thericher-v2/model-artifacts/research/current-net25-patch-seed-ensemble-development-20261106-v1.
 Recent saved-model replay99e30c88, Data47698983 and consensus e8022369 are COMPLETE,
 not active numerical commands. Parent62/110/66unique refs checked without array
-decoding/reruns. New short-swing target preparation/causal-routing offer are
-source/native tasks, not an actual market fit or Paper deployment.
+decoding/reruns. New short-swing source preparationcddef12b is closed/nativeCPU
+ready, actual CUDA pending. Minimal target projectionae4c68e8/READYe23875f9 is
+COMPLETE/onebuild/Parent74refs. New GPU campaign and causal specialist CPU
+consumer have disjoint scopes; no new market fit/Paper model deployment
+is inferred from source directories. Compact role history is in pushed12e5e906.
+
+## CSCO Public Outcome Reader
+
+Qualified repeatable PUBLIC-only reader Source9742ae68, Parent independent38
+invented tests/30unique refs PASS; prewindow entry/exit/lifecycle NOT_DUE with
+0outcome enumeration/reads. No private/KIS/Scheduler/recovery authority.
+Entry eligible afterNov6UTC16:35, exit/lifecycle after17:05 (KSTNov7 01:35/02:05).
+
+```powershell
+& 'C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-csco-e6-public-outcome-reader-20261106-v1/reader.py' --source 9742ae68d76463e7542227f63d6a7eb115b7bedf0da0ec1a8b0e6cd4d722dfed --phase lifecycle
+```
+
+For the earlier entry-only result use the same command with --phase entry AFTER
+16:35UTC. No output argument/consumed marker is needed. Missing/partial/mismatch/
+ambiguous/unstable is UNKNOWN. Exact source/release/cycle/input/policy/invocation/
+terminal linkage is checked; no latest-file/task-exit inference. Worker ASOF is
+not independent current custody/fresh holdings/fees/settlement/PnL or cryptographic
+OS Scheduler origin. Never upgrade terminal entry into owned-flat exit.
+Exact API/HANDOFF:
+D:/thericher-v2/model-artifacts/execution/current-csco-e6-public-outcome-reader-20261106-v1/HANDOFF.json.
+Parent proof:
+D:/thericher-v2/model-artifacts/execution/current-csco-parent-public-reader-check-20261106-v1/RESULT.json.
+New custody-reader preparation is separately source-only, NOT an actual private
+read command. Never replay consumed717d or call recovery-capable observe().
 
 ## Actual Deployments
 
