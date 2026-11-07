@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov6UTC22:33 / Nov7KST07:33.
+Updated Nov7UTC00:39 / Nov7KST09:39.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Detailed prior reality is preserved in Git01f23a13/c835f2b5 and immutable sources.
@@ -52,7 +52,7 @@ read/route KIS_LIVE_* or print secret/raw private financial values.
 | Original H3AMD exit | Public report TECHNICAL_FAILURE at20:45:40.658400Z. Source-bound diagnostic recovers Denied/actor_identity, admission.py204, native_stage NOT_ENTERED. Exact actor/subcondition and all financial effects remain UNKNOWN. |
 | Original Full17 exit | Exact declared public outcome root ABSENT, FileNotFoundError2. Producer reason unproven; no alternate/private discovery or zero-effects inference. |
 | MSE exact custody reader | R7/R8/R9/R10 actual scopes consumed/withheld, no complete financial result. R9 reached container descriptor count failure; R10 later reached host actor_unregistered before container admission. Different ASOF failures, not one inferred cause. |
-| R5 coexistence propagation | R4 discards fresh fixed-peer proof before reclassifying original claims. New R5 preserves it but is NOT qualified/deployed. fixture-r4/repair1 Sourcec0b839c4 passed focused and synthetic entry46callbacks; full graph timed out135s, cold exit incomplete. All11Jobs/native CIDs closed. No retry of consumed scope. |
+| R5 coexistence propagation | NOT qualified/deployed. Latest short ba0b97f0 passed focused checks but sole paired graph failed mocked-owner setup before either phase; inner predicate unretained. Final32.861partialdebit, recordedJobs closed/CIDs absent; owner-child PID/birth not retained. R4 unchanged, no more same repair chain. |
 
 Original public results:
 A/execution/current-original-exit-parent-results-20261106-v1.
@@ -66,8 +66,14 @@ A/execution/mse-c79-meta-r10/c1, Source543f8e71307a05bc79831cfcbf51c6227042386e0
 Actual metadata21:57:03, own4identity checks PASS, nonowned HOST actor_unregistered.
 Entry path digestd8521f9f64a949b5eaf0f345db61463358ed91bad5388419a953420d65270aaa,
 source9d2a05aa09e98bea5e9f595599a18463ee3055e001a66fecb1091869e6f15818.
-Exact source/lineage resolution is assigned; do not exempt unknown project code
-by process name. No guest/private read; metadata nonce consumed, all closed.
+Parent later matched BOTH retained path digest and entry bytes via immutable
+quiet-audit11a98d: infra/current-rth-executable-spelling-recovery-20261020-v1/
+release-r1/runtime/kis_postclose_entry.py, the existing postclose Data entry.
+A/execution/current-r10-parent-source-attribution-20261106-v1/RESULT.json
+SHAe295225207178474c6e3b29633cb0bdd26382224ce81d35d61c9034caa24aefe.
+This identifies the source, NOT historical PID/birth/argv mode/lineage or custody
+capability. Imported runtime/child/mount/token/write-scope still needs exact
+attestation. No guest/private read; metadata nonce consumed, all closed.
 
 Parent current container metadata21:36 observed57 containers, only webbe48
 running; this new ASOF does not identify R9's old object. Existing exact web
@@ -83,6 +89,49 @@ not exact fills/owned custody/full-risk/fees/settlement/PnL or release authority
 CSCO public entry/exit technical failures, HALF unresolved and INTC consumed
 discovery UNKNOWN remain open. Preserve all original duties and identities.
 
+NEW broker HISTORY query actually completed Nov6UTC23:34:11..17:
+A/execution/current-historical-paper-order-availability-20261106-v1/API.json
+SHAe6282858d9fc02ac353a2b71d92f02d1cfbde2c1a24004e6d7e1fad5e170b24f.
+Sourceb24f583b04ba14f50fea39acff1ea0c76f7744529221d2795512b063f1cc188c,
+RESULT62773099071f9722041cd2ff14311eee23acd877ceabe6d09cf2596eceeadf3c.
+ONEclient/1initialPOST/3GET/all2xx/0retry/0orders, off unchanged,25nativePASS,
+allJobsclosed/35.943conservativeactive. Oct21 query14history/14fill-positive
+rows; Oct28 query5/5; Nov2 empty0/0. These are API-returned ROW counts, not unique
+owned orders/exact F9 fill/current inventory/PnL. Empty is not historicalabsence.
+No reservation release; exact broker identity echo remains unproven. Parent31
+code/proof pins match, emittedF821/F822/F823/E9PASS. Never replay consumed batch.
+
+Later metadata Source98322f1e15f601378df7fe106522878c7a8e1bb1404ef3bc12c74b9f23bc9d68
+at23:15:55.807608UTC was WITHHELD before_create: own4identity checksPASS,
+0private reads/0guests/0retry/allownedGUIJobsCIDsclosed. Retained all categories:
+twoHOST716e/a675 unregistered, oneDockeridentity mismatch, one4a56-image
+container with0descriptors/protectedRWfalse/inactiveproofincomplete. Not proof
+of private writes or any financial result. Actual metadata scope consumed.
+A/execution/current-postclose-data-custody-scope-repair-20261106-v1/metadata-only/API.json.
+
+Parent identified BOTH716e/a675 as installed Codex cua_node9c26d707817e90a7;
+old control-context efc081 still pins1fb7137c46617d50/bf3c7651. R4claims f562
+references the SAME old control-context. This is a potential current admission
+dependency, not a proven future failure or arbitrary Node capability grant.
+A/execution/current-983-parent-runtime-attribution-20261106-v1/RESULT.json
+SHAaaeeb07d9a3bb466d489499fba50f076a383c218a70c17464cfc1287ac392367.
+Manifestdd09fc6a/currentbinary716e and exact forward-slash path digest match;
+PID/bootstrap/program/argv/descendants still need qualification. First probe
+stopped before argv/Docker at selected-node count>16. Calibrated256-row Source
+83d6/API3dc1 completed23:58:19:20runtime/2project contexts/zerochildren;
+argc5/9,cwd/roots match but bootstrap e410 and programs e62b/8131 changed.
+12fakecases/1CIM/2localDockerGET/0private/all5Jobsclosed. Candidate62fe changes
+runtime/manifest only and is NOT a qualified program grant. Banach supplies a
+bounded privacy-safe code projection; Godel reviews exact source provenance,
+not a generic Node permission. Darwin's configuration-only R4 successor waits
+for that qualified descriptor, then one complete synthetic pair. Installed
+R4/claims/context/Tasks stay unchanged; no unqualified R5 shortcut.
+
+F9 source-only join feasibility3a89cd7b is UNAVAILABLE: pinned public anchor
+does not bind broker ID/immutable state leaf; current decoder needs mutable
+pointer/pending/state plus writer admission. No source-only reservation release.
+A/execution/current-f9-historical-fill-join-feasibility-20261107-v1/API.json.
+
 ## Research Integrated
 
 All adaptive reused/current-listed MODE1 research; not PIT/finality/arrival
@@ -95,6 +144,8 @@ Percentages below are after-cost DEV / RECENT replay, not broker returns.
 | Crossasset2c45/bd5d | 2CPU/3924updates, pooled+1.438200%/+.388483%, adaptive screen PASSboth; extra1024parameters confound. |
 | Capacity0a805/a161 | 2CPU/4033updates. Newpool+.983036%/+.288886%, RECENT0changed => primary NONINFORMATIVE. Self+1.587842%/+.297790%; fixedmean2+1.189906%/+.369845%, ensemble FAIL. |
 | WeightedBCE/MSEc947/b3ff | 2actual CUDA/7194updates. MSE32epochs/best20, BCE34/best22;25.966/25.231s,384MiB reserved each. BCE+.585736%/+.429935% versus MSE+.485886%/+.400851%, blind+.993207%/+.288886%. Frozen primary FAIL DEV; DD/turnPASSboth, no secondary rescue. All8containers/71Jobs closed. |
+| FixedthreephaseH3b3a6/ce811 | COMPLETE0fits/forwards/GPU,12actualmarketbooks. Primary DEV+.961026%/DD1.320427%, RECENT-.012572%/.772334%; growth/DDFAILboth, turnoverPASS. No bestphase selection/Paper swap. |
+| M5LSTM/Ridge6108/e6fb | COMPLETE2CPUfits/1350updates. LSTM27epochs/best15/10.462s, Ridgeclosedform/.118s. Actual native warm calibration CPU6.040ms versusCUDA9.652ms selected CPU. All4books0buys, NONINFORMATIVE, not profitable or a model winner. Allactorsclosed; no repeat. |
 
 Latest FINAL-API:
 A/research/current-held-d-weighted-bce-lstm-development-20261106-v1/FINAL-API.json
@@ -111,19 +162,42 @@ No future payload/feature parity or exact owned fill is inferred.
 
 ## Current Owners And Next
 
-Parent owns shared MD/Git. Banach's bounded source lookup found no exact R10
-entry; deeper declared owner references remain unknown. Darwin's retained audit
-proves cold exit began40callbacks/41begin;105.614s owner time overlaps the135s
-whole synthetic graph. NEWphase-pair-r5 qualification is assigned: one pair,
-entry/coldexit each<=135s, unchanged core guards,900active/2700elapsed/0retry.
-Not yet qualified or installed. Arendt is sole GPU coordinator; NEWfixed
-three-phaseH3 CPU cached-forecast research is assigned,0fits/forwards/GPU,
-1200active/3600elapsed/<=16native and12market actual books. Exact new ENTRY
-parser/calendar/terminal/funding conservation must pass before cached intake/
-seal/readout; missing inputs withhold, no model rerun. Godel's scoped Claude
-challenge is advisory, not another post-start approval. Ptolemy LLM is CLOSED;
-its two CUDA fits are complete, not running. Planck LLM is closed; its installed
-Data/publisher duties are unchanged. No completed fit/forward/read is replayed.
+Parent owns shared MD/Git. Banach owns current-runtime/reference-source probe,
+no new private read. Darwin owns source-only R4 configuration-refresh preparation
+after complete current-runtime descriptor; installed R4 stays unchanged.
+Planck completed M5Data projection; Arendt completed the new M5LSTM/Ridge
+campaign and is sole GPU coordinator. No optimizer currently proven active.
+Godel supplies strategy/independent source review. Ptolemy LLM CLOSED, completed
+fits never repeat. Actual installed Data/publisher duties are unchanged.
+
+Threephase R2 API49ffc867 at current-h3-three-phase-sleeves-development-20261106-v1/
+research-r2/API.json: intakeSourceb3a66d43/readout29eefb48/resultce8114fa/
+seal72a92cc3/closure92f59090. Completed23:21:30 before originalhard;3R2containers/
+27Jobsclosed/all4familyCIDsremoved. R2one native/6syntheticbooks/1parse+8negative
+parser cases/1cachedintake-seal-readout/12marketbooks/2wrappers. Historical2
+attempt reservations remain; familytotal3, no refund.250.008571partialactive/
+noBudgetPASS. Parent6proofrefs+13codepins match/E9PASS. No economic winner.
+
+Closed M5 contract: Sourcea161/READY8386 existing24sessions/17stocks,16FIT4INNER4DEV
+already reused. Data window24complete5mbars=120minutes, price-onlyOHLC+IND8
+RSI14/BB20/ATR14/momentum/volatility/trend insidewindow. Lastobservedbar b ends
+decision; explicit5minlag buysOPENb+2, fixed30minexitOPENb+8, same-sessiononly.
+Inputknown/targetknown/calendar eligibility separate; future outcomes never gate
+forecasts. FIT-only normalization; Native producer->actual parser before build.
+Actual2CPUfits (Ridgealpha1 andLSTM32/27epochs/INNERbest15/earlystop12),
+fixedhalf score blend and4actualmarketreplays. Pre-fit contract permitted six
+synthetic CPU/CUDA optimizer updates and measured backend choice; CPU won,
+not a CUDA environment/permission failure. MarketVRAM0; no convergence claim.
+API34c4c5b4/Source6108b9fb/result e6fb29f9/native85ef1acd/closuree17c81b8
+under qualified-run below, completed00:24:29. TwoDEVroleforwards/onejointseal/
+0oldcalls/allactorsclosed.432.684470partialactive/2364.010755elapsed, no complete
+budget ledger/BudgetPASS. Parent59Source/code/proof refs match/emittedE9+F821-
+F822-F823PASS. Initialstatic failures/debits remain, not the current result.
+Retrospective NY-reference/vendor-clock defect, units/CA/finality/arrival limits
+remain; no independent-alpha or live-input admission. Next distinct hypothesis
+must address economic/mechanism failure, not rescue thresholds or repeat fits.
+A/data/current-m5-120m-h30m-sequence-projection-20261107-v1;
+A/research/current-m5-indicator-lstm-ridge-development-20261107-v1.
 
 Original exits: GOOGLNov9UTC20:55, RAWNov10UTC14:30, HALFNov11UTC14:30,
 memoryNov20/H20Dec1; W25Nov10/13UTC21:30 remain exact owned duties.

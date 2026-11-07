@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov6UTC22:20 / Nov7KST07:20. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC00:39 / Nov7KST09:39. A=D:/thericher-v2/model-artifacts.
 Detailed closed contracts/curves/caps/debits: Git01f23a13 and immutable APIs.
 No completed fit/forward/evaluation is rerun for GPU occupancy.
 All figures here are adaptive after-cost DEV / RECENT replay, not independent
@@ -8,20 +8,62 @@ alpha, qualified selection, prospective profit or broker PnL.
 
 ## Ready / Owned
 
-Arendt is Engine and sole GPU coordinator; Ptolemy's twoCUDA fits are complete,
-not an active optimizer. NEWfixedthreephaseH3 cash-sleeve CPU study is assigned
-from Source7b4c187c/contractb917e651:0fit/restore/forward/GPU/newDataBuild,
-1200active/3600elapsed/cleanup120/readout180/<=2nativeattempts/16actualsynthetic
-books/onejointcached-intake-sealBEFOREmarks/onejointreadout/12logicalANDactual
-marketbooks/2wrappers. Exact archive+all17/H3scale/input-only known/newentry
-query+3 expiry/terminal mask/parser/funding conservation must qualify first.
-Same native fees25bp eachside, fixed1/3 initialcash compartments/no transfers/
-netting/newbanks. No bestphase selection, old-model rerun or primary rescue.
-Frozen b917 kill remains; new market result is not yet present.
-Use CPU for measured faster smallMLP, CUDA for useful LSTM work; no app-name
-permission hold. Source-only intent is not an available numerical campaign.
+Arendt is Engine and sole GPU coordinator. Ptolemy's CUDA fits, threephase and
+new M5 study are complete, not running optimizers. Closed M5scope:
+A/research/current-m5-indicator-lstm-ridge-development-20261107-v1.
+Data actual producer/parser READY871a/Source8625/API7184 delivered28checks,
+FIT12784/INNER3196/DEV3196 allknown/separateinput-target-marks/allJobsclosed.
+Engine initial staticRuff/format failures remain immutable ancestry/debits,
+not the current result. Qualified-run API34c4c5b4/Source6108b9fb/result e6fb29f9/
+native85ef1acd/closuree17c81b8 is COMPLETE at00:24:29/allactorsclosed.
+Actual CPU Ridgeclosedform/.117546s plus CPU LSTM27epochs/INNERbest15/
+1350updates/10.461795s. Savedcheckpoint6fb8738a15d4e1e041a7746ef996dba4bedc97f63a3882d465ef3ab7485e85be.
+LSTM stopped INNERpatience12/bestrestored; no convergence claim. Pre-fit contract
+selected actual backend with6total syntheticupdates: warm CPU6.040ms versus
+CUDA9.652ms, marketVRAM0. Not a GPU permission/environment failure.
+TwoDEVroleforwards/onejointseal/readout/4actualANDlogicalmarketbooks,0oldcalls.
+Allfourbooks0buys/effects => NONINFORMATIVE, not zero-risk alpha or a winner.
+432.684470partialactive/2364.010755elapsed/noBudgetPASS. Parent59code/Source/
+proof refs match/emittedF821-F822-F823-E9PASS. Do not rerun fits or rescue sign
+thresholds. FrozenData parser6451 remains unchanged. No optimizer proven active.
+Existing24sessions/17axis/16FIT4INNER4DEV already reused; no independent
+claim. Window24completeM5bars=120minutes+IND8price-only withinwindow. bEND
+decision+5minlag=>entryOPENb+2,30minexitOPENb+8/same-session. InputKnown pastonly,
+futuretargetKnown separate; admitted missingoutcomes WITHHOLDbook, notskiptrade.
+Original2fit0retry contract: CPU Ridgealpha1 and LSTMhidden32/max100epochs10000updates/
+soft600hard660/INNERstop12/LRplateau4factor.5/bestrestore. Sameinformation/FIT
+scalers/targetNet25 once; rawNet25 fixedhalf beforeu>0. Nativeactualsolver/
+optimizer/checkpoint/parser/book/mounts first.1800active5400elapsed/cleanup180,
+<=2natives/6syntheticoptimizersteps/8syntheticbooks/2DEVroleforwards/0oldcalls/
+ONEjointseal-readout/<=4logicalANDactualmarketportfolio replay calls. Longonly,
+flat-onlyperasset/fixedexpiry/sellbeforebuy/nativeu.5/17/cashfunding. Primary
+growth>cash/EW and>=singles;DD<=1.25maxriskybaselinesDD,turn<=1.10maxsingles;
+allcash/missingrisk baseline NONINFORMATIVE. No cost/window/threshold/seed grid
+or rescue. Existing qualified GPU resources measured before useful launch;
+personal GPU apps not a permission hold. Priceunits/CA/arrival/vendor-clock
+limits retained, no Paperbank/input/lot or profitable-model claim.
+Use measured useful backend, not GPU occupancy. Next distinct cost-aware
+short-swing/mechanism proposal is Strategy-owned before a new frozen campaign;
+completed results never become extra trials. No app-name permission hold.
 
 ## Recent Closed Comparisons
+
+Threephase R2 COMPLETE, never repeat:
+A/research/current-h3-three-phase-sleeves-development-20261106-v1/research-r2/API.json,
+SHA49ffc8672758573a30039c80dc8826b6269475b329ce7b60244d703101e515a4.
+IntakeSourceb3a66d43/readout29eefb48/resultce8114fa/nativec327e73d/closure92f59090.
+Completed23:21:30,0fits/restores/forwards/GPU,1cachedintake/seal/readout,
+12actualmarketbooks/2wrappers. R2one native/6syntheticbooks/1parse+8negative
+cases; family3attempt reservations preserveoldfailures.3R2containers27Jobsclosed/
+all4familyCIDsremoved.250.008571partialactive/noBudgetPASS. Parent6proofrefs+
+13codepins match/E9PASS. Primary DEV+.961026%/DD1.320427%, RECENT-.012572%/
+.772334%;growth/DDFAILboth/turnPASS. Originalphase0+.993207%/+.288886%.
+Lower drawdown versus phase0 did not meet the complete risky-EW criterion;
+no bestphase selection, model swap or independent-alpha claim.
+
+WAIT31 offerf49f/781c is source-only4RECENTcohorts68keys/noDEV, clocked book+
+price-basis gap; no automatic replay or forecast/model rerun. M5source-ready
+inputa161/8386 supports a separate campaign, not this cross-frequency bridge.
 
 | Campaign under A/research | Actual work / result |
 | --- | --- |

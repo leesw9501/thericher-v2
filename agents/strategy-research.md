@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov6UTC22:20 / Nov7KST07:20. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC00:39 / Nov7KST09:39. A=D:/thericher-v2/model-artifacts.
 Godel proposes executable hypotheses, not a model-name checklist or reading
 list. Detailed historical offers/rejections are in Git01f23a13 and Sources.
 
@@ -16,6 +16,31 @@ allclosed/rawdiscarded, no verdict/agreement/retry/human hold. Arendt notified.
 A/review/current-three-phase-h3-composition-challenge-20261106-v1/API.json.
 Engine owns final data/target/split/cost/trial caps and fitting; Execution owns
 financial risk/cohort/budget. No new durable role/platform/gate required.
+
+ThreephaseR2 is now COMPLETE/primaryFAILboth, not a pendingexperiment:
+b3a6/ce811/0fits/forwards/12marketbooks. DEV+.961026%/DD1.320427%, RECENT
+-.012572%/.772334%, growth-DDFAILboth/turnPASS. No bestphase winner/rescue.
+
+Next temporal offer f49fdbf9/781cfac5 is fixedWAIT31 with unchangedH3selection/
+e3expiry/25bpeachside. Only4RECENTcohorts/68keys/noDEV overlap; clockedbook and
+cross-frequency price-basis parity unqualified. Source-only, no autorun/alpha.
+StandaloneM5Sourcea161/READY8386 instead supports newSource8625/READY871a actual
+120mOHLC+IND8 projection,28nativechecks/onebuild. NewLSTM/Ridge campaign uses
+explicit5minexecutionlag,30minholding/sameSession, sameNet25costs, FIT-only
+scalers and inputKnown separate from futuretargetKnown. Godel source/Claude
+interpretation review found no critical issue in reviewed snapshots; advisory
+unavailable is not agreement, Native/runtime proof still separately required.
+Consumer M5study is now COMPLETE API34c4/Source6108/result e6fb:2CPUfits,
+LSTM27epochs/best15/1350updates,4books0buys/NONINFORMATIVE. Cost-aware allcash
+is not an informative winner. Next one distinct cost-aware short-swing proposal
+must address mechanism/opportunity, not relax the completed score threshold.
+
+Current control-runtime review is SOURCE-only:83d6 snapshot hasnewNode716e+
+newbootstrap/mainprogrambytes. Runtime/manifest-only62fe refresh notqualified;
+exactprogram provenance still missing. Privacy-safe SourceCode getter assigned,
+not anotherfinancialactor grant. R4oldclaims f562/efc081 unchanged. GenericJS/
+filesystem capability alone is not the finding; review same managedcontrol role
+underassumedhonesthost/closedargv/nochildren, not an invented adversarial sandbox.
 
 ## Current Evidence For Direction
 

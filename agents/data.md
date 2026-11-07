@@ -1,9 +1,57 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov6UTC22:20 / Nov7KST07:20.
+Updated Nov7UTC00:39 / Nov7KST09:39.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
-Planck LLM is CLOSED; independently owned installed tasks are not cancelled.
+Planck resumed for the new M5projection below. Previously completed builds and
+independently owned installed tasks are not repeated or cancelled.
+
+## Current M5 Projection
+
+A/data/current-m5-120m-h30m-sequence-projection-20261107-v1;
+payload M/us_equities/research_inputs/current-m5-120m-h30m-sequence-projection-20261107-v1.
+COMPLETE_DATA_READY, not a pending build. API7184dc5eea885329f99ebd56f019aa9021f2d18c7e3bbb493dfd3458f00db461,
+SOURCE-r2.json86253ff6b93705054e48aa719d46d25b3fe0078bd972c5f7a3e64dfc63b3e848,
+DATAREADY871a9a1f396cdde92b17e956fcd004f06da32369769cf841f1f4f0815ccf90b9.
+ONEprojection0retry, FIT12784/INNER3196/DEV3196 plannedrows allknown. Native2
+passed28checks/firstbootstrapfailure retained/allJobsclosed.0provider/credential/
+Task/model/economic/Docker/GPU calls. DirectArendt handoff delivered; no Parent
+approval or rebuild needed. Parent5proofpins match/parserF821-F822-F823-E9PASS.
+Consumer M5Engine qualified-run API34c4/Source6108/result e6fb is COMPLETE:
+2CPUfits/1350updates/4marketbooks0buys/NONINFORMATIVE/allactorsclosed. Data
+delivery is not pending and no duplicate projection/training is needed.
+Existing Sourcea161fcb7/READY8386fe07 references canonicalf13a056e,24sessions/
+17axis/16FIT4INNER4DEV, already reused by closed30/120 M1GRUs. M5derivedfiles
+already exist; no new acquisition/resampling or independent-data claim.
+Window24complete5mbars=120minutes, price-onlyrawOHLC+IND8summary WITHINwindow:
+RSI14/BBz20/BBwidth20/ATR14relative/momentum3+12/realizedvol12/trend24.
+No ambiguousEVOL/volume feature or hidden extra context. ObservedbarbEND is
+decision; explicit5minlag entryOPENb+2, fixed30minexitOPENb+8, SAMEsession.
+Calendar eligible b23..69 predetermined, inputKnown PASTONLY, targetKnown
+future prices separate; no targetmask in forecasters. Fullplannedkeys/missing
+remain masked, not imputed. Modelscalers FITonly. Native wideindex/clock/lag/
+boundary/missing-mask/parse-and-return checks precede projection. Inherited
+NY-reference/vendor-clock defect/priceunits/CA/finality/arrival limits remain;
+relative-price analytical study is not live/Paper-price qualification.
+
+## Completed Source Handoffs
+
+LateData structured binding COMPLETEc610f3889af495ef8df6b03879964b20d6bd8576840fe7c05850987249cea4fa:
+A/data/current-three-phase-late-input-source-binding-20261106-v1/RESOLUTION.json.
+Source4f31 uniquely pins currentlate_inputs.py97160 at/code_and_metadata/3;
+READYbab237 joins,37non-market refs match. Header.source is CONTRACTc3e93057,
+not buildSource4f31. No code mismatch/Data rebuild;0payload/numeric calls.
+Do not test provenance by hash-substring membership in serialized JSON.
+
+Intraday source feasibility COMPLETE6e867173 at
+A/data/current-intraday-engine-input-feasibility-20261106-v1/API.json.
+A: fixed dailyH3 selections overlap only4RECENT cohorts/68keys (Sep28,Oct1,6,9),
+noDEV; WAIT31 needs clocked entry/book and cross-frequency price-basis parity.
+B: existing retrospectiveM1/M5 input above, not new fit authority itself.
+Earlier21-session source-limit is exact-cursor evidence, not a universal KIS
+lookback.82targeted streams include22notattempted finitecap, scoped no-new/gap
+stops; no broad exhaustion claim. Source cursorOwnerReleased at its own snapshot
+does not prove current collector quiescence. No backfill worker launched here.
 
 ## Actual Fresh Input And Consumer
 
@@ -61,6 +109,15 @@ do not prove future capture/feature parity or Execution's exact owned fills.
 No actual future task/payload installed by this feasibility package.
 
 ## Boundaries
+
+Parent attributed the R10 unregistered host entry to the existing postclose
+Data launcher via exact quiet-audit11a98d and path+bytes9d2/d852. Evidence:
+A/execution/current-r10-parent-source-attribution-20261106-v1/RESULT.json
+SHAe295225207178474c6e3b29633cb0bdd26382224ce81d35d61c9034caa24aefe.
+Not PID/mode/lineage or noncustody capability proof. Banach checks exact imported
+runtime/argv/child/mount/token/writes before a narrowly typed descriptor.
+Data source intent cannot override protected private-custody RW mount overlap.
+No new collector run, existing task change or private read assigned by this work.
 
 Latest broker read-only account query0abff at17:44 is Execution-owned/consumed,
 not Data acquisition or current custody proof. Original query failures do not

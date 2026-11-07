@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov6UTC22:20 / Nov7KST07:20. Company outcome UNFINISHED.
+Updated Nov7UTC00:39 / Nov7KST09:39. Company outcome UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 HANDOFF.md is current reality; AGENTS.md owns standing authority.
@@ -14,6 +14,69 @@ This compact runbook replaces stale runnable projections. Full prior commands/
 failed scopes remain in Git01f23a13/c835f2b5 and immutable HANDOFF/Source files;
 they are history, not permission to replay a consumed nonce, fit or installer.
 Never manually Run a scheduled Task/strategy/collector merely to inspect it.
+
+## Current Results And Compatibility
+
+Actual broker-history scope is COMPLETE/CONSUMED, not a runnable pending job:
+D:/thericher-v2/model-artifacts/execution/current-historical-paper-order-availability-20261106-v1/API.json
+SHAe6282858d9fc02ac353a2b71d92f02d1cfbde2c1a24004e6d7e1fad5e170b24f;
+Sourceb24f583b04ba14f50fea39acff1ea0c76f7744529221d2795512b063f1cc188c,
+RESULT62773099071f9722041cd2ff14311eee23acd877ceabe6d09cf2596eceeadf3c.
+ActualNov6UTC23:34:11..17,1initialPOST+3GET/all2xx/0retry/0orders/25nativePASS/
+allJobsclosed. Oct21query14history/14positive-fill-quantity ROWS;Oct28query5/5;
+Nov2emptyresponse. No exact originalrequest/uniqueorder/owned-fill/PnL or release
+from these unbound responses. Empty does not prove historicalabsence. Parent31
+code/proofrefs match and changedemittedF821/F822/F823/E9PASS. Never replay batch.
+F9source-only feasibility3a89 requires mutablepointer/pending/state; immutable
+broker-ID leaf not established, no private read or reservation release.
+
+Latest983metadata-only attempt at23:15:55UTC is CONSUMED/WITHHELD,0private reads,
+0guests/allclosed. Exact records:
+D:/thericher-v2/model-artifacts/execution/current-postclose-data-custody-scope-repair-20261106-v1/metadata-only/API.json.
+Own4identityPASS but2newNodehosts/Dockeridentity/container4a56 unknown. Source
+Data9d2 entry-only qualification19c4 does not grant unknown children or mounts.
+No actual private-read command adopted; do not invoke disabled/consumed sources.
+
+Parentsoftwareattributionaaeeb07d:
+D:/thericher-v2/model-artifacts/execution/current-983-parent-runtime-attribution-20261106-v1/RESULT.json.
+Current cua_node9c26d707817e90a7 binary716e/manifestdd09 replaces old1fb/bf3.
+InstalledR4claims f562 also references old contextefc081. Exact source inspection
+confirmed the shared stale reference, not a future Task failure.
+Calibrated metadata-only probe83d614f4 completedNov6UTC23:58:19 with20runtime
+rows/2projectrelevant/526total,2sourcefiles68196bytes,12fakecases/1CIM/2local
+DockerGET/0private/all5Jobsclosed. It measured compatible argc5/9,cwd,roots,
+zerochildren; incompatible newbootstrap e410 and mainprogramse62b/8131.
+D:/thericher-v2/model-artifacts/execution/current-postclose-data-custody-scope-repair-20261106-v1/control-runtime-ready/r2/API.json
+SHA3dc16f8246845fc66e1298c27f8a2b15ed50dda3dbc1c5ef9d8bb80a26f6b3ee.
+Runtime-only candidate62fe428d is NOT a qualified source grant. Review exact
+current program bodies/provenance before updated descriptor/native integration;
+no blanketNode exception/hash substitution. Old16-bound probe stays failed.
+
+Configuration-only R4 refresh preparation0ff6/14pins/0OS/native/private calls:
+D:/thericher-v2/model-artifacts/execution/current-nov9-r4-control-runtime-refresh-preparation-20261107-v1/API.json.
+ActualR4/claims/context/Tasks remain unchanged. Do not use unqualified R5ba0b:
+its latest graph failed mocked-owner setup before phases; final32.861partial
+debit, recordedJobsclosed/CIDsabsent/owner-childPID unretained. No retry/migration.
+New descriptor and complete qualified config/runtime/installer/owner/readback
+proof are still needed before any existing futureTask update.
+
+ThreephaseH3R2 COMPLETE at23:21:30,Sourceb3a6/readout29ee/resultce811/nativec327/
+closure92f5:0fits/forwards/GPU,12marketbooks/2wrappers/all3R2containers27Jobs
+closed/all4familyCIDsremoved. PrimaryDEV+.961026%/DD1.320427%,recent-.012572%/
+.772334%;growth-DDFAILboth,turnPASS. No selected phase/model swap. ExactAPI:
+D:/thericher-v2/model-artifacts/research/current-h3-three-phase-sleeves-development-20261106-v1/research-r2/API.json.
+Parent6proofrefs+13codepins/E9PASS. Partial250.008571active is not BudgetPASS.
+
+M5LSTM/Ridge is also COMPLETE, never restart it from the failed initial API:
+D:/thericher-v2/model-artifacts/research/current-m5-indicator-lstm-ridge-development-20261107-v1/qualified-run/API.json
+SHA34c4c5b44837851c76aef3d27c6a0a5500b7bb927d5a71310d79c988f2d1f4ec;
+Source6108b9fb/result e6fb29f9/native85ef1acd/closuree17c81b8. Actual2CPUfits:
+LSTM27epochs/INNERbest15/1350updates/10.462s, Ridgeclosedform/.118s. Predeclared
+six-update synthetic calibration CPU6.040ms versusCUDA9.652ms selected CPU,
+not a GPU environment failure.2DEVforwards/4marketbooks/all0buys/NONINFORMATIVE/
+allactorsclosed. Parent59Source/code/proofrefs match/emittedF821-F822-F823-E9PASS.
+432.684470partialactive/2364.010755elapsed/no completeBudgetPASS. No threshold
+rescue/model swap/duplicate training; reused-data/sourceclock limitations stay.
 
 ## Installed Nov9 Runtime
 
@@ -118,10 +181,11 @@ timed out135s/coldexit incomplete, all11Jobs/native CIDs closed. NOT qualified,
 not deployed, no retry of consumed source. Diagnose retained stage/cost before
 another scope, no blind timeout increase or source-only install claim.
 Retained FIRSTCAUSE-source-only.json now proves coldexit40complete/41begin,
-owner105.614s overlaps fullwall. NEWphase-pair-r5 separately bounds eachphase
-135s/onepair/same invented savedlifecycle/no reseed/900active2700elapsed; no
-qualified Source/install command yet. Production6/7minute Tasklimits do not
-override Phase<=280/actual effect clocks or grant oldsource retry.
+owner105.614s overlaps fullwall. Subsequent phase-pair-r5/r6/r7 and shortba0b
+attempts are closed failures, not current commands. None qualified/installed.
+Current alternative is the separately scoped configuration-only R4 successor
+after qualified software descriptor, NOT a retry of this R5 repair chain.
+Production6/7minute limits do not relax financial clocks or old debits.
 
 Exact MSE custody reader attempts R7/R8/R9/R10 are consumed; NONE produced a
 complete financial result. R9 ownidentityPASS/container descriptor count failed;
@@ -137,7 +201,19 @@ loopback/disjoint-control-write checks. Currentweb snapshot is not old R9 cause.
 No actual custody command is currently adopted. Do not run old Parent run.py/
 direct.ps1/spec or recovery-capable observe(). Read nonce absent is not authority.
 
-Latest actual broker GET query is COMPLETE/CONSUMED:
+Parent source-only attribution NOW identifies exact Data entry path+bytes:
+D:/thericher-v2/model-artifacts/execution/current-r10-parent-source-attribution-20261106-v1/RESULT.json,
+SHAe295225207178474c6e3b29633cb0bdd26382224ce81d35d61c9034caa24aefe.
+Existing quiet-audit11a98d tasks[50].known_public_sources[0] matches
+D:/thericher-v2/model-artifacts/infra/current-rth-executable-spelling-recovery-20261020-v1/release-r1/runtime/kis_postclose_entry.py.
+Actual CLI forward-slash form native digestd852 matches; currentbytes9d2 match.
+Not historical PID/argv/mode/lineage or private-custody capability. Banach exact
+closure/mount/token/write scope19c4 was prepared, but actual983 metadata later
+withheld on current software/other descriptors as detailed above. No actual
+private-read command is adopted; consumed probes cannot be replayed.
+Do not modify the normalizer, invoke collector or exempt broad artifactRW.
+
+Earlier broker GET snapshot query is COMPLETE/CONSUMED:
 D:/thericher-v2/model-artifacts/execution/current-post-csco-paper-readonly-account-20261106-v1/query-scope-r2,
 Source0abff5126ad78de7834a1e53a353bd4ce92905bea16bd01a9c362f7fdd03c9ee,
 RESULTca318e9df88b73351561b084bb5a10f40f97650c98877a096779d3e8f9a5181d.

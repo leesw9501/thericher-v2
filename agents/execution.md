@@ -1,9 +1,47 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov6UTC22:20 / Nov7KST07:20.
+Updated Nov7UTC00:39 / Nov7KST09:39.
 A=D:/thericher-v2/model-artifacts. Detailed scopes: Git01f23a13 and artifacts.
 Company runtime outcome UNFINISHED; no new accepted submit/exactfill/current
 owned/terminal/fees/settlement/netPnL proven. AGENTS.md owns Paper authority.
+
+## Current Evidence And Priority
+
+Broker-historyb24/e628 actually completed23:34:11..17:1initialPOST+3GET/all2xx/
+0retry/0orders/offunchanged/25nativePASS/allJobsclosed/35.943partialactive.
+Oct21query14rows/14fill-positive,Oct28query5/5,Nov2empty0/0. These areAPIresponse
+ROWcounts, not exact originalrequest/uniqueorders/ownedfill/currentinventory/
+PnL/reservation release; empty does not prove historicalabsence. Parent31pins/
+emittedF821/F822/F823/E9PASS. Scope consumed:
+A/execution/current-historical-paper-order-availability-20261106-v1/API.json
+SHAe6282858d9fc02ac353a2b71d92f02d1cfbde2c1a24004e6d7e1fad5e170b24f.
+F9source-onlyjoin3a89 UNAVAILABLE: publicanchor lacksbrokerID/immutableprivate
+leaf, decoder needsmutablepointer/pending/state and relevant-writer admission.
+No newquery/private read/release authorized by that source-only finding.
+
+Actualmetadata98323:15:55 ownidentityPASS/0private/0guest/allclosed, denied
+2Nodehosts+Dockeridentity+container4a56 descriptor. Parent exact716e/a675
+binary/path attribution is currentCodexcua_node9c26, not Dataactor9d2.
+Old control-context efc081 pins1fb/bf3; installedR4claims f562 references it.
+ProbeR2Source83d6/API3dc1 at23:58:19:20runtime/2projectrelevant/0children,
+closedargc5/9/cwd/roots match, NEWbootstrap e410/mainprogramse62b8131 unreviewed.
+0private/12fakecases/1CIM/2localDockerGET/all5Jobsclosed; candidate62fe is
+runtime/manifest refresh ONLY, no Sourcegrant. No consumed983/probe rerun.
+Banach/Godel qualify actualprogramsources under existing control-reference
+schema, not arbitraryNode/financial authority. Darwin config-only R4 prep0ff6
+is withheld on that exact dependency;14pins/0native/OS/privatecalls. Current
+R4/Tasks untouched; newdescriptor needs complete native/config/owner/installer/
+independent readback before future definition migration. No SourceR5shortcut.
+After qualified directhandoff, Darwin owns900active2700elapsed/cleanup120/
+<=3focusedchecks/ONEoriginalR4syntheticpair0retry with fresh namespaced source.
+SAME core/model/point/private/bank/token/emergency/clocks/exits; no actual Task
+mutation/enable/run/private read yet. Source prep is not runtime deployment.
+
+Latest R5shortba0b FAILED_CLOSED: focusedPASS/onepairedgraph failed mocked-owner
+setup before entry/coldexit, sourcepredicate unretained.32.861finalpartialdebit,
+recordedJobsclosed/CIDsabsent/cleanupassertionpassed but owner-childPID/birth
+unretained; do not claim an independently observed process roster. Stop same
+repair chain, all originalfinancial paths/duties unchanged.
 
 ## Installed Nov9 Pair And Actual Input
 
@@ -45,10 +83,10 @@ Sourcec0b839c4f508ceebe4ef75397c868e1002744f06bd4fe061bf4538db84a2a9db,
 3focused/1full consumed; synthetic entry46callbacks PASS, full135s timeout,
 coldexit incomplete.422.892new/695.078linked debit, all11Jobs/native CIDs closed.
 Retained audit proves coldexit began40callbacks/41begin,105.614owner seconds
-overlap the combined135s graph. NEWphase-pair-r5 qualification assigned:
-900active/2700elapsed/<=3focused/ONEpair0retry, entry<=135 andcoldexit<=135,
-same invented savedlifecycle/input/no reseed/unchanged coreguards. Not yet
-qualified or installed. Old combined ceiling/result/debits remain unchanged.
+overlap the combined135s graph. Historical phase-pair-r5/r6/r7 and shortba0b
+attempts are closed failures, NOT ready rerun commands. None qualified or
+installed. Old ceilings/results/debits remain unchanged; current alternative
+is the separately scoped configuration-only R4 successor described above.
 Any future migration must separately qualify installer/current-owner closure,
 preserve same tasks/clocks/bank/unknowns and independent exit-first readback.
 
@@ -69,8 +107,15 @@ R10 A/execution/mse-c79-meta-r10/c1, Source543f8e71307a05bc79831cfcbf51c62270423
 actual21:57 own4identityPASS, nonownedhost actor_unregistered/native.actor143,
 maskedscoped29; container admission not reached. All closed,1metadata/0private
 reads, no readnonce. Banach source-only exact retained entry path/source/lineage
-resolution found no exact match/deeperownerrefs unknown. No arbitrary
-project-script exemption, actual metadata retry or
+resolution first found no match, but Parent quiet-audit11a98d source plus exact
+forward-slash native path digest proves the postclose Data entry
+infra/current-rth-executable-spelling-recovery-20261020-v1/release-r1/runtime/
+kis_postclose_entry.py. Parent evidencee2952252/current-r10-parent-source-
+attribution-20261106-v1/RESULT.json. Not PID/mode/lineage/capability proof.
+Historical current-postclose-data-custody-scope-repair-20261106-v1:600active1800elapsed/
+3focused/oneinventedgraph/0actualqueries; exact imported closure/child/mount/
+token/write-scope. BroadA RW still overlaps custody despite Data intent.
+No arbitrary project-script exemption, actual metadata retry or
 unqualified private command. R7/R8/R9/R10 consumed scopes remain consumed.
 Strict reader needs actual relevant custody-writer admission, networknone/RO,
 exact account/basis/input/policy/intent/fill joins, no observe()/locks/recovery,

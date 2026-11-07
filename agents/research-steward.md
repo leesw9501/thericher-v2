@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov6UTC22:25 / Nov7KST07:25.
+Updated Nov7UTC00:39 / Nov7KST09:39.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns resource/trial authority.
 Full former board: Git01f23a13:agents/research-steward.md. Immutable campaign
 APIs/closures retain exact failures, clocks, debits and checkpoints. This is
@@ -17,13 +17,28 @@ An assignment/source directory is not an active optimizer or resource lease.
 | WeightedBCE/MSEc947/b3ff | COMPLETE2CUDA32/34epochs/7194updates/384MiB each/all8containers71Jobsclosed. PrimaryFAILDEV despiteRECENT improvement; no repeat. |
 | Capacity/context ensemble0a805/a161 | COMPLETE2CPUfits4033updates/8actualreplays/all8containers68Jobsclosed. PrimaryNONINFORMATIVE/RECENT0changed; fixedmean2FAIL versusallcomparators. No rerun. |
 | Crossasset2c45/bd5d | COMPLETE2CPUfits3924updates/6actualreplays/all8containers68Jobsclosed. AdaptivePASSboth but extra1024parameters; not robust independent context evidence. |
-| Next useful research | NEWfixedthreephaseH3 CPUcached study7b4c/b917 assigned:0fit/forward/GPU,1200active3600elapsed/16native and12market actualbooks. Exactparser/native thenonejointseal/readout, no old training rerun. |
-| Execution reliability | OldR5full135s timeout/unqualified; NEWonepair with135s independently bounded phases assigned, no installedR4change. BanachR10hostactor source lookup no match/closed/no actualretry. Independent work continues; actual emergency preempts at a safe checkpoint. |
+| M5indicatorLSTM/Ridge | COMPLETE API34c4c5b4/Source6108/result e6fb. Data8625/871a COMPLETE28checks/oneprojection. Actual2CPUfits; LSTM27epochs/best15/1350updates/10.462s, Ridgeclosedform/.118s. Native measured warmCPU6.040ms versusCUDA9.652ms selected CPU, not a CUDA ban. All4books0buys/NONINFORMATIVE/allactorsclosed. |
+| Next useful research | Strategy proposes one distinct cost-aware short-swing mechanism, not a threshold rescue/repeated M5fit. No current optimizer proven active. |
+| ThreephaseH3R2 | COMPLETEb3a6/ce811/0fits/forwards/GPU/12marketbooks/all3R2containers27Jobsclosed. Primarygrowth-DDFAILboth/turnPASS;250.008571partialactive/noBudgetPASS. |
+| Execution reliability | R5ba0b unqualified, no installedR4change. StaleCodexcontrol-context identified; Source83d6 probe measured20runtime/2project contexts and newunreviewedprograms. Configuration-only R4 preparation is separate from current-task effects. |
 | Existing owned opportunities | H3AMDtechnicalfailure/Full17UNKNOWN. Source72 actuallypublished17known/4positive_H3 at21:47:03, validNov9UTC14:25..<14:35 only. InstalledR4entry14:31, no manualRun/duplicateforward. |
 
 Mean2 preparation is provisional Paper-learning research, not a rescued primary
 or qualified winner. Exact OLD60_H3 entries/age1HOLD/age2D/e3expiry and original
 bank/exits are unchanged. Future required input is UNKNOWN, never a placeholder.
+
+Closed M5data is reused24sessions/17axis/16FIT4INNER4DEV; one120min
+window24M5bars with price-onlyIND8, explicit5minlag and30minexpiry. Campaign
+1800active5400elapsed/cleanup180/2newmarketfits0retry, maxLSTM100epochs10000
+updates600soft660hard/INNERstop12/bestrestore; RidgeCPUonefit.2nativeattempts/
+6syntheticoptimizersteps/8syntheticbooks/2DEVroleforwards/0savedcalls/onejoint
+seal-readout/4actualANDlogicalmarketreplays. FIT-onlyscalers, no futureTargetKnown
+in forecast eligibility, no cost/seed/window rescue. Actual2nativegraphs/
+6syntheticupdates/8syntheticbooks/2DEVforwards/4marketbooks completed; market
+VRAM0/CPU selected by predeclared realoptimizer calibration.432.684470partial
+active/2364.010755elapsed/noBudgetPASS; initialfailedpreparations remain.
+Parent59pins/emittedE9-F821-F822-F823PASS. Project firstGPUpriority and useful
+concurrency unchanged; a CPU-faster shape is not CUDA unavailability/approval.
 
 ## Recent Completed Work
 
