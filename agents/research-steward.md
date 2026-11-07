@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov7UTC02:33 / Nov7KST11:33. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
 Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea is soleGPUcoordinator. AGENTS.md owns
 resource/trial authority. History/caps/debits: Git8b1db436 and immutable APIs,
 not another resource platform. An MD/source folder is not an active optimizer.
@@ -12,12 +12,11 @@ not another resource platform. An MD/source folder is not an active optimizer.
 | TemporalSELF/CROSS worker Bohr |COMPLETE7bba/b3a6/22fac;2CUDA fits4033updates, CROSS19epochs/best7/13.036s/386MiB, SELF18/best6/12.331s/384MiB. All6containers56Jobs5leasesclosed; BohrLLMclosed. Primarygrowth-DDFAILboth, no repeat. |
 | FixedhalfSELF/LSTM |COMPLETE0ce5/11973/aa5c;0fits/forwards/GPU/4newbooks/all3containers27Jobsclosed. GrowthPASS/DDFAILboth, no model promotion. |
 | PastRV20 allocation |COMPLETE7fc9/71d0/9643;0fits/forwards/GPU/4books/0controlreplays/all3containers27Jobsclosed. Exactgrossmatch passed, utilityFAILboth. No further grid. |
-| Current ready work |Paper-proposal source/synthetic parity package current-self-lstm60-fixed-half-paper-proposal-preparation-20261107-v1;240active1200elapsed/90cleanup/0marketcalls/training/GPU/2explicitNEWpurpose saved-checkpoint SYNTHETICforwards/oneNative. No actualoptimizer inferred. |
-| Execution priority |ParentR8 SOURCE29ccc/native25bd actualentry+coldexitPASS/0financialeffects. ORIGINAL30bbtasksstillinstalled; exactowner/migrator/readbacks/currentadmission required. MSEallcontainer reader issue is not R8running-only hold. |
+| Fixed-half Paper proposal |COMPLETE synthetic API63e0/Source2072/bundleee98; two saved-checkpoint CPU forwards, zero training/market/GPU, all2containers20Jobsclosed. Final metadata audit5s late, partial~80.49s/no BudgetPASS. No ready optimizer inferred. |
+| Execution priority |R8 Source29ccc installed Nov7UTC02:58:40; result f88ac16f, original pair unchanged clocks/model/bank, all9 Jobs closed. Actual admission and financial outcome not observed. |
 
-New proposal synthetic calls do not reopen old trial counters or enable market
-forecasts/broker effects. Exact assets/constructors/scalers/head/known-time DTOs
-before launch. Future input UNKNOWN; no Nov9 point swap or new bank.
+Completed synthetic calls do not reopen old trial counters or enable market
+forecasts/broker effects. Future input UNKNOWN; no Nov9 point swap or new bank.
 
 ## Resource Knowledge
 

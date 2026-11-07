@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov7UTC02:45 / Nov7KST11:45.
+Updated Nov7UTC02:59 / Nov7KST11:59.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History/contracts/debits: Git8b1db436/99af01f4 and immutable external APIs.
@@ -20,14 +20,16 @@ Never read/route KIS_LIVE_* or expose secret/raw private financial values.
 
 ## Installed Opportunity
 
-ORIGINAL SHORT R4 SOURCE30bbe174e50842c583580c87d9c81823e90bd975f407a7efa72da1989a7615b4
-is still installed under A/execution/n9h3-1106-r4/repair1. Its native923a6d1c
-passed actual Windows writers/full109.689s entry+coldexit. Installer4531/08dc
-was ACTUALLY consumed Nov6UTC20:17..18: disabled create, independent fullXML/
-API7ACL, EXIT enabled before ENTRY, independent final bothenabled/0instances.
-No Task.Run or financial effects. Adoption48df0d07:
-A/execution/current-nov9-r4-parent-installation-20261106-v1/PARENT-ADOPTION.json.
-Never replay its Create/Enable/Apply.
+R8 SOURCE29ccc is ACTUALLY installed on the SAME original two tasks. Parent
+preflight Nov7UTC02:58:31 proved original30bb owned programs/CIDs/attempts=0;
+one bounded batch updated and enabled EXIT before ENTRY. Final independent
+complete XML/API7 ACL readback at02:58:40: both enabled, zero instances.
+Nine owned Jobs closed; no Task.Run, KIS, credentials or private payload reads.
+Same clocks, Source72 point, model, original bank/B10/F9 and identities/exits.
+Result f88ac16fc0f278f8a3203acb82c7104f112548c23b1ba6b232b471b2e82988bf:
+A/execution/current-nov9-r8-parent-migration-20261107-v1/RESULT.json.
+Original30bb installation/adoption48df stays historical. Never replay either
+installer or the consumed migration batch. No due-time admission or fill yet.
 
 | Exact owned task | UTC clock |
 | --- | --- |
@@ -43,8 +45,9 @@ PUBLISHED_SHADOW_NOT_YET_VALID; valid ONLY Nov9UTC14:25..<14:35. Bound Data0f9/
 PLAN47f1 READY/seals/closure were validated by publisher, not independent
 provider-finality/PIT/OS-origin proof. No stale retag/placeholder/retrain.
 
-Original public result reader7f506317/36checks is qualified for ORIGINAL30bb
-after each phase hard end; not automatically a successor's result reader.
+R8 public result reader8742d364/26 checks (RUNBOOK) after each phase hard end.
+Old7f506317 was 30bb-only. New reader is operational, not private custody or
+OS-origin proof; no receipt or incomplete chain remains unknown.
 
 ## Runtime Recovery
 
@@ -78,13 +81,12 @@ fresh all489-module audit. Darwin proved ActualCensus is RUNNING-ONLY ps-q /
 inspect / ps-q. The stopped foreign4a56 all-container MSE-reader denial is NOT
 an R8/company-wide Paper hold. Full Admission needs real leg/bank/owner and
 Guard writes metadata; do not invent a bank-free full-admission preflight.
-Inputnamespace/receipt metadata ABSENT at02:17, not an old receipt rebind.
-ORIGINAL30bb tasks remain installed. Darwin owns qualified exact existing-future
-R8 migration and separate R8-bound public reader preparation under
-A/execution/current-nov9-r8-future-task-migration-preparation-20261107-v1.
-Actual migration still needs qualified installer, positive original-owner
-closure, fullXML/API7ACL and exit-first readbacks. Native PASS does NOT prove
-due-time financial admission, deployment, acceptance or fill.
+Input namespace and receipt metadata absent before migration, no old receipt
+rebind. Darwin's installer repair2 Source4354b42e passed34 mock checks. Failed
+initial mock wrote outside its test metadata root; preserved, not regraded.
+Repair1's historical preflight was not reused. Parent consumed repair2 with
+fresh proof c00b5bf6 and final readback f6422fa5. At effect time all original
+source/clock/owner/input/account/risk/orderability/unknown guards still apply.
 
 ## Custody And Broker Facts
 
@@ -159,13 +161,16 @@ Parent52refs/emittedE9-F821-F822-F823PASS. Frozen growth-DD utility FAILboth:
 lower exposure is not alpha. Old blend's
 DD failure unchanged; no numeric rerun/regrade or deterministic-risk change.
 
-Arendt now owns source/synthetic fixed-half Paper proposal preparation:
+Arendt completed source/synthetic fixed-half Paper proposal preparation:
 A/research/current-self-lstm60-fixed-half-paper-proposal-preparation-20261107-v1.
-240active1200elapsed90cleanup/0training-marketpayload-broker-Task. One native
-two NEW-purpose saved-checkpoint synthetic forwards only; require exact
-ENTRY_SELFbest6 and OLD60==Source72savedbest10 parity or withhold. No cached
-means as available model, invented future point, Nov9 model/bank swap or
-profitability promotion. Godel may review exact source compatibility.
+API63e09bbb/Source2072dcb8/bundleee98ca93/native465520cd: one native graph,
+two saved-checkpoint CPU synthetic forwards,9 negatives,0training/market/GPU,
+both containers and20 Jobs closed. Parent64refs/E9 pass; Godel independently
+confirmed ENTRY_SELF best6 MLP and exact OLD60==Source72 best10 parity. Metadata
+audit ended5s beyond prep deadline; partial active~80.49s, no BudgetPASS.
+New qualified future input/point and consumer binding still unknown. Harden
+duplicate-key/exact-number parsing in future consumer, not frozen rerun. No
+Nov9 model/bank swap or profitability promotion.
 Older GRU/TCN/Transformer/Patch/SSL/foundation/HGB/OOF history stays immutable.
 
 ## Data, Monitor And Team
@@ -182,10 +187,10 @@ Last qualified monitor observation is legacy Korean127.0.0.1:8787/be48 with
 runtimeRO/emergencyRW/operationsRO, not current-cohort deployment. New8788 was
 unstarted; no new health probe/public exposure inferred.
 
-Parent owns shared MD/Git. Arendt Engine/soleGPUcoordinator owns fixed-half
-source/synthetic Paper proposal; Godel reviews its exact compatibility after
-handoff; Darwin owns R8 future-task migration/reader preparation. Banach supplied
-closed source interpretations. Planck,
+Parent owns shared MD/Git. Arendt completed the fixed-half proposal, Godel its
+compatibility review, and Darwin the exact installer/reader. Parent completed
+actual migration. No active optimizer/agent claimed from those closed packages.
+Banach supplied closed source interpretations. Planck,
 Ptolemy and Bohr LLMs closed after completed packages. Existing independent Data
 duties unchanged. MD/assignment is not an active model/worker.
 

@@ -1,21 +1,19 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov7UTC02:33 / Nov7KST11:33. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
 Godel01a1ad7a-f750-7383-947e-2d7a3bc9bbec owns concise falsification/source
 research, not numerical tuning or permanent model/Execution approval.
 History/sourceoffers: Git8b1db436/01f23a13 and immutable APIs.
 
 ## Current Consumer
 
-Arendt proposal bundle current-self-lstm60-fixed-half-paper-proposal-preparation-
-20261107-v1: exactSELFbest6+OLD60H3 checkpoint/scaler/constructor/source parity
-to future strictH3proposal DTO. TWOexplicitNEWpurpose saved-checkpoint
-SYNTHETICforwards/oneNative/0training-marketpayload-evaluation-private-broker.
-Must identify whether cachedOLD60 is SAME savedbest10 currentSource72LSTM60;
-unknown is a scoped compatibility gap, not a substitute model. Fixedblend DD
-failure/post-outcomeDEV+RECENTselection retained; no qualifiedwinner/currentNov9
-point swap or extra bank. ProvisionalPaper learning independent of profitpass.
-Short source-only challenge on exact ready handoff, no extraParentACKbarrier.
+Proposal bundle current-self-lstm60-fixed-half-paper-proposal-preparation-
+20261107-v1 COMPLETE synthetic (Source2072/bundleee98). Independent Godel review
+confirmed best6 SELF MLP and OLD60 is exact Source72 best10 LSTM60 with the
+original FIT receipt, class, stats, scale and H3 head. No calls in review.
+Duplicate-key/numeric-type strictness remains for future consumer hardening.
+Future point unknown, not production qualification; fixedblend DDfailure and
+adaptive DEV+RECENT selection remain. No current Nov9 swap or extra bank.
 
 ## Research Direction From Actual Results
 
@@ -43,8 +41,9 @@ semantic_source_grant:false, not arbitraryJSsandbox or financialauthority.
 ParentR8 SOURCE29ccc/native25bd ACTUALentry+coldexit pairPASS/0financialeffects.
 Independent review12refs found no deterministic contradiction. Sharedhostpair,
 sampledexitclosure and no separateFrame2/CFG4/all489audit are explicitlimits,
-not a new approval. R6bdfd/R7f6a remainFAILED. Actualfutureinstaller/positive
-originalowner/completeXML/API7ACL/exitfirst remain separate responsibilities.
+not a new approval. R6bdfd/R7f6a remainFAILED. Actual migration f88ac16f closed
+with positive original owner closure, exit-first and complete XML/API7 ACL.
+Due-time financial admission and effects remain separate.
 
 ExactR8ActualCensus is running-only, unlike MSEall-container reader. Stopped
 foreign4a56 does not establish R8/companyblock. Currentactualmembership and

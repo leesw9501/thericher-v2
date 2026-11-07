@@ -100,8 +100,9 @@ CLOCKS1f36092d990de563cc4899156a9487da97b5e6c9487b7ff4c9c5632006bf0555.
 Validity Nov9UTC14:25..<14:35. Savedbest10 one forward,0training; no placeholder,
 stale retag, financial input consumption or fill inferred from publication.
 A/research/current-nov9-publication-parent-read-20261106-v1/RESULT.json.
-Installed R4 entryNov9 14:31/ownedexitNov12 14:30 validates all native gates at
-actual effects. Data availability is not financial admission.
+Same entryNov9 14:31/ownedexitNov12 14:30 now uses installed R8, with unchanged
+Source72 point. All native guards still apply at effects; data availability is
+not financial admission.
 
 ## Held-State Research Data Complete
 

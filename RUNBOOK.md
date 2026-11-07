@@ -1,6 +1,6 @@
 # Runbook
 
-Updated Nov7UTC02:33 / Nov7KST11:33. Company outcome UNFINISHED.
+Updated Nov7UTC02:59 / Nov7KST11:59. Company outcome UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Current reality: HANDOFF.md. Authority: AGENTS.md. Historical runnable scopes:
@@ -25,12 +25,15 @@ Untracked %SystemDrive%/ is unrelated and must not be staged/deleted.
 
 ## Current Deployment
 
-Original R4 SOURCE30bbe174e50842c583580c87d9c81823e90bd975f407a7efa72da1989a7615b4
-still installed. A/execution/n9h3-1106-r4/repair1. Qualified original installer
-4531/08dc was consumed Nov6UTC20:17..18, positive independentXML/API7ACL and
-exit-first enable; adoption48df. Never replay Create/Enable/Apply.
-Repeatable original readback route, not TaskRun:
-D:/thericher-v2/model-artifacts/execution/current-nov9-net25-r4-future-installer-fix-20261106-v1/repair1/COMMANDS.json.
+R8 SOURCE29ccc64da6c2c23282d9411ddad90762cf6ae77f18be00790b56d6afeb2bcefd
+ACTUALLY installed on the original pair by Nov7UTC02:58:40. Qualified repair2
+installer4354/34 mocked checks, fresh original30bb closure c00b5bf6, complete
+exit-first update and independent full XML/API7 ACL readbacks. Both enabled,
+zero instances; all9 Jobs closed. No Task.Run/KIS/credentials/private payload.
+D:/thericher-v2/model-artifacts/execution/current-nov9-r8-parent-migration-20261107-v1/RESULT.json
+SHA f88ac16fc0f278f8a3203acb82c7104f112548c23b1ba6b232b471b2e82988bf.
+Original30bb/4531/48df are historical. Never replay Create/Enable/Apply or
+the Parent batch. Exact rollback metadata is retained, not a command to run.
 
 | Exact owned task | UTC opportunity |
 | --- | --- |
@@ -53,12 +56,8 @@ Qualifierb8fc/Parent216source+147host+6proofpins match. New900active1800elapsed/
 120cleanup,387.975partialupper/notBudgetPASS. R6/R7 remainFAILED/0pairs; no
 regrade or qualifier rerun. Current inputnamespace/receipt metadataABSENT02:17.
 
-Future migration preparation, NOT actualupdate:
-D:/thericher-v2/model-artifacts/execution/current-nov9-r8-future-task-migration-preparation-20261107-v1.
-Requires source-qualified typedinstaller, originaldefinition/ACL rollback,
-positive relevant-sourceprocess/CIDclosure, completeXML/API7ACL, exit-first
-sequence, SAMEclock/input/model/bank/B10/F9/identities/exits, NEWR8publicreader.
-No command is adopted here until its actual readiness/Source qualifies.
+Migration preserved exact clocks, Source72 input/model, bank/B10/F9 and all
+original identities/exits. Installation is not due-time financial admission.
 
 Important: R8ActualCensus samples RUNNING ps-q/inspect/ps-q, not MSEallcontainers.
 Stoppedforeign4a56 is not an R8/companyblock unless suppliedasownedvisitCID.
@@ -78,13 +77,12 @@ Repeatable PUBLIC-only reader, no launcher/model/broker call:
 & 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -S -B 'D:/thericher-v2/model-artifacts/research/current-nov9-lstm-h3-clock-bound-publisher-20261106-v1/readback.py' --source 72eb95e32abfdc96bb7e72c1628177a51633fbf5da74c74be5f77d35bcdbd4d5
 ```
 
-ORIGINAL30bb-only resultReader7f50631776a54e949c4a307694ed250b6bf73146cf0e5f02ef080086ce220583,
-36checks/Parent18pins/E9. Do not retag this reader if installation later changes.
-After respective Nov9/12UTC14:37 only:
+Installed R8-bound reader8742d364/26 native producer-to-parser checks.
+Original7f506317 is historical 30bb-only. After respective Nov9/12UTC14:37:
 
 ```powershell
-& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-nov9-r4-public-result-readiness-20261106-v1/select_receipt.py' --source 7f50631776a54e949c4a307694ed250b6bf73146cf0e5f02ef080086ce220583 --phase entry
-& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-nov9-r4-public-result-readiness-20261106-v1/select_receipt.py' --source 7f50631776a54e949c4a307694ed250b6bf73146cf0e5f02ef080086ce220583 --phase exit
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-nov9-r8-future-task-migration-preparation-20261107-v1/repair1/select_receipt.py' --source 8742d364a302a47165ab8899d893440bf8649e4b38bb91c14b588028dd8bfcf9 --phase entry
+& 'C:/Users/User/AppData/Roaming/uv/python/cpython-3.14.3-windows-x86_64-none/python.exe' -I -B 'D:/thericher-v2/model-artifacts/execution/current-nov9-r8-future-task-migration-preparation-20261107-v1/repair1/select_receipt.py' --source 8742d364a302a47165ab8899d893440bf8649e4b38bb91c14b588028dd8bfcf9 --phase exit
 ```
 
 Exact ATTEMPT/LAUNCH/CHILD-STARTED/HOST-TERMINAL/CHILD-CLOSED immutable path/hash

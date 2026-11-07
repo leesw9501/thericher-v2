@@ -1,15 +1,18 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov7UTC02:33 / Nov7KST11:33. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 
 ## Actual Current Deployment
 
-ORIGINAL A/execution/n9h3-1106-r4/repair1 SOURCE30bb remains installed.
-Installer4531/08dc ACTUALLY installedNov6UTC20:17..18, exit-first/independent
-completeXML/API7ACL/finalbothenabled0instances; adoption48df. No replay/TaskRun.
+R8 SOURCE29ccc ACTUALLY installed on same two tasks Nov7UTC02:58:40.
+Parent RESULT f88ac16f under A/execution/current-nov9-r8-parent-migration-20261107-v1.
+Fresh original30bb closure c00b5bf6: zero programs/CIDs/attempts. Exit-first
+update and independent full XML/API7 ACL final readback f6422fa5: both enabled,
+zero instances, all9 Jobs closed. Original installer4531/48df now historical.
+No replay/Task.Run/KIS/credentials/private payload or financial conclusion.
 EntryNov9UTC14:31..<14:35/hard14:37; ownedexitNov12UTC14:30..<14:35/hard14:37.
 Exactnames: thericher-net25-lstm-h3-nov9-entry-20261109-v1 and
 thericher-net25-lstm-h3-nov9-owned-exit-20261112-v1. Quietpythonw/no demand/
@@ -35,16 +38,12 @@ Node/financial authority grant. Parent11+13refs match. Independent actualR8
 review found no deterministic contradiction; shared-host pair/sampled exit
 closure remains a narrower claim than live admission/new all489 audit.
 
-Inputnamespace/receipt metadataABSENT02:17; old30bb-source receipt mismatch was
-hypothetical, not read/retagged. Current source-only packet for future migration:
-A/execution/current-nov9-r8-future-task-migration-preparation-20261107-v1,
-600active1800elapsed/120cleanup/<=3fullymockedScheduler/XML/API7ACL cases,
-ONEread-onlyoriginaldefinition/ACL/source-owner preflight allowed. NO actual
-updates/TaskRun/KIS/bank/credentials/strategy. Preserve exact names/triggers/
-identities/Source72point/model/input/bank/B10/F9/all old exits. Reuse qualified
-installer patterns; prepare exact disabled-entry/exit-first migration/readbacks
-and NEWR8publicreader, not prose retag of original7f reader. Parent consumes
-qualified installer only with positive relevant-original-owner closure.
+Input namespace/receipt metadata absent before migration; no old receipt retag.
+Darwin installer repair2 Source4354/34 mock checks consumed by Parent once.
+Original mock artifact-root failure and repair1 historical preflight preserved.
+R8 reader8742/26 checks in RUNBOOK is operational-only, not actual custody.
+At effects enforce unchanged input/clock/owner/account/bank/unknown/quote/risk
+guards. No schedule expansion, model swap or new capital.
 
 ## Relevant Metadata Scope
 

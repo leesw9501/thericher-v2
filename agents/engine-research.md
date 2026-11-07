@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov7UTC02:33 / Nov7KST11:33. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
 Current owner Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea, also soleGPUcoordinator.
 Detailed former contracts/curves/debits: Git8b1db436/01f23a13 and immutable APIs.
 No completed fit/forward/evaluation is repeated for GPU occupancy.
@@ -9,24 +9,19 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 All new fitting is CLOSED; no active optimizer is evidenced. Temporary Bohr
 LLM closed after successful CUDA execution, not a CUDA availability restriction.
-Current product-oriented package:
+Completed provisional Paper proposal:
 A/research/current-self-lstm60-fixed-half-paper-proposal-preparation-20261107-v1.
-240active1200elapsed/90cleanup/0training-marketpayload-forecasts-books-broker-
-credential-Task calls; ONEactualnative/TWONEWpurpose saved-checkpoint SYNTHETIC
-forwards only. Prove ENTRY_SELFbest6 and exact cachedOLD60H3 can be reconstructed
-with trusted project constructors/weights/FITaffines/H3Net25 semantics. Explicitly
-check OLD60 is the same savedbest10 LSTM60+IND8 as currentSource72publisher or
-withhold; cached means alone are not an available production model.
+API63e0/Source2072/native4655/bundleee98: one actual native graph, two saved
+checkpoint CPU synthetic forwards, nine negatives, zero training/market/GPU.
+Both containers and all20 Jobs closed. Parent64refs/E9 pass. Godel confirmed
+SELF is best6 MLP, and exact OLD60 is Source72 best10 LSTM60+IND8. Real input
+producer/parser, frozen feature kernel, safe weights and H3 DTO roundtrip passed.
+Final audit5s late; partial active~80.49s, no BudgetPASS or rerun.
 
-Freeze strict whole17pastRAW60x12+IND8/728 input/known-key/source/date/layout/
-scaler/checkpoint/head/ROasset parity -> rawH3Net25 fixedhalf -> typed proposal
-consumer. No currentOPEN/targets/unknownimputation/probability/amount outputs.
-Future market input UNKNOWN; no actual point publication/Nov9 swap/separate
-bank writer or broker-risk change. Frozen blend DDfailure and post-outcome
-DEV+RECENT selection remain; provisional Paper-learning permission is separate
-from profitability, not promotion. Godel concise compatibility review/direct
-handoff; prebound native-ready launch needs no extra Parent ACK. Stop once
-technical/cap failure, preserve stage/source/frame/category, no repair cascade.
+Next consumer needs exact new future public input/point and finite binding,
+isolated RO inference and duplicate-key/exact-number parser hardening. Frozen
+source remains immutable. No Nov9 point/model swap or new bank. Blend's frozen
+DDfailure and adaptive DEV+RECENT selection remain; no promotion claim.
 
 ## Latest Closed Studies
 
@@ -78,8 +73,8 @@ studies remain in Git/immutable APIs, not an untried model-name checklist.
 Public foundation pretraining ambiguity constrains comparisons/consumers.
 
 Existing Source72 savedbest10 publisher actually emitted17known/4positiveH3,
-POINT4a602d3b validNov9UTC14:25..<14:35. ORIGINAL30bb entry/exit tasks still
-installed; ParentR8actualnativePASS is not migration/financial admission/fill.
+POINT4a602d3b validNov9UTC14:25..<14:35. Same entry/exit tasks migrated to R8
+on Nov7UTC02:58:40, unchanged model/input/clocks. Installation is not a fill.
 Research never changes ONEB/10/F9UNKNOWN-HELD/private journals/nativebroker risk.
 Repo fresh authority8984:20289PASS26knownSKIP/8of8[20315]/427.97s/guardedcleanup;
 reuse only exact1440protected+AGENTS. External code needs its own native proof.

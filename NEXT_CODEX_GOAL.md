@@ -17,10 +17,13 @@ Historical Sources/caps are not instructions to replay consumed jobs.
 
 ## Current Priorities
 
-Updated Nov7UTC02:45 / Nov7KST11:45.
+Updated Nov7UTC02:59 / Nov7KST11:59.
 
-1. Finalize actually qualified R8 recovery toward the ORIGINAL Nov9 opportunity.
-   Original30bb tasks are STILL installed; do not replay installer4531/08dc.
+1. Observe the original Nov9/12 opportunity on the now-installed R8 runtime.
+   Actual migration completed Nov7UTC02:58:40, result f88ac16f under
+   A/execution/current-nov9-r8-parent-migration-20261107-v1. Original owner
+   closed, exit-first, full independent XML/API7 ACLs, both enabled/idle and
+   all9 Jobs closed. Do not replay original installer or migration.
    Source72 point actually published17known/4positiveH3 atNov6UTC21:47;
    POINT4a602d3b/CLOCKS1f36092d valid ONLYNov9UTC14:25..<14:35. Entry14:31/
    hard14:37, exitNov12UTC14:30/hard14:37. No stale retag/model swap/new bank.
@@ -30,14 +33,11 @@ Updated Nov7UTC02:45 / Nov7KST11:45.
    55SDKmodules/0actualprivate-env-KIS-Task-model-market. Parent216source+147host+
    6proofpins match. This is a NEW actual pair, not regraded R6/R7/compositional
    substitute. No qualifier rerun. Inputnamespace/receipt metadataABSENT02:17.
-   Independent12ref review closed; ActualCensus is RUNNING-ONLY, not the MSE
-   all-container reader. Stopped foreign4a56 is not its global Paper hold; do
-   not invent a bank-free full Admission API. Darwin owns R8 migration/reader
-   preparation at A/execution/current-nov9-r8-future-task-migration-preparation-20261107-v1.
-   Finish qualified existing-future installer, positive original-owner closure, fullXML/API7ACL/
-   exit-first readbacks BEFORE any actual migration. Actual source/owner/input/
-   model/clock/account/budget/unknown-request/quote/orderability gates still at
-   effects. No current private writer exemption or financial-admission claim.
+   Independent12ref review closed; ActualCensus is running-only, not the MSE
+   all-container reader. Stopped foreign4a56 is not a global Paper hold.
+   Use exact R8 public reader8742 from RUNBOOK after respective hard ends.
+   Source/owner/input/model/clock/account/budget/unknown/quote/orderability still
+   checked at effects. Operational closure is not acceptance or fill.
 2. Recover exact custody evidence on the relevant actual writer scope, not
    unrelated Data/Research waits. R6bdfd/R7f6a and oldmetadata983/83d6/f6c068 remain
    closed/consumed; source-only3a89 F9 has no immutable brokerID/state join.
@@ -69,12 +69,13 @@ Updated Nov7UTC02:45 / Nov7KST11:45.
    missingautomaticdigestguard remains a residual gap, not a rerun permission.
    PastRV20 71d0/9643 COMPLETE0fits/GPU/4books/allclosed, utilityFAILboth versus
    same-name/grossEW. Lowerexposure notalpha; old frozen blendDD failure remains.
-   Arendt owns NEWsource/synthetic Paper proposal under
+   Arendt completed source/synthetic Paper proposal under
    A/research/current-self-lstm60-fixed-half-paper-proposal-preparation-20261107-v1:
-   240active1200elapsed90cleanup/oneNative2saved-checkpoint SYNTHETIC forwards,
-   0training/marketpayload/broker/Task. Prove SELFbest6 and OLD60 Source72best10
-   parity or withhold. No cachedmeans asmodel/inventedfuturepoint/Nov9swap/newbank/
-   profitabilitypromotion. Godel reviews exact compatibility after handoff.
+   API63e0/Source2072/bundleee98, two synthetic CPU forwards, zero training or
+   market calls, allclosed. Godel confirmed SELFbest6/OLD60==Source72best10.
+   Final metadata audit5s late, no BudgetPASS. Next distinct consumer requires
+   new exact future input and point, strict parser hardening and isolated RO
+   inference; no repeated forwards/Nov9 swap/extra bank/profitability promotion.
    Intradayproviderbaranchor/finality/arrival limits do not become a company-wide
    research/dailyPaper hold. Useful new GPU work is allowed when genuinely ready;
    no occupancy-only work or inference of an optimizer from Source/MD existence.
