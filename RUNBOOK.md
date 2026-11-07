@@ -2,7 +2,7 @@
 
 ## Current Authority
 
-Updated Nov7UTC00:39 / Nov7KST09:39. Company outcome UNFINISHED.
+Updated Nov7UTC01:00 / Nov7KST10:00. Company outcome UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 HANDOFF.md is current reality; AGENTS.md owns standing authority.
@@ -59,6 +59,27 @@ its latest graph failed mocked-owner setup before phases; final32.861partial
 debit, recordedJobsclosed/CIDsabsent/owner-childPID unretained. No retry/migration.
 New descriptor and complete qualified config/runtime/installer/owner/readback
 proof are still needed before any existing futureTask update.
+Getter now COMPLETE3ce1/0138 at00:36:05 with three exact privacy-safeASTs,
+oneCIM/twofakechecks/all4Jobsclosed/no private/profileeffects. Exact narrow
+source review is COMPLETE, not yet a runtime context or financial admission:
+D:/thericher-v2/model-artifacts/review/current-codex-control-program-code-getter-20261107-v1/independent-review/API.json
+SHA29b9cc02d2c72469e87281232ec17ade473dffb8a21d71c63ff8197c4fe503cd;
+Source5f72/reviewb941/eligiblefields6d05. Parent11getter+13reviewrefs match.
+Literal-essential semantics remain unproved; SAMEmanagedcontrol_reference/
+semantic_source_grant:false only. Darwin prebound900active2700elapsed/<=3focused/
+onecompleteoriginalR4syntheticpair0retry, no existingTask update yet.
+Remaining custody source review87e081/f28e is COMPLETE12pins/10purecases/Ruff/
+allclosed/0actualqueries, not a runtime descriptor. Current newmetadata-only
+calibration is separately owned by Banach,0private/broker/Task/profileeffects;
+do not replay983/83d6 or invoke a private reader from source-only readiness.
+
+Intraday clock feasibility is COMPLETE; no blanket canonical hour shift:
+D:/thericher-v2/model-artifacts/data/current-intraday-source-clock-repair-feasibility-20261107-v1/API.json
+SHA16a9b3e04f38cedb7b6f4d118e32471d03e2513f59502564555816cb44bc27ef;
+Source3d29895f/11pins/13syntheticchecks/0payload/allclosed. Canonical NY-reference
+already applied; provider minute anchor/completion/arrival remain unknown.
+No retiming, rebuild, repeated study or Paper authority hold. Official timestamp
+contract review is public-docs-only; not KIS API/data acquisition.
 
 ThreephaseH3R2 COMPLETE at23:21:30,Sourceb3a6/readout29ee/resultce811/nativec327/
 closure92f5:0fits/forwards/GPU,12marketbooks/2wrappers/all3R2containers27Jobs

@@ -17,7 +17,7 @@ ready private work. Historical Sources/caps are not instructions to replay them.
 
 ## Current Priorities
 
-Updated Nov7UTC00:39 / Nov7KST09:39.
+Updated Nov7UTC00:49 / Nov7KST09:49.
 
 1. Preserve installed Nov9 SHORT R4 pair and validate its actual runtime when
    due, not by manually running it. Source30bbe174/native923a6d1c qualified;
@@ -39,6 +39,11 @@ Updated Nov7UTC00:39 / Nov7KST09:39.
    Keep SAME core/model/point/private/bank/token/emergency/clocks/exits. No edits
    to installed Source30bb/Tasks until actual complete Native and independently
    qualified future migration/positive original-owner closure/readback exist.
+   Getter3ce1/API0138 and independentreview5f72/API29b9/fields6d05 now qualify
+   the SAME managed control_reference (semantic_source_grant:false), not literal
+   semantic equality/financial authority. Parent11getter+13reviewrefs match.
+   Darwin derives new context and runs prebound900active2700elapsed/oneoriginal
+   R4syntheticpair0retry; installedR4 unchanged until actual migration qualifies.
 3. Recover exact custody evidence without blocking on unrelated Data/Research
    actors or successful peer trades. R7/R8/R9/R10 actual attempts are consumed,
    no complete strict financial result. R10c1 actual21:57 metadata ownidentity
@@ -87,6 +92,13 @@ Updated Nov7UTC00:39 / Nov7KST09:39.
    cohorts/68keys, noDEV and no price-basis/book bridge; not autorun.
    Use useful GPU work when ready, no duplicate fits for occupancy. Independent
    Research/Data/Execution work continues while task-owned opportunities wait.
+   NEW ENTRY_POOL vsSELF_CONTEXT proposal1fd8 is adopted: RAW60+IND8/H3Net25,
+   identical50849parameter/init/seed2026110701,2freshfits0retry,1800active5400elapsed,
+   INNERstop12/bestrestore/<=2natives/6syntheticupdates/16syntheticbooks/
+   4roleforwards/0oldcalls/8actualANDlogicalmarketbooks. Exact cachedOLD60/
+   event-grossEW and full input-only keys/clocks/native DTO/book first. CPU-first
+   actual-shape measurement, no fee/threshold rescue. A/research/current-h3-entry-
+   pool-self-context-development-20261107-v1; source prep is not an active fit.
 
 ## Boundaries And Completion
 

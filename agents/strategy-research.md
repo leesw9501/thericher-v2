@@ -1,6 +1,6 @@
 # Strategy Research Stateboard (전략 탐색)
 
-Updated Nov7UTC00:39 / Nov7KST09:39. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC00:49 / Nov7KST09:49. A=D:/thericher-v2/model-artifacts.
 Godel proposes executable hypotheses, not a model-name checklist or reading
 list. Detailed historical offers/rejections are in Git01f23a13 and Sources.
 
@@ -41,6 +41,18 @@ exactprogram provenance still missing. Privacy-safe SourceCode getter assigned,
 not anotherfinancialactor grant. R4oldclaims f562/efc081 unchanged. GenericJS/
 filesystem capability alone is not the finding; review same managedcontrol role
 underassumedhonesthost/closedargv/nochildren, not an invented adversarial sandbox.
+This review is now COMPLETE5f72/API29b9: SAMECONTROL_REFERENCE eligibility only,
+semantic_source_grant:false;13refs exact/Parentmatched. Literal-dependent
+equivalence/transitive startup claims stay unproved, no new financial grant.
+Getter3ce1/0138 oneCIM/all4Jobsclosed, no replay. Darwin has direct eligible
+fields6d05 and prebound actualnativepair, no extra ParentACK.
+
+New ENTRYproposal1fd8 (closedM5root NEXT-PROPOSAL.json) adopted for Arendt's
+current-h3-entry-pool-self-context-development-20261107-v1 preparation.
+FreshH3Net25/RAW728/capacity-initmatched50849parameters/POOLversusSELF, notold
+held-D model. Exact cachedOLD60/event-grossEW/cash comparisons/fees25eachside/
+whole17 input-only keys/fullmarks. Source/nativeadapter challenge180active900
+elapsed/directEngine, no numerical evaluation/rerank/threshold-cost rescue.
 
 ## Current Evidence For Direction
 

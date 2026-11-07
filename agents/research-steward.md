@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov7UTC00:39 / Nov7KST09:39.
+Updated Nov7UTC00:49 / Nov7KST09:49.
 A=D:/thericher-v2/model-artifacts. AGENTS.md owns resource/trial authority.
 Full former board: Git01f23a13:agents/research-steward.md. Immutable campaign
 APIs/closures retain exact failures, clocks, debits and checkpoints. This is
@@ -18,7 +18,7 @@ An assignment/source directory is not an active optimizer or resource lease.
 | Capacity/context ensemble0a805/a161 | COMPLETE2CPUfits4033updates/8actualreplays/all8containers68Jobsclosed. PrimaryNONINFORMATIVE/RECENT0changed; fixedmean2FAIL versusallcomparators. No rerun. |
 | Crossasset2c45/bd5d | COMPLETE2CPUfits3924updates/6actualreplays/all8containers68Jobsclosed. AdaptivePASSboth but extra1024parameters; not robust independent context evidence. |
 | M5indicatorLSTM/Ridge | COMPLETE API34c4c5b4/Source6108/result e6fb. Data8625/871a COMPLETE28checks/oneprojection. Actual2CPUfits; LSTM27epochs/best15/1350updates/10.462s, Ridgeclosedform/.118s. Native measured warmCPU6.040ms versusCUDA9.652ms selected CPU, not a CUDA ban. All4books0buys/NONINFORMATIVE/allactorsclosed. |
-| Next useful research | Strategy proposes one distinct cost-aware short-swing mechanism, not a threshold rescue/repeated M5fit. No current optimizer proven active. |
+| Next useful research | NEW ENTRY_POOL vsSELF_CONTEXT proposal1fd8 adopted00:49;2freshmatched50849param/728input/H3Net25 fits only after exact native/Source qualification. CPU-first actualshape measurement/2fit0retry/1800active5400elapsed/4forwards8marketbooks. No current optimizer proven active. |
 | ThreephaseH3R2 | COMPLETEb3a6/ce811/0fits/forwards/GPU/12marketbooks/all3R2containers27Jobsclosed. Primarygrowth-DDFAILboth/turnPASS;250.008571partialactive/noBudgetPASS. |
 | Execution reliability | R5ba0b unqualified, no installedR4change. StaleCodexcontrol-context identified; Source83d6 probe measured20runtime/2project contexts and newunreviewedprograms. Configuration-only R4 preparation is separate from current-task effects. |
 | Existing owned opportunities | H3AMDtechnicalfailure/Full17UNKNOWN. Source72 actuallypublished17known/4positive_H3 at21:47:03, validNov9UTC14:25..<14:35 only. InstalledR4entry14:31, no manualRun/duplicateforward. |

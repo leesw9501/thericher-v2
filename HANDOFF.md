@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated Nov7UTC00:39 / Nov7KST09:39.
+Updated Nov7UTC01:00 / Nov7KST10:00.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Detailed prior reality is preserved in Git01f23a13/c835f2b5 and immutable sources.
@@ -127,6 +127,26 @@ not a generic Node permission. Darwin's configuration-only R4 successor waits
 for that qualified descriptor, then one complete synthetic pair. Installed
 R4/claims/context/Tasks stay unchanged; no unqualified R5 shortcut.
 
+Current program provenance is now source-qualified for the SAME narrow managed
+control_reference role, semantic_source_grant:false. Getter3ce1/API0138285c
+captured three exact programs as safe redacted ASTs at00:36:05; oneCIM/twofake
+checks/fourJobsclosed/0private-Docker-KIS-Task-profileeffects. Parent11refs match.
+Independent review5f72/API29b9cc02/reviewb941/fields6d05 matched13refs; Parent
+independently matched all13. Literal-dependent semantic equality/transitive
+startup effects remain unproved, not a broad Node exemption or financial grant.
+A/review/current-codex-control-program-code-getter-20261107-v1/independent-review/API.json.
+Darwin may derive a NEW efc081-based context changing only eligible runtime/
+manifest/bootstrap/main pins, then complete original-R4 native pair under
+900active2700elapsed/<=3focused/onepair0retry. No actual futureTask update yet.
+
+Remaining-custody source review87e081/f28e COMPLETE:12inputpins/10purecases/
+Ruff/allclosed/0actualqueries. OldDocker attachment PID/birth failed before
+argv role;4a56 needs complete two-snapshot positive inactive proof or exact
+physical/source descriptor, not protectedRWfalse alone. Reader repair does not
+update R4 final classifiers. Banach now owns a NEW metadata-only calibration
+300active1200elapsed/<=2fakechecks/one1CIM+<=4localDockerGET observation0retry,
+no private read/nonce/profile/broker/Task effects or old-probe replay.
+
 F9 source-only join feasibility3a89cd7b is UNAVAILABLE: pinned public anchor
 does not bind broker ID/immutable state leaf; current decoder needs mutable
 pointer/pending/state plus writer admission. No source-only reservation release.
@@ -165,8 +185,15 @@ No future payload/feature parity or exact owned fill is inferred.
 Parent owns shared MD/Git. Banach owns current-runtime/reference-source probe,
 no new private read. Darwin owns source-only R4 configuration-refresh preparation
 after complete current-runtime descriptor; installed R4 stays unchanged.
-Planck completed M5Data projection; Arendt completed the new M5LSTM/Ridge
-campaign and is sole GPU coordinator. No optimizer currently proven active.
+Planck completed M5Data and clockfeasibility16a9/3d298/11refs/13syntheticchecks:
+canonical NY reference already applied; blanket hour shift is NOT justified.
+Provider bar start/end/completion/arrival semantics remain unknown, not a new
+research/Paper authority hold. No payload/provider/frozenSource changes. Parent
+11pins+emittedE9/F821-F822-F823 match. Current public-official-docs timestamp
+contract review240active900elapsed/<=4queries/no KIS calls seeks those exact
+missing semantics. Arendt completed M5 and owns
+the NEW ENTRY_POOL versus SELF_CONTEXT preparation below; no active optimizer
+is inferred. Banach source-reviews remaining Docker/container custody categories.
 Godel supplies strategy/independent source review. Ptolemy LLM CLOSED, completed
 fits never repeat. Actual installed Data/publisher duties are unchanged.
 
@@ -198,6 +225,22 @@ remain; no independent-alpha or live-input admission. Next distinct hypothesis
 must address economic/mechanism failure, not rescue thresholds or repeat fits.
 A/data/current-m5-120m-h30m-sequence-projection-20261107-v1;
 A/research/current-m5-indicator-lstm-ridge-development-20261107-v1.
+
+NEW ENTRY context campaign prebound00:49, not an active fit/result:
+A/research/current-h3-entry-pool-self-context-development-20261107-v1.
+Adopted proposal1fd8aa96b0b07117aabae2a8238907ae89d6488c11936d139065441cc64a5471
+under closed M5 NEXT-PROPOSAL.json: fresh-entry RAW60+IND8/H3Net25, not held-D.
+Exact H123Data ae4c/e238 and cachedOLD60 benchmark; two matched50849parameter
+POOL/SELF models/same seed2026110701 and initial weights. No new Data build,
+old-model calls, fee/threshold rescue or blend.1800active5400elapsed/cleanup180,
+2fits0retry/max100epochs10000updates each/INNERstop12/bestrestore;<=2natives/
+6syntheticoptimizersteps/16syntheticbooks/4whole-roleforwards/2seals/onejoint
+readout/8actualANDlogicalmarketbooks. CPU-first, actual-shape native measurement
+may select CUDA before fits. Exact producer/parser/DTO/book/bootstrap/mount and
+whole17-input-only/source/causality/perturbation checks precede market use.
+Primary must beat cash/SELF/cachedOLD60/event-grossEW both periods with frozen
+risky-DD/turn/effect bounds; missing alignment withholds only this comparison.
+All reused data/adaptive limits remain; no Paper bank/model deployment change.
 
 Original exits: GOOGLNov9UTC20:55, RAWNov10UTC14:30, HALFNov11UTC14:30,
 memoryNov20/H20Dec1; W25Nov10/13UTC21:30 remain exact owned duties.

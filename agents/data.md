@@ -1,10 +1,28 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov7UTC00:39 / Nov7KST09:39.
+Updated Nov7UTC01:00 / Nov7KST10:00.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
 Planck resumed for the new M5projection below. Previously completed builds and
 independently owned installed tasks are not repeated or cancelled.
+Closed source-only package: current-intraday-source-clock-repair-feasibility-
+20261107-v1,240active900elapsed/<=12targetedsource-contractrefs/one optional
+synthetic clocktest,0payload/provider/private/Task calls. Identify actual vendor
+clock defect and smallest justified repair for intraday input/Paper parity;
+missing timestamp semantics remain scoped unknown, no finality/PIT/arrival
+retag or canonical rebuild. New ENTRYcontext ae4c/e238 needs no new Data build.
+COMPLETE API16a9b3e04f38cedb7b6f4d118e32471d03e2513f59502564555816cb44bc27ef,
+Source3d29895f/11refs/13syntheticchecks/0payload/allclosed. Parent11pins and
+emittedF821-F822-F823-E9PASS. Recorded discrepancy is redundant Korea label
+onehour ahead under historicalEDT/captureEST; canonical already chooses NY.
+Vendor implementation explanation is inference, not proof. Blanket hour shift
+would corrupt canonical/unaffected winter rows; no retiming/rebuild justified.
+Provider xhms baranchor/completion/arrival still unknown; existing scoped
+research remains unchanged, no company-wide Paper hold.
+Current task: current-kis-minute-timestamp-contract-review-20261107-v1,
+240active900elapsed/<=4targeted official KIS/GitHub queries/no KIS or payload
+calls. Establish explicit versus undisclosed timing fields for intraday
+Paper-feature parity, not another dataset qualification report/platform.
 
 ## Current M5 Projection
 

@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov7UTC00:39 / Nov7KST09:39. A=D:/thericher-v2/model-artifacts.
+Updated Nov7UTC00:49 / Nov7KST09:49. A=D:/thericher-v2/model-artifacts.
 Detailed closed contracts/curves/caps/debits: Git01f23a13 and immutable APIs.
 No completed fit/forward/evaluation is rerun for GPU occupancy.
 All figures here are adaptive after-cost DEV / RECENT replay, not independent
@@ -45,6 +45,22 @@ limits retained, no Paperbank/input/lot or profitable-model claim.
 Use measured useful backend, not GPU occupancy. Next distinct cost-aware
 short-swing/mechanism proposal is Strategy-owned before a new frozen campaign;
 completed results never become extra trials. No app-name permission hold.
+
+Next preparation, not actual optimizer: adoptedNEXT-PROPOSAL1fd8aa96 under
+closedM5root, NEW current-h3-entry-pool-self-context-development-20261107-v1.
+ExistingH123Data ae4c/e238/original728RAW60+IND8/H3Net25 RMS/splits20purge and
+cachedOLD60 rawH3/no oldcalls. Two50849param/init-matched seed2026110701 models:
+same-date17POOL versus identicalcapacity SELF context, fresh entry not held-D.
+1800active5400elapsed/cleanup180/2fits0retry/max100epochs10000updates each/
+INNERstop12/LRplateau4/bestrestore/fullcurves. CPU-first; native actualshape
+3CPU3CUDAsteps TOTAL6 may select backend before fitSource.<=2natives/
+16syntheticbooks/4whole-roleforwards/2seals/onejointreadout/8actualANDlogical
+marketbooks. Exact parser/whole17 input-only/permutation/perturbation/checkpoint/
+strictH3DTO/book/mount/bootstrap negatives before market use. Primarygrowth
+beats cash/SELF/cachedOLD60/event-grossEW bothperiods, riskyDD<=1.25EW,
+turn<=1.05maxcontrols/positiveeffects>=2changedcohorts with>=1eachperiod.
+Missing alignments withhold only comparison; no masksubset/threshold-cost rescue,
+extra seed/blend/fits or Paper bank/deployment change. Adaptive reuseddata only.
 
 ## Recent Closed Comparisons
 
