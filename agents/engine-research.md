@@ -1,11 +1,37 @@
 # Engine Research Stateboard (매매 엔진 연구)
 
-Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
-Current owner Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea, also soleGPUcoordinator.
+Updated Nov9UTC11:43 / Nov9KST20:43. A=D:/thericher-v2/model-artifacts.
+Latest bounded eval prep: Sagan01a1c018-059e-77b1-a1f4-f5908a2d3db0.
 Detailed former contracts/curves/debits: Git8b1db436/01f23a13 and immutable APIs.
 No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
+
+Nov23: Nov9 cohort closed unmeasured (sole locked target not admitted). No
+reforecast or zero-return imputation. Next fixed five candidate intervals in
+RUNBOOK; the new tracked session selector has no provider or outcome access.
+The Nov9 seal and test history below are retained, not pending work.
+
+First actual pre-open fixed-half cohort sealed Nov9UTC11:43:43.513:
+A/research/current-fixed-half-nov9-forecast-20261109-v1/actual/SEAL.json
+b4478e07, Source32b490fe, forecast194d9382, scoring lock63b74188. Same exact
+Data0f/RAW60x12+IND8/FITstats, new SELF best6 CPU inference once, reuse exact
+Source72 OLD60 raw H3, zero fitting/repeated LSTM/target reads. Native input
+and parser PASS (4 negatives), actual forecast parsed by independent eval
+consumer for all17; 10 Jobs and 2 containers closed.
+
+Frozen comparison A/research/current-fixed-half-forward-evaluation-20261109-v1
+Source920d2a02, contractca253d74: Nov9 OPEN to Nov12 OPEN, positive 0.5/17
+per selected slot, matched funded-gross 17-name EW, 25bp each leg, cash
+reference. Original H3 replay; two invented books/13 rejects, no actual
+evaluation. Must qualify exact Nov13 W25 source4cbe target-only OPEN4/CLOSE3
+same basis after Nov13UTC21:45. No peek/retune/forecasts/reruns, no claim of
+out-of-sample gain/DD until actual marks and one locked evaluation.
+One-shot caller3611e635 under
+A/research/current-fixed-half-nov9-one-shot-readout-preparation-20261109-v1
+has exact mount/caller notes and proof checks: no early target read, original
+replay pins, exclusive synced attempt, aggregate result only. No new books
+in caller preparation. Retain same state directory and no retry.
 
 All new fitting is CLOSED; no active optimizer is evidenced. Temporary Bohr
 LLM closed after successful CUDA execution, not a CUDA availability restriction.
@@ -18,10 +44,9 @@ SELF is best6 MLP, and exact OLD60 is Source72 best10 LSTM60+IND8. Real input
 producer/parser, frozen feature kernel, safe weights and H3 DTO roundtrip passed.
 Final audit5s late; partial active~80.49s, no BudgetPASS or rerun.
 
-Next consumer needs exact new future public input/point and finite binding,
-isolated RO inference and duplicate-key/exact-number parser hardening. Frozen
-source remains immutable. No Nov9 point/model swap or new bank. Blend's frozen
-DDfailure and adaptive DEV+RECENT selection remain; no promotion claim.
+The new Nov9 analytical forecast above is separate from this earlier
+synthetic-only bundle and the Paper model. No Nov9 Paper point/model swap or
+new bank. Blend's frozen DDfailure and adaptive selection remain historical.
 
 ## Latest Closed Studies
 

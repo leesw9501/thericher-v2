@@ -1,8 +1,8 @@
 # Research Steward Stateboard (연구 자원·평가 관리)
 
-Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
-Arendt01a1af96-209a-72f2-8cf9-e698e483f5ea is soleGPUcoordinator. AGENTS.md owns
-resource/trial authority. History/caps/debits: Git8b1db436 and immutable APIs,
+Updated Nov9UTC11:43 / Nov9KST20:43. A=D:/thericher-v2/model-artifacts.
+No active optimizer or GPU worker in the prospective package. AGENTS.md owns
+resource/trial authority. History/caps/debits: Git6874494b and immutable APIs,
 not another resource platform. An MD/source folder is not an active optimizer.
 
 ## Actual Queue
@@ -13,10 +13,11 @@ not another resource platform. An MD/source folder is not an active optimizer.
 | FixedhalfSELF/LSTM |COMPLETE0ce5/11973/aa5c;0fits/forwards/GPU/4newbooks/all3containers27Jobsclosed. GrowthPASS/DDFAILboth, no model promotion. |
 | PastRV20 allocation |COMPLETE7fc9/71d0/9643;0fits/forwards/GPU/4books/0controlreplays/all3containers27Jobsclosed. Exactgrossmatch passed, utilityFAILboth. No further grid. |
 | Fixed-half Paper proposal |COMPLETE synthetic API63e0/Source2072/bundleee98; two saved-checkpoint CPU forwards, zero training/market/GPU, all2containers20Jobsclosed. Final metadata audit5s late, partial~80.49s/no BudgetPASS. No ready optimizer inferred. |
+| Fixed-half prospective H3 |ACTUAL pre-open b4478e07/32b490fe/lock63b74188. 1 new CPU inference, reused OLD60,0 training/repeated forwards/outcomes/GPU. Native+actual all10 Jobs and2 containers closed. Held until exact target-source admission after Nov13UTC21:45; one evaluation with two books, no reselection. |
 | Execution priority |R8 Source29ccc installed Nov7UTC02:58:40; result f88ac16f, original pair unchanged clocks/model/bank, all9 Jobs closed. Actual admission and financial outcome not observed. |
 
-Completed synthetic calls do not reopen old trial counters or enable market
-forecasts/broker effects. Future input UNKNOWN; no Nov9 point swap or new bank.
+Completed synthetic calls do not reopen old trial counters. The separate
+research-only Nov9 seal does not swap the Paper point or enable broker effects.
 
 ## Resource Knowledge
 

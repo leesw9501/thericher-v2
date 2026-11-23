@@ -1,9 +1,15 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Updated Nov9UTC11:43 / Nov9KST20:43. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package APIs.
 
 ## Company Reality
+
+Nov23: Execution isolated the pre-marker owner failure and host-off missed
+windows. Data closed Nov9 unmeasured and prepared the next capture contract.
+Parent owns the tracked startup helper and integration, with a separate
+tracked calendar utility. No new runtime deployed. Next reusable paths and
+completion conditions are in NEXT_CODEX_GOAL.md and RUNBOOK.md.
 
 coexistent-native-paper-execution-runtime-v1 UNFINISHED. No newly qualified exact
 owned acceptance/fill/current inventory/terminal/netPnL. Tests/install/replay/
@@ -12,6 +18,14 @@ ONEinitialB/10/F9UNKNOWN-HELD/all pending/reservations/costs/losses/exits unchan
 Parent owns shared MD/Git; no live/public/paid authority added.
 
 ## Current Team
+
+Nov9 parallel bounded packages: Mill checked original Scheduler and qualified
+the R8-specific custody adapter (28 invented checks). Faraday confirmed exact
+Data0f/Source72 compatibility and the future target-only W25 route. Sagan
+froze original replay/cost/comparator and verified 2 invented books/13 rejects.
+Parent took the time-critical pre-open producer: Source32b490fe, seal b4478e07
+at11:43:43.513, lock63b74188, 1 CPU inference/0 LSTM repeat/training/target reads,
+all10 Jobs/2 containers closed. No schedule/bank/model swap.
 
 | Role / agent | Current evidence / action |
 | --- | --- |
@@ -32,6 +46,14 @@ LLM. Direct qualified handoffs permitted; ACK finals never replace actual APIs.
 
 ## Ready / Owned / Due
 
+- Nov9 original entry/public result due14:31/14:37UTC. Both tasks Ready and
+  never run as of11:36. Mill's reader bridges `publication` receipt only,
+  not current custody proof. Exact fill/holding claim needs actual attempt
+  and isolated admitted read. Never infer from task exit or pre-open Ready.
+- Prospective cohort locked Nov9 OPEN -> Nov12 OPEN. Target admission not
+  before Nov13UTC21:45 on exact W25 Source4cbe2eb6. Whole17 and same basis,
+  full source-known OPEN4/CLOSE3/custody; two books, no target reads yet.
+  Separate due times do not halt either lane. No foreground market wait.
 - R8 is installed on the original pair. Parent migration result f88ac16f under
   A/execution/current-nov9-r8-parent-migration-20261107-v1. At02:58:31 positive
   original owner closure, at02:58:40 final exit-first/independent full XML/API7

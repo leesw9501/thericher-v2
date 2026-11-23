@@ -1,10 +1,35 @@
 # TheRicher v2 Handoff
 
-Updated Nov7UTC02:59 / Nov7KST11:59.
+Updated 2026-11-23. Earlier Nov7/9 deployment and research detail below is historical.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History/contracts/debits: Git8b1db436/99af01f4 and immutable external APIs.
 This is working memory for the engine/Paper loop, not another evidence registry.
+
+## Nov23 Partial Reset
+
+Nov9 entry ran and closed without timeout, with an unavailable host terminal
+before `owner.prove()` reached the attempt marker. The startup file records
+`ValueError` at `scheduled.py:25`; the underlying denial string was not kept.
+Actual registered XML lacks runtime-required RegistrationInfo.Source and has
+different Description. The owner comparison keeps both fields. Treat this as
+a demonstrated install/runtime mismatch, not a proven first failing guard.
+Terminal bc0bfc96 and child closure f54578a7 in R8 runtime receipts preserve
+the attempt. No new order/fill/holding or reservation conclusion follows.
+
+Nov12 exit and Nov13 W25 capture never ran. Kernel-General System events
+208796/208797 place both due windows between Nov11 21:19 KST shutdown and
+Nov14 22:42 KST boot; Task Scheduler Operational logging was unavailable.
+Neither task had wake or catch-up enabled. No definitions changed, replay,
+new KIS call or private custody access in this diagnosis.
+
+Nov9 fixed-half research: CLOSED_UNMEASURED, locked target not admitted;
+retain original pre-open seal b4478e07; no alternative target or result of zero.
+Next five planned H3 intervals and requirements are in RUNBOOK. Neither the
+new tracked startup helper nor that forecast calendar is a deployed worker.
+Nov23 verification supersedes the historical suite below: 8/8 workers,
+20,336 items, 20,310 passed / 26 Windows symlink skips / 35 warnings,
+421.44 seconds, guarded helper exit 0. Focused new tests 21 passed.
 
 ## Company Reality
 
@@ -48,6 +73,12 @@ provider-finality/PIT/OS-origin proof. No stale retag/placeholder/retrain.
 R8 public result reader8742d364/26 checks (RUNBOOK) after each phase hard end.
 Old7f506317 was 30bb-only. New reader is operational, not private custody or
 OS-origin proof; no receipt or incomplete chain remains unknown.
+Nov9UTC11:36 Scheduler status: both enabled/Ready and never run, no KIS call.
+Original entry remains due Nov9UTC14:31, public read after14:37. Any positive
+financial claim must bind the exact original request and attributed fill;
+fresh broker holdings need a separate scoped same-account read. Existing
+decoder's old `publisher` spelling does not accept the R8 `publication`
+producer; do not reuse its consumed execution command or rewrite receipts.
 
 ## Runtime Recovery
 
@@ -127,8 +158,23 @@ H20Dec1 exits and W25Nov10/13UTC21:30 owned observations.
 
 ## Research
 
-All adaptive/reused/current-listed, not independent alpha or broker PnL.
-Numbers are after-cost DEV / RECENT replay,25bp EACH buy and sell.
+**Current prospective cohort.** Fixed-half saved MLP/LSTM forecast sealed
+Nov9UTC11:43:43.513, before the 14:30 research open, at
+A/research/current-fixed-half-nov9-forecast-20261109-v1/actual/SEAL.json
+SHA b4478e07d93ebcc8d4e2963a02fc84c5d8281c0da6db8d12478014d97d656c50.
+Source32b490fe/forecast194d9382/lock63b74188. One new SELF CPU inference from
+exact Data0f 60x19 completed prefix, Source72 OLD60 raw H3 reused, 0 fits /
+OLD60 forwards / targets read. All10 Jobs and both containers closed.
+Evaluator920d2a02 used original H3 book, matched funded-gross 17-name EW,
+25bp each leg and sampled NAV drawdown; 2 invented books/13 negatives and
+exact actual forecast parse PASS, no market replay. Single event Nov9 OPEN
+to Nov12 OPEN; marks only after Nov13UTC21:45 with exact W25 Source4cbe2eb6
+positive closure, all17 OPEN4/CLOSE3 and untouched same-basis evidence.
+Claude SUPPORTED_WITH_LIMITS in evaluation lock. No PnL or risk claim yet;
+no reforecast, reselection, Paper change or synthetic-to-actual substitution.
+
+Historical numbers below are adaptive/reused DEV / RECENT replay, 25bp each
+buy and sell, not independent alpha or broker PnL.
 
 | Closed campaign | Actual result |
 | --- | --- |

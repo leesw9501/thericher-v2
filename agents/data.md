@@ -1,7 +1,10 @@
 # Data Stateboard (시장데이터)
 
-Updated Nov7UTC02:33 / Nov7KST11:33.
+Updated 2026-11-23.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Nov13 locked W25 capture missed during host shutdown. No qualified target
+edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK
+block; qualify a reusable coherent 60-session and outcome capture path.
 Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
 Planck LLM CLOSED after completed M5/clock/official-document packages. Completed builds and
 independently owned installed tasks are not repeated or cancelled.
@@ -29,8 +32,12 @@ transformchanges/allclosed/Parent4pins match. Reference labels/NMIN documented,
 exactDST/baranchor/completion/finality/arrival not established in reviewed
 official sources; portalunverified. Stop this docprobe, no canonicalhourshift.
 NewENTRY/fusion/temporal/RV20 consumers completed without new Data builds.
-Current Paper-proposal checkpoint/feature parity is Engine-owned; futureData
-remainsUNKNOWN until exact consumer-qualified preparation, no Nov9pointretag.
+Faraday's Nov9 metadata review confirmed exact Data0f input and Source72
+OLD60 H3 reuse. Parent actual seal b4478e07 before Nov9 open; no retag/acquisition.
+Separate target-only candidate: exact W25 Nov13 capture Source4cbe2eb6, locked
+by evaluation63b74188. Only after Nov13UTC21:45, actual READY/owner closure and
+same MODP1 source-known whole17 Nov9-12 OPEN4 / first3 CLOSE, no conditionals.
+Current outcomes not read or qualified. No historical DEV/RECENT reuse as OOS.
 
 ## Current M5 Projection
 

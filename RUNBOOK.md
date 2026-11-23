@@ -1,6 +1,6 @@
 # Runbook
 
-Updated Nov7UTC02:59 / Nov7KST11:59. Company outcome UNFINISHED.
+Updated Nov9UTC11:43 / Nov9KST20:43. Company outcome UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Current reality: HANDOFF.md. Authority: AGENTS.md. Historical runnable scopes:
@@ -22,6 +22,37 @@ Set-Location 'C:/Users/Public/Documents/thericher-v2'
 Read current goal/handoff/roles and actual resource/owner before resume/restart/
 reconcile. Source/API/closure, not an MD or directory, determines completed work.
 Untracked %SystemDrive%/ is unrelated and must not be staged/deleted.
+
+## Current Recovery And Forward Evaluation
+
+Nov9 entry closed in scheduled-owner proof before the financial marker.
+Do not use the missing-marker reader as proof it never launched. Compare
+installed and runtime-expected task semantics using the same definition
+producer in the replacement. Exercise an invented installed-to-runtime
+handoff including RegistrationInfo.Source and Description; do not weaken
+identity or risk checks. Use the tracked startup helper with the fixed task
+slot identity and an absolute owned evidence root, before financial code.
+An interrupted attempt stays unknown; no expiry grants another submit.
+
+Nov12 exit and Nov13 data were missed with the host off. Do not enable
+unbounded catch-up for entries; preserve original exits and allow only exact
+owned recovery. The Nov9 50:50 seal is archived unmeasured since its sole
+target capture was absent. Historic commands below are not instructions to
+replay those windows.
+
+Next research block (US session dates, `OPEN[e]` to `OPEN[e+3]`):
+Nov30-Dec3, Dec4-Dec9, Dec10-Dec15, Dec16-Dec21, Dec22-Dec28.
+These are fixed candidate windows, not installed tasks. Use the tracked 2026
+calendar and `select_prospective_h3_intervals`; include early-close dates at
+their actual close. Before first dispatch, bind the 60-session completed
+input source, 19-name input/17-name decision axis, exact existing checkpoints
+and FIT affines, and same-basis source-known OPEN4/CLOSE3 outcome capture.
+No full prefix or timely seal means that slot is missing, not replaced.
+Compare fixed half (strict positive, 0.5/17 per name), same funded-gross
+17-name EW and cash, 25bp per side; retain valid no-signal independently of
+missing. Read once at block end, at least four admitted cohorts for a
+descriptive comparison only. Count dates, not 17 independent observations
+per date. No payout tuning, new fits, or promotion from this sample.
 
 ## Current Deployment
 
@@ -89,6 +120,42 @@ Exact ATTEMPT/LAUNCH/CHILD-STARTED/HOST-TERMINAL/CHILD-CLOSED immutable path/has
 chain, optionalPARENT-TERMINAL normal success; no latestscan/Taskexit/standalone
 startup inference. Public operational report only, not custody/PnL/release or
 cryptographic OS-scheduler origin. Missing/unbound staysUNKNOWN.
+
+Nov9UTC11:36 Scheduler projection: both exact original tasks enabled and
+Ready, never run. Do not treat that as an outcome or manually invoke either.
+After an actual eligible R8 attempt, distinguish submission from exact
+acceptance/fill and attributed owned inventory. Old reader expects `publisher`;
+R8 producer emits `publication`. Preserve exact R8 receipt bytes and use only
+the separately qualified R8 adapter with current relevant-writer admission,
+no network, private/source RO and before/after stability. A fresh broker
+holdings read is a separate same-account observation, not attributed custody.
+Exact adapter `reader.start()` plus typed `Expected`/immutable bytes:
+D:/thericher-v2/model-artifacts/execution/current-nov9-r8-owned-reader-preparation-20261109-v1/reader.py
+d0df5a44d76ae2f7cc7a3c93f724f759946266bfb709b87ceffc9c5096c001cd;
+28 invented producer-to-decoder checks. No actual private-read authorization
+from the adapter itself; no standalone replay of the old decoder command.
+
+## Fixed-Half Prospective Evaluation
+
+Use the existing PREOPEN seal, never rerun the forecast:
+D:/thericher-v2/model-artifacts/research/current-fixed-half-nov9-forecast-20261109-v1/actual/SEAL.json
+SHA b4478e07d93ebcc8d4e2963a02fc84c5d8281c0da6db8d12478014d97d656c50.
+Sealed Nov9UTC11:43:43.513; exact MLP/LSTM mix and scoring/target-source
+lock63b74188. Entry Nov9UTC14:30, expiry Nov12UTC14:30. Do not open targets
+until Nov13UTC21:45 and exact source4cbe2eb6 qualified W25 READY, positive
+closure, same-basis full17 OPEN4/CLOSE3 and untouched custody. This capture is
+target-only, never forecast input. No replacement after viewing outcomes.
+Evaluator Source920d2a02 uses the original H3 book, 25bp per buy/sell, and
+event-gross-matched 17-name EW; cash is a reference. Only two actual book
+calls, no training, no repeats. Report return, sampled NAV drawdown and
+exposure/turnover together; one cohort is descriptive and not broker PnL.
+One-shot caller and exact RO mount instructions:
+D:/thericher-v2/model-artifacts/research/current-fixed-half-nov9-one-shot-readout-preparation-20261109-v1/RUN.md.
+Caller3611e635 proof smoke joined the actual seal, denied early target
+access, verified evaluator imports and exercised an exclusive synced debit
+on its state bind. No books, actual target mount or debit in that prep.
+Use only after admissible Data marks plus the exact compact receipt; never
+open a separate W25 sealed evaluation or reset an incomplete attempt.
 
 ## Consumed Evidence
 

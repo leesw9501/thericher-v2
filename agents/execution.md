@@ -1,9 +1,16 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated Nov7UTC02:59 / Nov7KST11:59. A=D:/thericher-v2/model-artifacts.
+Updated 2026-11-23. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
+
+Current: Nov9 owner proof failed before the financial marker (terminal and
+child closure retained); Nov12 exit never ran while host was off. Installed
+and runtime RegistrationInfo differ; native canonicalizer confirmed both
+field differences matter on invented XML. No direct original inner-denial
+evidence. Use one definition producer and locked startup receipt for a new
+opportunity, not a replay. The deployment observations below are historical.
 
 ## Actual Current Deployment
 
@@ -44,6 +51,20 @@ Original mock artifact-root failure and repair1 historical preflight preserved.
 R8 reader8742/26 checks in RUNBOOK is operational-only, not actual custody.
 At effects enforce unchanged input/clock/owner/account/bank/unknown/quote/risk
 guards. No schedule expansion, model swap or new capital.
+
+Nov9UTC11:36 both original tasks enabled/Ready, never run. Exact post-hard-end
+result reader only after Nov9/12UTC14:37 respectively. Mill checked source and
+migration pins; no new KIS/task/financial observation. The old custody parser
+rejects R8's `publication` receipt because it expects `publisher`. New exact
+RAM-only adapter under A/execution/current-nov9-r8-owned-reader-preparation-20261109-v1,
+reader.py d0df5a44d76ae2f7cc7a3c93f724f759946266bfb709b87ceffc9c5096c001cd,
+smoke.py cb45e2cd892b84417738a246e4e57cce749e23e7341fd23253cd01ce804a5d2c.
+28 guarded invented cases PASS, including original producer ABI, acceptance,
+partial/full fill, owned position and terminal flat. No receipt rewrite or
+runtime changes. An actual attempt still needs independently bound Expected
+and relevant-writer admission, network-none/private-source RO/stability.
+Use `reader.start()` only inside that cold scoped consumer. Attributed local
+inventory is distinct from a fresh read-only same-account broker snapshot.
 
 ## Relevant Metadata Scope
 
