@@ -8,6 +8,24 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: the existing dashboard source now leads with today's observed
+order evidence, project inventory and saved control requests. Past execution
+details remain expandable; short account tables fit a narrow viewport. On
+six synthetic state/viewport combinations, all three controls fit above the
+fold, keyboard focus reached each, and axe-core found zero automated WCAG
+A/AA violations. Its only inconclusive check was the decorative refresh glyph,
+measured separately at 5.95:1. Candidate local image
+`thericher-v2-web:operator-overview-20261123` (4745ec7b) built; existing 8787
+still runs be48. Do not change image identity under a frozen owner contract
+without qualifying the exact new actor or positively closing relevant owners.
+
+Paper successor registration and scheduled preflight are tested components,
+not a deployable pair. Claude challenge: a rejected launch must not consume
+the legitimate slot or imply a valid owner. Keep separate diagnostic/financial
+boundaries and prove the actual installer-to-owner handoff in the successor.
+Dec4/Dec9 remains a candidate only; exact Dec3 post-close OHLC60/19-name
+input and fresh publisher are absent. No replacement Task or broker effect.
+
 Nov9 entry ran and closed without timeout, with an unavailable host terminal
 before `owner.prove()` reached the attempt marker. The startup file records
 `ValueError` at `scheduled.py:25`; the underlying denial string was not kept.

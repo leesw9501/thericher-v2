@@ -488,12 +488,10 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     buy_state = "일시정지 요청 · Paused" if snapshot.pause_buys else "정지 요청 없음"
     sell_state = "일시정지 요청 · Paused" if snapshot.pause_sells else "정지 요청 없음"
     buy_action = "resume-buys" if snapshot.pause_buys else "pause-buys"
-    buy_label = "매수 정지 해제 · Resume buys" if snapshot.pause_buys else "매수 정지 · Pause buys"
+    buy_label = "매수 재개 요청" if snapshot.pause_buys else "매수 중지 요청"
     buy_class = "" if snapshot.pause_buys else "danger"
     sell_action = "resume-sells" if snapshot.pause_sells else "pause-sells"
-    sell_label = (
-        "매도 정지 해제 · Resume sells" if snapshot.pause_sells else "매도 정지 · Pause sells"
-    )
+    sell_label = "매도 재개 요청" if snapshot.pause_sells else "매도 중지 요청"
     sell_class = "" if snapshot.pause_sells else "danger"
     paper_account_details = _paper_account_details(
         snapshot.paper_account,
@@ -501,6 +499,42 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
         observed_at=snapshot.paper_account_observed_at,
         now=snapshot.heartbeat_utc,
     )
+    operations = _safe_operations(snapshot.operations_snapshot, now=snapshot.heartbeat_utc)
+    control = f"""
+    <section class="section controls" aria-labelledby="safety-heading">
+      <div class="section-header">
+        <h2 id="safety-heading" tabindex="-1">실행 제어</h2>
+        <span class="tag tag-unknown">실행기 반영: 미확인</span>
+      </div>
+      <p class="control-note">저장된 요청 · Local state only</p>
+      <div class="actions">
+        <form method="post" action="/controls/{buy_action}">
+          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
+          <span class="control-state">{buy_state}</span>
+          <button class="{buy_class}" type="submit">{buy_label}</button>
+        </form>
+        <form method="post" action="/controls/{sell_action}">
+          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
+          <span class="control-state">{sell_state}</span>
+          <button class="{sell_class}" type="submit">{sell_label}</button>
+        </form>
+        <form class="emergency-action" method="post" action="/emergency/stop-new-orders">
+          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
+          <span class="control-state">
+            {"차단 요청 있음" if snapshot.stop_new_orders else "차단 요청 없음"}</span>
+          <button class="danger" type="submit">신규주문 차단 요청</button>
+        </form>
+      </div>
+      <details class="evidence"><summary>제어 기록 및 적용 범위</summary>
+        <p>제어 요청 저장 ≠ 모든 실행기 반영 · consumer ack unknown.
+          미확인 주문·예약금은 유지됩니다. 미체결 취소 요청:
+          {"있음 · 결과 미확인" if snapshot.cancel_open_orders_requested else "없음"}.</p>
+        <p>방향 제어: {_text(snapshot.execution_control_reason)} ·
+          {_clock(snapshot.execution_control_updated_at)}</p>
+        <p>비상 제어: {_text(snapshot.emergency_reason)} ·
+          {_clock(snapshot.emergency_updated_at)}</p>
+      </details>
+    </section>"""
     return f"""<!doctype html>
 <html lang="ko">
 <head>
@@ -560,18 +594,6 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     .subtitle, .meta, .empty {{ color: var(--muted); }}
     .subtitle {{ margin-top: 2px; }}
     .meta {{ font-size: 12px; text-align: right; }}
-    .status-band {{
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-bottom: 1px solid var(--line);
-      background: var(--surface);
-    }}
-    .metric {{ padding: 14px 16px; border-right: 1px solid var(--line); }}
-    .metric:last-child {{ border-right: 0; }}
-    .metric-label {{ display: block; color: var(--muted); font-size: 12px; }}
-    .metric-value {{ display: block; margin-top: 3px; font-weight: 700; }}
-    .state-ready {{ color: var(--ink); }}
-    .state-paused {{ color: var(--red); }}
     .state-unknown {{ color: var(--amber); }}
     .section {{ border-bottom: 1px solid var(--line); padding: 20px 0; }}
     .section-header {{
@@ -581,7 +603,17 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
       gap: 16px;
       margin-bottom: 10px;
     }}
-    .actions {{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }}
+    .actions {{ display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: end; }}
+    .controls {{ padding: 12px 0; }}
+    .control-state, .control-note {{ display: block; color: var(--muted); font-size: 12px; }}
+    .control-state {{ margin-bottom: 3px; }}
+    .control-note {{ margin-bottom: 6px; }}
+    .emergency-action {{ border-left: 1px solid var(--line); padding-left: 16px; }}
+    .operator-overview {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 24px; padding: 12px 0; border-bottom: 1px solid var(--line); }}
+    .operator-overview p {{ margin-top: 4px; overflow-wrap: anywhere; }}
+    .outcome-row {{ display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 4px 0; }}
+    .outcome-row strong {{ min-width: 100px; }}
     form {{ margin: 0; }}
     button {{
       min-height: 44px;
@@ -626,7 +658,7 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     td.numeric, th.numeric {{ text-align: right; font-variant-numeric: tabular-nums; }}
     tbody tr:last-child td {{ border-bottom: 0; }}
     tbody tr:hover {{ background: #f1f5f3; }}
-    td, .metric, .overview > div {{ overflow-wrap: anywhere; }}
+    td, .overview > div {{ overflow-wrap: anywhere; }}
     .notice {{
       border-left: 3px solid var(--amber);
       background: var(--amber-soft);
@@ -664,20 +696,23 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
       .shell {{ padding: 12px; }}
       .topbar, .section-header {{ align-items: start; flex-direction: column; gap: 6px; }}
       .meta {{ text-align: left; }}
-      .status-band, .overview {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+      .overview {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
       .two-column {{ grid-template-columns: 1fr; }}
-      .metric, .overview > div {{ padding: 10px; border-bottom: 1px solid var(--line); }}
-      .metric:nth-child(even), .overview > div:nth-child(even) {{ border-right: 0; }}
-      .metric:nth-last-child(-n+2), .overview > div:nth-last-child(-n+2) {{ border-bottom: 0; }}
+      .overview > div {{ padding: 10px; border-bottom: 1px solid var(--line); }}
+      .overview > div:nth-child(even) {{ border-right: 0; }}
+      .overview > div:nth-last-child(-n+2) {{ border-bottom: 0; }}
       .timeline {{ gap: 10px; }}
       .timeline time {{ font-size: 12px; }}
       .run-facts {{ gap: 8px; }}
       .run-header .tag {{ margin-left: 0; }}
       .navigation {{ gap: 4px 18px; }}
       table {{ min-width: 460px; }}
-      .facts-table {{ min-width: 0; }}
+      .facts-table, .compact-table {{ min-width: 0; }}
+      .compact-table th, .compact-table td {{ padding-inline: 6px; overflow-wrap: anywhere; }}
     }}
     @media (max-width: 480px) {{
+      .operator-overview {{ grid-template-columns: 1fr; }}
+      .emergency-action {{ border-left: 0; padding-left: 0; }}
       .timeline {{ grid-template-columns: 1fr; gap: 8px; }}
       .timeline li {{ display: grid; grid-template-columns: minmax(86px, 0.65fr) minmax(0, 1fr);
         gap: 10px; border-top-width: 1px; padding-top: 8px; align-items: baseline; }}
@@ -691,7 +726,7 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     <header class="topbar">
       <div>
         <h1>TheRicher v2</h1>
-        <p class="subtitle">Paper 운영 <span class="scope">· Local paper console</span></p>
+        <p class="subtitle">KIS 모의투자 운영 <span class="scope">· Local paper console</span></p>
       </div>
       <div class="meta">
         <p>화면 생성 {_clock(snapshot.heartbeat_utc)}</p>
@@ -705,27 +740,9 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
       <a href="#data-heading">시장 데이터</a>
     </nav>
 
-    <section class="status-band" aria-label="저장된 제어 상태 · Control state">
-      <div class="metric">
-        <span class="metric-label">비상 신규주문 차단 요청</span>
-        <span class="metric-value {_state_class(snapshot.stop_new_orders)}">
-          {"차단 요청 있음" if snapshot.stop_new_orders else "차단 요청 없음"}</span>
-      </div>
-      <div class="metric">
-        <span class="metric-label">계좌 관측 경과 · Snapshot age</span>
-        <span class="metric-value">{_snapshot_age(snapshot)}</span>
-      </div>
-      <div class="metric">
-        <span class="metric-label">모델 매수 제어 · Buys</span>
-        <span class="metric-value {_state_class(snapshot.pause_buys)}">{buy_state}</span>
-      </div>
-      <div class="metric">
-        <span class="metric-label">모델 매도 제어 · Sells</span>
-        <span class="metric-value {_state_class(snapshot.pause_sells)}">{sell_state}</span>
-      </div>
-    </section>
-
-    {_operations_details(snapshot)}
+    {_operator_overview(snapshot, operations)}
+    {control}
+    {_operations_details(operations)}
 
     <section class="section" aria-labelledby="broker-heading">
       <div class="section-header">
@@ -733,6 +750,8 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
         {_status_badge(snapshot.paper_account_status)}
       </div>
       <p class="scope">source: kis_paper · 계좌 전체 관측; 프로젝트 소유 판정과 별개</p>
+      <p class="scope">계좌 관측 {_clock(snapshot.paper_account_observed_at)} ·
+        {_snapshot_age(snapshot)}</p>
       <div class="table-wrap" tabindex="0" role="region" aria-label="KIS 계좌 사실 상태">
         <table class="facts-table">
           <caption>계좌 사실 · Account facts</caption>
@@ -755,39 +774,6 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
         <p>Virtual-paper canary: {_text(snapshot.paper_canary_status)} ·
           Canary reconciliation: {_text(snapshot.paper_canary_reconciliation_status)}</p>
         {_paper_canary_details(snapshot)}
-      </details>
-    </section>
-
-    <section class="section" aria-labelledby="safety-heading">
-      <div class="section-header">
-        <h2 id="safety-heading" tabindex="-1">실행 제어 · Execution controls</h2>
-        <span class="scope">저장된 요청 · Local state only</span>
-      </div>
-      <div class="actions">
-        <form method="post" action="/controls/{buy_action}">
-          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
-          <button class="{buy_class}" type="submit">{buy_label}</button>
-        </form>
-        <form method="post" action="/controls/{sell_action}">
-          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
-          <button class="{sell_class}" type="submit">{sell_label}</button>
-        </form>
-        <form method="post" action="/emergency/stop-new-orders">
-          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
-          <button class="danger" type="submit">신규주문 차단 요청 · Pause new entries</button>
-        </form>
-      </div>
-      <p class="scope">
-        실행기 반영: 미확인 · consumer ack unknown. 실행기 소비 확인: 미수신.
-        제어 요청 저장 ≠ 모든 실행기 반영. 미확인 주문·예약금은 유지됩니다.
-        미체결 취소 요청:
-        {"있음 · 결과 미확인" if snapshot.cancel_open_orders_requested else "없음"}.
-      </p>
-      <details class="evidence"><summary>제어 변경 기록</summary>
-        <p>방향 제어: {_text(snapshot.execution_control_reason)} ·
-          {_clock(snapshot.execution_control_updated_at)}</p>
-        <p>비상 제어: {_text(snapshot.emergency_reason)} ·
-          {_clock(snapshot.emergency_updated_at)}</p>
       </details>
     </section>
 
@@ -1017,8 +1003,54 @@ def _safe_operations(value: object, *, now: str | None = None) -> dict[str, obje
     return {"observed_at": observed.isoformat(), "runs": runs}
 
 
-def _operations_details(snapshot: DashboardSnapshot) -> str:
-    operations = _safe_operations(snapshot.operations_snapshot, now=snapshot.heartbeat_utc)
+def _operator_overview(snapshot: DashboardSnapshot, operations: dict[str, object] | None) -> str:
+    now = _parse_time(snapshot.heartbeat_utc)
+    runs = [] if operations is None else operations["runs"]
+    results = []
+    holdings = []
+    upcoming = []
+    for run in runs:
+        symbol = _text(run["symbol"])
+        at = _parse_time(run.get("evidence_at"))
+        if run["status"] == "validated" and at is not None:
+            if now and at.astimezone(_KST).date() == now.astimezone(_KST).date():
+                results.append(
+                    f'<p class="outcome-row"><strong>{symbol}</strong>'
+                    f' 주문 {_status_badge(run["submit"])} 체결 {_status_badge(run["fill"])}'
+                    f' <span class="clock">근거 관측 {_clock(at.isoformat())}</span></p>'
+                )
+            if run["inventory"] in {"owned", "flat"}:
+                holdings.append(
+                    f'<p class="outcome-row"><strong>{symbol}</strong>'
+                    f' {_status_badge(run["inventory"])} {_clock(at.isoformat())}</p>'
+                )
+        for field, name in (("entry_due_at", "진입"), ("exit_due_at", "청산")):
+            due = _parse_time(run.get(field))
+            if due is not None and now is not None and due > now:
+                upcoming.append((due, symbol, name))
+    next_slot = min(upcoming, default=None)
+    next_text = (
+        "다음 예정 미확인"
+        if next_slot is None
+        else f"다음 계획: {next_slot[1]} {next_slot[2]} {_clock(next_slot[0].isoformat())}"
+    )
+    return f"""
+    <section class="operator-overview" aria-label="오늘의 운영 요약">
+      <div>
+        <h2>오늘 확인한 주문 결과</h2>
+        {"".join(results) or '<p class="state-unknown">오늘 확인된 주문 결과 미수신</p>'}
+        <p class="scope">{next_text}</p>
+      </div>
+      <div>
+        <h2>프로젝트 보유</h2>
+        {"".join(holdings) or '<p class="state-unknown">현재 보유 미확인</p>'}
+        <p class="scope">확인된 종목만 표시 · 프로젝트 전체 보유 확인 아님 ·
+          <a href="#broker-heading">계좌 전체 보기</a></p>
+      </div>
+    </section>"""
+
+
+def _operations_details(operations: dict[str, object] | None) -> str:
     runs = [] if operations is None else operations["runs"]
     rows = []
     for index, (key, (label, symbol, _)) in enumerate(_OPERATION_RUNS.items()):
@@ -1071,7 +1103,9 @@ def _operations_details(snapshot: DashboardSnapshot) -> str:
       </div>
       <p class="scope">예약 시각 ≠ 제출·체결. 접수·체결은 근거에 연결된 과거 기록.
         보유는 근거 관측 당시 기준, 현재 재확인 아님.</p>
-      <ol class="run-list">{"".join(rows)}</ol>
+      <details class="evidence"><summary>지난 실행·예약 및 관측 근거</summary>
+        <ol class="run-list">{"".join(rows)}</ol>
+      </details>
       <p class="scope">상태 투영 관측
         {_clock(None if operations is None else operations["observed_at"])}</p>
     </section>"""
@@ -1258,7 +1292,8 @@ def _paper_positions_table(account: PaperAccountSnapshot) -> str:
         rows = _empty_row(4, "관측된 계좌 보유 없음 · No verified KIS positions")
     return (
         '<div class="table-wrap" tabindex="0" role="region" aria-label="KIS 계좌 보유">'
-        "<table><caption>계좌 전체 보유 · 프로젝트 소유 여부 별도 확인</caption>"
+        '<table class="compact-table">'
+        '<caption>계좌 전체 보유 · 프로젝트 소유 여부 별도 확인</caption>'
         '<thead><tr><th scope="col">거래소</th><th scope="col">종목</th>'
         '<th scope="col" class="numeric">수량</th><th scope="col">통화</th></tr>'
         "</thead><tbody>"
@@ -1277,7 +1312,7 @@ def _paper_open_orders_table(account: PaperAccountSnapshot) -> str:
         rows = _empty_row(4, "관측된 계좌 미체결 없음 · No verified KIS open orders")
     return (
         '<div class="table-wrap" tabindex="0" role="region" aria-label="KIS 계좌 미체결">'
-        "<table><caption>계좌 전체 미체결 · 체결 확정 근거 아님</caption>"
+        '<table class="compact-table"><caption>계좌 전체 미체결 · 체결 확정 근거 아님</caption>'
         '<thead><tr><th scope="col">거래소</th><th scope="col">종목</th>'
         '<th scope="col">방향</th><th scope="col" class="numeric">잔여 수량</th>'
         "</tr></thead><tbody>"
@@ -1524,10 +1559,6 @@ def _side_text(value: str) -> str:
 
 def _replay_unavailable(snapshot: DashboardSnapshot) -> bool:
     return snapshot.status == "local_monitor_degraded"
-
-
-def _state_class(is_paused: bool) -> str:
-    return "state-paused" if is_paused else "state-ready"
 
 
 def _text(value: object) -> str:

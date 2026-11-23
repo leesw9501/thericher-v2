@@ -430,6 +430,26 @@ def test_pause_and_emergency_forms_are_nonce_bound_requests_not_runtime_acks(sna
         assert "미확인 주문·예약금은 유지" in html
 
 
+def test_operator_overview_separates_missing_from_observed_flat(snapshot) -> None:
+    missing = render_dashboard(snapshot).split('id="operations-heading"')[0]
+    assert "오늘 확인된 주문 결과 미수신" in missing
+    assert "현재 보유 미확인" in missing
+    assert "소유 잔고 없음 관측" not in missing
+    result = replace(
+        snapshot,
+        operations_snapshot=_validated(submit="accepted", fill="confirmed", inventory="flat"),
+    )
+    observed = render_dashboard(result).split('id="operations-heading"')[0]
+    assert "접수 확인" in observed and "연결 체결 확인" in observed
+    assert "소유 잔고 없음 관측" in observed
+    assert "현재 보유 미확인" not in observed
+    assert 'id="safety-heading"' in observed and "실행기 반영: 미확인" in observed
+    stale = replace(result, heartbeat_utc=(NOW + timedelta(minutes=6)).isoformat())
+    stale_header = render_dashboard(stale).split('id="operations-heading"')[0]
+    assert "현재 보유 미확인" in stale_header
+    assert "소유 잔고 없음 관측" not in stale_header
+
+
 def test_snapshot_age_and_expiry_do_not_invent_prices_or_pnl(snapshot) -> None:
     account = PaperAccountSnapshot(
         status="complete",

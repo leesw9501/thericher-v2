@@ -590,8 +590,8 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
         assert "로컬 시뮬레이터" in html
         assert "실행기 반영: 미확인" in html
         assert "제어 요청 저장 ≠ 모든 실행기 반영" in html
-        assert "Pause buys" in html
-        assert "Pause sells" in html
+        assert "매수 중지 요청" in html
+        assert "매도 중지 요청" in html
         cookie_header = _cookies(headers)
         nonce = _nonce(html)
 
@@ -628,7 +628,7 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
         status, _, updated_html = _request(server, "GET", "/", headers=form_headers)
         assert status == 200
         assert "일시정지 요청 · Paused" in updated_html
-        assert "매수 정지 해제 · Resume buys" in updated_html
+        assert "매수 재개 요청" in updated_html
         assert "실행기 반영: 미확인" in updated_html
         assert 'action="/controls/resume-buys"' in updated_html
         assert _nonce(updated_html) == nonce
