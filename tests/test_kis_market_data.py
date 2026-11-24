@@ -300,6 +300,98 @@ def test_daily_historical_query_rejects_unapproved_scope() -> None:
         KisPaperDailyQuery(symbol="QQQ", by_date="20260719", continuation="M")
 
 
+@pytest.mark.parametrize("mode", [None, "0", "1"])
+@pytest.mark.parametrize("has_rows", [False, True])
+def test_strict_daily_accepts_exact_response_identity_without_changing_wire_or_rows(mode, has_rows):
+    kwargs = dict(symbol=" qqq ", exchange=" nas ", by_date="20260719")
+    query = (
+        KisPaperDailyQuery(**kwargs, require_response_rsym=True)
+        if mode is None
+        else kis_market_data.KisPaperDailyAdjustmentProbeQuery(
+            **kwargs,
+            adjustment_mode=mode,
+            approved_symbol_exchanges={"QQQ": frozenset({"NAS"})},
+            require_response_rsym=True,
+        )
+    )
+    payload = dict(_daily_page("20260717", "20260716", continuation="F").payload())
+    payload["output1"] = {"rsym": "DNASQQQ"}
+    if not has_rows:
+        payload["output2"] = []
+    transport = _RecordingTransport(
+        [_token(), KisMarketDataResponse.from_payload(payload, headers={"tr_cont": "F"})]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    result = client.fetch_daily_raw_page(query)
+    assert [row.as_document() for row in result.rows] == payload["output2"]
+    assert result.page.query == query
+    assert result.page.row_count == (2 if has_rows else 0)
+    assert result.page.continuation_value == "F"
+    assert transport.requests[-1].query == {
+        "AUTH": "",
+        "EXCD": "NAS",
+        "SYMB": "QQQ",
+        "GUBN": "0",
+        "BYMD": "20260719",
+        "MODP": mode or "0",
+    }
+
+
+@pytest.mark.parametrize(
+    "envelope",
+    [
+        {},
+        {"output1": [{"rsym": "DNASQQQ"}]},
+        {"output1": {}, "rsym": "DNASQQQ"},
+        {"output1": {"RSYM": "DNASQQQ"}},
+        {"output1": {"rsym": None}},
+        {"output1": {"rsym": 123}},
+        {"output1": {"rsym": ["DNASQQQ"]}},
+        {"output1": {"rsym": ""}},
+        {"output1": {"rsym": "DNASSPY"}},
+        {"output1": {"rsym": "DAMSQQQ"}},
+        {"output1": {"rsym": "NASQQQ"}},
+        {"output1": {"rsym": "dnasqqq"}},
+        {"output1": {"rsym": "DNASQQQ "}},
+    ],
+)
+def test_strict_daily_rejects_non_exact_identity_before_row_parsing(envelope, monkeypatch):
+    transport = _RecordingTransport(
+        [_token(), KisMarketDataResponse.from_payload(dict(rt_cd="0", output2=[{}], **envelope))]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+    monkeypatch.setattr(
+        kis_market_data, "_parse_daily_raw_row", lambda _: pytest.fail("row parsed before identity")
+    )
+    with pytest.raises(KisPaperMarketDataError, match="^daily_response_identity_mismatch$"):
+        client.fetch_daily_page(
+            KisPaperDailyQuery(symbol="QQQ", by_date="20260719", require_response_rsym=True)
+        )
+    assert client.call_counts.daily_page_attempts == 1
+
+
+@pytest.mark.parametrize("bad_flag", [None, 0, 1, "false"])
+@pytest.mark.parametrize("mode", [None, "1"])
+def test_daily_response_identity_opt_in_requires_a_boolean(mode, bad_flag):
+    kwargs = dict(symbol="QQQ", by_date="20260719", require_response_rsym=bad_flag)
+    with pytest.raises(ValueError, match="identity opt-in must be boolean"):
+        if mode is None:
+            KisPaperDailyQuery(**kwargs)
+        else:
+            kis_market_data.KisPaperDailyAdjustmentProbeQuery(
+                **kwargs,
+                adjustment_mode=mode,
+                approved_symbol_exchanges={"QQQ": frozenset({"NAS"})},
+            )
+
+
 def test_daily_query_can_bind_a_separate_immutable_probe_scope_without_widening_default() -> None:
     probe_scope = {"AAPL": frozenset({"NAS"})}
     query = KisPaperDailyQuery(

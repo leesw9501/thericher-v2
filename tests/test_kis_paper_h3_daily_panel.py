@@ -68,6 +68,7 @@ def test_exact_dec3_plan(plan):
             "20261203",
         )
         assert query.document()["parameters"] == dict(BYMD="20261203", MODP="1", continuation=None)
+        assert query.document()["require_response_rsym"] is True
         assert query.query.approved_symbol_exchanges == {s: frozenset({v}) for s, v in AXIS}
 
 
@@ -137,7 +138,7 @@ def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
             return Response(
                 {
                     "rt_cd": "0",
-                    "output1": {},
+                "output1": {"rsym": f"D{venue}{symbol}"},
                     "output2": _wire_rows(plan, axis_index, full_page=axis_index % 2 == 0),
                 }
             )

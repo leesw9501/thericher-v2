@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터)
 
-Updated 2026-11-24.
+Updated 2026-11-25.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK
@@ -13,8 +13,10 @@ smoke selected all 1,140 rows from invented 60/100-row responses. `BYMD` does
 not bound the early end on the wire; the plan accepts only listed older sessions
 within the native page cap. Original Nov6 Source0f9c RESULTa947 shows 19/19
 first pages, 1 token POST and owner released; DATAREADY78f1 binds that source.
-Exact Dec3 coverage and custody are still unknown. Rebind strict native `rsym`
-identity, post-close custody and the current publisher. No new provider call.
+Exact Dec3 coverage and custody are still unknown. The Dec3 H3 query plan now
+requires exact native `rsym` before retained rows; that setting changes the
+frozen capture identity, without changing the legacy default. Wire a dated
+post-close owner/custody and the current publisher. No new provider call.
 Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
 Planck LLM CLOSED after completed M5/clock/official-document packages. Completed builds and
 independently owned installed tasks are not repeated or cancelled.

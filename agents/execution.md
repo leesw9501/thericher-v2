@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated 2026-11-24. A=D:/thericher-v2/model-artifacts.
+Updated 2026-11-25. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
@@ -16,6 +16,10 @@ Python owner ABI with invented metadata; wrong PID failed before consumption.
 Independent in-memory registration/readback fails closed on bad fields or exit
 enablement. Bind the fresh installer/launcher and complete real native proof
 before effects. Claude `review_unavailable` (OAuth expired); no authority change.
+`paper_native_task_definition.psm1` adds shared phase/stage-bound construction
+and unmodified XML/API registration readback, mocked. Existing Nov9/12 tasks
+have no next run. Bind new installer/owner/launcher before installation; full
+canonical XML, ACL7, instance/PID/birth and deterministic risk remain in callers.
 
 ## Actual Current Deployment
 

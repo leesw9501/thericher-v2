@@ -71,6 +71,12 @@ Compare fixed half (strict positive, 0.5/17 per name), same funded-gross
 missing. Read once at block end, at least four admitted cohorts for a
 descriptive comparison only. Count dates, not 17 independent observations
 per date. No payout tuning, new fits, or promotion from this sample.
+Use the frozen same-basis post-expiry MODP1 edition for each target projection,
+separately owned from the pre-entry input. Reuse Nov9 `marks._project` and
+`evaluate.parse_marks` as contract references, not executables for a new date.
+One unknown source field on an unselected name also withholds the entire
+cohort: the equal-weight reference still needs that name. No owner is bound
+for the five-date targets yet.
 
 ## Current Deployment
 

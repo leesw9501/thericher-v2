@@ -643,8 +643,11 @@ class KisPaperDailyQuery:
         compare=False,
         hash=False,
     )
+    require_response_rsym: bool = field(default=False, kw_only=True)
 
     def __post_init__(self) -> None:
+        if type(self.require_response_rsym) is not bool:
+            raise ValueError("daily response identity opt-in must be boolean")
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
         object.__setattr__(self, "by_date", self.by_date.strip())
@@ -683,8 +686,11 @@ class KisPaperDailyAdjustmentProbeQuery:
         compare=False,
         hash=False,
     )
+    require_response_rsym: bool = field(default=False, kw_only=True)
 
     def __post_init__(self) -> None:
+        if type(self.require_response_rsym) is not bool:
+            raise ValueError("daily response identity opt-in must be boolean")
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
         object.__setattr__(self, "symbol", self.symbol.strip().upper())
         object.__setattr__(self, "by_date", self.by_date.strip())
@@ -1185,7 +1191,7 @@ class KisPaperMarketDataClient:
         return self.fetch_daily_raw_page(query).page
 
     def fetch_daily_raw_page(self, query: KisPaperDailyRequestQuery) -> KisPaperDailyRawPage:
-        """Return typed OHLCV rows only for a bounded private-cache collector."""
+        """Return typed OHLCV rows, optionally requiring the exact KIS daily identity."""
 
         if self._minute_route != "standard":
             if self._mixed_daily_scope is None:
@@ -1228,6 +1234,11 @@ class KisPaperMarketDataClient:
         )
         payload = _successful_payload(response, "daily_response_rejected")
         output1 = payload.get("output1")
+        if query.require_response_rsym and (
+            not isinstance(output1, Mapping)
+            or output1.get("rsym") != f"D{query.exchange}{query.symbol}"
+        ):
+            raise KisPaperMarketDataError("daily_response_identity_mismatch")
         output2 = payload.get("output2")
         if not isinstance(output1, Mapping) or not isinstance(output2, Sequence):
             raise KisPaperMarketDataError("daily_response_invalid")

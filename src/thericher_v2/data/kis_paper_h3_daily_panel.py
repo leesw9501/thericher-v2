@@ -97,6 +97,7 @@ class H3DailyPanelPlan:
                         by_date=last,
                         adjustment_mode="1",
                         approved_symbol_exchanges=scope,
+                        require_response_rsym=True,
                     ),
                     first,
                     last,

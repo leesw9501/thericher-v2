@@ -132,9 +132,10 @@ def minute_body(**kwargs):
     return Response(dict(rt_cd="0", output1={}, output2=[row]), **kwargs)
 
 
-def daily_body(**kwargs):
+def daily_body(*, output1=None, **kwargs):
     row = dict(xymd="20261016", open="10", high="12", low="9", clos="11", tvol="100")
-    return Response(dict(rt_cd="0", output1={}, output2=[row]), **kwargs)
+    envelope = dict(rt_cd="0", output1={} if output1 is None else output1, output2=[row])
+    return Response(envelope, **kwargs)
 
 
 @pytest.fixture
@@ -988,6 +989,78 @@ def test_native_mixed_mode0_mode1_identities_distinct_one_POST_and_cache_hits(ri
         assert session.progress["POST"] == 1 and session.progress["GET"] == 3
         assert type(session._client) is m.KisPaperMarketDataClient
     assert len(rig.opener.calls) == 4
+
+
+@pytest.mark.parametrize(
+    "output1,accepted",
+    [
+        ({"rsym": "DAMSXLK"}, True),
+        ({}, False),
+        ({"rsym": "DAMSXLF"}, False),
+        ({"rsym": "DNASXLK"}, False),
+    ],
+)
+def test_native_strict_daily_capture_binds_identity_before_writing_rows(rig, output1, accepted):
+    legacy = daily(mode="1")
+    strict = replace(legacy, query=replace(legacy.query, require_response_rsym=True))
+    body = daily_body(output1=output1)
+    rig.opener.responses = [token(), body]
+
+    assert strict.document() == legacy.document() | {"require_response_rsym": True}
+    assert strict.key != legacy.key
+    with rig.session((strict,)) as session:
+        with pytest.raises(c.KisPaperCaptureError, match="outside_frozen_scope"):
+            session.capture(legacy)
+        assert not rig.loads and not rig.opener.calls
+        result = session.capture(strict)
+        assert session.progress["pending"] is None
+        assert session.progress["GET"] == session.progress["POST"] == 1
+    assert result.query_key == strict.key
+    assert result.raw and Path(result.raw["path"]).read_bytes() == body.data
+    if accepted:
+        assert result.status == "ACCEPTED" and result.row_count == 1 and result.reason is None
+        assert result.native
+        rows = json.loads(Path(result.native["path"]).read_bytes())
+        assert rows == json.loads(body.data)["output2"]
+    else:
+        assert result.status == "REJECTED" and result.reason == "daily_response_identity_mismatch"
+        assert result.native is None and result.row_count is None
+        assert not list(rig.market.glob("GET-*.native.json"))
+    assert state(rig)["contract"]["queries"] == [strict.document()]
+    assert [call[0] for call in rig.opener.calls] == ["POST", "GET"]
+
+    with rig.session((strict,), config_loader=lambda: pytest.fail("loaded on resume")) as session:
+        assert session.capture(strict, retry=True) == replace(result, cache_hit=True)
+    assert [call[0] for call in rig.opener.calls] == ["POST", "GET"]
+    assert_released(rig)
+
+
+@pytest.mark.parametrize("original_strict", [False, True])
+def test_capture_resume_refuses_any_change_to_daily_identity_policy(rig, original_strict):
+    legacy = daily(mode="1")
+    assert legacy.document() == {
+        "kind": "daily",
+        "symbol": "XLK",
+        "exchange": "AMS",
+        "first_date": "20261016",
+        "last_date": "20261016",
+        "approved": {"XLK": ["AMS"]},
+        "parameters": {"BYMD": "20261016", "MODP": "1", "continuation": None},
+    }
+    strict = replace(legacy, query=replace(legacy.query, require_response_rsym=True))
+    original, changed = (strict, legacy) if original_strict else (legacy, strict)
+    with rig.session((original,)):
+        pass
+    assert state(rig)["contract"]["queries"] == [original.document()]
+    cursor = rig.artifact / "capture-state.json"
+    before = cursor.read_bytes()
+    with pytest.raises(c.KisPaperCaptureError, match="resume_contract_mismatch"), rig.session(
+        (changed,)
+    ):
+        pytest.fail("changed response identity policy admitted")
+    assert cursor.read_bytes() == before
+    assert not rig.loads and not rig.opener.calls
+    assert_released(rig)
 
 
 def test_native_daily_only_mode1_uses_explicit_transport_without_minute_scope_mutation(rig):

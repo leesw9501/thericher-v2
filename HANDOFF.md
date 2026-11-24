@@ -1,12 +1,21 @@
 # TheRicher v2 Handoff
 
-Updated 2026-11-24. Earlier Nov7/9 deployment and research detail below is historical.
+Updated 2026-11-25. Earlier Nov7/9 deployment and research detail below is historical.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History/contracts/debits: Git8b1db436/99af01f4 and immutable external APIs.
 This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
+
+Nov25: shared native task constructor/readback checks the same frozen phase
+and stage across registration XML and Scheduler API shape (mocked). Exact
+historical Nov9/12 definitions had no next run; no new definition installed.
+Strict requested-vs-returned daily identity is enabled for H3 only, with
+legacy query keys unchanged. The tracked writer passed a full invented panel
+through the hash-matched original H123 feature and parser. Fresh owner/custody,
+native canonical XML/ACL/instance/PID verification and a fresh point are still
+required for actual use. No new model run or broker effect.
 
 Follow-on: the existing dashboard source now leads with today's observed
 order evidence, project inventory and saved control requests. Past execution

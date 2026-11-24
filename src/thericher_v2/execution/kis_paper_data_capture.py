@@ -45,6 +45,7 @@ _KNOWN_FAILURES = frozenset(
         "minute_response_rejected",
         "daily_response_invalid",
         "daily_response_rejected",
+        "daily_response_identity_mismatch",
         "auth_response_invalid",
         "auth_rejected",
         "rate_limited",
@@ -106,7 +107,7 @@ class CaptureQuery:
     def document(self) -> dict[str, Any]:
         q = self.query
         minute = type(q) is market.KisPaperHistoricalMinuteQuery
-        return dict(
+        document = dict(
             kind="minute" if minute else "daily",
             symbol=q.symbol,
             exchange=q.exchange,
@@ -124,6 +125,9 @@ class CaptureQuery:
                 else dict(BYMD=q.by_date, MODP=q.adjustment_mode, continuation=q.continuation)
             ),
         )
+        if not minute and q.require_response_rsym:
+            document["require_response_rsym"] = True
+        return document
 
     @property
     def key(self) -> str:

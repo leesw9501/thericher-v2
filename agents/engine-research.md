@@ -7,6 +7,12 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Nov25: tracked `h3_h123_input` writes exact ordered 17-name input from the
+60x19 MODP1 panel, enforcing the next session before open and requiring parser
+readback. Invented full-axis host smoke passed with Source72's exact feature
+and H123 parser. No feature or checkpoint change, training, or forward pass.
+Consumer: the new clock-bound publisher, still to be wired and source-bound.
+
 Nov23: Nov9 cohort closed unmeasured (sole locked target not admitted). No
 reforecast or zero-return imputation. Next fixed five candidate intervals in
 RUNBOOK; the new tracked session selector has no provider or outcome access.
