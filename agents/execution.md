@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated 2026-11-23. A=D:/thericher-v2/model-artifacts.
+Updated 2026-11-24. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
@@ -11,6 +11,11 @@ and runtime RegistrationInfo differ; native canonicalizer confirmed both
 field differences matter on invented XML. No direct original inner-denial
 evidence. Use one definition producer and locked startup receipt for a new
 opportunity, not a replay. The deployment observations below are historical.
+Ready components: `ops/paper_scheduled_native.py` bound the actual pinned R8
+Python owner ABI with invented metadata; wrong PID failed before consumption.
+Independent in-memory registration/readback fails closed on bad fields or exit
+enablement. Bind the fresh installer/launcher and complete real native proof
+before effects. Claude `review_unavailable` (OAuth expired); no authority change.
 
 ## Actual Current Deployment
 

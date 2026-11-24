@@ -5,11 +5,12 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
-Nov23: Execution isolated the pre-marker owner failure and host-off missed
-windows. Data closed Nov9 unmeasured and prepared the next capture contract.
-Parent owns the tracked startup helper and integration, with a separate
-tracked calendar utility. No new runtime deployed. Next reusable paths and
-completion conditions are in NEXT_CODEX_GOAL.md and RUNBOOK.md.
+Nov24 throughput review: Execution completed the independent XML and Python
+owner handoff fixtures; Data completed the native MODP1 panel fixture. Parent
+integrated both. Next disjoint work is native successor packaging and Data-to-
+publisher binding; neither requires waiting for the Dec3 US close to prepare.
+Reuse the exact Nov6 19-symbol plan and fixed checkpoints, not its captured
+prices or clocks. No new runtime deployed. See NEXT_CODEX_GOAL.md and RUNBOOK.md.
 
 coexistent-native-paper-execution-runtime-v1 UNFINISHED. No newly qualified exact
 owned acceptance/fill/current inventory/terminal/netPnL. Tests/install/replay/

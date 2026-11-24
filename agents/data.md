@@ -7,9 +7,14 @@ edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK
 block; qualify a reusable coherent 60-session and outcome capture path.
 Dec3 as-of / Dec4 decision candidate: reuse `KisPaperDataCaptureSession` for
 dated MODP1, not the three-symbol cross-asset probe as-is. The pinned calendar
-gives 60 sessions Sep10-Dec3 (Nov27 early close). Freeze the exact 19-name
-axis and verify all 1,140 rows and native consumer handoff before sealing.
-One-page coverage is unknown; no current producer or broker call in this review.
+gives 60 sessions Sep10-Dec3 (Nov27 early close). Tracked `kis_paper_h3_daily_panel`
+uses the original PLAN47f1 exact ordered axis; the capture/parser-to-panel
+smoke selected all 1,140 rows from invented 60/100-row responses. `BYMD` does
+not bound the early end on the wire; the plan accepts only listed older sessions
+within the native page cap. Original Nov6 Source0f9c RESULTa947 shows 19/19
+first pages, 1 token POST and owner released; DATAREADY78f1 binds that source.
+Exact Dec3 coverage and custody are still unknown. Rebind strict native `rsym`
+identity, post-close custody and the current publisher. No new provider call.
 Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
 Planck LLM CLOSED after completed M5/clock/official-document packages. Completed builds and
 independently owned installed tasks are not repeated or cancelled.

@@ -43,6 +43,15 @@ phase plan through `launcher.pyw` -> `host.py` -> `scheduled.owner` and carry th
 proven owner object past preflight. The locked historical R8 and repair2 files
 are integration references, not candidates for an in-place edit or replay.
 
+Dec4/Dec9 candidate, not installed: use `H3DailyPanelPlan(NET25_H3_AXIS)`
+for the US Dec3 as-of. A host-side invented panel passed the pinned
+`prefix_features` and H123 `parse_input` with Dec4 keys, no model load.
+Candidate UTC cutoffs: capture 21:30..<21:40 Dec3 with closure before 21:45;
+one existing-checkpoint forward 21:47..<21:52 with publication before 22:00;
+Dec4 point validity 14:25..<14:35. Rebind response identity, source,
+post-close clocks, readback and custody; do not reuse November receipts,
+enable catch-up, or use the host smoke as deployed-runtime proof.
+
 Nov12 exit and Nov13 data were missed with the host off. Do not enable
 unbounded catch-up for entries; preserve original exits and allow only exact
 owned recovery. The Nov9 50:50 seal is archived unmeasured since its sole

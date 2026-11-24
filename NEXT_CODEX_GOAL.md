@@ -19,10 +19,13 @@ execution path. The model is a proposal source, not a separate bank writer.
    standardizes Source/Description for installer and runtime, and
    `ops/paper_scheduled_preflight.py` writes a per-launch diagnostic and claims
    the fixed slot exclusively after the source, release, clock and owner checks.
-   Synthetic denial, racing launches and interrupted-claim tests pass. Wire
-   both components into the real owner provider and launcher. Test with
-   independently authored XML plus complete native API/ACL/instance/PID checks,
-   not only common helpers. A diagnostic or claim is not financial admission.
+   The tracked `ops/paper_scheduled_native.py` binds the phase to the native
+   owner ABI and retains the proven probe for effect-time checks. Mocked
+   XML registration/readback and the pinned R8 Python provider/parser smoke
+   pass, without actual Scheduler effects. Put these components in a fresh
+   successor installer, owner provider and launcher. Qualify the complete native
+   XML/API/ACL/instance/PID path before installation. A diagnostic or claim is
+   not financial admission.
 2. Reuse existing native Paper risk, reconciliation and single writer. Before
    changing definitions or running a new opportunity, positively resolve the
    relevant original owner and select a fresh exact window. Keep the original
@@ -33,8 +36,11 @@ execution path. The model is a proposal source, not a separate bank writer.
    Candidate Dec4/Dec9 is not installed. Dec3 post-close OHLC60 for 19 names
    and the new clock-bound proposal still require a named current producer;
    existing NAS100 collection can only contribute SPY when exactly qualified.
-   Build over `KisPaperDataCaptureSession` with an exact calendar/axis and
-   native parse-to-consumer smoke; prove full page coverage before sealing.
+   `data/kis_paper_h3_daily_panel.py` binds the exact prior ordered axis and
+   requires all 60 dates per column. The native capture/session smoke is
+   synthetic; historical Nov6 full19 first-page coverage does not prove Dec3.
+   Rebind the strict response identity, post-close custody and consumer publisher
+   before actual acquisition and sealing.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.

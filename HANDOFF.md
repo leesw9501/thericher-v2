@@ -24,9 +24,17 @@ not a deployable pair. Per-launch diagnostics no longer consume the legitimate
 slot. A returned owner proof and current start window precede a single exclusive
 claim; an interrupted claim stays consumed. Prove the actual installer-to-owner
 handoff in the successor; neither the claim nor the diagnostic is admission.
+Follow-on: the tracked native binding passed an offline smoke through the
+hash-matched R8 `scheduled.py` and `controller/owner.py` with invented metadata.
+Wrong coordinator PID did not claim; valid proof returned the same guard for
+rechecks. Independent in-memory XML readback proved exit-first enablement and
+rejection of missing Source, wrong Description and disabled exit. The actual
+successor launcher/installer and native OS checks are not yet packaged.
 Dec4/Dec9 remains a candidate only; exact Dec3 post-close OHLC60/19-name
-input and fresh publisher are absent. Data identified the reusable native MODP1
-capture session; one-page coverage and the exact producer handoff are unproven.
+input and fresh publisher are absent. The native MODP1 panel smoke passed for
+the full date grid; historical Nov6 first-page full19 coverage is confirmed,
+not a guarantee of Dec3. Use the actual strict source/custody/response identity
+checks before qualifying the successor producer.
 No replacement Task or broker effect.
 
 Nov9 entry ran and closed without timeout, with an unavailable host terminal
