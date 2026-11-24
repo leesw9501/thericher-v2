@@ -1,6 +1,6 @@
 # TheRicher v2 Handoff
 
-Updated 2026-11-23. Earlier Nov7/9 deployment and research detail below is historical.
+Updated 2026-11-24. Earlier Nov7/9 deployment and research detail below is historical.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History/contracts/debits: Git8b1db436/99af01f4 and immutable external APIs.
@@ -20,11 +20,14 @@ still runs be48. Do not change image identity under a frozen owner contract
 without qualifying the exact new actor or positively closing relevant owners.
 
 Paper successor registration and scheduled preflight are tested components,
-not a deployable pair. Claude challenge: a rejected launch must not consume
-the legitimate slot or imply a valid owner. Keep separate diagnostic/financial
-boundaries and prove the actual installer-to-owner handoff in the successor.
+not a deployable pair. Per-launch diagnostics no longer consume the legitimate
+slot. A returned owner proof and current start window precede a single exclusive
+claim; an interrupted claim stays consumed. Prove the actual installer-to-owner
+handoff in the successor; neither the claim nor the diagnostic is admission.
 Dec4/Dec9 remains a candidate only; exact Dec3 post-close OHLC60/19-name
-input and fresh publisher are absent. No replacement Task or broker effect.
+input and fresh publisher are absent. Data identified the reusable native MODP1
+capture session; one-page coverage and the exact producer handoff are unproven.
+No replacement Task or broker effect.
 
 Nov9 entry ran and closed without timeout, with an unavailable host terminal
 before `owner.prove()` reached the attempt marker. The startup file records

@@ -72,11 +72,12 @@ def run_scheduled_preflight(
     check_window: Callable[[ScheduledPaperPlan, datetime], object],
     check_owner: Callable[[ScheduledPaperPlan, Source], Owner],
 ) -> ScheduledPaperPreflight[Source, Release, Owner]:
-    """Record one no-order attempt, then return checked objects to the native caller.
+    """Record a diagnostic, then claim the slot only after successful checks.
 
     Use an existing, absolute, owned evidence root and a phase plan projected
     from pinned source, not assembled from launch arguments. The source, release,
     window and owner callbacks must raise on denial (literal False also denies).
+    The owner callback must return proof, not None or a bare boolean.
     They may verify, but must not reconcile custody, load credentials or submit.
     The owner check must prove the actual owner for the plan, including its task,
     action, slot, source and release. This adapter does not grant source authority.
@@ -154,7 +155,8 @@ def run_scheduled_preflight(
     def owner_check() -> None:
         nonlocal owner
         owner = check_owner(plan, source)
-        _not_denied(owner)
+        if owner is None or isinstance(owner, bool):
+            raise ValueError("Scheduled Paper owner proof denied")
 
     def prepare() -> ScheduledPaperPreflight[Source, Release, Owner]:
         return ScheduledPaperPreflight(plan, source, release, owner, now_in_window())
@@ -171,4 +173,5 @@ def run_scheduled_preflight(
             source=source_check, release=release_check, window=window_check, owner=owner_check
         ),
         prepare=prepare,
+        claim_after_checks=True,
     )

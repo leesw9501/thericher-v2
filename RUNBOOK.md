@@ -32,7 +32,16 @@ producer in the replacement. Exercise an invented installed-to-runtime
 handoff including RegistrationInfo.Source and Description; do not weaken
 identity or risk checks. Use the tracked startup helper with the fixed task
 slot identity and an absolute owned evidence root, before financial code.
-An interrupted attempt stays unknown; no expiry grants another submit.
+`diagnostic-*` records do not consume a phase. The fixed slot directory is
+claimed only after successful preflight; `CLAIM.json` binds the diagnostic
+name and attempt digest. A partial claim stays consumed and unknown. Neither
+record authorizes a broker effect, and no expiry grants another submit.
+Successor wiring: stamp `New-PairDefinition` XML before Scheduler assignment and
+assert its registered readback; assert the same fields on unmodified XML in
+the owner provider before full XML/API/ACL comparison. Use the same pinned
+phase plan through `launcher.pyw` -> `host.py` -> `scheduled.owner` and carry the
+proven owner object past preflight. The locked historical R8 and repair2 files
+are integration references, not candidates for an in-place edit or replay.
 
 Nov12 exit and Nov13 data were missed with the host off. Do not enable
 unbounded catch-up for entries; preserve original exits and allow only exact

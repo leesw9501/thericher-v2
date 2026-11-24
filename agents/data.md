@@ -1,10 +1,15 @@
 # Data Stateboard (시장데이터)
 
-Updated 2026-11-23.
+Updated 2026-11-24.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK
 block; qualify a reusable coherent 60-session and outcome capture path.
+Dec3 as-of / Dec4 decision candidate: reuse `KisPaperDataCaptureSession` for
+dated MODP1, not the three-symbol cross-asset probe as-is. The pinned calendar
+gives 60 sessions Sep10-Dec3 (Nov27 early close). Freeze the exact 19-name
+axis and verify all 1,140 rows and native consumer handoff before sealing.
+One-page coverage is unknown; no current producer or broker call in this review.
 Prior contracts/recovery/debits: Git01f23a13 and immutable sources.
 Planck LLM CLOSED after completed M5/clock/official-document packages. Completed builds and
 independently owned installed tasks are not repeated or cancelled.
