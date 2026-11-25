@@ -33,12 +33,18 @@ capture identity and every native page are checked; no actual targets,
 forecasts, books or scores were opened by this path. Bind the readout host
 and remaining block slots without replacing missed observations.
 
-Next ready research package: a separate Dec4 50:50 seal can reuse the
+The separate tracked Dec4 50:50 seal can reuse the
 already bound Dec3 H123 feature handoff. Read it without opening or claiming
 the Paper POINT root. Predeclare Dec4 14:12 UTC start, before 14:13 launch
 and before 14:25 seal, with one forward for each frozen model and exact
 20261204 keys. This is not installed or a new fit; Dec9 capture would
 separately pin the Dec4 cohort targets and produce Dec10 features.
+The sidecar passed an invented exact two-model CPU seal. In qualification
+we found the installed Nov30 frozen SELF loader rejects the actual
+training bundle. The shared fix reads only its exact model tensors; both
+original Nov30 callbacks passed on invented rows from frozen source-v2.
+The installed task is unchanged until the first-slot consumer is bound to
+the exact corrected source. No new fit, actual forecast, target or GPU.
 
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired

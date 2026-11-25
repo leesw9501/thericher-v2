@@ -17,8 +17,11 @@ base pythonw launch only, EnginePID matched the actual no-console action.
 Both fixtures and scratch are absent. Exact synthetic source:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/test_h3_scheduler_instance_fixture.ps1
 SHA256 7d77b02203b48c3e388fdd1c245af11631a52883b06b0fb40ce40f9f12f2aa70.
-Correct production readback to use hidden-inclusive exact path and state;
-do not treat this topology as a financial effect or generic PID guarantee.
+Tracked protected readback now reopens the exact task on the same local
+connection and requires two hidden-inclusive empty snapshots. The new
+active-instance probe passed in a fresh native inert direct-action fixture;
+exact cleanup verified. Do not treat this as a financial effect or generic
+PID guarantee. Bind the production caller and existing risk/owner checks.
 
 Nov26 throughput review: point ownership and reconciliation guest work ran
 in parallel; one focused verification covers their integration with native

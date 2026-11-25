@@ -100,6 +100,8 @@ def _self_forward(
     adapter: bytes,
     entry_io: bytes,
     stats: dict[str, np.ndarray],
+    *,
+    keys: tuple[str, ...] = _KEYS,
 ) -> np.ndarray:
     import torch
     from safetensors import SafetensorError
@@ -113,17 +115,28 @@ def _self_forward(
         features.shape != (1, 17, 728)
         or features.dtype != np.float32
         or not np.isfinite(features).all()
-        or packed["key"].tolist() != list(_KEYS)
+        or packed["key"].tolist() != list(keys)
         or packed["date_known"].tolist() != [True]
     ):
         raise ValueError("h3_loader_self_features_invalid")
 
     model = _source_module("entry_models", source).EntryCritic("SELF").cpu()
     try:
-        state = load(checkpoint)
+        bundle = load(checkpoint)
     except SafetensorError:
         raise ValueError("h3_loader_self_checkpoint_invalid") from None
     slots = model.state_dict()
+    if bundle.keys() == slots.keys():
+        state = bundle
+    elif all(key.startswith(("model.", "optimizer.", "rng.")) for key in bundle):
+        # Read only the model tensors from the exact verified training artifact.
+        state = {
+            key.removeprefix("model."): value
+            for key, value in bundle.items()
+            if key.startswith("model.")
+        }
+    else:
+        raise ValueError("h3_loader_self_checkpoint_invalid")
     if state.keys() != slots.keys() or any(
         value.shape != slots[key].shape
         or value.dtype != slots[key].dtype

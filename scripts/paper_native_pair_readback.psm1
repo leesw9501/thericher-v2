@@ -1,4 +1,4 @@
-# Installer readback only. Pin this module and paper_task_registration.psm1.
+# Pin this module and paper_task_registration.psm1.
 # The caller authenticates the plan and supplies separately pinned, complete
 # XML for each native surface at each stage, plus the expected ACL7 text.
 # Neither observed task XML nor the registration SDDL is a source of authority.
@@ -50,9 +50,100 @@ function ConvertTo-PaperPairCanonical([Xml.XmlDocument]$Document) {
     }
 }
 
-function Test-PaperPairStageReadback($Task, $Expected) {
+function Test-PaperLocalScheduler($Scheduler) {
+    $comparison = [StringComparison]::OrdinalIgnoreCase
+    return ($Scheduler.Connected -is [bool] -and $Scheduler.Connected -and
+        [string]::Equals($Scheduler.TargetServer, [Environment]::MachineName, $comparison) -and
+        [string]::Equals($Scheduler.ConnectedUser, [Environment]::UserName, $comparison) -and
+        [string]::Equals($Scheduler.ConnectedDomain, [Environment]::UserDomainName, $comparison))
+}
+
+function Get-PaperLocalRegisteredTask($Scheduler, [string]$Path, [scriptblock]$TestLocal) {
+    if ($Path -cnotmatch '\A\\[^\\/]+\z' -or -not (& $TestLocal $Scheduler)) {
+        throw 'PAPER_INSTANCE_LOCAL_CONNECTION'
+    }
+    $folder = $Scheduler.GetFolder('\')
+    if ($folder.Path -cne '\') { throw 'PAPER_INSTANCE_LOCAL_ROOT' }
+    $task = $folder.GetTask($Path.Substring(1))
+    if ($task.Path -cne $Path) { throw 'PAPER_INSTANCE_REGISTERED_PATH' }
+    return $task
+}
+
+function Read-PaperSchedulerInstances($Scheduler, [string]$ExpectedPath, [scriptblock]$TestLocal, [bool]$ReadIdentity) {
+    if (-not (& $TestLocal $Scheduler)) { throw 'PAPER_INSTANCE_LOCAL_CONNECTION' }
+    # GetInstances(0) was observed returning zero for a hidden Running task.
+    $running = $Scheduler.GetRunningTasks(1)  # TASK_ENUM_HIDDEN
+    if ($null -eq $running -or (-not [Runtime.InteropServices.Marshal]::IsComObject($running) -and
+        $null -eq $running.PSObject.Properties['Count'])) { throw 'PAPER_INSTANCE_COLLECTION' }
+    $total = $running.Count
+    if ($total -isnot [int] -or $total -lt 0 -or $total -gt 4096) { throw 'PAPER_INSTANCE_COUNT' }
+    $matchCount = 0
+    $engine = $null
+    $instance = $null
+    for ($i = 1; $i -le $total; $i++) {
+        $candidate = $running.Item($i)
+        $path = $candidate.Path
+        if ($path -isnot [string] -or $path.Length -lt 2 -or
+            -not $path.StartsWith('\', [StringComparison]::Ordinal)) { throw 'PAPER_INSTANCE_PATH' }
+        if (-not [string]::Equals($path, $ExpectedPath, [StringComparison]::OrdinalIgnoreCase)) { continue }
+        $matchCount++
+        if ($ReadIdentity) {
+            $parsed = [guid]::Empty
+            $engine = $candidate.EnginePID
+            $state = $candidate.State
+            if ($matchCount -ne 1 -or $path -cne $ExpectedPath -or
+                $state -isnot [int] -or $state -ne 4 -or
+                ($engine -isnot [int] -and $engine -isnot [uint32]) -or
+                $engine -le 0 -or $engine -gt [int]::MaxValue -or
+                $candidate.InstanceGuid -isnot [string] -or
+                -not [guid]::TryParse($candidate.InstanceGuid, [ref]$parsed) -or $parsed -eq [guid]::Empty) {
+                throw 'PAPER_INSTANCE_IDENTITY'
+            }
+            $instance = $parsed
+            $engine = [int]$engine
+        }
+    }
+    $after = $running.Count
+    if ($after -isnot [int] -or $after -ne $total -or -not (& $TestLocal $Scheduler)) {
+        throw 'PAPER_INSTANCE_CHANGED'
+    }
+    return @{ Matches = $matchCount; EnginePid = $engine; InstanceGuid = $instance }
+}
+
+function Get-PaperNativeActiveInstance {
+    # Only a source-qualified caller may interpret EnginePID as the direct
+    # action PID. Birth/image/argv, full task definition and risk are separate.
+    param(
+        [Parameter(Mandatory)][ValidateNotNull()]$Scheduler,
+        [Parameter(Mandatory)][ValidateNotNull()]$Task,
+        [Parameter(Mandatory)][string]$ExpectedPath,
+        [Parameter(Mandatory)][ValidateRange(1, 2147483647)][int]$ExpectedEnginePid
+    )
     $ErrorActionPreference = 'Stop'
     try {
+        if ($Task.Path -cne $ExpectedPath) { throw 'PAPER_INSTANCE_REGISTERED_PATH' }
+        $Task = Get-PaperLocalRegisteredTask $Scheduler $ExpectedPath ${function:Test-PaperLocalScheduler}
+        if (
+            $Task.State -isnot [int] -or $Task.State -ne 4 -or $Task.Enabled -isnot [bool] -or
+            -not $Task.Enabled) { throw 'PAPER_INSTANCE_REGISTERED_STATE' }
+        $first = Read-PaperSchedulerInstances $Scheduler $ExpectedPath ${function:Test-PaperLocalScheduler} $true
+        $second = Read-PaperSchedulerInstances $Scheduler $ExpectedPath ${function:Test-PaperLocalScheduler} $true
+        if ($first.Matches -ne 1 -or $second.Matches -ne 1 -or
+            $first.EnginePid -ne $ExpectedEnginePid -or $second.EnginePid -ne $first.EnginePid -or
+            $second.InstanceGuid -ne $first.InstanceGuid -or $Task.Path -cne $ExpectedPath -or
+            $Task.State -isnot [int] -or $Task.State -ne 4 -or $Task.Enabled -isnot [bool] -or
+            -not $Task.Enabled) { throw 'PAPER_INSTANCE_STABILITY' }
+        return $first + @{ Claim = 'SCHEDULER_INSTANCE_OBSERVED' }
+    } catch {
+        throw 'PAPER_NATIVE_ACTIVE_INSTANCE_UNCONFIRMED'
+    }
+}
+
+function Test-PaperPairStageReadback($Task, $Expected, $Scheduler, [scriptblock]$TestLocal, [scriptblock]$ReadMatches, [scriptblock]$ReadTask) {
+    $ErrorActionPreference = 'Stop'
+    try {
+        if ($Task.Path -cne $Expected.Path) { return $false }
+        $Task = & $ReadTask $Scheduler $Expected.Path $TestLocal
         $state = $Task.State
         $enabled = $Task.Enabled
         if ($state -isnot [int] -or $state -ne $Expected.State -or $enabled -isnot [bool] -or
@@ -72,7 +163,15 @@ function Test-PaperPairStageReadback($Task, $Expected) {
         if ($null -eq $instances -or (-not [Runtime.InteropServices.Marshal]::IsComObject($instances) -and
             $null -eq $instances.PSObject.Properties['Count'])) { return $false }
         $count = $instances.Count
-        return ($count -is [int] -and $count -eq 0)
+        if ($count -isnot [int] -or $count -ne 0) { return $false }
+        $first = & $ReadMatches $Scheduler $Expected.Path $TestLocal $false
+        $second = & $ReadMatches $Scheduler $Expected.Path $TestLocal $false
+        $finalState = $Task.State
+        $finalEnabled = $Task.Enabled
+        return ($first.Matches -eq 0 -and $second.Matches -eq 0 -and
+            $finalState -is [int] -and $finalState -eq $state -and
+            $finalEnabled -is [bool] -and $finalEnabled -eq $enabled -and
+            (& $TestLocal $Scheduler))
     } catch {
         # Native/parse failures are unknown, never a positive readback. Do not
         # expose native exceptions or observed definition/descriptor contents.
@@ -86,7 +185,8 @@ function New-PaperNativePairReadback {
         [Parameter(Mandatory)][System.Collections.IDictionary]$Manifest,
         [Parameter(Mandatory)][System.Collections.IDictionary]$ExpectedStageXml,
         [Parameter(Mandatory)][string]$EntryAcl7,
-        [Parameter(Mandatory)][string]$ExitAcl7
+        [Parameter(Mandatory)][string]$ExitAcl7,
+        [Parameter(Mandatory)][ValidateNotNull()]$Scheduler
     )
 
     $ErrorActionPreference = 'Stop'
@@ -136,11 +236,14 @@ function New-PaperNativePairReadback {
     # Capture the frozen expectations and module-bound verifier; the returned
     # block implements Install-PaperNativeFuturePair's (phase, stage, task) ABI.
     $verify = ${function:Test-PaperPairStageReadback}
+    $testLocal = ${function:Test-PaperLocalScheduler}
+    $readMatches = ${function:Read-PaperSchedulerInstances}
+    $readTask = ${function:Get-PaperLocalRegisteredTask}
     return {
         param($phase, $stage, $task)
         if ($phase -isnot [string] -or $phase -cnotin @('entry', 'exit') -or
             $stage -isnot [string] -or $stage -cnotin @('DISABLED', 'EXIT_ONLY', 'ENABLED')) { return $false }
-        & $verify $task $expectedByStage["${stage}:$phase"]
+        & $verify $task $expectedByStage["${stage}:$phase"] $Scheduler $testLocal $readMatches $readTask
     }.GetNewClosure()
 }
 
@@ -152,7 +255,8 @@ function New-PaperNativeProtectedProfile {
         [Parameter(Mandatory)][System.Collections.IDictionary]$Manifest,
         [Parameter(Mandatory)][string]$EntryDraftXml,
         [Parameter(Mandatory)][string]$ExitDraftXml,
-        [Parameter(Mandatory)][string]$Sid
+        [Parameter(Mandatory)][string]$Sid,
+        [Parameter(Mandatory)][ValidateNotNull()]$Scheduler
     )
     if ($Sid -cnotmatch '\AS-1-5-21-(?:[0-9]+-){3}[0-9]+\z') { throw 'PAPER_PROFILE_OWNER_SID' }
     $aclTail = "(A;;FA;;;$Sid)(A;;FA;;;SY)(A;;FA;;;BA)"
@@ -238,8 +342,8 @@ function New-PaperNativeProtectedProfile {
         }
     }
     $readback = New-PaperNativePairReadback -Manifest $Manifest -ExpectedStageXml $stageXml `
-        -EntryAcl7 $acl7 -ExitAcl7 $acl7
+        -EntryAcl7 $acl7 -ExitAcl7 $acl7 -Scheduler $Scheduler
     return @{ RegistrationSddl = $registrationSddl; VerifyReadback = $readback }
 }
 
-Export-ModuleMember -Function New-PaperNativePairReadback, New-PaperNativeProtectedProfile
+Export-ModuleMember -Function New-PaperNativePairReadback, New-PaperNativeProtectedProfile, Get-PaperNativeActiveInstance

@@ -16,17 +16,29 @@ The bank phase adapter now validates the complete point-owner handoff and
 retains the exact native proposal once. Exit restores only the original entry
 reference. Still bind the real caller, whose independent point closure and
 original exit reference cannot be supplied by the point file itself.
-Fix the verified hidden-instance false zero before wiring: on this host
-`GetInstances(0)` missed a running hidden task, while exact path filtering
-of `GetRunningTasks(1)` found it. Use the measured direct base interpreter
-shape and verify actual PID/birth/source/definition together at runtime.
-See orchestration.md for the exact inert fixture source and claim boundary.
+The protected installer now reopens definition, state and ACL from the same
+local Scheduler connection and requires two hidden-inclusive empty samples.
+`Get-PaperNativeActiveInstance` observed the exact GUID and EnginePID in the
+real inert direct-base-pythonw fixture. Bind it in the named launcher and
+verify actual Windows process birth, image, argv, source and full definition
+together; this observation alone is not native effect admission.
 The already installed point emits its content receipt before process exit.
-Bind a qualified post-join proof before the opportunity (prefer one existing
-point owner with a supervised child over a second observer task). Do not
+The tracked supervised point worker now joins the exact child Job and
+receipt chain. Bind its actual direct-child action and protected control
+directory before the opportunity (prefer one existing point owner over a
+second observer task). Do not
 self-pin the receipt or infer that its direct action finished from a later
 empty instance list. An original unrun task may be migrated only after
 positive exact owner closure, with no duplicate window or lost input seal.
+
+Parallel deadline before Nov30 14:12 UTC: the original live-in-Scheduler
+Nov30 research source rejects the already pinned SELF training bundle.
+The shared loader fix passed both actual original checkpoints on invented
+rows from the immutable `source-v2` (HANDOFF). The current first-slot
+reader still pins the old producer. Bind the single exact repaired source
+at the actual consumer, run a tiny producer-to-consumer smoke, then qualify
+and update only that existing unrun task at its unchanged opportunity.
+No old task was invoked or moved; no second forecast scheduler.
 
 ## First Work
 

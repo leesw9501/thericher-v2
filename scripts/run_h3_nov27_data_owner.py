@@ -19,6 +19,7 @@ HARD_STOP = datetime(2026, 11, 27, 18, 45, tzinfo=UTC)
 SOURCE = Path(f"D:/thericher-v2/model-artifacts/data/{RUN_NAME}/source")
 FORECAST_NAME = "h3-nov30-fixed-half-forecast-20261130-v1"
 FORECAST_SOURCE = Path(f"D:/thericher-v2/model-artifacts/research/{FORECAST_NAME}/source")
+FORECAST_REPAIR_SOURCE = FORECAST_SOURCE.with_name("source-v2")
 FORECAST_OPENS = datetime(2026, 11, 30, 14, 12, tzinfo=UTC)
 FORECAST_LAST_START = datetime(2026, 11, 30, 14, 13, tzinfo=UTC)
 DEC3_NAME = "h3-dec3-modp1-owner-20261203-v1"
@@ -406,6 +407,7 @@ def main():
     parser.add_argument("--source-sha256", required=True)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--nov30-forecast", action="store_true")
+    modes.add_argument("--nov30-forecast-repair", action="store_true")
     modes.add_argument("--dec3-capture", action="store_true")
     modes.add_argument("--dec4-point", action="store_true")
     parser.add_argument("--target-prebind-sha256")
@@ -418,6 +420,8 @@ def main():
         if args.dec3_capture
         else FORECAST_SOURCE
         if args.nov30_forecast
+        else FORECAST_REPAIR_SOURCE
+        if args.nov30_forecast_repair
         else SOURCE
     )
     if (
@@ -438,9 +442,10 @@ def main():
                 prebound_at=datetime.fromisoformat(args.prebound_at),
                 target_digest=args.target_prebind_sha256,
             )
+        elif args.nov30_forecast or args.nov30_forecast_repair:
+            run_forecast(source, args.source_sha256, clock=lambda: datetime.now(UTC))
         else:
-            driver = run_forecast if args.nov30_forecast else run_owner
-            driver(source, args.source_sha256, clock=lambda: datetime.now(UTC))
+            run_owner(source, args.source_sha256, clock=lambda: datetime.now(UTC))
     except Exception:
         return 20
     return 0

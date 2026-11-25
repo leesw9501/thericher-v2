@@ -39,6 +39,30 @@ operational caller and independently retained closure still need wiring.
 Claude categorical review:
 A/research/h3-dec4-lstm-point-20261204-v1/PAPER-INTAKE-CLAUDE-VERDICT.json.
 
+The protected pair readback now uses the same local Scheduler connection for
+the exact registered definition and two hidden-inclusive instance samples.
+The new active-instance probe matched a real inert direct-base-pythonw
+action; the fixture was removed after closure. It does not prove the
+financial caller's process image/birth or authority. The tracked point
+supervisor now requires a zero exit of the exact child and empty Windows
+Job, and same-attempt receipt/digest checks before publishing joined proof.
+Neither change migrated the original point task or installed the Paper pair.
+
+Nov30 first-slot technical repair (not deployed): the frozen SELF file is
+a training bundle with model/optimizer/RNG namespaces, not a bare state
+dict. The shared loader now restores only exact model tensors from the
+verified bytes. Both original CPU callbacks passed on 17 invented inputs
+from the new frozen source, and early native launch did not create a run.
+Repair source `f37981f4d4cd232be6f5382749fd5c50a14195e93e87f535d6286aec57244a44`
+under A/research/h3-nov30-fixed-half-forecast-20261130-v1/source-v2.
+`MIGRATE-NOV30-SOURCE.ps1` in that parent, SHA256
+`b2cb4b1c3b89ac41ac9f402539d9c7c696da7dbd2afd59005d1a403753cae1d6`,
+passed validate-only; it has not changed the existing old source/Ready
+task. Its Claude verdict in
+`MIGRATION-CLAUDE-VERDICT.json` withholds use until the first-slot reader
+accepts the exact repaired source and that native handoff passes. Neither
+actual forecast nor target was read. Preserve the same Nov30 time and run.
+
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.
 The wire filter refuses order endpoints, permits only qualified Paper

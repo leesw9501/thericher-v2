@@ -154,6 +154,22 @@ def test_rejects_repacked_self_with_same_tensors(synthetic):
         loader.make_nov30_h3_forward(**(synthetic | {"self_checkpoint": repacked}))
 
 
+@pytest.mark.parametrize("extra", ["optimizer.0.step", "rng.cpu", "weight", "unknown.slot"])
+def test_exact_training_bundle_selects_only_model_state(synthetic, arrays, monkeypatch, extra):
+    import torch
+    from safetensors.torch import save
+
+    raw = save({"model.weight": torch.tensor([2.0]), extra: torch.tensor([9.0])})
+    monkeypatch.setattr(loader, "SELF_PIN", loader.H3ModelPin(_sha(SELF_SOURCE), _sha(raw)))
+    forward = loader.make_nov30_h3_forward(**(synthetic | {"self_checkpoint": raw}))
+    if extra.startswith(("optimizer.", "rng.")):
+        scores = forward("SELF", loader.SELF_PIN, loader.FIT_SHA256, arrays)
+        assert list(scores.values()) == [2 * i * SCALE for i in range(17)]
+    else:
+        with pytest.raises(ValueError, match="self_checkpoint_invalid"):
+            forward("SELF", loader.SELF_PIN, loader.FIT_SHA256, arrays)
+
+
 @pytest.mark.parametrize(
     "overrides", [{"scale": np.array(1.0)}, {"std": np.zeros(12)}, {"mean": np.full(12, np.nan)}]
 )
