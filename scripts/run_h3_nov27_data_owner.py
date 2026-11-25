@@ -1,4 +1,4 @@
-"""Quiet, once-only Nov27 market-data owner for the Nov30 H3 READY input."""
+"""Quiet H3 one-shots: Nov27 market data and the separate Nov30 forecast."""
 
 import argparse
 import hashlib
@@ -17,6 +17,10 @@ OPENS = datetime(2026, 11, 27, 18, 30, tzinfo=UTC)
 CLOSES = datetime(2026, 11, 27, 18, 40, tzinfo=UTC)
 HARD_STOP = datetime(2026, 11, 27, 18, 45, tzinfo=UTC)
 SOURCE = Path(f"D:/thericher-v2/model-artifacts/data/{RUN_NAME}/source")
+FORECAST_NAME = "h3-nov30-fixed-half-forecast-20261130-v1"
+FORECAST_SOURCE = Path(f"D:/thericher-v2/model-artifacts/research/{FORECAST_NAME}/source")
+FORECAST_OPENS = datetime(2026, 11, 30, 14, 12, tzinfo=UTC)
+FORECAST_LAST_START = datetime(2026, 11, 30, 14, 13, tzinfo=UTC)
 MARKET = Path(f"D:/market_data/us_equities/kis_paper_private/{RUN_NAME}")
 DOTENV = Path("C:/Users/Public/Documents/thericher-v2/.env")
 VENV = DOTENV.parent / ".venv"
@@ -36,7 +40,7 @@ def _plain(path):
     return not (getattr(info, "st_file_attributes", 0) & 0x400) and not stat.S_ISLNK(info.st_mode)
 
 
-def verify_source(root, pin):
+def verify_source(root, pin, *, forecast=False):
     """Authenticate the complete isolated import tree before importing project code."""
     if not root.is_absolute() or root.resolve(strict=True) != root:
         raise ValueError("nov27_source_root")
@@ -52,8 +56,9 @@ def verify_source(root, pin):
     files = manifest.get("files")
     if (
         manifest.keys() != {"schema", "run", "tree", "files"}
-        or manifest["schema"] != "H3_NOV27_DATA_SOURCE_V1"
-        or manifest["run"] != RUN_NAME
+        or manifest["schema"]
+        != ("H3_NOV30_FORECAST_SOURCE_V1" if forecast else "H3_NOV27_DATA_SOURCE_V1")
+        or manifest["run"] != (FORECAST_NAME if forecast else RUN_NAME)
         or re.fullmatch(r"[0-9a-f]{40}", manifest["tree"]) is None
         or type(files) is not dict
         or not all(files.get(p) == digest for p, digest in PINNED_CODE.items())
@@ -182,19 +187,39 @@ def run_owner(source, source_pin, *, clock):
         raise
 
 
+def run_forecast(source, source_pin, *, clock):
+    if not FORECAST_OPENS <= clock() < FORECAST_LAST_START:
+        raise ValueError("nov30_owner_clock")
+    pinned = verify_source(source, source_pin, forecast=True)
+    sys.path.insert(0, str(source / "src"))
+    from thericher_v2.ops.h3_nov30_run import run_nov30_forecast
+
+    parser = _load("nov30_pinned_contract", pinned["pinned/contract.py"])
+    run_nov30_forecast(
+        SOURCE.parent,
+        source.parent / "run",
+        forecast_pin=source_pin,
+        clock=clock,
+        validate_input=parser.validate_input,
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-sha256", required=True)
+    parser.add_argument("--nov30-forecast", action="store_true")
     args = parser.parse_args()
+    source = FORECAST_SOURCE if args.nov30_forecast else SOURCE
     if (
-        Path(__file__).resolve() != (SOURCE / "scripts/run_h3_nov27_data_owner.py")
+        Path(__file__).resolve() != (source / "scripts/run_h3_nov27_data_owner.py")
         or Path(sys.executable).resolve() != (VENV / "Scripts/pythonw.exe").resolve()
         or not (sys.flags.isolated and sys.flags.no_site and sys.dont_write_bytecode)
     ):
         return 20
     sys.path.append(str(VENV / "Lib/site-packages"))
     try:
-        run_owner(SOURCE, args.source_sha256, clock=lambda: datetime.now(UTC))
+        driver = run_forecast if args.nov30_forecast else run_owner
+        driver(source, args.source_sha256, clock=lambda: datetime.now(UTC))
     except Exception:
         return 20
     return 0

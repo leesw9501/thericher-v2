@@ -14,14 +14,28 @@ instances and next 2026-11-27 18:30 UTC (Nov28 03:30 KST). Task:
 `4420f9c63ac74c480aa381ad0510eae8df5a42fd0d6f83cfa8d9724154c12f53`
 at A/data/h3-nov27-modp1-owner-20261127-v1/source/SOURCE.json.
 Quiet pythonw; no demand, catch-up or repetition. No run directory existed
-on readback. This installs capture only, no forecast Task or broker order.
+on readback. This capture has no broker order authority.
+
+Nov30 forecast owner is independently installed and Ready, with zero
+instances and next 2026-11-30 14:12 UTC (23:12 KST). Task:
+`thericher-h3-nov30-fixed-half-forecast-20261130-v1`. Source manifest
+`6cef92fda598c0f1f9aada60ca7a49b80ce50bb8f8b323129cc2db3144629c24`
+at A/research/h3-nov30-fixed-half-forecast-20261130-v1/source/SOURCE.json.
+It reads only the exact finalized Nov27 input plus pinned model files;
+successful consumption requires the forecast run's OWNER-CLOSED receipt
+with the exact seal digest. No forecast run existed on readback.
 
 Follow-on: the pinned Dec4 capsule adapter exercised the exact BankLeg,
 Windows Job and network-none Docker path for a successful response and
 for a stalled child. Both proved exact daemon absence. The production
-launcher, mount/owner/observer checks and host-abort containment remain.
+launcher and mount/owner/observer checks remain. The tracked outer host
+watchdog proved that interrupting the original owner can leave the exact
+synthetic Docker container running and its bank claim unchanged. The
+fixture container was removed; no production claim was touched. Exact
+post-crash daemon and bank reconciliation is still required.
 The Nov30 loader verified all seven original model/FIT/code members without
-a forward. Its source-bound dated caller remains to wire.
+a forward. The dated forecast caller now joins the Nov27 owner, attempt,
+READY and input digests before the seal; missing input is not a no-signal.
 
 Follow-on: the Dec4 host byte exchange now drives an already-owned child;
 ordered owner replies, final EOF and exact receipt readback passed with the

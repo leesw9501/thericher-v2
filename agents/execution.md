@@ -56,6 +56,10 @@ The pinned CapsuleVisit adapter now uses the exchange inside the existing
 BankLeg/Job/daemon path. Real isolated Windows/Docker success and stalled
 attach both proved exact fixture absence. Production mount/owner/observer
 binding and containment of host termination are unqualified; not installed.
+The outer host watchdog now proves native Job containment, not service
+closure. On a real no-network synthetic host abort the exact Docker
+container remained; the original bank claim stayed held. Test-only cleanup
+proved container absence. Production restart reconciliation is still needed.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,

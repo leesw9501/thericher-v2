@@ -14,8 +14,11 @@ one CPU forward, yielding one finite 17-name blend. The tracked Nov30 seal
 recorded both callbacks once and passed exact independent readback. No
 targets, prospective scores or fit used. The concrete checkpoint loader
 verified the seven original source/checkpoint/FIT members without loading
-the model for inference. Next bind the qualified Data closure and loader
-to the dated seal executable.
+the model for inference. The dated executable now binds actual Data owner
+closure and the checkpoint loader; a future inert Scheduler fixture passed.
+The actual owner is installed and Ready for Nov30 UTC14:12, no instance or
+attempt. Exact source in HANDOFF. The post-expiry target custody and block-end
+outcome read remain separate.
 
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired

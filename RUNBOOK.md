@@ -69,7 +69,8 @@ replay those windows.
 
 Next research block (US session dates, `OPEN[e]` to `OPEN[e+3]`):
 Nov30-Dec3, Dec4-Dec9, Dec10-Dec15, Dec16-Dec21, Dec22-Dec28.
-These are fixed candidate windows, not installed tasks. Use the tracked 2026
+These are fixed research windows; only the named first-slot input and
+forecast tasks below are installed. Use the tracked 2026
 calendar and `select_prospective_h3_intervals`; include early-close dates at
 their actual close. Before first dispatch, bind the 60-session completed
 input source, 19-name input/17-name decision axis, exact existing checkpoints
@@ -93,6 +94,13 @@ First-slot input owner (not forecast or target): exact
 A/data/h3-nov27-modp1-owner-20261127-v1/run. Use only an actual exact source,
 clock and attempt/READY digest match; Task exit or a missing result is not
 readiness. Do not manually start or retry the one-shot.
+First-slot forecast owner: exact
+`thericher-h3-nov30-fixed-half-forecast-20261130-v1`, installed Ready for
+Nov30 14:12 UTC (23:12 KST), latest start 14:13, hard stop 14:25 UTC.
+Read only the established attempt, seal and exact OWNER-CLOSED from
+A/research/h3-nov30-fixed-half-forecast-20261130-v1/run after the opportunity.
+A seal without its exact owner receipt is not admitted. No manual start,
+catch-up, targets or orders.
 
 ## Current Deployment
 

@@ -17,6 +17,10 @@ executable refused an early launch without creating a run. Native inert
 registration/enable/readback passed after normalizing the principal to its SID.
 Actual Nov27 owner installed, Ready, 0 instances, next Nov27 UTC18:30,
 no run yet. Capture hard stop UTC18:45; exact Source and paths in HANDOFF.
+Dec3 after-close MODP1 may supply both the Nov30 cohort targets and the
+Dec4 pre-entry prefix with one acquisition, only if independent target
+custody and later block-end readout are prebound. No target owner installed;
+the existing Dec4 feature READY is not target admission.
 
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK

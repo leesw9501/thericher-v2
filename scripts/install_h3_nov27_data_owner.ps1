@@ -3,21 +3,32 @@ param(
     [Parameter(Mandatory)]
     [ValidatePattern('\A[0-9a-f]{64}\z')]
     [string]$SourceSha256,
-    [switch]$Install
+    [switch]$Install,
+    [switch]$Nov30Forecast
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $name = 'thericher-h3-nov27-modp1-owner-20261127-v1'
 $source = 'D:\thericher-v2\model-artifacts\data\h3-nov27-modp1-owner-20261127-v1\source'
-$launcher = Join-Path $source 'scripts\run_h3_nov27_data_owner.py'
 $python = 'C:\Users\Public\Documents\thericher-v2\.venv\Scripts\pythonw.exe'
-$arguments = '-I -S -B "{0}" --source-sha256 {1}' -f $launcher, $SourceSha256
 $start = [DateTimeOffset]'2026-11-27T18:30:00+00:00'
-$end = $start.AddMinutes(1)
-$installBy = $start.AddMinutes(-5)
 $contractSource = "TheRicher/H3-Nov27-Data/$SourceSha256"
 $description = 'TheRicher Nov27 read-only MODP1 capture, one opportunity, no orders.'
+$limit = 'PT14M'
+if ($Nov30Forecast) {
+    $name = 'thericher-h3-nov30-fixed-half-forecast-20261130-v1'
+    $source = 'D:\thericher-v2\model-artifacts\research\h3-nov30-fixed-half-forecast-20261130-v1\source'
+    $start = [DateTimeOffset]'2026-11-30T14:12:00+00:00'
+    $contractSource = "TheRicher/H3-Nov30-Forecast/$SourceSha256"
+    $description = 'TheRicher Nov30 fixed-half CPU forecast, no targets, no orders.'
+    $limit = 'PT12M'
+}
+$launcher = Join-Path $source 'scripts\run_h3_nov27_data_owner.py'
+$arguments = '-I -S -B "{0}" --source-sha256 {1}' -f $launcher, $SourceSha256
+if ($Nov30Forecast) { $arguments += ' --nov30-forecast' }
+$end = $start.AddMinutes(1)
+$installBy = $start.AddMinutes(-5)
 
 function Assert-FutureWindow {
     if ([DateTimeOffset]::UtcNow -ge $installBy) { throw 'NOV27_INSTALL_WINDOW_CLOSED' }
@@ -43,7 +54,7 @@ function Assert-Definition($Task, [bool]$Enabled) {
         $d.Principal.LogonType -ne 3 -or $d.Principal.RunLevel -ne 0 -or
         $s.StartWhenAvailable -or $s.AllowDemandStart -or -not $s.Hidden -or
         -not $s.AllowHardTerminate -or $s.WakeToRun -or $s.MultipleInstances -ne 2 -or
-        $s.ExecutionTimeLimit -ne 'PT14M' -or $d.Triggers.Count -ne 1 -or $d.Actions.Count -ne 1) {
+        $s.ExecutionTimeLimit -ne $limit -or $d.Triggers.Count -ne 1 -or $d.Actions.Count -ne 1) {
         throw 'NOV27_DEFINITION_READBACK_FAILED'
     }
     for ($i = 0; $i -lt $desiredAcl.DiscretionaryAcl.Count; $i++) {
@@ -91,7 +102,7 @@ $settings.AllowDemandStart = $false
 $settings.AllowHardTerminate = $true
 $settings.WakeToRun = $false
 $settings.MultipleInstances = 2
-$settings.ExecutionTimeLimit = 'PT14M'
+$settings.ExecutionTimeLimit = $limit
 $trigger = $definition.Triggers.Create(1)
 $trigger.StartBoundary = $start.ToString('yyyy-MM-ddTHH:mm:sszzz')
 $trigger.EndBoundary = $end.ToString('yyyy-MM-ddTHH:mm:sszzz')

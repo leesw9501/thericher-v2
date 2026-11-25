@@ -92,9 +92,12 @@ execution path. The model is a proposal source, not a separate bank writer.
    passed success and stalled-child teardown. Bind production mount/owner/
    observer checks and a supervised host-abort path; do not use R8's expired
    clocks or guest CLI.
-   The draft's relative Scheduler limit is only two minutes; prove an actual
-   absolute host watchdog and end-to-end exact daemon teardown before
-   installing. No actual named pair installed.
+   The outer Windows Job watchdog now proves host-process termination.
+   Native host-abort smoke left the exact daemon container running and the
+   original synthetic BankLeg held. Wire the production launcher to the
+   supervisor and exact post-crash daemon/BankLeg recovery, without releasing
+   financial reservations. The draft Scheduler limit is two minutes; no
+   actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.
@@ -112,12 +115,17 @@ execution path. The model is a proposal source, not a separate bank writer.
    The actual checkpoint/FIT loader verified all seven pinned members
    without a forward. The exact Nov27 read-only capture Task is installed
    and Ready for UTC18:30; its actual closure/READY is still unknown.
-   Connect its owner-closed receipt to the isolated
-   named Nov30 seal caller and reserve a pre-open opportunity;
-   do not substitute a Dec4 LSTM-only proposal
+   The separate Nov30 seal caller is installed and Ready for UTC14:12
+   with a strict UTC14:25 cutoff. Verify its exact OWNER-CLOSED and seal
+   after the owned opportunity; no actual forecast yet.
+   Do not substitute a Dec4 LSTM-only proposal
    or rerun the older forecast. The pure reducer reports
    only descriptive paired results with at least four admitted dates. No
    actual outcome scored.
+   For the Nov30 outcomes, prebind the Dec3 after-close MODP1 acquisition
+   to independent target custody. One collector may also feed Dec4 features
+   without lookahead, but the Dec4 DATA-READY is not a target seal and may not
+   be adopted retroactively. Keep outcome access closed until block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion
