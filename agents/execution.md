@@ -44,7 +44,10 @@ two positive owner checks around the only credential frame. Native inert
 Windows Job/Docker round trip passed; protect the new image and do not reuse
 the old credential-first ABI. The separate normal restore coordinator uses
 an independently retained startup owner handoff, not bank/observer evidence
-alone. The actual cross-owner guard and external runner remain unbound.
+alone. The launcher now requires a pinned cross-owner guard with a fresh
+host/daemon snapshot at each effect boundary. Historical claims were denied
+in the real read-only probe. The current role profile and independent
+external restore runner remain unqualified.
 
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.

@@ -6,9 +6,9 @@
 attributable KIS Paper entry-to-exit lifecycle through a repeatable, tracked
 execution path. The model is a proposal source, not a separate bank writer.
 
-Next operational step: bind the real Dec4/Dec9 writer census and observer
-suspend/restore to the tracked normal-path launcher, and qualify the now-wired
-root watchdog with the actual Scheduler/Job shape. Its scheduled BankLeg
+Next operational step: qualify the Dec4/Dec9 concrete writer census on fresh
+source-scoped role claims, then bind the independent restore owner and qualify
+the now-wired root watchdog with the actual Scheduler/Job shape. Its scheduled BankLeg
 now stages and verifies the exact new
 capsule workspace before calling the existing native account worker.
 Protect the final phase profiles and source using the existing installer.
@@ -54,9 +54,15 @@ as a separate path. Scheduler emptiness is not descendant closure.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
-normal restore owner are tracked. Bind the actual cross-owner census and
+normal restore owner are tracked. The launcher now calls the pinned cross-owner
+census and checks mount aliases. A live read-only sample worked; historical
+claims withheld writer clearance. Seal and qualify the current profile and
 external restore runner, then freeze the new image/host sources and qualify
 the named source release. Do not use the prior credential-first capsule ABI.
+Qualify the one observed shared emergency/pause control volume and exact
+dashboard actor separately from financial state. Native read-side locks need
+write access; do not just remount it read-only or stop the dashboard. Keep
+all ledger, reservations, account state and token files outside that volume.
 V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.

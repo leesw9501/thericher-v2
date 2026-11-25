@@ -193,8 +193,32 @@ Windows fixture exercised startup handoff through restore in separate
 processes, without changing the operating observer or broker:
 A/execution/synthetic-observer-round-trip-dfe1877958a3/SMOKE.json, SHA256
 `19be7b05d6d9e49de7d9af2f42c55b0785ac0fb2d484a76249153459257e1e70`.
-Still bind the actual bounded external restore owner and native cross-owner
-guard; do not reuse the normal restoration route for an abnormal held claim.
+Still bind the actual bounded external restore owner; do not reuse the
+normal restoration route for an abnormal held claim.
+
+The named launcher now requires the concrete Dec4 scoped writer census.
+It retains the old pinned metadata tools and classifier, not old release
+authority; binds the profile to the existing bank/gate and its writable
+mount roots; and uses one fresh snapshot per writer boundary. Running
+Docker membership brackets projected inspect and Windows actor capture;
+only the pinned visit can identify an own CID. Owned actor handles and
+bind identities are rechecked, including Docker Desktop drive aliases.
+The actual read-only producer sampled this host and daemon in 1.817 s.
+Historical claims refused `unknown_custody_capability`; this is not current
+role qualification or end-to-end effect latency. See A evidence root above,
+`writer-census-native-8e744006/SMOKE.json`. Rebind and qualify the current
+claims/profile at the protected source, then use the same scoped decision
+for the independent normal restore owner. No scheduled definitions changed.
+The live Compose `web` role and prior Paper worker share the exact emergency
+named volume. The worker's existing readers open a writable lock even on
+read; an inert current-image named volume proved a read-only remount refuses
+that lock. Preserve it as one source-attested control-only overlap, not a
+private-custody exemption: unrelated writable mounts, broker credentials,
+ledger, reservations and token-state may not enter that role or volume.
+Claude favored this narrow classification over changing every native reader.
+Evidence: `native-emergency-lock-ce57d4b8/SMOKE.json` at the same A root,
+SHA256 `8de5e11bccc24572fe9c9b5ffaa2e3cb6f5a86cdcffd242d3b5b840abde4315c`.
+The classifier still needs this exact current role and has not admitted it.
 
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state

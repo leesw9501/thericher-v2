@@ -16,6 +16,7 @@ from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransp
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
 from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
 from thericher_v2.ops.h3_dec4_scheduler_provider import make_dec4_windows_owner_factory
+from thericher_v2.ops.h3_dec4_scoped_writer import Dec4ScopedWriterGuard
 
 _CAPSULE = {"image", "network", "mounts", "workspace", "account_ref", "worker_sha256"}
 _GUEST_PATHS = {
@@ -271,7 +272,6 @@ def run_dec4_windows_paper_leg(
     scheduler_providers,
     phase_input,
     observer_lease,
-    writer_and_observer_ready,
     writer_guard,
     load_paper_packet,
 ):
@@ -279,8 +279,8 @@ def run_dec4_windows_paper_leg(
 
     Only the actual guest worker decides account admission, order identity,
     risk and reconciliation. Planning or reaching this route is not a fill.
-    The readiness callback receives the watchdog actor for the writer census,
-    including positive closure of any observer descendants before admission.
+    The source-pinned writer guard evaluates current cross-owner facts once per
+    native effect boundary. Observer definition renewal is not that census.
     The outer caller still owns exact daemon recovery and observer restoration.
     """
     if (
@@ -292,16 +292,16 @@ def run_dec4_windows_paper_leg(
         or observer_lease.root != Path(observer_lease.plan.output_root)
         or type(observer_lease.transport) is not Dec4NativeObserverTransport
         or observer_lease.transport.plan != observer_lease.plan
-        or not callable(getattr(writer_guard, "check", None))
-        or not all(callable(cb) for cb in (writer_and_observer_ready, load_paper_packet))
+        or type(writer_guard) is not Dec4ScopedWriterGuard
+        or not callable(load_paper_packet)
     ):
         raise ValueError("dec4_launcher_missing_owned_admission")
     make_owner = make_dec4_windows_owner_factory(schedule_plan, scheduler_providers)
 
-    def readiness(leg, ready, watchdog_actor):
+    def readiness(leg, ready, _watchdog_actor):
         return (
             ready.source.get("observer_plan_sha256") == observer_lease.plan.sha256
-            and writer_and_observer_ready(leg, ready, watchdog_actor) is True
+            and writer_guard.source_ready(leg, ready) is True
             and observer_lease.renew_if_started(leg) is True
         )
 
@@ -325,6 +325,7 @@ def run_dec4_windows_paper_leg(
         retain_dec4_restore_owner(
             evidence_root, ready=ready, leg=leg, observer_plan=observer_lease.plan
         )
+        writer_guard.before_observer(leg, ready, gate.watchdog_actor(leg))
         observer_lease.begin(leg, ready)
         return dispatch
 
