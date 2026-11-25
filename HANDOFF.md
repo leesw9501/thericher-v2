@@ -8,6 +8,15 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: the Dec4/9 protected task plan and the Linux NET25 guest executable
+are tracked. The no-network Docker test parsed both Windows-generated frames;
+the actual executable refused early execution and retained byte-identical
+categorical output. No private mounts or credentials. Claude challenged
+post-effect failures being mistaken for no effect; faults retain financial
+unknown, and the native transport rechecks admission at the request boundary.
+Host launcher/source, writer/observer guard and timed containment still need
+an integrated proof. The named pair is not installed.
+
 Follow-on: the dated scheduled coordinator uses the existing BankLeg and a
 single durable capsule visit. It restores caller-pinned entry bytes inside
 the lease, then frames the exact NET25 guest cohort; Dec9 sends no proposal

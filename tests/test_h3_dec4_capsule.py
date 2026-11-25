@@ -1,0 +1,137 @@
+"""Guest pins, admission order, and result projection on synthetic input."""
+
+import hashlib
+import io
+import json
+from datetime import timedelta
+from pathlib import PurePosixPath
+from types import SimpleNamespace
+
+import pytest
+
+from test_h3_dec4_guest import _wire
+from test_h3_dec4_retained_input import _native
+from thericher_v2.execution import kis_paper_budget_strategy as budget
+from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule, run_dec4_account_capsule
+
+CONFIG = SimpleNamespace(
+    base_url="https://example.invalid", account_number="synthetic", account_product_code="test"
+)
+
+
+def _digest(value):
+    return hashlib.sha256(value).hexdigest()
+
+
+def _case(phase="entry", **overrides):
+    frame, refs = _wire(_native(), phase)
+    binding = {k.removeprefix("expected_"): v for k, v in refs.items()} | dict(
+        schema="dec4-net25-capsule-binding-v1",
+        account_ref=budget._digest(
+            [CONFIG.base_url, CONFIG.account_number, CONFIG.account_product_code]
+        ),
+        frame_sha256=_digest(frame),
+        worker_sha256="a" * 64,
+        paths={"state_root": "/app/state"},
+        token_root="/app/control",
+    )
+    raw = json.dumps(binding | overrides).encode()
+    return raw, frame
+
+
+def _parse(phase="entry", **overrides):
+    raw, frame = _case(phase, **overrides)
+    return inspect_dec4_capsule(raw, frame, binding_sha256=_digest(raw))
+
+
+def _answer(sequence, ready=True):
+    return (
+        json.dumps(dict(kind="current20-owner-answer-v1", sequence=sequence, ready=ready)) + "\n"
+    ).encode()
+
+
+def _forbidden(*args, **kwargs):
+    pytest.fail("crossed an unadmitted boundary")
+
+
+def test_independent_binding_and_frame_pins():
+    raw, frame = _case()
+    with pytest.raises(ValueError, match="^h3_capsule_binding_pin$"):
+        inspect_dec4_capsule(raw + b" ", frame, binding_sha256=_digest(raw))
+    with pytest.raises(ValueError, match="^h3_capsule_binding_invalid$"):
+        inspect_dec4_capsule(raw, frame + b" ", binding_sha256=_digest(raw))
+
+
+def test_outside_window_precedes_stdin():
+    binding, guest = _parse()
+    stream = SimpleNamespace(readline=_forbidden)
+    with pytest.raises(ValueError, match="^h3_capsule_outside_window$"):
+        run_dec4_account_capsule(
+            binding,
+            guest,
+            stream=stream,
+            sink=None,
+            load_worker=_forbidden,
+            clock=lambda: guest.cohort.slot.ends_at,
+        )
+
+
+@pytest.mark.parametrize("answer", [_answer(1, False), _answer(2), b""])
+def test_owner_denial_precedes_worker_and_packet_parsing(answer):
+    binding, guest = _parse()
+    sink = io.BytesIO()
+    with pytest.raises(ValueError, match=r"^h3_capsule_owner_(denied|unknown)$"):
+        run_dec4_account_capsule(
+            binding,
+            guest,
+            stream=io.BytesIO(b"opaque\n" + answer),
+            sink=sink,
+            load_worker=_forbidden,
+            clock=lambda: guest.cohort.slot.starts_at,
+        )
+    assert json.loads(sink.getvalue()) == {"kind": "current20-owner-request-v1", "sequence": 1}
+
+
+@pytest.mark.parametrize("phase", ["entry", "exit"])
+def test_exact_session_with_duplex_and_no_private_result(phase):
+    binding, guest = _parse(phase)
+    invoked = []
+
+    def session(config, **kwargs):
+        assert config is CONFIG and kwargs["execute"] is True
+        assert kwargs["cohort"] is guest.cohort
+        assert kwargs["deadline"] == guest.cohort.slot.ends_at
+        assert kwargs["source_ready"]() and kwargs["owner_ready"]()
+        if phase == "entry":
+            assert kwargs["target_loader"]() == _native()
+        else:
+            with pytest.raises(ValueError, match="retained_input"):
+                kwargs["target_loader"]()
+        invoked.append(True)
+        return dict(
+            pending=True, native_calls=1, native={"opaque": "private"}, calls={"ignored": 9}
+        )
+
+    def load(ref):
+        assert ref == binding["worker_sha256"]
+        return dict(
+            native_paths=lambda: {"state_root": PurePosixPath("/app/state")},
+            CONTROL=PurePosixPath("/app/control"),
+            parse_packet=lambda raw: CONFIG if raw == b"invented" else _forbidden(),
+            run_account_session=session,
+        )
+
+    sink = io.BytesIO()
+    result = run_dec4_account_capsule(
+        binding,
+        guest,
+        stream=io.BytesIO(b"invented\n" + _answer(1) + _answer(2)),
+        sink=sink,
+        load_worker=load,
+        clock=lambda: guest.cohort.slot.starts_at + timedelta(seconds=1),
+    )
+    assert invoked == [True]
+    assert [json.loads(raw)["sequence"] for raw in sink.getvalue().splitlines()] == [1, 2]
+    assert result["status"] == "pending"
+    assert result["financial_claim"] == "UNKNOWN" and result["reservation_release"] is False
+    assert "native" not in result and "calls" not in result and "private" not in str(result)

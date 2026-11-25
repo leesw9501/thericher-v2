@@ -73,9 +73,19 @@ execution path. The model is a proposal source, not a separate bank writer.
    The `ops/h3_dec4_guest.py` byte framing rebuilds an exact packaged NET25
    cohort on the guest side; exit carries the retained digest only. Test
    positive operational closure, old bank hold and owner birth mismatch.
-   Pin the actual launcher, writer/observer guard and existing capsule
-   against the new source, and prove native Windows/Docker hosting. Legacy
-   stock `main -> run` does not accept NET25. No actual named pair installed.
+   The named host schedule plan now derives the launcher action and protected
+   task drafts from the same bank windows. The Docker guest executable verifies
+   the exact frame and worker bytes, then uses duplex owner admission before
+   parsing the Paper packet. Network-none Windows-to-Docker tests parsed both
+   phases and verified early execution fails closed. Unknown effects are never
+   projected as a released reservation. Connect the actual quiet host launcher,
+   native owner provider and writer/observer guard; prove one prebound source
+   and the actual container/Job containment budget. The host must verify the
+   exact retained receipt against the duplex result and convert the nullable
+   guest field only from a valid non-fault outcome into the BankLeg boolean;
+   never coerce an unavailable result into a no-effect result. The draft's
+   relative Scheduler limit is only two minutes; qualify end-to-end teardown
+   before installing. No actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.
@@ -84,7 +94,9 @@ execution path. The model is a proposal source, not a separate bank writer.
    from a separately acquired expiry-as-of panel. The tracked exact single-
    cohort replay compares fixed-half, funded-gross EW and cash; distinct sell
    notionals drive leg-specific fees. Current forecast/target owners and
-   separate block-end admission still needed. The pure block reducer reports
+   separate block-end admission still needed. Prepare the Nov27 early-close
+   prefix and Nov30 pre-open fixed-half seal first; do not substitute a Dec4
+   LSTM-only Paper proposal or rerun the older closed forecast. The pure block reducer reports
    only descriptive paired results with at least four admitted dates. No
    actual outcome scored.
    Intraday timestamp work remains separate and cannot hold this block.

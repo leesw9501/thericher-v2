@@ -5,6 +5,16 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26 throughput review: the Dec4/9 host plan and NET25 guest were prepared in
+parallel; the real Linux worker requested owner admission again before
+custody in both invented phase tests. The scoped Claude review confirmed a
+transport/schema risk: unavailable or interrupted results cannot prove no
+effect. Immediate Execution work is exact host transport/containment, not
+another Scheduler definition. In parallel the research owner identified the
+Nov27 18:00 UTC early-close prefix for the Nov30 frozen 50:50 slot. Bind that
+pre-open forecast before block-end readout; the Dec4 LSTM-only Paper proposal
+does not count as a fixed-half seal. No fit or outcome opened.
+
 Nov24 throughput review: Execution completed the independent XML and Python
 owner handoff fixtures; Data completed the native MODP1 panel fixture. Parent
 integrated both. Next disjoint work is native successor packaging and Data-to-

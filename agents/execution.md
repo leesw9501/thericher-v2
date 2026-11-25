@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행)
 
-Updated 2026-11-25. A=D:/thericher-v2/model-artifacts.
+Updated 2026-11-26. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
@@ -45,6 +45,11 @@ The tracked Dec4/9 BankLeg coordinator and guest frame passed invented
 closure/hold/owner-birth tests. Exit carries exact retained identity only,
 not a fresh loader. Actual named launcher and existing source-qualified
 writer/observer and Docker capsule are still required; no account effect.
+The pure protected schedule plan and fixed-path guest executable are tracked.
+Both phase frames passed the actual network-none Docker executable; early
+execution retained an unavailable/financial-unknown receipt. Pin the host
+transport and prove the two-minute Scheduler draft budget or revise it with
+bounded absolute Job teardown. This is not installed or financial admission.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,
