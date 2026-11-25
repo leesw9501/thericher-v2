@@ -58,6 +58,45 @@ def _entry_clock():
     return datetime(2026, 12, 4, 14, 31, tzinfo=UTC)
 
 
+def test_same_leg_watchdog_arms_once_and_is_checked_after_slow_admission(monkeypatch):
+    events = []
+    live = True
+
+    def check_lease():
+        events.append("watchdog")
+        return live
+
+    def arm(**pins):
+        events.append(pins)
+        return SimpleNamespace(check=check_lease, actor="invented-watchdog")
+
+    def live_guard(ctx, *, stage, visit):
+        nonlocal live
+        events.append((ctx.leg, stage, visit))
+        live = False
+        return True
+
+    monkeypatch.setattr(launcher, "arm_root_watchdog", arm)
+    root = Path("C:/authorized/pythonw.exe")
+    leg = SimpleNamespace(record={"owner": {"native_start": "win-filetime:123", "pid": 2}})
+    plan = SimpleNamespace(source={}, plan=SimpleNamespace(hard_stop=_entry_clock()))
+    guard = SimpleNamespace(check=live_guard)
+    def readiness(_leg, _plan, actor):
+        assert actor == "invented-watchdog"
+        events.append("observer")
+        return True
+
+    gate = launcher._WatchdogGate(root, readiness, guard)
+    assert gate.ready(leg, plan) and gate.ready(leg, plan)
+    assert events[0] == dict(executable=root, pid=2, start_ticks="123", hard_cutoff=_entry_clock())
+    assert events[1:] == ["watchdog", "observer", "watchdog"] * 2
+    with pytest.raises(ValueError, match="h3_root_watchdog_unavailable"):
+        gate.check(SimpleNamespace(leg=object()), stage="GUEST_ADMISSION", visit=None)
+    with pytest.raises(ValueError, match="h3_root_watchdog_unavailable"):
+        gate.check(SimpleNamespace(leg=leg), stage="GUEST_ADMISSION", visit="invented")
+    assert events[-3:] == ["watchdog", (leg, "GUEST_ADMISSION", "invented"), "watchdog"]
+
+
 @pytest.mark.parametrize("phase,day,minute", [("entry", 4, 31), ("exit", 9, 30)])
 def test_each_leg_stages_exact_native_frame_and_uses_one_capsule(
     staged, tmp_path, monkeypatch, phase, day, minute

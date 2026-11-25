@@ -10,6 +10,7 @@ from thericher_v2.ops.h3_dec4_bank_visit import run_dec4_owned_bank_visit
 from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule
 from thericher_v2.ops.h3_dec4_capsule_adapter import run_dec4_capsule_visit
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
+from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
 from thericher_v2.ops.h3_dec4_scheduler_provider import make_dec4_windows_owner_factory
 
 _CAPSULE = {"image", "network", "mounts", "workspace", "account_ref", "worker_sha256"}
@@ -36,6 +37,52 @@ class _Context:
         self.created_starts = {}
         self.writer_guard = guard
         self.admission = admit
+
+    def watchdog_actor(self):
+        return self.writer_guard.watchdog_actor(self.leg)
+
+
+class _WatchdogGate:
+    def __init__(self, executable, readiness, guard):
+        self.executable = executable
+        self.readiness = readiness
+        self.guard = guard
+        self._leg = None
+        self._lease = None
+
+    def _check(self, leg):
+        if self._leg is not leg or self._lease is None or self._lease.check() is not True:
+            raise ValueError("h3_root_watchdog_unavailable")
+
+    def ready(self, leg, readiness):
+        if self._leg is None:
+            if readiness.source.get("synthetic_only", False) is not False:
+                raise ValueError("h3_root_watchdog_scope")
+            self._leg = leg
+            owner = leg.record["owner"]
+            clock, separator, ticks = owner["native_start"].partition(":")
+            if clock != "win-filetime" or not separator:
+                raise ValueError("h3_root_watchdog_scope")
+            self._lease = arm_root_watchdog(
+                executable=self.executable,
+                pid=owner["pid"],
+                start_ticks=ticks,
+                hard_cutoff=readiness.plan.hard_stop,
+            )
+        self._check(leg)
+        result = self.readiness(leg, readiness, self._lease.actor)
+        self._check(leg)
+        return result is True
+
+    def check(self, context, *, stage, visit):
+        self._check(context.leg)
+        result = self.guard.check(context, stage=stage, visit=visit)
+        self._check(context.leg)
+        return result is True
+
+    def watchdog_actor(self, leg):
+        self._check(leg)
+        return self._lease.actor
 
 
 def _mounts(rows, bank):
@@ -209,11 +256,12 @@ def run_dec4_windows_paper_leg(
     writer_guard,
     load_paper_packet,
 ):
-    """Run a named leg; the pinned host still supplies hard stop and native guards.
+    """Run one named leg under the same scheduled root's watchdog and native guards.
 
     Only the actual guest worker decides account admission, order identity,
     risk and reconciliation. Planning or reaching this route is not a fill.
-    The outer caller owns the absolute watchdog and exact daemon recovery.
+    The readiness callback receives the watchdog actor for the writer census.
+    The outer caller still owns exact daemon recovery and observer restoration.
     """
     if (
         type(phase_input) is not Dec4BankPhaseInput
@@ -224,6 +272,11 @@ def run_dec4_windows_paper_leg(
     ):
         raise ValueError("dec4_launcher_missing_owned_admission")
     make_owner = make_dec4_windows_owner_factory(schedule_plan, scheduler_providers)
+    gate = _WatchdogGate(
+        Path(schedule_plan["phases"][phase]["expected_argv"][0]),
+        writer_and_observer_ready,
+        writer_guard,
+    )
 
     def prepare(leg, ready, retained, frame, admit):
         return _prepare_capsule(
@@ -232,7 +285,7 @@ def run_dec4_windows_paper_leg(
             retained,
             frame,
             admit,
-            writer_guard=writer_guard,
+            writer_guard=gate,
             load_paper_packet=load_paper_packet,
             clock=lambda: datetime.now(UTC),
         )
@@ -244,7 +297,7 @@ def run_dec4_windows_paper_leg(
         release_pin=release_pin,
         phase=phase,
         make_owner=make_owner,
-        writer_and_observer_ready=writer_and_observer_ready,
+        writer_and_observer_ready=gate.ready,
         prepare_phase_input=phase_input,
         prepare_capsule_once=prepare,
     )

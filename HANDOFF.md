@@ -102,6 +102,30 @@ the Dec4/Dec9 pair was absent. Neither fact proves effect-time admission.
 Claude verdict: same A evidence root, `GUEST-ADMISSION-CLAUDE-VERDICT.json`,
 SHA256 `1cbb121800b82e5ac65895064f74b6e79f4333699c2ab66433a8dd3f03db013c`.
 
+The normal-path launcher now arms a separate quiet cutoff watcher after
+the exact scheduled BankLeg is acquired and before observer/effect admission.
+Only a restricted inherited handle to the actual root and an arm event cross
+the boundary; the child verifies the root PID/birth and never reopens by PID.
+Live checks bracket approval callbacks, with both UTC and monotonic cutoff.
+The census receives the actual watchdog PID/birth and launched argv hash;
+it still must independently match that actor and classify remaining writers.
+Real direct Pythonw tests passed normal exit, cutoff termination, wrong-birth
+refusal and watcher death. A separate inert test with the pinned R8 attach
+Job also closed its recorded child when the root died. This proves neither
+Scheduler behavior with a watcher descendant nor a complete launch/restore.
+The legacy Job's suspended create-to-assignment sequence is not atomic;
+do not claim an unassigned suspended child cannot remain on interruption.
+Root termination cannot supply the separate daemon/native closure proof.
+Claude verdict: same A evidence root, `ROOT-WATCHDOG-CLAUDE-VERDICT.json`,
+SHA256 `2724d205ade809669d5d33a2a02a0c4ea47bdfc84b8c8d54d83c2dceed8046b2`.
+
+The two observer policy plans now pin exact task definition/ACL, phase
+clocks, source and separate roots. The original current metadata matched in
+five read-only hidden-inclusive samples (COM 39--77 ms; not census latency).
+Pin the PowerShell path that emits fresh readiness, repeats exact identity
+before disable, and restores from native same-leg closure. The old helper
+reply and parent assertion are not sufficient.
+
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
 dict. The shared loader now restores only exact model tensors from the

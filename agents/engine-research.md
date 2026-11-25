@@ -9,8 +9,9 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 The fixed-half block-end join requires all five frozen slots in order.
 Missing measurements stay explicit, separate from verified no-signal dates.
-The actual independent block-end caller and admitted inputs remain pending;
-the adapter tests use only invented results and do not repeat any fit.
+The time-bound caller denies target reads before Dec28 21:00 UTC and requires
+all five bindings to be independently attested. Actual immutable one-shot
+ownership and per-slot input runners remain pending. No fit was repeated.
 
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72

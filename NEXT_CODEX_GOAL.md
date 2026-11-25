@@ -6,9 +6,10 @@
 attributable KIS Paper entry-to-exit lifecycle through a repeatable, tracked
 execution path. The model is a proposal source, not a separate bank writer.
 
-Next operational step: bind the real Dec4/Dec9 writer census, observer
-suspend/restore and independent watchdog to the tracked normal-path
-launcher. Its scheduled BankLeg now stages and verifies the exact new
+Next operational step: bind the real Dec4/Dec9 writer census and observer
+suspend/restore to the tracked normal-path launcher, and qualify the now-wired
+root watchdog with the actual Scheduler/Job shape. Its scheduled BankLeg
+now stages and verifies the exact new
 capsule workspace before calling the existing native account worker.
 Protect the final phase profiles and source using the existing installer.
 Keep abort reconciliation as a distinct path for its original request;
@@ -48,6 +49,8 @@ checks against the guest's 13-second acknowledgement limit; a matching CID
 alone does not exclude a second process in the same container.
 The archive's financial census pwsh adapter cannot also run the observer;
 qualify the observer's separate read/restore caller and current policy.
+Both phase policy plans and strict readiness reply are now defined; connect
+the real bridge, exact disable receipt and independent restore proof.
 V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.
@@ -209,7 +212,8 @@ with unchanged clocks, principal, and one-attempt run root.
    25 bp-per-side comparator and native block record. Actual target
    admission, block readout and other source owners remain separate.
    The typed five-slot block join retains explicit unmeasured intervals;
-   it is neither the time-bound block caller nor outcome custody.
+   the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
+   separate immutable one-shot owner and each exact slot's qualified custody.
    No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 
