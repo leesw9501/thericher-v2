@@ -1,7 +1,8 @@
 param(
     [Parameter(Mandatory)][ValidateSet('SampleEnabled','SampleDisabled','Disable','Restore')][string]$Mode,
     [Parameter(Mandatory)][ValidatePattern('^[0-9a-f]{64}$')][string]$PlanSha256,
-    [ValidatePattern('^[0-9a-f]{64}$')][string]$AttemptSha256
+    [ValidatePattern('^[0-9a-f]{64}$')][string]$AttemptSha256,
+    [switch]$BoundedNormalRestore
 )
 $ErrorActionPreference = 'Stop'
 $PSModuleAutoLoadingPreference = 'None'
@@ -21,6 +22,7 @@ function Read-Exact([string]$Path, [string]$Pin) {
 }
 
 try {
+    if ($BoundedNormalRestore -and $Mode -cne 'Restore') { throw 'OBSERVER_MODE' }
     $plan = Read-Exact ([IO.Path]::Combine($PSScriptRoot, 'OBSERVER-PLAN.json')) $PlanSha256 |
         ConvertFrom-Json -AsHashtable -DateKind String
     $core = [IO.Path]::Combine($PSScriptRoot, 'paper_h3_observer_native.psm1')
@@ -35,6 +37,9 @@ try {
     $null = Read-Exact $PSCommandPath $plan.bridge_sha256
     $null = Read-Exact $core $plan.core_sha256
     $m = Import-Module $core -Force -PassThru -ErrorAction Stop
+    $notAfter = if ($Mode -ceq 'Disable') { [DateTimeOffset]$plan.closes_utc } elseif ($BoundedNormalRestore) {
+        ([DateTimeOffset]$plan.hard_utc).AddSeconds(30)
+    } else { $null }
     if ($Mode -ceq 'SampleEnabled' -or $Mode -ceq 'SampleDisabled') {
         if ($AttemptSha256) { throw 'OBSERVER_READ_ONLY_SCOPE' }
         $before = $null
@@ -44,7 +49,7 @@ try {
         } else { throw 'OBSERVER_MODE' }
         $now = [DateTimeOffset]::UtcNow
         if ($now -lt [DateTimeOffset]$plan.opens_utc -or
-            ($Mode -ceq 'Disable' -and $now -ge [DateTimeOffset]$plan.closes_utc)) {
+            ($null -ne $notAfter -and $now -ge $notAfter)) {
             throw 'OBSERVER_CLOCK'
         }
         $execRoot = 'D:\thericher-v2\model-artifacts\execution\'
@@ -74,7 +79,7 @@ try {
         } finally { $native.Dispose() }
     }
     $reply = & $m {
-        param($operation,$previous,$nativePlan)
+        param($operation,$previous,$nativePlan,$mutationNotAfter)
         $service = New-Object -ComObject 'Schedule.Service'
         $service.Connect()
         $folder = $service.GetFolder('\')
@@ -88,12 +93,11 @@ try {
         }
         $now = [DateTimeOffset]::UtcNow
         if ($now -lt [DateTimeOffset]$nativePlan.opens_utc -or
-            ($operation -ceq 'Disable' -and $now -ge [DateTimeOffset]$nativePlan.closes_utc)) {
+            ($null -ne $mutationNotAfter -and $now -ge $mutationNotAfter)) {
             throw 'OBSERVER_CLOCK'
         }
-        $notAfter = if ($operation -ceq 'Disable') { [DateTimeOffset]$nativePlan.closes_utc } else { $null }
-        return Set-H3ObserverExactEnabled $service $folder $previous ($operation -ceq 'Restore') $notAfter
-    } $Mode $before $plan
+        return Set-H3ObserverExactEnabled $service $folder $previous ($operation -ceq 'Restore') $mutationNotAfter
+    } $Mode $before $plan $notAfter
     [Console]::WriteLine(($reply | ConvertTo-Json -Compress))
 } catch {
     [Console]::Error.WriteLine('H3_OBSERVER_LEASE_TRANSPORT_UNAVAILABLE')

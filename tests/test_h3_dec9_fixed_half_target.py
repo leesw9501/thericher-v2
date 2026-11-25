@@ -11,10 +11,11 @@ from urllib.parse import parse_qs, urlsplit
 import pytest
 
 from test_h3_fixed_half_dec4_contract_readiness import _invented_forecast
-from thericher_v2.data.kis_paper_h3_capture import capture_h3_daily_panel_once
 from thericher_v2.execution import kis_market_data as market
 from thericher_v2.execution import kis_paper_data_capture as capture
+from thericher_v2.ops import h3_dec9_fixed_half_capture as sealer
 from thericher_v2.ops import h3_dec9_fixed_half_target as target
+from thericher_v2.ops.h3_dec9_target_owner import run_dec9_target_owner
 from thericher_v2.ops.h3_fixed_half_block_readout import (
     H3BlockReadoutError,
     H3SlotReaderBinding,
@@ -56,6 +57,7 @@ def edition(tmp_path, monkeypatch):
     tape = target.H3DailyPanelPlan(target.NET25_H3_AXIS, target.INTERVAL.expiry)
     now = _OPENS
     calls = []
+    config_loads = []
 
     class Response:
         status = 200
@@ -109,66 +111,36 @@ def edition(tmp_path, monkeypatch):
         nonlocal now
         now += timedelta(seconds=seconds)
 
-    immutable = capture.KisPaperDataCaptureSession._immutable
-
-    def omit_wire_body(session, name, body):
-        if name.endswith(".body"):
-            return dict(path=str(session.market_root / name), sha256=target._sha(body))
-        return immutable(session, name, body)
+    def config_loader():
+        assert (owner / "ATTEMPT.json").is_file() and not calls
+        config_loads.append(True)
+        return market.KisPaperMarketDataConfig(app_key="invented-key", app_secret="invented-secret")
 
     monkeypatch.setattr(socket.socket, "connect", no_network)
     monkeypatch.setattr(urllib.request, "build_opener", lambda *_: Opener())
     monkeypatch.setattr(capture, "_MARKET_BASE", tmp_path / "market")
     monkeypatch.setattr(capture, "_ARTIFACT_BASE", tmp_path / "artifacts")
-    monkeypatch.setattr(capture.KisPaperDataCaptureSession, "_immutable", omit_wire_body)
-    native = capture_h3_daily_panel_once(
-        plan=tape,
-        market_root=pins.market_root,
-        artifact_root=artifact,
-        window_opens_utc=pins.capture_opens,
-        window_closes_utc=pins.capture_closes,
+    birth = f"win-filetime:{target._ticks(_OPENS)}"
+    monkeypatch.setattr(sealer, "process_start", lambda pid: birth if pid == os.getpid() else None)
+    owner_digest = run_dec9_target_owner(
+        pins,
+        prebind_sha256=initial_digest,
         clock=lambda: now,
         owner_ready=lambda: capture.CaptureReadiness(True),
-        config_loader=lambda: market.KisPaperMarketDataConfig(
-            app_key="invented-key", app_secret="invented-secret"
-        ),
+        config_loader=config_loader,
         monotonic=lambda: (now - _OPENS).total_seconds(),
         sleeper=advance,
     )
-    assert calls == ["POST"] + ["GET"] * 19
-    assert not tuple(pins.market_root.glob("*.body"))
-    owner.mkdir()
-    custody.mkdir()
-    birth = f"win-filetime:{target._ticks(_OPENS)}"
-    a = dict(
-        schema="H3_DEC9_DATA_ATTEMPT_V1",
-        owner=pins.owner,
-        launch_attempt_sha256=pins.attempt_sha256,
-        source_sha256=source_sha,
-        target_prebind_sha256=initial_digest,
-        started_at=_OPENS.isoformat(),
-        pid=12345,
-        synthetic=False,  # Native ABI; the test's entire capture and closure are invented.
-        roots=[str(p) for p in (pins.market_root, artifact, custody, owner)],
-    )
-    s = dict(
-        schema="DEC9_H3_TARGET_CUSTODY_V1",
-        cohort=["2026-12-04", "2026-12-09"],
-        prebind_sha256=initial_digest,
-        capture_state_sha256=native.state_sha256,
-        capture_closed_at=native.closed_at.isoformat(),
-        sealed_at=(native.closed_at + _TICK).isoformat(),
-    )
-    c = dict(
-        schema="H3_DEC9_OWNER_CLOSED_V1",
-        source_sha256=source_sha,
-        native_start=birth,
-        closed_at=(native.closed_at + 2 * _TICK).isoformat(),
-        target_status="pinned",
-    )
+    assert config_loads == [True] and calls == ["POST"] + ["GET"] * 19
+    closure = run / "OWNER-CLOSED.json"
+    assert target._sha(closure.read_bytes()) == owner_digest
+    a = json.loads((owner / "ATTEMPT.json").read_bytes())
+    s = json.loads((custody / "TARGET-CUSTODY.json").read_bytes())
+    c = json.loads(closure.read_bytes())
     box = SimpleNamespace(
         pins=pins,
         prebind=initial_digest,
+        owner_digest=owner_digest,
         attempt=a,
         seal=s,
         closure=c,
@@ -197,7 +169,7 @@ def edition(tmp_path, monkeypatch):
         box.owner_digest = _write(run / "OWNER-CLOSED.json", c)
 
     def closed(pid, native_start, digest):
-        return (pid, native_start, digest) == (12345, birth, box.owner_digest)
+        return (pid, native_start, digest) == (os.getpid(), birth, box.owner_digest)
 
     def options(**changes):
         return (
@@ -213,7 +185,6 @@ def edition(tmp_path, monkeypatch):
         )
 
     box.flush, box.options = flush, options
-    flush()
     return box
 
 

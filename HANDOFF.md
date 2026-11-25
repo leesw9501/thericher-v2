@@ -235,6 +235,22 @@ A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 TRACKED-RESTORE-PROCESS-NATIVE-faeed691.json, SHA256
 `ef8af6cb64af32e8098cab6954038c7898227635f0ce1505c57a394d497405b8`.
 This does not exercise native observer mutation or financial admission.
+The capsule adapter now retains the original native Job/container closure
+receipt only after `Visit.close` accepts it and the exchange returns normally.
+Restore replays the exact durable record transition read-only, then rechecks
+the same receipt under the bank gate. Cleanup after failed exchange cannot
+publish a normal receipt. The native bounded observer write rejects after
+the leg hard time plus 30 seconds, independently of the Python check; the
+separate exact manual restore path retains its existing clock semantics.
+An actual PowerShell invocation with a mock COM endpoint refused expired
+restore before creating a native-attempt marker and reached only the mock
+in the unexpired control. No real observer or bank was touched.
+The tracked adapter also retained and re-read the receipt with a real
+Windows Job, network-none/no-mount inert Docker capsule, and disposable
+bank; exact container absence was confirmed after cleanup. Evidence:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+NORMAL-JOB-RECEIPT-NATIVE-20261126.json, SHA256
+`24a162ba18753dbbadb8269963379121607616395d2fb494da3bc5fe2353d655`.
 Independent Claude review withheld the mutation until the protected child
 attests the actual loaded dependency closure, not only its entry script,
 and the writer exclusion holds through the mutation. Verdict:

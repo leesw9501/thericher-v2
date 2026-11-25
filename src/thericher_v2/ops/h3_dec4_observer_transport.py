@@ -25,6 +25,11 @@ class Dec4NativeObserverTransport:
     plan: Dec4ObserverPlan
     pwsh: Path
     pwsh_sha256: str
+    bounded_normal_restore: bool = False
+
+    def __post_init__(self):
+        if type(self.bounded_normal_restore) is not bool:
+            raise ValueError("h3_observer_transport_scope")
 
     def sample(self, *, enabled: bool):
         if type(enabled) is not bool:
@@ -78,6 +83,8 @@ class Dec4NativeObserverTransport:
         ]
         if attempt is not None:
             argv += ["-AttemptSha256", attempt]
+        if mode == "Restore" and self.bounded_normal_restore:
+            argv += ["-BoundedNormalRestore"]
         with ExitStack() as stack:
             stamps = {}
             for path, pin in protected.items():

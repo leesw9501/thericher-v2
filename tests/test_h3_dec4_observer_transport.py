@@ -2,7 +2,7 @@ import hashlib
 import json
 import os
 import subprocess
-from dataclasses import asdict
+from dataclasses import asdict, replace
 
 import pytest
 
@@ -93,3 +93,19 @@ def test_duplicate_native_json_field_is_refused(backend, monkeypatch):
     )
     with pytest.raises(ValueError, match="^h3_observer_lease_transport_unavailable$"):
         observer.sample(enabled=False)
+
+
+@pytest.mark.parametrize("bounded", [True, False])
+def test_deadline_flag_is_scoped_to_automatic_restore(backend, monkeypatch, bounded):
+    original, _ = backend
+    observer = replace(original, bounded_normal_restore=bounded)
+
+    def call(argv, **_):
+        assert ("-BoundedNormalRestore" in argv) is bounded
+        assert argv[argv.index("-Mode") + 1] == "Restore"
+        return subprocess.CompletedProcess(argv, 0, stdout=json.dumps(asdict(_ORIGINAL)).encode())
+
+    monkeypatch.setattr(native.subprocess, "run", call)
+    attempt = observer.pwsh.parent / "observer-entry" / "owned-output" / "RESTORE_STARTED.json"
+    actual = observer.switch(_OFF, enabled=True, attempt=attempt, attempt_sha256="e" * 64)
+    assert actual == _ORIGINAL

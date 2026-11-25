@@ -5,6 +5,14 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: normal Job closure now has an original retained receipt joined to the
+closed bank record, and automatic observer writes have a finite native
+deadline. Native inert Job/Docker cleanup and the mock-COM deadline passed.
+The next actual Paper wiring is the protected restore child program and
+exclusion profile, not another closure report. The Dec9 target-only owner
+now runs the existing capture and custody writer together; bind its source
+and native action before opening the cohort, with one collector.
+
 Nov26: the scheduled path now actually retains and hands off the original
 restore digest before any observer mutation. The tracked child observed
 normal root exit under an inert direct Scheduler action; no operational

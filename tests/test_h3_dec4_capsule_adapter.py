@@ -20,6 +20,7 @@ from thericher_v2.ops.h3_dec4_capsule_adapter import (
     _run_visit,
 )
 from thericher_v2.ops.h3_dec4_guest_identity import ANSWER, CHALLENGE, REQUEST, linux_argv_sha256
+from thericher_v2.ops.h3_dec4_job_closure import read_dec4_normal_job_close
 
 _BANK = dict(engine="npipe:////./pipe/dockerdesktoplinuxengine", volume="synthetic")
 _CID = "c" * 64
@@ -296,6 +297,16 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, monkeypatch, cas
 
         assert leg.process_probe is live_probe and ctx.created_starts == {}
         (visit,) = leg.record["visits"]
+        receipt = leg.root / ("JOB-CLOSED-" + identity["run"] + ".json")
+        assert receipt.is_file() is (case == "ok")
+        if case == "ok":
+            snapshot = read_dec4_normal_job_close(leg.root, leg.record)
+            assert pv._read(receipt) == snapshot
+            changed = pv._decode(snapshot[0])
+            changed["receipt"]["children"][0]["native_start"] = "win-filetime:1"
+            receipt.write_bytes(pv.encode(changed))
+            with pytest.raises(pv.Denied, match="^h3_normal_job_receipt_unbound$"):
+                read_dec4_normal_job_close(leg.root, leg.record)
         assert visit["create"]["resolution"] == (
             "DISCOVERED_EXACT_SCOPE" if case == "unknown_create" else "ACK_EXACT_CID"
         )

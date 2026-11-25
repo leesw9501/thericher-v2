@@ -14,6 +14,7 @@ from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops.h3_dec4_guest import Dec4GuestVisit
 from thericher_v2.ops.h3_dec4_guest_identity import linux_argv_sha256
 from thericher_v2.ops.h3_dec4_host_exchange import exchange_dec4_guest
+from thericher_v2.ops.h3_dec4_job_closure import retain_dec4_normal_job_close
 
 _CONTROLLER = Path("D:/thericher-v2/model-artifacts/execution/n9h3-control-r8/c1/controller")
 _DAEMON = "38abb623556fdf08ba38253e369e369b019ffeb23221af3da9cdc37bed07fe8c"
@@ -65,6 +66,14 @@ p.join_job()
     # An exited attach root can still have live Job descendants holding pipes.
     # On faults kill any unjoined Job before trying to wait or close the visit.
     lifecycle.finalbody[1].body[0].test = ast.parse("not p.joined", mode="eval").body
+    close_probe = methods["_close_probe"]
+    terminal = close_probe.body[-1]
+    if not isinstance(terminal, ast.Return):
+        raise ValueError("h3_capsule_r8_source_mismatch")
+    close_probe.body[-1:] = [
+        ast.Assign([ast.Name("receipt", ast.Store())], terminal.value),
+        *ast.parse("self.dec4_close_proof = (record, receipt)\nreturn receipt").body,
+    ]
 
     tree.body = [assignments["D"], assignments["ENV"], helpers["norm"], helpers["need"], visit]
     return ast.fix_missing_locations(tree)
@@ -237,7 +246,9 @@ def _run_visit(
 
     leg.process_probe = probe
     try:
-        return visit.execute(renew=renew, exchange=exchange)
+        result = visit.execute(renew=renew, exchange=exchange)
+        retain_dec4_normal_job_close(leg, *visit.dec4_close_proof)
+        return result
     finally:
         leg.process_probe = original_probe
         ctx.created_starts.clear()

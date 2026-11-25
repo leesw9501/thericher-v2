@@ -33,8 +33,10 @@ refused; removal cleared the probe only. The actual independent restore
 owner and watchdog/Job closure still need to be fully bound. The scheduled
 launcher now requires an armed restore-only child with the exact original
 handoff digest and includes only its exact native identity in the live
-census. The native root handle rejects a nonzero or late exit. Next supply
-the protected child's Job-join/exclusion inputs and bounded observer write.
+census. The native root handle rejects a nonzero or late exit. Original Job
+closure is now retained and re-attested under the bank gate; automatic
+observer restore has a native upper deadline. Next package the protected
+child entry and unbound-writer exclusion through actual readback.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

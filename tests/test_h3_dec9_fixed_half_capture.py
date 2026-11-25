@@ -6,9 +6,10 @@ import pytest
 
 from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture
 from thericher_v2.data.kis_paper_h3_daily_panel import qualify_h3_daily_panel
-from thericher_v2.execution.kis_paper_data_capture import CaptureResult
+from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness, CaptureResult
 from thericher_v2.ops import h3_dec9_fixed_half_capture as producer
 from thericher_v2.ops import h3_dec9_fixed_half_target as target
+from thericher_v2.ops import h3_dec9_target_owner as entry
 from thericher_v2.research.prospective_h3_target_custody import _json, _sha
 
 _TICK = timedelta(microseconds=1)
@@ -255,3 +256,57 @@ def test_late_completion_readback_never_returns_authority(launch, monkeypatch):
     with pytest.raises(ValueError, match="dec9_capture_fresh_scope"):
         launch.write()
     assert launch.calls == 1
+
+
+@pytest.mark.parametrize("fault", ["early", "prebind", "owner", "truthy"])
+def test_owner_entry_denies_before_native_capture(launch, monkeypatch, fault):
+    def forbidden(**_kwargs):
+        pytest.fail("native capture called on denied entry")
+
+    monkeypatch.setattr(entry, "capture_h3_daily_panel_once", forbidden)
+    if fault == "early":
+        launch.now -= _TICK
+    readiness = True if fault == "truthy" else CaptureReadiness(fault != "owner")
+    with pytest.raises(ValueError, match="dec9_capture_(clock|prebind|owner)"):
+        entry.run_dec9_target_owner(
+            launch.pins,
+            prebind_sha256="f" * 64 if fault == "prebind" else launch.prebind,
+            clock=lambda: launch.now,
+            owner_ready=lambda: readiness,
+            config_loader=lambda: pytest.fail("config loaded on denied entry"),
+        )
+    assert not launch.run.exists()
+    assert not launch.pins.market_root.exists()
+
+
+@pytest.mark.parametrize("fault", ["owner", "deadline"])
+def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
+    def native(**kwargs):
+        assert (launch.run / "owner/ATTEMPT.json").is_file()
+        assert kwargs["owner_ready"] is ready
+        if fault == "owner":
+            launch.ready = False
+        else:
+            launch.now = launch.pins.capture_closes
+        kwargs["config_loader"]()
+        pytest.fail("denied config load returned")
+
+    def ready():
+        return CaptureReadiness(launch.ready)
+
+    def run():
+        return entry.run_dec9_target_owner(
+            launch.pins,
+            prebind_sha256=launch.prebind,
+            clock=lambda: launch.now,
+            owner_ready=ready,
+            config_loader=lambda: pytest.fail("config loaded after loss of authority"),
+        )
+
+    monkeypatch.setattr(entry, "capture_h3_daily_panel_once", native)
+    with pytest.raises(ValueError, match="dec9_owner_config_denied"):
+        run()
+    assert not launch.closure.exists()
+    launch.now, launch.ready = _OPENS, True
+    with pytest.raises(ValueError, match="dec9_capture_fresh_scope"):
+        run()

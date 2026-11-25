@@ -11,6 +11,7 @@ from pathlib import Path
 from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops.h3_dec4_bank_visit import _TIMES, ROUND, TASKS
 from thericher_v2.ops.h3_dec4_crash_recovery import _terminated
+from thericher_v2.ops.h3_dec4_job_closure import read_dec4_normal_job_close
 from thericher_v2.ops.h3_dec4_native_host import _ticks
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
@@ -211,6 +212,7 @@ def restore_dec4_observer_once(
                 and type(daemon) is Dec4RestoreDaemon
                 and type(lease.transport) is Dec4NativeObserverTransport
                 and lease.transport.plan == lease.plan
+                and lease.transport.bounded_normal_restore
             )
         ),
         "h3_observer_restore_scope",
@@ -218,6 +220,8 @@ def restore_dec4_observer_once(
     phase = lease.plan.phase
     opens, closes, hard = _TIMES[phase]
     clock = fixture_clock or (lambda: datetime.now(UTC))
+    deadline = hard + timedelta(seconds=30) if daemon is not None else None
+    pv._need(deadline is None or clock() < deadline, "h3_observer_restore_deadline")
     identity = dict(
         source=pins.source_sha256,
         release=pins.release_sha256,
@@ -327,12 +331,14 @@ def restore_dec4_observer_once(
         "h3_observer_restore_not_normal_closure",
     )
 
+    job_close = read_dec4_normal_job_close(root, record) if daemon is not None and visits else None
     completed = False
     with hold_native_closure(deepcopy(record)) as check_native:
         pv._need(callable(check_native), "h3_observer_restore_native_unknown")
 
         def native_closed(current):
             pv._need(clock() >= at, "h3_observer_restore_stale_start")
+            pv._need(deadline is None or clock() < deadline, "h3_observer_restore_deadline")
             pv._need(
                 pv._same(current, record) and check_source() == bank,
                 "h3_observer_restore_original_mismatch",
@@ -341,6 +347,11 @@ def restore_dec4_observer_once(
                 _terminated(pv.process_start, actor)
             pv._need(check_native() is True, "h3_observer_restore_native_unknown")
             if daemon is not None:
+                if job_close is not None:
+                    pv._need(
+                        read_dec4_normal_job_close(root, current) == job_close,
+                        "h3_observer_restore_job_closure_changed",
+                    )
                 pv._need(
                     daemon.check(bank=bank, record=current) is True,
                     "h3_observer_restore_daemon_unknown",
