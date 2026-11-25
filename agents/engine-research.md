@@ -7,6 +7,12 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+The H123 input reader now checks the current owned capture-state, READY and
+both input digests before validating the same buffers in memory. The original
+Source72 functions passed an invented host smoke. Separate five-date target
+projection now emits the ordered OPEN4/CLOSE3 only; no target opened, scored,
+model loaded or real point produced.
+
 Nov25: tracked `h3_h123_input` writes exact ordered 17-name input from the
 60x19 MODP1 panel, enforcing the next session before open and requiring parser
 readback. Invented full-axis host smoke passed with Source72's exact feature

@@ -26,9 +26,11 @@ execution path. The model is a proposal source, not a separate bank writer.
    now binds construction and unmodified registered XML/API readback to the
    same phase and stage. The fresh-pair installer core creates both disabled,
    requires readback before each enable, and refuses ambiguous retries.
-   Pin and call these components from a named installer, owner provider and
-   launcher. Qualify the complete canonical XML/ACL/instance/PID path before
-   installation. A diagnostic or claim is not financial admission.
+   The shared installer readback compares complete native XML and an exact
+   ACL7 expectation across stages, and denies when instances are not known
+   empty. Pin and call these components from a named installer, owner provider
+   and launcher. Qualify the actual registered native ACL, instance and PID
+   path before effects. A diagnostic or claim is not financial admission.
 2. Reuse existing native Paper risk, reconciliation and single writer. Before
    changing definitions or running a new opportunity, positively resolve the
    relevant original owner and select a fresh exact window. Keep the original
@@ -46,12 +48,16 @@ execution path. The model is a proposal source, not a separate bank writer.
    keys. `models/h3_h123_input.py` writes the verified next-session parser input.
    `data/kis_paper_h3_capture.py` executes that plan once inside its post-close
    window with one client and no retries. Native mocked-wire coverage passed.
-   Bind the fresh owner, custody/closure and publisher point readback before
-   actual acquisition and sealing.
+   The tracked H123 handoff binds the closed capture-state digest and exact
+   input files to the current date/source, then returns verified-buffer arrays.
+   Bind the fresh named owner and the forward-to-point publisher/reader before
+   actual acquisition and sealing. An input READY is not a model point.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.
    Nov9 is closed unmeasured: the sole locked target source did not publish.
+   The tracked target projection emits only the frozen 17-name OPEN4/CLOSE3
+   from a separately acquired expiry-as-of panel; no owner or score yet.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion

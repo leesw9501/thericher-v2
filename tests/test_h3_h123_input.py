@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 import numpy as np
 import pytest
 
+from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture
 from thericher_v2.data.kis_paper_h3_daily_panel import (
     NET25_H3_AXIS,
     H3DailyPanel,
@@ -13,6 +14,11 @@ from thericher_v2.data.kis_paper_h3_daily_panel import (
 )
 from thericher_v2.execution.kis_market_data import KisPaperDailyRawRow
 from thericher_v2.models.h3_h123_input import write_h3_h123_input
+from thericher_v2.models.h3_publisher_input import (
+    H3InputBinding,
+    read_h3_publisher_input,
+    write_h3_publisher_input,
+)
 
 DECISION = datetime(2026, 12, 4, 14, 25, tzinfo=UTC)
 SOURCE = "3" * 64
@@ -116,3 +122,76 @@ def test_consumer_drift_withholds_success(tmp_path, panel):
     assert not (dest / "SEAL.json").exists()
     with pytest.raises(FileExistsError):
         write(dest, panel)
+
+
+@pytest.fixture
+def publisher(tmp_path, panel):
+    state = tmp_path / "capture-state.json"
+    state.write_bytes(b"invented closed state")
+    closed = datetime(2026, 12, 3, 21, 35, tzinfo=UTC)
+    limit = datetime(2026, 12, 3, 21, 45, tzinfo=UTC)
+    binding = H3InputBinding(SOURCE, DECISION, limit, True)
+    capture = H3DailyCapture(panel, hashlib.sha256(state.read_bytes()).hexdigest(), closed)
+    root = tmp_path / "input"
+
+    def publish(*, clock=lambda: closed, parser=reader):
+        return write_h3_publisher_input(
+            root,
+            capture,
+            binding=binding,
+            clock=clock,
+            prefix_features=features,
+            parse_input=parser,
+        )
+
+    return root, state, binding, publish
+
+
+def test_publisher_binds_closed_state_and_both_input_files(publisher):
+    root, state, binding, publish = publisher
+    ready_sha = publish()
+    arrays, _ = read_publisher(root, state, binding, ready_sha)
+    assert arrays["x"].shape == (17, 60, 12)
+    with pytest.raises(ValueError, match="ready_binding_mismatch"):
+        read_publisher(root, state, replace(binding, synthetic=False), ready_sha)
+    with pytest.raises(ValueError, match="read_clock_mismatch"):
+        read_publisher(root, state, binding, ready_sha, clock=lambda: binding.decision_at)
+    state.write_bytes(b"different next capture")
+    with pytest.raises(ValueError, match="member_digest_mismatch"):
+        read_publisher(root, state, binding, ready_sha)
+
+
+def read_publisher(root, state, binding, digest, *, clock=None):
+    def validate(arrays, header, **pins):
+        assert arrays["key"].tolist() == pins["expected_keys"]
+        assert header["source"] == pins["expected_source"] == SOURCE
+        assert header["role"] == pins["role"] == "FUTURE_20261203_ASOF_20261204"
+        assert header["synthetic"] is pins["synthetic"] is True
+
+    return read_h3_publisher_input(
+        root,
+        state,
+        binding=binding,
+        ready_sha256=digest,
+        clock=clock or (lambda: binding.hard_stop),
+        validate_input=validate,
+    )
+
+
+@pytest.mark.parametrize("member", ["INPUT.json", "INPUT.npz", "READY.json"])
+def test_publisher_rejects_swapped_member(publisher, member):
+    root, state, binding, publish = publisher
+    ready_sha = publish()
+    (root / member).write_bytes(b"swapped")
+    with pytest.raises(ValueError, match="digest_mismatch"):
+        read_publisher(root, state, binding, ready_sha)
+
+
+def test_publisher_expiry_before_rename_does_not_publish(publisher):
+    root, state, binding, publish = publisher
+    stamps = iter([binding.hard_stop.replace(minute=40)] * 2 + [binding.hard_stop])
+    with pytest.raises(ValueError, match="outside_window"):
+        publish(clock=lambda: next(stamps))
+    assert not (root / "READY.json").exists()
+    with pytest.raises(ValueError, match="unreadable"):
+        read_publisher(root, state, binding, "2" * 64)

@@ -1,7 +1,9 @@
 """Run a fresh, finite post-close capture for the strict H3 daily panel."""
 
+import hashlib
 import os
 from collections.abc import Callable
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -23,6 +25,13 @@ from thericher_v2.execution.kis_paper_data_capture import (
 
 def _is_utc(value: object) -> bool:
     return isinstance(value, datetime) and value.utcoffset() == timedelta(0)
+
+
+@dataclass(frozen=True)
+class H3DailyCapture:
+    panel: H3DailyPanel
+    state_sha256: str
+    closed_at: datetime
 
 
 def _read_native(root: Path, reference: str) -> bytes:
@@ -58,7 +67,7 @@ def capture_h3_daily_panel_once(
     config_loader: Callable[[], KisPaperMarketDataConfig],
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
-) -> H3DailyPanel:
+) -> H3DailyCapture:
     """Return a qualified panel after successful session closure, not a publication seal.
 
     The caller pins the future window, roots and current owner probe. No resume,
@@ -115,5 +124,16 @@ def capture_h3_daily_panel_once(
                 raise H3DailyPanelError("h3_capture_page_unavailable")
             captures.append((result, _read_native(session.market_root, result.native["path"])))
         panel = qualify_h3_daily_panel(plan, captures)
-    now_in_window()
-    return panel
+        progress = session.progress
+        if (progress["GET"], progress["POST"], progress["retry"], progress["pending"]) != (
+            19,
+            1,
+            0,
+            None,
+        ):
+            raise H3DailyPanelError("h3_capture_counters_mismatch")
+        state_path = session.artifact_root / "capture-state.json"
+        state = _read_native(session.artifact_root, str(state_path))
+    if _read_native(artifact_root, str(state_path)) != state:
+        raise H3DailyPanelError("h3_capture_state_changed_on_close")
+    return H3DailyCapture(panel, hashlib.sha256(state).hexdigest(), now_in_window())

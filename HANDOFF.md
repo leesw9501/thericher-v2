@@ -8,6 +8,14 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: capture closure and exact H123 input files are joined by a last
+READY record; the reader checks the pinned source/date/digest and validates
+the same byte buffers used for model inputs. Full invented host proof passed
+with Source72's pinned feature and parser, no model run. The fresh ownership
+and point publication are not installed. Separate frozen target projection
+does not read predictions or create an evaluation result. Installer readback
+was verified with mocked native XML/ACL7 and instance surfaces, not a real pair.
+
 Nov26: desktop long goal is active, with one milestone in NEXT_CODEX_GOAL.
 GOAL_SCRIPT now specifies repeatable Paper execution and independent net-edge
 research, using scoped Claude CLI and parallel disjoint lanes. Claude supplied

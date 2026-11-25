@@ -177,7 +177,15 @@ def test_native_capture_parser_to_full_panel(wrong_identity, tmp_path, monkeypat
         assert calls == ["POST"] + ["GET"] * 3
         return
 
-    panel = capture_h3_daily_panel_once(**options)
+    closed = capture_h3_daily_panel_once(**options)
+    panel = closed.panel
+    assert (
+        closed.state_sha256
+        == hashlib.sha256(
+            (options["artifact_root"] / "capture-state.json").read_bytes()
+        ).hexdigest()
+    )
+    assert start <= closed.closed_at < options["window_closes_utc"]
     with pytest.raises(H3DailyPanelError, match="fresh_scope_required"):
         capture_h3_daily_panel_once(**options)
 
