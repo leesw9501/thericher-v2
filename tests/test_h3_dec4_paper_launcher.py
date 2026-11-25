@@ -79,6 +79,7 @@ def test_each_leg_stages_exact_native_frame_and_uses_one_capsule(
     def verify_adapter(ctx, spec, *, guest, load_packet, read_retained, exchange_deadline):
         ((leg, ready, frame, admit),) = bindings
         assert ctx.leg is leg and ctx.writer_guard is guard and ctx.source_pin == PIN
+        assert ctx.readiness is ready and ctx.owner is ready.owner
         assert ctx.admission() is True and type(exchange_deadline) is float
         assert load_packet is _never
         mounts = {m["target"]: m for m in spec["mounts"]}

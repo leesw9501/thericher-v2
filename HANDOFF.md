@@ -92,6 +92,16 @@ and observer ordering with fresh pins, not old lineage or Nov9 windows.
 Claude categorical review: A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 `CAPSULE-LAUNCHER-CLAUDE-VERDICT.json`.
 
+Every guest owner request now renews source/window/owner and runs the writer
+check on the same active visit, original CID/spec and recorded attach birth.
+The host rechecks the leg, attach identity and deadline before acknowledging.
+The actual census must detect additional actors even within that CID and
+complete the end-to-end guest acknowledgement within its 13-second limit.
+The exact observer was enabled with no hidden active instance at sample time;
+the Dec4/Dec9 pair was absent. Neither fact proves effect-time admission.
+Claude verdict: same A evidence root, `GUEST-ADMISSION-CLAUDE-VERDICT.json`,
+SHA256 `1cbb121800b82e5ac65895064f74b6e79f4333699c2ab66433a8dd3f03db013c`.
+
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
 dict. The shared loader now restores only exact model tensors from the

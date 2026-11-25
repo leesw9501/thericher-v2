@@ -18,6 +18,10 @@ Still bind actual Dec4 writer census (collector-native process identity),
 separate observer transport/current policy, and independent hard stop.
 The untouched-phase marker is not reset; ambiguous dispatch retains the
 original claim and reservations for exact recovery.
+Every guest owner acknowledgement now carries the exact active visit/CID and
+attach Job to the writer guard; denied, drifted or late renewal gets no ACK.
+Still qualify the live census and same-CID additional-actor test under the
+guest's 13-second limit, and bind the independent observer restore path.
 
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.

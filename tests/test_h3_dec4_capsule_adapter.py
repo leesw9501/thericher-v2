@@ -52,7 +52,19 @@ def test_loads_pinned_code_without_legacy_transport(frozen_daemon, tmp_path):
 
 
 @pytest.mark.parametrize(
-    "case", ["ok", "retained", "unknown_create", "timeout", "remove", "owner_denied", "guard"]
+    "case",
+    [
+        "ok",
+        "retained",
+        "unknown_create",
+        "timeout",
+        "remove",
+        "owner_denied",
+        "guard",
+        "guest_guard_denied",
+        "guest_guard_identity_changed",
+        "guest_guard_deadline",
+    ],
 )
 def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
     _, guest = _parse()
@@ -97,7 +109,7 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
                 assert leg.record["visits"][0]["create"]["resolution"] == "ACK_EXACT_CID"
                 running = True
                 self.stdin = io.BytesIO()
-                self.stdout = io.BytesIO(_REQUEST + terminal)
+                self.stdout = io.BytesIO(_REQUEST + _REQUEST.replace(b"1}", b"2}") + terminal)
                 if case == "timeout":
                     self.stdout = SimpleNamespace(readline=self.blocked_read)
 
@@ -191,8 +203,21 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
     def writer_check(ctx, *, stage, visit):
         assert visit.context is ctx
         log.append(stage)
+        if stage == "GUEST_ADMISSION":
+            attach = visit.jobs[-1]
+            assert attach.command == "start" and visit.cid == _CID
+            assert leg.record["visits"][0]["children"][-1]["pid"] == attach.pid
+            if log.count(stage) == 2:
+                if case == "guest_guard_denied":
+                    return False
+                if case == "guest_guard_identity_changed":
+                    attach.native_start = "win-filetime:1"
+                if case == "guest_guard_deadline":
+                    deadlines[0] = 0
         return not (case == "guard" and stage == "AFTER_CREATE")
 
+    clock = time.monotonic
+    deadlines = [1]
     errors = {
         "retained": (ValueError, "h3_capsule_outcome_unconfirmed"),
         "unknown_create": (pv.Held, "daemon_create_ack_unknown"),
@@ -200,6 +225,9 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
         "remove": (pv.Held, "daemon_remove_unknown"),
         "owner_denied": (ValueError, "h3_host_exchange_owner_denied"),
         "guard": (pv.Held, "h3_capsule_visit_writer_denied"),
+        "guest_guard_denied": (ValueError, "h3_host_exchange_owner_denied"),
+        "guest_guard_identity_changed": (ValueError, "h3_host_exchange_owner_denied"),
+        "guest_guard_deadline": (ValueError, "h3_host_exchange_owner_denied"),
     }
     visit_type = _compile_visit(frozen_daemon, tmp_path, Job, None)
     with pv.BankLeg(tmp_path, bank=_BANK, identity=identity, process_probe=live_probe) as leg:
@@ -213,6 +241,7 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
         )
 
         def invoke():
+            deadline = clock() + (1.5 if case == "timeout" else 5)
             return _run_visit(
                 visit_type,
                 ctx,
@@ -220,7 +249,8 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
                 guest,
                 lambda: b'{"invented":true}',
                 read_retained,
-                time.monotonic() + (1.5 if case == "timeout" else 5),
+                deadline,
+                _clock=lambda: clock() if deadlines[0] else deadline,
             )
 
         if case == "ok":
@@ -256,9 +286,17 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
                 assert "retained" not in log
                 attach = next(job for job in jobs if job.command == "start")
                 assert attach.stdin.getvalue() == b'{"invented":true}\n'
+            elif case.startswith("guest_guard_"):
+                attach = next(job for job in jobs if job.command == "start")
+                replies = [json.loads(row) for row in attach.stdin.getvalue().splitlines()[1:]]
+                assert [row["sequence"] for row in replies] == [1]
+                assert log.count("GUEST_ADMISSION") == 2
+                assert log.index("start") < log.index("kill_job") < log.index("stop")
+                assert "retained" not in log
             elif case not in {"unknown_create", "guard"}:
                 assert log.index("start") < log.index("retained") < log.index("stop")
                 assert "admit" in log[log.index("start") : log.index("retained")]
+                assert log.count("GUEST_ADMISSION") == 2
             with pytest.raises(ValueError, match="^h3_capsule_visit_already_started$"):
                 invoke()
             leg.close()

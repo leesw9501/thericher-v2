@@ -114,7 +114,17 @@ def run_dec4_capsule_visit(context, spec, *, guest, load_packet, read_retained, 
     )
 
 
-def _run_visit(visit_type, ctx, spec, guest, load_packet, read_retained, exchange_deadline):
+def _run_visit(
+    visit_type,
+    ctx,
+    spec,
+    guest,
+    load_packet,
+    read_retained,
+    exchange_deadline,
+    *,
+    _clock=time.monotonic,
+):
     leg = ctx.leg
     if (
         type(leg) is not pv.BankLeg
@@ -133,7 +143,7 @@ def _run_visit(visit_type, ctx, spec, guest, load_packet, read_retained, exchang
         raise ValueError("h3_capsule_visit_binding")
 
     def check_deadline():
-        if time.monotonic() >= exchange_deadline:
+        if _clock() >= exchange_deadline:
             raise ValueError("h3_capsule_visit_deadline")
 
     def renew():
@@ -161,11 +171,40 @@ def _run_visit(visit_type, ctx, spec, guest, load_packet, read_retained, exchang
         if used:
             raise ValueError("h3_capsule_exchange_already_started")
         used = True
+
+        def check_attach():
+            leg.check()
+            (active,) = leg.record["visits"]
+            if (
+                active["run"] != visit.run
+                or active["status"] != "ACTIVE"
+                or active["create"]["resolution"] != "ACK_EXACT_CID"
+                or active["create"]["cid"] != visit.cid
+                or active["create"]["spec_sha256"] != pv.digest(visit.spec)
+                or len(active["children"]) != 2
+                or active["children"][-1]["pid"] != process.pid
+                or active["children"][-1]["native_start"] != process.native_start
+                or active["children"][-1]["status"] != "RUNNING_OR_UNKNOWN"
+                or not visit.jobs
+                or visit.jobs[-1] is not process
+                or process.joined
+            ):
+                raise ValueError("h3_capsule_attach_identity_changed")
+
+        def admit_guest(_sequence):
+            renew()
+            check_attach()
+            if ctx.writer_guard.check(ctx, stage="GUEST_ADMISSION", visit=visit) is not True:
+                raise ValueError("h3_capsule_visit_writer_denied")
+            check_attach()
+            check_deadline()
+            return True
+
         return exchange_dec4_guest(
             process,
             packet=packet,
             guest=guest,
-            admit=lambda _: renew(),
+            admit=admit_guest,
             read_retained=read_retained,
             deadline=exchange_deadline,
         )

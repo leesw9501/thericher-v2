@@ -7,6 +7,11 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+The fixed-half block-end join requires all five frozen slots in order.
+Missing measurements stay explicit, separate from verified no-signal dates.
+The actual independent block-end caller and admitted inputs remain pending;
+the adapter tests use only invented results and do not repeat any fit.
+
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72
 checkpoint. The quiet credential-free owner is installed for Dec3 UTC21:47

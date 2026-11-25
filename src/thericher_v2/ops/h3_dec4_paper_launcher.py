@@ -27,9 +27,11 @@ _PRIVATE_EXECUTION_ROOT = Path("D:/thericher-v2/model-artifacts/execution")
 
 
 class _Context:
-    def __init__(self, leg, bank, guard, admit):
+    def __init__(self, leg, bank, ready, guard, admit):
         self.leg = leg
         self.bank = bank
+        self.owner = ready.owner
+        self.readiness = ready
         self.source_pin = leg.identity["source"]
         self.created_starts = {}
         self.writer_guard = guard
@@ -182,7 +184,7 @@ def _prepare_capsule(leg, ready, retained, frame, admit, *, writer_guard, load_p
         if left <= 0:
             raise ValueError("dec4_launcher_window")
         return run_dec4_capsule_visit(
-            _Context(leg, bank, writer_guard, checked_admit),
+            _Context(leg, bank, ready, writer_guard, checked_admit),
             spec,
             guest=guest,
             load_packet=load_paper_packet,

@@ -42,6 +42,10 @@ the final bank owner's effect-time guard or the paired exit readback.
 Reuse the pinned R8 admission and observer logic as a source reference,
 not its expired settings. The Dec4 owner proof is not the census actor
 lineage: attest actual controller/Job roots and exact low-level argv.
+The capsule guard now receives the exact active visit and attach Job at
+each guest acknowledgement. Measure the actual census plus owner/observer
+checks against the guest's 13-second acknowledgement limit; a matching CID
+alone does not exclude a second process in the same container.
 The archive's financial census pwsh adapter cannot also run the observer;
 qualify the observer's separate read/restore caller and current policy.
 V2 is withheld: the original
@@ -204,6 +208,8 @@ with unchanged clocks, principal, and one-attempt run root.
    The Dec4 fixed-half adapter now joins ordered typed inputs to the existing
    25 bp-per-side comparator and native block record. Actual target
    admission, block readout and other source owners remain separate.
+   The typed five-slot block join retains explicit unmeasured intervals;
+   it is neither the time-bound block caller nor outcome custody.
    No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 
