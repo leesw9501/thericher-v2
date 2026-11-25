@@ -69,6 +69,31 @@ def test_enforces_exact_import_tree(tmp_path, monkeypatch):
         OWNER.verify_source(root, pin)
 
 
+def test_dec3_is_a_distinct_once_only_window_and_prebind(tmp_path, monkeypatch):
+    src = tmp_path / "source"
+    pin = "1" * 64
+    prebound = OWNER.DEC3_OPENS - timedelta(days=1)
+    base, run, target = OWNER.dec3_plan(src, pin, prebound)
+    assert base == tmp_path / "run"
+    assert run.input_root == base / "input"
+    assert target.target_root == base / "target" and target.source_sha256 == pin
+    assert len(target.prebind_sha256) == 64
+
+    def forbidden(*_args, **_kwargs):
+        pytest.fail("out-of-window Dec3 must not reach source or credentials")
+
+    monkeypatch.setattr(OWNER, "verify_source", forbidden)
+    with pytest.raises(ValueError, match="^dec3_owner_clock$"):
+        OWNER.run_dec3(
+            src,
+            pin,
+            prebound_at=prebound,
+            target_digest=target.prebind_sha256,
+            clock=lambda: OWNER.DEC3_LAST_START,
+        )
+    assert not base.exists()
+
+
 def test_owner_claim_precedes_scoped_loader_and_prevents_repeat(tmp_path, monkeypatch):
     root = tmp_path / "source"
     root.mkdir()

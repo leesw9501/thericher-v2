@@ -48,8 +48,11 @@ after a partial or unknown write; find the exact registered definitions and
 retain the original install identity. The local COM probe created only an
 in-memory definition and queried an invented absent name, not a registered task.
 
-Dec4/Dec9 candidate, not installed: use `H3DailyPanelPlan(NET25_H3_AXIS)`
-for the US Dec3 as-of. A host-side invented panel passed the pinned
+Dec4/Dec9 Paper candidate, not installed: its Dec3 input owner is installed
+as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
+The external Source and separate target prebind are in HANDOFF. There is
+no run. Use `H3DailyPanelPlan(NET25_H3_AXIS)` for the US Dec3 as-of.
+A host-side invented panel passed the pinned
 `prefix_features` and H123 `parse_input` with Dec4 keys, no model load.
 Candidate UTC cutoffs: capture 21:30..<21:40 Dec3 with closure before 21:45;
 one existing-checkpoint forward 21:47..<21:52 with publication before 22:00;

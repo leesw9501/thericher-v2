@@ -8,6 +8,24 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Dec3 shared read-only capture owner is installed, Ready, zero instances,
+next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:
+`thericher-h3-dec3-modp1-owner-20261203-v1`, quiet one-shot, no catch-up.
+Source `878615272a71b035f61438d3242163c50f548350842409e6bc64dd6415b861bf`
+and independent prebind
+`40e4ae04030c4aa855d6434ff694beedf7cd2761b54d6599eefc360a8a7baf27`
+under A/data/h3-dec3-modp1-owner-20261203-v1. No run existed. It can
+produce Dec4 input and separate Nov30 target metadata, not a point or order.
+Earlier Nov27 and Nov30 task times/Ready state were independently unchanged.
+
+Follow-on: the native NET25 pending repair verifies the original cohort and
+request under the existing policy lock without reserve, submit or cancel.
+The wire filter refuses order endpoints, permits only qualified Paper
+account/identity reads and one token attempt. Invented partial/cancellable
+order stayed pending; an already canonical terminal plan resumed the
+journal write with no wire. No actual broker or financial custody touched.
+The recovery guest/physical-receipt binding and finalizer remain unwired.
+
 Follow-on: supervised abort recovery closed the exact acknowledged
 container in a native isolated Windows/Docker run while leaving the original
 BankLeg bytes and financial reservation untouched. Unknown create, missing

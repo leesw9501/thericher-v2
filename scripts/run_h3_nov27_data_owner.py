@@ -21,6 +21,13 @@ FORECAST_NAME = "h3-nov30-fixed-half-forecast-20261130-v1"
 FORECAST_SOURCE = Path(f"D:/thericher-v2/model-artifacts/research/{FORECAST_NAME}/source")
 FORECAST_OPENS = datetime(2026, 11, 30, 14, 12, tzinfo=UTC)
 FORECAST_LAST_START = datetime(2026, 11, 30, 14, 13, tzinfo=UTC)
+DEC3_NAME = "h3-dec3-modp1-owner-20261203-v1"
+DEC3_SOURCE = Path(f"D:/thericher-v2/model-artifacts/data/{DEC3_NAME}/source")
+DEC3_MARKET = Path(f"D:/market_data/us_equities/kis_paper_private/{DEC3_NAME}")
+DEC3_OPENS = datetime(2026, 12, 3, 21, 30, tzinfo=UTC)
+DEC3_LAST_START = datetime(2026, 12, 3, 21, 31, tzinfo=UTC)
+DEC3_CAPTURE_END = datetime(2026, 12, 3, 21, 40, tzinfo=UTC)
+DEC3_HARD_STOP = datetime(2026, 12, 3, 21, 45, tzinfo=UTC)
 MARKET = Path(f"D:/market_data/us_equities/kis_paper_private/{RUN_NAME}")
 DOTENV = Path("C:/Users/Public/Documents/thericher-v2/.env")
 VENV = DOTENV.parent / ".venv"
@@ -40,7 +47,7 @@ def _plain(path):
     return not (getattr(info, "st_file_attributes", 0) & 0x400) and not stat.S_ISLNK(info.st_mode)
 
 
-def verify_source(root, pin, *, forecast=False):
+def verify_source(root, pin, *, forecast=False, dec3=False):
     """Authenticate the complete isolated import tree before importing project code."""
     if not root.is_absolute() or root.resolve(strict=True) != root:
         raise ValueError("nov27_source_root")
@@ -57,8 +64,14 @@ def verify_source(root, pin, *, forecast=False):
     if (
         manifest.keys() != {"schema", "run", "tree", "files"}
         or manifest["schema"]
-        != ("H3_NOV30_FORECAST_SOURCE_V1" if forecast else "H3_NOV27_DATA_SOURCE_V1")
-        or manifest["run"] != (FORECAST_NAME if forecast else RUN_NAME)
+        != (
+            "H3_DEC3_DATA_SOURCE_V1"
+            if dec3
+            else "H3_NOV30_FORECAST_SOURCE_V1"
+            if forecast
+            else "H3_NOV27_DATA_SOURCE_V1"
+        )
+        or manifest["run"] != (DEC3_NAME if dec3 else FORECAST_NAME if forecast else RUN_NAME)
         or re.fullmatch(r"[0-9a-f]{40}", manifest["tree"]) is None
         or type(files) is not dict
         or not all(files.get(p) == digest for p, digest in PINNED_CODE.items())
@@ -204,12 +217,142 @@ def run_forecast(source, source_pin, *, clock):
     )
 
 
+def dec3_plan(source, source_pin, prebound_at):
+    """Resolve fixed paths; the installer binds the pre-launch target digest."""
+    from thericher_v2.ops.h3_dec4_run import Dec4H3Run
+    from thericher_v2.research.prospective_h3_target_custody import Nov30H3TargetPins
+
+    run_root = source.parent / "run"
+    run = Dec4H3Run(
+        DEC3_MARKET,
+        run_root / "capture",
+        run_root / "input",
+        run_root / "point",
+        source_pin,
+        False,
+    )
+    target = Nov30H3TargetPins(
+        owner="thericher-" + DEC3_NAME,
+        source_sha256=source_pin,
+        attempt_sha256=_sha(f"{DEC3_NAME}:{source_pin}".encode("ascii")),
+        market_root=run.market_root,
+        artifact_root=run.artifact_root,
+        target_root=run_root / "target",
+        prebound_at=prebound_at,
+        release_at=datetime(2026, 12, 28, 21, tzinfo=UTC),
+        synthetic=False,
+    )
+    return run_root, run, target
+
+
+def run_dec3(source, source_pin, *, prebound_at, target_digest, clock):
+    if not DEC3_OPENS <= clock() < DEC3_LAST_START:
+        raise ValueError("dec3_owner_clock")
+    pinned = verify_source(source, source_pin, dec3=True)
+    sys.path.insert(0, str(source / "src"))
+    from thericher_v2.execution.kis_market_data import load_kis_paper_market_data_config
+    from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
+    from thericher_v2.execution.paper_peer_visit import process_start
+    from thericher_v2.ops.h3_dec3_target_owner import run_dec3_target_owner
+
+    _load("peer_math", pinned["pinned/peer_math.py"])
+    features = _load("dec3_pinned_features", pinned["pinned/half_inference.py"])
+    parser = _load("dec3_pinned_contract", pinned["pinned/contract.py"])
+    run_root, run, target = dec3_plan(source, source_pin, prebound_at)
+    born = process_start(os.getpid())
+    usage = shutil.disk_usage(DEC3_MARKET.anchor)
+    if (
+        not DEC3_OPENS <= clock() < DEC3_LAST_START
+        or not born
+        or usage.free * 100 < 15 * usage.total
+        or re.fullmatch("[0-9a-f]{64}", target_digest) is None
+        or prebound_at.utcoffset() != UTC.utcoffset(None)
+        or prebound_at >= DEC3_OPENS
+    ):
+        raise ValueError("dec3_owner_admission")
+    run_root.mkdir(exist_ok=False)
+    attempt_root = run_root / "owner"
+    attempt = attempt_root / "ATTEMPT.json"
+    claim_digest = None
+
+    def held():
+        nonlocal claim_digest
+        if not _plain(attempt) or attempt.stat().st_size > 16_384:
+            return False
+        raw = attempt.read_bytes()
+        digest = _sha(raw)
+        if claim_digest is None:
+            claim = json.loads(raw)
+            if (
+                claim["schema"] != "H3_DEC3_DATA_ATTEMPT_V1"
+                or claim["pid"] != os.getpid()
+                or claim["source_sha256"] != source_pin
+                or claim["launch_attempt_sha256"] != target.attempt_sha256
+                or claim["owner"] != target.owner
+                or claim["synthetic"] is not False
+            ):
+                return False
+            claim_digest = digest
+        return digest == claim_digest
+
+    def ready():
+        return CaptureReadiness(
+            DEC3_OPENS <= clock() < DEC3_CAPTURE_END
+            and process_start(os.getpid()) == born
+            and held()
+            and _sha((source / "SOURCE.json").read_bytes()) == source_pin
+        )
+
+    def settings():
+        if not ready().ready:
+            raise ValueError("dec3_owner_admission")
+        return load_kis_paper_market_data_config(DOTENV, environment={})
+
+    result = run_dec3_target_owner(
+        run,
+        attempt_root=attempt_root,
+        target_pins=target,
+        prebind_sha256=target_digest,
+        clock=clock,
+        owner_ready=ready,
+        config_loader=settings,
+        prefix_features=features.prefix_features,
+        parse_input=parser.parse_input,
+    )
+    closed = clock()
+    if (
+        not DEC3_OPENS <= closed < DEC3_HARD_STOP
+        or process_start(os.getpid()) != born
+        or not held()
+    ):
+        raise ValueError("dec3_owner_close")
+    _write(
+        run_root / "OWNER-CLOSED.json",
+        dict(
+            schema="H3_DEC3_OWNER_CLOSED_V1",
+            source_sha256=source_pin,
+            attempt_sha256=claim_digest,
+            native_start=born,
+            closed_at=closed.isoformat(),
+            ready_sha256=result.ready_sha256,
+            target_status=result.target_status,
+            target_custody_sha256=result.target_custody_sha256,
+        ),
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-sha256", required=True)
-    parser.add_argument("--nov30-forecast", action="store_true")
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--nov30-forecast", action="store_true")
+    modes.add_argument("--dec3-capture", action="store_true")
+    parser.add_argument("--target-prebind-sha256")
+    parser.add_argument("--prebound-at")
     args = parser.parse_args()
-    source = FORECAST_SOURCE if args.nov30_forecast else SOURCE
+    source = (
+        DEC3_SOURCE if args.dec3_capture else FORECAST_SOURCE if args.nov30_forecast else SOURCE
+    )
     if (
         Path(__file__).resolve() != (source / "scripts/run_h3_nov27_data_owner.py")
         or Path(sys.executable).resolve() != (VENV / "Scripts/pythonw.exe").resolve()
@@ -218,8 +361,17 @@ def main():
         return 20
     sys.path.append(str(VENV / "Lib/site-packages"))
     try:
-        driver = run_forecast if args.nov30_forecast else run_owner
-        driver(source, args.source_sha256, clock=lambda: datetime.now(UTC))
+        if args.dec3_capture:
+            run_dec3(
+                source,
+                args.source_sha256,
+                clock=lambda: datetime.now(UTC),
+                prebound_at=datetime.fromisoformat(args.prebound_at),
+                target_digest=args.target_prebind_sha256,
+            )
+        else:
+            driver = run_forecast if args.nov30_forecast else run_owner
+            driver(source, args.source_sha256, clock=lambda: datetime.now(UTC))
     except Exception:
         return 20
     return 0

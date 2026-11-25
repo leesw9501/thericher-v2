@@ -24,6 +24,13 @@ the existing Dec4 feature READY is not target admission.
 The target metadata writer/reader and Dec3 pre-feature callback now passed
 with one invented MODP1 acquisition; no prices were copied or unsealed.
 Actual target owner and original-page block-end reader remain to bind.
+The dated Dec3 owner now durably claims one capture and pins the target
+metadata before feature publication; target-local failure leaves qualified
+feature READY independent. Exact code-only source and future inert
+Scheduler readback passed. No actual capture or outcome read.
+The actual Dec3 read-only owner is now installed, next Dec3 UTC21:30,
+Ready/0 instances/no run. Exact source and independent target prebind are
+in HANDOFF. The Dec4 point task and block-end target reader remain separate.
 
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK

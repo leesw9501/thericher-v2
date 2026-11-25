@@ -4,11 +4,21 @@ param(
     [ValidatePattern('\A[0-9a-f]{64}\z')]
     [string]$SourceSha256,
     [switch]$Install,
-    [switch]$Nov30Forecast
+    [switch]$Nov30Forecast,
+    [switch]$Dec3Capture,
+    [ValidatePattern('\A[0-9a-f]{64}\z')]
+    [string]$TargetPrebindSha256,
+    [ValidatePattern('\A[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\+00:00\z')]
+    [string]$PreboundAt
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+if (($Nov30Forecast -and $Dec3Capture) -or
+    ($Dec3Capture -and (-not $TargetPrebindSha256 -or -not $PreboundAt)) -or
+    (-not $Dec3Capture -and ($TargetPrebindSha256 -or $PreboundAt))) {
+    throw 'H3_OWNER_PARAMETERS'
+}
 $name = 'thericher-h3-nov27-modp1-owner-20261127-v1'
 $source = 'D:\thericher-v2\model-artifacts\data\h3-nov27-modp1-owner-20261127-v1\source'
 $python = 'C:\Users\Public\Documents\thericher-v2\.venv\Scripts\pythonw.exe'
@@ -24,9 +34,21 @@ if ($Nov30Forecast) {
     $description = 'TheRicher Nov30 fixed-half CPU forecast, no targets, no orders.'
     $limit = 'PT12M'
 }
+if ($Dec3Capture) {
+    $name = 'thericher-h3-dec3-modp1-owner-20261203-v1'
+    $source = 'D:\thericher-v2\model-artifacts\data\h3-dec3-modp1-owner-20261203-v1\source'
+    $start = [DateTimeOffset]'2026-12-03T21:30:00+00:00'
+    $prebound = [DateTimeOffset]$PreboundAt
+    if ($prebound -gt [DateTimeOffset]::UtcNow -or $prebound -ge $start.AddMinutes(-30)) {
+        throw 'H3_OWNER_PREBIND_CLOCK'
+    }
+    $contractSource = "TheRicher/H3-Dec3-Data/$SourceSha256"
+    $description = 'TheRicher Dec3 MODP1 capture and separated target custody, no orders.'
+}
 $launcher = Join-Path $source 'scripts\run_h3_nov27_data_owner.py'
 $arguments = '-I -S -B "{0}" --source-sha256 {1}' -f $launcher, $SourceSha256
 if ($Nov30Forecast) { $arguments += ' --nov30-forecast' }
+if ($Dec3Capture) { $arguments += " --dec3-capture --target-prebind-sha256 $TargetPrebindSha256 --prebound-at $PreboundAt" }
 $end = $start.AddMinutes(1)
 $installBy = $start.AddMinutes(-5)
 

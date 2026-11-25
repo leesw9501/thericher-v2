@@ -67,6 +67,10 @@ The supervisor must launch the actual native interpreter directly so its
 recorded root PID/birth is the BankLeg owner, not a venv shim's identity.
 Next bind original native request reconciliation without reserve, submit
 or cancel, then finish the exact operational claim. No production recovery.
+The exact NET25 request reconciliation-only kernel now passed invented
+custody tests (unknown/partial hold and interruption between canonical
+terminal retention and policy journal save). The actual physical-receipt
+admission, capped transport caller and final bank closure are not wired.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,
