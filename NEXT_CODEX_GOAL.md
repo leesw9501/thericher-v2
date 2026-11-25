@@ -83,8 +83,12 @@ execution path. The model is a proposal source, not a separate bank writer.
    and the actual container/Job containment budget. The host result verifier
    now checks exact retained bytes, exit code and phase/source/input/policy
    before projecting a result for BankLeg; faults cannot prove no effect.
-   Reuse the pinned R8 Job and daemon closure behavior, not its old clocks
-   or guest CLI. The Windows Job helper joined an inert blocked pipe tree.
+   The tracked host exchange now drives one already-contained attach child,
+   checks owner request order and exact terminal EOF, and uses the retained
+   receipt verifier. An inert Windows Job to isolated Docker visit passed
+   with exact synthetic container removal; no Scheduler or custody involved.
+   Bind the exchange to the pinned CapsuleVisit Job/daemon closure path and
+   actual owner/observer checks, not R8's expired clocks or guest CLI.
    The draft's relative Scheduler limit is only two minutes; prove an actual
    absolute host watchdog and end-to-end exact daemon teardown before
    installing. No actual named pair installed.
@@ -98,9 +102,13 @@ execution path. The model is a proposal source, not a separate bank writer.
    notionals drive leg-specific fees. Current forecast/target owners and
    separate block-end admission still needed. Prepare the Nov27 early-close
    prefix and Nov30 pre-open fixed-half seal first. An invented Nov27 session
-   exercised the 18:00 UTC close, MODP1 capture and Nov30 READY reader. Pin the
-   actual owner plus exact feature and forecast parser; do not substitute a
-   Dec4 LSTM-only proposal or rerun the older forecast. The pure reducer reports
+   exercised the 18:00 UTC close, named Nov27 producer, and Nov30 READY reader.
+   The tracked one-attempt seal accepts both pinned model callbacks and binds
+   exact ordered SELF, OLD60 and fixed-half vectors. The full native invented
+   path (exact features/parser, real CPU model classes, seal readback) passed.
+   Bind the actual Data owner and exact checkpoint/FIT loader to this caller;
+   do not substitute a Dec4 LSTM-only proposal
+   or rerun the older forecast. The pure reducer reports
    only descriptive paired results with at least four admitted dates. No
    actual outcome scored.
    Intraday timestamp work remains separate and cannot hold this block.

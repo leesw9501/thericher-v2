@@ -7,6 +7,14 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Nov30 preparation: an invented Nov27 panel passed the exact pinned feature
+kernel, H123 parser and byte-verified READY reader. Both original model
+classes (SELF/OLD60) loaded invented safetensors strictly and each completed
+one CPU forward, yielding one finite 17-name blend. The tracked Nov30 seal
+recorded both callbacks once and passed exact independent readback. No
+original weights, targets, prospective scores or fit used. Next attach the
+actual Data owner and real checkpoint/affine loader to the seal caller.
+
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired
 descriptive result, not performance promotion. No target or fit was opened.

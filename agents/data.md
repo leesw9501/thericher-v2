@@ -10,6 +10,9 @@ Nov27 18:30 UTC; the Nov6 MODP1 one-shot is consumed and the recurring
 NAS/pair/SPY collectors do not supply the exact full panel. Reuse the proven
 worker with a new dated binding, not the consumed opportunity. No real
 capture was attempted.
+The named Nov27 producer now uses the same capture/READY implementation as
+Dec3; the early-close input fixture invokes this production entry point.
+Actual owner, roots and source-pinned readers remain to bind.
 
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK

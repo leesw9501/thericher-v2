@@ -16,18 +16,18 @@ from thericher_v2.data.kis_paper_h3_daily_panel import (
     H3DailyPanelError,
     H3DailyPanelPlan,
 )
+from thericher_v2.data.kis_paper_h3_producer import produce_nov27_h3_publisher_input_once
 from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.execution import kis_market_data as market
 from thericher_v2.execution import kis_paper_data_capture as capture
 from thericher_v2.models.h3_publisher_input import (
     H3InputBinding,
     read_h3_publisher_input,
-    write_h3_publisher_input,
 )
 
 AS_OF = date(2026, 11, 27)
 EARLY_CLOSE = datetime(2026, 11, 27, 18, tzinfo=UTC)
-# Proposed Nov27 prefix window, not a deployed capture or forecast schedule.
+# Expected producer clocks, independent of its constants.
 CAPTURE_OPENS = EARLY_CLOSE + timedelta(minutes=30)
 CAPTURE_CLOSES = EARLY_CLOSE + timedelta(minutes=40)
 INPUT_HARD_STOP = EARLY_CLOSE + timedelta(minutes=45)
@@ -83,6 +83,19 @@ def test_capture_refuses_early_late_or_regular_close_clock(plan, tmp_path, opens
         capture_h3_daily_panel_once(
             **options, clock=lambda: now, owner_ready=forbidden, config_loader=forbidden
         )
+    with pytest.raises(ValueError, match="h3_producer_outside_capture_window"):
+        produce_nov27_h3_publisher_input_once(
+            market_root=options["market_root"],
+            artifact_root=options["artifact_root"],
+            input_root=tmp_path / "input-nov30",
+            data_source_sha256=SOURCE,
+            synthetic=True,
+            clock=lambda: now,
+            owner_ready=forbidden,
+            config_loader=forbidden,
+            prefix_features=_features,
+            parse_input=_parse,
+        )
     assert not list(tmp_path.iterdir())
 
 
@@ -118,9 +131,10 @@ def _parse(root, **pins):
     return arrays, header
 
 
-@pytest.mark.parametrize("wrong_identity", [False, True])
-def test_native_nov27_capture_to_nov30_input(plan, tmp_path, monkeypatch, wrong_identity):
+@pytest.mark.parametrize("case", ["success", "wrong_identity", "hard_stop"])
+def test_native_nov27_capture_to_nov30_input(plan, tmp_path, monkeypatch, case):
     calls = []
+    owner_checks = []
     now = CAPTURE_OPENS
 
     def sleep(seconds):
@@ -129,6 +143,16 @@ def test_native_nov27_capture_to_nov30_input(plan, tmp_path, monkeypatch, wrong_
 
     def forbidden(*_args, **_kwargs):
         pytest.fail("real network forbidden")
+
+    def owner_ready():
+        owner_checks.append(now)
+        return capture.CaptureReadiness(True)
+
+    def parse_input(root, **pins):
+        nonlocal now
+        parsed = _parse(root, **pins)
+        now = INPUT_HARD_STOP if case == "hard_stop" else CAPTURE_CLOSES
+        return parsed
 
     class Response(io.BytesIO):
         status = 200
@@ -140,6 +164,7 @@ def test_native_nov27_capture_to_nov30_input(plan, tmp_path, monkeypatch, wrong_
     class Opener:
         def open(self, request, timeout):
             assert CAPTURE_OPENS <= now < CAPTURE_CLOSES
+            assert owner_checks
             url = urlsplit(request.full_url)
             method = request.get_method()
             calls.append(method)
@@ -155,7 +180,9 @@ def test_native_nov27_capture_to_nov30_input(plan, tmp_path, monkeypatch, wrong_
             return Response(
                 dict(
                     rt_cd="0",
-                    output1=dict(rsym="DNASWRONG" if wrong_identity else f"D{venue}{symbol}"),
+                    output1=dict(
+                        rsym="DNASWRONG" if case == "wrong_identity" else f"D{venue}{symbol}"
+                    ),
                     output2=[
                         dict(
                             xymd=day.strftime("%Y%m%d"),
@@ -174,35 +201,51 @@ def test_native_nov27_capture_to_nov30_input(plan, tmp_path, monkeypatch, wrong_
     monkeypatch.setattr(urllib.request, "build_opener", lambda *_args: Opener())
     monkeypatch.setattr(capture, "_MARKET_BASE", tmp_path / "market")
     monkeypatch.setattr(capture, "_ARTIFACT_BASE", tmp_path / "artifacts")
-    options = _capture_options(plan, tmp_path) | dict(
+    root = tmp_path / "input-nov30"
+    options = dict(
+        market_root=tmp_path / "market/nov27",
+        artifact_root=tmp_path / "artifacts/nov27",
+        input_root=root,
+        data_source_sha256=SOURCE,
+        synthetic=True,
         clock=lambda: now,
-        owner_ready=lambda: capture.CaptureReadiness(True),
+        owner_ready=owner_ready,
         config_loader=lambda: market.KisPaperMarketDataConfig(
             app_key="invented-key", app_secret="invented-secret"
         ),
         monotonic=lambda: (now - CAPTURE_OPENS).total_seconds(),
         sleeper=sleep,
+        prefix_features=_features,
+        parse_input=parse_input,
     )
-    if wrong_identity:
+    if case == "wrong_identity":
         with pytest.raises(H3DailyPanelError, match="page_unavailable"):
-            capture_h3_daily_panel_once(**options)
+            produce_nov27_h3_publisher_input_once(**options)
         assert calls == ["POST", "GET"]
+        assert not root.exists()
+        return
+    if case == "hard_stop":
+        with pytest.raises(ValueError, match="h3_publisher_outside_window"):
+            produce_nov27_h3_publisher_input_once(**options)
+        assert calls == ["POST"] + ["GET"] * 19
+        assert not (root / "READY.json").exists()
         return
 
-    closed = capture_h3_daily_panel_once(**options)
+    produced = produce_nov27_h3_publisher_input_once(**options)
     assert calls == ["POST"] + ["GET"] * 19
-    assert CAPTURE_OPENS <= closed.closed_at < CAPTURE_CLOSES
-    state = options["artifact_root"] / "capture-state.json"
-    assert hashlib.sha256(state.read_bytes()).hexdigest() == closed.state_sha256
+    assert produced.input_root == root
+    state = produced.capture_state_path
+    assert state == options["artifact_root"] / "capture-state.json"
+    binding = produced.binding
+    assert binding == H3InputBinding(SOURCE, DECISION, INPUT_HARD_STOP, synthetic=True)
+    ready_raw = (root / "READY.json").read_bytes()
+    assert hashlib.sha256(ready_raw).hexdigest() == produced.ready_sha256
+    ready = json.loads(ready_raw)
+    assert CAPTURE_OPENS <= datetime.fromisoformat(ready["closed_at"]) < CAPTURE_CLOSES
+    assert datetime.fromisoformat(ready["ready_at"]) == CAPTURE_CLOSES
+    assert hashlib.sha256(state.read_bytes()).hexdigest() == ready["capture_state_sha256"]
 
-    binding = H3InputBinding(SOURCE, DECISION, INPUT_HARD_STOP, synthetic=True)
-    root = tmp_path / "input-nov30"
-    publish = dict(binding=binding, prefix_features=_features, parse_input=_parse)
-    with pytest.raises(ValueError, match="outside_window"):
-        write_h3_publisher_input(root, closed, clock=lambda: INPUT_HARD_STOP, **publish)
-    assert not root.exists()
-    ready_sha = write_h3_publisher_input(root, closed, clock=lambda: CAPTURE_CLOSES, **publish)
-    read = dict(ready_sha256=ready_sha, validate_input=_validate)
+    read = dict(ready_sha256=produced.ready_sha256, validate_input=_validate)
     read_at = DECISION - timedelta(seconds=1)
     read_h3_publisher_input(root, state, binding=binding, clock=lambda: read_at, **read)
     with pytest.raises(ValueError, match="ready_binding_mismatch"):

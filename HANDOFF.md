@@ -8,6 +8,14 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: the Dec4 host byte exchange now drives an already-owned child;
+ordered owner replies, final EOF and exact receipt readback passed with the
+pinned Windows Job helper and an inert network-none Docker container. Exact
+fixture removal passed. The named host CapsuleVisit, time supervisor and
+Scheduler owner are not yet bound. The tracked Nov27 data producer uses the
+same capture/READY implementation as Dec3; tests exercised its early close,
+wrong response identity and publication cutoff. No actual capture, fit or order.
+
 Follow-on: Dec4 host receipt verification now accepts only exact duplex and
 retained bytes, zero exit and matching phase/source/input/policy. The
 historical pinned Windows Job helper joined an inert blocked pipe tree; this

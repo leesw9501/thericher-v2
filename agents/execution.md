@@ -50,6 +50,10 @@ Both phase frames passed the actual network-none Docker executable; early
 execution retained an unavailable/financial-unknown receipt. Pin the host
 transport and prove the two-minute Scheduler draft budget or revise it with
 bounded absolute Job teardown. This is not installed or financial admission.
+The host byte exchange successfully drove two owner replies and exact result
+readback through a contained Windows attach child and inert Linux container.
+Its caller must still bind the real CapsuleVisit, owner/observer callbacks and
+absolute launch deadline; the caller owns Job/daemon closure, not the reader.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,

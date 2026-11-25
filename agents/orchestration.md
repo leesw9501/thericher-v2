@@ -5,6 +5,13 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26 throughput review: group the disjoint host exchange, dated Data
+producer and forecast seal changes until all focused checks and Ruff pass,
+then use one fresh full run. The prior full started before Ruff and is
+diagnostic only after the transport lint fix. Next operational paths are
+the existing capsule's exact Job and daemon teardown, and a named
+Nov27 capture/Nov30 seal caller. Neither needs a foreground market wait.
+
 Nov26 throughput review: the Dec4/9 host plan and NET25 guest were prepared in
 parallel; the real Linux worker requested owner admission again before
 custody in both invented phase tests. The scoped Claude review confirmed a
