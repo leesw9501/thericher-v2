@@ -12,8 +12,10 @@ kernel, H123 parser and byte-verified READY reader. Both original model
 classes (SELF/OLD60) loaded invented safetensors strictly and each completed
 one CPU forward, yielding one finite 17-name blend. The tracked Nov30 seal
 recorded both callbacks once and passed exact independent readback. No
-original weights, targets, prospective scores or fit used. Next attach the
-actual Data owner and real checkpoint/affine loader to the seal caller.
+targets, prospective scores or fit used. The concrete checkpoint loader
+verified the seven original source/checkpoint/FIT members without loading
+the model for inference. Next bind the qualified Data closure and loader
+to the dated seal executable.
 
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired

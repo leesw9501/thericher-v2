@@ -87,8 +87,11 @@ execution path. The model is a proposal source, not a separate bank writer.
    checks owner request order and exact terminal EOF, and uses the retained
    receipt verifier. An inert Windows Job to isolated Docker visit passed
    with exact synthetic container removal; no Scheduler or custody involved.
-   Bind the exchange to the pinned CapsuleVisit Job/daemon closure path and
-   actual owner/observer checks, not R8's expired clocks or guest CLI.
+   The pinned CapsuleVisit adapter now joins the exchange to one BankLeg,
+   Windows Job and exact daemon closure. A real network-none Docker fixture
+   passed success and stalled-child teardown. Bind production mount/owner/
+   observer checks and a supervised host-abort path; do not use R8's expired
+   clocks or guest CLI.
    The draft's relative Scheduler limit is only two minutes; prove an actual
    absolute host watchdog and end-to-end exact daemon teardown before
    installing. No actual named pair installed.
@@ -106,7 +109,11 @@ execution path. The model is a proposal source, not a separate bank writer.
    The tracked one-attempt seal accepts both pinned model callbacks and binds
    exact ordered SELF, OLD60 and fixed-half vectors. The full native invented
    path (exact features/parser, real CPU model classes, seal readback) passed.
-   Bind the actual Data owner and exact checkpoint/FIT loader to this caller;
+   The actual checkpoint/FIT loader verified all seven pinned members
+   without a forward. The exact Nov27 read-only capture Task is installed
+   and Ready for UTC18:30; its actual closure/READY is still unknown.
+   Connect its owner-closed receipt to the isolated
+   named Nov30 seal caller and reserve a pre-open opportunity;
    do not substitute a Dec4 LSTM-only proposal
    or rerun the older forecast. The pure reducer reports
    only descriptive paired results with at least four admitted dates. No

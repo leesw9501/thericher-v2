@@ -87,6 +87,13 @@ One unknown source field on an unselected name also withholds the entire
 cohort: the equal-weight reference still needs that name. No owner is bound
 for the five-date targets yet.
 
+First-slot input owner (not forecast or target): exact
+`thericher-h3-nov27-modp1-owner-20261127-v1`, installed Ready for Nov27
+18:30 UTC. Its `OWNER-CLOSED.json` belongs under
+A/data/h3-nov27-modp1-owner-20261127-v1/run. Use only an actual exact source,
+clock and attempt/READY digest match; Task exit or a missing result is not
+readiness. Do not manually start or retry the one-shot.
+
 ## Current Deployment
 
 R8 SOURCE29ccc64da6c2c23282d9411ddad90762cf6ae77f18be00790b56d6afeb2bcefd

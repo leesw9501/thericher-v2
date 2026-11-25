@@ -8,6 +8,21 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Nov27 early-close Data owner is installed once and Ready, with zero
+instances and next 2026-11-27 18:30 UTC (Nov28 03:30 KST). Task:
+`thericher-h3-nov27-modp1-owner-20261127-v1`. Source manifest
+`4420f9c63ac74c480aa381ad0510eae8df5a42fd0d6f83cfa8d9724154c12f53`
+at A/data/h3-nov27-modp1-owner-20261127-v1/source/SOURCE.json.
+Quiet pythonw; no demand, catch-up or repetition. No run directory existed
+on readback. This installs capture only, no forecast Task or broker order.
+
+Follow-on: the pinned Dec4 capsule adapter exercised the exact BankLeg,
+Windows Job and network-none Docker path for a successful response and
+for a stalled child. Both proved exact daemon absence. The production
+launcher, mount/owner/observer checks and host-abort containment remain.
+The Nov30 loader verified all seven original model/FIT/code members without
+a forward. Its source-bound dated caller remains to wire.
+
 Follow-on: the Dec4 host byte exchange now drives an already-owned child;
 ordered owner replies, final EOF and exact receipt readback passed with the
 pinned Windows Job helper and an inert network-none Docker container. Exact

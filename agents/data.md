@@ -12,7 +12,11 @@ worker with a new dated binding, not the consumed opportunity. No real
 capture was attempted.
 The named Nov27 producer now uses the same capture/READY implementation as
 Dec3; the early-close input fixture invokes this production entry point.
-Actual owner, roots and source-pinned readers remain to bind.
+The quiet owner package pins frozen source and real H123 callbacks; the actual
+executable refused an early launch without creating a run. Native inert
+registration/enable/readback passed after normalizing the principal to its SID.
+Actual Nov27 owner installed, Ready, 0 instances, next Nov27 UTC18:30,
+no run yet. Capture hard stop UTC18:45; exact Source and paths in HANDOFF.
 
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK
