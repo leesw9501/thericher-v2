@@ -27,6 +27,12 @@ It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child
 and exact watchdog-to-daemon recovery are not demonstrated by root closure.
 
+The real read-only observer reply and inert native Enabled-only round trip
+passed. Operating observer was not changed. Wire the write attempt, scoped
+native writer closure and independent same-leg restore; never treat the
+definition switch or Scheduler emptiness as process closure. The capsule
+retains exact attach identity across joined daemon inspection children.
+
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.
 The entry path now calls the supervised receipt reader; exit remains

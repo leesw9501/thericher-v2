@@ -122,9 +122,35 @@ SHA256 `2724d205ade809669d5d33a2a02a0c4ea47bdfc84b8c8d54d83c2dceed8046b2`.
 The two observer policy plans now pin exact task definition/ACL, phase
 clocks, source and separate roots. The original current metadata matched in
 five read-only hidden-inclusive samples (COM 39--77 ms; not census latency).
-Pin the PowerShell path that emits fresh readiness, repeats exact identity
-before disable, and restores from native same-leg closure. The old helper
-reply and parent assertion are not sufficient.
+The tracked quiet PowerShell bridge now emits the exact request-bound reply.
+The real observer was read only; the clean subprocess/typed parser passed
+in 0.590 s (actual pre-window clock was denied). Its native Enabled-only
+primitive disabled/restored one dormant inert task with exact original
+XML/ACL7, unchanged last run and confirmed removal. State/last run and
+hidden-inclusive samples are checked before and after the switch. This is
+not observer process closure: an action can detach, and a race on disable
+holds the attempt. Keep mutation private until a durable same-leg owner
+and independent native restore decision are wired. Evidence/Claude verdict:
+same A evidence root, `OBSERVER-TRANSITION-NATIVE-SAMPLE.json`, SHA256
+`049d240d8eb795208bdfdd404cccf40abbce2ba8627929506549f4ce5562ebd5`.
+
+The exact writer guard can perform daemon metadata reads during guest
+admission without replacing the acknowledged attach. The capsule matches
+the recorded live child, not the most recently launched Job; extra unjoined
+Jobs deny the request. The native actor join distinguishes raw vs parsed
+command digests and withholds a same-CID extra or unknown process inventory.
+The actual current source-qualified inventory/sampler still must supply those
+rows and prove its effect-time budget.
+In an isolated no-mount Docker fixture, native `top` saw one process before
+and two with a second same-CID inert process, then exact cleanup. That is
+a real reject signal, not exact namespace PID/birth. Evidence at the same
+root, `DOCKER-SAME-CID-INVENTORY-SAMPLE.json` (SHA256
+`b39e30ee136205ab364bbaaaa57c4112fa59c01c6904c8efccb60eac353dc6e1`).
+The real inert Docker attach spawned `conhost.exe` under the original flag,
+including after guest readiness. Only the new Dec4 attach now adds Windows
+DETACHED_PROCESS (pipe handles retained). A pinned native Job mock-capsule
+round trip passed both directions and 16 single-member samples, with exact
+child join/daemon removal. Never classify an arbitrary console host as owned.
 
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state

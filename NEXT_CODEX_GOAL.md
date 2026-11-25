@@ -47,10 +47,13 @@ The capsule guard now receives the exact active visit and attach Job at
 each guest acknowledgement. Measure the actual census plus owner/observer
 checks against the guest's 13-second acknowledgement limit; a matching CID
 alone does not exclude a second process in the same container.
-The archive's financial census pwsh adapter cannot also run the observer;
-qualify the observer's separate read/restore caller and current policy.
-Both phase policy plans and strict readiness reply are now defined; connect
-the real bridge, exact disable receipt and independent restore proof.
+The observer now has its own native read-only bridge; the clean child matches
+the exact typed reply, and the native Enabled-only primitive round-trips an
+inert task. Wire the real protected caller's durable attempt/disable receipt
+and independent restore proof. Scheduler emptiness is not descendant closure.
+Source-bind the actual current census and same-CID process inventory. The
+typed join and the capsule now identify the acknowledged attach even after
+joined Docker metadata Jobs are appended by the census.
 V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.

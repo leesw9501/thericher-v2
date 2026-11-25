@@ -105,6 +105,7 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
             elif self.command == "start":
                 assert self.args == ["--attach", "--interactive", _CID]
                 assert opts["stderr"] == subprocess.DEVNULL
+                assert opts["creationflags"] == getattr(subprocess, "DETACHED_PROCESS", 0)
                 assert leg.record["visits"][0]["create"]["cid"] == _CID
                 assert leg.record["visits"][0]["create"]["resolution"] == "ACK_EXACT_CID"
                 running = True
@@ -204,9 +205,12 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
         assert visit.context is ctx
         log.append(stage)
         if stage == "GUEST_ADMISSION":
-            attach = visit.jobs[-1]
+            attach = next(job for job in visit.jobs if job.command == "start")
             assert attach.command == "start" and visit.cid == _CID
             assert leg.record["visits"][0]["children"][-1]["pid"] == attach.pid
+            if case == "ok":
+                visit.exact(visit.inspect(_CID))
+                assert visit.jobs[-1].command == "inspect" and visit.jobs[-1].joined
             if log.count(stage) == 2:
                 if case == "guest_guard_denied":
                     return False

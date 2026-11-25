@@ -56,7 +56,7 @@ def _visit_tree(raw, filename):
         """
 renew()
 p = factory(args, env=ENV, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL)
+            stderr=subprocess.DEVNULL, creationflags=getattr(subprocess, 'DETACHED_PROCESS', 0))
 result = exchange(p)
 p.join_job()
 """
@@ -175,6 +175,9 @@ def _run_visit(
         def check_attach():
             leg.check()
             (active,) = leg.record["visits"]
+            # Exact daemon census reads can append joined metadata children.
+            # The durably recorded attach, not list position, owns the stream.
+            same_pid = [job for job in visit.jobs if job.pid == process.pid and not job.joined]
             if (
                 active["run"] != visit.run
                 or active["status"] != "ACTIVE"
@@ -185,8 +188,9 @@ def _run_visit(
                 or active["children"][-1]["pid"] != process.pid
                 or active["children"][-1]["native_start"] != process.native_start
                 or active["children"][-1]["status"] != "RUNNING_OR_UNKNOWN"
-                or not visit.jobs
-                or visit.jobs[-1] is not process
+                or len(same_pid) != 1
+                or same_pid[0] is not process
+                or any(job is not process and not job.joined for job in visit.jobs)
                 or process.joined
             ):
                 raise ValueError("h3_capsule_attach_identity_changed")
