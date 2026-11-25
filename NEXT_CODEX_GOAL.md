@@ -22,23 +22,29 @@ local Scheduler connection and requires two hidden-inclusive empty samples.
 real inert direct-base-pythonw fixture. Bind it in the named launcher and
 verify actual Windows process birth, image, argv, source and full definition
 together; this observation alone is not native effect admission.
-The already installed point emits its content receipt before process exit.
-The tracked supervised point worker now joins the exact child Job and
-receipt chain. Bind its actual direct-child action and protected control
-directory before the opportunity (prefer one existing point owner over a
-second observer task). Do not
-self-pin the receipt or infer that its direct action finished from a later
-empty instance list. An original unrun task may be migrated only after
-positive exact owner closure, with no duplicate window or lost input seal.
+The original installed point still emits a pre-exit receipt. The direct
+supervisor/child source-v3 and protected control directory are now frozen
+and native path/ACL/early-refusal checks passed (HANDOFF). Bank intake now
+calls the exact supervised receipt reader using source-qualified pins.
+Before use, qualify and update the single existing point task without a
+duplicate opportunity, independently retain the supervisor digest, and
+wire the real bank caller. Native owner binding now reads the Windows
+process image, argv and creation FILETIME, and checks that birth against
+the exact leg window; it still needs the actual full-definition Scheduler
+provider and risk/observer callbacks. V2 is withheld: the original
+frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
+original attempt/receipt and checks positive native PID absence directly.
 
 Parallel deadline before Nov30 14:12 UTC: the original live-in-Scheduler
 Nov30 research source rejects the already pinned SELF training bundle.
 The shared loader fix passed both actual original checkpoints on invented
-rows from the immutable `source-v2` (HANDOFF). The current first-slot
-reader still pins the old producer. Bind the single exact repaired source
-at the actual consumer, run a tiny producer-to-consumer smoke, then qualify
-and update only that existing unrun task at its unchanged opportunity.
-No old task was invoked or moved; no second forecast scheduler.
+rows from the immutable `source-v2` (HANDOFF). The first-slot reader now
+accepts only the exact repair, and that frozen producer, real parser and
+both CPU models passed the full invented handoff to the marks reader.
+The live task still points at the old source; validate-only passed but the
+host rejected the inert migration command. Do not bypass. Qualify and
+update only the original unrun definition through an allowed native path
+with unchanged clocks, principal, and one-attempt run root.
 
 ## First Work
 

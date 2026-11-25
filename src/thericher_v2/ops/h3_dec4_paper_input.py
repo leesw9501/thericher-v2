@@ -19,6 +19,7 @@ from thericher_v2.models.h3_shadow_point import (
     read_dec4_h3_shadow_point,
 )
 from thericher_v2.ops import h3_dec4_point_owner as owner
+from thericher_v2.ops.h3_dec4_point_join import read_supervised_point
 from thericher_v2.ops.h3_dec4_retained_input import Dec4H3RetainedRef, retain_dec4_h3_input
 from thericher_v2.ops.h3_dec4_run import Dec4H3Run
 from thericher_v2.ops.paper_startup import Phase
@@ -27,7 +28,6 @@ from thericher_v2.research import model_paper_weights as weights
 DEC4_NET25_PROFILE = weights.MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
 _FEATURE_CLOSE = datetime(2026, 12, 3, 21, tzinfo=UTC)
 _VALID_UNTIL = datetime(2026, 12, 4, 14, 35, tzinfo=UTC)
-_POINT_OWNER_SOURCE = "62fced2058e405f286e10de4e138d39eabb2d9fba6b33cb2baa91361171a7cdb"
 _OWNER_KEYS = {
     "schema",
     "source_sha256",
@@ -169,6 +169,7 @@ def prepare_dec4_paper_input(
 def retain_completed_dec4_paper_input(
     run: Dec4H3Run,
     *,
+    point_source_sha256: str,
     point_owner_sha256: str,
     prove_point_closed: Callable[[str], bool],
     retained_path: Path,
@@ -186,6 +187,7 @@ def retain_completed_dec4_paper_input(
     """
     if (
         run.synthetic is not (fixture_now is not None)
+        or not owner._digest(point_source_sha256)
         or not owner._digest(point_owner_sha256)
         or run.data_source_sha256 != owner.DATA_SOURCE_SHA256
     ):
@@ -213,7 +215,7 @@ def retain_completed_dec4_paper_input(
         done = owner._record(raw, _OWNER_KEYS)
         if (
             done["schema"] != "H3_DEC4_POINT_OWNER_CLOSED_V1"
-            or done["source_sha256"] != _POINT_OWNER_SOURCE
+            or done["source_sha256"] != point_source_sha256
             or done["source72_sha256"] != owner.SOURCE72_SHA256
             or done["data_source_sha256"] != run.data_source_sha256
             or done["financial_authority"] is not False
@@ -280,8 +282,7 @@ class Dec4BankPhaseInput:
     """Phase input callback for the existing single-bank coordinator."""
 
     run: Dec4H3Run
-    closed_point_pin: Callable[[], str]
-    prove_point_closed: Callable[[str], bool]
+    point_completion_pin: Callable[[], str]
     original_retained: Callable[[], Dec4H3RetainedRef]
     fixture_now: datetime | None = None
 
@@ -294,10 +295,20 @@ class Dec4BankPhaseInput:
             return self.original_retained()
         if phase != "entry":
             raise ValueError("h3_entry_phase_mismatch")
+        point_source = ready.source["point_owner_source_sha256"]
+        control = Path(ready.source["point_control_path"])
+        completion = self.point_completion_pin()
+
+        def joined():
+            return read_supervised_point(
+                control=control, point_source_sha256=point_source, completion_sha256=completion
+            )
+
         return retain_completed_dec4_paper_input(
             self.run,
-            point_owner_sha256=self.closed_point_pin(),
-            prove_point_closed=self.prove_point_closed,
+            point_source_sha256=point_source,
+            point_owner_sha256=joined(),
+            prove_point_closed=lambda expected: joined() == expected,
             retained_path=Path(ready.source["retained_input_path"]),
             source_sha256=ready.plan.source_sha256,
             policy_ref=ready.source["execution_policy_ref"],

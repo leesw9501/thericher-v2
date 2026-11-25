@@ -5,6 +5,14 @@ Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 
+Nov26: supervised point source-v3 and the protected control root passed
+native path/ACL and early refusal checks; the existing task is unchanged.
+The entry path now calls the supervised receipt reader; exit remains
+bound to the prior native reference. The bank adapter independently
+reads live Windows image/argv/creation FILETIME and refuses births
+outside the dated slot. Bind the measured Scheduler provider, exact
+definition and native observer/risk callbacks before deploying.
+
 Nov26: sealed point to native entry input and retained-reference-only exit
 callbacks passed on invented data. No scheduled caller deployed. A real
 no-order hidden task fixture found `GetInstances(0)` can return zero while

@@ -46,7 +46,23 @@ action; the fixture was removed after closure. It does not prove the
 financial caller's process image/birth or authority. The tracked point
 supervisor now requires a zero exit of the exact child and empty Windows
 Job, and same-attempt receipt/digest checks before publishing joined proof.
-Neither change migrated the original point task or installed the Paper pair.
+The supervised point launcher is staged, not installed. Exact source
+`8df70d7421139ac26b2cf10ee5af231f60b3c346a502eb29d0edb5ca93096205`
+under A/research/h3-dec4-lstm-point-20261204-v1/source-v3.
+`SUPERVISED-POINT-PREPARED-V3.json` in that parent binds the direct versioned
+CPython 3.14.3 and protected source/control ACL pins, SHA256
+`b1992c0d40c42d3678785a10d493a8aa761b9caa1a67721bf6f528c04f1a6c24`.
+The generic Python base alias was reparse-backed; the resolved versioned
+binary and complete source tree passed native checks. V2 is withheld and
+retained: the actual immutable Dec3 writer lacks the anticipated helper.
+V3 only reuses its exact source verifier and independently checks the
+receipt, original attempt PID/birth and positive process absence.
+An early direct
+launch refused with no control writes. Paper entry now requires the
+supervised receipt reader and authenticated completion pin. The real bank
+caller still needs its full-definition Scheduler provider/risk wiring;
+the new Windows process reader itself checks image, argv and birth.
+The point task remains on its original source; no Paper pair installed.
 
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
@@ -58,10 +74,13 @@ under A/research/h3-nov30-fixed-half-forecast-20261130-v1/source-v2.
 `MIGRATE-NOV30-SOURCE.ps1` in that parent, SHA256
 `b2cb4b1c3b89ac41ac9f402539d9c7c696da7dbd2afd59005d1a403753cae1d6`,
 passed validate-only; it has not changed the existing old source/Ready
-task. Its Claude verdict in
-`MIGRATION-CLAUDE-VERDICT.json` withholds use until the first-slot reader
-accepts the exact repaired source and that native handoff passes. Neither
-actual forecast nor target was read. Preserve the same Nov30 time and run.
+task. The first-slot reader now accepts only source-v2. The frozen producer,
+real parser and both original CPU checkpoints sealed invented features;
+the native reader accepted the resulting closure and projected 17 names
+from invented original pages. The old pin is rejected. The host rejected
+the inert task migration command; no workaround or update attempted.
+Neither actual forecast nor target was read. Preserve the same Nov30 time
+and run root when an allowed reversible native update is qualified.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.

@@ -7,10 +7,13 @@ from types import SimpleNamespace
 
 import pytest
 
+from test_h3_nov30_run import owned_data  # noqa: F401
 from thericher_v2.ops import h3_fixed_half_target_slot as slot
+from thericher_v2.ops import h3_nov30_run
 from thericher_v2.research.prospective_h3_target_custody import write_nov30_h3_target_custody
 
 _TICK = timedelta(microseconds=1)
+_OLD_FORECAST_SOURCE = "6cef92fda598c0f1f9aada60ca7a49b80ce50bb8f8b323129cc2db3144629c24"
 
 
 @pytest.fixture
@@ -225,6 +228,32 @@ def test_real_custody_and_original_pages_to_typed_first_slot(edition, monkeypatc
     assert all(path.name not in ("SEAL.json", "READY.json", "DATA-READY.json") for path in accesses)
 
 
+def test_repaired_forecast_producer_closure_feeds_original_slot(
+    edition, owned_data, monkeypatch  # noqa: F811
+):
+    calls = []
+
+    def forward(name, pin, fit, arrays):
+        calls.append(name)
+        return {str(key): 0.0 for key in arrays["key"]}
+
+    monkeypatch.setattr(h3_nov30_run, "make_nov30_h3_forward", lambda **_: forward)
+    monkeypatch.setattr(h3_nov30_run, "_MEMBERS", {})
+    edition.forecast_path.unlink()
+    edition.forecast_path.parent.rmdir()
+    seal = h3_nov30_run.run_nov30_forecast(
+        owned_data.data,
+        edition.forecast_path.parent,
+        forecast_pin=slot._FORECAST_SOURCE,
+        clock=lambda: h3_nov30_run.OPENS,
+        validate_input=owned_data.validate,
+    )
+    assert calls == ["SELF", "OLD60"]
+    raw = edition.forecast_path.read_bytes()
+    assert slot._document(raw)["seal_sha256"] == seal
+    assert edition.read(forecast_owner_sha256=slot._sha(raw)).sessions[0] == slot.INTERVAL.entry
+
+
 @pytest.mark.parametrize("fault", ["early", "naive", "not_ready"])
 def test_denies_before_path_access(edition, monkeypatch, fault):
     if fault == "early":
@@ -245,6 +274,7 @@ def test_denies_before_path_access(edition, monkeypatch, fault):
     [
         ("forecast", "closed_at", slot._FORECAST_CUTOFF.isoformat(), "forecast"),
         ("forecast", "source", "0" * 64, "forecast"),
+        ("forecast", "source", _OLD_FORECAST_SOURCE, "forecast"),
         ("owner", "target_status", "pin_failed", "data_owner"),
         ("owner", "closed_at", slot.INPUT_HARD_STOP_UTC.isoformat(), "attempt"),
         ("owner", "closed_at", (slot.CAPTURE_CLOSES_UTC - _TICK).isoformat(), "capture_clock"),

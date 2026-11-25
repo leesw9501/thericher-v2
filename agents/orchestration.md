@@ -5,6 +5,17 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: keep the forecast migration hold scoped. Frozen Nov30 source-v2 to
+first-slot readout passed with invented data and the two original models;
+the host rejected the inert migration command and the registered old
+source is unchanged. Do not bypass. In parallel prepare the named Paper
+launcher around the verified native process reader and point source-v3.
+V2 failed the frozen-writer API comparison and is not a deployable option.
+The current runtime has neither pywin32 nor comtypes. A single isolated
+pwsh connection and hidden enumeration measured 719 ms (not a complete
+owner proof). Reuse PowerShell first and measure the full proof against
+the exact leg budget before adding a dependency or long-lived service.
+
 Nov26: Data-to-point is installed for its exact future window; no point or
 financial effect yet. Recovery handoff and first-slot target binding ran in
 parallel. Next priority is the normal-path named Paper launch on invented

@@ -270,7 +270,7 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     assert [target.proposal.symbol for target in restored.targets] == ["JPM"]
     owner = h3_dec4_point_owner
     monkeypatch.setattr(owner, "DATA_SOURCE_SHA256", SOURCE)
-    point_source = h3_dec4_paper_input._POINT_OWNER_SOURCE
+    point_source = "f" * 64
     (root.parent / "owner").mkdir()
     handoff = {
         "attempt_sha256": (
@@ -318,6 +318,7 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     closure_raw = owner._json(completion)
     path = root.parent / "retained-input"
     params = dict(
+        point_source_sha256=point_source,
         point_owner_sha256=owner._sha(closure_raw),
         prove_point_closed=lambda pin: pin == owner._sha(closure_raw),
         retained_path=path,
@@ -359,10 +360,21 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     def forbid(*_args):
         pytest.fail("wrong-phase callback invoked")
 
+    completion_pin = "e" * 64
+    control_path = root.parent / "point-control"
+
+    def joined(**binding):
+        assert binding == dict(
+            control=control_path,
+            point_source_sha256=point_source,
+            completion_sha256=completion_pin,
+        )
+        return params["point_owner_sha256"]
+
+    monkeypatch.setattr(h3_dec4_paper_input, "read_supervised_point", joined)
     phase_input = h3_dec4_paper_input.Dec4BankPhaseInput(
         run=run,
-        closed_point_pin=lambda: params["point_owner_sha256"],
-        prove_point_closed=params["prove_point_closed"],
+        point_completion_pin=lambda: completion_pin,
         original_retained=forbid,
         fixture_now=DECISION,
     )
@@ -373,6 +385,8 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
             "execution_policy_ref": encoded.policy_ref,
             "paper_input_adapter_ref": params["adapter_ref"],
             "paper_input_calendar_ref": params["calendar_ref"],
+            "point_owner_source_sha256": point_source,
+            "point_control_path": str(control_path),
         },
     )
     with pytest.raises(ValueError, match="phase_mismatch"):
@@ -440,8 +454,7 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     (output / "POINT.json").unlink()
     exit_input = replace(
         phase_input,
-        closed_point_pin=forbid,
-        prove_point_closed=forbid,
+        point_completion_pin=forbid,
         original_retained=lambda: retained,
     )
     ready_exit = SimpleNamespace(plan=SimpleNamespace(phase="exit"))
