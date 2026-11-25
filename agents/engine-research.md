@@ -7,6 +7,10 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+The H3 block reducer treats unadmitted dates as missing and a real zero-signal
+cohort as admitted. At least four admitted dates are required for the paired
+descriptive result, not performance promotion. No target or fit was opened.
+
 The exact H3 paired replay now consumes the existing invented mark projection
 for all five frozen intervals. Models/EW match funded entry gross, not their
 exit notional or fees; no-signal and incomplete data remain distinct. That

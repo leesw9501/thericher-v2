@@ -1,18 +1,25 @@
 import hashlib
 import json
+import runpy
 from dataclasses import replace
 from datetime import UTC, datetime
+from pathlib import Path
 
 import numpy as np
 import pytest
 
+from thericher_v2.data import us_equity_session
 from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture
 from thericher_v2.data.kis_paper_h3_daily_panel import (
     NET25_H3_AXIS,
     H3DailyPanel,
     H3DailyPanelPlan,
 )
+from thericher_v2.execution import paper_account_session
 from thericher_v2.execution.kis_market_data import KisPaperDailyRawRow
+from thericher_v2.execution.kis_paper_current_stock_cycle import StockCycleProfile
+from thericher_v2.execution.kis_readonly import KisPaperConfig
+from thericher_v2.execution.paper_account_round import PaperRoundSlot
 from thericher_v2.models import h3_shadow_point
 from thericher_v2.models.h3_h123_input import write_h3_h123_input
 from thericher_v2.models.h3_publisher_input import (
@@ -20,6 +27,11 @@ from thericher_v2.models.h3_publisher_input import (
     read_h3_publisher_input,
     write_h3_publisher_input,
 )
+from thericher_v2.ops import h3_dec4_paper_input
+from thericher_v2.ops.h3_dec4_paper_input import DEC4_NET25_PROFILE, prepare_dec4_paper_input
+from thericher_v2.ops.h3_dec4_retained_input import restore_dec4_h3_input, retain_dec4_h3_input
+from thericher_v2.ops.h3_dec4_run import Dec4H3Run
+from thericher_v2.research.model_paper_weights import load_model_paper_weights_input
 
 DECISION = datetime(2026, 12, 4, 14, 25, tzinfo=UTC)
 SOURCE = "3" * 64
@@ -208,7 +220,7 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
         assert arrays["x"].shape == (17, 60, 12)
         before_forward()
         forwards.append(1)
-        return np.array([0.5, 0.0, -0.5] + [0] * 14, np.float64)
+        return np.array([-0.5] + [0.0] * 7 + [0.5] + [0.0] * 8, np.float64)
 
     def validate(arrays, header, **pins):
         assert list(arrays["key"]) == pins["expected_keys"]
@@ -231,9 +243,83 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
         output, binding=binding, ready_sha256=ready, point_sha256=digest
     )
     assert not point["financial_authority"] and point["synthetic"]
-    assert point["rows"][0]["weight"] == "0.02941176470588235"
+    assert point["rows"][8]["weight"] == "0.02941176470588235"
     assert point["rows"][1]["weight"] == point["rows"][2]["weight"] == "0"
     assert point["rows"][-1]["route"] == "CASH"
+    run = Dec4H3Run(root.parent / "market", state.parent, root, output, SOURCE, True)
+    (root / "DATA-READY.json").write_bytes(run._receipt(ready))
+    pins = dict(
+        ready_sha256=ready,
+        point_sha256=digest,
+        policy_ref="sha256:" + "a" * 64,
+        adapter_ref="sha256:"
+        + hashlib.sha256(Path(h3_dec4_paper_input.__file__).read_bytes()).hexdigest(),
+        calendar_ref="sha256:"
+        + hashlib.sha256(Path(us_equity_session.__file__).read_bytes()).hexdigest(),
+        fixture_now=DECISION,
+    )
+    encoded = prepare_dec4_paper_input(run, **pins)
+    restored = load_model_paper_weights_input(
+        encoded.payload, expected_sha256=encoded.sha256, expected_policy_ref=encoded.policy_ref
+    )
+    assert encoded.synthetic and restored.profile == DEC4_NET25_PROFILE
+    assert restored.metadata.input_asof == binding.hard_stop.replace(minute=48)
+    assert restored.metadata.source_available_at == binding.hard_stop.replace(minute=35)
+    assert restored.exit_session.open_ts == datetime(2026, 12, 9, 14, 30, tzinfo=UTC)
+    assert [target.proposal.symbol for target in restored.targets] == ["JPM"]
+    retained = retain_dec4_h3_input(
+        root.parent / "retained-input",
+        encoded.payload,
+        source_sha256=run.data_source_sha256,
+        point_sha256=digest,
+        policy_ref=encoded.policy_ref,
+        synthetic=encoded.synthetic,
+    )
+    with pytest.raises(ValueError, match="fixture_mode_mismatch"):
+        restore_dec4_h3_input(retained)
+
+    def prohibited(*_a, **_k):
+        pytest.fail("native custody or client callback reached")
+
+    monkeypatch.setattr(paper_account_session, "_snapshot", prohibited)
+    entry_at = restored.entry_session.open_ts
+    last_start = entry_at.replace(minute=35)
+    worker = (
+        Path(__file__).resolve().parents[1] / "scripts/run_kis_paper_current_stock_cycle_worker.py"
+    )
+    guest = runpy.run_path(str(worker))["run_account_session"]
+    with pytest.raises(ValueError, match="account_session_admission_denied"):
+        guest(
+            KisPaperConfig("invented-key", "invented-secret", "00000000", "00"),
+            execute=True,
+            cohort=paper_account_session.PaperAccountCohort(
+                PaperRoundSlot(
+                    "invented-dec4",
+                    "entry",
+                    entry_at,
+                    last_start,
+                    "sha256:" + encoded.sha256,
+                    encoded.policy_ref,
+                ),
+                "sha256:" + run.data_source_sha256,
+                "sha256:" + "e" * 64,
+                StockCycleProfile.MODEL_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3,
+            ),
+            paths={},
+            target_loader=prohibited,
+            source_ready=lambda: True,
+            owner_ready=lambda: False,
+            clock=lambda: entry_at,
+            deadline=last_start,
+        )
+    with pytest.raises(ValueError, match="fixture_clock_mode"):
+        prepare_dec4_paper_input(replace(run, synthetic=False), **pins)
+    with pytest.raises(ValueError, match="loaded_source_mismatch"):
+        prepare_dec4_paper_input(run, **(pins | {"calendar_ref": "sha256:" + "c" * 64}))
+    with pytest.raises(ValueError, match="receipt_mismatch"):
+        prepare_dec4_paper_input(run, **(pins | {"ready_sha256": "d" * 64}))
+    with pytest.raises(ValueError, match="outside_window"):
+        prepare_dec4_paper_input(run, **(pins | {"fixture_now": DECISION.replace(minute=35)}))
     with pytest.raises(FileExistsError):
         h3_shadow_point.publish_dec4_h3_shadow_point(output, **options)
     with pytest.raises(ValueError, match="readback_mismatch"):
@@ -245,3 +331,5 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
             root.parent / "late", **(options | {"clock": lambda: binding.decision_at})
         )
     assert forwards == [1]
+    (output / "POINT.json").unlink()
+    assert restore_dec4_h3_input(retained, synthetic_fixture=True) == restored

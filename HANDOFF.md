@@ -8,6 +8,16 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: Dec4 point V2 measures input verification and inference completion
+separately. Its verified DATA/READY/POINT binds to exact native NET25 bytes;
+an invented NYS target passed native encode/decode and stopped at the real
+guest's denied owner callback before any custody/client access. The same
+entry input restored from an immutable owner reference with POINT absent.
+One separately scoped invented CPU smoke also ran the exact pinned LSTM,
+V2 POINT, NET25 encoding, and byte-identical restore without POINT end to end.
+No actual order or scheduled owner. The fixed H3 study has a pure block
+reducer; no forecast/target admitted or scored in this turn.
+
 Follow-on: native inert future pair passed all six ordered readbacks using
 the tracked protected profile derived before registration. Exact ACL7,
 local-offset trigger serialization, export/default omissions and both XML

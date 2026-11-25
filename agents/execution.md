@@ -41,6 +41,10 @@ The protected profile and enabled-export default repair passed six ordered
 readbacks on one native inert future pair, after independently stamping the
 exact ACL into both drafts. No run occurred; exact cleanup/absence verified.
 Named Paper caller/owner and effect-time proof remain separate.
+The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
+and Dec9 restore without POINT. Native guest denied at owner check before
+custody. Still bind one actual bank-owned coordinator, exact stage owners,
+the authorized state and custody paths, and admission at effects.
 
 ## Actual Current Deployment
 

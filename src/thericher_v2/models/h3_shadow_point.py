@@ -123,10 +123,12 @@ def _rows(scores):
     ]
 
 
-def _point(scores, binding, ready_sha256, started, observed):
+def _point(scores, binding, ready_sha256, input_verified, started, completed, observed):
     return dict(
-        schema="DEC4_FROZEN_LSTM_H3_SHADOW_V1",
+        schema="DEC4_FROZEN_LSTM_H3_SHADOW_V2",
+        input_verified_at=input_verified.isoformat(),
         inference_started_at=started.isoformat(),
+        inference_completed_at=completed.isoformat(),
         observed_at=observed.isoformat(),
         source_sha256=binding.source_sha256,
         ready_sha256=ready_sha256,
@@ -180,7 +182,7 @@ def publish_dec4_h3_shadow_point(
         arrays["context_close"] == "2026-12-03T21:00:00+00:00"
     ):
         raise ValueError("h3_point_input_clock_mismatch")
-    _checked_clock(clock, _LAST_START)
+    input_verified = _checked_clock(clock, _LAST_START)
     destination.mkdir(exist_ok=False)
     started = None
 
@@ -197,10 +199,13 @@ def publish_dec4_h3_shadow_point(
         weights,
         before_forward=before_forward,
     )
+    completed = _checked_clock(clock, _HARD)
     observed = _checked_clock(clock, _HARD)
-    if started is None or started > observed:
+    if started is None or not input_verified <= started <= completed <= observed:
         raise ValueError("h3_point_forward_clock_mismatch")
-    raw = _json(_point(scores.tolist(), binding, ready_sha256, started, observed))
+    raw = _json(
+        _point(scores.tolist(), binding, ready_sha256, input_verified, started, completed, observed)
+    )
     pending = destination / "POINT.pending"
     with pending.open("xb") as stream:
         stream.write(raw)
@@ -221,12 +226,16 @@ def read_dec4_h3_shadow_point(
     if _sha(raw) != point_sha256:
         raise ValueError("h3_point_digest_mismatch")
     point = json.loads(raw)
+    input_verified = datetime.fromisoformat(point["input_verified_at"])
     started = datetime.fromisoformat(point["inference_started_at"])
+    completed = datetime.fromisoformat(point["inference_completed_at"])
     observed = datetime.fromisoformat(point["observed_at"])
+    _checked_clock(lambda: input_verified, _LAST_START)
     _checked_clock(lambda: started, _LAST_START)
+    _checked_clock(lambda: completed, _HARD)
     _checked_clock(lambda: observed, _HARD)
-    if started > observed or raw != _json(
-        _point(point["scores"], binding, ready_sha256, started, observed)
+    if not input_verified <= started <= completed <= observed or raw != _json(
+        _point(point["scores"], binding, ready_sha256, input_verified, started, completed, observed)
     ):
         raise ValueError("h3_point_readback_mismatch")
     return point

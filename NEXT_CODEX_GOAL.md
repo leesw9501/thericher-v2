@@ -64,9 +64,12 @@ execution path. The model is a proposal source, not a separate bank writer.
    consumer. `ops/h3_dec4_run.py` now joins the dated producer/point entry APIs
    through the run-owned DATA closure receipt and exact native READY digest;
    no owner definitions installed. Neither receipt nor point is order authority.
-   Next financial handoff: serialize the verified Dec4 point/causal clocks
-   using the native ModelPaperWeights codec. Restore exactly those input bytes
-   and owned binding at Dec9 without rereading POINT. Use the tracked account-
+   `ops/h3_dec4_paper_input.py` encodes the current point/causal clocks using
+   the native NET25 codec. `ops/h3_dec4_retained_input.py` restores exact entry
+   bytes by an owner-pinned reference without reading POINT. Invented NYS
+   input parsed and the real guest denied before custody when owner proof
+   was withheld. Wire these into the named coordinator and retain the exact
+   owned binding at Dec9. Use the tracked account-
    session guest behind one outer bank lease and one bounded visit; legacy
    stock `main -> run` does not accept NET25. Do not pass host slot classes
    into the independently imported guest; reconstruct from verified bytes.
@@ -78,7 +81,9 @@ execution path. The model is a proposal source, not a separate bank writer.
    from a separately acquired expiry-as-of panel. The tracked exact single-
    cohort replay compares fixed-half, funded-gross EW and cash; distinct sell
    notionals drive leg-specific fees. Current forecast/target owners and
-   block-end admission/readout are still needed; no actual outcome scored.
+   separate block-end admission still needed. The pure block reducer reports
+   only descriptive paired results with at least four admitted dates. No
+   actual outcome scored.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion
