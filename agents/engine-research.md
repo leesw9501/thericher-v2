@@ -7,6 +7,12 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
+attempt, owner closure, READY and H123 links and the unchanged Source72
+checkpoint. Focused invented-input checks passed; no new fit, actual forward
+or schedule. Next handoff is the quiet host launcher with positive Data
+closure and a bounded stop. This remains separate from the fixed-half study.
+
 Nov30 preparation: an invented Nov27 panel passed the exact pinned feature
 kernel, H123 parser and byte-verified READY reader. Both original model
 classes (SELF/OLD60) loaded invented safetensors strictly and each completed

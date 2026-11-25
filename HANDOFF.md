@@ -18,13 +18,23 @@ under A/data/h3-dec3-modp1-owner-20261203-v1. No run existed. It can
 produce Dec4 input and separate Nov30 target metadata, not a point or order.
 Earlier Nov27 and Nov30 task times/Ready state were independently unchanged.
 
+The tracked Dec4 point owner now checks the exact installed Dec3 source,
+attempt, closure and ready chain and the unchanged LSTM checkpoint before
+allowing one forward. It still needs a named launcher to prove host closure
+and enforce its deadline. No point owner was installed and no forward ran.
+
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.
 The wire filter refuses order endpoints, permits only qualified Paper
 account/identity reads and one token attempt. Invented partial/cancellable
 order stayed pending; an already canonical terminal plan resumed the
 journal write with no wire. No actual broker or financial custody touched.
-The recovery guest/physical-receipt binding and finalizer remain unwired.
+The recovery guest now binds the exact original pending request and physical
+receipt under a separate bounded window. It projects terminal proof only
+after a durable prepared-proof callback and native readback. The finalizer
+requires the exact proof, independently joined guest closure, and original
+claim before closing the operational lock. The production supervisor,
+transport and durable callback are not wired; no original lock was cleared.
 
 Follow-on: supervised abort recovery closed the exact acknowledged
 container in a native isolated Windows/Docker run while leaving the original

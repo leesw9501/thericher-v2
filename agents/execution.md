@@ -69,8 +69,10 @@ Next bind original native request reconciliation without reserve, submit
 or cancel, then finish the exact operational claim. No production recovery.
 The exact NET25 request reconciliation-only kernel now passed invented
 custody tests (unknown/partial hold and interruption between canonical
-terminal retention and policy journal save). The actual physical-receipt
-admission, capped transport caller and final bank closure are not wired.
+terminal retention and policy journal save). Its guest and operational
+finalizer now exercise exact proof readback and interruption recovery on
+invented custody. Wire the production supervisor, capped transport, durable
+prepared proof and independent guest join before any original claim closure.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,

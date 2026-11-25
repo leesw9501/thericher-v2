@@ -5,6 +5,12 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26 throughput review: point ownership and reconciliation guest work ran
+in parallel; one focused verification covers their integration with native
+proof readback and the bank finalizer. Next, wire the quiet point launcher
+and actual supervisor independently. Neither path needs a new fit or a
+market-session wait to prepare. No live, broker effect, or new schedule here.
+
 Nov26 throughput review: group the disjoint host exchange, dated Data
 producer and forecast seal changes until all focused checks and Ruff pass,
 then use one fresh full run. The prior full started before Ruff and is

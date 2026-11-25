@@ -23,11 +23,39 @@ _PATHS = (
 
 
 @dataclass(frozen=True, slots=True)
+class Net25TerminalProof:
+    plan_ref: str
+    pending_ref: str
+    before_journal_ref: str
+    after_journal_ref: str
+    book_ref: str
+    evidence_ref: str
+    evidence_kind: str
+
+    def validate(self):
+        for pin in (
+            self.plan_ref,
+            self.pending_ref,
+            self.before_journal_ref,
+            self.after_journal_ref,
+            self.book_ref,
+            self.evidence_ref,
+        ):
+            core._pin(pin)
+        core._check(
+            self.evidence_kind in {"broker_terminal_retained", "presubmit_proven"}
+            and self.before_journal_ref != self.after_journal_ref,
+            "cycle_request_changed",
+        )
+
+
+@dataclass(frozen=True, slots=True)
 class Net25PendingOutcome:
     status: str
     reason: str
     get_attempts: int = 0
     token_attempts: int = 0
+    terminal: Net25TerminalProof | None = None
 
 
 class _ReadOnlyTransport:
@@ -67,19 +95,23 @@ def reconcile_net25_pending_request(
     admissible,
     clock,
     make_credentials_and_transport,
+    persist_prepared=None,
 ):
     """Use the existing policy lock and native journal, never reserve or place an order.
 
     The caller must already own a reconciliation-only visit bound to the same
     original bank claim and physical closure. The callable supplies scoped
     Paper configuration and the existing paced, token-gated wire transport
-    only if broker evidence is needed. Its result is not account admission.
+    only if broker evidence is needed. The production caller must persist
+    the exact prepared proof before the native journal advances. Its
+    result is not account admission.
     """
     core._check(
         type(cohort) is PaperAccountCohort
         and cohort.profile is _PROFILE
         and cohort.mode == "recovery"
-        and set(paths) == set(_PATHS),
+        and set(paths) == set(_PATHS)
+        and (persist_prepared is None or callable(persist_prepared)),
         "cycle_configuration_invalid",
     )
     cohort.validate()
@@ -200,8 +232,92 @@ def reconcile_net25_pending_request(
         if result.status != "reconciled":
             return Net25PendingOutcome("pending", "native_plan_still_pending", gets, posts)
         guard()
+        suffix = "sha256:"
+        book = core._book(root, account_ref, cohort.basis_ref)
+        evidence = book["terminal_evidence"].get(proof.run_id)
+        core._check(type(evidence) is dict, "cycle_request_changed")
+        before_ref = record["ref"]
         if proof.side == "buy":
             record["active"]["entries_done"].append(pending["symbol"])
         record["pending"] = None
+        final_ref = suffix + core.budget._digest({k: v for k, v in record.items() if k != "ref"})
+        terminal = Net25TerminalProof(
+            plan_ref=proof.plan_ref,
+            pending_ref=expected_pending_ref,
+            before_journal_ref=before_ref,
+            after_journal_ref=final_ref,
+            book_ref=suffix + core.budget._digest(book),
+            evidence_ref=suffix + core.budget._digest(evidence),
+            evidence_kind=(
+                "presubmit_proven"
+                if state.phase == "intent_recorded"
+                else "broker_terminal_retained"
+            ),
+        )
+        terminal.validate()
+        if persist_prepared is not None:
+            persist_prepared(terminal)
+        guard()
         core._save(pointer, record)
-        return Net25PendingOutcome("reconciled", "exact_native_terminal_retained", gets, posts)
+        core._check(record["ref"] == final_ref, "cycle_checkpoint_invalid")
+        return Net25PendingOutcome(
+            "reconciled", "exact_native_terminal_retained", gets, posts, terminal
+        )
+
+
+def verify_net25_reconciled_terminal(paths, account_ref, cohort, terminal, *, clock, admitted):
+    """Re-read the committed exact native terminal; no wire, locks or writes."""
+    core._check(
+        type(terminal) is Net25TerminalProof
+        and type(cohort) is PaperAccountCohort
+        and cohort.profile is _PROFILE
+        and cohort.mode == "recovery"
+        and set(paths) == set(_PATHS),
+        "cycle_configuration_invalid",
+    )
+    terminal.validate()
+    cohort.validate()
+    core._check(admitted() is True, "cycle_configuration_invalid")
+    paths = {k: Path(v) for k, v in paths.items()}
+    for path in paths.values():
+        core._unlinked(path)
+    core.budget._validate_paths(*(paths[k] for k in _PATHS))
+    root = paths["state_root"]
+    pointer = root / core.model_paper_pointer(cohort.slot.policy_ref)
+    core._unlinked(pointer)
+    before = _snapshot(paths, account_ref, cohort)
+    book, record, _, _ = before
+    core._check(
+        record is not None
+        and record["pending"] is None
+        and record["ref"] == terminal.after_journal_ref
+        and "sha256:" + core.budget._digest(book) == terminal.book_ref,
+        "cycle_checkpoint_invalid",
+    )
+    plans = [
+        plan
+        for stock in book.get("stocks", {}).values()
+        for plan in stock["plans"]
+        if "sha256:" + core.budget._digest(plan) == terminal.plan_ref
+        and plan["input_ref"] == cohort.slot.input_ref
+    ]
+    core._check(len(plans) == 1 and len(plans[0]["states"]) == 1, "cycle_request_changed")
+    (run_id,) = plans[0]["states"]
+    evidence = book["terminal_evidence"].get(run_id)
+    core._check(
+        type(evidence) is dict
+        and "sha256:" + core.budget._digest(evidence) == terminal.evidence_ref,
+        "cycle_request_changed",
+    )
+    state = core.canary.KisPaperCanaryState.from_dict(evidence["state"])
+    core._check(
+        terminal.evidence_kind
+        == ("presubmit_proven" if state.phase == "intent_recorded" else "broker_terminal_retained"),
+        "cycle_request_changed",
+    )
+    core._projection(root, book, readonly.require_utc(clock()))
+    core._check(
+        _snapshot(paths, account_ref, cohort) == before and admitted() is True,
+        "cycle_checkpoint_invalid",
+    )
+    return terminal

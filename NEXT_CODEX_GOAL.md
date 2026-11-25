@@ -101,8 +101,10 @@ execution path. The model is a proposal source, not a separate bank writer.
    request digest, allows only Paper reconciliation reads/one token attempt,
    and cannot reserve, submit or cancel. Interrupted plan-to-journal save
    recovered without wire in invented custody. Bind it to the production
-   supervisor and original physical receipt in a separate recovery guest;
-   finalize the original bank claim only after durable native reconciliation.
+   supervisor. The separate, tested guest binds the original physical receipt
+   and request, and the finalizer requires exact durable native and guest
+   closure proof. Wire the actual transport, prepared-proof sink, and
+   supervisor join before operational use.
    The draft limit is two minutes; no actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
@@ -136,8 +138,10 @@ execution path. The model is a proposal source, not a separate bank writer.
    an invented one-capture run. The quiet Dec3 owner now prebinds an
    independent target digest and keeps target-local errors from invalidating
    unchanged feature input. It is installed and Ready for Dec3 21:30 UTC,
-   with no run. Wire the Dec4 point and later original-page
-   readout. No outcome access before block-end.
+   with no run. The Dec4 point core validates that exact source/attempt/
+   closure/ready chain and the frozen LSTM checkpoint. Bind its named quiet
+   launcher to positive Data owner closure and a hard deadline, and wire the
+   later original-page readout. No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion

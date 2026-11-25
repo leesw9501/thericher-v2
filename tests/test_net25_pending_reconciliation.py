@@ -1,5 +1,6 @@
 """Exact native NET25 recovery with invented custody and no order wire."""
 
+from dataclasses import replace
 from datetime import timedelta
 from types import SimpleNamespace
 
@@ -13,6 +14,7 @@ from thericher_v2.execution import kis_readonly as readonly
 from thericher_v2.execution.net25_pending_reconciliation import (
     _ReadOnlyTransport,
     reconcile_net25_pending_request,
+    verify_net25_reconciled_terminal,
 )
 from thericher_v2.execution.paper_account_round import PaperRoundSlot
 from thericher_v2.execution.paper_account_session import PaperAccountCohort
@@ -32,7 +34,7 @@ def denied(*_args, **_kwargs):
     pytest.fail("reconciliation attempted forbidden broker/account setup or effect")
 
 
-def recover(h, *, make=denied, pending_ref=None, admissible=lambda: True):
+def recovery_scope(h):
     value, at = h["data"], h["now"]
     original = record(h)
     slot = PaperRoundSlot(
@@ -46,14 +48,22 @@ def recover(h, *, make=denied, pending_ref=None, admissible=lambda: True):
     cohort = PaperAccountCohort(
         slot, "sha256:" + "b" * 64, h["initial"]["basis_ref"], net25.NATIVE, "recovery"
     )
-    return reconcile_net25_pending_request(
+    return dict(
         cohort=cohort,
         paths={k: v for k, v in h["call"].items() if k.endswith(("_path", "_root"))},
         account_ref=original["account_ref"],
+        clock=lambda: at,
+    )
+
+
+def recover(h, *, make=denied, pending_ref=None, admissible=lambda: True, prepared=None):
+    original = record(h)
+    return reconcile_net25_pending_request(
+        **recovery_scope(h),
         expected_pending_ref=pending_ref or "sha256:" + core.budget._digest(original["pending"]),
         admissible=admissible,
-        clock=lambda: at,
         make_credentials_and_transport=make,
+        persist_prepared=prepared,
     )
 
 
@@ -133,9 +143,24 @@ def test_exact_local_terminal_reconciles_after_journal_write_interrupt(h, monkey
             recover(h)
     canon = bank_bytes(h)
     assert record(h)["pending"] == pending
-    result = recover(h)
+    retained = []
+
+    def prepare(proof):
+        assert record(h)["pending"] == pending and record(h)["ref"] == proof.before_journal_ref
+        retained.append(proof)
+
+    result = recover(h, prepared=prepare)
     assert result.status == "reconciled" and result.token_attempts == result.get_attempts == 0
     assert record(h)["pending"] is None and bank_bytes(h) == canon and len(h["submits"]) == 1
+    assert retained == [result.terminal]
+    assert result.terminal.evidence_kind == "broker_terminal_retained"
+    verifier = dict(**recovery_scope(h), admitted=lambda: True)
+    assert verify_net25_reconciled_terminal(**verifier, terminal=result.terminal) == result.terminal
+    with pytest.raises(core._CycleFault):
+        verify_net25_reconciled_terminal(
+            **verifier,
+            terminal=replace(result.terminal, evidence_ref="sha256:" + "a" * 64),
+        )
 
 
 @pytest.mark.parametrize("endpoint", ["order", "order-rvsecncl", "wrong-GET", "live-token"])
