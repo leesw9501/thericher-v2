@@ -7,6 +7,7 @@ from pathlib import Path
 from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops.h3_dec4_docker_inventory import Dec4DockerInventory
 from thericher_v2.ops.h3_dec4_guest_identity import CapsuleProcess, linux_argv_sha256
+from thericher_v2.ops.h3_dec4_monitor_mount import validate_worker_control_mount
 from thericher_v2.ops.h3_dec4_writer_census import Dec4WriterCensus
 from thericher_v2.ops.h3_dec4_writer_identity import join_dec4_writer_actors
 
@@ -32,6 +33,10 @@ class Dec4ScopedWriterGuard:
         source = ready.source
         bank = dict(source["original_owner"]["bank"])
         protected = {_norm(path) for path in self.census.profile.protected}
+        if self.census.profile.monitor is not None:
+            if bank["volume"] != self.census.profile.monitor.bank_volume:
+                raise ValueError("h3_writer_guard_scope")
+            validate_worker_control_mount(source["capsule"]["mounts"], bank["volume"])
         private_writes = {_norm(bank["volume"]), _norm(leg.root.parent)} | {
             _norm(row["source"]) for row in source["capsule"]["mounts"] if row["rw"] is True
         }

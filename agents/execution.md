@@ -22,6 +22,11 @@ Every guest owner acknowledgement now carries the exact active visit/CID and
 attach Job to the writer guard; denied, drifted or late renewal gets no ACK.
 Still qualify the live census and same-CID additional-actor test under the
 guest's 13-second limit, and bind the independent observer restore path.
+The optional, image/bank-pinned local dashboard control role now checks
+physical Docker volume identity, exact mounts and loopback command. Redacted
+Docker projection matched the running web; its source is older than current
+Git. Qualify the selected image and actual phase profile before use. Nothing
+was restarted or admitted financially.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

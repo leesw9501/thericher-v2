@@ -59,10 +59,13 @@ census and checks mount aliases. A live read-only sample worked; historical
 claims withheld writer clearance. Seal and qualify the current profile and
 external restore runner, then freeze the new image/host sources and qualify
 the named source release. Do not use the prior credential-first capsule ABI.
-Qualify the one observed shared emergency/pause control volume and exact
-dashboard actor separately from financial state. Native read-side locks need
-write access; do not just remount it read-only or stop the dashboard. Keep
-all ledger, reservations, account state and token files outside that volume.
+The tracked classifier now distinguishes the exact local dashboard control
+mount from its private custody checks. The live Docker command/mount sample
+passed, but the deployed dashboard image is older than current Git. Qualify
+an exact reviewed dashboard build and the real phase's distinct control,
+telemetry and bank volume backing; do not pin the old image from metadata
+alone. Bind this profile before installing the financial pair. Keep ledger,
+reservations, account state and token files outside the control volume.
 V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.

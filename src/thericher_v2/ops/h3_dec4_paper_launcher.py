@@ -10,6 +10,7 @@ from thericher_v2.ops.h3_dec4_bank_visit import run_dec4_owned_bank_visit
 from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule
 from thericher_v2.ops.h3_dec4_capsule_adapter import run_dec4_capsule_visit
 from thericher_v2.ops.h3_dec4_docker_inventory import sample_dec4_docker_inventory
+from thericher_v2.ops.h3_dec4_monitor_mount import CONTROL, validate_worker_control_mount
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_restore import retain_dec4_restore_owner
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
@@ -103,7 +104,9 @@ class _WatchdogGate:
         return self._lease.actor
 
 
-def _mounts(rows, bank):
+def _mounts(rows, bank, *, monitor_control=False):
+    if monitor_control:
+        validate_worker_control_mount(rows, bank["volume"])
     targets = set()
     accepted = []
     for row in rows:
@@ -131,7 +134,9 @@ def _mounts(rows, bank):
         ):
             raise ValueError("dec4_launcher_mount")
         if row["type"] == "volume":
-            if row["source"] != bank["volume"]:
+            if row["source"] != bank["volume"] and not (
+                monitor_control and row["source"] == CONTROL
+            ):
                 raise ValueError("dec4_launcher_bank_volume")
         else:
             pv.ordinary(Path(row["source"]))
@@ -139,7 +144,9 @@ def _mounts(rows, bank):
                 raise ValueError("dec4_launcher_mount")
         targets.add(target)
         accepted.append(dict(row))
-    if not any(m["type"] == "volume" and m["rw"] for m in accepted):
+    if not any(
+        m["type"] == "volume" and m["source"] == bank["volume"] and m["rw"] for m in accepted
+    ):
         raise ValueError("dec4_launcher_bank_volume")
     return accepted
 
@@ -164,7 +171,11 @@ def _prepare_capsule(leg, ready, retained, frame, admit, *, writer_guard, load_p
         raise ValueError("dec4_launcher_capsule_pins")
     if pv.bank_key(bank) != leg.key:
         raise ValueError("dec4_launcher_bank_volume")
-    mounts = _mounts(pins["mounts"], bank)
+    monitor_control = (
+        type(writer_guard) is _WatchdogGate
+        and writer_guard.guard.census.profile.monitor is not None
+    )
+    mounts = _mounts(pins["mounts"], bank, monitor_control=monitor_control)
     root = Path(pins["workspace"])
     pv.ordinary(root)
     if (

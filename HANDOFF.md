@@ -218,7 +218,30 @@ ledger, reservations and token-state may not enter that role or volume.
 Claude favored this narrow classification over changing every native reader.
 Evidence: `native-emergency-lock-ce57d4b8/SMOKE.json` at the same A root,
 SHA256 `8de5e11bccc24572fe9c9b5ffaa2e3cb6f5a86cdcffd242d3b5b840abde4315c`.
-The classifier still needs this exact current role and has not admitted it.
+The tracked classifier now handles that role when named by an exact image and
+bank-bound profile. Only the matched local loopback dashboard is removed from
+the private classifier; other actors and its volume remain subject to the
+existing rules. Docker's redacted projection and default-local control/telemetry
+layout matched the live web container. Native image inspection with no network
+or mounts found current server/emergency bytes but older operations/view
+members (Git 045882cd and 6af88d2c) and no newer read-only server. This is not a
+source-qualified current dashboard release or effect admission. Build/attest
+the selected dashboard image and the actual bank-backed profile before using
+the option; no web restart, Paper task installation or order was performed.
+Built a replacement candidate from Git 819cb458: `thericher-v2-web:dec4-review-819cb458`,
+image `sha256:8fb0963b6987985492b2f16edadc2dcaad2bded18fa8e956f579af2b0916f23d`.
+Seven exact dashboard/control members and both CLI parser imports passed in
+the no-network/no-mount image. Six invented loopback HTTP checks also passed
+in the isolated read-only candidate: health, unknown input, valid input, HEAD,
+POST refusal and foreign Host refusal. It is not installed on the host port.
+The existing local 8787 health route returned 200. Two Docker backing reads
+with a disposable bank plus the real monitor mounts agreed in a 427 ms
+partial probe; the disposable bank was removed. This was not the real bank,
+full writer census, or a timed credential exchange.
+Offline Claude challenge identified local-driver bind aliasing as the strongest
+counterexample; the source checks non-aliased default-local backing again after
+classification and refuses drift. Docker refused the declared bind-alias
+volume in a disposable, unmounted negative probe; cleanup was verified.
 
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state

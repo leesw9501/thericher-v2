@@ -14,6 +14,15 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from thericher_v2.execution import paper_peer_visit as pv
+from thericher_v2.ops.h3_dec4_monitor_mount import (
+    CONTROL,
+    OPERATIONS,
+    RULE,
+    RUNTIME,
+    VOLUME_FORMAT,
+    Dec4MonitorMount,
+    validate_control_volume,
+)
 from thericher_v2.ops.h3_dec4_scheduler_provider import (
     _file_stamp,
     _open_locked,
@@ -58,6 +67,7 @@ class Dec4CensusProfile:
     sensitive: tuple[str, ...]
     protected: tuple[str, ...]
     financial_entries: tuple[str, ...]
+    monitor: Dec4MonitorMount | None = None
 
     def __post_init__(self):
         _need(
@@ -68,6 +78,7 @@ class Dec4CensusProfile:
             and all(
                 pv._hash(pin) for pin in (self.claims_sha256, self.pwsh_sha256, self.docker_sha256)
             )
+            and (self.monitor is None or type(self.monitor) is Dec4MonitorMount)
             and type(self.financial_entries) is tuple
             and self.financial_entries
             and all(pv._hash(item) for item in self.financial_entries)
@@ -91,6 +102,7 @@ class Dec4CensusProfile:
                 sensitive=self.sensitive,
                 protected=self.protected,
                 financial_entries=self.financial_entries,
+                **({"monitor": self.monitor.sha256} if self.monitor is not None else {}),
                 sources={str(path): pin for path, pin in _SOURCES.items()},
             )
         )
@@ -182,7 +194,7 @@ def _json(raw):
     return json.loads(raw, object_pairs_hook=_unique_object)
 
 
-def _collect(project, claims, invoke, *, host_args, docker_args, own):
+def _collect(project, claims, invoke, *, host_args, docker_args, own, monitor=None):
     list_args = (*docker_args, "ps", "--quiet", "--no-trunc")
     members = _ids(invoke(list_args))
     host = _json(invoke(host_args))
@@ -201,7 +213,11 @@ def _collect(project, claims, invoke, *, host_args, docker_args, own):
                 "container",
                 "inspect",
                 "--format",
-                project.template(claims["container_rules"]),
+                (
+                    project.template(claims["container_rules"])
+                    if monitor is None
+                    else monitor.template(project, claims["container_rules"])
+                ),
                 *ids,
             )
         )
@@ -276,6 +292,50 @@ def _foreign_writable_binds(facts, own):
     return identities
 
 
+def _monitor_scope(facts, profile, own, invoke, docker_args):
+    monitor = profile.monitor
+    if monitor is None:
+        return facts, None
+    rows = [row for row in facts["containers"] if RULE in row["RuleMatches"]]
+    if not rows:
+        return facts, _monitor_backing(profile, invoke, docker_args)
+    _need(len(rows) == 1 and rows[0]["Id"] != own, "monitor_owner")
+    row = rows[0]
+    operations = [m["Source"] for m in row["Mounts"] if m["Destination"] == "/app/operations"]
+    _need(
+        len(operations) == 1
+        and _windows_mount(operations[0]) == _windows_mount(OPERATIONS)
+        and monitor.row_matches(row, mapped_operations=operations[0]),
+        "monitor_scope",
+    )
+    return (
+        facts | {"containers": [r for r in facts["containers"] if r is not row]},
+        _monitor_backing(profile, invoke, docker_args),
+    )
+
+
+def _monitor_backing(profile, invoke, docker_args):
+    # Docker local-driver bind options can alias a named volume to a private root.
+    path = Path(OPERATIONS)
+    pv.ordinary(path)
+    _need(path.is_dir() and path.resolve(strict=True) == path, "monitor_bind")
+    safe_root = path.resolve(strict=True)
+    for value in (*profile.sensitive, *profile.protected):
+        absolute = _windows_mount(value)
+        if absolute is not None:
+            root = Path(absolute)
+            _need(
+                not safe_root.is_relative_to(root) and not root.is_relative_to(safe_root),
+                "monitor_bind_alias",
+            )
+    volumes = []
+    for name in (CONTROL, RUNTIME, profile.monitor.bank_volume):
+        raw = invoke((*docker_args, "volume", "inspect", "--format", VOLUME_FORMAT, name))
+        volumes.append(validate_control_volume(_json(raw), name))
+    info = path.stat()
+    return info.st_dev, info.st_ino, volumes
+
+
 class Dec4WriterCensus:
     """Retain source locks and run the existing scope decision on one fresh sample."""
 
@@ -331,12 +391,14 @@ class Dec4WriterCensus:
             def invoke(args):
                 return _run(args, cwd=root / "System32", env=env, deadline=deadline)
 
+            docker_args = (str(_DOCKER), "--host", _ENGINE)
             facts = _collect(
                 project,
                 claims,
                 invoke,
                 own=own,
-                docker_args=(str(_DOCKER), "--host", _ENGINE),
+                docker_args=docker_args,
+                monitor=p.monitor,
                 host_args=(
                     str(_PWSH),
                     "-NoProfile",
@@ -351,8 +413,9 @@ class Dec4WriterCensus:
             )
             owned = bind_owned(facts)
             binds = _foreign_writable_binds(facts, own)
+            scope_facts, backing = _monitor_scope(facts, p, own, invoke, docker_args)
             result = scope.decide(
-                facts,
+                scope_facts,
                 claims,
                 owned,
                 native=native,
@@ -367,6 +430,12 @@ class Dec4WriterCensus:
             _need(
                 result["status"] == "NO_CURRENT_PRIVATE_CUSTODY_WRITER_OBSERVED"
                 and bind_owned(facts) == owned
+                and (backing is None or _monitor_backing(p, invoke, docker_args) == backing)
+                and (
+                    backing is None
+                    or _ids(invoke((*docker_args, "ps", "--quiet", "--no-trunc")))
+                    == sorted(row["Id"] for row in facts["containers"] if row["Running"])
+                )
                 and _foreign_writable_binds(facts, own) == binds
                 and all(_path_stamp(path) == pair[0] for path, pair in data.items())
                 and (config_stat.st_dev, config_stat.st_ino, config_stat.st_mtime_ns)

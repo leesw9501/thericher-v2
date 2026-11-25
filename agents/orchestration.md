@@ -5,6 +5,15 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26 throughput review: the local monitor's emergency-lock volume is not a
+financial writer. Keep the exact monitor role separate instead of stopping
+the dashboard or loosening custody checks. Its live shape matched, but the
+deployed image is older than Git; qualify a reviewed exact build and original
+bank backing rather than source-pin a discovered tag. In parallel the Dec4
+target/replay smoke used invented data only. Next use the existing sealed
+capture/slot contract for the Dec9 target adapter, with no extra publisher or
+holdout open. The Nov30 migration dependency remains scoped to that slot.
+
 Nov26: keep the forecast migration hold scoped. Frozen Nov30 source-v2 to
 first-slot readout passed with invented data and the two original models;
 the host rejected the inert migration command and the registered old
