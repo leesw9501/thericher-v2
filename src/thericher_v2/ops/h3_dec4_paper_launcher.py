@@ -15,6 +15,7 @@ from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_restore import retain_dec4_restore_owner
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
+from thericher_v2.ops.h3_dec4_restore_process import Dec4RestoreProcess
 from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
 from thericher_v2.ops.h3_dec4_scheduler_provider import make_dec4_windows_owner_factory
 from thericher_v2.ops.h3_dec4_scoped_writer import Dec4ScopedWriterGuard
@@ -51,6 +52,9 @@ class _Context:
     def watchdog_actor(self):
         return self.writer_guard.watchdog_actor(self.leg)
 
+    def restore_actor(self):
+        return self.writer_guard.restore_actor(self.leg)
+
 
 class _WatchdogGate:
     def __init__(self, executable, readiness, guard):
@@ -59,10 +63,13 @@ class _WatchdogGate:
         self.guard = guard
         self._leg = None
         self._lease = None
+        self._restore = None
 
     def _check(self, leg):
         if self._leg is not leg or self._lease is None or self._lease.check() is not True:
             raise ValueError("h3_root_watchdog_unavailable")
+        if self._restore is not None and self._restore.check() is not True:
+            raise ValueError("h3_restore_process_unavailable")
 
     def ready(self, leg, readiness):
         if self._leg is None:
@@ -102,6 +109,31 @@ class _WatchdogGate:
     def watchdog_actor(self, leg):
         self._check(leg)
         return self._lease.actor
+
+    def restore_actor(self, leg):
+        self._check(leg)
+        return None if self._restore is None else self._restore.actor
+
+    def arm_restore(self, leg, ready, restore, handoff):
+        self._check(leg)
+        if (
+            self._restore is not None
+            or restore.executable != self.executable
+            or ready.source.get("observer_restore_process_sha256") != restore.sha256
+        ):
+            raise ValueError("h3_restore_process_scope")
+        owner = leg.record["owner"]
+        self._restore = restore.arm(
+            pid=owner["pid"],
+            start_ticks=owner["native_start"].removeprefix("win-filetime:"),
+            cutoff=ready.plan.hard_stop.timestamp(),
+            phase=ready.plan.phase,
+            source=ready.plan.source_sha256,
+            release=ready.plan.release_sha256,
+            handoff=handoff,
+        )
+        if self.restore_actor(leg) is None:
+            raise ValueError("h3_restore_process_unavailable")
 
 
 def _mounts(rows, bank, *, monitor_control=False):
@@ -283,6 +315,7 @@ def run_dec4_windows_paper_leg(
     scheduler_providers,
     phase_input,
     observer_lease,
+    restore_process,
     writer_guard,
     load_paper_packet,
 ):
@@ -292,7 +325,8 @@ def run_dec4_windows_paper_leg(
     risk and reconciliation. Planning or reaching this route is not a fill.
     The source-pinned writer guard evaluates current cross-owner facts once per
     native effect boundary. Observer definition renewal is not that census.
-    The outer caller still owns exact daemon recovery and observer restoration.
+    The independently armed child owns the normal restore. Abnormal physical
+    closure and financial recovery remain separate.
     """
     if (
         type(phase_input) is not Dec4BankPhaseInput
@@ -304,6 +338,7 @@ def run_dec4_windows_paper_leg(
         or type(observer_lease.transport) is not Dec4NativeObserverTransport
         or observer_lease.transport.plan != observer_lease.plan
         or type(writer_guard) is not Dec4ScopedWriterGuard
+        or type(restore_process) is not Dec4RestoreProcess
         or not callable(load_paper_packet)
     ):
         raise ValueError("dec4_launcher_missing_owned_admission")
@@ -333,10 +368,13 @@ def run_dec4_windows_paper_leg(
             load_paper_packet=load_paper_packet,
             clock=lambda: datetime.now(UTC),
         )
-        retain_dec4_restore_owner(
+        handoff = retain_dec4_restore_owner(
             evidence_root, ready=ready, leg=leg, observer_plan=observer_lease.plan
         )
-        writer_guard.before_observer(leg, ready, gate.watchdog_actor(leg))
+        gate.arm_restore(leg, ready, restore_process, handoff)
+        writer_guard.before_observer(
+            leg, ready, gate.watchdog_actor(leg), restore=gate.restore_actor(leg)
+        )
         observer_lease.begin(leg, ready)
         return dispatch
 

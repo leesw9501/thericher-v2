@@ -221,6 +221,26 @@ Actual Job-join receipts, cutoff behavior and the bounded Enabled-only
 mutation are still unqualified; the fixture did not touch the real observer.
 An isolated Windows process probe separately confirmed the same query-only
 handle can distinguish normal exit 0 from the cutoff code 20.
+The tracked launcher now actually passes the retained digest to one pinned,
+quiet child over its narrow startup contract and requires acknowledgement
+before observer disable. Beyond null stdio, only the exact root's
+query/synchronize handle and acknowledgement event are inherited. The writer census
+joins this live child by its exact birth, root parent, pinned image and argv.
+The source-pinned child entry still needs real closure and exclusion inputs
+and the protected observer writer deadline. Nothing is installed by this change.
+The tracked startup/acknowledgement code then passed in a native inert
+direct-pythonw Scheduler fixture, with the root EnginePID unchanged and the
+child observing exact normal exit. Task/scratch absence was rechecked.
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+TRACKED-RESTORE-PROCESS-NATIVE-faeed691.json, SHA256
+`ef8af6cb64af32e8098cab6954038c7898227635f0ce1505c57a394d497405b8`.
+This does not exercise native observer mutation or financial admission.
+Independent Claude review withheld the mutation until the protected child
+attests the actual loaded dependency closure, not only its entry script,
+and the writer exclusion holds through the mutation. Verdict:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+RESTORE-STARTUP-CLAUDE-VERDICT-20261126.json, SHA256
+`2ea6fe73eabad5d3cca92348c589b6d194692679574b17f313015d79421329a1`.
 The Dec4 point task is still Ready at Dec3 21:47 UTC, one old action and no
 catch-up. The exact prepared source-v3 manifest matches on disk but is not
 the installed action. Both financial task names are still absent.

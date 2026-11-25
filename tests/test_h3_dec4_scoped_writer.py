@@ -72,6 +72,7 @@ def test_guest_scope_runs_one_fresh_decision_with_exact_own_cid_and_live_attach(
         leg=leg,
         readiness=ready,
         watchdog_actor=lambda: "proof",
+        restore_actor=lambda: "restore-proof",
         exchange_deadline=time.monotonic() + 5,
         guest_process=guest,
         daemon_inventory=Dec4DockerInventory(_CID, 20, "epoch", 1),
@@ -83,6 +84,7 @@ def test_guest_scope_runs_one_fresh_decision_with_exact_own_cid_and_live_attach(
             owner="exact-scheduled-proof",
             bank_record={},
             watchdog="proof",
+            restore="restore-proof",
             attached_visit=visit,
         )
         return frozenset({(9, "1", "exact")})

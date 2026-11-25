@@ -8,6 +8,7 @@ from types import SimpleNamespace
 import pytest
 
 from thericher_v2.execution.paper_peer_visit import digest
+from thericher_v2.ops.h3_dec4_restore_process import RestoreProcessActor
 from thericher_v2.ops.h3_dec4_root_watchdog import RootWatchdogActor
 from thericher_v2.ops.h3_dec4_writer_identity import (
     CapsuleProcess,
@@ -140,6 +141,24 @@ def test_emits_only_exact_r8_census_keys(cohort, attached, ids):
         for row in cohort.facts["actors"]
         if row["pid"] in ids
     )
+
+
+def test_exact_restore_child_join_never_adopts_wrong_lineage(cohort):
+    child = WindowsActor(60, "188", "d" * 64, "e" * 64, cohort.actors[10].image)
+    cohort.actors[60] = child
+    row = cohort.facts["actors"][-1]
+    row.update(start_ticks=str(_EPOCH + 188), argv_sha256=child.raw_command_sha256)
+    options = dict(
+        owner=cohort.owner,
+        bank_record=cohort.record,
+        watchdog=cohort.watch,
+        restore=RestoreProcessActor(60, child.filetime, child.raw_command_sha256),
+        read_actor=cohort.actors.__getitem__,
+    )
+    assert {key[0] for key in join_dec4_writer_actors(cohort.facts, **options)} == {10, 20, 60}
+    row["parent_pid"] = 5
+    with pytest.raises(ValueError, match="actor_lineage"):
+        join_dec4_writer_actors(cohort.facts, **options)
 
 
 @pytest.mark.parametrize("index", [0, 2])

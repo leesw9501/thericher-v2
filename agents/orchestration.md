@@ -5,6 +5,14 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: the scheduled path now actually retains and hands off the original
+restore digest before any observer mutation. The tracked child observed
+normal root exit under an inert direct Scheduler action; no operational
+owner was changed. Finish the real child entry around the existing Job
+closure and bounded restore writer. In parallel the Dec9 target writer
+matches the reader around one native capture; bind the real Data owner
+before entry open, without creating another collector or evaluation.
+
 Nov26: the restore path now distinguishes normal BankLeg closure from
 current daemon closure. The local native probe refused a stopped capsule and
 its exact label alias; only the invented capsule was removed. The Dec9

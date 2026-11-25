@@ -18,6 +18,7 @@ from typing import Protocol
 
 from thericher_v2.execution.paper_peer_visit import digest
 from thericher_v2.ops.h3_dec4_guest_identity import CapsuleProcess as CapsuleProcess
+from thericher_v2.ops.h3_dec4_restore_process import RestoreProcessActor
 from thericher_v2.ops.h3_dec4_root_watchdog import RootWatchdogActor
 
 _EPOCH = 504911232000000000
@@ -238,6 +239,7 @@ def join_dec4_writer_actors(
     owner: Mapping[str, object],
     bank_record: Mapping[str, object],
     watchdog: RootWatchdogActor,
+    restore: RestoreProcessActor | None = None,
     attached_visit: _CapsuleVisit | None = None,
     read_actor: Callable[[int], WindowsActor] = read_windows_actor,
 ) -> frozenset[OwnedKey]:
@@ -283,8 +285,19 @@ def join_dec4_writer_actors(
         "watchdog_identity",
     )
     attach = _attach_job(bank_record, attached_visit) if attached_visit is not None else None
+    if restore is not None:
+        _need(
+            type(restore) is RestoreProcessActor
+            and _pid(restore.pid)
+            and restore.pid not in {pid, watchdog.pid}
+            and _hex(restore.argv_sha256),
+            "restore_identity",
+        )
     if attach:
-        _need(attach[0].pid not in {pid, watchdog.pid}, "attach_identity")
+        _need(
+            attach[0].pid not in {pid, watchdog.pid, getattr(restore, "pid", None)},
+            "attach_identity",
+        )
         _single_job_actor(attach[0])
 
     def match(actor_pid, birth, *, raw=None, parsed=None, image=None, child=False):
@@ -327,8 +340,18 @@ def join_dec4_writer_actors(
         image=native_root.image,
         child=True,
     )
+    owned = {root, watch}
+    if restore is not None:
+        restoring, _ = match(
+            restore.pid,
+            restore.start_ticks,
+            raw=restore.argv_sha256,
+            image=native_root.image,
+            child=True,
+        )
+        owned.add(restoring)
     if not attach:
-        return frozenset((root, watch))
+        return frozenset(owned)
     job, raw = attach
     attached, _ = match(
         job.pid,
@@ -341,7 +364,7 @@ def join_dec4_writer_actors(
     _single_job_actor(job)
     check_job, check_raw = _attach_job(bank_record, attached_visit)
     _need(check_job is job and check_raw == raw, "attach_identity")
-    return frozenset((root, watch, attached))
+    return frozenset(owned | {attached})
 
 
 @dataclass(frozen=True)

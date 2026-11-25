@@ -99,9 +99,10 @@ This exercises the data-plane contract, not actual capture provenance or the
 timed target reader. Follow-on: the tracked Dec9 reader joins a pre-open
 prebind to exact native capture pages and an independently supplied Data
 closure, then feeds the frozen Dec4 comparator. Its early/late-mutation
-checks are synthetic. Bind one Dec9 post-close producer and the existing
-block-end owner independently of the Nov30 migration. No market target
-opened or fit run.
+checks are synthetic. The paired Dec9 writer now seals metadata around one
+native capture without opening the page contents; its returned digest is not
+OS process closure. Bind its actual post-close owner and existing block-end
+owner independently of the Nov30 migration. No market target opened or fit run.
 
 First actual pre-open fixed-half cohort sealed Nov9UTC11:43:43.513:
 A/research/current-fixed-half-nov9-forecast-20261109-v1/actual/SEAL.json

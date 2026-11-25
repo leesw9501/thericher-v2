@@ -50,8 +50,8 @@ class Dec4ScopedWriterGuard:
             raise ValueError("h3_writer_guard_scope")
         return True
 
-    def before_observer(self, leg, ready, watchdog):
-        return self._decide(leg, ready, watchdog, None, False, None)
+    def before_observer(self, leg, ready, watchdog, *, restore=None):
+        return self._decide(leg, ready, watchdog, None, False, None, restore)
 
     def check(self, context, *, stage, visit):
         if stage not in {"BEFORE_CREDENTIALS", "BEFORE_CREATE", "AFTER_CREATE", "GUEST_ADMISSION"}:
@@ -77,9 +77,10 @@ class Dec4ScopedWriterGuard:
             visit,
             guest,
             context.exchange_deadline,
+            context.restore_actor(),
         )
 
-    def _decide(self, leg, ready, watchdog, visit, guest, deadline):
+    def _decide(self, leg, ready, watchdog, visit, guest, deadline, restore):
         self.source_ready(leg, ready)
         now = datetime.now(UTC)
         if not ready.plan.starts_at <= now < ready.plan.ends_at:
@@ -98,6 +99,7 @@ class Dec4ScopedWriterGuard:
                 owner=proof,
                 bank_record=leg.record,
                 watchdog=watchdog,
+                restore=restore,
                 attached_visit=visit if guest else None,
             )
 

@@ -91,9 +91,12 @@ missing. Read once at block end, at least four admitted cohorts for a
 descriptive comparison only. Count dates, not 17 independent observations
 per date. No payout tuning, new fits, or promotion from this sample.
 Dec4/Dec9 target contract must be independently pinned before Dec4 14:30
-UTC. The tracked Dec9 target reader still needs one post-close capture
-owner and the block-end caller. It refuses reads before Dec28 21:00 UTC.
+UTC. The tracked Dec9 writer and reader still need one post-close capture
+owner and the block-end caller. The reader refuses reads before Dec28 21:00 UTC.
 The Dec4 Paper point is not the fixed-half forecast or this target.
+Use the existing quiet data-owner bootstrap and one native MODP1 capture
+without feature or point generation. Independently pin it before entry
+open; a writer-returned digest alone is not post-exit closure.
 Use the frozen same-basis post-expiry MODP1 edition for each target projection,
 separately owned from the pre-entry input. Reuse Nov9 `marks._project` and
 `evaluate.parse_marks` as contract references, not executables for a new date.

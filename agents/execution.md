@@ -30,7 +30,11 @@ was restarted or admitted financially.
 Normal restore now rechecks the pinned daemon and exact old capsule/labels
 inside the existing bank gate. Native inert stopped/relabeled presence was
 refused; removal cleared the probe only. The actual independent restore
-owner and watchdog/Job closure still need to be bound.
+owner and watchdog/Job closure still need to be fully bound. The scheduled
+launcher now requires an armed restore-only child with the exact original
+handoff digest and includes only its exact native identity in the live
+census. The native root handle rejects a nonzero or late exit. Next supply
+the protected child's Job-join/exclusion inputs and bounded observer write.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

@@ -53,9 +53,12 @@ independent normal restore owner and retain exact abnormal physical recovery
 as a separate path. Scheduler emptiness is not descendant closure.
 The normal restore now rechecks the exact local daemon, former capsule ID and
 original ownership labels under the existing bank gate, including stopped
-containers. Native inert closure passed. Bind that profile and the external
-owner/descendant proof in the actual release; do not treat the Docker reader
-as proof of writer exclusion.
+containers. The scheduled launcher now arms a source-pinned restore-only
+child with the original handoff digest before disabling the observer. The
+child's restricted root handle requires a normal exit; its live actor is
+joined by exact birth, lineage, image and argv. Supply the protected child
+program with durable Job-join proof, bounded observer write and real
+writer exclusion; do not treat Docker absence as that proof.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -232,8 +235,9 @@ with unchanged clocks, principal, and one-attempt run root.
    25 bp-per-side comparator and native block record. Actual target
    admission, block readout and other source owners remain separate. The
    Dec9 reader now binds a pre-open contract, exact capture/pages and
-   independent owner closure; bind one real Dec9 target-only producer and
-   the block-end caller without duplicating collection or opening outcomes.
+   independent owner closure. The one-capture metadata writer now matches
+   that reader without opening pages. Bind its actual Dec9 post-close owner
+   and block-end caller without duplicating the capture or opening outcomes.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.
