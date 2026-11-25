@@ -6,9 +6,11 @@
 attributable KIS Paper entry-to-exit lifecycle through a repeatable, tracked
 execution path. The model is a proposal source, not a separate bank writer.
 
-Next operational step: bind the named Dec4/Dec9 normal-path Paper launcher
-to the existing protected pair installer, capsule, and effect-time bank
-and observer checks. Exercise that exact launch path on invented state.
+Next operational step: bind the real Dec4/Dec9 writer census, observer
+suspend/restore and independent watchdog to the tracked normal-path
+launcher. Its scheduled BankLeg now stages and verifies the exact new
+capsule workspace before calling the existing native account worker.
+Protect the final phase profiles and source using the existing installer.
 Keep abort reconciliation as a distinct path for its original request;
 do not wait for a market session or use a successful recovery fixture as
 normal-path admission. The credential-free point task is already installed.
@@ -37,6 +39,11 @@ runtime profile fields. Bind those profiles, the bank visit and existing
 risk/observer callbacks in the named launcher. The actual inert trigger
 fixture passed direct action self-attestation; that does not demonstrate
 the final bank owner's effect-time guard or the paired exit readback.
+Reuse the pinned R8 admission and observer logic as a source reference,
+not its expired settings. The Dec4 owner proof is not the census actor
+lineage: attest actual controller/Job roots and exact low-level argv.
+The archive's financial census pwsh adapter cannot also run the observer;
+qualify the observer's separate read/restore caller and current policy.
 V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.
@@ -194,6 +201,9 @@ with unchanged clocks, principal, and one-attempt run root.
    Dec4 fixed-half now has a separate score-only reader requiring the exact
    independent completion, capture, model/policy and seal pins. No actual
    result has been admitted.
+   The Dec4 fixed-half adapter now joins ordered typed inputs to the existing
+   25 bp-per-side comparator and native block record. Actual target
+   admission, block readout and other source owners remain separate.
    No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 

@@ -79,6 +79,19 @@ Remaining: freeze these exact profiles in the named Paper
 launcher and bind existing writer/observer and financial checks.
 This readback is not account/effect permission or runtime deployment.
 
+The named Dec4/Dec9 normal path now composes the scheduled BankLeg,
+supervised-input adapter and existing capsule. It creates one source-owned
+workspace per leg, with exact native entry or digest-only exit frame, pinned
+guest binding, read-only admission mount and fresh result mount. A local
+staging rejection before dispatch closes the known untouched leg without
+refunding the consumed phase. Admission-file drift or preexisting output
+after dispatch selection withholds the effect and preserves unknown.
+The actual Dec4 census/observer policy, independent hard stop/recovery
+and launch/exit profile release are not installed. Reuse R8's guard
+and observer ordering with fresh pins, not old lineage or Nov9 windows.
+Claude categorical review: A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+`CAPSULE-LAUNCHER-CLAUDE-VERDICT.json`.
+
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
 dict. The shared loader now restores only exact model tensors from the

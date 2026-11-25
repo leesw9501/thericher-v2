@@ -38,7 +38,8 @@ def run_dec4_owned_bank_visit(
     make_owner: Callable,
     writer_and_observer_ready: Callable,
     prepare_phase_input: Callable,
-    invoke_capsule_once: Callable,
+    invoke_capsule_once: Callable | None = None,
+    prepare_capsule_once: Callable | None = None,
     fixture_clock: Callable[[], datetime] | None = None,
 ) -> dict:
     """Own one finite leg, but leave quote/order/risk and closure to the native capsule.
@@ -51,6 +52,8 @@ def run_dec4_owned_bank_visit(
     """
     if phase not in _TIMES or source.ROUND != ROUND:
         raise ValueError("h3_bank_round_mismatch")
+    if (invoke_capsule_once is None) == (prepare_capsule_once is None):
+        raise ValueError("h3_bank_capsule_binding")
     slot = source.SLOTS[phase]
     times = tuple(datetime.fromisoformat(slot[k]) for k in ("start_UTC", "end_UTC", "hard_UTC"))
     if (
@@ -160,9 +163,20 @@ def run_dec4_owned_bank_visit(
             payload_sha256=retained.payload_sha256,
             payload=payload,
         )
+        if prepare_capsule_once is None:
+            assert invoke_capsule_once is not None
+
+            def dispatch():
+                return invoke_capsule_once(leg, ready, frame, admit)
+        else:
+            # This callback can only stage the exact source-owned files.
+            # Credentials and daemon calls belong to the returned dispatch.
+            dispatch = prepare_capsule_once(leg, ready, retained, frame, admit)
+            if not callable(dispatch) or leg.record["visits"]:
+                raise ValueError("h3_bank_capsule_binding")
         admit()
         invoked = True
-        outcome = invoke_capsule_once(leg, ready, frame, admit)
+        outcome = dispatch()
         visits = leg.record["visits"]
         if (
             type(outcome) is not dict

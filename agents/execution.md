@@ -11,6 +11,14 @@ The protected draft API exports exact runtime profile fields. Reuse the
 existing bank, observer and risk checks in the one named caller; no order,
 account read, funded slot or new Paper task is evidenced.
 
+Nov26: the tracked normal-path launcher stages the exact BankLeg frame
+and calls the existing native capsule under the same live owner renewal.
+Target-local pre-dispatch faults never invoke credentials or the daemon.
+Still bind actual Dec4 writer census (collector-native process identity),
+separate observer transport/current policy, and independent hard stop.
+The untouched-phase marker is not reset; ambiguous dispatch retains the
+original claim and reservations for exact recovery.
+
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.
 The entry path now calls the supervised receipt reader; exit remains

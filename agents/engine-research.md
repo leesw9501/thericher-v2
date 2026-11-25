@@ -52,6 +52,11 @@ and re-computes the 50:50 vector. It returns score inputs only at block
 end; the separate target and marks admission is unchanged. No actual
 seal was opened or evaluation run.
 
+The Dec4 fixed-half slot now feeds the existing exact same-gross risky
+and cash comparisons and native block reducer on invented inputs. The
+adapter requires the original interval/session axis and ordered symbols;
+it has no cost override (25 bp per leg). No outcome or PnL claim.
+
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired
 descriptive result, not performance promotion. No target or fit was opened.
