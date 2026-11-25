@@ -8,6 +8,15 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: supervised abort recovery closed the exact acknowledged
+container in a native isolated Windows/Docker run while leaving the original
+BankLeg bytes and financial reservation untouched. Unknown create, missing
+Job identity and missing original container stay held. A separately scoped
+native reconciliation-only guest is still required; do not route the old
+reserve/submit/cancel recovery API merely to inspect. The one existing Dec3
+capture now has a metadata-only target hook before H123 publication; the
+synthetic combined proof passed and no actual target task was installed.
+
 Nov27 early-close Data owner is installed once and Ready, with zero
 instances and next 2026-11-27 18:30 UTC (Nov28 03:30 KST). Task:
 `thericher-h3-nov27-modp1-owner-20261127-v1`. Source manifest

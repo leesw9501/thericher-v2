@@ -21,6 +21,9 @@ Dec3 after-close MODP1 may supply both the Nov30 cohort targets and the
 Dec4 pre-entry prefix with one acquisition, only if independent target
 custody and later block-end readout are prebound. No target owner installed;
 the existing Dec4 feature READY is not target admission.
+The target metadata writer/reader and Dec3 pre-feature callback now passed
+with one invented MODP1 acquisition; no prices were copied or unsealed.
+Actual target owner and original-page block-end reader remain to bind.
 
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK

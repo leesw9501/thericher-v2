@@ -60,6 +60,13 @@ The outer host watchdog now proves native Job containment, not service
 closure. On a real no-network synthetic host abort the exact Docker
 container remained; the original bank claim stayed held. Test-only cleanup
 proved container absence. Production restart reconciliation is still needed.
+The tracked ACK-only physical recovery now removed the exact inert
+container via the existing daemon path and retained the original ACTIVE
+claim byte-for-byte. Its receipt does not authorize another writer.
+The supervisor must launch the actual native interpreter directly so its
+recorded root PID/birth is the BankLeg owner, not a venv shim's identity.
+Next bind original native request reconciliation without reserve, submit
+or cancel, then finish the exact operational claim. No production recovery.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,

@@ -54,6 +54,7 @@ def produce_dec3_h3_publisher_input_once(
     config_loader: Callable[[], KisPaperMarketDataConfig],
     prefix_features: Callable[..., tuple[np.ndarray, np.ndarray]],
     parse_input: Callable[..., tuple[dict, dict]],
+    on_capture_closed: Callable[[str, datetime], None] | None = None,
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
 ) -> H3ProducedInput:
@@ -63,6 +64,8 @@ def produce_dec3_h3_publisher_input_once(
     clock, owner probe, Paper config loader, feature kernel and consumer parser.
     Argument presence is not attestation. There is no default owner, credential
     lookup, historical DataREADY fallback or retry of an interrupted directory.
+    An independently prebound target owner can receive the original capture
+    digest and close time before H123 publication, never the native prices.
     """
     return _produce_h3_publisher_input_once(
         as_of=DEC3_AS_OF,
@@ -77,6 +80,7 @@ def produce_dec3_h3_publisher_input_once(
         config_loader=config_loader,
         prefix_features=prefix_features,
         parse_input=parse_input,
+        on_capture_closed=on_capture_closed,
         monotonic=monotonic,
         sleeper=sleeper,
     )
@@ -139,10 +143,11 @@ def _produce_h3_publisher_input_once(
     parse_input: Callable[..., tuple[dict, dict]],
     monotonic: Callable[[], float] | None,
     sleeper: Callable[[float], None] | None,
+    on_capture_closed: Callable[[str, datetime], None] | None = None,
 ) -> H3ProducedInput:
     if not all(
         callable(fn) for fn in (clock, owner_ready, config_loader, prefix_features, parse_input)
-    ):
+    ) or (on_capture_closed is not None and not callable(on_capture_closed)):
         raise ValueError("h3_producer_pinned_callables_required")
 
     now = clock()
@@ -183,6 +188,9 @@ def _produce_h3_publisher_input_once(
         return parsed
 
     require_closed_state()
+    if on_capture_closed is not None:
+        on_capture_closed(capture.state_sha256, capture.closed_at)
+        require_closed_state()
     ready_sha = write_h3_publisher_input(
         input_root,
         capture,

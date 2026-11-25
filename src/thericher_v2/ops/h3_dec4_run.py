@@ -82,6 +82,7 @@ def run_dec3_data(
     config_loader: Callable[[], KisPaperMarketDataConfig],
     prefix_features: Callable,
     parse_input: Callable,
+    on_capture_closed: Callable[[str, datetime], None] | None = None,
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
 ) -> str:
@@ -98,6 +99,7 @@ def run_dec3_data(
         config_loader=config_loader,
         prefix_features=prefix_features,
         parse_input=parse_input,
+        on_capture_closed=on_capture_closed,
         monotonic=monotonic,
         sleeper=sleeper,
     )

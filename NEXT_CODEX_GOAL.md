@@ -94,10 +94,13 @@ execution path. The model is a proposal source, not a separate bank writer.
    clocks or guest CLI.
    The outer Windows Job watchdog now proves host-process termination.
    Native host-abort smoke left the exact daemon container running and the
-   original synthetic BankLeg held. Wire the production launcher to the
-   supervisor and exact post-crash daemon/BankLeg recovery, without releasing
-   financial reservations. The draft Scheduler limit is two minutes; no
-   actual named pair installed.
+   original synthetic BankLeg held. The tracked physical recovery accepted
+   exact original watchdog and acknowledged CID evidence, removed the inert
+   container, and left the bank claim byte-identical. Next bind the production
+   supervisor and an exact pending-first reconciliation-only guest; the old
+   recovery path can reserve, submit or cancel and must not be reused as-is.
+   Finalize the original bank claim only after durable native reconciliation.
+   The draft limit is two minutes; no actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.
@@ -125,7 +128,10 @@ execution path. The model is a proposal source, not a separate bank writer.
    For the Nov30 outcomes, prebind the Dec3 after-close MODP1 acquisition
    to independent target custody. One collector may also feed Dec4 features
    without lookahead, but the Dec4 DATA-READY is not a target seal and may not
-   be adopted retroactively. Keep outcome access closed until block-end.
+   be adopted retroactively. The metadata-only target receipt, its block-end
+   reader and the Dec3 pre-feature capture-close handoff passed together on
+   an invented one-capture run. Pin the actual independent owner and later
+   original-page readout. No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion

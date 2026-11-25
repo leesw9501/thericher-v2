@@ -13,6 +13,11 @@ from thericher_v2.data.kis_paper_h3_producer import produce_dec3_h3_publisher_in
 from thericher_v2.execution import kis_market_data as market
 from thericher_v2.execution import kis_paper_data_capture as capture
 from thericher_v2.models.h3_publisher_input import read_h3_publisher_input
+from thericher_v2.research.prospective_h3_target_custody import (
+    Nov30H3TargetPins,
+    read_nov30_h3_target_custody,
+    write_nov30_h3_target_custody,
+)
 
 OPEN = datetime(2026, 12, 3, 21, 30, tzinfo=UTC)
 CLOSE = OPEN + timedelta(minutes=10)
@@ -160,6 +165,50 @@ def test_native_capture_through_publisher_and_reader(dated_run):
     with pytest.raises(ValueError, match="fresh_roots_required"):
         produce_dec3_h3_publisher_input_once(**options)
     assert calls == ["POST"] + ["GET"] * 19
+
+
+def test_one_native_capture_binds_independent_target_metadata_before_features(dated_run, tmp_path):
+    options, calls, _ = dated_run
+    release = datetime(2026, 12, 28, 21, tzinfo=UTC)
+    target = Nov30H3TargetPins(
+        owner="invented-target-owner",
+        source_sha256=SOURCE,
+        attempt_sha256="4" * 64,
+        market_root=options["market_root"],
+        artifact_root=options["artifact_root"],
+        target_root=tmp_path / "separate-target",
+        prebound_at=OPEN - timedelta(hours=1),
+        release_at=release,
+        synthetic=True,
+    )
+    seal = []
+    pin = target.prebind_sha256
+
+    def attest(digest, closed_at):
+        assert not options["input_root"].exists()
+        seal.append(
+            write_nov30_h3_target_custody(
+                target,
+                prebind_sha256=pin,
+                capture_state_sha256=digest,
+                capture_closed_at=closed_at,
+                clock=options["clock"],
+            )
+        )
+
+    produced = produce_dec3_h3_publisher_input_once(**options, on_capture_closed=attest)
+    assert len(seal) == 1 and calls == ["POST"] + ["GET"] * 19
+    with pytest.raises(ValueError, match="release_denied"):
+        read_nov30_h3_target_custody(
+            target, prebind_sha256=pin, expected_sha256=seal[0], now=release - timedelta(seconds=1)
+        )
+    custody = read_nov30_h3_target_custody(
+        target, prebind_sha256=pin, expected_sha256=seal[0], now=release
+    )
+    assert (
+        hashlib.sha256(produced.capture_state_path.read_bytes()).hexdigest()
+        == custody.capture_state_sha256
+    )
 
 
 @pytest.mark.parametrize(
