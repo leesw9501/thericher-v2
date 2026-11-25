@@ -31,6 +31,12 @@ execution path. The model is a proposal source, not a separate bank writer.
    empty. Pin and call these components from a named installer, owner provider
    and launcher. Qualify the actual registered native ACL, instance and PID
    path before effects. A diagnostic or claim is not financial admission.
+   Windows fresh inert disabled registration reproduced the two XML surfaces
+   differing by nine leaf paths. Both retained Source and Description and passed
+   the shared API/metadata guard. Observed ACL7 text differs from registration
+   SDDL. Bind separate expected native XML surfaces per stage and independently
+   pin ACL7; do not drop fields or adopt observed ACLs as expectations. The
+   exact inert fixture was removed and its absence verified; never enabled.
 2. Reuse existing native Paper risk, reconciliation and single writer. Before
    changing definitions or running a new opportunity, positively resolve the
    relevant original owner and select a fresh exact window. Keep the original
@@ -50,8 +56,11 @@ execution path. The model is a proposal source, not a separate bank writer.
    window with one client and no retries. Native mocked-wire coverage passed.
    The tracked H123 handoff binds the closed capture-state digest and exact
    input files to the current date/source, then returns verified-buffer arrays.
-   Bind the fresh named owner and the forward-to-point publisher/reader before
-   actual acquisition and sealing. An input READY is not a model point.
+   `data/kis_paper_h3_producer.py` now binds the Dec3 capture and H123 handoff;
+   `models/h3_shadow_point.py` binds the Dec4 forward and readback to the fixed
+   checkpoint and window. One invented native CPU forward matched the retained
+   18-row weights codec. Pin the fresh named producers and execution point
+   consumer; neither an input READY nor the synthetic point is order authority.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.

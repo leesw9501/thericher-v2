@@ -8,6 +8,18 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: dated Dec3 capture-to-H123 producer and Dec4 one-forward shadow
+publisher/reader are tracked. An invented input passed the pinned LSTM CPU
+forward and exact retained 18-row weight encoding. No new fit, real market
+input or Paper point. Native TASK_VALIDATE_ONLY accepted an inert future
+definition and the invented name remained absent. Historical R8 read-only
+COM inspection showed two native XML surfaces differ structurally. Confirmed
+on one fresh, inert disabled fixture: nine leaf-path differences, both Source
+and Description exact, shared XML/API guard passed, zero instances, ACL7 text
+not equal to input SDDL. No enable/run. Removed only that exact fixture and
+verified absence. Named executable runtimes still pending. Use independently
+pinned native surface/ACL expectations, not runtime normalization by guess.
+
 Follow-on: capture closure and exact H123 input files are joined by a last
 READY record; the reader checks the pinned source/date/digest and validates
 the same byte buffers used for model inputs. Full invented host proof passed

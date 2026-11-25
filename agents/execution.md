@@ -26,6 +26,14 @@ mocked attempts refuse any rerun after partial create/enable/readback failure.
 The local unregistered COM probe confirmed native absent-name classification
 after handling `FileNotFoundException` with exact 0x80070002. Named installer
 caller, owner runtime, and actual native ACL/instance/PID proofs remain pending.
+Read-only historical R8 showed exported and definition XML are not structurally
+identical. An inert Windows validate-only call passed and registered nothing.
+One fresh inert disabled `0x3A` fixture reproduced nine XML leaf-path
+differences; both surfaces retained Source/Description and passed the shared
+XML/API guard, zero instances. ACL7 text differed from the registration SDDL.
+Exact fixture removed with absence readback. No enable/start or broker action.
+Next: distinct native XML expectations by phase/stage and independent ACL7
+pins. Don't ignore missing Source or unmatched native fields.
 
 ## Actual Current Deployment
 

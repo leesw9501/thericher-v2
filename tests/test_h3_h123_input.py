@@ -13,6 +13,7 @@ from thericher_v2.data.kis_paper_h3_daily_panel import (
     H3DailyPanelPlan,
 )
 from thericher_v2.execution.kis_market_data import KisPaperDailyRawRow
+from thericher_v2.models import h3_shadow_point
 from thericher_v2.models.h3_h123_input import write_h3_h123_input
 from thericher_v2.models.h3_publisher_input import (
     H3InputBinding,
@@ -195,3 +196,52 @@ def test_publisher_expiry_before_rename_does_not_publish(publisher):
     assert not (root / "READY.json").exists()
     with pytest.raises(ValueError, match="unreadable"):
         read_publisher(root, state, binding, "2" * 64)
+
+
+def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
+    root, state, binding, publish = publisher
+    ready = publish()
+    output = root.parent / "point"
+    forwards = []
+
+    def forward(arrays, *_files, before_forward):
+        assert arrays["x"].shape == (17, 60, 12)
+        before_forward()
+        forwards.append(1)
+        return np.array([0.5, 0.0, -0.5] + [0] * 14, np.float64)
+
+    def validate(arrays, header, **pins):
+        assert list(arrays["key"]) == pins["expected_keys"]
+        assert header["source"] == pins["expected_source"]
+
+    monkeypatch.setattr(h3_shadow_point, "_frozen_lstm", forward)
+    options = dict(
+        input_root=root,
+        capture_state_path=state,
+        binding=binding,
+        ready_sha256=ready,
+        clock=lambda: binding.hard_stop.replace(minute=48),
+        validate_input=validate,
+        model_source=b"not used in fixture",
+        stats=b"",
+        weights=b"",
+    )
+    digest = h3_shadow_point.publish_dec4_h3_shadow_point(output, **options)
+    point = h3_shadow_point.read_dec4_h3_shadow_point(
+        output, binding=binding, ready_sha256=ready, point_sha256=digest
+    )
+    assert not point["financial_authority"] and point["synthetic"]
+    assert point["rows"][0]["weight"] == "0.02941176470588235"
+    assert point["rows"][1]["weight"] == point["rows"][2]["weight"] == "0"
+    assert point["rows"][-1]["route"] == "CASH"
+    with pytest.raises(FileExistsError):
+        h3_shadow_point.publish_dec4_h3_shadow_point(output, **options)
+    with pytest.raises(ValueError, match="readback_mismatch"):
+        h3_shadow_point.read_dec4_h3_shadow_point(
+            output, binding=binding, ready_sha256="4" * 64, point_sha256=digest
+        )
+    with pytest.raises(ValueError, match="clock_denied"):
+        h3_shadow_point.publish_dec4_h3_shadow_point(
+            root.parent / "late", **(options | {"clock": lambda: binding.decision_at})
+        )
+    assert forwards == [1]

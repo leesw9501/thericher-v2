@@ -7,6 +7,12 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Dec4 candidate: one invented CPU forward with the selected Source72 FIT
+affines, model class and checkpoint passed the new bound shadow point reader.
+Exact legacy 18-row proposal encoding matched. No real input or forward, no
+refit and no change to the frozen five-cohort study. Pair requires fresh owned
+capture and the new point consumer; do not retag Nov9.
+
 The H123 input reader now checks the current owned capture-state, READY and
 both input digests before validating the same buffers in memory. The original
 Source72 functions passed an invented host smoke. Separate five-date target
