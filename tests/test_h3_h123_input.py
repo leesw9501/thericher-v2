@@ -4,6 +4,7 @@ import runpy
 from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
@@ -27,9 +28,9 @@ from thericher_v2.models.h3_publisher_input import (
     read_h3_publisher_input,
     write_h3_publisher_input,
 )
-from thericher_v2.ops import h3_dec4_paper_input
+from thericher_v2.ops import h3_dec4_paper_input, h3_dec4_point_owner
 from thericher_v2.ops.h3_dec4_paper_input import DEC4_NET25_PROFILE, prepare_dec4_paper_input
-from thericher_v2.ops.h3_dec4_retained_input import restore_dec4_h3_input, retain_dec4_h3_input
+from thericher_v2.ops.h3_dec4_retained_input import restore_dec4_h3_input
 from thericher_v2.ops.h3_dec4_run import Dec4H3Run
 from thericher_v2.research.model_paper_weights import load_model_paper_weights_input
 
@@ -267,14 +268,119 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     assert restored.metadata.source_available_at == binding.hard_stop.replace(minute=35)
     assert restored.exit_session.open_ts == datetime(2026, 12, 9, 14, 30, tzinfo=UTC)
     assert [target.proposal.symbol for target in restored.targets] == ["JPM"]
-    retained = retain_dec4_h3_input(
-        root.parent / "retained-input",
-        encoded.payload,
-        source_sha256=run.data_source_sha256,
-        point_sha256=digest,
-        policy_ref=encoded.policy_ref,
-        synthetic=encoded.synthetic,
+    owner = h3_dec4_point_owner
+    monkeypatch.setattr(owner, "DATA_SOURCE_SHA256", SOURCE)
+    point_source = h3_dec4_paper_input._POINT_OWNER_SOURCE
+    (root.parent / "owner").mkdir()
+    handoff = {
+        "attempt_sha256": (
+            root.parent / "POINT-ATTEMPT.json",
+            dict(
+                schema="H3_DEC4_POINT_ATTEMPT_V1",
+                source_sha256=point_source,
+                started_at=owner.OPENS.isoformat(),
+            ),
+        ),
+        "data_attempt_sha256": (root.parent / "owner/ATTEMPT.json", {"fixture": True}),
+    }
+    refs = {}
+    for key, (path, record) in handoff.items():
+        raw = owner._json(record)
+        path.write_bytes(raw)
+        refs[key] = owner._sha(raw)
+    data_done = owner._json(
+        dict(
+            schema="H3_DEC3_OWNER_CLOSED_V1",
+            source_sha256=SOURCE,
+            attempt_sha256=refs["data_attempt_sha256"],
+            ready_sha256=ready,
+            closed_at=owner.OPENS.replace(minute=44).isoformat(),
+            native_start="win-filetime:1",
+            target_status="pin_failed",
+            target_custody_sha256=None,
+        )
     )
+    (root.parent / "OWNER-CLOSED.json").write_bytes(data_done)
+    completion = dict(
+        schema="H3_DEC4_POINT_OWNER_CLOSED_V1",
+        source_sha256=point_source,
+        source72_sha256=owner.SOURCE72_SHA256,
+        data_source_sha256=SOURCE,
+        data_owner_sha256=owner._sha(data_done),
+        ready_sha256=ready,
+        data_ready_sha256=owner._sha(run._receipt(ready)),
+        point_sha256=digest,
+        closed_at=owner.OPENS.replace(minute=50).isoformat(),
+        financial_authority=False,
+        **refs,
+    )
+    closure = output / "OWNER-CLOSED.json"
+    closure_raw = owner._json(completion)
+    path = root.parent / "retained-input"
+    params = dict(
+        point_owner_sha256=owner._sha(closure_raw),
+        prove_point_closed=lambda pin: pin == owner._sha(closure_raw),
+        retained_path=path,
+        source_sha256=run.data_source_sha256,
+        policy_ref=encoded.policy_ref,
+        adapter_ref=pins["adapter_ref"],
+        calendar_ref=pins["calendar_ref"],
+        fixture_now=DECISION,
+    )
+    retain = h3_dec4_paper_input.retain_completed_dec4_paper_input
+    with pytest.raises(FileNotFoundError):
+        retain(run, **params)
+    closure.write_bytes(closure_raw)
+    with pytest.raises(ValueError, match="closure_unknown"):
+        retain(run, **(params | {"prove_point_closed": lambda _pin: False}))
+    with pytest.raises(ValueError, match="source_member_digest"):
+        retain(
+            run,
+            **(params | {"point_owner_sha256": "0" * 64, "prove_point_closed": lambda _pin: True}),
+        )
+    pending = output / "OWNER-CLOSED.pending"
+    pending.touch()
+    with pytest.raises(FileExistsError):
+        retain(run, **params)
+    pending.unlink()
+    late = owner._json(completion | {"closed_at": owner.HARD_STOP.isoformat()})
+    closure.write_bytes(late)
+    with pytest.raises(ValueError, match="point_clocks"):
+        retain(
+            run,
+            **(
+                params
+                | {"point_owner_sha256": owner._sha(late), "prove_point_closed": lambda _pin: True}
+            ),
+        )
+    closure.write_bytes(closure_raw)
+    assert not path.exists()
+
+    def forbid(*_args):
+        pytest.fail("wrong-phase callback invoked")
+
+    phase_input = h3_dec4_paper_input.Dec4BankPhaseInput(
+        run=run,
+        closed_point_pin=lambda: params["point_owner_sha256"],
+        prove_point_closed=params["prove_point_closed"],
+        original_retained=forbid,
+        fixture_now=DECISION,
+    )
+    ready_entry = SimpleNamespace(
+        plan=SimpleNamespace(phase="entry", source_sha256=run.data_source_sha256),
+        source={
+            "retained_input_path": str(path),
+            "execution_policy_ref": encoded.policy_ref,
+            "paper_input_adapter_ref": params["adapter_ref"],
+            "paper_input_calendar_ref": params["calendar_ref"],
+        },
+    )
+    with pytest.raises(ValueError, match="phase_mismatch"):
+        phase_input(ready_entry, "exit")
+    retained = phase_input(ready_entry, "entry")
+    assert retained.payload_sha256 == encoded.sha256
+    with pytest.raises(FileExistsError):
+        retain(run, **params)
     with pytest.raises(ValueError, match="fixture_mode_mismatch"):
         restore_dec4_h3_input(retained)
 
@@ -332,4 +438,11 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
         )
     assert forwards == [1]
     (output / "POINT.json").unlink()
-    assert restore_dec4_h3_input(retained, synthetic_fixture=True) == restored
+    exit_input = replace(
+        phase_input,
+        closed_point_pin=forbid,
+        prove_point_closed=forbid,
+        original_retained=lambda: retained,
+    )
+    ready_exit = SimpleNamespace(plan=SimpleNamespace(phase="exit"))
+    assert restore_dec4_h3_input(exit_input(ready_exit, "exit"), synthetic_fixture=True) == restored

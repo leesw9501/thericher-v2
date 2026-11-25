@@ -5,6 +5,13 @@ Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 
+Nov26: sealed point to native entry input and retained-reference-only exit
+callbacks passed on invented data. No scheduled caller deployed. A real
+no-order hidden task fixture found `GetInstances(0)` can return zero while
+Running; use exact path matching over hidden-inclusive enumeration and
+cross-check the task state before taking action. Direct base pythonw
+instance/PID/birth matched only that launch shape (see orchestration.md).
+
 Current: Nov9 owner proof failed before the financial marker (terminal and
 child closure retained); Nov12 exit never ran while host was off. Installed
 and runtime RegistrationInfo differ; native canonicalizer confirmed both

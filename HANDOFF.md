@@ -30,6 +30,15 @@ targets or financial authority. No actual point or forward yet; Paper pair
 installation remains separate. Claude conditional verdict: same root,
 `CLAUDE-VERDICT.json`.
 
+The tracked bank phase input callback now checks exact point completion,
+linked Dec3 closure/READY/attempt bytes and the dated source before retaining
+the NET25 proposal. On exit it uses only the exact previously retained
+reference. The callback does not supply Scheduler/financial admission or
+replace the original observer, bank, or pending-request gates. The
+operational caller and independently retained closure still need wiring.
+Claude categorical review:
+A/research/h3-dec4-lstm-point-20261204-v1/PAPER-INTAKE-CLAUDE-VERDICT.json.
+
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.
 The wire filter refuses order endpoints, permits only qualified Paper

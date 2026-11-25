@@ -10,10 +10,15 @@ financial effect yet. Recovery handoff and first-slot target binding ran in
 parallel. Next priority is the normal-path named Paper launch on invented
 state using the existing protected pair, not waiting on the qualified input
 or adding another scheduler for recovery verification.
-The separate inert running-instance topology probe was inconclusive and
-its exact fixture is gone. Do not equate Scheduler EnginePID with the
-action PID; instrument the next fixture's actual instance and process
-births, and retain a categorical first-failure stage before cleanup.
+The native inert hidden-instance fixture exposed a false zero:
+`GetInstances(0)` returned none during Running while
+`GetRunningTasks(1)` identified the exact instance. For the verified direct
+base pythonw launch only, EnginePID matched the actual no-console action.
+Both fixtures and scratch are absent. Exact synthetic source:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/test_h3_scheduler_instance_fixture.ps1
+SHA256 7d77b02203b48c3e388fdd1c245af11631a52883b06b0fb40ce40f9f12f2aa70.
+Correct production readback to use hidden-inclusive exact path and state;
+do not treat this topology as a financial effect or generic PID guarantee.
 
 Nov26 throughput review: point ownership and reconciliation guest work ran
 in parallel; one focused verification covers their integration with native

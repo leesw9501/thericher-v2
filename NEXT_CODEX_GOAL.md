@@ -12,6 +12,21 @@ and observer checks. Exercise that exact launch path on invented state.
 Keep abort reconciliation as a distinct path for its original request;
 do not wait for a market session or use a successful recovery fixture as
 normal-path admission. The credential-free point task is already installed.
+The bank phase adapter now validates the complete point-owner handoff and
+retains the exact native proposal once. Exit restores only the original entry
+reference. Still bind the real caller, whose independent point closure and
+original exit reference cannot be supplied by the point file itself.
+Fix the verified hidden-instance false zero before wiring: on this host
+`GetInstances(0)` missed a running hidden task, while exact path filtering
+of `GetRunningTasks(1)` found it. Use the measured direct base interpreter
+shape and verify actual PID/birth/source/definition together at runtime.
+See orchestration.md for the exact inert fixture source and claim boundary.
+The already installed point emits its content receipt before process exit.
+Bind a qualified post-join proof before the opportunity (prefer one existing
+point owner with a supervised child over a second observer task). Do not
+self-pin the receipt or infer that its direct action finished from a later
+empty instance list. An original unrun task may be migrated only after
+positive exact owner closure, with no duplicate window or lost input seal.
 
 ## First Work
 

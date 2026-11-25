@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -17,12 +18,40 @@ from thericher_v2.models.h3_shadow_point import (
     WEIGHTS_SHA,
     read_dec4_h3_shadow_point,
 )
+from thericher_v2.ops import h3_dec4_point_owner as owner
+from thericher_v2.ops.h3_dec4_retained_input import Dec4H3RetainedRef, retain_dec4_h3_input
 from thericher_v2.ops.h3_dec4_run import Dec4H3Run
+from thericher_v2.ops.paper_startup import Phase
 from thericher_v2.research import model_paper_weights as weights
 
 DEC4_NET25_PROFILE = weights.MODEL_PAPER_WEIGHTS_US_CASH_NET25_OPEN_ELAPSED3_PROFILE
 _FEATURE_CLOSE = datetime(2026, 12, 3, 21, tzinfo=UTC)
 _VALID_UNTIL = datetime(2026, 12, 4, 14, 35, tzinfo=UTC)
+_POINT_OWNER_SOURCE = "62fced2058e405f286e10de4e138d39eabb2d9fba6b33cb2baa91361171a7cdb"
+_OWNER_KEYS = {
+    "schema",
+    "source_sha256",
+    "source72_sha256",
+    "data_source_sha256",
+    "data_attempt_sha256",
+    "data_owner_sha256",
+    "ready_sha256",
+    "data_ready_sha256",
+    "attempt_sha256",
+    "point_sha256",
+    "closed_at",
+    "financial_authority",
+}
+_DATA_OWNER_KEYS = {
+    "schema",
+    "source_sha256",
+    "attempt_sha256",
+    "native_start",
+    "closed_at",
+    "ready_sha256",
+    "target_status",
+    "target_custody_sha256",
+}
 
 
 @dataclass(frozen=True)
@@ -135,3 +164,144 @@ def prepare_dec4_paper_input(
     if fixture_now is None and not DEC4_BINDING_CLOCK <= datetime.now(UTC) < _VALID_UNTIL:
         raise ValueError("h3_native_point_outside_window")
     return Dec4PaperInput(payload, digest, policy_ref, run.synthetic)
+
+
+def retain_completed_dec4_paper_input(
+    run: Dec4H3Run,
+    *,
+    point_owner_sha256: str,
+    prove_point_closed: Callable[[str], bool],
+    retained_path: Path,
+    source_sha256: str,
+    policy_ref: str,
+    adapter_ref: str,
+    calendar_ref: str,
+    fixture_now: datetime | None = None,
+) -> Dec4H3RetainedRef:
+    """Prepare an entry only after independently joined exact point publication.
+
+    The bank-owned caller supplies the independently recorded closure digest
+    and the probe; reading this file and echoing its digest is not that proof.
+    Exit restores the returned reference and never calls this entry path.
+    """
+    if (
+        run.synthetic is not (fixture_now is not None)
+        or not owner._digest(point_owner_sha256)
+        or run.data_source_sha256 != owner.DATA_SOURCE_SHA256
+    ):
+        raise ValueError("h3_entry_point_binding")
+    if not run.synthetic:
+        data_root = owner._DATA / "run"
+        if (run.market_root, run.artifact_root, run.input_root, run.point_root) != (
+            owner._MARKET,
+            data_root / "capture",
+            data_root / "input",
+            data_root / "point",
+        ):
+            raise ValueError("h3_entry_point_binding")
+
+    def read_completion():
+        now = datetime.now(UTC) if fixture_now is None else fixture_now
+        if not owner._is_utc(now) or not DEC4_BINDING_CLOCK <= now < _VALID_UNTIL:
+            raise ValueError("h3_native_point_outside_window")
+        if prove_point_closed(point_owner_sha256) is not True:
+            raise ValueError("h3_entry_point_closure_unknown")
+        for name in ("OWNER-CLOSED.pending", "POINT.pending"):
+            owner._absent(run.point_root / name)
+        root = run.point_root.parent
+        raw = owner._pinned(run.point_root / "OWNER-CLOSED.json", point_owner_sha256, 16_384)
+        done = owner._record(raw, _OWNER_KEYS)
+        if (
+            done["schema"] != "H3_DEC4_POINT_OWNER_CLOSED_V1"
+            or done["source_sha256"] != _POINT_OWNER_SOURCE
+            or done["source72_sha256"] != owner.SOURCE72_SHA256
+            or done["data_source_sha256"] != run.data_source_sha256
+            or done["financial_authority"] is not False
+        ):
+            raise ValueError("h3_entry_point_binding")
+        locations = {
+            "attempt_sha256": root / "POINT-ATTEMPT.json",
+            "data_attempt_sha256": root / "owner/ATTEMPT.json",
+            "data_owner_sha256": root / "OWNER-CLOSED.json",
+            "ready_sha256": run.input_root / "READY.json",
+            "data_ready_sha256": run.input_root / "DATA-READY.json",
+            "point_sha256": run.point_root / "POINT.json",
+        }
+        if any(not owner._digest(done[key]) for key in locations):
+            raise ValueError("h3_entry_point_binding")
+        linked = {key: owner._pinned(path, done[key], 16_384) for key, path in locations.items()}
+        attempt = owner._record(linked["attempt_sha256"], {"schema", "source_sha256", "started_at"})
+        data = owner._record(linked["data_owner_sha256"], _DATA_OWNER_KEYS)
+        if (
+            attempt["schema"] != "H3_DEC4_POINT_ATTEMPT_V1"
+            or attempt["source_sha256"] != done["source_sha256"]
+            or data["schema"] != "H3_DEC3_OWNER_CLOSED_V1"
+            or data["source_sha256"] != done["data_source_sha256"]
+            or data["attempt_sha256"] != done["data_attempt_sha256"]
+            or data["ready_sha256"] != done["ready_sha256"]
+        ):
+            raise ValueError("h3_entry_point_binding")
+        started = owner._stamp(attempt["started_at"])
+        closed = owner._stamp(done["closed_at"])
+        observed = owner._stamp(json.loads(linked["point_sha256"])["observed_at"])
+        data_closed = owner._stamp(data["closed_at"])
+        if (
+            not owner.OPENS <= started < owner.LAST_START
+            or not started <= observed <= closed < owner.HARD_STOP <= now
+            or not owner.CAPTURE_OPENS_UTC <= data_closed < owner.INPUT_HARD_STOP_UTC
+        ):
+            raise ValueError("h3_entry_point_clocks")
+        return done
+
+    done = read_completion()
+    result = prepare_dec4_paper_input(
+        run,
+        ready_sha256=done["ready_sha256"],
+        point_sha256=done["point_sha256"],
+        policy_ref=policy_ref,
+        adapter_ref=adapter_ref,
+        calendar_ref=calendar_ref,
+        fixture_now=fixture_now,
+    )
+    if read_completion() != done:
+        raise ValueError("h3_entry_point_changed")
+    return retain_dec4_h3_input(
+        retained_path,
+        result.payload,
+        source_sha256=source_sha256,
+        point_sha256=done["point_sha256"],
+        policy_ref=policy_ref,
+        synthetic=run.synthetic,
+    )
+
+
+@dataclass(frozen=True)
+class Dec4BankPhaseInput:
+    """Phase input callback for the existing single-bank coordinator."""
+
+    run: Dec4H3Run
+    closed_point_pin: Callable[[], str]
+    prove_point_closed: Callable[[str], bool]
+    original_retained: Callable[[], Dec4H3RetainedRef]
+    fixture_now: datetime | None = None
+
+    def __call__(self, ready, phase: Phase) -> Dec4H3RetainedRef:
+        if ready.plan.phase != phase:
+            raise ValueError("h3_entry_phase_mismatch")
+        if phase == "exit":
+            # BankLeg independently checks source/path/policy and restores
+            # the exact bytes; point and new target callbacks are never used.
+            return self.original_retained()
+        if phase != "entry":
+            raise ValueError("h3_entry_phase_mismatch")
+        return retain_completed_dec4_paper_input(
+            self.run,
+            point_owner_sha256=self.closed_point_pin(),
+            prove_point_closed=self.prove_point_closed,
+            retained_path=Path(ready.source["retained_input_path"]),
+            source_sha256=ready.plan.source_sha256,
+            policy_ref=ready.source["execution_policy_ref"],
+            adapter_ref=ready.source["paper_input_adapter_ref"],
+            calendar_ref=ready.source["paper_input_calendar_ref"],
+            fixture_now=self.fixture_now,
+        )
