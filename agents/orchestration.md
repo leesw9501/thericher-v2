@@ -5,6 +5,16 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: Data-to-point is installed for its exact future window; no point or
+financial effect yet. Recovery handoff and first-slot target binding ran in
+parallel. Next priority is the normal-path named Paper launch on invented
+state using the existing protected pair, not waiting on the qualified input
+or adding another scheduler for recovery verification.
+The separate inert running-instance topology probe was inconclusive and
+its exact fixture is gone. Do not equate Scheduler EnginePID with the
+action PID; instrument the next fixture's actual instance and process
+births, and retain a categorical first-failure stage before cleanup.
+
 Nov26 throughput review: point ownership and reconciliation guest work ran
 in parallel; one focused verification covers their integration with native
 proof readback and the bank finalizer. Next, wire the quiet point launcher

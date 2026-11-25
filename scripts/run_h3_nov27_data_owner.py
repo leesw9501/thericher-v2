@@ -1,4 +1,4 @@
-"""Quiet H3 one-shots: Nov27 market data and the separate Nov30 forecast."""
+"""Quiet finite H3 capture and credential-free forecast owners."""
 
 import argparse
 import hashlib
@@ -28,6 +28,10 @@ DEC3_OPENS = datetime(2026, 12, 3, 21, 30, tzinfo=UTC)
 DEC3_LAST_START = datetime(2026, 12, 3, 21, 31, tzinfo=UTC)
 DEC3_CAPTURE_END = datetime(2026, 12, 3, 21, 40, tzinfo=UTC)
 DEC3_HARD_STOP = datetime(2026, 12, 3, 21, 45, tzinfo=UTC)
+POINT_NAME = "h3-dec4-lstm-point-20261204-v1"
+POINT_SOURCE = Path(f"D:/thericher-v2/model-artifacts/research/{POINT_NAME}/source")
+POINT_OPENS = datetime(2026, 12, 3, 21, 47, tzinfo=UTC)
+POINT_LAST_START = datetime(2026, 12, 3, 21, 52, tzinfo=UTC)
 MARKET = Path(f"D:/market_data/us_equities/kis_paper_private/{RUN_NAME}")
 DOTENV = Path("C:/Users/Public/Documents/thericher-v2/.env")
 VENV = DOTENV.parent / ".venv"
@@ -47,7 +51,7 @@ def _plain(path):
     return not (getattr(info, "st_file_attributes", 0) & 0x400) and not stat.S_ISLNK(info.st_mode)
 
 
-def verify_source(root, pin, *, forecast=False, dec3=False):
+def verify_source(root, pin, *, forecast=False, dec3=False, point=False):
     """Authenticate the complete isolated import tree before importing project code."""
     if not root.is_absolute() or root.resolve(strict=True) != root:
         raise ValueError("nov27_source_root")
@@ -65,13 +69,16 @@ def verify_source(root, pin, *, forecast=False, dec3=False):
         manifest.keys() != {"schema", "run", "tree", "files"}
         or manifest["schema"]
         != (
-            "H3_DEC3_DATA_SOURCE_V1"
+            "H3_DEC4_POINT_SOURCE_V1"
+            if point
+            else "H3_DEC3_DATA_SOURCE_V1"
             if dec3
             else "H3_NOV30_FORECAST_SOURCE_V1"
             if forecast
             else "H3_NOV27_DATA_SOURCE_V1"
         )
-        or manifest["run"] != (DEC3_NAME if dec3 else FORECAST_NAME if forecast else RUN_NAME)
+        or manifest["run"]
+        != (POINT_NAME if point else DEC3_NAME if dec3 else FORECAST_NAME if forecast else RUN_NAME)
         or re.fullmatch(r"[0-9a-f]{40}", manifest["tree"]) is None
         or type(files) is not dict
         or not all(files.get(p) == digest for p, digest in PINNED_CODE.items())
@@ -341,17 +348,77 @@ def run_dec3(source, source_pin, *, prebound_at, target_digest, clock):
     )
 
 
+def _closed_sync_data(pid, birth, digest, *, probe):
+    # The frozen Data program executes the capture synchronously. Use the PID
+    # in its receipt, not the Scheduler action PID (which may be a venv stub).
+    # The point core separately checks the bound output bytes; this is not OS
+    # proof of the launch's origin or absence of every possible host writer.
+    if (
+        type(pid) is not int
+        or pid <= 0
+        or not re.fullmatch(r"win-filetime:[1-9][0-9]{0,19}", birth)
+        or not re.fullmatch(r"[a-f0-9]{64}", digest)
+    ):
+        return False
+    receipt = DEC3_SOURCE.parent / "run" / "OWNER-CLOSED.json"
+    if not _plain(receipt) or receipt.stat().st_size > 16_384:
+        return False
+    raw = receipt.read_bytes()
+    if _sha(raw) != digest:
+        return False
+    observed = probe(pid)
+    # Be conservative about PID reuse; denied probes raise, never return None.
+    return observed is None and _plain(receipt) and receipt.read_bytes() == raw
+
+
+def run_point_owner(source, source_pin, *, clock):
+    if not POINT_OPENS <= clock() < POINT_LAST_START:
+        raise ValueError("dec4_point_owner_clock")
+    verify_source(source, source_pin, point=True)
+    sys.path.insert(0, str(source / "src"))
+    from thericher_v2.execution.paper_peer_visit import process_start
+    from thericher_v2.ops.h3_dec4_point_owner import DATA_SOURCE_SHA256, run_dec4_point_owner
+
+    # Verify the complete original Data source, not merely the closure receipt.
+    verify_source(DEC3_SOURCE, DATA_SOURCE_SHA256, dec3=True)
+    born = process_start(os.getpid())
+    if born is None or not born.startswith("win-filetime:"):
+        raise ValueError("dec4_point_owner_process")
+
+    def ready():
+        return (
+            process_start(os.getpid()) == born
+            and _sha((source / "SOURCE.json").read_bytes()) == source_pin
+        )
+
+    run_dec4_point_owner(
+        point_source_sha256=source_pin,
+        owner_ready=ready,
+        data_owner_closed=lambda pid, birth, digest: _closed_sync_data(
+            pid, birth, digest, probe=process_start
+        ),
+        clock=clock,
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-sha256", required=True)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--nov30-forecast", action="store_true")
     modes.add_argument("--dec3-capture", action="store_true")
+    modes.add_argument("--dec4-point", action="store_true")
     parser.add_argument("--target-prebind-sha256")
     parser.add_argument("--prebound-at")
     args = parser.parse_args()
     source = (
-        DEC3_SOURCE if args.dec3_capture else FORECAST_SOURCE if args.nov30_forecast else SOURCE
+        POINT_SOURCE
+        if args.dec4_point
+        else DEC3_SOURCE
+        if args.dec3_capture
+        else FORECAST_SOURCE
+        if args.nov30_forecast
+        else SOURCE
     )
     if (
         Path(__file__).resolve() != (source / "scripts/run_h3_nov27_data_owner.py")
@@ -361,7 +428,9 @@ def main():
         return 20
     sys.path.append(str(VENV / "Lib/site-packages"))
     try:
-        if args.dec3_capture:
+        if args.dec4_point:
+            run_point_owner(source, args.source_sha256, clock=lambda: datetime.now(UTC))
+        elif args.dec3_capture:
             run_dec3(
                 source,
                 args.source_sha256,

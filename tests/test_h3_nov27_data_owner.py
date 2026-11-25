@@ -94,6 +94,48 @@ def test_dec3_is_a_distinct_once_only_window_and_prebind(tmp_path, monkeypatch):
     assert not base.exists()
 
 
+@pytest.mark.parametrize("offset", [-1, 300])
+def test_dec4_point_outside_clock_does_not_open_sources(tmp_path, monkeypatch, offset):
+    def forbidden(*_args, **_kwargs):
+        pytest.fail("outside clock must not reach point inputs")
+
+    monkeypatch.setattr(OWNER, "verify_source", forbidden)
+    now = OWNER.POINT_OPENS + timedelta(seconds=offset)
+    with pytest.raises(ValueError, match="^dec4_point_owner_clock$"):
+        OWNER.run_point_owner(tmp_path, "a" * 64, clock=lambda: now)
+
+
+def test_dec4_requires_exact_sync_receipt_and_positive_exit(tmp_path, monkeypatch):
+    monkeypatch.setattr(OWNER, "DEC3_SOURCE", tmp_path / "source")
+    path = tmp_path / "run" / "OWNER-CLOSED.json"
+    path.parent.mkdir()
+    raw = b"fixture: exact frozen writer closure"
+    path.write_bytes(raw)
+    birth = "win-filetime:1234"
+    pin = _digest(raw)
+    observed = []
+
+    def exited(pid):
+        observed.append(pid)
+        return None
+
+    def denied(_pid):
+        raise PermissionError("process state unavailable")
+
+    def changed(pid):
+        path.write_bytes(b"changed during probe")
+        return exited(pid)
+
+    assert OWNER._closed_sync_data(13, birth, pin, probe=exited)
+    assert observed == [13]
+    assert not OWNER._closed_sync_data(13, birth, pin, probe=lambda _pid: birth)
+    assert not OWNER._closed_sync_data(13, birth, pin, probe=lambda _pid: "win-filetime:456")
+    assert not OWNER._closed_sync_data(13, birth, "0" * 64, probe=denied)
+    with pytest.raises(PermissionError):
+        OWNER._closed_sync_data(13, birth, pin, probe=denied)
+    assert not OWNER._closed_sync_data(13, birth, pin, probe=changed)
+
+
 def test_owner_claim_precedes_scoped_loader_and_prevents_repeat(tmp_path, monkeypatch):
     root = tmp_path / "source"
     root.mkdir()

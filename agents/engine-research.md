@@ -9,9 +9,10 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72
-checkpoint. Focused invented-input checks passed; no new fit, actual forward
-or schedule. Next handoff is the quiet host launcher with positive Data
-closure and a bounded stop. This remains separate from the fixed-half study.
+checkpoint. The quiet credential-free owner is installed for Dec3 UTC21:47
+with an eight-minute limit, no current instance and no actual point. Its
+completion is conditional on the exact synchronous Data exit and bound
+input bytes. No new fit or forward. This is separate from the fixed-half study.
 
 Nov30 preparation: an invented Nov27 panel passed the exact pinned feature
 kernel, H123 parser and byte-verified READY reader. Both original model
@@ -25,6 +26,12 @@ closure and the checkpoint loader; a future inert Scheduler fixture passed.
 The actual owner is installed and Ready for Nov30 UTC14:12, no instance or
 attempt. Exact source in HANDOFF. The post-expiry target custody and block-end
 outcome read remain separate.
+
+First-slot block-end reader: invented Dec3 native pages and independent
+Nov30/Dec3 closure pins produced typed marks only. Block-end time, original
+capture identity and every native page are checked; no actual targets,
+forecasts, books or scores were opened by this path. Bind the readout host
+and remaining block slots without replacing missed observations.
 
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired

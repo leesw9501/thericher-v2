@@ -6,6 +6,7 @@ param(
     [switch]$Install,
     [switch]$Nov30Forecast,
     [switch]$Dec3Capture,
+    [switch]$Dec4Point,
     [ValidatePattern('\A[0-9a-f]{64}\z')]
     [string]$TargetPrebindSha256,
     [ValidatePattern('\A[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\+00:00\z')]
@@ -15,6 +16,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 if (($Nov30Forecast -and $Dec3Capture) -or
+    ($Dec4Point -and ($Nov30Forecast -or $Dec3Capture)) -or
     ($Dec3Capture -and (-not $TargetPrebindSha256 -or -not $PreboundAt)) -or
     (-not $Dec3Capture -and ($TargetPrebindSha256 -or $PreboundAt))) {
     throw 'H3_OWNER_PARAMETERS'
@@ -45,10 +47,20 @@ if ($Dec3Capture) {
     $contractSource = "TheRicher/H3-Dec3-Data/$SourceSha256"
     $description = 'TheRicher Dec3 MODP1 capture and separated target custody, no orders.'
 }
+if ($Dec4Point) {
+    $name = 'thericher-h3-dec4-lstm-point-20261204-v1'
+    $source = 'D:\thericher-v2\model-artifacts\research\h3-dec4-lstm-point-20261204-v1\source'
+    $start = [DateTimeOffset]'2026-12-03T21:47:00+00:00'
+    $contractSource = "TheRicher/H3-Dec4-Point/$SourceSha256"
+    $description = 'TheRicher Dec4 LSTM proposal, no credentials, targets or orders.'
+    # Even the application latest-start limit at 21:52 leaves eight minutes.
+    $limit = 'PT8M'
+}
 $launcher = Join-Path $source 'scripts\run_h3_nov27_data_owner.py'
 $arguments = '-I -S -B "{0}" --source-sha256 {1}' -f $launcher, $SourceSha256
 if ($Nov30Forecast) { $arguments += ' --nov30-forecast' }
 if ($Dec3Capture) { $arguments += " --dec3-capture --target-prebind-sha256 $TargetPrebindSha256 --prebound-at $PreboundAt" }
+if ($Dec4Point) { $arguments += ' --dec4-point' }
 $end = $start.AddMinutes(1)
 $installBy = $start.AddMinutes(-5)
 

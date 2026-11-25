@@ -52,6 +52,12 @@ Dec4/Dec9 Paper candidate, not installed: its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
 The external Source and separate target prebind are in HANDOFF. There is
 no run. Use `H3DailyPanelPlan(NET25_H3_AXIS)` for the US Dec3 as-of.
+The separate credential-free `thericher-h3-dec4-lstm-point-20261204-v1`
+is installed Ready for UTC21:47, with one trigger, no catch-up or demand
+start, and an eight-minute execution limit. Its pinned Source is in
+HANDOFF. Read exact `run/point/OWNER-CLOSED.json` under the Dec3 owner only
+after the exact point launcher closes; unsealed or missing is unknown.
+This is not Paper execution admission or OS Scheduler-origin proof.
 A host-side invented panel passed the pinned
 `prefix_features` and H123 `parse_input` with Dec4 keys, no model load.
 Candidate UTC cutoffs: capture 21:30..<21:40 Dec3 with closure before 21:45;

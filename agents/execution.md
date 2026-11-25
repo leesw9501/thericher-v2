@@ -73,6 +73,10 @@ terminal retention and policy journal save). Its guest and operational
 finalizer now exercise exact proof readback and interruption recovery on
 invented custody. Wire the production supervisor, capped transport, durable
 prepared proof and independent guest join before any original claim closure.
+The tracked handoff verifies joined evidence independently pinned by that
+supervisor, publishes the exact prepared proof, and calls the finalizer.
+The supervisor itself must still retain joined Job and daemon closure; a
+successful watchdog exit alone cannot provide this evidence.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,

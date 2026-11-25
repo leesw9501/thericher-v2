@@ -6,6 +6,13 @@
 attributable KIS Paper entry-to-exit lifecycle through a repeatable, tracked
 execution path. The model is a proposal source, not a separate bank writer.
 
+Next operational step: bind the named Dec4/Dec9 normal-path Paper launcher
+to the existing protected pair installer, capsule, and effect-time bank
+and observer checks. Exercise that exact launch path on invented state.
+Keep abort reconciliation as a distinct path for its original request;
+do not wait for a market session or use a successful recovery fixture as
+normal-path admission. The credential-free point task is already installed.
+
 ## First Work
 
 1. Nov9 R8 failed at scheduled-owner proof before the financial attempt marker.
@@ -103,8 +110,9 @@ execution path. The model is a proposal source, not a separate bank writer.
    recovered without wire in invented custody. Bind it to the production
    supervisor. The separate, tested guest binds the original physical receipt
    and request, and the finalizer requires exact durable native and guest
-   closure proof. Wire the actual transport, prepared-proof sink, and
-   supervisor join before operational use.
+   closure proof. The tracked host handoff consumes the exact joined visit
+   and prepared proof and calls the finalizer; wire the actual transport,
+   prepared-proof sink, and supervisor as evidence producers before use.
    The draft limit is two minutes; no actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
@@ -138,10 +146,13 @@ execution path. The model is a proposal source, not a separate bank writer.
    an invented one-capture run. The quiet Dec3 owner now prebinds an
    independent target digest and keeps target-local errors from invalidating
    unchanged feature input. It is installed and Ready for Dec3 21:30 UTC,
-   with no run. The Dec4 point core validates that exact source/attempt/
-   closure/ready chain and the frozen LSTM checkpoint. Bind its named quiet
-   launcher to positive Data owner closure and a hard deadline, and wire the
-   later original-page readout. No outcome access before block-end.
+   with no run. The separate credential-free Dec4 point owner is installed
+   for Dec3 21:47 UTC with an eight-minute limit. Its exact synchronous Data
+   closure and content checks are not Scheduler-origin proof. Accept no bare
+   point without exact completed launcher and matching retained closure;
+   the Nov30 first-slot original-page reader now projects typed marks on
+   invented input. Its block-end caller and remaining slots are not wired.
+   No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion

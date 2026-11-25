@@ -18,10 +18,17 @@ under A/data/h3-dec3-modp1-owner-20261203-v1. No run existed. It can
 produce Dec4 input and separate Nov30 target metadata, not a point or order.
 Earlier Nov27 and Nov30 task times/Ready state were independently unchanged.
 
-The tracked Dec4 point owner now checks the exact installed Dec3 source,
-attempt, closure and ready chain and the unchanged LSTM checkpoint before
-allowing one forward. It still needs a named launcher to prove host closure
-and enforce its deadline. No point owner was installed and no forward ran.
+The separate Dec4 point task `thericher-h3-dec4-lstm-point-20261204-v1`
+is installed, Ready, zero instances, next Dec3 21:47 UTC (Dec4 06:47 KST).
+Source `62fced2058e405f286e10de4e138d39eabb2d9fba6b33cb2baa91361171a7cdb`
+under A/research/h3-dec4-lstm-point-20261204-v1. The native fixture passed
+registration/readback/cleanup; the pinned executable denied early launch
+without a run. It uses the exact synchronous Dec3 program, receipt-bound
+original PID exit and input digests under an assumed-honest host, not proof
+of Scheduler origin (Operational logging disabled). It has no credentials,
+targets or financial authority. No actual point or forward yet; Paper pair
+installation remains separate. Claude conditional verdict: same root,
+`CLAUDE-VERDICT.json`.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.
@@ -33,8 +40,16 @@ The recovery guest now binds the exact original pending request and physical
 receipt under a separate bounded window. It projects terminal proof only
 after a durable prepared-proof callback and native readback. The finalizer
 requires the exact proof, independently joined guest closure, and original
-claim before closing the operational lock. The production supervisor,
-transport and durable callback are not wired; no original lock was cleared.
+claim before closing the operational lock. The tracked host handoff verifies
+the retained proof and independently pinned Job/container closure, then
+publishes before finalizing under the bank gate. The actual supervisor still
+needs to produce that joined evidence and durable proof. No original lock
+was cleared.
+
+The fixed-half first-slot target reader can validate the exact Nov30/Dec3
+capture and forecast closure after Dec28 21:00 UTC. It projects typed marks
+from the original native pages, without scoring. Its host isolation, readout
+caller and other block slots are not deployed; no target opened.
 
 Follow-on: supervised abort recovery closed the exact acknowledged
 container in a native isolated Windows/Docker run while leaving the original
