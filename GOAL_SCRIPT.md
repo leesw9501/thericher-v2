@@ -1,21 +1,19 @@
-# Long Goal Script
+# TheRicher v2 Long Goal
 
-Repository policy holds details; this launcher dispatches work rather than
-duplicating those rules.
+This script starts one long-running goal. `NEXT_CODEX_GOAL.md` names the one
+current milestone; it is not the completion condition for the long goal.
 
 ```text
 /goal
 Working directory: C:\Users\Public\Documents\thericher-v2
 
-Run .\scripts\start_next_codex_task.ps1. Read NEXT_CODEX_GOAL.md, HANDOFF.md, AGENTS.md and the active boards in agents/README.md.
+Run .\scripts\start_next_codex_task.ps1. Read AGENTS.md, HANDOFF.md, NEXT_CODEX_GOAL.md, RUNBOOK.md and the active role boards. Act as Codex Orchestrator. Continue until TheRicher v2 has a repeatable private KIS Paper loop for US equities held intraday to a few sessions, exact entry/exit and restart reconciliation, and attributable costs and PnL. Keep iterating until a frozen strategy shows a reproducible, predeclared useful net edge against aligned simple baselines on independent unseen outcomes after accounting for costs, turnover and drawdown. Use measured Paper outcomes to check whether that case holds under execution. A failed evaluation changes the research direction, not the result. No guaranteed profits or live go-ahead from Paper results.
 
-Act as Codex Orchestrator: assign disjoint ready Data, Strategy Research, Engine Research and Execution packages in parallel; use Research Steward to coordinate GPU resources and temporary independent review when useful. This project has first GPU priority even during personal GPU use; co-run distinct ready frozen training jobs when measured headroom permits, without duplicate fits or killing apps. Prioritize a repeatable KIS Paper loop within the existing shared initial virtual-cash 10-percent allocation while research continues. A research result or lane-local missing input never becomes a company-wide permission gate.
+Prioritize closing the current owned Paper lifecycle. In parallel dispatch disjoint Data, Engine Research and Execution work. Use a separately named engineering baseline if needed for execution learning; don't gate Paper on research profitability or force a signal. Keep the existing shared initial virtual-cash 10% basis, pending identities/reservations and owed exits. Reuse completed fits and schedule distinct ready experiments on CPU/GPU under measured capacity. No dummy training or silent retry.
 
-Preserve exact requests, unknown outcomes, owned inventory, losses/reservations and the original aggregate budget. Never force a model signal, substitute an unknown order, read KIS_LIVE_* or enable real money. Private no-cost KIS Paper account/data/order/recovery/schedule work is already authorized.
+Prefer Claude CLI for bounded implementation, source research and independent review when it saves Codex usage. Give it only selected non-sensitive source and synthetic inputs; disable tools or narrowly isolate its tool access. Never give it credentials, private custody, raw broker or private evaluation data. Codex owns scope, integration, verification, Git and operational effects. If Claude is unavailable or its output fails verification, continue the ready package with Codex instead of waiting.
 
-At resume/handoff/failure/long dispatch inspect ready/owned/due and fix one reversible throughput bottleneck. Workers own cooldowns; continue another ready package instead of foreground waiting. Claude challenges material direction/recovery decisions but is not a standing approval gate.
+At resume and before long dispatch, check ready/owned/due work and remove one reversible bottleneck. Keep one writer for each mutable resource. Workers own cooldowns and market due times; continue any independent ready work. After each evidenced company milestone, verify under AGENTS.md, commit/push, update current boards and replace NEXT_CODEX_GOAL.md with exactly one next milestone. Do not mark a source test, install, due time or missing result as runtime completion.
 
-After actual bounded company completion, verify according to AGENTS.md, commit/push, update current boards and replace NEXT_CODEX_GOAL.md with ONE next material outcome, then continue. Source preparation or a due time alone is not completion. Preserve superseded unfinished work honestly. Do not create per-agent goals, report systems or dummy GPU training.
-
-Stop only for genuinely reserved operator authority: live/real money, paid commitments, unclear rights, public exposure, major runtime replacement or unresolved actual account risk. Data stays under D:\market_data and generated artifacts under D:\thericher-v2\model-artifacts. Keep secrets/private broker data out of output, Git and Claude.
+Private no-cost KIS Paper authority follows AGENTS.md. Never read KIS_LIVE_* or enable live behavior. Pause for genuine operator-only authority: live or real money, paid commitments, unclear rights, public exposure, major runtime replacement or unresolved actual account-risk decisions. Do not make a missing input, external retry, failed model or unavailable reviewer a company-wide hold. Keep market data under D:\market_data and generated artifacts under D:\thericher-v2\model-artifacts.
 ```

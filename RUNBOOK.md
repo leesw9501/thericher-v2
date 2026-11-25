@@ -42,6 +42,11 @@ the owner provider before full XML/API/ACL comparison. Use the same pinned
 phase plan through `launcher.pyw` -> `host.py` -> `scheduled.owner` and carry the
 proven owner object past preflight. The locked historical R8 and repair2 files
 are integration references, not candidates for an in-place edit or replay.
+The fresh-pair core uses an absent-only native create, disabled definitions,
+then full caller readback at each stage before enabling entry. Never rerun it
+after a partial or unknown write; find the exact registered definitions and
+retain the original install identity. The local COM probe created only an
+in-memory definition and queried an invented absent name, not a registered task.
 
 Dec4/Dec9 candidate, not installed: use `H3DailyPanelPlan(NET25_H3_AXIS)`
 for the US Dec3 as-of. A host-side invented panel passed the pinned
@@ -51,6 +56,10 @@ one existing-checkpoint forward 21:47..<21:52 with publication before 22:00;
 Dec4 point validity 14:25..<14:35. Rebind response identity, source,
 post-close clocks, readback and custody; do not reuse November receipts,
 enable catch-up, or use the host smoke as deployed-runtime proof.
+`capture_h3_daily_panel_once` is the reusable Data worker for this capture
+window. Its caller must prebind the exact task/roots, owner-ready probe and
+scoped Paper data configuration. It returns only a complete qualified panel,
+not a DATAREADY seal or an inference decision.
 
 Nov12 exit and Nov13 data were missed with the host off. Do not enable
 unbounded catch-up for entries; preserve original exits and allow only exact

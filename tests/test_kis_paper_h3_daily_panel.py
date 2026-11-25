@@ -4,11 +4,11 @@ import socket
 import urllib.request
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
-from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 import pytest
 
+from thericher_v2.data.kis_paper_h3_capture import capture_h3_daily_panel_once
 from thericher_v2.data.kis_paper_h3_daily_panel import (
     NET25_H3_AXIS,
     H3DailyPanelError,
@@ -91,7 +91,9 @@ def test_holiday_as_of_is_not_rolled_back():
         H3DailyPanelPlan(AXIS, date(2026, 11, 26))
 
 
-def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
+@pytest.mark.parametrize("wrong_identity", [False, True])
+def test_native_capture_parser_to_full_panel(wrong_identity, tmp_path, monkeypatch):
+    plan = H3DailyPanelPlan(NET25_H3_AXIS)
     tick = 0.0
     start = plan.as_of_close_utc + timedelta(minutes=10)
 
@@ -127,7 +129,7 @@ def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
             assert parts.path == market.KIS_PAPER_DAILY_PATH
             query = parse_qs(parts.query)
             axis_index = len(calls) - 2
-            symbol, venue = AXIS[axis_index]
+            symbol, venue = NET25_H3_AXIS[axis_index]
             assert query == {
                 "SYMB": [symbol],
                 "EXCD": [venue],
@@ -138,7 +140,11 @@ def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
             return Response(
                 {
                     "rt_cd": "0",
-                "output1": {"rsym": f"D{venue}{symbol}"},
+                    "output1": {
+                        "rsym": "DNASWRONG"
+                        if wrong_identity and axis_index == 2
+                        else f"D{venue}{symbol}"
+                    },
                     "output2": _wire_rows(plan, axis_index, full_page=axis_index % 2 == 0),
                 }
             )
@@ -151,11 +157,12 @@ def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
     monkeypatch.setattr(capture, "_MARKET_BASE", tmp_path / "market")
     monkeypatch.setattr(capture, "_ARTIFACT_BASE", tmp_path / "artifacts")
 
-    with capture.KisPaperDataCaptureSession(
-        queries=plan.queries,
+    options = dict(
+        plan=plan,
         market_root=tmp_path / "market/h3",
         artifact_root=tmp_path / "artifacts/h3",
-        limits=capture.CaptureLimits(max_get=19, max_retries=0, wall_seconds=120),
+        window_opens_utc=start,
+        window_closes_utc=start + timedelta(minutes=2),
         owner_ready=lambda: capture.CaptureReadiness(True),
         config_loader=lambda: market.KisPaperMarketDataConfig(
             app_key="synthetic-h3-key", app_secret="synthetic-h3-secret"
@@ -163,13 +170,16 @@ def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
         clock=clock,
         monotonic=lambda: tick,
         sleeper=sleep,
-    ) as session:
-        inputs = []
-        for query in plan.queries:
-            result = session.capture(query)
-            assert result.status == "ACCEPTED"
-            inputs.append((result, Path(result.native["path"]).read_bytes()))
-        panel = qualify_h3_daily_panel(plan, reversed(inputs))
+    )
+    if wrong_identity:
+        with pytest.raises(H3DailyPanelError, match="page_unavailable"):
+            capture_h3_daily_panel_once(**options)
+        assert calls == ["POST"] + ["GET"] * 3
+        return
+
+    panel = capture_h3_daily_panel_once(**options)
+    with pytest.raises(H3DailyPanelError, match="fresh_scope_required"):
+        capture_h3_daily_panel_once(**options)
 
     assert calls == ["POST"] + ["GET"] * 19
     assert panel.plan is plan
@@ -179,6 +189,24 @@ def test_native_capture_parser_to_full_panel(plan, tmp_path, monkeypatch):
     )
     assert tuple(row.clos for row in panel.rows[-1]) == tuple(str(11 + i) for i in range(19))
     assert panel.rows[0][0].as_document() == _wire_rows(plan, 0)[-1]
+
+
+def test_h3_worker_refuses_outside_window_before_touching_storage(tmp_path):
+    plan = H3DailyPanelPlan(NET25_H3_AXIS)
+    opens = plan.as_of_close_utc + timedelta(minutes=30)
+    closes = opens + timedelta(minutes=10)
+    with pytest.raises(H3DailyPanelError, match="outside_window"):
+        capture_h3_daily_panel_once(
+            plan=plan,
+            market_root=tmp_path / "market",
+            artifact_root=tmp_path / "artifacts",
+            window_opens_utc=opens,
+            window_closes_utc=closes,
+            clock=lambda: closes,
+            owner_ready=lambda: pytest.fail("outside window"),
+            config_loader=lambda: pytest.fail("outside window"),
+        )
+    assert not list(tmp_path.iterdir())
 
 
 @pytest.mark.parametrize(

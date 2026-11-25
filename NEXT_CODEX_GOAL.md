@@ -24,9 +24,11 @@ execution path. The model is a proposal source, not a separate bank writer.
    XML registration/readback and the pinned R8 Python provider/parser smoke
    pass, without actual Scheduler effects. `scripts/paper_native_task_definition.psm1`
    now binds construction and unmodified registered XML/API readback to the
-   same phase and stage. Pin and call these components from a fresh installer,
-   owner provider and launcher. Qualify the complete canonical XML/ACL/instance/PID
-   path before installation. A diagnostic or claim is not financial admission.
+   same phase and stage. The fresh-pair installer core creates both disabled,
+   requires readback before each enable, and refuses ambiguous retries.
+   Pin and call these components from a named installer, owner provider and
+   launcher. Qualify the complete canonical XML/ACL/instance/PID path before
+   installation. A diagnostic or claim is not financial admission.
 2. Reuse existing native Paper risk, reconciliation and single writer. Before
    changing definitions or running a new opportunity, positively resolve the
    relevant original owner and select a fresh exact window. Keep the original
@@ -42,8 +44,10 @@ execution path. The model is a proposal source, not a separate bank writer.
    synthetic; historical Nov6 full19 first-page coverage does not prove Dec3.
    Strict response identity is enabled in the H3 query plan and bound to capture
    keys. `models/h3_h123_input.py` writes the verified next-session parser input.
-   Wire both into a fresh, post-close owner and current publisher. Bind the real
-   custody/closure and point readback before actual acquisition and sealing.
+   `data/kis_paper_h3_capture.py` executes that plan once inside its post-close
+   window with one client and no retries. Native mocked-wire coverage passed.
+   Bind the fresh owner, custody/closure and publisher point readback before
+   actual acquisition and sealing.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.

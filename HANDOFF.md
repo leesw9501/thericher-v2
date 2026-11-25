@@ -1,12 +1,23 @@
 # TheRicher v2 Handoff
 
-Updated 2026-11-25. Earlier Nov7/9 deployment and research detail below is historical.
+Updated 2026-11-26. Earlier Nov7/9 deployment and research detail below is historical.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History/contracts/debits: Git8b1db436/99af01f4 and immutable external APIs.
 This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
+
+Nov26: desktop long goal is active, with one milestone in NEXT_CODEX_GOAL.
+GOAL_SCRIPT now specifies repeatable Paper execution and independent net-edge
+research, using scoped Claude CLI and parallel disjoint lanes. Claude supplied
+the first draft of the fresh H3 capture worker; parent corrected storage and
+custody assumptions and verified against the actual native capture parser.
+No real capture or order ran. Dec3 post-close owner and publisher still unbound.
+The future-pair installer core passed mocked partial-mutation refusal tests.
+The Windows in-memory definition and absent-name query found the real
+`FileNotFoundException` mapping for HRESULT 0x80070002; support it without
+weakening unknown-target refusal. No task registration or execution in the probe.
 
 Nov25: shared native task constructor/readback checks the same frozen phase
 and stage across registration XML and Scheduler API shape (mocked). Exact

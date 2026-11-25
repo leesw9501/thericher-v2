@@ -20,6 +20,12 @@ before effects. Claude `review_unavailable` (OAuth expired); no authority change
 and unmodified XML/API registration readback, mocked. Existing Nov9/12 tasks
 have no next run. Bind new installer/owner/launcher before installation; full
 canonical XML, ACL7, instance/PID/birth and deterministic risk remain in callers.
+Nov26: `paper_native_future_pair.psm1` implements disabled create/readback and
+exit-first enablement. Claude conditional challenge focused on ambiguous writes;
+mocked attempts refuse any rerun after partial create/enable/readback failure.
+The local unregistered COM probe confirmed native absent-name classification
+after handling `FileNotFoundException` with exact 0x80070002. Named installer
+caller, owner runtime, and actual native ACL/instance/PID proofs remain pending.
 
 ## Actual Current Deployment
 
