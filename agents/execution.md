@@ -27,6 +27,10 @@ physical Docker volume identity, exact mounts and loopback command. Redacted
 Docker projection matched the running web; its source is older than current
 Git. Qualify the selected image and actual phase profile before use. Nothing
 was restarted or admitted financially.
+Normal restore now rechecks the pinned daemon and exact old capsule/labels
+inside the existing bank gate. Native inert stopped/relabeled presence was
+refused; removal cleared the probe only. The actual independent restore
+owner and watchdog/Job closure still need to be bound.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

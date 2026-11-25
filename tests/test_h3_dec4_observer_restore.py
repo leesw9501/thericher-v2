@@ -293,6 +293,15 @@ def test_restores_exact_normal_owner_once_under_held_guard(restore_case):
     assert case.transport.switches == [False, True]
 
 
+def test_fixture_cannot_admit_a_native_daemon_probe(restore_case, tmp_path):
+    from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
+
+    profile = Dec4RestoreDaemon("1" * 64, "2" * 64, tmp_path)
+    with pytest.raises(pv.Denied, match="h3_observer_restore_scope"):
+        restore_case.restore(daemon=profile)
+    assert restore_case.transport.switches == [False]
+
+
 @pytest.mark.parametrize(
     ("actor", "start", "error"),
     [

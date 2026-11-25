@@ -195,6 +195,35 @@ A/execution/synthetic-observer-round-trip-dfe1877958a3/SMOKE.json, SHA256
 `19be7b05d6d9e49de7d9af2f42c55b0785ac0fb2d484a76249153459257e1e70`.
 Still bind the actual bounded external restore owner; do not reuse the
 normal restoration route for an abnormal held claim.
+Normal restore now calls the source-pinned, read-only daemon check while the
+existing bank gate is held, before and after the attempted observer mutation.
+It requires the exact local engine ID twice, absence of the old full CID
+including stopped containers, and absence of a different CID with the same
+visit/source labels. The actual Windows/Docker probe rejected both forms of
+presence with an inert, no-mount container; passed after exact removal
+(228 ms). This proves neither the independent Windows owner/Job lifecycle
+nor exclusion of foreign writers. Live observer and Paper tasks unchanged.
+Claude verdict (withhold without full native owner closure) is
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/RESTORE-CLAUDE-VERDICT-20261126.json,
+SHA256 `073bff8edce02ada212ca49c14793a257f110bb638e896a5effc80b5602558a9`.
+The scheduled action currently discards the restore startup handoff digest.
+Pass it to one bounded restore-only child before disable, without changing
+the direct Scheduler root PID or reusing the hard-stop child. Its restricted
+root handle and exact retained Job-join proof must distinguish a normal
+exit from cutoff. An inert direct-pythonw Scheduler trigger kept EnginePID
+equal to the root; its separate child observed the exact root's exit using
+only a synchronize/query handle, without requesting breakaway or opening a
+console. Exact task and scratch cleanup were verified.
+Evidence: A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+RESTORE-CHILD-NATIVE-b2a55ac7.json, SHA256
+`91c217044fb420c2b5a15f5c0d469f27e1a11d3ff1e07ecc2334e572fa34e32b`.
+Actual Job-join receipts, cutoff behavior and the bounded Enabled-only
+mutation are still unqualified; the fixture did not touch the real observer.
+An isolated Windows process probe separately confirmed the same query-only
+handle can distinguish normal exit 0 from the cutoff code 20.
+The Dec4 point task is still Ready at Dec3 21:47 UTC, one old action and no
+catch-up. The exact prepared source-v3 manifest matches on disk but is not
+the installed action. Both financial task names are still absent.
 
 The named launcher now requires the concrete Dec4 scoped writer census.
 It retains the old pinned metadata tools and classifier, not old release

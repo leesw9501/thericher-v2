@@ -5,6 +5,13 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: the restore path now distinguishes normal BankLeg closure from
+current daemon closure. The local native probe refused a stopped capsule and
+its exact label alias; only the invented capsule was removed. The Dec9
+target reader is ready for a producer and block-end wiring, not a live score.
+Prioritize the existing watchdog/restore handoff and one Dec9 post-close
+owner; keep Data/Research work moving without opening the sealed targets.
+
 Nov26 throughput review: the local monitor's emergency-lock volume is not a
 financial writer. Keep the exact monitor role separate instead of stopping
 the dashboard or loosening custody checks. Its live shape matched, but the

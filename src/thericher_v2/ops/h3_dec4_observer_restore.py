@@ -14,6 +14,7 @@ from thericher_v2.ops.h3_dec4_crash_recovery import _terminated
 from thericher_v2.ops.h3_dec4_native_host import _ticks
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
+from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
 from thericher_v2.ops.paper_scheduled_native import NativeScheduledSource
 
 
@@ -158,6 +159,7 @@ def restore_dec4_observer_once(
     source: NativeScheduledSource,
     pins: Dec4ObserverRestorePins,
     hold_native_closure: Callable[[dict], AbstractContextManager[Callable[[], bool]]],
+    daemon: Dec4RestoreDaemon | None = None,
     fixture_clock: Callable[[], datetime] | None = None,
 ) -> None:
     """Re-enable only the exact observer disabled by a normally closed Paper leg.
@@ -167,7 +169,8 @@ def restore_dec4_observer_once(
     must hold relevant-writer exclusion until context exit and freshly prove
     original owner/Job/descendant and exact daemon/container closure at every
     check. A census alone is not exclusion. The guard must not take the bank
-    Gate itself, which the existing lease takes around the switch.
+    Gate itself, which the existing lease takes around the switch. The exact
+    daemon probe runs only in that existing locked mutation path.
 
     No waiting, retries, abort repair, task start, or financial state changes.
     Once the lease writes RESTORE_STARTED, a failed result is unknown.
@@ -199,11 +202,13 @@ def restore_dec4_observer_once(
             (
                 fixture_clock is not None
                 and callable(fixture_clock)
+                and daemon is None
                 and type(lease.transport) is not Dec4NativeObserverTransport
             )
             or (
                 fixture_clock is None
                 and os.name == "nt"
+                and type(daemon) is Dec4RestoreDaemon
                 and type(lease.transport) is Dec4NativeObserverTransport
                 and lease.transport.plan == lease.plan
             )
@@ -240,6 +245,7 @@ def restore_dec4_observer_once(
                 == (opens, closes, hard)
                 and value.get("synthetic_only", False) is (fixture_clock is not None)
                 and value.get("observer_plan_sha256") == pins.observer_plan_sha256
+                and (daemon is None or value.get("observer_restore_daemon_sha256") == daemon.sha256)
                 and Path(value["original_gate_root"]) == pins.gate_root
                 and pv.bank_key(bank) == pins.bank_key
                 and release.get("source") == pins.source_sha256
@@ -334,6 +340,11 @@ def restore_dec4_observer_once(
             for actor in (owner, *(child for visit in visits for child in visit["children"])):
                 _terminated(pv.process_start, actor)
             pv._need(check_native() is True, "h3_observer_restore_native_unknown")
+            if daemon is not None:
+                pv._need(
+                    daemon.check(bank=bank, record=current) is True,
+                    "h3_observer_restore_daemon_unknown",
+                )
             check_markers()
             pv._need(
                 tuple(pv._read(path) for path in (closed, started, disabled)) == snapshots,
