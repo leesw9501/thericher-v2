@@ -8,6 +8,16 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: the dated scheduled coordinator uses the existing BankLeg and a
+single durable capsule visit. It restores caller-pinned entry bytes inside
+the lease, then frames the exact NET25 guest cohort; Dec9 sends no proposal
+body. Invented Windows process ownership/closure and canonical frame tests
+passed; unknown reservation remains held. Read-only, network-none Linux/amd64
+image `4bb201b5` parsed the Windows-host entry/exit bytes and the real guest
+denied access before custody. This was not a qualified financial capsule.
+Actual named source, launcher, writer/observer guards and capsule remain to
+bind. No trade or install.
+
 Follow-on: Dec4 point V2 measures input verification and inference completion
 separately. Its verified DATA/READY/POINT binds to exact native NET25 bytes;
 an invented NYS target passed native encode/decode and stopped at the real

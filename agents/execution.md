@@ -41,6 +41,10 @@ The protected profile and enabled-export default repair passed six ordered
 readbacks on one native inert future pair, after independently stamping the
 exact ACL into both drafts. No run occurred; exact cleanup/absence verified.
 Named Paper caller/owner and effect-time proof remain separate.
+The tracked Dec4/9 BankLeg coordinator and guest frame passed invented
+closure/hold/owner-birth tests. Exit carries exact retained identity only,
+not a fresh loader. Actual named launcher and existing source-qualified
+writer/observer and Docker capsule are still required; no account effect.
 The Dec4 NET25 adapter and retained-input codec passed invented NYS entry
 and Dec9 restore without POINT. Native guest denied at owner check before
 custody. Still bind one actual bank-owned coordinator, exact stage owners,

@@ -68,11 +68,14 @@ execution path. The model is a proposal source, not a separate bank writer.
    the native NET25 codec. `ops/h3_dec4_retained_input.py` restores exact entry
    bytes by an owner-pinned reference without reading POINT. Invented NYS
    input parsed and the real guest denied before custody when owner proof
-   was withheld. Wire these into the named coordinator and retain the exact
-   owned binding at Dec9. Use the tracked account-
-   session guest behind one outer bank lease and one bounded visit; legacy
-   stock `main -> run` does not accept NET25. Do not pass host slot classes
-   into the independently imported guest; reconstruct from verified bytes.
+   was withheld. `ops/h3_dec4_bank_visit.py` freezes the named Dec4/Dec9 phase
+   windows, wraps the existing physical BankLeg and dispatches one capsule.
+   The `ops/h3_dec4_guest.py` byte framing rebuilds an exact packaged NET25
+   cohort on the guest side; exit carries the retained digest only. Test
+   positive operational closure, old bank hold and owner birth mismatch.
+   Pin the actual launcher, writer/observer guard and existing capsule
+   against the new source, and prove native Windows/Docker hosting. Legacy
+   stock `main -> run` does not accept NET25. No actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.
