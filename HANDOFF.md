@@ -8,6 +8,16 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: native inert future pair passed all six ordered readbacks using
+the tracked protected profile derived before registration. Exact ACL7,
+local-offset trigger serialization, export/default omissions and both XML
+surfaces passed. A pair without independently authored SecurityDescriptor
+in both drafts lost that XML field on the second task and correctly failed.
+No manual run or live action; all inert tasks removed and verified absent.
+The named Paper pair and runtime PID/birth proof are still pending. The Dec3
+DATA and Dec4 POINT entry APIs now share exact roots/pins through an owned
+DATA receipt; no scheduled acquisition or model point was run.
+
 Follow-on: fresh-pair readback now requires independent complete `ExportXml`
 and `DefinitionXml` pins for all six phase/stage combinations. Mock fixtures
 with distinct native/export forms passed and mismatches were denied. Actual

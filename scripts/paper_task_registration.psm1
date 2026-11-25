@@ -71,7 +71,7 @@ function Assert-PaperTaskXmlText([Xml.XmlElement]$Node, [string]$Name) {
     }
 }
 
-function Read-PaperTaskRegistrationXml([string]$Xml, [bool]$Enabled) {
+function Read-PaperTaskRegistrationXml([string]$Xml, [bool]$Enabled, [bool]$AllowEnabledExportDefault = $false) {
     $settings = [Xml.XmlReaderSettings]::new()
     $settings.DtdProcessing = [Xml.DtdProcessing]::Prohibit
     $settings.XmlResolver = $null
@@ -92,10 +92,12 @@ function Read-PaperTaskRegistrationXml([string]$Xml, [bool]$Enabled) {
         throw 'PAPER_TASK_XML_ROOT'
     }
     $taskSettings = Get-PaperTaskXmlChild $task 'Settings' $true
-    $enabledNode = Get-PaperTaskXmlChild $taskSettings 'Enabled' $true
-    Assert-PaperTaskXmlText $enabledNode 'Enabled'
-    $allowed = if ($Enabled) { @('true', '1') } else { @('false', '0') }
-    if ($enabledNode.InnerText -cnotin $allowed) { throw 'PAPER_TASK_STAGE_ENABLED' }
+    $enabledNode = Get-PaperTaskXmlChild $taskSettings 'Enabled' (-not ($Enabled -and $AllowEnabledExportDefault))
+    if ($null -ne $enabledNode) {
+        Assert-PaperTaskXmlText $enabledNode 'Enabled'
+        $allowed = if ($Enabled) { @('true', '1') } else { @('false', '0') }
+        if ($enabledNode.InnerText -cnotin $allowed) { throw 'PAPER_TASK_STAGE_ENABLED' }
+    }
     return (Get-PaperTaskXmlChild $task 'RegistrationInfo' $true)
 }
 
@@ -132,10 +134,11 @@ function Assert-PaperTaskRegistrationXml {
         [Parameter(Mandatory)][string]$Stage,
         [Parameter(Mandatory)][string]$Role,
         [Parameter(Mandatory)][string]$TaskName,
-        [Parameter(Mandatory)][string]$Xml
+        [Parameter(Mandatory)][string]$Xml,
+        [switch]$AllowEnabledExportDefault
     )
     $expected = Get-PaperTaskRegistrationExpected $Manifest $Stage $Role $TaskName
-    $info = Read-PaperTaskRegistrationXml $Xml $expected.Enabled
+    $info = Read-PaperTaskRegistrationXml $Xml $expected.Enabled $AllowEnabledExportDefault.IsPresent
     foreach ($field in @('Description', 'Source')) {
         $node = Get-PaperTaskXmlChild $info $field $true
         Assert-PaperTaskXmlText $node $field

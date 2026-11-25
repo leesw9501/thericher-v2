@@ -31,14 +31,13 @@ execution path. The model is a proposal source, not a separate bank writer.
    empty. Pin and call these components from a named installer, owner provider
    and launcher. Qualify the actual registered native ACL, instance and PID
    path before effects. A diagnostic or claim is not financial admission.
-   Readback now requires both complete XML surfaces for every phase/stage,
-   independently pinned with ACL7 before mutation. Inert Windows registration
-   showed nine defaults omitted from export and two registration fields added
-   to the draft. An unprotected DACL gained three ACEs; a protected DACL kept
-   the three authored ACEs in order, though descriptor flags still changed.
-   Use a protected, independently specified ACL7 and build native expectations
-   before installing the named pair. Inert fixtures were never enabled or run;
-   exact cleanup and absence readback passed.
+   `New-PaperNativeProtectedProfile` derives both exact surfaces and protected
+   ACL7 from both unregistered, explicitly ACL-stamped COM drafts. A native
+   inert future pair passed all six ordered full readbacks; enabled export can
+   omit only its documented `Settings.Enabled=true` default, while the native
+   definition and state/API must agree explicitly. The pair never ran and
+   cleanup/absence passed. Bind these qualified components to the named
+   installer and owner runtime; the inert pair did not prove runtime PID/birth.
 2. Reuse existing native Paper risk, reconciliation and single writer. Before
    changing definitions or running a new opportunity, positively resolve the
    relevant original owner and select a fresh exact window. Keep the original
@@ -62,7 +61,15 @@ execution path. The model is a proposal source, not a separate bank writer.
    `models/h3_shadow_point.py` binds the Dec4 forward and readback to the fixed
    checkpoint and window. One invented native CPU forward matched the retained
    18-row weights codec. Pin the fresh named producers and execution point
-   consumer; neither an input READY nor the synthetic point is order authority.
+   consumer. `ops/h3_dec4_run.py` now joins the dated producer/point entry APIs
+   through the run-owned DATA closure receipt and exact native READY digest;
+   no owner definitions installed. Neither receipt nor point is order authority.
+   Next financial handoff: serialize the verified Dec4 point/causal clocks
+   using the native ModelPaperWeights codec. Restore exactly those input bytes
+   and owned binding at Dec9 without rereading POINT. Use the tracked account-
+   session guest behind one outer bank lease and one bounded visit; legacy
+   stock `main -> run` does not accept NET25. Do not pass host slot classes
+   into the independently imported guest; reconstruct from verified bytes.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.

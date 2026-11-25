@@ -118,7 +118,9 @@ function Assert-PaperNativeRegisteredTaskDefinition {
     }
     $registration = @{Manifest = $Manifest; Stage = $Stage; Role = $expected.Role; TaskName = $expected.Name}
     # Read both native surfaces directly. Never stamp or repair observed XML.
-    Assert-PaperTaskRegistrationXml @registration -Xml ([string]$Task.Xml)
+    # Registered export omits a true Settings.Enabled on this host. The state
+    # above, native definition below and complete readback still have to agree.
+    Assert-PaperTaskRegistrationXml @registration -Xml ([string]$Task.Xml) -AllowEnabledExportDefault
     $definition = $Task.Definition
     Assert-PaperTaskRegistrationXml @registration -Xml ([string]$definition.XmlText)
     Assert-NativePaperDefinitionApi $definition $expected $Sid $PrincipalIdentity

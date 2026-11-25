@@ -37,6 +37,10 @@ by phase/stage and independent ACL7 pins. Fresh inert probes established
 unprotected 3->6 ACEs versus protected 3->3 with the same ordered grants;
 registration SDDL still isn't the exact ACL7 expectation. Bind the production
 pins and callers without ignoring missing Source or unmatched native fields.
+The protected profile and enabled-export default repair passed six ordered
+readbacks on one native inert future pair, after independently stamping the
+exact ACL into both drafts. No run occurred; exact cleanup/absence verified.
+Named Paper caller/owner and effect-time proof remain separate.
 
 ## Actual Current Deployment
 

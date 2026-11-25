@@ -119,7 +119,7 @@ function New-PaperNativePairReadback {
                 foreach ($field in $fields) {
                     $document = Read-PaperPairXml $pin[$field]
                     Assert-PaperTaskRegistrationXml -Manifest $Manifest -Stage $stage -Role $row.Role `
-                        -TaskName $row.Name -Xml $pin[$field]
+                        -TaskName $row.Name -Xml $pin[$field] -AllowEnabledExportDefault:($row.Enabled -and $field -ceq 'ExportXml')
                     $xml[$field] = ConvertTo-PaperPairCanonical $document
                 }
                 $expectedByStage["${stage}:$phase"] = @{
@@ -144,4 +144,102 @@ function New-PaperNativePairReadback {
     }.GetNewClosure()
 }
 
-Export-ModuleMember -Function New-PaperNativePairReadback
+function New-PaperNativeProtectedProfile {
+    # This profile is qualified against local Scheduler 1.4 inert tasks only.
+    # Inputs are unregistered COM definitions. The installer still resolves
+    # the same SID against the current principal with its native API check.
+    param(
+        [Parameter(Mandatory)][System.Collections.IDictionary]$Manifest,
+        [Parameter(Mandatory)][string]$EntryDraftXml,
+        [Parameter(Mandatory)][string]$ExitDraftXml,
+        [Parameter(Mandatory)][string]$Sid
+    )
+    if ($Sid -cnotmatch '\AS-1-5-21-(?:[0-9]+-){3}[0-9]+\z') { throw 'PAPER_PROFILE_OWNER_SID' }
+    $aclTail = "(A;;FA;;;$Sid)(A;;FA;;;SY)(A;;FA;;;BA)"
+    $registrationSddl = "O:${Sid}G:${Sid}D:P$aclTail"
+    $acl7 = "O:${Sid}G:${Sid}D:PAI$aclTail"
+    $draftByPhase = @{ entry = $EntryDraftXml; exit = $ExitDraftXml }
+    $defaults = [ordered]@{
+        'Triggers/TimeTrigger/Enabled' = 'true'
+        'Principals/Principal/RunLevel' = 'LeastPrivilege'
+        'Settings/AllowHardTerminate' = 'true'
+        'Settings/StartWhenAvailable' = 'false'
+        'Settings/RunOnlyIfNetworkAvailable' = 'false'
+        'Settings/RunOnlyIfIdle' = 'false'
+        'Settings/DisallowStartOnRemoteAppSession' = 'false'
+        'Settings/WakeToRun' = 'false'
+        'Settings/Priority' = '7'
+    }
+    $stageXml = @{}
+    foreach ($stage in @('DISABLED', 'EXIT_ONLY', 'ENABLED')) {
+        foreach ($row in (Get-PaperTaskRegistrationPair -Manifest $Manifest -Stage $stage)) {
+            $phase = if ($row.Role -ceq 'ENTRY') { 'entry' } else { 'exit' }
+            $doc = Read-PaperPairXml $draftByPhase[$phase]
+            $root = $doc.DocumentElement.psbase
+            if ($root.GetAttribute('version') -cne '1.4') { throw 'PAPER_PROFILE_SCHEMA_VERSION' }
+            $ns = [Xml.XmlNamespaceManager]::new($doc.NameTable)
+            $ns.AddNamespace('t', $root.NamespaceURI)
+            $principals = $doc.SelectNodes('/t:Task/t:Principals/t:Principal', $ns)
+            if ($principals.Count -ne 1) { throw 'PAPER_PROFILE_OWNER_PRINCIPAL' }
+            $userIds = $principals[0].SelectNodes('t:UserId', $ns)
+            if ($userIds.Count -ne 1 -or $userIds[0].psbase.InnerText -cne $Sid -or
+                $principals[0].SelectNodes('t:GroupId', $ns).Count) { throw 'PAPER_PROFILE_OWNER_PRINCIPAL' }
+            $info = $doc.SelectSingleNode('/t:Task/t:RegistrationInfo', $ns)
+            if ($info.SelectSingleNode('t:URI', $ns)) { throw 'PAPER_PROFILE_NOT_A_DRAFT' }
+            $securityNodes = $info.SelectNodes('t:SecurityDescriptor', $ns)
+            if ($securityNodes.Count -ne 1 -or $securityNodes[0].psbase.InnerText -cne $registrationSddl) {
+                throw 'PAPER_PROFILE_EXPLICIT_DRAFT_SECURITY_REQUIRED'
+            }
+            $security = $securityNodes[0]
+            $uri = $doc.CreateElement('URI', $root.NamespaceURI)
+            $uri.InnerText = '\' + $row.Name
+            $null = $info.InsertBefore($uri, $security)
+            $enabled = $doc.SelectSingleNode('/t:Task/t:Settings/t:Enabled', $ns)
+            if ($enabled.psbase.InnerText -cne 'false') { throw 'PAPER_PROFILE_NOT_DISABLED_DRAFT' }
+            foreach ($field in @('StartBoundary', 'EndBoundary')) {
+                $boundary = $doc.SelectSingleNode("/t:Task/t:Triggers/t:TimeTrigger/t:$field", $ns).psbase
+                if ($boundary.InnerText -cnotmatch '\A[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|\+00:00)\z') {
+                    throw 'PAPER_PROFILE_DRAFT_CLOCK'
+                }
+                $local = [TimeZoneInfo]::ConvertTime([DateTimeOffset]$boundary.InnerText, [TimeZoneInfo]::Local)
+                $boundary.InnerText = $local.ToString('yyyy-MM-ddTHH:mm:sszzz', [Globalization.CultureInfo]::InvariantCulture)
+            }
+            if ($row.Enabled) { $enabled.psbase.InnerText = 'true' }
+            $definitionXml = $doc.OuterXml
+            foreach ($leaf in $defaults.Keys) {
+                $xpath = '/t:Task/t:' + $leaf.Replace('/', '/t:')
+                $nodes = $doc.SelectNodes($xpath, $ns)
+                if ($nodes.Count -ne 1 -or $nodes[0].psbase.InnerText -cne $defaults[$leaf]) {
+                    throw 'PAPER_PROFILE_UNEXPECTED_DEFAULT'
+                }
+                $null = $nodes[0].psbase.ParentNode.RemoveChild($nodes[0])
+            }
+            if ($row.Enabled) { $null = $enabled.psbase.ParentNode.RemoveChild($enabled) }
+            $security = $info.SelectSingleNode('t:SecurityDescriptor', $ns)
+            $null = $info.PrependChild($security)
+            $settings = $doc.SelectSingleNode('/t:Task/t:Settings', $ns)
+            $exportOrder = @('AllowStartOnDemand', 'DisallowStartIfOnBatteries', 'StopIfGoingOnBatteries')
+            if (-not $row.Enabled) { $exportOrder += 'Enabled' }
+            $exportOrder += @('ExecutionTimeLimit', 'Hidden', 'MultipleInstancesPolicy', 'IdleSettings', 'UseUnifiedSchedulingEngine')
+            if ($settings.SelectNodes('*').Count -ne $exportOrder.Count) { throw 'PAPER_PROFILE_EXPORT_SHAPE' }
+            foreach ($field in $exportOrder) {
+                $nodes = $settings.SelectNodes("t:$field", $ns)
+                if ($nodes.Count -ne 1) { throw 'PAPER_PROFILE_EXPORT_SHAPE' }
+                $null = $settings.AppendChild($nodes[0])
+            }
+            $documentOrder = @('RegistrationInfo', 'Principals', 'Settings', 'Triggers', 'Actions')
+            if ($root.SelectNodes('*').Count -ne $documentOrder.Count) { throw 'PAPER_PROFILE_EXPORT_SHAPE' }
+            foreach ($field in $documentOrder) {
+                $nodes = $root.SelectNodes("t:$field", $ns)
+                if ($nodes.Count -ne 1) { throw 'PAPER_PROFILE_EXPORT_SHAPE' }
+                $null = $root.AppendChild($nodes[0])
+            }
+            $stageXml["${stage}:$phase"] = @{ ExportXml = $doc.OuterXml; DefinitionXml = $definitionXml }
+        }
+    }
+    $readback = New-PaperNativePairReadback -Manifest $Manifest -ExpectedStageXml $stageXml `
+        -EntryAcl7 $acl7 -ExitAcl7 $acl7
+    return @{ RegistrationSddl = $registrationSddl; VerifyReadback = $readback }
+}
+
+Export-ModuleMember -Function New-PaperNativePairReadback, New-PaperNativeProtectedProfile
