@@ -31,12 +31,14 @@ execution path. The model is a proposal source, not a separate bank writer.
    empty. Pin and call these components from a named installer, owner provider
    and launcher. Qualify the actual registered native ACL, instance and PID
    path before effects. A diagnostic or claim is not financial admission.
-   Windows fresh inert disabled registration reproduced the two XML surfaces
-   differing by nine leaf paths. Both retained Source and Description and passed
-   the shared API/metadata guard. Observed ACL7 text differs from registration
-   SDDL. Bind separate expected native XML surfaces per stage and independently
-   pin ACL7; do not drop fields or adopt observed ACLs as expectations. The
-   exact inert fixture was removed and its absence verified; never enabled.
+   Readback now requires both complete XML surfaces for every phase/stage,
+   independently pinned with ACL7 before mutation. Inert Windows registration
+   showed nine defaults omitted from export and two registration fields added
+   to the draft. An unprotected DACL gained three ACEs; a protected DACL kept
+   the three authored ACEs in order, though descriptor flags still changed.
+   Use a protected, independently specified ACL7 and build native expectations
+   before installing the named pair. Inert fixtures were never enabled or run;
+   exact cleanup and absence readback passed.
 2. Reuse existing native Paper risk, reconciliation and single writer. Before
    changing definitions or running a new opportunity, positively resolve the
    relevant original owner and select a fresh exact window. Keep the original
@@ -66,7 +68,10 @@ execution path. The model is a proposal source, not a separate bank writer.
    block, do not retrain, and keep outcomes sealed until the block closes.
    Nov9 is closed unmeasured: the sole locked target source did not publish.
    The tracked target projection emits only the frozen 17-name OPEN4/CLOSE3
-   from a separately acquired expiry-as-of panel; no owner or score yet.
+   from a separately acquired expiry-as-of panel. The tracked exact single-
+   cohort replay compares fixed-half, funded-gross EW and cash; distinct sell
+   notionals drive leg-specific fees. Current forecast/target owners and
+   block-end admission/readout are still needed; no actual outcome scored.
    Intraday timestamp work remains separate and cannot hold this block.
 
 ## Completion

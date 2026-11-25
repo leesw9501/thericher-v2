@@ -32,8 +32,11 @@ One fresh inert disabled `0x3A` fixture reproduced nine XML leaf-path
 differences; both surfaces retained Source/Description and passed the shared
 XML/API guard, zero instances. ACL7 text differed from the registration SDDL.
 Exact fixture removed with absence readback. No enable/start or broker action.
-Next: distinct native XML expectations by phase/stage and independent ACL7
-pins. Don't ignore missing Source or unmatched native fields.
+`New-PaperNativePairReadback` now requires distinct native XML expectations
+by phase/stage and independent ACL7 pins. Fresh inert probes established
+unprotected 3->6 ACEs versus protected 3->3 with the same ordered grants;
+registration SDDL still isn't the exact ACL7 expectation. Bind the production
+pins and callers without ignoring missing Source or unmatched native fields.
 
 ## Actual Current Deployment
 

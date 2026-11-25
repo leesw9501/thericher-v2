@@ -8,6 +8,21 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: fresh-pair readback now requires independent complete `ExportXml`
+and `DefinitionXml` pins for all six phase/stage combinations. Mock fixtures
+with distinct native/export forms passed and mismatches were denied. Actual
+inert disabled probes identified nine omitted export defaults and two native
+registration additions (`URI` and `SecurityDescriptor`). Unprotected DACL
+grew from three to six ACEs; protected DACL retained the three authored ACEs
+in order with owner/group unchanged, while descriptor flags differed. The
+probes were never enabled or run and were verified absent after cleanup.
+No trading or Data task installed; the new exact native expectations/caller
+and runtime proof are still needed for the named candidate pair.
+Throughput review: the historical model-free INTC manual baseline has a native
+handoff but no current qualified caller or fresh window; R8 is expired and
+the SPY recurring task is a separate owner. No already-qualified faster pair
+found. Preserve the Dec1 H20 exit as an existing duty, not a new entry slot.
+
 Follow-on: dated Dec3 capture-to-H123 producer and Dec4 one-forward shadow
 publisher/reader are tracked. An invented input passed the pinned LSTM CPU
 forward and exact retained 18-row weight encoding. No new fit, real market

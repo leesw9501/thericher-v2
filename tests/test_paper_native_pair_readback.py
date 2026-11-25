@@ -14,8 +14,21 @@ READBACK = MODULE.with_name("paper_native_pair_readback.psm1")
 CALLBACK = r"""
 Import-Module -Name '__READBACK__'
 try {
+    $pins = @{}
+    foreach ($phase in @('entry', 'exit')) {
+        foreach ($stage in @('DISABLED', 'EXIT_ONLY', 'ENABLED')) {
+            $export = $fixtures[$phase].Xml
+            if ($stage -ceq 'ENABLED' -or ($stage -ceq 'EXIT_ONLY' -and $phase -ceq 'exit')) {
+                $export = $export.Replace('<Enabled>false</Enabled>', '<Enabled>true</Enabled>')
+            }
+            $native = $export.Replace('</Settings>', '<Priority>7</Priority></Settings>')
+            $pins["${stage}:$phase"] = @{ ExportXml = $export; DefinitionXml = $native }
+        }
+    }
+    if ($scenario -ceq 'missing-stage') { $pins.Remove('ENABLED:entry') }
+    if ($scenario -ceq 'missing-surface') { $pins['EXIT_ONLY:exit'].Remove('DefinitionXml') }
     $fixed = New-PaperNativePairReadback -Manifest $manifest `
-        -EntryDisabledNativeXml $fixtures.entry.Xml -ExitDisabledNativeXml $fixtures.exit.Xml `
+        -ExpectedStageXml $pins `
         -EntryAcl7 $entryExpectedAcl -ExitAcl7 $sddl
 } catch {
     $_.Exception.Message
@@ -42,6 +55,8 @@ $params.VerifyReadback = {
 
 XML_AND_STATE_CASES = r"""
             'registered-xml-drift' { $task.Xml = $task.Xml.Replace('<Author>', '<Author>foreign-') }
+            'matched-bad' { $task.Xml = $task.Definition.XmlText }
+            'native-default-drift' { $task.Definition.XmlText = $task.Definition.XmlText.Replace('<Priority>7</Priority>', '<Priority>4</Priority>') }
             'extra-setting' { $task.Xml = $task.Xml.Replace('</Settings>', '<Priority>4</Priority></Settings>') }
             'text-space' { $task.Xml = $task.Xml.Replace('--phase entry', '--phase  entry') }
             'extra-trigger' { $task.Xml = $task.Xml.Replace('</Triggers>', '<BootTrigger /></Triggers>') }
@@ -95,6 +110,15 @@ switch ($scenario) {
         )
         .replace("        switch ($this.Scenario) {\n            'xml-drift'", "        switch ($this.Scenario) {\n"
                  + XML_AND_STATE_CASES + "            'xml-drift'")
+        .replace(
+            "    $task | Add-Member ScriptProperty Enabled",
+            "    $task.Definition.XmlText = $task.Xml.Replace('</Settings>', '<Priority>7</Priority></Settings>')\n"
+            "    $task | Add-Member ScriptProperty Enabled",
+        )
+        .replace(
+            "$this.Definition.XmlText = $this.Xml",
+            "$this.Definition.XmlText = $this.Definition.XmlText.Replace('<Enabled>false</Enabled>', '<Enabled>true</Enabled>')",
+        )
         .replace("__MODULE__", str(MODULE).replace("'", "''"))
         .replace("__READBACK__", str(READBACK).replace("'", "''"))
         .replace("__SCENARIO__", scenario)
@@ -108,10 +132,10 @@ switch ($scenario) {
             "success", "scope", "layout-only", "different-expected-acl", "claim-input-drift"
         )],
         *[(case, ["PAPER_PAIR_READBACK_EXPECTATION"]) for case in (
-            "bad-expectation-xml", "bad-expectation-acl"
+            "bad-expectation-xml", "bad-expectation-acl", "missing-stage", "missing-surface"
         )],
         *[(case, ["PAPER_FUTURE_PAIR_FULL_READBACK", DISABLED]) for case in (
-            "registered-xml-drift", "xml-drift", "extra-setting", "text-space", "extra-trigger",
+            "registered-xml-drift", "matched-bad", "native-default-drift", "xml-drift", "extra-setting", "text-space", "extra-trigger",
             "doctype", "processing-instruction", "xml-comment", "deserializer-option", "unsafe-state",
             "acl-drift", "acl-ordinal", "instance", "null-instances", "unknown-count", "missing-count", "text-count",
             "instance-error",

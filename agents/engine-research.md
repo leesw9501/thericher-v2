@@ -7,6 +7,11 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+The exact H3 paired replay now consumes the existing invented mark projection
+for all five frozen intervals. Models/EW match funded entry gross, not their
+exit notional or fees; no-signal and incomplete data remain distinct. That
+kernel is ready for block-end admission/readout, not evidence of performance.
+
 Dec4 candidate: one invented CPU forward with the selected Source72 FIT
 affines, model class and checkpoint passed the new bound shadow point reader.
 Exact legacy 18-row proposal encoding matched. No real input or forward, no
