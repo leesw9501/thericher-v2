@@ -30,8 +30,14 @@ Before use, qualify and update the single existing point task without a
 duplicate opportunity, independently retain the supervisor digest, and
 wire the real bank caller. Native owner binding now reads the Windows
 process image, argv and creation FILETIME, and checks that birth against
-the exact leg window; it still needs the actual full-definition Scheduler
-provider and risk/observer callbacks. V2 is withheld: the original
+the exact leg window. The pinned Python/PowerShell Scheduler provider
+now verifies both registered XML surfaces, ACL and action hash around
+the hidden live instance; protected installer drafts expose the exact
+runtime profile fields. Bind those profiles, the bank visit and existing
+risk/observer callbacks in the named launcher. The actual inert trigger
+fixture passed direct action self-attestation; that does not demonstrate
+the final bank owner's effect-time guard or the paired exit readback.
+V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.
 
@@ -185,6 +191,9 @@ with unchanged clocks, principal, and one-attempt run root.
    point without exact completed launcher and matching retained closure;
    the Nov30 first-slot original-page reader now projects typed marks on
    invented input. Its block-end caller and remaining slots are not wired.
+   Dec4 fixed-half now has a separate score-only reader requiring the exact
+   independent completion, capture, model/policy and seal pins. No actual
+   result has been admitted.
    No outcome access before block-end.
    Intraday timestamp work remains separate and cannot hold this block.
 

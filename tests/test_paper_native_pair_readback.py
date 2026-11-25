@@ -123,6 +123,15 @@ if ($scenario.StartsWith('profile-')) {
         $p = New-PaperNativeProtectedProfile -Manifest $manifest -EntryDraftXml $drafts.entry `
             -ExitDraftXml $drafts.exit -Sid $sid -Scheduler $scheduler
         if ($p.RegistrationSddl -cne $s -or $p.VerifyReadback -isnot [scriptblock]) { throw 'PROFILE_WRONG_RESULT' }
+        foreach ($phase in @('entry', 'exit')) {
+            $r = $p.RuntimeByPhase[$phase]
+            if ($r.task_path -cne ('\' + $manifest["${phase}_name"]) -or
+                $r.definition_xml -cnotmatch '<Enabled>true</Enabled>' -or
+                $r.export_xml -cmatch '<Enabled>false</Enabled>' -or
+                $r.acl7 -cnotmatch 'D:PAI' -or $r.psbase.Count -ne 4) {
+                throw 'PROFILE_WRONG_RUNTIME'
+            }
+        }
         'PROFILE_OK'
     } catch { $_.Exception.Message }
     return

@@ -5,6 +5,12 @@ Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 
+Nov26: pinned Python provider to native PowerShell/full-definition readback
+passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.
+The protected draft API exports exact runtime profile fields. Reuse the
+existing bank, observer and risk checks in the one named caller; no order,
+account read, funded slot or new Paper task is evidenced.
+
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.
 The entry path now calls the supervised receipt reader; exit remains

@@ -64,6 +64,21 @@ caller still needs its full-definition Scheduler provider/risk wiring;
 the new Windows process reader itself checks image, argv and birth.
 The point task remains on its original source; no Paper pair installed.
 
+The actual pinned Python-to-PowerShell Scheduler probe matched two XML
+surfaces, ACL7 and action hash around one direct hidden inert instance;
+the fixture and scratch were removed. The PowerShell action hash also
+matched Python's codec. The protected installer now exposes runtime
+profile fields derived from its drafts, not from post-install task
+discovery. A separate trigger-fired direct pythonw fixture attested its
+own PID/birth and active instance with the same pinned subprocess probe.
+Source and categorical Claude verdict are under
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z;
+`VERIFY-NATIVE-SELF-OWNER.ps1` SHA256
+`9754f5ab371bfc97af15beb05d3bea510cbd050973fa97cd84c9eb2b1a41291f`.
+Remaining: freeze these exact profiles in the named Paper
+launcher and bind existing writer/observer and financial checks.
+This readback is not account/effect permission or runtime deployment.
+
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
 dict. The shared loader now restores only exact model tensors from the

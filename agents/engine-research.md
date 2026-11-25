@@ -46,6 +46,12 @@ original Nov30 callbacks passed on invented rows from frozen source-v2.
 The installed task is unchanged until the first-slot consumer is bound to
 the exact corrected source. No new fit, actual forecast, target or GPU.
 
+The Dec4 fixed-half reader now joins the exact independent successful
+owner completion, Dec3 read-only closure and immutable attempt/seal,
+and re-computes the 50:50 vector. It returns score inputs only at block
+end; the separate target and marks admission is unchanged. No actual
+seal was opened or evaluation run.
+
 The H3 block reducer treats unadmitted dates as missing and a real zero-signal
 cohort as admitted. At least four admitted dates are required for the paired
 descriptive result, not performance promotion. No target or fit was opened.

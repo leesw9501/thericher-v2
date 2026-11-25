@@ -343,7 +343,18 @@ function New-PaperNativeProtectedProfile {
     }
     $readback = New-PaperNativePairReadback -Manifest $Manifest -ExpectedStageXml $stageXml `
         -EntryAcl7 $acl7 -ExitAcl7 $acl7 -Scheduler $Scheduler
-    return @{ RegistrationSddl = $registrationSddl; VerifyReadback = $readback }
+    $runtime = @{}
+    foreach ($row in (Get-PaperTaskRegistrationPair -Manifest $Manifest -Stage 'ENABLED')) {
+        $phase = if ($row.Role -ceq 'ENTRY') { 'entry' } else { 'exit' }
+        $enabled = $stageXml["ENABLED:$phase"]
+        $runtime[$phase] = @{
+            task_path = '\' + $row.Name
+            export_xml = $enabled.ExportXml
+            definition_xml = $enabled.DefinitionXml
+            acl7 = $acl7
+        }
+    }
+    return @{ RegistrationSddl = $registrationSddl; VerifyReadback = $readback; RuntimeByPhase = $runtime }
 }
 
 Export-ModuleMember -Function New-PaperNativePairReadback, New-PaperNativeProtectedProfile, Get-PaperNativeActiveInstance
