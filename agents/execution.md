@@ -32,6 +32,13 @@ passed. Operating observer was not changed. Wire the write attempt, scoped
 native writer closure and independent same-leg restore; never treat the
 definition switch or Scheduler emptiness as process closure. The capsule
 retains exact attach identity across joined daemon inspection children.
+The named launcher now holds a durable same-leg observer attempt and rechecks
+native disabled readback; restore is separately gated on the exact normal
+BankLeg closure and original PID/birth absence. Protected native read and
+pre-window mutation refusal passed without touching the live task. Actual
+restore runner and cross-owner census remain pending. A live daemon sample
+now rejects extra same-CID processes/restarts before guest acknowledgement;
+exact guest kernel birth remains a separate input.
 
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.

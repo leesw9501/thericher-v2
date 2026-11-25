@@ -72,11 +72,15 @@ def test_same_leg_watchdog_arms_once_and_is_checked_after_slow_admission(monkeyp
 
     def live_guard(ctx, *, stage, visit):
         nonlocal live
+        assert ctx.daemon_inventory == "invented-daemon-sample"
         events.append((ctx.leg, stage, visit))
         live = False
         return True
 
     monkeypatch.setattr(launcher, "arm_root_watchdog", arm)
+    monkeypatch.setattr(
+        launcher, "sample_dec4_docker_inventory", lambda *a, **k: "invented-daemon-sample"
+    )
     root = Path("C:/authorized/pythonw.exe")
     leg = SimpleNamespace(record={"owner": {"native_start": "win-filetime:123", "pid": 2}})
     plan = SimpleNamespace(source={}, plan=SimpleNamespace(hard_stop=_entry_clock()))
@@ -92,8 +96,10 @@ def test_same_leg_watchdog_arms_once_and_is_checked_after_slow_admission(monkeyp
     assert events[1:] == ["watchdog", "observer", "watchdog"] * 2
     with pytest.raises(ValueError, match="h3_root_watchdog_unavailable"):
         gate.check(SimpleNamespace(leg=object()), stage="GUEST_ADMISSION", visit=None)
+    context = SimpleNamespace(leg=leg, exchange_deadline=7.0, daemon_inventory=None)
     with pytest.raises(ValueError, match="h3_root_watchdog_unavailable"):
-        gate.check(SimpleNamespace(leg=leg), stage="GUEST_ADMISSION", visit="invented")
+        gate.check(context, stage="GUEST_ADMISSION", visit="invented")
+    assert context.daemon_inventory is None
     assert events[-3:] == ["watchdog", (leg, "GUEST_ADMISSION", "invented"), "watchdog"]
 
 

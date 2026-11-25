@@ -90,7 +90,7 @@ def test_exact_phase_policy_and_bridge_locations(phase, date, minute, bank_task)
         "output_root": root / "owned-output",
         "policy_path": root / "POLICY.json",
         "bridge_path": root / "observer_bridge.ps1",
-        "core_path": root / "yield_observer.ps1",
+        "core_path": root / "paper_h3_observer_native.psm1",
     }.items():
         assert manifest[key] == str(path)
     assert (manifest["bridge_sha256"], manifest["core_sha256"]) == ("a" * 64, "b" * 64)

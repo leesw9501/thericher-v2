@@ -81,7 +81,7 @@ function Read-H3ObserverNativeSnapshot($Service, $Folder, [string]$TaskPath, [st
 
 # This primitive does not grant authority. It is intentionally module-private
 # until its production caller provides the durable attempt/closure boundary.
-function Set-H3ObserverExactEnabled($Service, $Folder, $Previous, [bool]$Enabled) {
+function Set-H3ObserverExactEnabled($Service, $Folder, $Previous, [bool]$Enabled, $NotAfter = $null) {
     if ($Previous.enabled -isnot [bool] -or $Previous.enabled -eq $Enabled) {
         throw 'H3_OBSERVER_TRANSITION'
     }
@@ -99,6 +99,7 @@ function Set-H3ObserverExactEnabled($Service, $Folder, $Previous, [bool]$Enabled
         (Get-H3ObserverTextHash ([string]$task.GetSecurityDescriptor(7))) -cne $Previous.api7_sha256) {
         throw 'H3_OBSERVER_DRIFT_BEFORE_TRANSITION'
     }
+    if ($null -ne $NotAfter -and [DateTimeOffset]::UtcNow -ge $NotAfter) { throw 'H3_OBSERVER_CLOCK' }
     $task.Enabled = $Enabled
     $after = Read-H3ObserverNativeSnapshot $Service $Folder $Previous.task_path $Previous.api7_sha256 $Enabled
     if ($after.shape_sha256 -cne $Previous.shape_sha256 -or $after.last_run -ne $Previous.last_run) {

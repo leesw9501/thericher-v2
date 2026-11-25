@@ -152,6 +152,27 @@ DETACHED_PROCESS (pipe handles retained). A pinned native Job mock-capsule
 round trip passed both directions and 16 single-member samples, with exact
 child join/daemon removal. Never classify an arbitrary console host as owned.
 
+The named launcher now takes the exact source-pinned observer lease. It
+stages phase input before writing an exclusive disable attempt tied to the
+live BankLeg; a publishable result requires unchanged task activity and
+the exact disabled definition. Readback and writer admission are rechecked
+before effects. Missing results classify read-only, never repeat a switch.
+Restore uses the original normal `CLOSED` record, original PID/birth absence,
+same bank gate and separate native closure. The independent restore worker
+and abnormal physical-recovery handoff are not installed. Claude challenged
+the pre-disable/start race; the postcheck rejects any activity drift.
+The protected native package read the real task and refused a pre-window
+mutation before a native marker. Evidence at the same A root,
+`observer-lease-native-cdeaf9db/NATIVE-LEASE-SMOKE.json`, SHA256
+`bc755e37da2c1459f5a9ce5a505f2b6c1c0a33bf0981aee16242bfc0c9066bff`.
+
+Every guest acknowledgement now brackets `docker top` by exact selected
+daemon inspect samples for the acknowledged CID. Inert runs reject a same-CID
+extra process or restart and confirm cleanup. The sampler transmits only
+the daemon PID/start epoch/count to the current writer guard; it does not
+prove exact Linux namespace birth. Bind independent guest identity and the
+actual cross-owner census before installing the financial pair.
+
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
 dict. The shared loader now restores only exact model tensors from the

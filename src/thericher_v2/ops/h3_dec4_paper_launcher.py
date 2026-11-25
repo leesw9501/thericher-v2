@@ -9,6 +9,9 @@ from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops.h3_dec4_bank_visit import run_dec4_owned_bank_visit
 from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule
 from thericher_v2.ops.h3_dec4_capsule_adapter import run_dec4_capsule_visit
+from thericher_v2.ops.h3_dec4_docker_inventory import sample_dec4_docker_inventory
+from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
+from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
 from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
 from thericher_v2.ops.h3_dec4_scheduler_provider import make_dec4_windows_owner_factory
@@ -28,7 +31,7 @@ _PRIVATE_EXECUTION_ROOT = Path("D:/thericher-v2/model-artifacts/execution")
 
 
 class _Context:
-    def __init__(self, leg, bank, ready, guard, admit):
+    def __init__(self, leg, bank, ready, guard, admit, *, deadline):
         self.leg = leg
         self.bank = bank
         self.owner = ready.owner
@@ -37,6 +40,8 @@ class _Context:
         self.created_starts = {}
         self.writer_guard = guard
         self.admission = admit
+        self.exchange_deadline = deadline
+        self.daemon_inventory = None
 
     def watchdog_actor(self):
         return self.writer_guard.watchdog_actor(self.leg)
@@ -76,9 +81,16 @@ class _WatchdogGate:
 
     def check(self, context, *, stage, visit):
         self._check(context.leg)
-        result = self.guard.check(context, stage=stage, visit=visit)
-        self._check(context.leg)
-        return result is True
+        if stage == "GUEST_ADMISSION":
+            context.daemon_inventory = sample_dec4_docker_inventory(
+                visit, deadline=context.exchange_deadline
+            )
+        try:
+            result = self.guard.check(context, stage=stage, visit=visit)
+            self._check(context.leg)
+            return result is True
+        finally:
+            context.daemon_inventory = None
 
     def watchdog_actor(self, leg):
         self._check(leg)
@@ -230,13 +242,14 @@ def _prepare_capsule(leg, ready, retained, frame, admit, *, writer_guard, load_p
         left = (ready.plan.ends_at - clock()).total_seconds()
         if left <= 0:
             raise ValueError("dec4_launcher_window")
+        deadline = time.monotonic() + left
         return run_dec4_capsule_visit(
-            _Context(leg, bank, ready, writer_guard, checked_admit),
+            _Context(leg, bank, ready, writer_guard, checked_admit, deadline=deadline),
             spec,
             guest=guest,
             load_packet=load_paper_packet,
             read_retained=read_outcome,
-            exchange_deadline=time.monotonic() + left,
+            exchange_deadline=deadline,
         )
 
     return dispatch
@@ -252,6 +265,7 @@ def run_dec4_windows_paper_leg(
     schedule_plan,
     scheduler_providers,
     phase_input,
+    observer_lease,
     writer_and_observer_ready,
     writer_guard,
     load_paper_packet,
@@ -260,26 +274,40 @@ def run_dec4_windows_paper_leg(
 
     Only the actual guest worker decides account admission, order identity,
     risk and reconciliation. Planning or reaching this route is not a fill.
-    The readiness callback receives the watchdog actor for the writer census.
+    The readiness callback receives the watchdog actor for the writer census,
+    including positive closure of any observer descendants before admission.
     The outer caller still owns exact daemon recovery and observer restoration.
     """
     if (
         type(phase_input) is not Dec4BankPhaseInput
         or phase_input.fixture_now is not None
         or phase_input.run.synthetic
+        or type(observer_lease) is not Dec4ObserverLease
+        or observer_lease.plan.phase != phase
+        or observer_lease.root != Path(observer_lease.plan.output_root)
+        or type(observer_lease.transport) is not Dec4NativeObserverTransport
+        or observer_lease.transport.plan != observer_lease.plan
         or not callable(getattr(writer_guard, "check", None))
         or not all(callable(cb) for cb in (writer_and_observer_ready, load_paper_packet))
     ):
         raise ValueError("dec4_launcher_missing_owned_admission")
     make_owner = make_dec4_windows_owner_factory(schedule_plan, scheduler_providers)
+
+    def readiness(leg, ready, watchdog_actor):
+        return (
+            ready.source.get("observer_plan_sha256") == observer_lease.plan.sha256
+            and writer_and_observer_ready(leg, ready, watchdog_actor) is True
+            and observer_lease.renew_if_started(leg) is True
+        )
+
     gate = _WatchdogGate(
         Path(schedule_plan["phases"][phase]["expected_argv"][0]),
-        writer_and_observer_ready,
+        readiness,
         writer_guard,
     )
 
     def prepare(leg, ready, retained, frame, admit):
-        return _prepare_capsule(
+        dispatch = _prepare_capsule(
             leg,
             ready,
             retained,
@@ -289,6 +317,8 @@ def run_dec4_windows_paper_leg(
             load_paper_packet=load_paper_packet,
             clock=lambda: datetime.now(UTC),
         )
+        observer_lease.begin(leg, ready)
+        return dispatch
 
     return run_dec4_owned_bank_visit(
         evidence_root,

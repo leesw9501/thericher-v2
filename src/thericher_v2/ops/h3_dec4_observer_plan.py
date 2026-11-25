@@ -106,7 +106,7 @@ class Dec4ObserverPlan:
                 policy_sha256=self.policy_sha256,
                 bridge_path=str(self.helper_root / "observer_bridge.ps1"),
                 bridge_sha256=self.bridge_sha256,
-                core_path=str(self.helper_root / "yield_observer.ps1"),
+                core_path=str(self.helper_root / "paper_h3_observer_native.psm1"),
                 core_sha256=self.core_sha256,
             )
         )
