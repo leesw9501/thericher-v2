@@ -11,6 +11,7 @@ from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule
 from thericher_v2.ops.h3_dec4_capsule_adapter import run_dec4_capsule_visit
 from thericher_v2.ops.h3_dec4_docker_inventory import sample_dec4_docker_inventory
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
+from thericher_v2.ops.h3_dec4_observer_restore import retain_dec4_restore_owner
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
 from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
@@ -42,6 +43,8 @@ class _Context:
         self.admission = admit
         self.exchange_deadline = deadline
         self.daemon_inventory = None
+        self.first_daemon_inventory = None
+        self.guest_process = None
 
     def watchdog_actor(self):
         return self.writer_guard.watchdog_actor(self.leg)
@@ -82,9 +85,11 @@ class _WatchdogGate:
     def check(self, context, *, stage, visit):
         self._check(context.leg)
         if stage == "GUEST_ADMISSION":
-            context.daemon_inventory = sample_dec4_docker_inventory(
-                visit, deadline=context.exchange_deadline
-            )
+            sampled = sample_dec4_docker_inventory(visit, deadline=context.exchange_deadline)
+            if context.first_daemon_inventory not in (None, sampled):
+                raise ValueError("h3_dec4_daemon_identity_changed")
+            context.first_daemon_inventory = sampled
+            context.daemon_inventory = sampled
         try:
             result = self.guard.check(context, stage=stage, visit=visit)
             self._check(context.leg)
@@ -316,6 +321,9 @@ def run_dec4_windows_paper_leg(
             writer_guard=gate,
             load_paper_packet=load_paper_packet,
             clock=lambda: datetime.now(UTC),
+        )
+        retain_dec4_restore_owner(
+            evidence_root, ready=ready, leg=leg, observer_plan=observer_lease.plan
         )
         observer_lease.begin(leg, ready)
         return dispatch

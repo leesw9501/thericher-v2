@@ -170,8 +170,31 @@ Every guest acknowledgement now brackets `docker top` by exact selected
 daemon inspect samples for the acknowledged CID. Inert runs reject a same-CID
 extra process or restart and confirm cleanup. The sampler transmits only
 the daemon PID/start epoch/count to the current writer guard; it does not
-prove exact Linux namespace birth. Bind independent guest identity and the
-actual cross-owner census before installing the financial pair.
+prove exact Linux namespace birth. Treat the independent guest sample below
+as a separate observation; the actual cross-owner census is still needed.
+
+The Dec4/9 owner pipe now challenges the pinned guest before reading any
+credential packet, and requires another positive owner check before the
+guest can parse it. Compare the guest's PID 1, kernel birth and raw NUL argv
+digest to the fixed command and same repeated guest facts; compare the
+Docker PID/epoch independently across acknowledgements (not equal to Linux
+ticks). TTY, reused stdin, logging, extra processes and late replies deny.
+The real Windows Job/Docker network-none invented two-ACK round trip closed
+the exact capsule. A evidence root as above, `guest-v2-native-396604a0/SMOKE.json`,
+SHA256 `8c186dafa2607298b8365344c9034e87e589f895ab413cc91a929a6d9769053f`.
+This is stream/owner binding under a trusted local daemon, not proof against
+privileged peers or continuous process exclusivity. No real credentials sent.
+
+The protected startup slot now retains the exact original restore owner
+before observer disable, separate from STARTED/DISABLED/bank CLOSED; the
+normal restore coordinator joins the independently retained digest and live
+original/capsule closure under relevant-writer exclusion. The real inert
+Windows fixture exercised startup handoff through restore in separate
+processes, without changing the operating observer or broker:
+A/execution/synthetic-observer-round-trip-dfe1877958a3/SMOKE.json, SHA256
+`19be7b05d6d9e49de7d9af2f42c55b0785ac0fb2d484a76249153459257e1e70`.
+Still bind the actual bounded external restore owner and native cross-owner
+guard; do not reuse the normal restoration route for an abnormal held claim.
 
 Nov30 first-slot technical repair (not deployed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state

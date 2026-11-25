@@ -17,6 +17,7 @@ from dataclasses import dataclass
 from typing import Protocol
 
 from thericher_v2.execution.paper_peer_visit import digest
+from thericher_v2.ops.h3_dec4_guest_identity import CapsuleProcess as CapsuleProcess
 from thericher_v2.ops.h3_dec4_root_watchdog import RootWatchdogActor
 
 _EPOCH = 504911232000000000
@@ -341,15 +342,6 @@ def join_dec4_writer_actors(
     check_job, check_raw = _attach_job(bank_record, attached_visit)
     _need(check_job is job and check_raw == raw, "attach_identity")
     return frozenset((root, watch, attached))
-
-
-@dataclass(frozen=True)
-class CapsuleProcess:
-    """One process inside the exact container PID namespace (not a thread)."""
-
-    namespace_pid: int
-    start_ticks: int
-    argv_sha256: str
 
 
 @dataclass(frozen=True)

@@ -3,6 +3,7 @@
 import hashlib
 import io
 import json
+from dataclasses import asdict
 from datetime import timedelta
 from pathlib import PurePosixPath
 from types import SimpleNamespace
@@ -12,15 +13,20 @@ import pytest
 from test_h3_dec4_guest import _wire
 from test_h3_dec4_retained_input import _native
 from thericher_v2.execution import kis_paper_budget_strategy as budget
+from thericher_v2.ops import h3_dec4_capsule as capsule
 from thericher_v2.ops.h3_dec4_capsule import (
     inspect_dec4_capsule,
     run_dec4_account_capsule,
     verify_dec4_capsule_outcome,
 )
+from thericher_v2.ops.h3_dec4_guest_identity import CapsuleProcess
 
 CONFIG = SimpleNamespace(
     base_url="https://example.invalid", account_number="synthetic", account_product_code="test"
 )
+_PROCESS = CapsuleProcess(namespace_pid=1, start_ticks=123, argv_sha256="b" * 64)
+_NONCE = "c" * 64
+_PACKET = b'{"app_key":"fake-key","app_secret":"fake-secret"}'
 
 
 def _digest(value):
@@ -48,10 +54,30 @@ def _parse(phase="entry", **overrides):
     return inspect_dec4_capsule(raw, frame, binding_sha256=_digest(raw))
 
 
-def _answer(sequence, ready=True):
-    return (
-        json.dumps(dict(kind="current20-owner-answer-v1", sequence=sequence, ready=ready)) + "\n"
-    ).encode()
+def _frame(**body):
+    return json.dumps(body).encode("ascii") + b"\n"
+
+
+_CHALLENGE = _frame(kind="dec4-owner-challenge-v2", challenge=_NONCE)
+
+
+def _answer(sequence, ready=True, challenge=_NONCE):
+    return _frame(kind="dec4-owner-answer-v2", sequence=sequence, challenge=challenge, ready=ready)
+
+
+def _requests(sink):
+    return [json.loads(raw) for raw in sink.getvalue().splitlines()]
+
+
+def _request(sequence):
+    return dict(
+        kind="dec4-owner-request-v2", sequence=sequence, challenge=_NONCE, process=asdict(_PROCESS)
+    )
+
+
+@pytest.fixture
+def guest_identity(monkeypatch):
+    monkeypatch.setattr(capsule, "read_guest_process", lambda: _PROCESS)
 
 
 def _forbidden(*args, **kwargs):
@@ -80,26 +106,50 @@ def test_outside_window_precedes_stdin():
         )
 
 
-@pytest.mark.parametrize("answer", [_answer(1, False), _answer(2), b""])
-def test_owner_denial_precedes_worker_and_packet_parsing(answer):
+@pytest.mark.parametrize(
+    ("sequence", "answer", "error"),
+    [
+        (1, _answer(1, False), "denied"),
+        (1, _answer(2), "denied"),
+        (1, b"", "unknown"),
+        (2, _answer(2, False), "denied"),
+        (2, _answer(2, challenge="d" * 64), "denied"),
+        (2, b"", "unknown"),
+    ],
+)
+def test_owner_denial_precedes_worker_and_packet_parsing(guest_identity, sequence, answer, error):
     binding, guest = _parse()
     sink = io.BytesIO()
-    with pytest.raises(ValueError, match=r"^h3_capsule_owner_(denied|unknown)$"):
+    prefix = _CHALLENGE if sequence == 1 else _CHALLENGE + _answer(1) + _PACKET + b"\n"
+    remainder = _PACKET + b"\n" if sequence == 1 and answer else b""
+    stream = io.BytesIO(prefix + answer + remainder)
+    with pytest.raises(ValueError, match=f"^h3_capsule_owner_{error}$"):
         run_dec4_account_capsule(
             binding,
             guest,
-            stream=io.BytesIO(b"opaque\n" + answer),
+            stream=stream,
             sink=sink,
             load_worker=_forbidden,
             clock=lambda: guest.cohort.slot.starts_at,
         )
-    assert json.loads(sink.getvalue()) == {"kind": "current20-owner-request-v1", "sequence": 1}
+    assert stream.tell() == len(prefix + answer)
+    assert _requests(sink) == [_request(n) for n in range(1, sequence + 1)]
 
 
 @pytest.mark.parametrize("phase", ["entry", "exit"])
-def test_exact_session_with_duplex_and_no_private_result(phase):
+def test_exact_session_with_duplex_and_no_private_result(guest_identity, phase):
     binding, guest = _parse(phase)
     invoked = []
+    sink = io.BytesIO()
+    admitted = _CHALLENGE + _answer(1) + _PACKET + b"\n" + _answer(2)
+    stream = io.BytesIO(admitted + _answer(3))
+
+    def parse_packet(raw):
+        assert raw == _PACKET
+        assert stream.tell() == len(admitted)
+        assert _requests(sink) == [_request(1), _request(2)]
+        invoked.append("parse")
+        return CONFIG
 
     def session(config, **kwargs):
         assert config is CONFIG and kwargs["execute"] is True
@@ -111,31 +161,33 @@ def test_exact_session_with_duplex_and_no_private_result(phase):
         else:
             with pytest.raises(ValueError, match="retained_input"):
                 kwargs["target_loader"]()
-        invoked.append(True)
+        invoked.append("session")
         return dict(
             pending=True, native_calls=1, native={"opaque": "private"}, calls={"ignored": 9}
         )
 
     def load(ref):
         assert ref == binding["worker_sha256"]
+        assert stream.tell() == len(admitted)
+        invoked.append("load")
         return dict(
             native_paths=lambda: {"state_root": PurePosixPath("/app/state")},
             CONTROL=PurePosixPath("/app/control"),
-            parse_packet=lambda raw: CONFIG if raw == b"invented" else _forbidden(),
+            parse_packet=parse_packet,
             run_account_session=session,
         )
 
-    sink = io.BytesIO()
     result = run_dec4_account_capsule(
         binding,
         guest,
-        stream=io.BytesIO(b"invented\n" + _answer(1) + _answer(2)),
+        stream=stream,
         sink=sink,
         load_worker=load,
         clock=lambda: guest.cohort.slot.starts_at + timedelta(seconds=1),
     )
-    assert invoked == [True]
-    assert [json.loads(raw)["sequence"] for raw in sink.getvalue().splitlines()] == [1, 2]
+    assert invoked == ["load", "parse", "session"]
+    assert _requests(sink) == [_request(1), _request(2), _request(3)]
+    assert _PACKET not in sink.getvalue()
     assert result["status"] == "pending"
     assert result["financial_claim"] == "UNKNOWN" and result["reservation_release"] is False
     assert "native" not in result and "calls" not in result and "private" not in str(result)

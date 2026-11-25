@@ -39,6 +39,10 @@ _FIELDS = {
     "restart_policy": ".HostConfig.RestartPolicy",
     "restart_count": ".RestartCount",
     "state": ".State",
+    "tty": ".Config.Tty",
+    "open_stdin": ".Config.OpenStdin",
+    "stdin_once": ".Config.StdinOnce",
+    "log_driver": ".HostConfig.LogConfig.Type",
 }
 _FORMAT = "{" + ",".join(f'"{key}":{{{{json {expr}}}}}' for key, expr in _FIELDS.items()) + "}"
 _LIVE = {
@@ -165,6 +169,13 @@ def _inspect(raw: bytes, ack: _Ack) -> tuple[int, str]:
     )
     policy = obj["restart_policy"]
     _need(obj["pid_mode"] == "" and obj["init"] is None, "pid_namespace")
+    _need(
+        obj["tty"] is False
+        and obj["open_stdin"] is True
+        and obj["stdin_once"] is True
+        and obj["log_driver"] == "none",
+        "private_stream",
+    )
     _need(
         type(obj["restart_count"]) is int
         and obj["restart_count"] == 0

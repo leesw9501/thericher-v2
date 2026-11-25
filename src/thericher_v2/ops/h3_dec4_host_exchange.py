@@ -5,17 +5,32 @@ import math
 import time
 from functools import partial
 from queue import Empty, Queue
+from secrets import token_hex
 from threading import Thread
 
 from thericher_v2.ops.h3_dec4_capsule import _json, verify_dec4_capsule_outcome
+from thericher_v2.ops.h3_dec4_guest_identity import (
+    ANSWER,
+    CHALLENGE,
+    REQUEST,
+    is_hex,
+    parse_guest_process,
+)
 
 _LIMIT = 4096
-_ACK = "current20-owner-answer-v1"
-_REQUEST = "current20-owner-request-v1"
+_LOCAL_ACK_SECONDS = 12  # The guest's 13-second limit also covers transport.
 
 
 def exchange_dec4_guest(
-    process, *, packet, guest, admit, read_retained, deadline, monotonic=time.monotonic
+    process,
+    *,
+    load_packet,
+    guest,
+    guest_argv_sha256,
+    admit,
+    read_retained,
+    deadline,
+    monotonic=time.monotonic,
 ):
     """Use the attach child's exact terminal bytes; never create or settle a visit.
 
@@ -24,9 +39,8 @@ def exchange_dec4_guest(
     lease. Its cleanup must kill the Job before closing a blocked pipe.
     """
     if (
-        type(packet) is not bytes
-        or not 0 < len(packet) <= 8192
-        or any(separator in packet for separator in (b"\n", b"\r"))
+        not callable(load_packet)
+        or not is_hex(guest_argv_sha256, 64)
         or type(deadline) not in (int, float)
         or not math.isfinite(deadline)
     ):
@@ -68,8 +82,13 @@ def exchange_dec4_guest(
     def receive():
         return process.stdout.readline(_LIMIT + 1)
 
-    pipe(partial(send, packet + b"\n"))
+    def frame(value):
+        pipe(partial(send, json.dumps(value).encode("ascii") + b"\n"))
+
+    challenge = token_hex(32)
+    frame(dict(kind=CHALLENGE, challenge=challenge))
     sequence = 0
+    initial = None
     while True:
         line = pipe(receive)
         if type(line) is not bytes or not 1 < len(line) <= _LIMIT or not line.endswith(b"\n"):
@@ -80,28 +99,51 @@ def exchange_dec4_guest(
             raise ValueError("h3_host_exchange_frame") from None
         if type(body) is not dict:
             raise ValueError("h3_host_exchange_frame")
-        if body.get("kind") != _REQUEST:
+        if body.get("kind") != REQUEST:
             break
         sequence += 1
         if (
-            body.keys() != {"kind", "sequence"}
+            body.keys() != {"kind", "sequence", "challenge", "process"}
             or type(body["sequence"]) is not int
             or body["sequence"] != sequence
+            or body["challenge"] != challenge
             or sequence > 512
         ):
             raise ValueError("h3_host_exchange_sequence")
+        identity = parse_guest_process(body["process"])
+        if identity.argv_sha256 != guest_argv_sha256 or initial not in (None, identity):
+            raise ValueError("h3_host_exchange_guest_changed")
+        initial = identity
         remaining()
+        began = monotonic()
         try:
-            owner_ready = admit(sequence)
+            owner_ready = admit(sequence, identity)
         except Exception:
             raise ValueError("h3_host_exchange_owner_denied") from None
         if owner_ready is not True:
             raise ValueError("h3_host_exchange_owner_denied")
         remaining()
-        ack = json.dumps(dict(kind=_ACK, sequence=sequence, ready=True)).encode("ascii")
-        pipe(partial(send, ack + b"\n"))
+        if not 0 <= monotonic() - began <= _LOCAL_ACK_SECONDS:
+            raise ValueError("h3_host_exchange_owner_late")
+        frame(dict(kind=ANSWER, sequence=sequence, challenge=challenge, ready=True))
+        if sequence == 1:
+            remaining()
+            if not 0 <= monotonic() - began <= _LOCAL_ACK_SECONDS:
+                raise ValueError("h3_host_exchange_owner_late")
+            try:
+                packet = load_packet()
+            except Exception:
+                raise ValueError("h3_host_exchange_packet_unavailable") from None
+            if (
+                type(packet) is not bytes
+                or not 0 < len(packet) <= 8192
+                or any(sep in packet for sep in (b"\n", b"\r"))
+            ):
+                raise ValueError("h3_host_exchange_packet_invalid")
+            pipe(partial(send, packet + b"\n"))
+            del packet
 
-    if sequence == 0:
+    if sequence < 2:
         raise ValueError("h3_host_exchange_owner_missing")
     pipe(process.stdin.close)
     if pipe(receive) != b"":

@@ -96,11 +96,31 @@ def test_same_leg_watchdog_arms_once_and_is_checked_after_slow_admission(monkeyp
     assert events[1:] == ["watchdog", "observer", "watchdog"] * 2
     with pytest.raises(ValueError, match="h3_root_watchdog_unavailable"):
         gate.check(SimpleNamespace(leg=object()), stage="GUEST_ADMISSION", visit=None)
-    context = SimpleNamespace(leg=leg, exchange_deadline=7.0, daemon_inventory=None)
+    context = SimpleNamespace(
+        leg=leg, exchange_deadline=7.0, daemon_inventory=None, first_daemon_inventory=None
+    )
     with pytest.raises(ValueError, match="h3_root_watchdog_unavailable"):
         gate.check(context, stage="GUEST_ADMISSION", visit="invented")
     assert context.daemon_inventory is None
     assert events[-3:] == ["watchdog", (leg, "GUEST_ADMISSION", "invented"), "watchdog"]
+
+
+def test_guest_renewal_cannot_switch_daemon_process_epoch(monkeypatch):
+    leg = object()
+    calls = []
+    guard = SimpleNamespace(check=lambda ctx, **_: calls.append(ctx.daemon_inventory) or True)
+    gate = launcher._WatchdogGate(None, None, guard)
+    gate._leg = leg
+    gate._lease = SimpleNamespace(check=lambda: True)
+    samples = iter(("first-epoch", "second-epoch"))
+    monkeypatch.setattr(launcher, "sample_dec4_docker_inventory", lambda *_, **kw: next(samples))
+    context = SimpleNamespace(
+        leg=leg, exchange_deadline=1.0, daemon_inventory=None, first_daemon_inventory=None
+    )
+    assert gate.check(context, stage="GUEST_ADMISSION", visit=object()) is True
+    with pytest.raises(ValueError, match="h3_dec4_daemon_identity_changed"):
+        gate.check(context, stage="GUEST_ADMISSION", visit=object())
+    assert calls == ["first-epoch"] and context.daemon_inventory is None
 
 
 @pytest.mark.parametrize("phase,day,minute", [("entry", 4, 31), ("exit", 9, 30)])

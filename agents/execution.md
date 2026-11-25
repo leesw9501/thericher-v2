@@ -38,7 +38,13 @@ BankLeg closure and original PID/birth absence. Protected native read and
 pre-window mutation refusal passed without touching the live task. Actual
 restore runner and cross-owner census remain pending. A live daemon sample
 now rejects extra same-CID processes/restarts before guest acknowledgement;
-exact guest kernel birth remains a separate input.
+the daemon epoch is distinct from exact guest kernel birth.
+The new owner pipe observes that birth separately and requires
+two positive owner checks around the only credential frame. Native inert
+Windows Job/Docker round trip passed; protect the new image and do not reuse
+the old credential-first ABI. The separate normal restore coordinator uses
+an independently retained startup owner handoff, not bank/observer evidence
+alone. The actual cross-owner guard and external runner remain unbound.
 
 Nov26: supervised point source-v3 and the protected control root passed
 native path/ACL and early refusal checks; the existing task is unchanged.

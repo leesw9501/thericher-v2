@@ -51,10 +51,12 @@ The named launcher now uses a durable, exact-BankLeg observer lease and
 protected native transport; early physical mutation is refused. Finish the
 independent normal restore owner and retain exact abnormal physical recovery
 as a separate path. Scheduler emptiness is not descendant closure.
-Guest admission now samples exact same-CID Docker process count and daemon
-PID/start epoch; bind independent guest PID/birth and the actual
-source-qualified cross-owner census. Do not infer Linux kernel birth from
-Docker StartedAt or from a matching CLI process.
+Guest admission now joins exact same-CID Docker count/PID/epoch to an
+independent challenge-bound guest PID/birth/argv sample before and after
+the credential frame. The protected startup handoff and join for a separate
+normal restore owner are tracked. Bind the actual cross-owner census and
+external restore runner, then freeze the new image/host sources and qualify
+the named source release. Do not use the prior credential-first capsule ABI.
 V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.

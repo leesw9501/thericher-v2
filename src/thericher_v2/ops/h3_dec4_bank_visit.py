@@ -169,7 +169,7 @@ def run_dec4_owned_bank_visit(
             def dispatch():
                 return invoke_capsule_once(leg, ready, frame, admit)
         else:
-            # This callback can only stage the exact source-owned files.
+            # Stage exact source-owned files and the nonfinancial observer lease.
             # Credentials and daemon calls belong to the returned dispatch.
             dispatch = prepare_capsule_once(leg, ready, retained, frame, admit)
             if not callable(dispatch) or leg.record["visits"]:

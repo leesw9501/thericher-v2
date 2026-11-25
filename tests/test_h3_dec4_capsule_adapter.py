@@ -12,12 +12,14 @@ import pytest
 
 from test_h3_dec4_capsule import _outcome, _parse
 from thericher_v2.execution import paper_peer_visit as pv
+from thericher_v2.ops import h3_dec4_host_exchange
 from thericher_v2.ops.h3_dec4_capsule_adapter import (
     _CONTROLLER,
     _compile_visit,
     _load_visit,
     _run_visit,
 )
+from thericher_v2.ops.h3_dec4_guest_identity import ANSWER, CHALLENGE, REQUEST, linux_argv_sha256
 
 _BANK = dict(engine="npipe:////./pipe/dockerdesktoplinuxengine", volume="synthetic")
 _CID = "c" * 64
@@ -30,7 +32,22 @@ _SPEC = dict(
     entrypoint=["python"],
     args=["fixture.py", "--execute"],
 )
-_REQUEST = b'{"kind":"current20-owner-request-v1","sequence":1}\n'
+_NONCE = "8" * 64
+_ARGV = linux_argv_sha256([*_SPEC["entrypoint"], *_SPEC["args"]])
+
+
+def _request(sequence):
+    return (
+        json.dumps(
+            dict(
+                kind=REQUEST,
+                sequence=sequence,
+                challenge=_NONCE,
+                process=dict(namespace_pid=1, start_ticks=101, argv_sha256=_ARGV),
+            )
+        ).encode()
+        + b"\n"
+    )
 
 
 @pytest.fixture(scope="module")
@@ -66,7 +83,8 @@ def test_loads_pinned_code_without_legacy_transport(frozen_daemon, tmp_path):
         "guest_guard_deadline",
     ],
 )
-def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
+def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, monkeypatch, case):
+    monkeypatch.setattr(h3_dec4_host_exchange, "token_hex", lambda _: _NONCE)
     _, guest = _parse()
     terminal = _outcome(guest)
     source = guest.cohort.source_ref.removeprefix("sha256:")
@@ -110,7 +128,7 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
                 assert leg.record["visits"][0]["create"]["resolution"] == "ACK_EXACT_CID"
                 running = True
                 self.stdin = io.BytesIO()
-                self.stdout = io.BytesIO(_REQUEST + _REQUEST.replace(b"1}", b"2}") + terminal)
+                self.stdout = io.BytesIO(_request(1) + _request(2) + terminal)
                 if case == "timeout":
                     self.stdout = SimpleNamespace(readline=self.blocked_read)
 
@@ -205,6 +223,7 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
         assert visit.context is ctx
         log.append(stage)
         if stage == "GUEST_ADMISSION":
+            assert ctx.guest_process.start_ticks == 101 and ctx.guest_process.argv_sha256 == _ARGV
             attach = next(job for job in visit.jobs if job.command == "start")
             assert attach.command == "start" and visit.cid == _CID
             assert leg.record["visits"][0]["children"][-1]["pid"] == attach.pid
@@ -246,12 +265,18 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
 
         def invoke():
             deadline = clock() + (1.5 if case == "timeout" else 5)
+
+            def load():
+                log.append("packet")
+                assert log.count("GUEST_ADMISSION") == 1
+                return b'{"invented":true}'
+
             return _run_visit(
                 visit_type,
                 ctx,
                 _SPEC,
                 guest,
-                lambda: b'{"invented":true}',
+                load,
                 read_retained,
                 deadline,
                 _clock=lambda: clock() if deadlines[0] else deadline,
@@ -289,12 +314,18 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, case):
                 assert log.index("start") < log.index("kill_job") < log.index("stop")
                 assert "retained" not in log
                 attach = next(job for job in jobs if job.command == "start")
-                assert attach.stdin.getvalue() == b'{"invented":true}\n'
+                assert json.loads(attach.stdin.getvalue()) == dict(kind=CHALLENGE, challenge=_NONCE)
+                assert "packet" not in log
             elif case.startswith("guest_guard_"):
                 attach = next(job for job in jobs if job.command == "start")
-                replies = [json.loads(row) for row in attach.stdin.getvalue().splitlines()[1:]]
-                assert [row["sequence"] for row in replies] == [1]
+                rows = [json.loads(row) for row in attach.stdin.getvalue().splitlines()]
+                assert rows == [
+                    dict(kind=CHALLENGE, challenge=_NONCE),
+                    dict(kind=ANSWER, challenge=_NONCE, sequence=1, ready=True),
+                    {"invented": True},
+                ]
                 assert log.count("GUEST_ADMISSION") == 2
+                assert log.count("packet") == 1
                 assert log.index("start") < log.index("kill_job") < log.index("stop")
                 assert "retained" not in log
             elif case not in {"unknown_create", "guard"}:

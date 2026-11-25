@@ -12,6 +12,7 @@ from uuid import uuid4
 
 from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops.h3_dec4_guest import Dec4GuestVisit
+from thericher_v2.ops.h3_dec4_guest_identity import linux_argv_sha256
 from thericher_v2.ops.h3_dec4_host_exchange import exchange_dec4_guest
 
 _CONTROLLER = Path("D:/thericher-v2/model-artifacts/execution/n9h3-control-r8/c1/controller")
@@ -163,7 +164,6 @@ def _run_visit(
     if ctx.writer_guard.check(ctx, stage="BEFORE_CREDENTIALS", visit=visit) is not True:
         raise ValueError("h3_capsule_visit_writer_denied")
     check_deadline()
-    packet = load_packet()
     used = False
 
     def exchange(process):
@@ -195,19 +195,32 @@ def _run_visit(
             ):
                 raise ValueError("h3_capsule_attach_identity_changed")
 
-        def admit_guest(_sequence):
+        def admit_guest(_sequence, identity):
             renew()
             check_attach()
-            if ctx.writer_guard.check(ctx, stage="GUEST_ADMISSION", visit=visit) is not True:
-                raise ValueError("h3_capsule_visit_writer_denied")
+            ctx.guest_process = identity
+            try:
+                if ctx.writer_guard.check(ctx, stage="GUEST_ADMISSION", visit=visit) is not True:
+                    raise ValueError("h3_capsule_visit_writer_denied")
+            finally:
+                ctx.guest_process = None
             check_attach()
             check_deadline()
             return True
 
+        def credential_packet():
+            check_attach()
+            check_deadline()
+            packet = load_packet()
+            check_attach()
+            check_deadline()
+            return packet
+
         return exchange_dec4_guest(
             process,
-            packet=packet,
+            load_packet=credential_packet,
             guest=guest,
+            guest_argv_sha256=linux_argv_sha256([*visit.spec["entrypoint"], *visit.spec["args"]]),
             admit=admit_guest,
             read_retained=read_retained,
             deadline=exchange_deadline,

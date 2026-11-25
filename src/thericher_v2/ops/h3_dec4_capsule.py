@@ -4,10 +4,18 @@ import hashlib
 import json
 import re
 import time
+from dataclasses import asdict
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from thericher_v2.ops.h3_dec4_guest import Dec4GuestVisit, parse_dec4_guest_visit
+from thericher_v2.ops.h3_dec4_guest_identity import (
+    ANSWER,
+    CHALLENGE,
+    REQUEST,
+    is_hex,
+    read_guest_process,
+)
 
 _SHA = re.compile(r"[0-9a-f]{64}")
 _PINS = {"phase", "source_ref", "basis_ref", "policy_ref", "payload_sha256"}
@@ -122,11 +130,23 @@ def verify_dec4_capsule_outcome(stdout, retained, *, exit_code, guest):
 
 
 class OwnerChannel:
-    """The current20 duplex protocol already spoken by the owned host transport."""
+    """Bind one new stream to its nonce and independently read guest identity."""
 
     def __init__(self, stream, sink, *, monotonic=time.monotonic):
         self.stream, self.sink, self.monotonic = stream, sink, monotonic
         self.sequence = 0
+        raw = stream.readline(4097)
+        if not raw.endswith(b"\n") or len(raw) > 4096:
+            raise ValueError("h3_capsule_owner_unknown")
+        init = _json(raw)
+        if (
+            type(init) is not dict
+            or init.keys() != {"kind", "challenge"}
+            or init["kind"] != CHALLENGE
+            or not is_hex(init["challenge"], 64)
+        ):
+            raise ValueError("h3_capsule_owner_denied")
+        self.challenge = init["challenge"]
 
     def __call__(self):
         self.sequence += 1
@@ -135,7 +155,15 @@ class OwnerChannel:
         started = self.monotonic()
         self.sink.write(
             (
-                json.dumps(dict(kind="current20-owner-request-v1", sequence=self.sequence)) + "\n"
+                json.dumps(
+                    dict(
+                        kind=REQUEST,
+                        sequence=self.sequence,
+                        challenge=self.challenge,
+                        process=asdict(read_guest_process()),
+                    )
+                )
+                + "\n"
             ).encode("ascii")
         )
         self.sink.flush()
@@ -145,8 +173,9 @@ class OwnerChannel:
         answer = _json(raw)
         if (
             type(answer) is not dict
-            or answer.keys() != {"kind", "sequence", "ready"}
-            or answer["kind"] != "current20-owner-answer-v1"
+            or answer.keys() != {"kind", "sequence", "challenge", "ready"}
+            or answer["kind"] != ANSWER
+            or answer["challenge"] != self.challenge
             or type(answer["sequence"]) is not int
             or answer["sequence"] != self.sequence
             or answer["ready"] is not True
@@ -173,9 +202,6 @@ def run_dec4_account_capsule(binding, guest, *, stream, sink, load_worker, clock
         return True
 
     check_window()
-    packet = stream.readline(8194)
-    if not packet.endswith(b"\n") or len(packet) > 8193:
-        raise ValueError("h3_capsule_packet_invalid")
     owner = OwnerChannel(stream, sink)
 
     def admit():
@@ -184,6 +210,11 @@ def run_dec4_account_capsule(binding, guest, *, stream, sink, load_worker, clock
         check_window()
         return True
 
+    admit()
+    packet = stream.readline(8194)
+    if not packet.endswith(b"\n") or len(packet) > 8193:
+        raise ValueError("h3_capsule_packet_invalid")
+    # Recheck the same container after receiving the bounded frame; never echo it.
     admit()
     worker = load_worker(binding["worker_sha256"])
     paths = worker["native_paths"]()
