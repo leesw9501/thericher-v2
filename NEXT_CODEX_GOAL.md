@@ -80,12 +80,14 @@ execution path. The model is a proposal source, not a separate bank writer.
    phases and verified early execution fails closed. Unknown effects are never
    projected as a released reservation. Connect the actual quiet host launcher,
    native owner provider and writer/observer guard; prove one prebound source
-   and the actual container/Job containment budget. The host must verify the
-   exact retained receipt against the duplex result and convert the nullable
-   guest field only from a valid non-fault outcome into the BankLeg boolean;
-   never coerce an unavailable result into a no-effect result. The draft's
-   relative Scheduler limit is only two minutes; qualify end-to-end teardown
-   before installing. No actual named pair installed.
+   and the actual container/Job containment budget. The host result verifier
+   now checks exact retained bytes, exit code and phase/source/input/policy
+   before projecting a result for BankLeg; faults cannot prove no effect.
+   Reuse the pinned R8 Job and daemon closure behavior, not its old clocks
+   or guest CLI. The Windows Job helper joined an inert blocked pipe tree.
+   The draft's relative Scheduler limit is only two minutes; prove an actual
+   absolute host watchdog and end-to-end exact daemon teardown before
+   installing. No actual named pair installed.
 3. In parallel, implement one reusable daily capture-to-seal-to-readout path for
    the frozen 50:50 H3 study in RUNBOOK. Start with the designated five-date
    block, do not retrain, and keep outcomes sealed until the block closes.
@@ -95,8 +97,10 @@ execution path. The model is a proposal source, not a separate bank writer.
    cohort replay compares fixed-half, funded-gross EW and cash; distinct sell
    notionals drive leg-specific fees. Current forecast/target owners and
    separate block-end admission still needed. Prepare the Nov27 early-close
-   prefix and Nov30 pre-open fixed-half seal first; do not substitute a Dec4
-   LSTM-only Paper proposal or rerun the older closed forecast. The pure block reducer reports
+   prefix and Nov30 pre-open fixed-half seal first. An invented Nov27 session
+   exercised the 18:00 UTC close, MODP1 capture and Nov30 READY reader. Pin the
+   actual owner plus exact feature and forecast parser; do not substitute a
+   Dec4 LSTM-only proposal or rerun the older forecast. The pure reducer reports
    only descriptive paired results with at least four admitted dates. No
    actual outcome scored.
    Intraday timestamp work remains separate and cannot hold this block.

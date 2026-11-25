@@ -7,11 +7,24 @@ import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from thericher_v2.ops.h3_dec4_guest import parse_dec4_guest_visit
+from thericher_v2.ops.h3_dec4_guest import Dec4GuestVisit, parse_dec4_guest_visit
 
 _SHA = re.compile(r"[0-9a-f]{64}")
 _PINS = {"phase", "source_ref", "basis_ref", "policy_ref", "payload_sha256"}
 _FIELDS = _PINS | {"schema", "account_ref", "frame_sha256", "worker_sha256", "paths", "token_root"}
+_NATIVE_STATUS = {"advanced", "hold", "complete", "no_intent", "pending"}
+_OUTCOME_FIELDS = {
+    "schema",
+    "status",
+    "pending",
+    "phase",
+    "input_ref",
+    "policy_ref",
+    "source_ref",
+    "native_calls",
+    "financial_claim",
+    "reservation_release",
+}
 
 
 def _json(raw):
@@ -57,6 +70,55 @@ def inspect_dec4_capsule(binding_raw, frame, *, binding_sha256):
         raise ValueError("h3_capsule_binding_invalid")
     guest = parse_dec4_guest_visit(frame, **{"expected_" + k: binding[k] for k in _PINS})
     return binding, guest
+
+
+def verify_dec4_capsule_outcome(stdout, retained, *, exit_code, guest):
+    """Validate a successful exact transport result, not process or financial closure."""
+    if (
+        type(guest) is not Dec4GuestVisit
+        or type(exit_code) is not int
+        or exit_code != 0
+        or type(stdout) is not bytes
+        or type(retained) is not bytes
+        or not 1 < len(stdout) <= 4096
+        or stdout != retained
+        or not stdout.endswith(b"\n")
+        or stdout.count(b"\n") != 1
+    ):
+        raise ValueError("h3_capsule_outcome_unconfirmed")
+    try:
+        outcome = _json(stdout)
+    except (ValueError, RecursionError):
+        raise ValueError("h3_capsule_outcome_unconfirmed") from None
+    slot = guest.cohort.slot
+    pins = dict(
+        phase=slot.phase,
+        input_ref=slot.input_ref,
+        policy_ref=slot.policy_ref,
+        source_ref=guest.cohort.source_ref,
+    )
+    if (
+        type(outcome) is not dict
+        or outcome.keys() != _OUTCOME_FIELDS
+        or outcome["schema"] != "dec4-net25-capsule-outcome-v1"
+        or type(outcome["status"]) is not str
+        or outcome["status"] not in _NATIVE_STATUS
+        or outcome["pending"] is not (True if outcome["status"] == "pending" else None)
+        or type(outcome["native_calls"]) is not int
+        or not 0 <= outcome["native_calls"] <= 32
+        or outcome["financial_claim"] != "UNKNOWN"
+        or outcome["reservation_release"] is not False
+        or any(outcome[k] != v for k, v in pins.items())
+    ):
+        raise ValueError("h3_capsule_outcome_unconfirmed")
+    # BankLeg still requires independent process/container closure. This boolean
+    # reports a positive pending observation, not the absence of reservations.
+    return {
+        "pending": outcome["pending"] is True,
+        "native_status": outcome["status"],
+        "financial_claim": "UNKNOWN",
+        "reservation_release": False,
+    }
 
 
 class OwnerChannel:
@@ -157,15 +219,10 @@ def run_dec4_account_capsule(binding, guest, *, stream, sink, load_worker, clock
         raise ValueError("h3_capsule_result_invalid")
     native = result.get("native")
     status = native.get("status") if type(native) is dict else None
-    allowed = {"advanced", "hold", "complete", "no_intent", "unavailable", "pending"}
     if result["pending"]:
         status = "pending"
-    elif status not in allowed:
-        status = (
-            "no_intent"
-            if result.get("stop") == "empty_original_basket"
-            else "unavailable"
-        )
+    elif status not in _NATIVE_STATUS - {"pending"}:
+        status = "no_intent" if result.get("stop") == "empty_original_basket" else "unavailable"
     return dict(
         schema="dec4-net25-capsule-outcome-v1",
         status=status,

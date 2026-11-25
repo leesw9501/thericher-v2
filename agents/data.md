@@ -2,6 +2,15 @@
 
 Updated 2026-11-26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
+capture-to-READY path for the Nov30 research slot, including wrong response
+identity rejection. Capture owner/source and exact forecast parser are not
+yet bound. Scoped Scheduler metadata found no current named owner for
+Nov27 18:30 UTC; the Nov6 MODP1 one-shot is consumed and the recurring
+NAS/pair/SPY collectors do not supply the exact full panel. Reuse the proven
+worker with a new dated binding, not the consumed opportunity. No real
+capture was attempted.
+
 Nov13 locked W25 capture missed during host shutdown. No qualified target
 edition or substitute for Nov9. Next consumer is the five-cohort RUNBOOK
 block; qualify a reusable coherent 60-session and outcome capture path.

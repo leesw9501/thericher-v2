@@ -12,7 +12,11 @@ import pytest
 from test_h3_dec4_guest import _wire
 from test_h3_dec4_retained_input import _native
 from thericher_v2.execution import kis_paper_budget_strategy as budget
-from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule, run_dec4_account_capsule
+from thericher_v2.ops.h3_dec4_capsule import (
+    inspect_dec4_capsule,
+    run_dec4_account_capsule,
+    verify_dec4_capsule_outcome,
+)
 
 CONFIG = SimpleNamespace(
     base_url="https://example.invalid", account_number="synthetic", account_product_code="test"
@@ -135,3 +139,66 @@ def test_exact_session_with_duplex_and_no_private_result(phase):
     assert result["status"] == "pending"
     assert result["financial_claim"] == "UNKNOWN" and result["reservation_release"] is False
     assert "native" not in result and "calls" not in result and "private" not in str(result)
+
+
+def _outcome(guest, **overrides):
+    slot = guest.cohort.slot
+    value = dict(
+        schema="dec4-net25-capsule-outcome-v1",
+        status="no_intent",
+        pending=None,
+        phase=slot.phase,
+        input_ref=slot.input_ref,
+        policy_ref=slot.policy_ref,
+        source_ref=guest.cohort.source_ref,
+        native_calls=1,
+        financial_claim="UNKNOWN",
+        reservation_release=False,
+    )
+    return json.dumps(value | overrides).encode() + b"\n"
+
+
+@pytest.mark.parametrize("status,pending", [("no_intent", None), ("pending", True)])
+def test_host_capsule_result_contract(status, pending):
+    _, guest = _parse()
+    raw = _outcome(guest, status=status, pending=pending)
+    assert verify_dec4_capsule_outcome(raw, raw, exit_code=0, guest=guest) == dict(
+        pending=pending is True,
+        native_status=status,
+        financial_claim="UNKNOWN",
+        reservation_release=False,
+    )
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [
+        {"phase": "exit"},
+        {"input_ref": "sha256:" + "0" * 64},
+        {"status": "unavailable"},
+        {"status": "pending"},
+        {"pending": False},
+        {"native_calls": True},
+        {"reservation_release": 0},
+        {"extra": "unrecognized"},
+    ],
+)
+def test_host_capsule_result_rejects_malformed_response(overrides):
+    _, guest = _parse()
+    raw = _outcome(guest, **overrides)
+    with pytest.raises(ValueError, match="^h3_capsule_outcome_unconfirmed$"):
+        verify_dec4_capsule_outcome(raw, raw, exit_code=0, guest=guest)
+
+
+def test_host_capsule_result_requires_exact_members_and_confirmed_exit():
+    _, guest = _parse()
+    raw = _outcome(guest)
+    duplicate = b'{"status":"no_intent",' + raw[1:]
+    for stdout, retained, rc in (
+        (raw, raw[:-1], 0),
+        (raw, raw, 20),
+        (raw, raw, False),
+        (duplicate, duplicate, 0),
+    ):
+        with pytest.raises(ValueError, match="^h3_capsule_outcome_unconfirmed$"):
+            verify_dec4_capsule_outcome(stdout, retained, exit_code=rc, guest=guest)

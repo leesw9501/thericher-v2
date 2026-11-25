@@ -8,6 +8,16 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+Follow-on: Dec4 host receipt verification now accepts only exact duplex and
+retained bytes, zero exit and matching phase/source/input/policy. The
+historical pinned Windows Job helper joined an inert blocked pipe tree; this
+does not prove the new launcher's absolute deadline or daemon closure. An
+isolated no-network Docker fixture was still running after its attach Job
+joined; the exact owned container was removed and absence verified.
+Separately, the existing MODP1 capture and H123 READY format passed an
+invented Nov27 18:00 UTC early-close to Nov30 pre-open input smoke. No actual
+capture, forecast, fit, installation or broker execution.
+
 Follow-on: the Dec4/9 protected task plan and the Linux NET25 guest executable
 are tracked. The no-network Docker test parsed both Windows-generated frames;
 the actual executable refused early execution and retained byte-identical
