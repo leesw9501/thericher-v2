@@ -143,6 +143,17 @@ Missing measurements stay explicit, separate from verified no-signal dates.
 The time-bound caller denies target reads before Dec28 21:00 UTC and requires
 all five bindings to be independently attested. Actual immutable one-shot
 ownership and per-slot input runners remain pending. No fit was repeated.
+The D-only `read_block_once.py` candidate now prechecks the exact five slot
+owner-evidence digests before the caller takes its exclusive evaluation claim.
+An early/unresolved slot does not consume it; changed receipt bytes under the
+same status after claim withhold rather than retry. Four invented tests and
+47 existing block readout/evaluator tests passed. Artifact under
+`A/research/h3-dec4-fixed-half-production-prep-20261126-v1`, SHA256
+`3f2642de451dd23387ccc98130d41994a652e4a4ff094e39e18de6adbc315c3c`.
+The named block host must bind independent real evidence and a durable
+create-only claim. The Dec28 21:00 UTC timestamp is only the earliest clock
+boundary; the final target writer may not yet have closed then. No actual
+outcomes, claim or process launched.
 The shipped calendar and original 19-query MODP1 constructor agree on six
 capture dates for the five fixed cohorts: Nov27 input only; Dec3, Dec9,
 Dec15 and Dec21 each have a prior target and next prefix; Dec28 target only.
