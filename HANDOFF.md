@@ -176,6 +176,13 @@ network and the financial dispatcher were not used. Direct r3 Pythonw
 still denied both early phases. Neither package source nor task is frozen
 and installed yet. Select the actual source/runtime closure and real
 owner/release pins before qualifying the independent native installer.
+The same root's `dec4_source_closure.py` (SHA256
+`fd44f4ecd4b490b9af1349eab7c76b2d04a2511ca9183823be4ac922f8576420`)
+selects 112 frozen Git members including the restore entry from `8409ace2`.
+The composed startup imported 111 project modules using only that subset.
+The restore binding independently imported in no-site Python with the
+New York zone file and no third-party import path. The subset fits the
+existing 256-member reader; this does not prove late runtime effects.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

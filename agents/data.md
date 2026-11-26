@@ -127,6 +127,11 @@ explicit parent seed reached setup/cleanup without a mutation.
 Qualify the explicit startup seed inside a new bounded cold check without
 relaxing the mutation audit. The prior receipt did not identify its caller;
 the isolated fix does not prove the full Data startup.
+The one seeded `-importerror-r3/STARTUP.json` attempt (SHA256
+`50ced1d1532056b1e1e046b0b362646699d165c89c81cc97d60fc64ed0eaa299`)
+reached `exact_target_prebind` with one backend exclusion and no audit
+denials. It withheld there; no adoption or runtime authority. Review the
+exact prebind input shape rather than relaxing the import effect audit.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
