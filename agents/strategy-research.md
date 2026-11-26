@@ -33,6 +33,21 @@ different rule, not the pinned same-support EW target. No date-valid full
 17-name map was found. Do not substitute ETF routes or retrospective Norgate
 index membership, open scored tapes, fit, or change Paper on this evidence.
 
+Granite daily foundation candidate, Nov26: IBM `52-16-ft-r2.1`, immutable
+checkpoint commit `8c9c1d742ec5893d6419e3aa2ab21ed23e28df85` (2025-02-26),
+Apache-2.0. [Model card](https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2).
+Prior Granite campaigns used R1 plus trained heads; this is a distinct daily
+zero-shot candidate. The pinned two-file safetensors model made one CPU
+forward of invented 17x52x1 to 17x16x1, no data or fit. Existing pinned Granite
+image, network-none, RO root/checkpoint; import initially required bounded
+disposable `/tmp`. Both containers absent after run. Source and weights:
+`A/research/granite-ttm-r21-52-16-runtime-smoke-20261126-v1`, smoke SHA256
+`3c713a4debe90c73046f0a9d501f819dad0787750b823907bec70ba07f9e9e47`.
+Before a separate post-checkpoint campaign, align a causal daily OPEN prefix
+to forecast OPEN[e] and OPEN[e+3], not the gap into entry. Freeze naive and
+same-gross EW comparisons, costs and mask; no untouched or profit claim from
+release date alone. Keep this out of the frozen H3 block and Paper.
+
 Proposal bundle current-self-lstm60-fixed-half-paper-proposal-preparation-
 20261107-v1 COMPLETE synthetic (Source2072/bundleee98). Independent Godel review
 confirmed best6 SELF MLP and OLD60 is exact Source72 best10 LSTM60 with the
