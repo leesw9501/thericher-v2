@@ -259,6 +259,12 @@ passed with deployed R6 module pins in the exact capsule image. This was a
 normal process restart, not abrupt power-loss durability or a broker fill.
 `A/execution/r6-positive-restart-recovery-invented-20261126-v1/recovery_smoke.py`,
 SHA256 `a70380beffdc190f7835059ebe828ffc5d2074c67a628d4a1c179e26a08e2fe7`.
+An isolated check on the exact capsule image verified that a second process
+could not take the native file lock while held, but could acquire the same
+lock after abrupt process exit without deleting its file. This verifies
+process lock lifetime only. The separate injected-ack fixture did not yield
+an admitted result; its scratch and container were observed absent. Do not
+infer broker recovery or storage durability, and do not repeat that fixture.
 Positive reconciliation of an actual broker response is still unobserved.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
