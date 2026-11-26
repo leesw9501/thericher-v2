@@ -253,6 +253,13 @@ prefix, preserve the original target-only candidate, and select at most
 one actual collector after exact eligibility. Claude conditional review:
 `CLAUDE-SHARED-CAPTURE-VERDICT.json` in the Dec15 candidate root. No
 post-outcome retag or independent-performance claim from co-production.
+The separate Dec9 dual alternative was prepared before the original Dec4
+open, preserves target slot 2 and its embargo, and binds the Dec10 14:25
+UTC slot 3 prefix. One invented 19-query capture and separate read paths,
+including refusal of development access, passed. Not enrolled or selected.
+`A/data/h3-dec9-dual-output-alternative-v1/RESULT.json` SHA256
+`8054896b03a1675e9ea05fb4724370081f15c3f0b05e5527d5d7827fed271b8a`.
+Actual owner/Job return and inference-only mount isolation remain required.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

@@ -101,6 +101,15 @@ without rewriting the original receipt.
 SHA256 `c23f3cc236be05af52cdd6276e33c02f746fb294c11554138586e49e160da9d2`.
 Integrate with the bounded host and original Linux worker; the proof is not
 native origin qualification, a real input or an installed owner.
+The integrated stdlib host/worker includes verified one-time D: publication.
+`A/research/h3-dec4-fixed-half-integrated-metadata-candidate-20261126-v1/invented-once/RESULT.json`
+SHA256 `a04fa20e654f8d914fb82e63d06a1cba8a2e9beb4f475d8272f3ecb53c09cdf7`.
+Its sibling `check_no_site_origin.py` SHA256
+`5c0691affd110ed950f1f1b442d891abccc651d05a183e6b4142dddbe3f30120`
+passed on the direct interpreter with a scrubbed environment, before window:
+no numeric imports and no new extra-origin maps, two prior Program Files
+maps remained. This does not positively qualify those modules. Bind the
+exact protected bootstrap/profile and scoped origin, not a new data read.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
