@@ -154,6 +154,14 @@ disabled, and no idle prerequisite. The active power plan currently has
 automatic idle sleep disabled; this does not survive all power plan changes,
 manual sleep, shutdown or update restarts. Keep the host awake over the real
 windows; do not change or replay pinned tasks based on missing outcomes.
+The Nov26 readback also verified `Interactive` logon for Nov27/Nov30,
+the Dec1 H20 readout, Dec3 Data/point and the Dec4/Dec9 R6 pair. Windows
+requires an existing session for the registered user in this mode:
+[Microsoft Task Scheduler logon types](https://learn.microsoft.com/en-us/windows/win32/taskschd/principal-logontype).
+Leave that user signed in; lock the screen instead of signing out. If an
+update restarts the PC, sign back in before the owned window. All seven were
+Ready at readback; six require AC and host power was online. These host
+conditions do not prove task start, runtime admission or a broker effect.
 
 Next research block (US session dates, `OPEN[e]` to `OPEN[e+3]`):
 Nov30-Dec3, Dec4-Dec9, Dec10-Dec15, Dec16-Dec21, Dec22-Dec28.
