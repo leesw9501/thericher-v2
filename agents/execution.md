@@ -103,6 +103,14 @@ replayed, wrong alias and rehashed changed bytes refused. Membership,
 identities, mtimes and bytes stayed stable; container and volumes removed.
 No token mount/journal rewrite. This closes only the offline materializer
 gap. Capture-time writer exclusion is still required for actual custody.
+Separate capture from replay: replaying sealed bytes does not need the live
+original bank gate, but capturing them requires source-qualified exclusion,
+file/ancestor identity, full stable membership and byte checks. A transient
+sibling change can evade two listings; investigate one bounded native
+directory notification fixture, without claiming a physical namespace fence.
+Missing/overflow notifications are not quiet. Claude conditional planning:
+`host-preflight/CLAUDE-CAPTURE-BOUNDARY-VERDICT.json` in the same root. No
+change to live admission, no automatic retry or new global lock.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
