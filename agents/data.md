@@ -72,6 +72,17 @@ The external `dec9-native-root-bridge.py` SHA256
 joins the borrowed objects to the existing custody policy. Nine synthetic
 Windows cases passed twice; the original trusted bootstrap must still supply
 the actual handles. This bridge does not establish writer isolation.
+The newest protected source candidate
+`source-candidate-native-roots-9952c672/source/SOURCE.json` in this package
+has SHA256 `196d4a21a6d23c0448af758f3e65ae23c14d6323a93e2a6e1d3af751ca5e3fc4`.
+Direct no-site verification matched 569 source members, 3,589 runtime
+members and the same ordered 19 queries. The old pinned adapter refused
+the new pair; `native-root-bridge-repair-9952c672-v1/CONSTRUCTOR-CHECK.json`
+SHA256 `121ceb4e51fefe6c51a235c164184b96fdb67bce21259cf93c33e759adeaa266`
+proved the separately repaired constructor with exact pins, rejecting old
+or crossed pins. No live `prove()`, selected source or installed task.
+Next use this source candidate and establish actual protected runtime,
+Scheduler owner, namespace and writer isolation before activation.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

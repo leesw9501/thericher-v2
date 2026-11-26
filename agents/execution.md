@@ -29,6 +29,10 @@ The bank startup now derives its command and phase from the exact installer
 plan, verifies the source/launcher/direct image pins and keeps the live
 definition probe. Anchoring the actual outer launcher and both native
 readback profiles is still required. No financial task was installed.
+The external runtime inputs now accept both real unregistered COM profiles
+and the installed point's protected supervisor-digest path (HANDOFF). A
+crossed/changed command and an early handoff read were refused. Keep the
+original phase reference as the next real bank bootstrap obligation.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

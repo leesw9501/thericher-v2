@@ -35,6 +35,15 @@ guest bootstrap and independent daemon-side closure. Next try one minimal
 native file/network witness, no .NET, shell or forecast; require same-child
 restricted token/Job, explicit refusals, and exact zero-exit/empty-Job return.
 A timeout remains unqualified. No forward or training was dispatched.
+R4 ran once with direct no-site CPython (no .NET witness). The exact
+suspended image/token/Job and empty Job at root return were observed, but
+lifetime accounting again had a second unexplained PID and the witness wrote
+no result. File/network isolation was not qualified; neither timeout nor
+explicit denial was measured in R4. `appcontainer-probe-r4.RESULT.json`
+SHA256 `50fa74476f07ef769e3a65da1694a3dc859b976b1e77eedfc5b431ef18d232ec`.
+Preserve the exact R4 once/profile/scratch. Do not repeat this witness. Use
+another localized qualification method or defer this slot; no forecast,
+training, or outcome access was attempted.
 
 ## Actual Queue
 

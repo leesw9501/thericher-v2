@@ -10,6 +10,11 @@ Data implemented original creation-handle custody. Both focused packages ran
 in parallel and share one full verification on the combined tree. Next bind
 the actual host profiles, not another free-standing manifest. No financial
 effect, deployed target capture or GPU fit is claimed.
+Latest split: Execution's COM-profile and point-digest inputs are now
+independently usable in the protected bootstrap; Data's frozen candidate and
+repaired constructor passed without activation. Research R4 did not qualify
+isolation; stop repeating that probe. Prioritize the actual bank bootstrap
+and Dec9 owner/namespace, not another metadata census.
 
 Nov26: the original Nov30 research forecast owner was migrated in place to
 the corrected SELF loader. Independent native readback found the same

@@ -13,8 +13,12 @@ with the native launcher/installer; tracked tests do not install the pair.
 The bank launcher now derives its source action and phase window directly
 from that protected install plan, verifies the source and launcher/runtime
 bytes, and requires the same native provider binding. Next connect the
-protected outer process to the independently retained native profile pins;
-do not rebuild the plan or profile from the current Task as its own proof.
+protected outer process to the independently retained native profile pins.
+The external adapter consumed both real unregistered COM drafts and refused
+a changed command even with matching profile hash (HANDOFF). Use its
+selected-phase binding; do not rebuild intent from the current Task as its
+own proof. Bind the original retained input reference before entry effects so
+the exit can restart using the same input without reading a new point.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only
@@ -43,9 +47,10 @@ together; this observation alone is not native effect admission.
 The single existing point task now uses the supervised direct Pythonw v3.
 All 532 source members matched. Independent readback found Ready, never run
 and the same Dec3 21:47 UTC/PT8M schedule and effective ACL (HANDOFF).
-No point is evidenced. Retain its actual exact supervisor digest after
-the owned opportunity; wire the real bank caller to the supervised receipt
-reader now, without depending on an existing forecast. Native owner binding
+No point is evidenced. The external entry callback pins the installed
+source/control ACL and refuses any early digest read. Bind it into the real
+bank caller; use the point owner digest only after the owned opportunity and
+the existing supervised receipt check. Native owner binding
 now reads the Windows
 process image, argv and creation FILETIME, and checks that birth against
 the exact leg window. The pinned Python/PowerShell Scheduler provider
@@ -313,9 +318,10 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    confer generic write on descendants. The tracked Dec9 path now creates
    private roots and registers each native create-new handle before
    starting the capture session. The original creator and ancestor handles
-   stay held through sealing. Bind the updated source and actual protected
+   stay held through sealing. The exact new source and repaired bridge
+   passed native no-site assembly (Data board). Bind the actual protected
    Scheduler owner to the enrolled namespace and same-principal writer
-   exclusion; the handle alone does not prove either. Do not alter shared
+   exclusion; constructor and handle checks do not prove either. Do not alter shared
    parent ACLs or activate the CLI until that binding is qualified. Do not
    duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;

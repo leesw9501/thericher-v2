@@ -108,6 +108,22 @@ bytes and compares the phase command to the native owner expectation.
 Outer plan and profile anchoring still belongs to the protected bootstrap.
 The focused tests refused changed bytes and crossed phase actions.
 Claude challenge: same release root, `SCHEDULE-SOURCE-CLAUDE-VERDICT.json`.
+The external adapter now binds the authenticated plan and selected profile to
+the existing native provider. Both actual local unregistered COM drafts
+passed. Wrong plan, crossed/missing selected profile and command drift with
+a recomputed profile digest were refused; exit did not read the missing
+entry profile. Same root, `NATIVE-PLAN-PROVIDER-SMOKE.json` SHA256
+`bec8c49b83e1bbbe265477a489eb15c69d1eab9a524ddebb06339719980da870`.
+It proves the static input join, not registration, live Scheduler provenance
+or writer admission. Actual release/bootstrap and entry reference still need
+their exact protected bindings.
+The same release root has `dec4-point-supervisor-handoff.py` SHA256
+`a1ccd7de2c5eadeffb3047e7e033deba5d03c87fcae43bfecefa6d6f35995dac`.
+It binds the actual installed v3 source and control ACL, then refuses before
+the point hard stop without opening the handoff. Its invented read passed
+and rejected missing, pending, changed-identity and malformed digests.
+Use the separate `POINT-SUPERVISOR-DIGEST` with the existing causal reader;
+it is not a forecast or a way to infer completion from the payload.
 
 The named Dec4/Dec9 normal path now composes the scheduled BankLeg,
 supervised-input adapter and existing capsule. It creates one source-owned
