@@ -3,6 +3,19 @@
 Updated 2026-11-26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
+Comparable Nov6 MODP1 actual: 19/19 first pages in 41.08s, one token POST,
+zero recoveries and owner release; 1,140 known rows. Host wall to receipt
+preparation was about 41.9s, not the overlapping host+child debit of 83.24s.
+`A/data/current-next-session-short-swing-input-preparation-20261106-v1/capture-ready-r1/actual/capture/RESULT.json`,
+SHA256 `a947f6908b09b5cab5bd1a278b7aa4b1756f8a9d3ef00bdfb9c28a4322dd416f`.
+This is not timing for either upcoming capture. Dec3 runs target seal and
+pin readback before inference-prefix publication; distinguish target status
+and prefix closure before blaming market coverage or changing pacing.
+The registered four-minute observer references the session-gated runner.
+Its pure calendar check returned `outside_regular_session` immediately
+before both after-close captures (Nov27 18:27 and Dec3 21:27 UTC). A trigger
+is not a token POST; no actual gate state or future run is inferred.
+
 Intraday DEV triage: Oct26-29 has 26,520/26,520 symbol-minutes across
 17 names and four full regular sessions (`A/data/current-intraday-short-hold-readiness-20261106-v1/READY.json`).
 `A/data/current-m5-120m-h30m-sequence-projection-20261107-v1/DATAREADY.json`
