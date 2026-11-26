@@ -15,6 +15,15 @@ another four-session fit. A later bounded timing comparison should freeze
 signals before both entry anchors, hold the exit fixed to isolate entry
 timing, and report paired gross differences separately from assumed costs.
 Claude Haiku's tools-off design challenge agreed on that claim boundary.
+One CPU-only descriptive diagnostic is now closed: 15,980 overlapping
+matched anchors, no signals, the same exit at original entry +30 minutes,
+and early versus +5 minute entry. Late minus early gross return averaged
++0.26 bp; p05/median/p95 were -14.74/0.00/+15.91 bp, and p90 absolute
+change was 15.37 bp. No fit or protected input was opened. This neither
+supports a delay rule nor calibrates fees or fills; prioritize eventual
+exact Paper quote/fill attribution over fitting on this four-session slice.
+`A/research/current-intraday-paired-entry-delay-dev-20261126-v1/RESULT.json`
+SHA256 `119cadadf58ca5928864f03f6d150f1a18f71951489f4abcfbdb5afae3190a4a`.
 A distinct H3 earnings hurdle is deferred: no qualified timestamped issuer
 schedule vintage is bound to the decision clock. If that input becomes ready,
 freeze the original ranks and use same-funded-gross raw and equal-weight
