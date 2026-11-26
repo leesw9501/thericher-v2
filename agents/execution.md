@@ -35,8 +35,10 @@ launcher now requires an armed restore-only child with the exact original
 handoff digest and includes only its exact native identity in the live
 census. The native root handle rejects a nonzero or late exit. Original Job
 closure is now retained and re-attested under the bank gate; automatic
-observer restore has a native upper deadline. Next package the protected
-child entry and unbound-writer exclusion through actual readback.
+observer restore has a native upper deadline. The tracked no-site child now
+checks the protected source and connects exact root closure to the restore
+coordinator. Next provide the actual release binding and unbound-writer
+exclusion through readback. The native fixture had only a mock binding.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

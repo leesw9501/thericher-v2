@@ -257,6 +257,21 @@ and the writer exclusion holds through the mutation. Verdict:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 RESTORE-STARTUP-CLAUDE-VERDICT-20261126.json, SHA256
 `2ea6fe73eabad5d3cca92348c589b6d194692679574b17f313015d79421329a1`.
+The tracked no-site restore child now verifies the exact source manifest and
+protected root ACL, loads project imports from the verified in-memory bytes,
+and refuses unlisted project modules. It joins the original handoff/PID/birth
+before arming and rechecks the source under the held restore guard. A native
+isolated Pythonw fixture ran the tracked bootstrap to a mock binding and
+refused an extra module; no observer/broker effect. The actual protected
+release's exact native binding and unbound-writer exclusion remain to be built.
+The actual coordinator's 93 project imports also loaded through the
+same snapshot loader with Python site disabled. Evidence:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+RESTORE-BOOTSTRAP-NATIVE-20261126.json, SHA256
+`13aa532eb1dc0d859c7f72927b47f04b302ef0f781d37fcf9042ee4b634e69e4`.
+At the Nov26 native status sample the two old R8 tasks had no future time;
+the pending point task was Ready with a future time, and both Dec4/Dec9
+financial tasks were absent. This is status, not writer-exclusion or install proof.
 The Dec4 point task is still Ready at Dec3 21:47 UTC, one old action and no
 catch-up. The exact prepared source-v3 manifest matches on disk but is not
 the installed action. Both financial task names are still absent.

@@ -102,9 +102,10 @@ closure, then feeds the frozen Dec4 comparator. Its early/late-mutation
 checks are synthetic. The paired Dec9 writer now seals metadata around one
 native capture without opening the page contents; its returned digest is not
 OS process closure. The target-only entry now exercises its real capture
-API with invented input and deferred config. Bind the actual protected Data
-action and block-end owner independently of the Nov30 migration. No market
-target opened or fit run.
+API with invented input and deferred config. Its no-site bootstrap now binds
+the fixed Dec9 source, clocks and independent prebind, but does not dispatch.
+Bind the actual protected Data action and block-end owner independently of
+the Nov30 migration. No market target opened or fit run.
 
 First actual pre-open fixed-half cohort sealed Nov9UTC11:43:43.513:
 A/research/current-fixed-half-nov9-forecast-20261109-v1/actual/SEAL.json

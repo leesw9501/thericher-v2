@@ -5,6 +5,13 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: both new no-site launch boundaries verify their release bytes before
+project import. The restore bootstrap passed native Pythonw smoke and loaded
+the actual coordinator dependency graph, while the Dec9 bootstrap verified
+its fixed target owner without dispatch. Next bind concrete broker-free
+restore exclusion/lease configuration and the exact Data launch authority;
+do not register either action with a mock adapter.
+
 Nov26: normal Job closure now has an original retained receipt joined to the
 closed bank record, and automatic observer writes have a finite native
 deadline. Native inert Job/Docker cleanup and the mock-COM deadline passed.

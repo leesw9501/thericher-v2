@@ -59,9 +59,11 @@ child's restricted root handle requires a normal exit; its live actor is
 joined by exact birth, lineage, image and argv. The capsule now retains its
 original accepted Job-join receipt and restore reattests it against the
 closed bank record. The automatic observer mutation has a native deadline.
-Package the protected child entry with its loaded dependency closure and
-positive writer exclusion through the actual write; do not treat Docker
-absence alone as that proof.
+The tracked no-site child entry now loads exact verified dependency bytes,
+accepts the original owner digest, and connects the root wait to the
+restore coordinator. Supply the protected release's concrete native binding
+and positive writer exclusion through the actual write; do not treat
+Docker absence alone as that proof.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -240,9 +242,10 @@ with unchanged clocks, principal, and one-attempt run root.
    Dec9 reader now binds a pre-open contract, exact capture/pages and
    independent owner closure. The one-capture metadata writer now matches
    that reader without opening pages. The tracked target-only owner now
-   calls the native capture and writer together; freeze its real protected
-   Dec9 caller and block-end owner without duplicating the capture or
-   opening outcomes.
+   calls the native capture and writer together. Its tracked no-site
+   bootstrap now verifies the fixed Dec9 manifest and binds that callable.
+   Dispatch remains disabled until the native owner/ACL action and block-end
+   owner are frozen; do not duplicate the capture or open outcomes.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.
