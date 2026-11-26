@@ -11,8 +11,12 @@ observer/restore pins. The invented two-leg case and independent exit
 passed. Freeze one actual `RELEASE.json` and both protected phase rows
 with the native launcher/installer; tracked tests do not install the pair.
 
-Next operational step: qualify the Dec4/Dec9 concrete writer census on fresh
-source-scoped role claims, then bind the independent restore owner and qualify
+Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
+qualify the writer census on fresh source-scoped role claims. The count-only
+probe in HANDOFF distinguishes diagnostic ancestry but is not an allowlist.
+Do not spend another run guessing from raw process output; use the actual
+protected caller and exact physical scope. Then bind the independent restore
+owner and qualify
 the now-wired root watchdog with the actual Scheduler/Job shape. Its scheduled BankLeg
 now stages and verifies the exact new
 capsule workspace before calling the existing native account worker.

@@ -5,6 +5,12 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26 throughput: Execution isolated diagnostic ancestry from the remaining
+unclassified census candidate. Next use actual caller/Job-bound evidence
+instead of repeating broad surveys. Data independently located the three
+creator callbacks needed for Dec9 custody. Neither result advances a
+financial effect or requests GPU capacity.
+
 Nov26: the original Nov30 research forecast owner was migrated in place to
 the corrected SELF loader. Independent native readback found the same
 opportunity and ACL, Ready and never run. Read its exact causal closure

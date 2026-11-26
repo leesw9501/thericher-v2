@@ -16,6 +16,11 @@ failed closed. Exit binding succeeded with an invalid entry observer pin.
 Freeze the real pair release and protected runtime definition next. The
 direct COM draft builder passed both invented phases and rejected crossed
 action hashes. Neither future financial task is installed.
+Fresh native metadata found four unmatched host candidates, three in the
+diagnostic's observed ancestry and one outside it. One running container
+matched a projected rule. Use HANDOFF's count-only evidence to target the
+actual caller/Job and the independent actor, not to exempt either or admit
+financial effects. H20 Dec1 remains unchanged.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

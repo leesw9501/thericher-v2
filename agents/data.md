@@ -50,6 +50,12 @@ no change to shared parent ACLs or the default H3 capture path. An invented
 Windows child directory and its file did not inherit the test parent's
 common-group grant. The focused suite passed 101 tests. Real Scheduler
 binding still needs the fixed source and effect-time custody/owner proof.
+The next bounded source change is to pass the creation-bound identity
+from the three existing root creators to the protected owner callback.
+Reject pre-existing/substituted roots; prove the parent protects the
+creation-to-identity interval or use the native creation identity. Verify
+again before capture-session entry and sealing. No Data task is installed
+by this review.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

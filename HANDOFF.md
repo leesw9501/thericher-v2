@@ -505,9 +505,17 @@ bind identities are rechecked, including Docker Desktop drive aliases.
 The actual read-only producer sampled this host and daemon in 1.817 s.
 Historical claims refused `unknown_custody_capability`; this is not current
 role qualification or end-to-end effect latency. See A evidence root above,
-`writer-census-native-8e744006/SMOKE.json`. Rebind and qualify the current
-claims/profile at the protected source, then use the same scoped decision
-for the independent normal restore owner. No scheduled definitions changed.
+`writer-census-native-8e744006/SMOKE.json`. The newer count-only probe at
+A/execution/h3-dec4-dec9-native-release-20261126-v1/NATIVEWRITERCANDIDATES20261126.json
+(SHA256 `350cfe2d4e7cd68ad9497341904cd4ceedfc9e19f9778c264b8b06e49f83bbd3`)
+completed in 1.809 s. One running container matched a projected rule; all
+four host candidates were unmatched, three in the observed diagnostic
+ancestor chain and one outside it. The diagnostic does not exclude any
+candidate, attest physical mount capability or admit financial effects.
+Claude's categorical challenge is `WRITER-DIAGNOSTIC-CLAUDE-VERDICT.json`
+beside it. Bind the actual launcher/Job lineage and qualify other current
+actors with the scoped classifier before protecting the release and restore
+profile. No scheduled definitions or private custody changed.
 The live Compose `web` role and prior Paper worker share the exact emergency
 named volume. The worker's existing readers open a writable lock even on
 read; an inert current-image named volume proved a read-only remount refuses
