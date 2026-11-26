@@ -249,6 +249,16 @@ broker fees, settlement and measured net remain unknown. Do not call
 the arithmetic a fill, terminal proof or a measured broker-cost model.
 Synthetic cold restart now demonstrates the same unknown request and
 reservation survive across processes without another submit (HANDOFF).
+Frozen R6 now also passed the distinct positive cold path. Its native
+executor wrote one invented accepted BUY with history unavailable. A new
+network-none process parsed the exact cumulative history and moved only
+that reservation to owned entry cost, without changing the initial basis,
+other reservations or original identity. A separate crossed-reference
+fixture stayed pending; neither recovery made a BUY POST. Test and teardown
+passed with deployed R6 module pins in the exact capsule image. This was a
+normal process restart, not abrupt power-loss durability or a broker fill.
+`A/execution/r6-positive-restart-recovery-invented-20261126-v1/recovery_smoke.py`,
+SHA256 `a70380beffdc190f7835059ebe828ffc5d2074c67a628d4a1c179e26a08e2fe7`.
 Positive reconciliation of an actual broker response is still unobserved.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
