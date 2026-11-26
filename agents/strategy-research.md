@@ -43,6 +43,16 @@ and distinct with unchanged gross on invented nonuniform weights. Current
 fixed-half replay uses equal weight on support; skip the duplicate arm.
 Only a separately prebound later nonuniform study can test this SIC proxy;
 no scored tape, model fit, frozen experiment or Paper path changed.
+The outcome-free DEV support check is now closed: 47 cohorts, 25 without
+funded support, 11 identities, 6 ordinary-half duplicates and 5 distinct
+allocations. The predeclared 8-distinct priority floor was not met: omit
+this arm from the next slate. The exact comparator also confirmed that
+with two names the rule is always identity or ordinary half-blend.
+One network-none CPU attempt, exact two score archives, no market marks,
+outcomes, fits or forwards; scope was current observed SIC applied for a
+structural check only, not historical PIT, alpha or a Paper change.
+`A/research/sic17-allocator-overlap-dev-scores-20261126-v1/RESULT.json`
+SHA256 `e759d847fec87e0053fc4db9b5582d99e4752c55cac68434ca919097bf6f2700`.
 
 Granite daily foundation candidate, Nov26: IBM `52-16-ft-r2.1`, immutable
 checkpoint commit `8c9c1d742ec5893d6419e3aa2ab21ed23e28df85` (2025-02-26),
