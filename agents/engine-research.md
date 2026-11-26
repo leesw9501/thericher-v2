@@ -42,6 +42,14 @@ SHA256 `2623953753e28f55a0e70e2743be5046c918feedab858501760b581e48726656`.
 Next map the original Windows receipt paths to exact guest RO members
 without rewriting them; bind the finite host and 14:25 UTC hard stop before
 any launch. No actual forecast or schedule change.
+A native Docker fixture mapped nine exact invented Windows paths to pinned
+Linux files without rewriting the original receipts. The original verifier,
+native array parser and native seal consumer passed; five crossed paths or
+digests were refused. Host rechecked input bytes and seal after zero exit
+and removal. `A/research/h3-dec4-fixed-half-linux-mount-adapter-invented-20261126-v1/HOST-EVIDENCE.json`
+SHA256 `128c8ab0f878b8baccd40bdb319bdfe6199e41d957f931c7c6cef2f9c72ed135`.
+Use this in one bounded host launcher candidate; the program still needs
+the production owner/reap/retention integration. No actual payloads read.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight

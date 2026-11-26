@@ -133,6 +133,12 @@ unbounded catch-up for entries; preserve original exits and allow only exact
 owned recovery. The Nov9 50:50 seal is archived unmeasured since its sole
 target capture was absent. Historic commands below are not instructions to
 replay those windows.
+Nov26 readback: the named Nov27/Nov30 research, Dec1 H20 readout, Dec3
+Data/point and Dec4/Dec9 R6 tasks have WakeToRun and StartWhenAvailable
+disabled, and no idle prerequisite. The active power plan currently has
+automatic idle sleep disabled; this does not survive all power plan changes,
+manual sleep, shutdown or update restarts. Keep the host awake over the real
+windows; do not change or replay pinned tasks based on missing outcomes.
 
 Next research block (US session dates, `OPEN[e]` to `OPEN[e+3]`):
 Nov30-Dec3, Dec4-Dec9, Dec10-Dec15, Dec16-Dec21, Dec22-Dec28.
