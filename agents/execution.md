@@ -95,6 +95,14 @@ no journal rewrite. A freshly hashed archive still refused changed, extra
 or missing members against an independent manifest. Next native smoke
 materializes those exact bytes and exercises the existing RO reader; the
 seal alone does not collect a live snapshot or demonstrate write exclusion.
+`host-preflight/sealed_linux_materializer.py` SHA256
+`6efb7c9a23931c8ac8eb84d1800e3e95d9bb4e47f9b627aaa1f72fe444bba0fa`
+passed the end-to-end invented native consumer on the existing image. All
+four aliases were RO and network disabled, two exact synthetic fills
+replayed, wrong alias and rehashed changed bytes refused. Membership,
+identities, mtimes and bytes stayed stable; container and volumes removed.
+No token mount/journal rewrite. This closes only the offline materializer
+gap. Capture-time writer exclusion is still required for actual custody.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
