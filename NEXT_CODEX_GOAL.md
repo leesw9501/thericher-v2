@@ -16,9 +16,11 @@ See HANDOFF and RUNBOOK for pins, scope and owned result paths.
 
 Next: complete the exact financial result joins; R6 startup and observer
 marker readers are ready and both phases are not due. The installed host
-does not persist a separate digest of the accepted capsule stdout. Do not
-treat a standalone RAW-PRODUCER as accepted output or a fill. Keep the Dec1 H20 owned exit/readback
-separate. After each R6 opportunity classify
+does not persist a separate digest of the accepted capsule stdout.
+Successor tracked code now retains that exact transport witness; it is
+not deployed to R6. Do not treat a standalone RAW-PRODUCER as accepted
+output or a fill. Keep the Dec1 H20 owned exit/readback separate.
+After each R6 opportunity classify
 no outcome, input refusal, submit, fill, owned inventory and terminal
 reconciliation from the actual retained evidence. Startup still enforces
 Scheduler/Job ownership and fresh account, writer, observer, quote and risk

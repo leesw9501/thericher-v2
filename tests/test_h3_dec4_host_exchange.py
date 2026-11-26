@@ -1,5 +1,6 @@
 """Exercise the host transport with an inert pipe child and exact fixture bytes."""
 
+import hashlib
 import io
 import json
 import subprocess
@@ -125,6 +126,7 @@ def test_exact_duplex_with_native_pipes(mode, deny_sequence, expected, admission
                 native_status="no_intent",
                 financial_claim="UNKNOWN",
                 reservation_release=False,
+                accepted_stdout={"sha256": hashlib.sha256(retained).hexdigest(), "exit_code": 0},
             )
         assert owner == admissions
         sent = [call.args[0] for call in child.stdin.write.call_args_list]

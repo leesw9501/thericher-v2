@@ -20,10 +20,14 @@ from thericher_v2.ops.h3_dec4_capsule_adapter import (
     _run_visit,
 )
 from thericher_v2.ops.h3_dec4_guest_identity import ANSWER, CHALLENGE, REQUEST, linux_argv_sha256
-from thericher_v2.ops.h3_dec4_job_closure import read_dec4_normal_job_close
+from thericher_v2.ops.h3_dec4_job_closure import (
+    read_dec4_accepted_capsule_summary,
+    read_dec4_normal_job_close,
+)
 
 _BANK = dict(engine="npipe:////./pipe/dockerdesktoplinuxengine", volume="synthetic")
 _CID = "c" * 64
+_BINDING = "b" * 64
 _SPEC = dict(
     kind="effect",
     phase="entry",
@@ -31,7 +35,7 @@ _SPEC = dict(
     network="none",
     mounts=[],
     entrypoint=["python"],
-    args=["fixture.py", "--execute"],
+    args=["/app/scripts/run_h3_dec4_account_capsule.py", "--binding-sha256", _BINDING, "--execute"],
 )
 _NONCE = "8" * 64
 _ARGV = linux_argv_sha256([*_SPEC["entrypoint"], *_SPEC["args"]])
@@ -302,6 +306,32 @@ def test_exact_exchange_and_r8_closure(frozen_daemon, tmp_path, monkeypatch, cas
         if case == "ok":
             snapshot = read_dec4_normal_job_close(leg.root, leg.record)
             assert pv._read(receipt) == snapshot
+
+            def accepted(data, binding=_BINDING):
+                return read_dec4_accepted_capsule_summary(
+                    leg.root, leg.record, retained=data, guest=guest, binding_sha256=binding
+                )
+
+            summary = accepted(terminal)
+            assert summary["native_status"] == "no_intent"
+            assert summary["financial_claim"] == "UNKNOWN"
+            with pytest.raises(pv.Denied, match="h3_accepted_capsule_stdout_unbound"):
+                accepted(_outcome(guest, status="pending", pending=True))
+            with pytest.raises(pv.Denied, match="h3_accepted_capsule_stdout_unbound"):
+                accepted(terminal, "5" * 64)
+            other = pv._decode(pv.encode(leg.record))
+            other["identity"]["run"] = "9" * 32
+            other_path = leg.root / ("JOB-CLOSED-" + other["identity"]["run"] + ".json")
+            other_path.write_bytes(snapshot[0])
+            with pytest.raises(pv.Denied, match="h3_normal_job_transition_unbound"):
+                read_dec4_accepted_capsule_summary(
+                    leg.root, other, retained=terminal, guest=guest, binding_sha256=_BINDING
+                )
+            old = pv._decode(snapshot[0])
+            old.pop("accepted")
+            receipt.write_bytes(pv.encode(old))
+            assert accepted(terminal) is None
+            receipt.write_bytes(snapshot[0])
             changed = pv._decode(snapshot[0])
             changed["receipt"]["children"][0]["native_start"] = "win-filetime:1"
             receipt.write_bytes(pv.encode(changed))

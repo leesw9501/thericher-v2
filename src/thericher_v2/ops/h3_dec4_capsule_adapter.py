@@ -169,6 +169,16 @@ def _run_visit(
     leg.check()
     if leg.record["visits"]:
         raise ValueError("h3_capsule_visit_already_started")
+    args = spec.get("args")
+    if (
+        type(args) is not list
+        or len(args) != 4
+        or args[:2] != ["/app/scripts/run_h3_dec4_account_capsule.py", "--binding-sha256"]
+        or not pv._hash(args[2])
+        or args[3] != "--execute"
+    ):
+        raise ValueError("h3_capsule_visit_binding")
+    binding_sha256 = args[2]
     renew()
     visit = visit_type(ctx, deepcopy(spec))
     if ctx.writer_guard.check(ctx, stage="BEFORE_CREDENTIALS", visit=visit) is not True:
@@ -248,7 +258,24 @@ def _run_visit(
     leg.process_probe = probe
     try:
         result = visit.execute(renew=renew, exchange=exchange)
-        retain_dec4_normal_job_close(leg, *visit.dec4_close_proof)
+        stdout = result.pop("accepted_stdout")
+        cohort, slot = guest.cohort, guest.cohort.slot
+        retain_dec4_normal_job_close(
+            leg,
+            *visit.dec4_close_proof,
+            accepted={
+                "schema": "h3-dec4-accepted-capsule-stdout-v1",
+                "phase": slot.phase,
+                "source_ref": cohort.source_ref,
+                "basis_ref": cohort.basis_ref,
+                "input_ref": slot.input_ref,
+                "policy_ref": slot.policy_ref,
+                "binding_sha256": binding_sha256,
+                "spec_sha256": pv.digest(visit.spec),
+                "stdout_sha256": stdout["sha256"],
+                "exit_code": stdout["exit_code"],
+            },
+        )
         return result
     finally:
         leg.process_probe = original_probe

@@ -6,6 +6,11 @@ R6 status supersedes earlier draft notes: named Dec4 entry/Dec9 exit are
 installed Ready, zero instances, exact full readback in HANDOFF. No manual
 start or broker call. Next prepare the phase result readers, leave Dec1 H20
 separate, and classify only actual original run/intent/fill evidence.
+The successor host transport now retains an accepted stdout witness in
+the exact normal Job receipt; it is not deployed to R6. Separate invented
+native-ledger replay verified the existing R6 format can identify exact
+cohort fills and owned lots after the actual writer closes, even without
+that transport witness. Host-launch attribution and fees stay distinct.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 

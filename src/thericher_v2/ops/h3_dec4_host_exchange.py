@@ -1,5 +1,6 @@
 """One Dec4 guest exchange inside an already-owned Windows Job and capsule visit."""
 
+import hashlib
 import json
 import math
 import time
@@ -155,4 +156,7 @@ def exchange_dec4_guest(
         remaining()
     except Exception:
         raise ValueError("h3_host_exchange_unconfirmed") from None
-    return verify_dec4_capsule_outcome(line, retained, exit_code=exit_code, guest=guest)
+    outcome = verify_dec4_capsule_outcome(line, retained, exit_code=exit_code, guest=guest)
+    return outcome | {
+        "accepted_stdout": {"sha256": hashlib.sha256(line).hexdigest(), "exit_code": exit_code},
+    }

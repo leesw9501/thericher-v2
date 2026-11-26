@@ -172,6 +172,13 @@ the on-disk pin matched but baseline/delta/absence was not distinguished.
 `dc44f7f58f26956d970e39e4354da1fdf2976d768c89d764d0a4699655fb972c`.
 Integrity matched before/after; process closed, no retry or activation.
 Isolate native mapped-image state separately before another startup probe.
+Core-only probe `A/data/h3-dec9-defender-image-classification-r5-v1/RESULT.json`
+SHA256 `d073091fb1db7c08d29b8b2289e961e8356187a99aab5986fb36f2c9b35d0be2`
+found no mapped Defender image at either inventory time, while the two
+SQLite companions passed. The Defender on-disk pin stayed stable; mapped
+file identity was not exercised. R5's delta-only prior condition still
+withholds R5; do not regrade it or claim the independent probe explains
+which specific R5 branch occurred.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

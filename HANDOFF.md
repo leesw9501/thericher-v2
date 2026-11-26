@@ -53,6 +53,25 @@ that digest. A substituted summary can still pass the guest parser.
 Do not use RAW-PRODUCER alone or mutate the installed R6 to backfill proof.
 An exact owned intent/fill/native ledger join is separate from that summary;
 fees, settlement, current broker holdings and net PnL remain unobserved.
+Successor tracked host code now stores the accepted stdout digest and exit
+zero in the exact normal Job/capsule receipt. The reader joins the same
+closed visit's source/basis/policy/input, binding, spec and retained bytes.
+An older two-member receipt has no acceptance witness. Structurally valid
+but substituted retained bytes, crossed binding and cross-run replay are
+refused. This proves transport witnessed by the assumed-honest protected
+host only, not a cryptographic broker/OS claim or a fill. The installed R6
+source remains unchanged. Claude challenge:
+`A/execution/h3-dec4-financial-readout-inert-20261126-v1/HOST-WITNESS-CLAUDE-VERDICT.json`.
+Verification: 79 focused, 12/12 workers with 21,707 collected,
+21,681 passed, 26 known link skips, helper exit zero and its own
+`r-944e51d8` child/lease absent. Ruff and four Compose configurations passed.
+Separately, `A/execution/h3-dec4-native-ledger-inert-20261126-v1/fixture.py`
+proved a read-only exact account/basis/policy/input-to-request/plan/intent
+join against two invented terminal native fills and owned lots. Crossed
+source, request or intent rejected; no locks or before/after mutations.
+The installed format can prove exact cohort fills without the new host
+witness once its actual writer closes and a network-disabled RO custody
+reader qualifies. It cannot prove which host launch first sent the request.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:
