@@ -50,6 +50,19 @@ and removal. `A/research/h3-dec4-fixed-half-linux-mount-adapter-invented-2026112
 SHA256 `128c8ab0f878b8baccd40bdb319bdfe6199e41d957f931c7c6cef2f9c72ed135`.
 Use this in one bounded host launcher candidate; the program still needs
 the production owner/reap/retention integration. No actual payloads read.
+One bounded D-only integrated launcher then passed a real invented Windows
+Job and Docker lifecycle in 10.50 s with zero exits, empty Job, removed
+container and independently matched seal. `A/research/h3-dec4-fixed-half-bounded-launcher-candidate-20261126-v1/invented-once-r2/RESULT.json`
+SHA256 `20bdc17838ded42743842f3aa93115f974d7ac6d2be6768a9be1baec2ac1c4ff`.
+In the same root, `Test-Dec4ResearchDraft.ps1` SHA256
+`8a179d205c690ce5a8d75f6e166fdaec4e191e2d7e23509004ed625e1fb48501`
+proved an unregistered native COM draft round trip, absent exact research
+task, direct quiet Python, 14:12-14:13 UTC start and no overlap with the
+14:31 R6 start if the worker enforces its independently bounded 14:25 UTC
+stop. No Task was created. The final protected profile must bind the real
+entrypoint's argv, ACL and dynamic PID/birth/instance; a draft or stop cap
+is not verified runtime ownership or cleanup. Dec3 payload and proof remain
+due-time inputs, not prerequisites for drafting an absent future task.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
