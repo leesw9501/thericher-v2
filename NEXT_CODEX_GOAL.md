@@ -84,8 +84,13 @@ unchanged inner financial receipt pins in HANDOFF. The old direct task
 receipt is historical; the actual after-event probe is not yet run.
 The matching claims paths and repaired writer-deny input, plus the current
 exact web bootstrap and mount metadata, now pass their scoped verifier.
-Next integrate the pinned typed-web checks into the five-phase census
-and protect the actual caller/output source; no broad web exemption.
+The pinned exact web checks now run through the five-phase census Job
+deadline path. The actual V2 binding passed inert assembly and the
+import-only entry joins claim, transport and publication. Protect and
+bind the real direct caller/output and independently qualify its
+Scheduler identity and joined rehearsal; no broad web exemption.
+Use the verified code-only host package and its explicit three-file TZPATH
+before no-site imports. It is not the activated release.
 Freeze V2 for the next host profile: the public gross sign is only exact
 closed-flat KIS Paper fill cashflow before fees; no amount, settlement or
 net evidence is inferred. Keep V1 source and results historical.

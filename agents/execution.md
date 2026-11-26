@@ -63,8 +63,11 @@ write/delete-denying source handles. Native pre-event only passed; no
 inference about the future PID or runtime result.
 Both source claims consumers and repaired writer denial passed the
 source-only assembly; the exact running web passed metadata checks.
-Integrate the typed web rule in the shared-deadline census. No full
-custody census or private read was executed in this check.
+The transport now installs the exact typed web rule in the shared-deadline
+census. The V2 candidate binding passed inert assembly. The import-only
+entry joins one profile, exclusive attempt and publication; its protected
+direct Scheduler owner and joined native rehearsal are not ready. No full
+custody census or private read was executed.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

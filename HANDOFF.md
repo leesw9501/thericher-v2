@@ -366,6 +366,27 @@ volume rule; changed-bootstrap and changed-mount fixtures were rejected.
 `CENSUS-INPUT-RESULT.json` and its verifier in the V2 code root retain
 the pins. Bind the typed web overlay into all five fresh admissions;
 this probe does not attest full current custody or authorize a read.
+The transport now installs those exact metadata-only wrappers into each
+fresh admission, checks both claim consumers and preserves the original
+and repaired writer deny paths. Physical volume queries go through the
+same native Job/deadline. V2 `DEC1-BINDING-CANDIDATE.json` SHA256
+`876d701e905550d156bdb0f9a36a96b66d109a4411416a4365e7d4af65bacff3`
+passed inert assembly; only reader/SDK mounts and relevant read metadata
+changed. A protected import-only caller now joins one immutable profile,
+once-only claim, transport and publication. Direct Scheduler owner/source
+binding and joined native rehearsal remain; no live census or private read.
+The code-only host package at the same root's `host-code/SOURCE.json`,
+SHA256 `2fe4a19f656ebe12271272a8ea00726a897561b3870ffb9e8491e447f3edb138`,
+verified all 566 members and imported from direct CPython `-I -S -B` after
+pinning the declared three-file TZPATH; the early path refused without
+reading a profile. Retained `HOST-CODE-VERIFIED.json` records the first
+cause, code ACL and pins. No activation or protected Scheduler release.
+The same frozen no-site code also assembled the exact candidate, including
+the typed wrapper, without a live census. Three isolated web metadata
+checks took 0.723-0.828 s end to end; not full phase/custody timing.
+Claude conditional verdict at the same root's `WEB-PHASE-CLAUDE-VERDICT.json`:
+one metadata latch cannot substitute for all five fresh admissions; the
+protected once-only claim stays outside the measured custody.
 Claude's `EXIT-LINEAGE-CLAUDE-VERDICT.json` requires fresh writer identity
 and custody census, not just disappearance of one controller PID.
 V2 code is staged under A/execution/h20-dec1-phase-v2-code-20261126-v1.

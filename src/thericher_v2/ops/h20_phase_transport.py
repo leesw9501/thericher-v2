@@ -18,6 +18,7 @@ from thericher_v2.ops.h20_phase_host import (
     invoke_h20_phase_window,
 )
 from thericher_v2.ops.h20_phase_owner_probe import prove_h20_exit_outer_owner_closed
+from thericher_v2.ops.h20_phase_web_census import bind_h20_web_census
 
 _ROOT = Path(
     "D:/thericher-v2/model-artifacts/execution/"
@@ -114,6 +115,7 @@ def run_h20_phase_transport(*, binding, out, entry_file, entry_sha256, guest_sha
     deadline.remaining()
     configure, bounded_transport, share_deadline = _native_sources()
     configured = configure(binding, out, entry_file)
+    bind_h20_web_census(configured, binding)
     namespace = configured.namespace
     _need(namespace["SOURCE"]["image"] == image)
     deadline.remaining()

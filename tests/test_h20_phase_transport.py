@@ -94,6 +94,7 @@ def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, 
         return SimpleNamespace(namespace=namespace, fresh=census)
 
     monkeypatch.setattr(transport, "_native_sources", lambda: (configure, Native, lambda *_: None))
+    monkeypatch.setattr(transport, "bind_h20_web_census", lambda *_: None)
     monkeypatch.setattr(
         transport,
         "prove_h20_exit_read_boundary",
