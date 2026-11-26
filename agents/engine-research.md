@@ -131,6 +131,14 @@ Claude's conditional verdict in the same root's
 decision, but prior target receipts/metrics must not choose or change later
 inputs, checkpoints or policy. This proof covers the native parser/publisher
 boundary, not real operational isolation or absence of adaptive reuse.
+The Data native fixture confirms that some earlier relative open marks can
+be reconstructed from the next prefix. Give overlapping prefix bytes only
+to the exact frozen inference process before block end, not development
+readers; file separation alone is not a no-adaptation claim. The five-date
+comparison remains descriptive: even four out of four positive paired signs
+has one-sided probability 1/16 under independent fair signs, an assumption
+not proved for these dates. Do not add a retrospective significance gate or
+promote from this block alone.
 
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72

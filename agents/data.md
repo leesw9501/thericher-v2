@@ -218,6 +218,19 @@ SHA256 `d7125a09ee28dec94770a99a40ca0e5321c2ee5a7ce929ce2f8e6088714faa7e`.
 This is a per-file protection option only. It does not cover unheld state,
 directory membership, metadata/ACLs, ancestor replacement or post-close
 custody; do not waive the independently retained digest or writer exclusion.
+One invented 19-query Dec9 panel fed separate target and next-session
+prefix outputs without a second capture. The prefix parser opened no target
+files, a crossed capture-state commitment refused before payload read, and
+the target reader enforced the Dec28 21:00 UTC embargo. However an invented
+prefix consumer could reconstruct prior relative open marks from features.
+This is inference-only input custody, not concealment from any reader with
+prefix access. Keep later checkpoints, affines and policy frozen and deny
+development/scoring access before block end. No actual Dec9 owner change.
+`A/data/h3-dec9-dual-consumer-qualification-v4/RESULT.json` SHA256
+`eef17a5074161433ae90d0adb72690734f8ddce6dde63a0b6ad81402b71e67c7`.
+Use for a new later-date prebind only after exact runtime ABI verification,
+including `ascii` and `cp437`, and actual writer exclusion. Dec9 remains
+target-only.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
