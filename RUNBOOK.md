@@ -62,6 +62,14 @@ only; the older H20 monitor entry is not this exit. Report the entry and
 exit terminal categories and exact owned lot separately from gross sign.
 Fees and settlement are not observed and net PnL remains unknown. Do not
 switch the pinned monitor or mount outcome code/private custody to show it.
+For the later read-only monitor only, a host-side stdout converter can project
+the exact committed result into `readonly-paper-summary-v1`:
+`A/execution/h20-dec1-monitor-projection-20261126-v1/project_h20.py`,
+SHA256 `313a7be828fe6ce3018eec406278c72298cb9e86f04490b19efda355baf6fbca`.
+It uses the pinned public verifier and refuses before 14:46 UTC. The existing
+DTO has no fee or net-PnL fields; this does not replace the direct readout.
+Nine invented/early/code-pin tests passed; no publication was read and no
+summary was installed or wired to either monitor.
 The [official Paper-capable overseas execution example](https://github.com/koreainvestment/open-trading-api/tree/main/examples_llm/overseas_stock/inquire_ccnl)
 documents executed amount/quantity, not per-fill fees or settled cash.
 The KIS examples for daily transactions, period PnL and settlement balance
