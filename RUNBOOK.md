@@ -73,6 +73,15 @@ This is ledger evidence at the original observation time, not current broker
 holdings, fee, settlement or net PnL. Six invented tests passed including
 native loopback GET, stale labeling and rejected POST. The converter does
 not replace the direct readout; no summary was published or wired to a monitor.
+The isolated `docker_schedule_smoke.py` in that root (SHA256
+`8b32e47c925a542ea4bf668163f6092f68ef7655e50cb10af68deba7acda06b6`)
+also served four current schedule metadata rows on loopback using exact
+candidate image `4745ec7b`. All financial outcomes stayed unknown. Both
+configured and actual port maps were `127.0.0.1:8788`; GET/read-only and
+POST refusal passed, and the scratch, container and bridge were removed.
+The internal-network variant did not publish a usable host port on this
+Docker Desktop. The bridge test proved loopback ingress, not disabled
+egress. No operational monitor configuration changed.
 The [official Paper-capable overseas execution example](https://github.com/koreainvestment/open-trading-api/tree/main/examples_llm/overseas_stock/inquire_ccnl)
 documents executed amount/quantity, not per-fill fees or settled cash.
 The KIS examples for daily transactions, period PnL and settlement balance
