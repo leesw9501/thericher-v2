@@ -37,9 +37,14 @@ class Dec4ScopedWriterGuard:
             if bank["volume"] != self.census.profile.monitor.bank_volume:
                 raise ValueError("h3_writer_guard_scope")
             validate_worker_control_mount(source["capsule"]["mounts"], bank["volume"])
-        private_writes = {_norm(bank["volume"]), _norm(leg.root.parent)} | {
-            _norm(row["source"]) for row in source["capsule"]["mounts"] if row["rw"] is True
-        }
+        retained = Path(source["retained_input_path"])
+        if not retained.is_absolute() or ".." in retained.parts:
+            raise ValueError("h3_writer_guard_scope")
+        private_writes = {
+            _norm(bank["volume"]),
+            _norm(leg.root.parent),
+            _norm(retained.parent),
+        } | {_norm(row["source"]) for row in source["capsule"]["mounts"] if row["rw"] is True}
         if (
             source.get("writer_census_sha256") != self.sha256
             or source.get("synthetic_only", False) is not False

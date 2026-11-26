@@ -31,8 +31,11 @@ definition probe. Anchoring the actual outer launcher and both native
 readback profiles is still required. No financial task was installed.
 The external runtime inputs now accept both real unregistered COM profiles
 and the installed point's protected supervisor-digest path (HANDOFF). A
-crossed/changed command and an early handoff read were refused. Keep the
-original phase reference as the next real bank bootstrap obligation.
+crossed/changed command and an early handoff read were refused. The tracked
+bank now records an original input reference before dispatch and reloads it
+with exact closed entry identity in a new process. Missing/tampered records
+and repeat exit were refused. Protect its actual storage and wire the real
+launcher; held intents still use exact recovery, not a substitute exit.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

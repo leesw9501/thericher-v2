@@ -37,6 +37,7 @@ def setup(tmp_path):
         source=dict(
             original_owner=dict(bank=_BANK),
             original_gate_root=str(tmp_path),
+            retained_input_path=str(tmp_path / "retained"),
             writer_census_sha256=guard.sha256,
             capsule=dict(mounts=[dict(rw=True, source=protected[-1])]),
         ),
@@ -55,6 +56,13 @@ def test_first_class_rejects_changed_scope_before_observer(setup, monkeypatch):
     monkeypatch.setattr(Dec4WriterCensus, "evaluate", lambda *a, **kw: pytest.fail("unknown scope"))
     with pytest.raises(ValueError, match="^h3_writer_guard_scope$"):
         guard.before_observer(leg, ready, "invented-watchdog")
+
+
+def test_rejects_unprotected_entry_reference_parent(setup):
+    guard, leg, ready = setup
+    ready.source["retained_input_path"] = str(leg.root / "unprotected" / "retained")
+    with pytest.raises(ValueError, match="^h3_writer_guard_scope$"):
+        guard.source_ready(leg, ready)
 
 
 def test_guest_scope_runs_one_fresh_decision_with_exact_own_cid_and_live_attach(setup, monkeypatch):

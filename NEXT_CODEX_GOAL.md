@@ -17,8 +17,9 @@ protected outer process to the independently retained native profile pins.
 The external adapter consumed both real unregistered COM drafts and refused
 a changed command even with matching profile hash (HANDOFF). Use its
 selected-phase binding; do not rebuild intent from the current Task as its
-own proof. Bind the original retained input reference before entry effects so
-the exit can restart using the same input without reading a new point.
+own proof. The tracked bank publishes the original input reference before
+entry effects and restores it at exit without the point. Bind its original
+retained-input/reference parent into the actual protected runtime profile.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only

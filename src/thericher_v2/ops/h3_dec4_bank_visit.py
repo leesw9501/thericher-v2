@@ -9,7 +9,12 @@ from uuid import uuid4
 
 from thericher_v2.execution.paper_peer_visit import BankLeg, Held, bank_key, ordinary
 from thericher_v2.ops.h3_dec4_guest import DEC4_ROUND, encode_dec4_guest_visit
-from thericher_v2.ops.h3_dec4_retained_input import Dec4H3RetainedRef, restore_dec4_h3_input
+from thericher_v2.ops.h3_dec4_retained_input import (
+    Dec4H3RetainedRef,
+    publish_dec4_entry_reference,
+    read_dec4_entry_reference,
+    restore_dec4_h3_input,
+)
 from thericher_v2.ops.paper_scheduled_native import (
     NativeScheduledSource,
     run_native_scheduled_preflight,
@@ -126,6 +131,8 @@ def run_dec4_owned_bank_visit(
             "reservation_release": False,
         }
 
+    stable_entry_reference = None
+
     def admit():
         leg.check(identity)
         check_time()
@@ -134,6 +141,8 @@ def run_dec4_owned_bank_visit(
             raise ValueError("h3_bank_owner_changed")
         if writer_and_observer_ready(leg, ready) is not True:
             raise ValueError("h3_bank_writer_admission_denied")
+        if stable_entry_reference is not None:
+            stable_entry_reference()
         leg.check(identity)
         check_time()
         return True
@@ -141,24 +150,36 @@ def run_dec4_owned_bank_visit(
     invoked = False
     try:
         admit()
-        # Entry prepares/retains once; exit supplies only the previously
-        # owner-pinned reference. Policy, basis and path come from the source.
-        retained = prepare_phase_input(ready, phase)
+        basis = ready.source["original_basis_ref"]
+        policy = ready.source["execution_policy_ref"]
+        retained_path = Path(ready.source["retained_input_path"])
+        if phase == "entry":
+            retained = prepare_phase_input(ready, phase)
+        else:
+            retained, stable_entry_reference = read_dec4_entry_reference(
+                leg,
+                retained_path,
+                basis=basis,
+                policy=policy,
+                synthetic=fixture_clock is not None,
+            )
         if (
             type(retained) is not Dec4H3RetainedRef
             or retained.source_sha256 != pin
-            or retained.policy_ref != ready.source["execution_policy_ref"]
-            or retained.path != Path(ready.source["retained_input_path"])
+            or retained.policy_ref != policy
+            or retained.path != retained_path
         ):
             raise ValueError("h3_bank_retained_binding_mismatch")
         value = restore_dec4_h3_input(retained, synthetic_fixture=fixture_clock is not None)
         payload = serialize_model_paper_weights_input(value) if phase == "entry" else None
         if payload is not None and hashlib.sha256(payload).hexdigest() != retained.payload_sha256:
             raise ValueError("h3_bank_retained_bytes_changed")
+        if phase == "entry":
+            stable_entry_reference = publish_dec4_entry_reference(leg, retained, basis=basis)
         frame = encode_dec4_guest_visit(
             phase=phase,
             source_ref="sha256:" + pin,
-            basis_ref=ready.source["original_basis_ref"],
+            basis_ref=basis,
             policy_ref=retained.policy_ref,
             payload_sha256=retained.payload_sha256,
             payload=payload,

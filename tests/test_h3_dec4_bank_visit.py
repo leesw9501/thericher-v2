@@ -10,7 +10,10 @@ from test_h3_dec4_retained_input import POINT, _native
 from thericher_v2.execution.paper_peer_visit import digest
 from thericher_v2.ops.h3_dec4_bank_visit import ROUND, TASKS, run_dec4_owned_bank_visit
 from thericher_v2.ops.h3_dec4_guest import parse_dec4_guest_visit
-from thericher_v2.ops.h3_dec4_retained_input import retain_dec4_h3_input
+from thericher_v2.ops.h3_dec4_retained_input import (
+    _entry_reference_path,
+    retain_dec4_h3_input,
+)
 from thericher_v2.research.model_paper_weights import serialize_model_paper_weights_input
 
 PIN = "a" * 64
@@ -183,10 +186,103 @@ def test_positive_operational_close_never_releases_unknown_reservation(tmp_path)
         tmp_path,
         source,
         phase="exit",
+        prepare_phase_input=no_effect,
         fixture_clock=lambda: datetime(2026, 12, 9, 14, 30, tzinfo=UTC),
     )
     assert result["status"] == "CLOSED_OPERATIONAL_FINANCIAL_PENDING"
     assert result["reservation_release"] is False
+    assert len(list(source.gate.glob("*/CLOSED-*.json"))) == 2
+    with pytest.raises(FileExistsError):
+        run(
+            tmp_path,
+            source,
+            phase="exit",
+            prepare_phase_input=no_effect,
+            invoke_capsule_once=no_effect,
+            fixture_clock=lambda: datetime(2026, 12, 9, 14, 30, tzinfo=UTC),
+        )
+
+
+@pytest.mark.parametrize("fault", ("no_reference", "no_closure", "changed_ref", "changed_payload"))
+def test_exit_cannot_use_unbound_or_tampered_original_input(tmp_path, fault):
+    source = Source(tmp_path)
+    run(tmp_path, source)
+    link = _entry_reference_path(source.retained.path)
+    (closure,) = source.gate.glob("*/CLOSED-*.json")
+    if fault == "no_reference":
+        link.unlink()
+    elif fault == "no_closure":
+        closure.unlink()
+    elif fault == "changed_ref":
+        link.write_bytes(link.read_bytes().replace(BASIS.encode(), b"sha256:" + b"8" * 64))
+    else:
+        source.retained.path.write_bytes(source.retained.path.read_bytes() + b"x")
+    with pytest.raises(ValueError):
+        run(
+            tmp_path,
+            source,
+            phase="exit",
+            prepare_phase_input=no_effect,
+            invoke_capsule_once=no_effect,
+            fixture_clock=lambda: datetime(2026, 12, 9, 14, 30, tzinfo=UTC),
+        )
+    assert not list(source.gate.glob("*/ACTIVE-LEG.json"))
+
+
+def test_entry_reference_must_survive_prepare_before_first_effect(tmp_path):
+    source = Source(tmp_path)
+    link = _entry_reference_path(source.retained.path)
+
+    def mutate(*_args):
+        assert link.is_file()
+        link.write_bytes(b"changed")
+        return no_effect
+
+    with pytest.raises(ValueError, match="h3_entry_reference_changed"):
+        run(tmp_path, source, prepare_capsule_once=mutate, invoke_capsule_once=None)
+    assert not list(source.gate.glob("*/ACTIVE-LEG.json"))
+
+
+def test_exit_restarts_in_new_process_without_entry_callback(tmp_path):
+    source = Source(tmp_path)
+    run(tmp_path, source)
+    child = """
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+from types import SimpleNamespace
+
+sys.path.insert(0, sys.argv[1])
+from test_h3_dec4_bank_visit import Source, no_effect, run
+
+root = Path(sys.argv[2])
+restarted = Source.__new__(Source)
+restarted.ROOT = root
+restarted.gate = root / "existing-gate"
+restarted.retained = SimpleNamespace(path=root / "retained", policy_ref=sys.argv[3])
+outcome = run(
+    root, restarted, phase="exit", prepare_phase_input=no_effect,
+    fixture_clock=lambda: datetime(2026, 12, 9, 14, 30, tzinfo=UTC),
+)
+assert outcome["status"] == "CLOSED_OPERATIONAL_FINANCIAL_PENDING"
+assert outcome["reservation_release"] is False
+"""
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-B",
+            "-c",
+            child,
+            os.path.dirname(__file__),
+            str(tmp_path),
+            source.retained.policy_ref,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=12,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
     assert len(list(source.gate.glob("*/CLOSED-*.json"))) == 2
 
 

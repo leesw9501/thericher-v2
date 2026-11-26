@@ -357,9 +357,6 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     closure.write_bytes(closure_raw)
     assert not path.exists()
 
-    def forbid(*_args):
-        pytest.fail("wrong-phase callback invoked")
-
     completion_pin = "e" * 64
     control_path = root.parent / "point-control"
 
@@ -375,7 +372,6 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
     phase_input = h3_dec4_paper_input.Dec4BankPhaseInput(
         run=run,
         point_completion_pin=lambda: completion_pin,
-        original_retained=forbid,
         fixture_now=DECISION,
     )
     ready_entry = SimpleNamespace(
@@ -452,10 +448,6 @@ def test_dec4_point_one_attempt_and_exact_binding(publisher, monkeypatch):
         )
     assert forwards == [1]
     (output / "POINT.json").unlink()
-    exit_input = replace(
-        phase_input,
-        point_completion_pin=forbid,
-        original_retained=lambda: retained,
-    )
     ready_exit = SimpleNamespace(plan=SimpleNamespace(phase="exit"))
-    assert restore_dec4_h3_input(exit_input(ready_exit, "exit"), synthetic_fixture=True) == restored
+    with pytest.raises(ValueError, match="phase_mismatch"):
+        phase_input(ready_exit, "exit")

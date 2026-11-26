@@ -10,6 +10,7 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
 
+from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.execution.kis_paper_data_capture import _safe_path
 from thericher_v2.market.resample import SessionWindow
 from thericher_v2.research.model_paper_weights import (
@@ -150,3 +151,109 @@ def restore_dec4_h3_input(
     if not raw.startswith(header):
         raise ValueError("h3_retained_binding_mismatch")
     return _load(raw[len(header) :], expected)
+
+
+def _entry_reference_path(retained: Path) -> Path:
+    retained = _checked_path(retained)
+    return retained.with_name(retained.name + ".entry-reference.json")
+
+
+def _entry_reference_scope(leg, basis, policy):
+    return {
+        "schema": "DEC4_H3_ORIGINAL_ENTRY_REFERENCE_V1",
+        "source": leg.identity["source"],
+        "release": leg.identity["release"],
+        "bank": leg.key,
+        "basis": basis,
+        "policy": policy,
+    }
+
+
+def _stable_reference(leg, *files):
+    def check():
+        leg.check()
+        if any(pv._read(path) != snapshot for path, snapshot in files):
+            raise ValueError("h3_entry_reference_changed")
+
+    check()
+    return check
+
+
+def publish_dec4_entry_reference(leg, ref: Dec4H3RetainedRef, *, basis: str):
+    """Publish once, inside the verified entry leg and before its first visit."""
+    leg.check()
+    if (
+        type(ref) is not Dec4H3RetainedRef
+        or ref.source_sha256 != leg.identity["source"]
+        or leg.record["visits"]
+    ):
+        raise ValueError("h3_entry_reference_scope")
+    ref._header()  # Validate its exact reference format before writing.
+    link = _entry_reference_scope(leg, basis, ref.policy_ref) | {
+        "entry_identity": leg.identity,
+        "entry_owner": leg.record["owner"],
+        "point": ref.point_sha256,
+        "payload": ref.payload_sha256,
+        "synthetic": ref.synthetic,
+    }
+    path = _entry_reference_path(ref.path)
+    return _stable_reference(leg, (path, pv._new(path, pv.encode(link))))
+
+
+def read_dec4_entry_reference(leg, path: Path, *, basis: str, policy: str, synthetic: bool):
+    """Bind original input to a positively closed leg; this proves no fill."""
+    leg.check()
+    reference_path = _entry_reference_path(path)
+    try:
+        snapshot = pv._read(reference_path)
+        link = pv._decode(snapshot[0])
+        scope = _entry_reference_scope(leg, basis, policy)
+        if (
+            type(link) is not dict
+            or link.keys()
+            != scope.keys() | {"entry_identity", "entry_owner", "point", "payload", "synthetic"}
+            or any(link[k] != val for k, val in scope.items())
+            or link["synthetic"] is not synthetic
+        ):
+            raise ValueError
+        original = link["entry_identity"]
+        pv._identity(original, leg.key)
+        if original["run"] == leg.identity["run"] or any(
+            original[k] != leg.identity[k] for k in ("source", "release", "group", "member")
+        ):
+            raise ValueError
+        closure_path = leg.root / ("CLOSED-" + original["run"] + ".json")
+        closure_snapshot = pv._read(closure_path)
+        closure = pv._decode(closure_snapshot[0])
+        record = closure["record"]
+        pv._record(record, leg.key)
+        if (
+            closure.keys()
+            != {
+                "status",
+                "record",
+                "same_native_intent_reconciliation_required",
+                "reservation_or_budget_release",
+            }
+            or closure["status"] != "CLOSED_OPERATIONAL_ONLY"
+            or closure["same_native_intent_reconciliation_required"] is not True
+            or closure["reservation_or_budget_release"] is not False
+            or record["identity"] != original
+            or record["owner"] != link["entry_owner"]
+            or len(record["visits"]) != 1
+            or (record["visits"][0]["kind"], record["visits"][0]["status"]) != ("effect", "CLOSED")
+            or not record["visits"][0]["children"]
+            or record["visits"][0]["create"]["resolution"]
+            not in {"ACK_EXACT_CID", "DISCOVERED_EXACT_SCOPE"}
+        ):
+            raise ValueError
+        ref = Dec4H3RetainedRef(
+            path, scope["source"], link["point"], policy, link["payload"], synthetic
+        )
+        ref._header()
+        stable = _stable_reference(
+            leg, (reference_path, snapshot), (closure_path, closure_snapshot)
+        )
+    except (OSError, AttributeError, KeyError, TypeError, ValueError, pv.Denied):
+        raise ValueError("h3_original_entry_reference_withheld") from None
+    return ref, stable

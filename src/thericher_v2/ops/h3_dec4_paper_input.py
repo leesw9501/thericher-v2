@@ -279,21 +279,14 @@ def retain_completed_dec4_paper_input(
 
 @dataclass(frozen=True)
 class Dec4BankPhaseInput:
-    """Phase input callback for the existing single-bank coordinator."""
+    """Entry proposal callback; the bank coordinator owns the exit reference."""
 
     run: Dec4H3Run
     point_completion_pin: Callable[[], str]
-    original_retained: Callable[[], Dec4H3RetainedRef]
     fixture_now: datetime | None = None
 
     def __call__(self, ready, phase: Phase) -> Dec4H3RetainedRef:
-        if ready.plan.phase != phase:
-            raise ValueError("h3_entry_phase_mismatch")
-        if phase == "exit":
-            # BankLeg independently checks source/path/policy and restores
-            # the exact bytes; point and new target callbacks are never used.
-            return self.original_retained()
-        if phase != "entry":
+        if ready.plan.phase != phase or phase != "entry":
             raise ValueError("h3_entry_phase_mismatch")
         point_source = ready.source["point_owner_source_sha256"]
         control = Path(ready.source["point_control_path"])

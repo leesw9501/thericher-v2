@@ -128,6 +128,8 @@ def test_each_leg_stages_exact_native_frame_and_uses_one_capsule(
     staged, tmp_path, monkeypatch, phase, day, minute
 ):
     source, workspace, _ = staged
+    if phase == "exit":
+        run(tmp_path, source)
     guard = SimpleNamespace(check=lambda *_a, **_k: True)
     bindings = []
 

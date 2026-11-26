@@ -83,6 +83,13 @@ proved the separately repaired constructor with exact pins, rejecting old
 or crossed pins. No live `prove()`, selected source or installed task.
 Next use this source candidate and establish actual protected runtime,
 Scheduler owner, namespace and writer isolation before activation.
+`native-runtime-reattest-9952c672-v1/NATIVE-STARTUP-REATTEST.json` SHA256
+`a6d5eeee394dfd38f93feeb014a46c61e80648de9eeceb48ea5abf5a345e3d5c`
+reports exact direct no-site candidate startup and repeat reattestation,
+with wrong source/runtime pins refused. Full rechecks took 2.015-2.058 s;
+3,375 runtime members had multiple hard links. This is not a protected
+runtime or native owner proof. Protect the runtime/aliases and bound the
+fresh effect check; do not assume a writable venv is isolated.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

@@ -67,6 +67,12 @@ Dec4/Dec9 Paper candidate, not installed: its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
 The external Source and separate target prebind are in HANDOFF. There is
 no run. Use `H3DailyPanelPlan(NET25_H3_AXIS)` for the US Dec3 as-of.
+The Paper entry coordinator writes its exact original input reference beside
+the retained native input before visiting the capsule. That parent belongs
+in the protected writer profile. The exit uses that reference with the
+original BankLeg closure; do not republish it, copy a point into it, or infer a
+fill from operational closure. A held original intent requires its existing
+recovery path, not a replacement exit.
 The separate credential-free `thericher-h3-dec4-lstm-point-20261204-v1`
 is installed Ready for UTC21:47, with one trigger, no catch-up or demand
 start, and an eight-minute execution limit. It now uses the direct
