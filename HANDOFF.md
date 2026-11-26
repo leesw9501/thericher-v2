@@ -141,7 +141,12 @@ linked Dec3 closure/READY/attempt bytes and the dated source before retaining
 the NET25 proposal. On exit it uses only the exact previously retained
 reference. The callback does not supply Scheduler/financial admission or
 replace the original observer, bank, or pending-request gates. The
-operational caller and independently retained closure still need wiring.
+installed R6 dispatch and protected point-v3 callback now match the exact
+Dec3 source, point control path and ACL. The live early metadata bind passed;
+the early proof callback refused before attempting the digest read. Evidence:
+`A/execution/h3-dec4-native-ledger-inert-20261126-v1/check_installed_r6_point_handoff.py`
+SHA256 `bd9dfa0051acb012b466e66e44ce29dff74b65e17c078a33fbf87f22f6101966`.
+No result was opened and no due-time proof or financial admission is implied.
 Claude categorical review:
 A/research/h3-dec4-lstm-point-20261204-v1/PAPER-INTAKE-CLAUDE-VERDICT.json.
 

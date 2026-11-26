@@ -25,6 +25,14 @@ Claude host-bridge verdict is preparation-only at the same root's
 closure. Bind independently verified Dec3 source/closure and the same input
 bytes to one pinned container exit and native seal outside the guest. Do
 not conflate host consistency with OS origin or real forecast quality.
+A companion 9.02 s invented host run joined a real inert Windows Job's
+PID/birth through the original Dec3 closure verifier to exact mounted inputs.
+It rejected a wrong receipt digest, rechecked source/input hashes and
+independently matched returned seal bytes after exact zero exit and removal.
+`A/research/h3-dec4-fixed-half-docker-host-bridge-invented-20261126-v1/once/HOST-EVIDENCE.json`
+SHA256 `755b955f90989224c58d31d872fb28b05b87ae2e64ec07e84dd378cf7dfbafe2`.
+This advances the source/clock-bound production adapter, not activation or
+actual Dec3 data/model/holdout access.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
