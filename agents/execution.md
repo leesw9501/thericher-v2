@@ -49,6 +49,10 @@ and Job/container closure. Bind the protected caller, exact exit/current
 custody proof next. The publisher now verifies the complete envelope and
 retains its independent commit digest without overwriting. Use the proposed after-event window in
 HANDOFF, not the old entry-only ABI. No read profile or exit change installed.
+The protected direct bootstrap passed native hidden startup and three negative
+checks without a claim or private read. See HANDOFF for the exact receipt.
+Qualify the native identity join in an invented end-to-end rehearsal; the
+operational profile/seal and read Task remain absent. The original exit is Ready.
 V2 adds a categorical gross result for an exact matched terminal pair and
 never a cash amount. Both actual fee lines and booked settlement remain
 unknown until independently linked to the two fills; no net PnL claim.

@@ -381,6 +381,16 @@ verified all 566 members and imported from direct CPython `-I -S -B` after
 pinning the declared three-file TZPATH; the early path refused without
 reading a profile. Retained `HOST-CODE-VERIFIED.json` records the first
 cause, code ACL and pins. No activation or protected Scheduler release.
+The hidden direct caller and protected output roots are now staged. Its
+native `HOST-BOOTSTRAP-SMOKE.json` SHA256
+`0c4390e2c969eb998a438c7fa22766c94285bcc1e5af8dc72c935f07def24865`
+records import success, wrong-hash/early-run/invalid-mode refusal and no
+claim or publication. The original exit is still Ready and the reader Task
+is absent. Before release, exercise the actual native Scheduler verifier
+with an invented joined receipt and no private mounts; the operational
+profile/seal is not yet installed. Claude's conditional verdict is retained
+in this receipt: this attests startup on the assumed-honest host, not
+pre-bootstrap loader integrity or resistance to host tampering.
 The same frozen no-site code also assembled the exact candidate, including
 the typed wrapper, without a live census. Three isolated web metadata
 checks took 0.723-0.828 s end to end; not full phase/custody timing.
