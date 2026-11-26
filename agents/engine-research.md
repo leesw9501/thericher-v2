@@ -162,6 +162,14 @@ The named block host must bind independent real evidence and a durable
 create-only claim. The Dec28 21:00 UTC timestamp is only the earliest clock
 boundary; the final target writer may not yet have closed then. No actual
 outcomes, claim or process launched.
+The matching D-only `block_once_claim.py`, SHA256
+`bec62048fe762d2a7bc76bd270d73eb68132901624fe562d7c77855470d03cce`,
+durably retains the exact five source and evidence digests in one exclusive
+create. Invented concurrent callers produced one winner; partial existing
+claim stayed consumed; wrong slot order and expired clock wrote nothing.
+Seven tests across the two candidate modules passed. No actual claim yet:
+bind independent protected control, named host identity and real slot
+evidence. A persisted record is not its own authority or a score.
 The shipped calendar and original 19-query MODP1 constructor agree on six
 capture dates for the five fixed cohorts: Nov27 input only; Dec3, Dec9,
 Dec15 and Dec21 each have a prior target and next prefix; Dec28 target only.
