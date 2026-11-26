@@ -56,10 +56,13 @@ by the current exact owner definitions or remain uninstalled package history.
 - **Engine Research:** Keep the fixed five-slot H3 block and predeclared
   fixed-half model; no replacement, payout tuning or repeat of closed fits.
   Verify the Nov30 forecast from the existing source-v2 owner after its
-  opportunity. For the Dec4 research forecast, prepare the separate pinned
-  CPU Docker route that passed with invented inputs. Join the independently
-  verified Windows Dec3 closure to exact mounted bytes, network-none/RO
-  configuration, actual container exit and native seal before any real run.
+  opportunity. The separate Dec4 research CPU Docker route passed with
+  invented inputs but is not installed. Reuse the Nov30 native owner reader
+  for the exact Dec4 Scheduler instance and process, not the Nov30
+  installation readback as mapped-image origin evidence. Dec4 still needs
+  its own protected release bound to the actual host process and profile,
+  plus the exact Dec3 closed input, network-none/RO mounts and native seal.
+  Do not repeat unchanged origin probes or force an unqualified launch.
   Do not alter the Dec4 Paper point. Bind later dates and block-end reader
   separately; target access remains embargoed until Dec28 21:00 UTC and
   requires independently validated actual final capture closure and exact
