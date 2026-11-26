@@ -66,6 +66,13 @@ only; the older H20 monitor entry is not this exit. Report the entry and
 exit terminal categories and exact owned lot separately from gross sign.
 Fees and settlement are not observed and net PnL remains unknown. Do not
 switch the pinned monitor or mount outcome code/private custody to show it.
+For the planned SPY H20 lot (Nov2 entry, Dec1 exit), the issuer's
+[2026 distribution schedule](https://www.ssga.com/library-content/products/fund-data/etfs/us/distribution/SPDR_Dividend_Distribution_Schedule.pdf)
+shows no scheduled ex-date inside that interval (Sep18 and Dec18 bracket it;
+the potential year-end excise distribution is Dec31). This is a calendar
+cross-check, not evidence of actual fill dates, entitlement, booked Paper
+cash or zero distributions. After a matched pair, compare the actual holding
+interval to final issuer records before interpreting a distribution effect.
 For the later read-only monitor only, the host-side stdout converter
 `A/execution/h20-dec1-monitor-projection-20261126-v1/project_h20_v2.py`
 SHA256 `8b1256824a4d89717ebde70653b1866576cf4e4c118a184cab2b202ebff68985`
