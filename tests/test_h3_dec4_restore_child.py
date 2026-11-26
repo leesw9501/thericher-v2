@@ -55,7 +55,7 @@ def test_project_import_executes_verified_bytes_not_later_disk_contents(tmp_path
 
 
 @pytest.mark.skipif(not Path("C:/").is_absolute(), reason="requires Windows plan paths")
-@pytest.mark.parametrize("fault", [None, "receipt_pid", "root", "source"])
+@pytest.mark.parametrize("fault", [None, "receipt_pid", "root", "source", "retirement"])
 def test_runtime_waits_for_exact_root_and_rechecks_source_under_held_writer_guard(
     tmp_path, monkeypatch, fault
 ):
@@ -104,7 +104,9 @@ def test_runtime_waits_for_exact_root_and_rechecks_source_under_held_writer_guar
     monkeypatch.setattr(child, "read_dec4_restore_owner", read)
     monkeypatch.setattr(child, "wait_for_dec4_normal_root", wait)
     monkeypatch.setattr(child, "restore_dec4_observer_once", restore)
-    binding = child.Dec4RestoreChildBinding(source, plan, tmp_path, lease, daemon, hold)
+    binding = child.Dec4RestoreChildBinding(
+        source, plan, tmp_path, lease, daemon, hold, lambda: fault != "retirement"
+    )
     args = ("entry", b, c, a, "9", "10", "42", "123", str(plan.hard_stop.timestamp()), "88")
     if fault is None:
         child.run_dec4_restore_child(binding, args, source_ready=lambda: status[0])
@@ -114,3 +116,5 @@ def test_runtime_waits_for_exact_root_and_rechecks_source_under_held_writer_guar
         with pytest.raises(pv.Denied):
             child.run_dec4_restore_child(binding, args, source_ready=lambda: status[0])
         assert "restore" not in events
+        if fault == "retirement":
+            assert events == ["handoff"]

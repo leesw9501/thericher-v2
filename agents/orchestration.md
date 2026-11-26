@@ -5,6 +5,15 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: actual restore binding was implemented; candidate retirement check
+passed an inert native COM probe. Real R8 tasks are Enabled without a
+future trigger; not qualified retirement. A live namespace status scan
+found 12 enabled future-clock project tasks, including the Dec1 H20 exit.
+Do not retire the latter or infer the other tasks' financial capability
+from names. Prove actual writer enrollment and/or retired authority under
+the existing gate. Dec9 runtime activation now has a typed boundary; its
+protected Windows provider remains the scoped deployment dependency.
+
 Nov26: both new no-site launch boundaries verify their release bytes before
 project import. The restore bootstrap passed native Pythonw smoke and loaded
 the actual coordinator dependency graph, while the Dec9 bootstrap verified

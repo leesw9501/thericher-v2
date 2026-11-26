@@ -61,9 +61,15 @@ original accepted Job-join receipt and restore reattests it against the
 closed bank record. The automatic observer mutation has a native deadline.
 The tracked no-site child entry now loads exact verified dependency bytes,
 accepts the original owner digest, and connects the root wait to the
-restore coordinator. Supply the protected release's concrete native binding
-and positive writer exclusion through the actual write; do not treat
-Docker absence alone as that proof.
+restore coordinator. The concrete binding now projects the exact held
+gate, bounded observer/daemon and native retired-writer/census checks.
+Before arming, old authority retirement is checked; recheck it and the
+current census inside the bank gate through the actual write. Freeze the
+qualified release from the actual writer topology, not a declarative roster.
+The two R8 old tasks are still Enabled with no future trigger; do not admit
+them as retired or retire the existing Dec1 H20 owned exit.
+Qualify exit-specific categorical readout for that Dec1 duty before its
+owned window: the original H20 reader exposes entry status, not exit status.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -244,8 +250,10 @@ with unchanged clocks, principal, and one-attempt run root.
    that reader without opening pages. The tracked target-only owner now
    calls the native capture and writer together. Its tracked no-site
    bootstrap now verifies the fixed Dec9 manifest and binds that callable.
-   Dispatch remains disabled until the native owner/ACL action and block-end
-   owner are frozen; do not duplicate the capture or open outcomes.
+   The activation boundary now joins fixed scope, native owner identity and
+   deferred Paper config. The CLI remains disabled until the real Windows
+   provider, independent protected pins and block-end owner are frozen; do
+   not duplicate the capture or open outcomes.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.

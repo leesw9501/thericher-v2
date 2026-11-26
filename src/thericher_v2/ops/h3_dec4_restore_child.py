@@ -26,6 +26,7 @@ class Dec4RestoreChildBinding:
     lease: Dec4ObserverLease
     daemon: Dec4RestoreDaemon
     hold_native_closure: Callable[[dict], AbstractContextManager[Callable[[], bool]]]
+    retirement_ready: Callable[[], bool]
 
 
 def run_dec4_restore_child(binding, argv, *, source_ready):
@@ -46,6 +47,7 @@ def run_dec4_restore_child(binding, argv, *, source_ready):
         and type(binding.lease) is Dec4ObserverLease
         and type(binding.daemon) is Dec4RestoreDaemon
         and callable(binding.hold_native_closure)
+        and callable(binding.retirement_ready)
         and binding.evidence_root.is_absolute()
         and float(cutoff) == plan.hard_stop.timestamp()
         and source_ready() is True,
@@ -69,6 +71,7 @@ def run_dec4_restore_child(binding, argv, *, source_ready):
     _need(
         pins.owner_pid == int(pid)
         and pins.owner_native_start == "win-filetime:" + birth
+        and binding.retirement_ready() is True
         and source_ready() is True,
         "h3_restore_child_owner",
     )

@@ -1,4 +1,4 @@
-"""Freeze and bind the Dec9 target-only Data owner; no native dispatch yet."""
+"""Bind the Dec9 target-only Data owner to a protected native host."""
 
 import hashlib
 import importlib.abc
@@ -10,9 +10,11 @@ import stat
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import NamedTuple
+from typing import NamedTuple, Protocol
+from uuid import UUID
 
 RUN_NAME = "h3-dec9-modp1-target-owner-20261209-v1"
+TASK_PATH = "\\thericher-" + RUN_NAME
 SOURCE_SCHEMA = "H3_DEC9_TARGET_SOURCE_V1"
 DATA_ROOT = Path(f"D:/thericher-v2/model-artifacts/data/{RUN_NAME}")
 MARKET_ROOT = Path(f"D:/market_data/us_equities/kis_paper_private/{RUN_NAME}")
@@ -188,6 +190,82 @@ class TargetOwnerBinding(NamedTuple):
     prebind_sha256: str
 
 
+class NativeAction(NamedTuple):
+    task_path: str
+    executable: str
+    arguments: str
+    working_directory: str
+
+
+class NativeProjection(NamedTuple):
+    action: NativeAction
+    definition_sha256: str
+    custody_acl_sha256: str
+    runtime_sha256: str
+    config_scope_sha256: str
+
+
+class NativeOwnerProof(NamedTuple):
+    projection: NativeProjection
+    prebind_sha256: str
+    instance: UUID
+    pid: int
+    birth: str
+
+
+class ProtectedNativeOwner(Protocol):
+    """Only a qualified host may supply these capabilities, never launch arguments.
+
+    Each proof must freshly verify the exact Scheduler definition/action/ACL,
+    isolated source and custody, launcher/interpreter/dependencies, config
+    access scope, and the live instance's link to this process. Policy digests
+    identify nonsecret bindings, not credentials or expected plan echoes.
+    """
+
+    def prove(self) -> NativeOwnerProof: ...
+
+    def load_paper_market_data_config(self, config_scope_sha256: str) -> object: ...
+
+
+class NativePrebind(NamedTuple):
+    source_sha256: str
+    prebound_at: datetime
+    target_prebind_sha256: str
+    projection: NativeProjection
+
+    @property
+    def sha256(self):
+        projection = self.projection
+        document = dict(
+            schema="H3_DEC9_NATIVE_PREBIND_V1",
+            run=RUN_NAME,
+            source_sha256=self.source_sha256,
+            prebound_at=self.prebound_at.isoformat(),
+            target_prebind_sha256=self.target_prebind_sha256,
+            action=projection.action._asdict(),
+            definition_sha256=projection.definition_sha256,
+            custody_acl_sha256=projection.custody_acl_sha256,
+            runtime_sha256=projection.runtime_sha256,
+            config_scope_sha256=projection.config_scope_sha256,
+            capture_opens=OPENS.isoformat(),
+            capture_closes=CLOSES.isoformat(),
+            seal_before=SEAL_BEFORE.isoformat(),
+        )
+        return _sha(json.dumps(document, sort_keys=True, separators=(",", ":")).encode("ascii"))
+
+
+def _projection(value):
+    return (
+        type(value) is NativeProjection
+        and type(value.action) is NativeAction
+        and all(type(s) is str and "\0" not in s for s in value.action)
+        and value.action.task_path == TASK_PATH
+        and Path(value.action.executable).is_absolute()
+        and Path(value.action.working_directory).is_absolute()
+        and all(map(_hex, value[1:]))
+    )
+
+
 def _project_module(name):
     return name == "thericher_v2" or name.startswith("thericher_v2.")
 
@@ -202,9 +280,22 @@ def _require_runtime():
         raise ValueError("dec9_owner_runtime")
 
 
+def _now():
+    return datetime.now(UTC)
+
+
 def _capture_window():
-    if not OPENS <= datetime.now(UTC) < CLOSES:
+    if not OPENS <= _now() < CLOSES:
         raise ValueError("dec9_owner_clock")
+
+
+def _utc(value):
+    return type(value) is datetime and value.utcoffset() == UTC.utcoffset(None)
+
+
+def _ticks(stamp):
+    delta = stamp - datetime(1601, 1, 1, tzinfo=UTC)
+    return (delta.days * 86400 + delta.seconds) * 10_000_000 + delta.microseconds * 10
 
 
 def bind_target_owner(source_sha256, *, prebound_at, target_prebind_sha256):
@@ -216,11 +307,7 @@ def bind_target_owner(source_sha256, *, prebound_at, target_prebind_sha256):
     """
     _require_runtime()
     _capture_window()
-    if (
-        type(prebound_at) is not datetime
-        or prebound_at.utcoffset() != UTC.utcoffset(None)
-        or not _hex(target_prebind_sha256)
-    ):
+    if not _utc(prebound_at) or not _hex(target_prebind_sha256):
         raise ValueError("dec9_owner_prebind")
     finder = _FrozenImports(verify_source(source_sha256))
     _capture_window()
@@ -253,6 +340,121 @@ def bind_target_owner(source_sha256, *, prebound_at, target_prebind_sha256):
             if _project_module(name):
                 del sys.modules[name]
         raise
+
+
+def activate_target_owner(
+    prebind: NativePrebind, *, native_prebind_sha256: str, host: ProtectedNativeOwner
+) -> str:
+    """In-process continuation for an independently qualified, pinned host.
+
+    This does not implement Windows readback, authenticate the host itself or
+    expose an executable action. The independently retained digest must reach
+    the host out of band, not be derived from mutable launch input at runtime.
+    """
+    _require_runtime()
+    _capture_window()
+    if not (
+        type(prebind) is NativePrebind
+        and _hex(prebind.source_sha256)
+        and _utc(prebind.prebound_at)
+        and prebind.prebound_at < OPENS
+        and _hex(prebind.target_prebind_sha256)
+        and _projection(prebind.projection)
+        and _hex(native_prebind_sha256)
+        and native_prebind_sha256 == prebind.sha256
+    ):
+        raise ValueError("dec9_native_prebind")
+
+    pid = os.getpid()
+
+    def prove():
+        proof = host.prove()
+        now = _now()
+        if not (
+            OPENS <= now < SEAL_BEFORE
+            and type(proof) is NativeOwnerProof
+            and _projection(proof.projection)
+            and proof.projection == prebind.projection
+            and _hex(proof.prebind_sha256)
+            and proof.prebind_sha256 == native_prebind_sha256
+            and type(proof.instance) is UUID
+            and proof.instance.int != 0
+            and type(proof.pid) is int
+            and proof.pid == pid
+            and type(proof.birth) is str
+            and re.fullmatch(r"win-filetime:[0-9]{18}", proof.birth)
+            and _ticks(OPENS) <= int(proof.birth.split(":")[1]) <= _ticks(now)
+        ):
+            raise ValueError("dec9_native_owner")
+        return proof
+
+    try:
+        original = prove()
+    except Exception:
+        raise ValueError("dec9_native_owner") from None
+    load_scoped_config = getattr(host, "load_paper_market_data_config", None)
+    if not callable(load_scoped_config):
+        raise ValueError("dec9_native_config")
+    bound = bind_target_owner(
+        prebind.source_sha256,
+        prebound_at=prebind.prebound_at,
+        target_prebind_sha256=prebind.target_prebind_sha256,
+    )
+    from thericher_v2.execution.kis_market_data import (
+        KIS_PAPER_MARKET_DATA_BASE_URL,
+        KisPaperMarketDataConfig,
+    )
+    from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
+    from thericher_v2.execution.paper_peer_visit import process_start
+
+    lost = False
+
+    def ready():
+        nonlocal lost
+        if not lost:
+            try:
+                lost = not (
+                    OPENS <= _now() < SEAL_BEFORE
+                    and prove() == original
+                    and process_start(pid) == original.birth
+                    and _sha(_read(SOURCE / "SOURCE.json", 1024 * 1024)) == prebind.source_sha256
+                    and OPENS <= _now() < SEAL_BEFORE
+                )
+            except Exception:
+                lost = True
+        return CaptureReadiness(not lost)
+
+    config_attempted = False
+
+    def load_config():
+        nonlocal config_attempted
+        if config_attempted or not ready().ready:
+            raise ValueError("dec9_native_config")
+        _capture_window()
+        config_attempted = True
+        try:
+            config = load_scoped_config(prebind.projection.config_scope_sha256)
+        except Exception:
+            raise ValueError("dec9_native_config") from None
+        if (
+            type(config) is not KisPaperMarketDataConfig
+            or config.base_url != KIS_PAPER_MARKET_DATA_BASE_URL
+            or not ready().ready
+        ):
+            raise ValueError("dec9_native_config")
+        _capture_window()
+        return config
+
+    if not ready().ready:
+        raise ValueError("dec9_native_owner")
+    _capture_window()
+    return bound.run_owner(
+        bound.pins,
+        prebind_sha256=prebind.target_prebind_sha256,
+        clock=_now,
+        owner_ready=ready,
+        config_loader=load_config,
+    )
 
 
 if __name__ == "__main__":

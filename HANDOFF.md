@@ -272,6 +272,32 @@ RESTORE-BOOTSTRAP-NATIVE-20261126.json, SHA256
 At the Nov26 native status sample the two old R8 tasks had no future time;
 the pending point task was Ready with a future time, and both Dec4/Dec9
 financial tasks were absent. This is status, not writer-exclusion or install proof.
+The concrete restore binding now checks the original bank gate and exact
+phase release, constructs the bounded transport, checks two known retired
+authorities before ack, then checks their full native readback and current
+writer census inside the original bank gate. Native read-only Scheduler
+probe admitted a disposable disabled definition and rejected wrong ACL;
+the fixture was never enabled and was removed. Evidence:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+RESTORE-RETIREMENT-NATIVE-20261126.json, SHA256
+`0bd5c01212e3fb0b7551db8969bf7067d8080139627b6d925ad5e647395399a8`.
+Actual old R8 definitions are Enabled with no future clocks. This code must
+not be released until they are positively retired and other remaining
+financial writers are shown to acquire the same physical gate. Preserve the
+installed Dec1 14:25 UTC H20 SPY owned exit; it is not a retired authority.
+The pinned H20 compatibility reader reports the entry's attempt, acceptance,
+fill and terminal fields; an exit fill only changes its inventory projection.
+Before Dec1 qualify a separate exit-specific categorical readout against
+the exact exit callback and contract. Scheduled start is not sell authority:
+the host window begins 14:25 UTC, the financial window begins 14:30 UTC.
+Existing join roots: A/execution/current-h20-reader-parent-completion-20261101-v1/
+BINDING.json and A/execution/current-h20-exact-outcome-reader-readiness-20261031-v1/
+runtime-r4/reader.py. No H20 outcome/custody was opened in this audit.
+Independent Claude review withheld release pending actual gate acquisition
+by the exact authorized writers (including mixed-OS and demand-start paths).
+Verdict A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+RESTORE-WRITER-SCOPE-CLAUDE-VERDICT-20261126.json, SHA256
+`05044301c3869ad6f8bf6abf024aa21fdf943f8fa4310afa853049d09da2d4bd`.
 The Dec4 point task is still Ready at Dec3 21:47 UTC, one old action and no
 catch-up. The exact prepared source-v3 manifest matches on disk but is not
 the installed action. Both financial task names are still absent.

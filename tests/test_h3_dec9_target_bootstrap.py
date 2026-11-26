@@ -2,13 +2,18 @@
 
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 from datetime import timedelta
 from pathlib import Path
+from uuid import UUID
 
 import pytest
 
+from thericher_v2.execution import paper_peer_visit
+from thericher_v2.execution.kis_market_data import KisPaperMarketDataConfig
+from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
 from thericher_v2.ops.h3_dec9_fixed_half_target import ENTRY_OPEN, Dec9TargetPins
 
 REPO = Path(__file__).resolve().parents[1]
@@ -86,7 +91,7 @@ def test_loader_executes_only_the_verified_bytes(frozen):
         loader.find_spec("thericher_v2.ops.h3_dec9_other_owner")
 
 
-def test_isolated_binding_uses_real_target_owner(tmp_path):
+def test_isolated_activation_uses_real_target_owner(tmp_path):
     data_root, market_root = tmp_path / "data", tmp_path / "market"
     root = data_root / "source"
     members = {
@@ -112,6 +117,8 @@ import importlib.util
 import sys
 from datetime import datetime
 from pathlib import Path
+from uuid import UUID
+import os
 
 entry, venv, pin, prebound_at, digest = sys.argv[1:]
 spec = importlib.util.spec_from_file_location("dec9_test_child", entry)
@@ -122,7 +129,7 @@ boot.DATA_ROOT = boot.SOURCE.parent
 boot.MARKET_ROOT = boot.DATA_ROOT.parent / "market"
 boot.VENV = Path(venv)
 boot._require_runtime = lambda: None
-boot._capture_window = lambda: None
+boot._now = lambda: boot.OPENS
 args = {"prebound_at": datetime.fromisoformat(prebound_at)}
 try:
     boot.bind_target_owner(pin, target_prebind_sha256="0" * 64, **args)
@@ -131,10 +138,48 @@ except ValueError as error:
 else:
     raise AssertionError("wrong prebind admitted")
 assert not any(boot._project_module(name) for name in sys.modules)
-bound = boot.bind_target_owner(pin, target_prebind_sha256=digest, **args)
-from thericher_v2.ops.h3_dec9_target_owner import run_dec9_target_owner
-assert bound.run_owner is run_dec9_target_owner
-assert bound.pins.prebind_sha256 == bound.prebind_sha256 == digest
+action = boot.NativeAction(boot.TASK_PATH, str(Path(venv) / "host.exe"), "", str(boot.SOURCE))
+projection = boot.NativeProjection(action, *[c * 64 for c in "abcd"])
+prebind = boot.NativePrebind(pin, args["prebound_at"], digest, projection)
+birth = f"win-filetime:{boot._ticks(boot.OPENS)}"
+bind = boot.bind_target_owner
+
+class StopBeforeNetwork(Exception):
+    pass
+
+class Host:
+    def prove(self):
+        return boot.NativeOwnerProof(projection, prebind.sha256, UUID(int=1), os.getpid(), birth)
+
+    def load_paper_market_data_config(self, scope):
+        from thericher_v2.execution.kis_market_data import KisPaperMarketDataConfig
+        assert scope == projection.config_scope_sha256
+        assert (boot.DATA_ROOT / "run/owner/ATTEMPT.json").is_file()
+        return KisPaperMarketDataConfig("invented-key", "invented-secret")
+
+def bind_with_synthetic_capture(*a, **kw):
+    bound = bind(*a, **kw)
+    from thericher_v2.ops import h3_dec9_fixed_half_capture, h3_dec9_target_owner as owner
+    from thericher_v2.execution import paper_peer_visit
+    assert bound.run_owner is owner.run_dec9_target_owner
+    assert bound.pins.prebind_sha256 == bound.prebind_sha256 == digest
+
+    def no_network(**kwargs):
+        assert kwargs["owner_ready"]().ready is True
+        assert kwargs["config_loader"]().app_key == "invented-key"
+        raise StopBeforeNetwork
+
+    paper_peer_visit.process_start = h3_dec9_fixed_half_capture.process_start = lambda pid: birth
+    owner.capture_h3_daily_panel_once = no_network
+    return bound
+
+boot.bind_target_owner = bind_with_synthetic_capture
+try:
+    boot.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=Host())
+except StopBeforeNetwork:
+    pass
+else:
+    raise AssertionError("real owner did not reach the synthetic capture boundary")
 """
     subprocess.run(
         [
@@ -153,8 +198,166 @@ assert bound.pins.prebind_sha256 == bound.prebind_sha256 == digest
         check=True,
         timeout=30,
     )
-    assert not (data_root / "run").exists()
+    attempt = json.loads((data_root / "run/owner/ATTEMPT.json").read_bytes())
+    assert attempt["target_prebind_sha256"] == pins.prebind_sha256
+    assert not (data_root / "run/OWNER-CLOSED.json").exists()
     assert not market_root.exists()
+
+
+@pytest.fixture
+def activation(frozen, monkeypatch):
+    root, _, pin = frozen
+    action = BOOT.NativeAction(BOOT.TASK_PATH, str(root / "host.exe"), "--fixed", str(root))
+    projection = BOOT.NativeProjection(action, *[c * 64 for c in "abcd"])
+    prebind = BOOT.NativePrebind(pin, ENTRY_OPEN - timedelta(seconds=1), "e" * 64, projection)
+    birth = f"win-filetime:{BOOT._ticks(BOOT.OPENS)}"
+
+    class Host:
+        now = BOOT.OPENS
+        proof = BOOT.NativeOwnerProof(projection, prebind.sha256, UUID(int=1), os.getpid(), birth)
+        proof_calls = 0
+        config_calls = 0
+        config = KisPaperMarketDataConfig("invented-key", "invented-secret")
+        native_birth = birth
+
+        def prove(self):
+            self.proof_calls += 1
+            return self.proof
+
+        def load_paper_market_data_config(self, scope):
+            assert scope == projection.config_scope_sha256
+            self.config_calls += 1
+            return self.config
+
+    host = Host()
+    monkeypatch.setattr(BOOT, "_now", lambda: host.now)
+    monkeypatch.setattr(BOOT, "_require_runtime", lambda: None)
+    monkeypatch.setattr(paper_peer_visit, "process_start", lambda _pid: host.native_birth)
+
+    def forbidden(*args, **kwargs):
+        pytest.fail("binding reached with denied native preflight")
+
+    monkeypatch.setattr(BOOT, "bind_target_owner", forbidden)
+    return prebind, host
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "pin",
+        "action",
+        "definition",
+        "runtime",
+        "acl",
+        "config_scope",
+        "proof_pin",
+        "pid",
+        "birth",
+        "bool",
+    ],
+)
+def test_activation_denies_unbound_native_proof(activation, fault):
+    prebind, host = activation
+    pin = prebind.sha256
+    if fault == "pin":
+        # The digest independently retained before launch cannot be rebuilt from the changed action.
+        projection = prebind.projection
+        action = projection.action._replace(arguments="--other")
+        prebind = prebind._replace(projection=projection._replace(action=action))
+    elif fault in {"action", "definition", "runtime", "acl", "config_scope"}:
+        projection = host.proof.projection
+        change = {
+            "action": {"action": projection.action._replace(arguments="--other")},
+            "definition": {"definition_sha256": "0" * 64},
+            "runtime": {"runtime_sha256": "0" * 64},
+            "acl": {"custody_acl_sha256": "0" * 64},
+            "config_scope": {"config_scope_sha256": "0" * 64},
+        }[fault]
+        host.proof = host.proof._replace(projection=projection._replace(**change))
+    elif fault == "proof_pin":
+        host.proof = host.proof._replace(prebind_sha256="0" * 64)
+    elif fault == "pid":
+        host.proof = host.proof._replace(pid=os.getpid() + 1)
+    elif fault == "birth":
+        host.proof = host.proof._replace(birth=f"win-filetime:{BOOT._ticks(BOOT.OPENS) - 1}")
+    else:
+        host.proof = True
+    error = "prebind" if fault == "pin" else "owner"
+    with pytest.raises(ValueError, match=f"^dec9_native_{error}$"):
+        BOOT.activate_target_owner(prebind, native_prebind_sha256=pin, host=host)
+    assert host.config_calls == 0
+
+
+def test_activation_without_config_provider_never_binds_owner(activation):
+    prebind, host = activation
+    host.load_paper_market_data_config = None
+    with pytest.raises(ValueError, match="^dec9_native_config$"):
+        BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [None, "instance", "birth", "source", "late", "seal_cutoff", "config_type", "config_drift"],
+)
+def test_activation_rechecks_owner_and_loads_config_only_in_capture(activation, monkeypatch, fault):
+    prebind, host = activation
+    pins = object()
+    close_digest = "f" * 64
+
+    if fault == "config_drift":
+        load = host.load_paper_market_data_config
+
+        def config_with_drift(scope):
+            config = load(scope)
+            host.proof = host.proof._replace(instance=UUID(int=2))
+            return config
+
+        host.load_paper_market_data_config = config_with_drift
+
+    def owner(passed, *, prebind_sha256, clock, owner_ready, config_loader):
+        assert passed is pins and prebind_sha256 == prebind.target_prebind_sha256
+        assert host.config_calls == 0 and type(owner_ready()) is CaptureReadiness
+        if fault == "instance":
+            original = host.proof
+            host.proof = original._replace(instance=UUID(int=2))
+            assert not owner_ready().ready
+            host.proof = original  # An observed loss cannot be treated as a transient readiness.
+        elif fault == "birth":
+            host.native_birth = None
+        elif fault == "source":
+            (BOOT.SOURCE / "SOURCE.json").write_bytes(b"changed")
+        elif fault == "late":
+            host.now = BOOT.CLOSES
+            assert owner_ready().ready  # Sealing is still allowed, credential loading is not.
+        elif fault == "seal_cutoff":
+            host.now = BOOT.SEAL_BEFORE
+            assert not owner_ready().ready
+        elif fault == "config_type":
+            host.config = object()
+        elif fault is None:
+            assert config_loader() is host.config
+            with pytest.raises(ValueError, match="dec9_native_config"):
+                config_loader()
+            host.now = BOOT.CLOSES
+            assert clock() == BOOT.CLOSES and owner_ready().ready
+            return close_digest
+        config_loader()
+        pytest.fail("denied config returned")
+
+    def bind(pin, *, prebound_at, target_prebind_sha256):
+        assert (pin, prebound_at, target_prebind_sha256) == prebind[:3]
+        return BOOT.TargetOwnerBinding(owner, pins, target_prebind_sha256)
+
+    monkeypatch.setattr(BOOT, "bind_target_owner", bind)
+    if fault is None:
+        assert (
+            BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
+            == close_digest
+        )
+    else:
+        with pytest.raises(ValueError, match="dec9_native_config|dec9_owner_clock"):
+            BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
+    assert host.config_calls == int(fault in {None, "config_type", "config_drift"})
 
 
 def test_bootstrap_is_not_an_executable_dispatch():

@@ -37,8 +37,10 @@ census. The native root handle rejects a nonzero or late exit. Original Job
 closure is now retained and re-attested under the bank gate; automatic
 observer restore has a native upper deadline. The tracked no-site child now
 checks the protected source and connects exact root closure to the restore
-coordinator. Next provide the actual release binding and unbound-writer
-exclusion through readback. The native fixture had only a mock binding.
+coordinator. The concrete release projection now binds the same bank gate,
+native retirement and current census. Actual R8 is still Enabled with no
+future time; do not infer retirement. Freeze actual same-gate proof and
+preserve the pending Dec1 H20 exit before operational release.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child
