@@ -93,6 +93,14 @@ software or an operational exclusion decision. Do not disable security or
 retry until it happens to be absent. Prefer a metadata-only host and the
 already isolated Linux numeric path if the actual host trust scope cannot
 be qualified without extra runtime dependencies.
+The stdlib-only Windows metadata host now connects five invented metadata
+members to sixteen exact RO commitments without importing the Windows
+numeric SDK. Direct base `-I -S -B` passed and refused a crossed owner,
+without rewriting the original receipt.
+`A/research/h3-dec4-fixed-half-metadata-host-20261126-v1/invented-once/RESULT.json`
+SHA256 `c23f3cc236be05af52cdd6276e33c02f746fb294c11554138586e49e160da9d2`.
+Integrate with the bounded host and original Linux worker; the proof is not
+native origin qualification, a real input or an installed owner.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight

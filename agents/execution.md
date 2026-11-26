@@ -62,6 +62,13 @@ entry and exit `CLOSED-<run>.json` and `JOB-CLOSED-<run>.json` under the
 original BankLeg root, and original entry-reference plus retained input
 join, under current writer exclusion. A restore marker cannot supply those
 proofs or attest a fill. No installed source was changed or real custody read.
+`host-preflight/r6_bank_job_proof.py` SHA256
+`0b0a1c068036f01c9e9ead46f2f14f90c0058d17b5a510a3f171e072a8b4c2f3`
+passed the installed two-member Job/BankLeg closure join on invented input.
+It rejected missing/replaced Job receipt, wrong run/owner/observer digest,
+zero visits, abnormal recovery and the successor schema. Join the retained
+input under scoped writer exclusion before any actual read; operation
+closure is neither an attributed effect nor at-read custody evidence.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact

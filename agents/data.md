@@ -239,6 +239,20 @@ SHA256 `0a66a936bc5a4d7682d75fb95f68e9b7115361b68ccbd2ce78b74f8a1ccc1d9c`.
 Need exact separate source/prebinds, protected owners and Job/digest closure,
 inference-only mount custody and block-end reader ABI. No activation or
 post-cutoff reads; no physical isolation inferred from the code-only guards.
+The Dec15 source-only candidate is frozen under
+`A/data/h3-dec15-dual-output-source-candidate-v1`. `source/SOURCE.json`
+SHA256 `9a368042544931895b6459750c7f92b7b1d2ef139381c14e0997895c4d6d0a35`;
+separate `PREBIND.json` SHA256
+`b3788587f1dbcb46491882e73796e81c5461f23c27394fea6323cbd8d527dd91`.
+Invented one capture/target/prefix and crossed prebind refusal in
+`RESULT.json` SHA256 `29dc3dd5676842c7c03d7e3e1fbde6f9ab4d2de513c7ad8a97e0525b2fed90a0`.
+Not enrolled. Dec15 cannot retroactively supply the Dec10 prefix. Native
+Scheduler explicitly reported both exact Dec9 target-only/dual task names
+absent. Prepare a distinct dual-output Dec9 alternative for the Dec10
+prefix, preserve the original target-only candidate, and select at most
+one actual collector after exact eligibility. Claude conditional review:
+`CLAUDE-SHARED-CAPTURE-VERDICT.json` in the Dec15 candidate root. No
+post-outcome retag or independent-performance claim from co-production.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
