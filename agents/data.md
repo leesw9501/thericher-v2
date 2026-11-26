@@ -115,6 +115,13 @@ withheld on a subsequent registry connection before full imports/DLL check.
 No replay of that failed revision; original source/runtime/copy matched after.
 The separate Paper smoke used a no-registry timezone backend contract; do
 not adopt it for Data without qualifying the affected explicit UTC operations.
+The one additive `-importerror-r2/STARTUP.json` attempt (SHA256
+`2507fca9996a0262278acf0e51b6a02022e689a3b19eaf296e62f1bb8972609b`)
+withheld on an earlier import-time mutation, before the timezone backend
+or clock/image checks. No registry attempt was observed before that stop.
+`AFTER.json` matched 569 source, 184 interpreter and 3,405 dependency files.
+Isolate the suspected NumPy startup mutation in a small inert reproducer;
+do not broaden the protected audit or claim this import qualified.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

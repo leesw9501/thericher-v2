@@ -23,9 +23,12 @@ retained-input/reference parent into the actual protected runtime profile.
 The bank now derives its observer, restore, writer and evidence paths from
 the same selected source/release as the restore child. The verified caller
 component joined two native drafts to an inert bank boundary and the actual
-bank/restore modules passed a no-site import and DLL-origin smoke. Freeze
-the actual starter with the protected runtime and the pre-source profile
-cards before installing. Do not invent account, bank or native writer facts.
+bank/restore modules passed a no-site import and DLL-origin smoke. The
+assembled outer starter now refuses early phases in direct no-site Pythonw
+and calls only verified runtime/dispatcher members. Bind its concrete
+protected dependency loader and immutable profile anchor, then freeze it
+with the pre-source profile cards before installing. Do not invent account,
+bank or native writer facts.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only

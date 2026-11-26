@@ -150,6 +150,14 @@ additional signed Defender image matched its single exact path and hash.
 This is not namespace protection or installed startup. Evidence:
 `A/execution/h3-dec4-dec9-native-release-20261126-v1/PAPER-CALLER-COMPONENT-SMOKE.json`,
 SHA256 `2d1b67b2ba86f3779f0af27505f0ac65043ddfdfd37c781362ad48440c09c9bf`.
+The same root has the assembled outer `run_h3_dec4_bank_pair_r2.py`,
+SHA256 `9b96a817c59780d447ca7728657575888c0ca1081631cedf5392aeb6014a55d8`.
+Direct base `pythonw -I -S -B` refused both early phases (20). Five inert
+assertions checked phase-local exit, deferred config, missing startup
+member and operational status mapping. Exit zero is not a fill.
+The source member `scripts/dec4_bank_runtime.py` (protected dependency
+admission, exact profile anchor and owned deferred loader) is not bound.
+Neither financial task was registered, invoked or closed by this work.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,
