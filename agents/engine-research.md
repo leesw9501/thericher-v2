@@ -70,6 +70,13 @@ joins exact Nov27 owner/READY to Nov30 forecast closure, and only projects
 its seal commitment. Seven invented tests and Ruff passed. Neither owned
 closure exists yet; no real join, payload/target read, or readiness claim.
 Target embargo remains Dec28 21:00 UTC plus independent custody.
+The installed source-v2 calendar/producer check matched the exact Nov27
+source member and 18:00 UTC early close, then exercised the frozen caller's
+early refusal before any input/checkpoint access. The associated Nov27
+18:30 and Nov30 14:12 UTC tasks were both Ready with no prior run in the
+read-only Scheduler check. No actual input or forecast was read.
+`A/research/h3-nov30-first-slot-owner-ready-metadata-20261126-v1/check_installed_prefix.py`
+SHA256 `e038888bf84d8b48224303b035681a08d818d61f25ea39f82be7e0c21532db86`.
 
 The fixed-half block-end join requires all five frozen slots in order.
 Missing measurements stay explicit, separate from verified no-signal dates.
