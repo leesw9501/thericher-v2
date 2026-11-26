@@ -151,6 +151,12 @@ UV interpreter companion. Static lint only at that checkpoint, SHA256
 `83c800dfd88546b9a946a473f2175261ef5285193b8b6542ce3193a803bf8b21`.
 This supports local runtime-file identity, not upstream signature/archive
 provenance. The separate interpreter-root denied open remains unattributed.
+Fresh isolated no-site import checked exact `sqlite3.dll` companion identity
+and SHA from the pinned base interpreter, and refused wrong identity/hash.
+Receipt `A/data/h3-dec9-sqlite-exact-authority-validation-v1/RESULT.json`
+SHA256 `ee6ed544f7cf18674c1b5aff168cabce08f274bf512f3304f81432e929a12c34`.
+No database access, R4 rerun, or startup authority. Next reproduce the
+separate unpinned interpreter-root read without relaxing the audit.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

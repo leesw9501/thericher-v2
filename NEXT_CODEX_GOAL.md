@@ -35,9 +35,11 @@ and both observer plans are now staged. R6's static input assembler and
 exact-pin future installer are ready for the writer scope; install rehearsal
 is not task registration. The monitor role has exact current image and
 source evidence, but unmatched host claims remain unqualified.
-Next bind the original protected scope and exact current writer roles to
-R6 before freezing SOURCE/RELEASE and scheduling. Do not invent account,
-bank or native writer facts.
+The inherited protected roots and 11 non-own writer-deny selectors are
+bound. Actual-path restore and native COM draft construction now match
+both pre-source profile cards with test-only historical claims. Bind the
+exact current claimant rules before freezing SOURCE/RELEASE and scheduling.
+Do not invent account, bank or native writer facts.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only

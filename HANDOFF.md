@@ -253,6 +253,18 @@ Do not use the capsule image as the monitor pin. Earlier R8 and H20 host
 samples had unmatched actors; neither grants ownership or excludes diagnostic
 ancestors. R6 still needs inherited protected/sensitive scope and exact
 writer rules, including the generated capsule output root and retained input.
+The protected inherited scope is now recovered in
+`candidate-r6/writer/WRITER-STATIC.json` SHA256
+`48304f2684a1aff80d0faebc043f8e5c6fac6af807949c06d36ef5992d874d7c`:
+five inherited sensitive roots, nine protected roots including capsule and
+retained workspaces, exact monitor pin and 11 non-own financial deny selectors.
+This is membership scope, not current host grants. `bind_dec4_restore_rows.py`
+and `prepare_dec4_final_plan.py` compose both actual-path roles into the
+tracked parent/restore constructors and real unregistered COM definitions.
+Both shapes matched the pre-source cards with computed source/release
+digests. Historical claims were test input only; nothing was written to
+SOURCE/RELEASE/ANCHOR or registered. Exact current claimant authority is
+the remaining static input; runtime owner and custody checks remain.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

@@ -20,8 +20,15 @@ invented books. Prior-close assignment survives an entry-open gap and the
 25 bp routine keeps pre-fee dollar targets, including terminal liquidation.
 See `native-synthetic-v1/HOST-EVIDENCE.json` SHA256
 `489ab08a0300758c628498c46421010789ed2942d64adecacdbe51430d6a53dd`.
-The exact DEV-only worker was assigned after that pass; no market attempt
-or holdout read is established by the smoke.
+The once-only DEV worker is now closed. Candidate versus stable: both-sided
+turnover 3.8251x vs 4.5511x; after-cost net growth 2.3916% vs 2.4257%;
+drawdown 2.9088% vs 2.8338%. Failed the frozen criterion: no promotion.
+One readout, two books, 47 cohorts, zero fits/forwards/retries and no
+RECENT or holdout access. Both books ended flat; container removed.
+See `dev-once-v1/attempt-01/RESULT.json` SHA256
+`8029f18f545b41092887bac7688058d7db8d8a5c0b30b06371992159cba78e42`
+and the exact host/registry receipts there. Reused development outcomes
+are not independent evidence or Paper results; do not rerun this candidate.
 
 The fixed-half block-end join requires all five frozen slots in order.
 Missing measurements stay explicit, separate from verified no-signal dates.

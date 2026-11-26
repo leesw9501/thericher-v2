@@ -1,9 +1,17 @@
 # Orchestration Stateboard (총괄)
 
-Updated Nov9UTC11:43 / Nov9KST20:43. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Updated Nov26 UTC. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package APIs.
 
 ## Company Reality
+
+R6 deployment: actual-path paired profiles and restore constructors checked
+from the pinned member set; exact inherited writer scope recovered. Next
+classify current claimant authority without suppressing unresolved actors.
+No task installation or financial effect. Data's SQLite candidate passed
+an isolated identity smoke; full startup still withheld on the separate
+denied read. Research's once-only W25 DEV read closed, below its frozen
+criterion. No rerun, candidate promotion, GPU fit, or held-out access.
 
 Nov26 throughput: Execution joined the bank preflight to the install plan;
 Data implemented original creation-handle custody. Both focused packages ran
