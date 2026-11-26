@@ -16,6 +16,14 @@ The network-disabled/read-only Docker reader passed on invented data only;
 SHA256 `b36ba84174045aa03165b617580c4e042187ac5b61f6cd6f01fa713650ffebfd`.
 Actual R6 reads still require positive relevant-writer closure and exact
 immutable request/fill links. Broker holdings are a separate observation.
+The next fixture used the exact Linux paths from installed R6 metadata for
+both the invented native producer and read-only consumer. No journal
+rewrite, no token-control mount, and network disabled; original bytes and
+membership unchanged. Exact replay passed and crossed runtime alias was
+refused. `A/execution/h3-dec4-native-ledger-inert-20261126-v1/path-preserving/PATH-PRESERVING.json`
+SHA256 `324393bb00c6d7c107d6b0b06eb2bdf80b8ce9bcfe2844bc7058a161a695f289`.
+Prepare the named host preflight against installed source, without opening
+private custody before the real eligibility window and writer closure.
 Synthetic cold restart now demonstrates the same unknown request and
 reservation survive across processes without another submit (HANDOFF).
 Positive reconciliation of an actual broker response is still unobserved.

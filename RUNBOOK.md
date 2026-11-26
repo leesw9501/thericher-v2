@@ -62,6 +62,13 @@ do not demonstrate a Paper route. Do not attach those TRs or infer a zero fee.
 Record broker gross separately from any modeled costs; promote fee and
 settlement facts only when a Paper-supported record can be linked to the
 same owned fills. Missing accounting fields do not block exact reconciliation.
+The official [overseas execution-basis current balance sample](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_present_balance/inquire_present_balance.py)
+does document a Paper route (`VTRP6504R`). Its
+[published column mapping](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_present_balance/chk_inquire_present_balance.py)
+describes holdings, currency totals and unsettled aggregates, not exact
+order-linked fee or settlement events. It is an optional read-only
+cross-check for a named inconsistent account snapshot, not an attribution
+source or another query required for each fill. Not invoked in this review.
 
 Dec4/Dec9 R6 Paper is installed: entry
 `thericher-kis-paper-dec4-h3-entry-20261204-v1` Dec4 14:31 UTC, exit

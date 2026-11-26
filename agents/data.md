@@ -202,6 +202,14 @@ was proved. The invented writer seal was unchanged. No retry, new namespace
 activation or operational ACL change. `A/data/h3-dec9-restricted-peer-seal-contract-v1/RESULT.json`
 SHA256 `a65f311d9169db6a341b99a7fd337935b44866e0176d0d33b80f557160ae1115`.
 Check reuse of the existing protected owner before further token probes.
+The exact Dec9 closure shape now passed an invented Windows Job handoff:
+one inherited return pipe, zero child exit and empty Job before parent
+retention. Wrong digest or a surviving descendant refused publication even
+with a clean root exit. No applicable independent writer exclusion found.
+`A/data/h3-dec9-invented-capsule-closure-handoff-v1/RESULT.json`
+SHA256 `de44b3527296670a0d5dff8d440c07899d1429db5e766f45dd5ac197f6a5539a`.
+Use the handoff to prove publication closure, not pre-hash custody or data
+activation. Enroll the actual isolated writer separately.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
