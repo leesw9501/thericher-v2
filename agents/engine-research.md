@@ -76,6 +76,13 @@ frozen code and seven metadata pins; the observed NumPy, pandas and
 calendar versions matched the lock. Pin dependencies and protect actual
 bytes before enabling; name/version/origin and source are not byte custody.
 No payload reads, Docker dispatch or task changes in this check.
+Reused the existing D: Dec9 SDK copy without another snapshot. Actual direct
+`-I -S -B` code-only import passed in 1.185 s; 3,405 exact single-link
+file hashes matched the pinned copy before and after (0.331/0.248 s).
+`A/research/h3-dec4-fixed-half-production-worker-20261126-v1/check_shared_sdk.py`
+SHA256 `874ecbe44e54fc81063f53248cb8be9395fd60dcb47d02b06a61b576e22aa97d`.
+Component evidence only: bind the exact protected runtime and actual native
+maps/ownership separately. No Data/model bytes, no Task install or launch.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight

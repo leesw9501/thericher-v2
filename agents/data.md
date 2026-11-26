@@ -231,6 +231,14 @@ development/scoring access before block end. No actual Dec9 owner change.
 Use for a new later-date prebind only after exact runtime ABI verification,
 including `ascii` and `cp437`, and actual writer exclusion. Dec9 remains
 target-only.
+Code-only later-date readiness now verifies Dec15 (target 3/prefix 4,
+prebind before Dec10 14:30 UTC) and Dec21 (target 4/prefix 5, prebind before
+Dec16 14:30 UTC): each 19-query native shape and exact no-site `ascii` and
+`cp437` codec checks passed. `A/data/h3-later-dual-consumer-readiness-v1/RESULT.json`
+SHA256 `0a66a936bc5a4d7682d75fb95f68e9b7115361b68ccbd2ce78b74f8a1ccc1d9c`.
+Need exact separate source/prebinds, protected owners and Job/digest closure,
+inference-only mount custody and block-end reader ABI. No activation or
+post-cutoff reads; no physical isolation inferred from the code-only guards.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
