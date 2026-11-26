@@ -14,6 +14,15 @@ settlement and period-profit interfaces; do not assume those are Paper fee
 sources or turn missing fees into zero. Source:
 <https://github.com/koreainvestment/open-trading-api/blob/main/examples_user/overseas_stock/overseas_stock_functions.py>.
 
+The separate [HTS daily overseas trade screen 0828](https://securities.koreainvestment.com/force_help/0828.html)
+documents provisional settlement, not booked cash. The official
+[Paper FAQ](https://securities.koreainvestment.com/main/customer/support/_static/TF04fg000000.jsp?mctgr=04)
+documents virtual login and unsupported menus but does not confirm 0828
+for Paper. Treat the UI as an unverified optional source, not an accounting
+dependency. After an exact owned fill, only a positively Paper-scoped record
+that binds to that fill could establish its displayed commission; provisional
+amounts would still not establish booked settlement. No live fallback.
+
 The current stock cycle already saves the original plan quote (both sides)
 with the exact plan and intent seed in `pending.arguments.reads`. Recovery
 uses these typed reads, then clears pending at native reconciliation. The
