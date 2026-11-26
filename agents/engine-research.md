@@ -7,6 +7,21 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Nov26 parallel research triage: the retained Oct26-29 one-minute DEV slice
+has a complete 17-name regular-session grid, but no qualified quote or
+publication-time evidence. Reserve it for price-timing sensitivity, not fill
+or cost calibration; do not replace the frozen prospective evaluation with
+another four-session fit. A later bounded timing comparison should freeze
+signals before both entry anchors, hold the exit fixed to isolate entry
+timing, and report paired gross differences separately from assumed costs.
+Claude Haiku's tools-off design challenge agreed on that claim boundary.
+A distinct H3 earnings hurdle is deferred: no qualified timestamped issuer
+schedule vintage is bound to the decision clock. If that input becomes ready,
+freeze the original ranks and use same-funded-gross raw and equal-weight
+controls with no refill; reject on insufficient event exposures, no net
+improvement against either control, or worse drawdown versus raw. Do not
+use final earnings calendars as point-in-time data or reopen seen DEV scores.
+
 Dec4 fixed-half synthetic handoff: a real Windows Job ran an inert child;
 the score-only reader accepted 17 invented rows using the supervisor's
 returned independent receipt digest and rejected a changed seal or receipt.

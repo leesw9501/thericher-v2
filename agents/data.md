@@ -2,6 +2,15 @@
 
 Updated 2026-11-26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+
+Intraday DEV triage: Oct26-29 has 26,520/26,520 symbol-minutes across
+17 names and four full regular sessions (`A/data/current-intraday-short-hold-readiness-20261106-v1/READY.json`).
+`A/data/current-m5-120m-h30m-sequence-projection-20261107-v1/DATAREADY.json`
+does not qualify historical publication-time availability, provider finality
+or corporate actions. Derived five-minute bars reuse the same observations.
+No matched bid/ask coverage was established for these sessions; estimating
+execution costs still needs aligned quote timestamps and linked Paper fills.
+
 Nov26 Dec9 independent package: native image, parsed argv and creation
 FILETIME now bracket exact Scheduler readback. Focused Windows fixtures
 matched; the venv Pythonw shim redirected to a different process. Bind the
