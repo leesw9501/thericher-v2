@@ -92,6 +92,15 @@ Missing measurements stay explicit, separate from verified no-signal dates.
 The time-bound caller denies target reads before Dec28 21:00 UTC and requires
 all five bindings to be independently attested. Actual immutable one-shot
 ownership and per-slot input runners remain pending. No fit was repeated.
+The shipped calendar and original 19-query MODP1 constructor agree on six
+capture dates for the five fixed cohorts: Nov27 input only; Dec3, Dec9,
+Dec15 and Dec21 each have a prior target and next prefix; Dec28 target only.
+`A/research/h3-dec4-fixed-half-production-prep-20261126-v1/capture_axis.py`
+SHA256 `3784c6b78f1d76f3706dbe4f0cea72a1bc71fd959c16039fa8f76db9f7d7cff1`.
+These are candidate same-date consumers, not installed owners or permission
+to read sealed targets. Existing Dec9 is target-only; do not retag or rerun
+it. Qualify one future producer with separate target and prefix outputs
+only where the source/owner contract permits, as with the Dec3 pattern.
 
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72

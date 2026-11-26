@@ -24,6 +24,14 @@ refused. `A/execution/h3-dec4-native-ledger-inert-20261126-v1/path-preserving/PA
 SHA256 `324393bb00c6d7c107d6b0b06eb2bdf80b8ce9bcfe2844bc7058a161a695f289`.
 Prepare the named host preflight against installed source, without opening
 private custody before the real eligibility window and writer closure.
+The pinned host preflight returned `not_due` on the actual clock before
+any metadata or custody opens; its synthetic in-window branch selected the
+four exact RO aliases with no token mount or journal rewrite. R6 entry
+readiness opens Dec4 14:37:30 UTC and ends at the Dec9 exit start.
+`A/execution/h3-dec4-native-ledger-inert-20261126-v1/host-preflight/preflight.py`
+SHA256 `891bef21e27c2e8147be57fc37265fc07d2dd87ec2ec2c04c6cf1fa458ac2a74`.
+The H20 reader is cohort-specific; reuse native no-lock parsers rather than
+the H20 adapter. R6 still needs an exact phase-to-request and fill join.
 Synthetic cold restart now demonstrates the same unknown request and
 reservation survive across processes without another submit (HANDOFF).
 Positive reconciliation of an actual broker response is still unobserved.
