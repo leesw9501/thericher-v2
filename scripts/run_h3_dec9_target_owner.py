@@ -20,6 +20,11 @@ DATA_ROOT = Path(f"D:/thericher-v2/model-artifacts/data/{RUN_NAME}")
 MARKET_ROOT = Path(f"D:/market_data/us_equities/kis_paper_private/{RUN_NAME}")
 SOURCE = DATA_ROOT / "source"
 VENV = Path("C:/Users/Public/Documents/thericher-v2/.venv")
+DIRECT_PYTHONW = Path(
+    "C:/Users/User/AppData/Roaming/uv/python/"
+    "cpython-3.14.3-windows-x86_64-none/pythonw.exe"
+)
+DIRECT_PYTHONW_SHA256 = "3737f863a02f4c92387dee920aeee6ab260548cd7c4bed829e96ed005e65409e"
 OPENS = datetime(2026, 12, 9, 21, 30, tzinfo=UTC)
 CLOSES = datetime(2026, 12, 9, 21, 40, tzinfo=UTC)
 SEAL_BEFORE = datetime(2026, 12, 9, 21, 45, tzinfo=UTC)
@@ -260,7 +265,7 @@ def _projection(value):
         and type(value.action) is NativeAction
         and all(type(s) is str and "\0" not in s for s in value.action)
         and value.action.task_path == TASK_PATH
-        and Path(value.action.executable).is_absolute()
+        and value.action.executable == str(DIRECT_PYTHONW)
         and Path(value.action.working_directory).is_absolute()
         and all(map(_hex, value[1:]))
     )
@@ -273,10 +278,21 @@ def _project_module(name):
 def _require_runtime():
     if (
         Path(__file__).resolve() != SOURCE / ENTRY
-        or Path(sys.executable).resolve() != (VENV / "Scripts/pythonw.exe").resolve()
+        or Path(sys.executable) != DIRECT_PYTHONW
+        or Path(sys._base_executable) != DIRECT_PYTHONW
         or not (sys.flags.isolated and sys.flags.no_site and sys.dont_write_bytecode)
         or any(map(_project_module, sys.modules))
     ):
+        raise ValueError("dec9_owner_runtime")
+    try:
+        pinned = (
+            DIRECT_PYTHONW.resolve(strict=True) == DIRECT_PYTHONW
+            and all(_plain(path.lstat(), directory=True) for path in DIRECT_PYTHONW.parents)
+            and _sha(_read(DIRECT_PYTHONW, 1024 * 1024)) == DIRECT_PYTHONW_SHA256
+        )
+    except (OSError, ValueError):
+        pinned = False
+    if not pinned:
         raise ValueError("dec9_owner_runtime")
 
 

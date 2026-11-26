@@ -414,7 +414,13 @@ enabled without re-registering. The original exit was unchanged.
 `READ-ONLY-TASK-INSTALLED.json` SHA256
 `24b8ae229930d39a1ebb2d30c040a0c67ddbc2f2dcf872aac415c68d7bc681b5`.
 Verify the exact runtime publication after its owned window; there is no
-private read yet. The startup conditional verdict is retained
+private read yet. After Dec1 14:46 UTC, the credential-free
+`read-installed-publication.py` at the same root verifies the installed
+release and protected publication digest before reporting only categories.
+SHA256 `f0c95eba52dd90441cccf874f91348d83b35b6a227463b8f7fd0bd4077880617`.
+The actual early call refused with no result read; invented missing,
+malformed and tampered markers/results also refused.
+The startup conditional verdict is retained
 in this receipt: this attests startup on the assumed-honest host, not
 pre-bootstrap loader integrity or resistance to host tampering.
 The same frozen no-site code also assembled the exact candidate, including

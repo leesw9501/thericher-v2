@@ -7,6 +7,7 @@ import subprocess
 import sys
 from datetime import timedelta
 from pathlib import Path
+from types import SimpleNamespace
 from uuid import UUID
 
 import pytest
@@ -112,6 +113,9 @@ def test_isolated_activation_uses_real_target_owner(tmp_path):
         capture_closes=BOOT.CLOSES,
         seal_before=BOOT.SEAL_BEFORE,
     )
+    direct = BOOT.DIRECT_PYTHONW
+    if not direct.is_file():
+        direct = Path(sys._base_executable).resolve(strict=True)
     check = """
 import importlib.util
 import sys
@@ -120,7 +124,7 @@ from pathlib import Path
 from uuid import UUID
 import os
 
-entry, venv, pin, prebound_at, digest = sys.argv[1:]
+entry, venv, pin, prebound_at, digest, executable, executable_pin = sys.argv[1:]
 spec = importlib.util.spec_from_file_location("dec9_test_child", entry)
 boot = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(boot)
@@ -128,7 +132,8 @@ boot.SOURCE = Path(entry).parents[1]
 boot.DATA_ROOT = boot.SOURCE.parent
 boot.MARKET_ROOT = boot.DATA_ROOT.parent / "market"
 boot.VENV = Path(venv)
-boot._require_runtime = lambda: None
+boot.DIRECT_PYTHONW = Path(executable)
+boot.DIRECT_PYTHONW_SHA256 = executable_pin
 boot._now = lambda: boot.OPENS
 args = {"prebound_at": datetime.fromisoformat(prebound_at)}
 try:
@@ -138,7 +143,7 @@ except ValueError as error:
 else:
     raise AssertionError("wrong prebind admitted")
 assert not any(boot._project_module(name) for name in sys.modules)
-action = boot.NativeAction(boot.TASK_PATH, str(Path(venv) / "host.exe"), "", str(boot.SOURCE))
+action = boot.NativeAction(boot.TASK_PATH, executable, "", str(boot.SOURCE))
 projection = boot.NativeProjection(action, *[c * 64 for c in "abcd"])
 prebind = boot.NativePrebind(pin, args["prebound_at"], digest, projection)
 birth = f"win-filetime:{boot._ticks(boot.OPENS)}"
@@ -183,7 +188,7 @@ else:
 """
     subprocess.run(
         [
-            sys.executable,
+            str(direct),
             "-I",
             "-S",
             "-B",
@@ -194,6 +199,8 @@ else:
             pin,
             prebound_at.isoformat(),
             pins.prebind_sha256,
+            str(direct),
+            BOOT._sha(direct.read_bytes()),
         ],
         check=True,
         timeout=30,
@@ -202,6 +209,42 @@ else:
     assert attempt["target_prebind_sha256"] == pins.prebind_sha256
     assert not (data_root / "run/OWNER-CLOSED.json").exists()
     assert not market_root.exists()
+
+
+@pytest.mark.parametrize(
+    "fault", [None, "shim", "base_redirect", "changed", "link", "not_isolated"]
+)
+def test_runtime_requires_direct_pinned_image(tmp_path, monkeypatch, fault):
+    root = tmp_path / "source"
+    binary = tmp_path / "pythonw.exe"
+    binary.write_bytes(b"synthetic image")
+    shim = tmp_path / "shim.exe"
+    pin = BOOT._sha(binary.read_bytes())
+    fake_sys = SimpleNamespace(
+        executable=str(shim if fault == "shim" else binary),
+        _base_executable=str(shim if fault == "base_redirect" else binary),
+        flags=SimpleNamespace(isolated=fault != "not_isolated", no_site=True),
+        dont_write_bytecode=True,
+        modules={},
+    )
+    monkeypatch.setattr(BOOT, "sys", fake_sys)
+    monkeypatch.setattr(BOOT, "SOURCE", root)
+    monkeypatch.setattr(BOOT, "__file__", str(root / BOOT.ENTRY))
+    monkeypatch.setattr(BOOT, "DIRECT_PYTHONW", binary)
+    monkeypatch.setattr(BOOT, "DIRECT_PYTHONW_SHA256", pin)
+    if fault == "changed":
+        binary.write_bytes(b"drift")
+    if fault == "link":
+        os.link(binary, shim)
+    try:
+        if fault is None:
+            BOOT._require_runtime()
+        else:
+            with pytest.raises(ValueError, match="^dec9_owner_runtime$"):
+                BOOT._require_runtime()
+    finally:
+        if fault == "link":
+            shim.unlink()
 
 
 @pytest.fixture
@@ -230,6 +273,7 @@ def activation(frozen, monkeypatch):
             return self.config
 
     host = Host()
+    monkeypatch.setattr(BOOT, "DIRECT_PYTHONW", Path(action.executable))
     monkeypatch.setattr(BOOT, "_now", lambda: host.now)
     monkeypatch.setattr(BOOT, "_require_runtime", lambda: None)
     monkeypatch.setattr(paper_peer_visit, "process_start", lambda _pid: host.native_birth)

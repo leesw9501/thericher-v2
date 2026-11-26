@@ -286,8 +286,11 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    The activation boundary now joins fixed scope, native owner identity and
    deferred Paper config. The read-only Dec9 Windows Scheduler probe now
    verifies exact action/ACL, current PID and instance, bracketing readback
-   with native image/argv/birth. A venv pythonw shim launched a different
-   child process; use a protected direct launcher. The CLI stays disabled
+   with native image/argv/birth. The tracked bootstrap now pins the exact
+   direct executable and base image rather than the venv redirector, and
+   the isolated direct native process reached an invented capture boundary.
+   Stage a corrected source candidate without changing the old frozen tree.
+   The CLI stays disabled
    until that launcher binds custody and independently retained protected
    pins; do not duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;

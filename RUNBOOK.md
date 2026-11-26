@@ -51,8 +51,10 @@ in-memory definition and queried an invented absent name, not a registered task.
 H20: original owned exit is Ready Dec1 14:25 UTC. The separate
 `thericher-h20-dec1-readonly-outcome-20261201-v2` is Ready Dec1 14:41 UTC
 with hard stop 14:46 UTC. Do not run it manually. After the window use the
-protected `RESULT-SHA256` and exact result reader in HANDOFF; a Task exit,
-missing publication or gross sign is not reconciled net PnL.
+credential-free reader pinned in HANDOFF (invoke via
+`uv run --no-env-file python -I -S -B` with the full reader path).
+It requires the protected `RESULT-SHA256`; a Task exit, missing publication
+or gross sign is not reconciled net PnL.
 
 Dec4/Dec9 Paper candidate, not installed: its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.

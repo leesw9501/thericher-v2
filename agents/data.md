@@ -13,8 +13,13 @@ or block-end read. The Dec9 code-only `source/SOURCE.json` is now protected
 under `A/data/h3-dec9-modp1-target-owner-20261209-v1`, SHA256
 `7ec569061f9cfae997ec3cf9477d6b74bdb643e0e3980b4863b702092471f79a`.
 Native source verification matched 567 Git members; a wrong pin failed.
-Bind the direct runtime and independent evaluation prebind next; the frozen
-entry currently expects the venv path. No target capture is installed.
+The tracked bootstrap now requires the pinned direct executable and base
+image, not the redirector. The isolated direct process loaded the real
+owner and dependencies and reached an invented capture boundary. Claude
+challenged dependency discovery; explicit site-packages import remains
+independent of the venv launcher. Preserve that original frozen tree and
+stage the corrected source separately; bind its protected native host and
+independent evaluation prebind next. No target capture is installed.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not
