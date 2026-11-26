@@ -68,8 +68,10 @@ current census inside the bank gate through the actual write. Freeze the
 qualified release from the actual writer topology, not a declarative roster.
 The two R8 old tasks are still Enabled with no future trigger; do not admit
 them as retired or retire the existing Dec1 H20 owned exit.
-Qualify exit-specific categorical readout for that Dec1 duty before its
-owned window: the original H20 reader exposes entry status, not exit status.
+The Dec1 phase-specific readout and offline guest now distinguish entry
+from exact exit and passed synthetic/native checks. Freeze a new qualified
+read-only host/output profile for that exact duty before the owned window;
+do not reuse the original entry-only result ABI.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -251,9 +253,11 @@ with unchanged clocks, principal, and one-attempt run root.
    calls the native capture and writer together. Its tracked no-site
    bootstrap now verifies the fixed Dec9 manifest and binds that callable.
    The activation boundary now joins fixed scope, native owner identity and
-   deferred Paper config. The CLI remains disabled until the real Windows
-   provider, independent protected pins and block-end owner are frozen; do
-   not duplicate the capture or open outcomes.
+   deferred Paper config. The read-only Dec9 Windows Scheduler probe now
+   verifies exact action/ACL, current PID and instance. The CLI remains
+   disabled until that proof is joined to real image/argv/birth/custody
+   and independently retained protected pins; do not duplicate capture or
+   open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.

@@ -293,6 +293,33 @@ the host window begins 14:25 UTC, the financial window begins 14:30 UTC.
 Existing join roots: A/execution/current-h20-reader-parent-completion-20261101-v1/
 BINDING.json and A/execution/current-h20-exact-outcome-reader-readiness-20261031-v1/
 runtime-r4/reader.py. No H20 outcome/custody was opened in this audit.
+The tracked phase readout now reuses the pinned R4 input/replay checks
+but separates entry and exit attempt, acceptance, fill and terminal.
+An entry fill with no linked exit leaves the exit unknown; an orphan
+exit control rejects the whole projection. Native network-none/all-RO
+Docker exercised the new guest's full synthetic admission with empty
+invented custody, and correctly reported an unknown exit. Evidence:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+H20-PHASE-GUEST-NATIVE-20261126.json, SHA256
+`b95f5499b0d56d1752d2a4afc1d3d081704a7edb6b88120e7c71560e10153a3e`.
+Freeze the new reader guest and exact after-event host/output profile
+before private use; the old host's entry-only result ABI is not that
+profile. No previous reader token was reused and no order ran.
+The real native lot-interference check rejected an invented different
+SPY cohort's exit and withheld both phase outcomes. Claude challenge:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+H20-PHASE-CLAUDE-VERDICT-20261126.json, SHA256
+`d5ff06585362397854673af1b94af9a6a132f89d0c9f28799b78c523c9181b4e`.
+The production task and custody are unchanged.
+
+The tracked Dec9 Scheduler probe also matched its own PID, actual
+registered action/ACL and current instance in a native direct-Pythonw
+inert task. Only the fixture used a synthetic task name; it was removed.
+This was not the Dec9 action, full native process/custody proof, or
+permission to dispatch. Evidence:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+DEC9-SCHEDULER-PROBE-NATIVE-20261126.json, SHA256
+`a58598539cdf63ea680cce13b2f7350b95149808f9fbd5c90f9f6489313c8cd1`.
 Independent Claude review withheld release pending actual gate acquisition
 by the exact authorized writers (including mixed-OS and demand-start paths).
 Verdict A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/

@@ -41,6 +41,9 @@ coordinator. The concrete release projection now binds the same bank gate,
 native retirement and current census. Actual R8 is still Enabled with no
 future time; do not infer retirement. Freeze actual same-gate proof and
 preserve the pending Dec1 H20 exit before operational release.
+The H20 phase-specific native reader now preserves entry and exit
+separately; the read-only guest passed synthetic Docker admission. Freeze
+its new exact after-event host profile, not the old entry-only ABI.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

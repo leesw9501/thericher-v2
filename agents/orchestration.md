@@ -5,6 +5,12 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: H20 Dec1 has a phase-specific readout preserving original native
+controls/replay while separating entry and exit. A broker-free native
+guest smoke passed; the after-event host/output contract is next, with
+no scheduler change. Dec9 now has a concrete exact read-only Scheduler
+instance probe, not yet the fully bound Data dispatcher.
+
 Nov26: actual restore binding was implemented; candidate retirement check
 passed an inert native COM probe. Real R8 tasks are Enabled without a
 future trigger; not qualified retirement. A live namespace status scan

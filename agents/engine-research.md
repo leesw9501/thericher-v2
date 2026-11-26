@@ -105,8 +105,10 @@ OS process closure. The target-only entry now exercises its real capture
 API with invented input and deferred config. Its no-site activation now
 joins fixed prebind, native action/ACL/owner identity and a one-attempt
 deferred Paper config. The CLI remains disabled: supply the actual Windows
-provider, protected pin store and block-end owner. No market target opened
-or fit run.
+provider, protected pin store and block-end owner. A concrete read-only
+Scheduler probe now verifies exact action, ACL, instance and current PID;
+native process image/argv/birth and independent reader closure still need
+binding. No market target opened or fit run.
 
 First actual pre-open fixed-half cohort sealed Nov9UTC11:43:43.513:
 A/research/current-fixed-half-nov9-forecast-20261109-v1/actual/SEAL.json
