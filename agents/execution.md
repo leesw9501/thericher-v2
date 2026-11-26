@@ -118,6 +118,14 @@ despite identical final known member identity, bytes and name set. Root and
 ancestor identity checks and bounded cancellation remain separate; empty
 completion/overflow is inconclusive. One combined invented capture-to-reader
 run is next, not a live writer fence or custody admission.
+The combined `host-preflight/watched_capture_readout.py` SHA256
+`dba4e02e92f34e921d66e08d48483ec761a6f30e1a7104c56b6be14787c4b468`
+passed once on the invented native path. Held file/watch rejected and
+withheld before Docker for transient membership; stable capture fed the
+exact sealed aliases to the pinned no-network native reader, then removed
+the container and volumes. No more invented retests without a source change
+or distinct failure. Real phase, relevant-writer and input evidence at
+due time remain separate; no live capture/read automatically enabled.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact

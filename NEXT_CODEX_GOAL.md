@@ -27,9 +27,10 @@ by the current exact owner definitions or remain uninstalled package history.
 ## Parallel Work Now
 
 - **Execution:** The path-preserving, network-disabled native ledger reader
-  passed invented entry, exit and recovery cases. Bind the actual R6 phase
-  and retained ownership proofs before admitting a read (no custody mutation
-  or recovery-capable `observe()`).
+  passed the watched capture-to-reader smoke and invented entry, exit and
+  recovery cases. After the exact owned window bind actual phase/Job and
+  retained ownership proofs and capture-time relevant-writer exclusion
+  before admitting a read. No custody mutation or recovery-capable `observe()`.
   Use exact input/basis/policy/request/plan/fill bindings and positive relevant
   writer closure at actual reads. Read the Dec1 H20 publication only after its
   window and require its independent result digest. For R6 join the original
