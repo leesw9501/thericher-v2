@@ -392,9 +392,17 @@ and instance GUID. Its first fixture lacked the declared timezone files;
 reusing the existing pinned TZPATH fixed that fixture. Both temporary tasks
 and scratch roots were removed. `HOST-NATIVE-SCHEDULER-COMPONENT-SMOKE.json`
 SHA256 `847dc33f598422c2f832432ee0aa9dce3d519ab964fe27c0a0f633a750400efa`.
-The fixture did not invoke transport/publication; join those using invented
-state before installing the operational reader profile/seal. No private
-read. Claude's conditional verdict is retained
+That component fixture did not invoke transport/publication. A separate
+trigger-fired fixture passed the actual entry, five-phase transport
+orchestration, publication and protected-digest reader together; its
+broker/custody/Docker edges were invented. Duplicate attempts and modified
+result bytes were refused. `HOST-JOINED-SYNTHETIC-PUBLICATION.json` SHA256
+`3e82c1f951bb0f3a58cc9534043819b1826faebc5135ba31f4263dc54d09c0bb`.
+Both the fixture Task and scratch are absent. The next step is the exact
+owned reader's future definition and protected profile/seal, keeping the
+existing financial exit unchanged. Claude's challenge distinguishes
+installation from start-time source checks and the absolute child deadline.
+No private read. The startup conditional verdict is retained
 in this receipt: this attests startup on the assumed-honest host, not
 pre-bootstrap loader integrity or resistance to host tampering.
 The same frozen no-site code also assembled the exact candidate, including

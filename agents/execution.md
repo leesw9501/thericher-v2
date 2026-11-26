@@ -51,9 +51,10 @@ retains its independent commit digest without overwriting. Use the proposed afte
 HANDOFF, not the old entry-only ABI. No read profile or exit change installed.
 The protected direct bootstrap passed native hidden startup and three negative
 checks without a claim or private read. See HANDOFF for the exact receipt.
-Exact native verifier identity join passed in a trigger-fired invented fixture;
-no transport/publication. Qualify that remaining join before release. The
-operational profile/seal and read Task remain absent. The original exit is Ready.
+The trigger-fired native identity join now also passed through real transport
+orchestration and protected publication with invented external evidence
+(HANDOFF). Bind the actual future definition and protected profile/seal next.
+The read Task remains absent; the original financial exit is Ready.
 V2 adds a categorical gross result for an exact matched terminal pair and
 never a cash amount. Both actual fee lines and booked settlement remain
 unknown until independently linked to the two fills; no net PnL claim.
