@@ -44,12 +44,15 @@ by the current exact owner definitions or remain uninstalled package history.
   native risk/observer/owner path at effects, not through metadata alone.
 - **Data:** Preserve the installed Nov27 and Dec3 read-only owners and their
   exact capture/READY chains. Keep the Dec3 target commitment independent even
-  where one capture also feeds the Dec4 model input. For Dec9, qualify the
-  exact 19-query target owner and namespace before Dec4 open; the successful
-  absence-only cold startup is not writer exclusion or a deployment. A
-  restricted peer failed startup, so reuse a demonstrably protected owner
-  or produce actual scoped writer exclusion instead of repeating token probes.
-  Preserve the frozen target and publication times. See agents/data.md.
+  where one capture also feeds the Dec4 model input. The Dec9 research capture
+  is still unowned: missing it loses both the Dec4 target and Dec10 prefix,
+  leaving at most three of five frozen cohorts. Prefer the already prepared
+  dual-output alternative only if one actual protected writer and independent
+  namespace exclusion qualify before Dec4 14:30 UTC. The original target-only
+  candidate remains uninstalled, not concurrent or a rebind. Nov27 and Dec3
+  use the same limited interactive identity, so reuse their capture code,
+  not a claim of writer exclusion. Stop same-account token repeats. Preserve
+  the frozen target/publication times and embargo. See agents/data.md.
 - **Engine Research:** Keep the fixed five-slot H3 block and predeclared
   fixed-half model; no replacement, payout tuning or repeat of closed fits.
   Verify the Nov30 forecast from the existing source-v2 owner after its
@@ -59,7 +62,8 @@ by the current exact owner definitions or remain uninstalled package history.
   configuration, actual container exit and native seal before any real run.
   Do not alter the Dec4 Paper point. Bind later dates and block-end reader
   separately; target access remains embargoed until Dec28 21:00 UTC and
-  requires exact custody. The same-funded-gross EW and cash comparison
+  requires independently validated actual final capture closure and exact
+  custody. The same-funded-gross EW and cash comparison
   charges 25 bp per side; absent is not no signal. At least four admitted
   cohorts support a descriptive comparison only, not promotion.
 - **Orchestration:** Keep one owner per write set. Workers own waits and

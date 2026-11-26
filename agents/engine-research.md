@@ -16,6 +16,12 @@ UTC; the dual candidate preserves both slots if qualified. The actual writer
 exclusion and Dec4 research forecast seal are still unproved. Keep the first
 installed Nov27/Nov30 pair unchanged and the later target embargo intact.
 
+Prior Granite R1 `current-ttm-return-head-independent-20261020-v1/REVIEW.json`
+SHA256 `fae75280e776190b65f6475e8b975ad2f685f59953e6d4276670ed323e1dc0ec`
+is independent source review, not independent strategy evidence. Its actual
+model forwards, fits and market decodes are zero; do not treat the directory
+name or later model-only artifact acceptance as a performance pass.
+
 Regime-input triage, Nov26: do not rerun the rejected RV20 sizing rule.
 The pinned H.15 snapshot `D:/market_data/us_equities/federal_reserve_h15/snapshot=20261007T204212Z`
 manifest SHA256 `6b2c62423470f12c17d22a634d4d5018ed7f6682d5a5875bc08c6ffd9e49e393`
