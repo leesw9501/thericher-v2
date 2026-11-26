@@ -87,9 +87,11 @@ exact web bootstrap and mount metadata, now pass their scoped verifier.
 The pinned exact web checks now run through the five-phase census Job
 deadline path. The actual V2 binding passed inert assembly and the
 import-only entry joins claim, transport and publication. The hidden protected
-caller passed native startup and early/wrong-hash refusal. Qualify its exact
-Scheduler verifier and joined rehearsal on invented state, then bind the real
-Scheduler profile/seal; none is installed and no broad web exemption applies.
+caller passed native startup and early/wrong-hash refusal. Its exact verifier
+matched a trigger-fired synthetic Scheduler identity twice; the fixture and
+scratch are removed. Join native identity through transport/publication on
+invented state before binding the real Scheduler profile/seal; none is
+installed and no broad web exemption applies.
 Use the verified code-only host package and its explicit three-file TZPATH
 before no-site imports. It is not the activated release.
 Freeze V2 for the next host profile: the public gross sign is only exact

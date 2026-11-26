@@ -386,9 +386,15 @@ native `HOST-BOOTSTRAP-SMOKE.json` SHA256
 `0c4390e2c969eb998a438c7fa22766c94285bcc1e5af8dc72c935f07def24865`
 records import success, wrong-hash/early-run/invalid-mode refusal and no
 claim or publication. The original exit is still Ready and the reader Task
-is absent. Before release, exercise the actual native Scheduler verifier
-with an invented joined receipt and no private mounts; the operational
-profile/seal is not yet installed. Claude's conditional verdict is retained
+is absent. A trigger-fired synthetic task exercised that exact verifier
+twice, rejected a wrong profile hash and matched an independent EnginePID
+and instance GUID. Its first fixture lacked the declared timezone files;
+reusing the existing pinned TZPATH fixed that fixture. Both temporary tasks
+and scratch roots were removed. `HOST-NATIVE-SCHEDULER-COMPONENT-SMOKE.json`
+SHA256 `847dc33f598422c2f832432ee0aa9dce3d519ab964fe27c0a0f633a750400efa`.
+The fixture did not invoke transport/publication; join those using invented
+state before installing the operational reader profile/seal. No private
+read. Claude's conditional verdict is retained
 in this receipt: this attests startup on the assumed-honest host, not
 pre-bootstrap loader integrity or resistance to host tampering.
 The same frozen no-site code also assembled the exact candidate, including
