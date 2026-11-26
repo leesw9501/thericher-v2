@@ -87,6 +87,13 @@ Remaining: freeze these exact profiles in the named Paper
 launcher and bind existing writer/observer and financial checks.
 This readback is not account/effect permission or runtime deployment.
 
+The Dec4/Dec9 tracked pair now consumes one `RELEASE.json` containing
+two static non-financial phase grants. In `SOURCE.json`, the
+`restore_native.<phase>.pins` fields independently bind that phase's
+observer plan, restore daemon and writer guard. Both exact phase bindings
+passed together offline; the exit still passed with an invalid entry
+observer pin. The actual pair is not packaged or installed.
+
 The named Dec4/Dec9 normal path now composes the scheduled BankLeg,
 supervised-input adapter and existing capsule. It creates one source-owned
 workspace per leg, with exact native entry or digest-only exit frame, pinned

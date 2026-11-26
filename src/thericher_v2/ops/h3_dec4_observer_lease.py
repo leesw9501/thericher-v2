@@ -13,6 +13,7 @@ from thericher_v2.ops.h3_dec4_observer_plan import (
     OBSERVER_XML_SHA256,
     Dec4ObserverPlan,
 )
+from thericher_v2.ops.h3_dec4_pair_release import phase_restore_pins
 
 
 def _need(ok, code):
@@ -120,7 +121,8 @@ class Dec4ObserverLease:
         _need(type(leg) is pv.BankLeg and self._leg is None, "disable_already_attempted")
         _need(
             ready.plan.phase == self.plan.phase
-            and ready.source["observer_plan_sha256"] == self.plan.sha256
+            and phase_restore_pins(ready.source, self.plan.phase)["observer_plan_sha256"]
+            == self.plan.sha256
             and leg.identity["source"] == ready.plan.source_sha256
             and leg.identity["release"] == ready.plan.release_sha256,
             "binding",

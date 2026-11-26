@@ -12,6 +12,7 @@ from thericher_v2.ops.h3_dec4_observer_restore import (
     read_dec4_restore_owner,
     restore_dec4_observer_once,
 )
+from thericher_v2.ops.h3_dec4_pair_release import phase_restore_pins
 from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
 from thericher_v2.ops.h3_dec4_restore_process import wait_for_dec4_normal_root
 from thericher_v2.ops.paper_scheduled_native import NativeScheduledSource
@@ -55,10 +56,11 @@ def run_dec4_restore_child(binding, argv, *, source_ready):
     )
     value = binding.source.check(source)
     grant = binding.source.release(value, source, release)
+    selected = phase_restore_pins(value, phase)
     _need(
         value.get("synthetic_only", False) is False
-        and value.get("observer_plan_sha256") == binding.lease.plan.sha256
-        and value.get("observer_restore_daemon_sha256") == binding.daemon.sha256
+        and selected["observer_plan_sha256"] == binding.lease.plan.sha256
+        and selected["observer_restore_daemon_sha256"] == binding.daemon.sha256
         and getattr(binding.lease.transport, "bounded_normal_restore", False) is True
         and grant.get("source") == source
         and grant.get("allow_execute") is True

@@ -66,9 +66,12 @@ def test_runtime_waits_for_exact_root_and_rechecks_source_under_held_writer_guar
         observer, Path(observer.output_root), SimpleNamespace(bounded_normal_restore=True)
     )
     daemon = Dec4RestoreDaemon(a, b, tmp_path)
-    values = dict(
-        observer_plan_sha256=observer.sha256, observer_restore_daemon_sha256=daemon.sha256
+    pins = dict(
+        observer_plan_sha256=observer.sha256,
+        observer_restore_daemon_sha256=daemon.sha256,
+        observer_restore_writer_guard_sha256=c,
     )
+    values = dict(restore_native=dict(entry=dict(pins=pins), exit={}))
     source = SimpleNamespace(
         check=lambda _: values,
         release=lambda *_: dict(source=b, allow_execute=True, actual_financial_admission=False),

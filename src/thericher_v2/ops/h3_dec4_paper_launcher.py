@@ -14,6 +14,7 @@ from thericher_v2.ops.h3_dec4_monitor_mount import CONTROL, validate_worker_cont
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_restore import retain_dec4_restore_owner
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
+from thericher_v2.ops.h3_dec4_pair_release import Dec4PairSource, phase_restore_pins
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
 from thericher_v2.ops.h3_dec4_restore_process import Dec4RestoreProcess
 from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
@@ -343,10 +344,12 @@ def run_dec4_windows_paper_leg(
     ):
         raise ValueError("dec4_launcher_missing_owned_admission")
     make_owner = make_dec4_windows_owner_factory(schedule_plan, scheduler_providers)
+    source = Dec4PairSource(source, phase)
 
     def readiness(leg, ready, _watchdog_actor):
         return (
-            ready.source.get("observer_plan_sha256") == observer_lease.plan.sha256
+            phase_restore_pins(ready.source, phase)["observer_plan_sha256"]
+            == observer_lease.plan.sha256
             and writer_guard.source_ready(leg, ready) is True
             and observer_lease.renew_if_started(leg) is True
         )

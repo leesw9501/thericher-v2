@@ -57,6 +57,12 @@ members. `DEC9-PRIVATE-ROOTS-TARGET-PREBIND.json` SHA256
 `6ccceea44218b51ed83faf68e6a3a4e84ff5d3b885cf6225a773aad935206ec3`
 is the exact pre-open candidate for that source, not a repin of either
 earlier candidate. The new candidate is not selected or scheduled.
+For this corrected source, `DEC9-PRIVATE-RUNTIME-COMPONENTS.json` SHA256
+`305fecd6d152b248c6d763621053cfbfc7989e7431025f43b14945a852ee6487`
+binds the fresh runtime fingerprint, successful direct cold-start guard,
+refused `--run`, and passed invented typed owner/credential-loader fixture.
+All outputs are separate from the older pins. This is not a native launch
+prebind, new data capture, or Scheduler installation.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

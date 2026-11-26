@@ -15,6 +15,7 @@ from thericher_v2.ops.h3_dec4_job_closure import read_dec4_normal_job_close
 from thericher_v2.ops.h3_dec4_native_host import _ticks
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
+from thericher_v2.ops.h3_dec4_pair_release import phase_restore_pins
 from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
 from thericher_v2.ops.paper_scheduled_native import NativeScheduledSource
 
@@ -67,7 +68,7 @@ def retain_dec4_restore_owner(evidence_root, *, ready, leg, observer_plan):
         and done["status"] == "ready"
         and done["category"] is None
         and plan.phase == observer_plan.phase
-        and source["observer_plan_sha256"] == observer_plan.sha256
+        and phase_restore_pins(source, plan.phase)["observer_plan_sha256"] == observer_plan.sha256
         and leg.key == pv.bank_key(bank)
         and leg.root.parent == Path(source["original_gate_root"])
         and leg.identity["source"] == plan.source_sha256
@@ -238,6 +239,7 @@ def restore_dec4_observer_once(
             row = source.SLOTS[phase]
             value = source.check(pins.source_sha256)
             release = source.release(value, pins.source_sha256, pins.release_sha256)
+            selected = phase_restore_pins(value, phase)
             bank = dict(value["original_owner"]["bank"])
             valid = (
                 source.ROOT.is_absolute()
@@ -248,8 +250,8 @@ def restore_dec4_observer_once(
                 )
                 == (opens, closes, hard)
                 and value.get("synthetic_only", False) is (fixture_clock is not None)
-                and value.get("observer_plan_sha256") == pins.observer_plan_sha256
-                and (daemon is None or value.get("observer_restore_daemon_sha256") == daemon.sha256)
+                and selected["observer_plan_sha256"] == pins.observer_plan_sha256
+                and (daemon is None or selected["observer_restore_daemon_sha256"] == daemon.sha256)
                 and Path(value["original_gate_root"]) == pins.gate_root
                 and pv.bank_key(bank) == pins.bank_key
                 and release.get("source") == pins.source_sha256

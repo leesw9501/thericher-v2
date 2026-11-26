@@ -1,5 +1,6 @@
 import os
 import sys
+from copy import deepcopy
 from datetime import UTC, datetime, timedelta
 from hashlib import sha256
 from pathlib import Path
@@ -11,6 +12,7 @@ from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops import h3_dec4_restore_native_binding as native
 from thericher_v2.ops import h3_dec4_restore_writer_guard as guard_api
 from thericher_v2.ops.h3_dec4_observer_plan import Dec4ObserverPlan
+from thericher_v2.ops.h3_dec4_pair_release import Dec4PairSource
 from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
 from thericher_v2.ops.h3_dec4_writer_census import Dec4CensusProfile, Dec4WriterCensus
 
@@ -52,7 +54,21 @@ def _guard(root):
 
 
 @pytest.mark.skipif(os.name != "nt", reason="Windows phase binding")
-@pytest.mark.parametrize("fault", [None, "root", "gate", "release", "launcher"])
+@pytest.mark.parametrize(
+    "fault",
+    [
+        None,
+        "root",
+        "gate",
+        "release",
+        "launcher",
+        "phase_pin",
+        "legacy",
+        "swapped_grant",
+        "changed_bytes",
+        "entry_not_ready",
+    ],
+)
 def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, fault):
     monkeypatch.setattr(native, "_ROOT", tmp_path)
     source = tmp_path / "source"
@@ -88,16 +104,22 @@ def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, 
             retirement_roster_sha256=_PIN,
         ),
     )
-    document = dict(
-        files={"scripts/bank.py": _PIN},
-        restore_bootstrap={"executable": "C:\\Python\\pythonw.exe"},
-        restore_native={"entry": row},
-        original_owner={"bank": _BANK},
-        original_gate_root=str(guard.gate_root),
-        single_bank_writer_gate=dict(gate_root=str(guard.gate_root), bank_key=guard.bank_key),
+    row["pins"] = dict(
         observer_plan_sha256=obs.sha256,
         observer_restore_daemon_sha256=daemon.sha256,
         observer_restore_writer_guard_sha256=guard.sha256,
+    )
+    exit_obs = Dec4ObserverPlan("exit", obs.package_root, _PIN, _OTHER)
+    exit_row = deepcopy(row)
+    exit_row["pins"]["observer_plan_sha256"] = exit_obs.sha256
+    exit_row["evidence_root"] = str(tmp_path / "exit-owner")
+    document = dict(
+        files={"scripts/bank.py": _PIN},
+        restore_bootstrap={"executable": "C:\\Python\\pythonw.exe"},
+        restore_native={"entry": row, "exit": exit_row},
+        original_owner={"bank": _BANK},
+        original_gate_root=str(guard.gate_root),
+        single_bank_writer_gate=dict(gate_root=str(guard.gate_root), bank_key=guard.bank_key),
     )
     if fault == "root":
         row["evidence_root"] = str(tmp_path / "source" / ".." / "owner")
@@ -105,25 +127,54 @@ def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, 
         document["single_bank_writer_gate"]["bank_key"] = _PIN
     if fault == "launcher":
         row["launcher"] = str(source / "scripts" / "not_pinned.py")
+    if fault == "phase_pin":
+        exit_row["pins"]["observer_plan_sha256"] = obs.sha256
+    if fault == "entry_not_ready":
+        row["pins"]["observer_plan_sha256"] = exit_obs.sha256
     pin = _write(source / "SOURCE.json", document)
+    grants = {
+        phase: dict(phase=phase, allow_execute=True, actual_financial_admission=False)
+        for phase in ("entry", "exit")
+    }
+    if fault == "release":
+        grants["entry"]["actual_financial_admission"] = True
+    if fault == "swapped_grant":
+        grants["exit"]["phase"] = "entry"
     release = _write(
-        tmp_path / "RELEASE-entry.json",
+        tmp_path / ("RELEASE-entry.json" if fault == "legacy" else "RELEASE.json"),
         dict(
-            schema="h3-dec4-protected-phase-release-v1",
+            schema="h3-dec4-protected-pair-release-v1",
             source=pin,
-            phase="entry",
-            allow_execute=True,
-            actual_financial_admission=fault == "release",
+            phases=grants,
         ),
     )
+    if fault == "changed_bytes":
+        with (tmp_path / "RELEASE.json").open("ab") as stream:
+            stream.write(b" ")
     if fault is not None:
+        phase = "exit" if fault == "phase_pin" else "entry"
         with pytest.raises(pv.Denied, match="h3_restore_native_binding"):
-            native.build_dec4_restore_binding(source, "entry", pin, release)
+            native.build_dec4_restore_binding(source, phase, pin, release)
+        if fault == "entry_not_ready":
+            assert native.build_dec4_restore_binding(source, "exit", pin, release).lease.plan == (
+                exit_obs
+            )
         return
     binding = native.build_dec4_restore_binding(source, "entry", pin, release)
     assert binding.plan.source_sha256 == pin and binding.plan.release_sha256 == release
     assert binding.lease.transport.bounded_normal_restore
     assert binding.daemon.sha256 == daemon.sha256
+    closed = native.build_dec4_restore_binding(source, "exit", pin, release)
+    assert closed.plan.source_sha256 == pin and closed.plan.release_sha256 == release
+    assert closed.lease.plan == exit_obs and closed.plan.task_name != binding.plan.task_name
+    original = SimpleNamespace(
+        ROOT=source,
+        check=lambda supplied: binding.source.check(supplied),
+        release=lambda *_: pytest.fail("legacy launcher release reader called"),
+    )
+    for phase in ("entry", "exit"):
+        adapter = Dec4PairSource(original, phase)
+        assert adapter.release(adapter.check(pin), pin, release) == {"source": pin, **grants[phase]}
 
 
 @pytest.mark.parametrize("fault", [None, "missing_legacy", "open_roster", "changed_self"])

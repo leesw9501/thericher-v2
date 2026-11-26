@@ -9,9 +9,11 @@ Nov26: offline reproduction found an installation blocker in the dated
 Dec4/Dec9 pair. Both actions pass one release digest, but restore compares
 the digest to two different phase grants. An invented entry passed and the
 matching exit refused; the real observer-contract codec also produces
-distinct digests by phase. Bind one immutable pair release with exact
-phase-local observer/restore pins. Do not make exit depend on live entry
-readiness. Verify both legs and swapped-phase refusal before install. No
+distinct digests by phase. The tracked fix binds one immutable pair release
+and exact phase-local observer/restore pins in startup, lease and restore.
+Both legs passed with the same release; wrong phase/legacy/tampered release
+failed closed. Exit binding succeeded with an invalid entry observer pin.
+Freeze the real pair release and protected runtime definition next. No
 financial tasks, original H20 exit or bank authority changed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback

@@ -71,7 +71,18 @@ def held(tmp_path):
     lease = Dec4ObserverLease(plan, output, transport)
     ready = SimpleNamespace(
         plan=SimpleNamespace(phase="entry", source_sha256="3" * 64, release_sha256="4" * 64),
-        source={"observer_plan_sha256": plan.sha256},
+        source={
+            "restore_native": {
+                "entry": {
+                    "pins": dict(
+                        observer_plan_sha256=plan.sha256,
+                        observer_restore_daemon_sha256="5" * 64,
+                        observer_restore_writer_guard_sha256="6" * 64,
+                    )
+                },
+                "exit": {},
+            }
+        },
     )
     return leg, lease, transport, ready
 

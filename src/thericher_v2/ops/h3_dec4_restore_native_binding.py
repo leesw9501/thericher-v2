@@ -12,6 +12,7 @@ from thericher_v2.ops.h3_dec4_monitor_mount import Dec4MonitorMount
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_plan import Dec4ObserverPlan
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
+from thericher_v2.ops.h3_dec4_pair_release import phase_restore_pins, read_pair_release
 from thericher_v2.ops.h3_dec4_restore_child import Dec4RestoreChildBinding
 from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
 from thericher_v2.ops.h3_dec4_restore_writer_guard import Dec4RestoreWriterGuard
@@ -71,18 +72,7 @@ class _PhaseSource:
     def release(self, value, pin, digest):
         _need(value.get("synthetic_only", False) is False)
         _need(pin == self.pin and digest == self.release_pin and pv._hash(digest))
-        raw, _ = pv._read(self.ROOT.parent / ("RELEASE-" + self.phase + ".json"))
-        _need(sha256(raw).hexdigest() == digest)
-        grant = pv._decode(raw)
-        _keys(grant, "schema source phase allow_execute actual_financial_admission")
-        _need(
-            grant["schema"] == "h3-dec4-protected-phase-release-v1"
-            and grant["source"] == pin
-            and grant["phase"] == self.phase
-            and grant["allow_execute"] is True
-            and grant["actual_financial_admission"] is False
-        )
-        return grant
+        return read_pair_release(self.ROOT, self.phase, pin, digest)
 
 
 def build_dec4_restore_binding(root, phase, source_sha256, release_sha256):
@@ -99,7 +89,8 @@ def _build(root, phase, source_sha256, release_sha256):
     value = source.check(source_sha256)
     source.release(value, source_sha256, release_sha256)
     row = value["restore_native"][phase]
-    _keys(row, "launcher evidence_root observer daemon writers")
+    _keys(row, "launcher evidence_root observer daemon writers pins")
+    pins = phase_restore_pins(value, phase)
     obs, d, w = row["observer"], row["daemon"], row["writers"]
     _keys(obs, "package_root bridge_sha256 core_sha256 pwsh pwsh_sha256")
     _keys(d, "docker_sha256 daemon_id_sha256 empty_docker_config")
@@ -155,9 +146,9 @@ def _build(root, phase, source_sha256, release_sha256):
         bank["volume"],
     )
     _need(
-        value["observer_plan_sha256"] == obs_plan.sha256
-        and value["observer_restore_daemon_sha256"] == daemon.sha256
-        and value["observer_restore_writer_guard_sha256"] == guard.sha256
+        pins["observer_plan_sha256"] == obs_plan.sha256
+        and pins["observer_restore_daemon_sha256"] == daemon.sha256
+        and pins["observer_restore_writer_guard_sha256"] == guard.sha256
         and value["single_bank_writer_gate"] == dict(gate_root=str(gate), bank_key=key)
     )
     launcher = _path(row["launcher"])

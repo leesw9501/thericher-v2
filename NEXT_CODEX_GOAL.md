@@ -6,9 +6,10 @@
 attributable KIS Paper entry-to-exit lifecycle through a repeatable, tracked
 execution path. The model is a proposal source, not a separate bank writer.
 
-Fix the reproduced Dec4/Dec9 shared-release and phase-local observer
-binding together before installing the actual Paper pair (Execution board).
-The owned exit must not depend on live entry readiness.
+The Dec4/Dec9 pair now has one tracked release reader and phase-local
+observer/restore pins. The invented two-leg case and independent exit
+passed. Freeze one actual `RELEASE.json` and both protected phase rows
+with the native launcher/installer; tracked tests do not install the pair.
 
 Next operational step: qualify the Dec4/Dec9 concrete writer census on fresh
 source-scoped role claims, then bind the independent restore owner and qualify
@@ -301,8 +302,10 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    confer generic write on descendants. The tracked Dec9 path now creates
    private run and capture roots; a native synthetic test verified the
    ACL and file inheritance. Wire the corrected frozen source and scoped
-   live-root checks to native Scheduler/runtime evidence. Do not alter shared
-   parent ACLs. The CLI stays
+   live-root checks to native Scheduler/runtime evidence. Its corrected
+   runtime manifest, guard and invented typed host checks are now refreshed
+   against the new candidate (Data stateboard). Do not alter shared parent
+   ACLs. The CLI stays
    disabled until that launcher binds custody and independently retained protected
    pins; do not duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;

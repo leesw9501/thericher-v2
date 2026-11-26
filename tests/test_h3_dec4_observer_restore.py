@@ -75,7 +75,16 @@ def test_startup_handoff_retains_separate_authority_before_observer_attempt(tmp_
         source=dict(
             original_owner=dict(bank=_BANK),
             original_gate_root=str(gate),
-            observer_plan_sha256=observer.sha256,
+            restore_native=dict(
+                entry=dict(
+                    pins=dict(
+                        observer_plan_sha256=observer.sha256,
+                        observer_restore_daemon_sha256="5" * 64,
+                        observer_restore_writer_guard_sha256="6" * 64,
+                    )
+                ),
+                exit={},
+            ),
         ),
         owner=SimpleNamespace(
             prove=lambda: dict(
@@ -182,7 +191,16 @@ def restore_case(tmp_path, monkeypatch):
     monkeypatch.setattr(pv, "process_start", process_start)
     source_value = dict(
         synthetic_only=True,
-        observer_plan_sha256=plan.sha256,
+        restore_native=dict(
+            entry=dict(
+                pins=dict(
+                    observer_plan_sha256=plan.sha256,
+                    observer_restore_daemon_sha256="5" * 64,
+                    observer_restore_writer_guard_sha256="6" * 64,
+                )
+            ),
+            exit={},
+        ),
         original_gate_root=str(tmp_path),
         original_owner={"bank": dict(_BANK)},
     )
