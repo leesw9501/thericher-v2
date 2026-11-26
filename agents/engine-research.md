@@ -123,6 +123,12 @@ loader paths in two stable samples of the scrubbed direct interpreter.
 This corroborates section path names, not section file identity, mapped
 bytes or production qualification. Do not repeat known probes for an
 apparently clean sample; use this boundary when pinning the exact host.
+The exact direct bootstrap and Scheduler profile intent survived a native
+in-memory round trip; direct `pythonw -I -S -B` refused pre-window with
+exit 20. `A/research/h3-dec4-fixed-half-protected-bootstrap-20261126-v1/PROFILE-INTENT.json`
+SHA256 `8e6b904117de68aa2e0c6848c56e43a6fc79dc15cd82e2a1110a6b044be3282d`.
+No registration, protected release grant or production runtime proof.
+The bootstrap refuses operational use while the host origin is unqualified.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
@@ -192,6 +198,13 @@ claim stayed consumed; wrong slot order and expired clock wrote nothing.
 Seven tests across the two candidate modules passed. No actual claim yet:
 bind independent protected control, named host identity and real slot
 evidence. A persisted record is not its own authority or a score.
+The descriptive aggregate `block_projection.py` under the same prep root,
+SHA256 `52fdd23cd1ebaa8edffd1bfaa1a4ef9011e1d4f2d6df6ba94e78776302ba68d2`,
+retains exact paired net differences, modeled fees, turnover and worst
+single-cohort drawdown for model, same-funded-gross EW and cash. It does
+not join unrelated dates into a NAV path or return zero for fewer than
+four admitted dates. Two invented native result tests passed; integrate
+only with the actual post-block host, not as a second readout.
 The shipped calendar and original 19-query MODP1 constructor agree on six
 capture dates for the five fixed cohorts: Nov27 input only; Dec3, Dec9,
 Dec15 and Dec21 each have a prior target and next prefix; Dec28 target only.
