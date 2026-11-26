@@ -87,18 +87,18 @@ def capture_h3_daily_panel_once(
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
     private_roots: bool = False,
-    on_root_created: Callable[[Path, tuple[int, int]], bool] | None = None,
+    create_private_root: Callable[[Path], bool] | None = None,
 ) -> H3DailyCapture:
     """Return a qualified panel after successful session closure, not a publication seal.
 
     The caller pins the future window, roots and current owner probe. No resume,
     retry, reconciliation, credential fallback or schedule action is performed.
-    A supplied registrar must accept each exclusive creation synchronously and
-    independently qualify its parent boundary. Path identity checks only detect drift.
+    A supplied creator owns each exclusive creation and its custody checks.
+    Path identity checks only detect drift.
     """
     if type(private_roots) is not bool:
         raise H3DailyPanelError("h3_capture_private_scope")
-    if on_root_created is not None and (not private_roots or not callable(on_root_created)):
+    if create_private_root is not None and (not private_roots or not callable(create_private_root)):
         raise H3DailyPanelError("h3_capture_root_registration")
     opens, closes = window_opens_utc, window_closes_utc
     if type(plan) is not H3DailyPanelPlan or plan.axis != NET25_H3_AXIS:
@@ -150,15 +150,14 @@ def capture_h3_daily_panel_once(
             ready = gated_ready()
             if type(ready) is not CaptureReadiness or not ready.ready or _safe_path(root) != root:
                 raise H3DailyPanelError("h3_capture_private_scope")
-            _mkdir_private(root)
-            identity = created[root] = _private_root_identity(root)
-            if on_root_created is not None and (
-                identity[1] <= 0 or on_root_created(root, identity) is not True
-            ):
+            if create_private_root is None:
+                _mkdir_private(root)
+            elif create_private_root(root) is not True:
                 raise H3DailyPanelError("h3_capture_root_registration")
+            created[root] = _private_root_identity(root)
 
     timing = {k: v for k, v in (("monotonic", monotonic), ("sleeper", sleeper)) if v is not None}
-    if on_root_created is not None:
+    if create_private_root is not None:
         # Session entry creates custody locks before the session uses owner_ready.
         require_ready()
     with KisPaperDataCaptureSession(
@@ -192,7 +191,7 @@ def capture_h3_daily_panel_once(
             raise H3DailyPanelError("h3_capture_counters_mismatch")
         state_path = session.artifact_root / "capture-state.json"
         state = _read_native(session.artifact_root, str(state_path))
-    if on_root_created is not None and any(
+    if create_private_root is not None and any(
         _private_root_identity(path) != identity for path, identity in created.items()
     ):
         raise H3DailyPanelError("h3_capture_private_scope_changed")

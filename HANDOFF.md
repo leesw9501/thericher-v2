@@ -101,6 +101,13 @@ documents unregistered native drafts from an invented typed plan.
 The builder retains UTC strings during JSON input; otherwise PowerShell's
 date coercion changes the ABI. Both action hashes matched, wrong plan
 hash and crossed action evidence were refused. No tasks were registered.
+The tracked Windows bank launcher now derives the check/action/window
+interface from the same protected install plan, not a caller's arbitrary
+source adapter. It reopens exact source/launcher and direct interpreter
+bytes and compares the phase command to the native owner expectation.
+Outer plan and profile anchoring still belongs to the protected bootstrap.
+The focused tests refused changed bytes and crossed phase actions.
+Claude challenge: same release root, `SCHEDULE-SOURCE-CLAUDE-VERDICT.json`.
 
 The named Dec4/Dec9 normal path now composes the scheduled BankLeg,
 supervised-input adapter and existing capsule. It creates one source-owned

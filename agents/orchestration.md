@@ -5,11 +5,11 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
-Nov26 throughput: Execution isolated diagnostic ancestry from the remaining
-unclassified census candidate. Next use actual caller/Job-bound evidence
-instead of repeating broad surveys. Data independently located the three
-creator callbacks needed for Dec9 custody. Neither result advances a
-financial effect or requests GPU capacity.
+Nov26 throughput: Execution joined the bank preflight to the install plan;
+Data implemented original creation-handle custody. Both focused packages ran
+in parallel and share one full verification on the combined tree. Next bind
+the actual host profiles, not another free-standing manifest. No financial
+effect, deployed target capture or GPU fit is claimed.
 
 Nov26: the original Nov30 research forecast owner was migrated in place to
 the corrected SELF loader. Independent native readback found the same

@@ -171,21 +171,10 @@ class _Dec4Owner:
         )
 
 
-def bind_dec4_native_owner(
-    schedule_plan: Mapping[str, object],
-    pin: str,
-    phase: Phase,
-    release_pin: str,
-    *,
-    read_scheduler: Callable[[str, int], QualifiedSchedulerInstance],
-    read_process: Callable[[int], NativeProcessIdentity],
-) -> NativeOwnerProbe:
-    """Partially bind a pinned schedule plan and providers to get make_owner.
-
-    The isolated launcher authenticates the plan, provider and launcher/image
-    artifacts. Readers must sample anew, never reconstruct facts from plan or
-    launch arguments. Existing preflight still checks source, release and time.
-    """
+def dec4_native_plan_fields(
+    schedule_plan: Mapping[str, object], pin: str, phase: Phase, release_pin: str
+) -> tuple[dict[str, str], tuple[str, ...], str]:
+    """Derive static owner fields and the exact action from a protected plan."""
     if phase not in TASKS or any(
         type(value) is not str or re.fullmatch(r"[0-9a-f]{64}", value) is None
         for value in (pin, release_pin)
@@ -231,4 +220,19 @@ def bind_dec4_native_owner(
             raise ValueError
     except (IndexError, KeyError, TypeError, ValueError):
         raise ValueError("h3_bank_native_plan_mismatch") from None
+    return expected, argv, action.decode("ascii")
+
+
+def bind_dec4_native_owner(
+    schedule_plan: Mapping[str, object],
+    pin: str,
+    phase: Phase,
+    release_pin: str,
+    *,
+    read_scheduler: Callable[[str, int], QualifiedSchedulerInstance],
+    read_process: Callable[[int], NativeProcessIdentity],
+) -> NativeOwnerProbe:
+    """Readers must sample anew, never reconstruct native facts from the plan."""
+    expected, argv, _ = dec4_native_plan_fields(schedule_plan, pin, phase, release_pin)
+    opens, closes, _ = _TIMES[phase]
     return _Dec4Owner(expected, argv, (_ticks(opens), _ticks(closes)), read_scheduler, read_process)

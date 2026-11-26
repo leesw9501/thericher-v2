@@ -8,10 +8,14 @@ import os
 import re
 import stat
 import sys
+from contextlib import ExitStack
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import NamedTuple, Protocol
+from typing import TYPE_CHECKING, NamedTuple, Protocol
 from uuid import UUID
+
+if TYPE_CHECKING:
+    from thericher_v2.ops.h3_dec9_native_roots import HeldDirectory
 
 RUN_NAME = "h3-dec9-modp1-target-owner-20261209-v1"
 TASK_PATH = "\\thericher-" + RUN_NAME
@@ -37,6 +41,7 @@ _REQUIRED = {
     "src/thericher_v2/ops/h3_dec9_target_owner.py",
     "src/thericher_v2/ops/h3_dec9_fixed_half_capture.py",
     "src/thericher_v2/ops/h3_dec9_fixed_half_target.py",
+    "src/thericher_v2/ops/h3_dec9_native_roots.py",
 }
 
 
@@ -226,22 +231,30 @@ class ProtectedNativeOwner(Protocol):
     access scope, and the live instance's link to this process. Policy digests
     identify nonsecret bindings, not credentials or expected plan echoes.
 
-    Before creation, prove() must qualify the exact parent namespaces against
-    replacement, deletion and reparse traversal, including same-principal
-    writers. Ordinary prove() may require unregistered roots to be absent.
-    register_created_root() alone handles the transition: it must freshly
-    verify the same binding with exactly the next root just created, independently
-    attest creation by this instance and commit the registration before returning
-    True. Later prove() calls must enforce the registered binding through all
-    path-based effects and sealing.
-    Merely reopening the path, comparing its stat, or echoing inputs is not
-    proof; a host unable to enforce this boundary must not activate.
+    qualify_root_parent() must independently attest the exact borrowed parent
+    chain against the enrolled namespace and policy before creation. The
+    bootstrap creates exclusively relative to that parent and lends the original
+    native creator handle to register_created_root(). Registration must inspect
+    the live objects, verify this exact instance and next root, and record the
+    binding before returning True. Ordinary prove() may require unregistered
+    roots to be absent; only registration handles that transition. Later prove()
+    calls enforce the binding and isolation through path effects and sealing.
+
+    Handles are borrowed, never closed or transferred by the host. Native
+    identity/share modes do not establish stable drive mapping, writer isolation
+    (including same-principal actors), or integrity of path-based descendants.
+    A host unable to enforce those independently must not activate.
     """
 
     def prove(self) -> NativeOwnerProof: ...
 
+    def qualify_root_parent(
+        self, proof: NativeOwnerProof, role: str, path: Path, parents: "tuple[HeldDirectory, ...]"
+    ) -> bool: ...
+
     def register_created_root(
-        self, proof: NativeOwnerProof, role: str, path: Path, identity: tuple[int, int]
+        self, proof: NativeOwnerProof, role: str, parents: "tuple[HeldDirectory, ...]",
+        creator: "HeldDirectory",
     ) -> bool: ...
 
     def load_paper_market_data_config(self, config_scope_sha256: str) -> object: ...
@@ -427,7 +440,8 @@ def activate_target_owner(
     if not callable(load_scoped_config):
         raise ValueError("dec9_native_config")
     register_root = getattr(host, "register_created_root", None)
-    if not callable(register_root):
+    qualify_parent = getattr(host, "qualify_root_parent", None)
+    if not callable(register_root) or not callable(qualify_parent):
         raise ValueError("dec9_native_root_registration")
     bound = bind_target_owner(
         prebind.source_sha256,
@@ -440,6 +454,7 @@ def activate_target_owner(
     )
     from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
     from thericher_v2.execution.paper_peer_visit import process_start
+    from thericher_v2.ops.h3_dec9_native_roots import NativeRootScope
 
     lost = False
 
@@ -454,6 +469,9 @@ def activate_target_owner(
                     and _sha(_read(SOURCE / "SOURCE.json", 1024 * 1024)) == prebind.source_sha256
                     and OPENS <= _now() < SEAL_BEFORE
                 )
+                if not lost:
+                    roots.verify()
+                    lost = not OPENS <= _now() < SEAL_BEFORE
             except Exception:
                 lost = True
         return CaptureReadiness(not lost)
@@ -462,22 +480,27 @@ def activate_target_owner(
     expected_roots = (("run", run), ("market", MARKET_ROOT), ("capture", run / "capture"))
     registered_count = 0
 
-    def register_created_root(role, path, identity):
+    def create_root(role, path):
         nonlocal lost, registered_count
         try:
             _capture_window()
             if not (
                 registered_count < len(expected_roots)
                 and (role, path) == expected_roots[registered_count]
-                and type(identity) is tuple
-                and len(identity) == 2
-                and all(type(part) is int for part in identity)
-                and identity[0] >= 0
-                and identity[1] > 0
-                and not lost
-                and process_start(pid) == original.birth
-                and register_root(original, role, path, identity) is True
                 and ready().ready
+            ):
+                raise ValueError("dec9_native_root_registration")
+            parents = roots.parents(path)
+            if qualify_parent(original, role, path, parents) is not True or not ready().ready:
+                raise ValueError("dec9_native_root_registration")
+            _capture_window()
+            creator = roots.create(path)
+            roots.verify()
+            _capture_window()
+            if (
+                process_start(pid) != original.birth
+                or register_root(original, role, parents, creator) is not True
+                or not ready().ready
             ):
                 raise ValueError("dec9_native_root_registration")
             _capture_window()
@@ -508,17 +531,19 @@ def activate_target_owner(
         _capture_window()
         return config
 
-    if not ready().ready:
-        raise ValueError("dec9_native_owner")
-    _capture_window()
-    return bound.run_owner(
-        bound.pins,
-        prebind_sha256=prebind.target_prebind_sha256,
-        clock=_now,
-        owner_ready=ready,
-        register_created_root=register_created_root,
-        config_loader=load_config,
-    )
+    with ExitStack() as lifetime:
+        roots = NativeRootScope(lifetime)
+        if not ready().ready:
+            raise ValueError("dec9_native_owner")
+        _capture_window()
+        return bound.run_owner(
+            bound.pins,
+            prebind_sha256=prebind.target_prebind_sha256,
+            clock=_now,
+            owner_ready=ready,
+            create_root=create_root,
+            config_loader=load_config,
+        )
 
 
 if __name__ == "__main__":

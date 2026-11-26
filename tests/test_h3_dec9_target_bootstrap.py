@@ -15,6 +15,7 @@ import pytest
 from thericher_v2.execution import paper_peer_visit
 from thericher_v2.execution.kis_market_data import KisPaperMarketDataConfig
 from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
+from thericher_v2.ops import h3_dec9_native_roots
 from thericher_v2.ops.h3_dec9_fixed_half_target import ENTRY_OPEN, Dec9TargetPins
 
 REPO = Path(__file__).resolve().parents[1]
@@ -92,6 +93,7 @@ def test_loader_executes_only_the_verified_bytes(frozen):
         loader.find_spec("thericher_v2.ops.h3_dec9_other_owner")
 
 
+@pytest.mark.skipif(sys.platform != "win32", reason="requires native Windows directory handles")
 def test_isolated_activation_uses_real_target_owner(tmp_path):
     data_root, market_root = tmp_path / "data", tmp_path / "market"
     root = data_root / "source"
@@ -153,8 +155,11 @@ class StopBeforeNetwork(Exception):
     pass
 
 class Host:
-    roles = []
     roots = (boot.DATA_ROOT / "run", boot.MARKET_ROOT, boot.DATA_ROOT / "run/capture")
+
+    def __init__(self):
+        self.roles = []
+        self.created = []
 
     def prove(self):
         assert tuple(path.exists() for path in self.roots) == tuple(
@@ -162,17 +167,27 @@ class Host:
         ), "ordinary readiness called during mkdir-to-registration transition"
         return boot.NativeOwnerProof(projection, prebind.sha256, UUID(int=1), os.getpid(), birth)
 
-    def register_created_root(self, proof, role, path, identity):
+    def qualify_root_parent(self, proof, role, path, parents):
+        assert proof == self.prove()
+        assert path == self.roots[len(self.roles)]
+        assert tuple(parent.path for parent in parents) == tuple(reversed(path.parents))
+        if role == "capture":
+            assert parents[-1] is self.created[0]
+        return True
+
+    def register_created_root(self, proof, role, parents, creator):
         assert proof == boot.NativeOwnerProof(
             projection, prebind.sha256, UUID(int=1), os.getpid(), birth
         )
-        assert path == self.roots[len(self.roles)]
+        assert creator.path == self.roots[len(self.roles)]
+        assert parents[-1].path == creator.path.parent
+        assert api.identity(creator.handle) == creator.identity
+        api.check_dacl(creator.handle)
         assert tuple(root.exists() for root in self.roots) == tuple(
             index <= len(self.roles) for index in range(len(self.roots))
         )
-        info = path.stat()
-        assert identity == (info.st_dev, info.st_ino)
         self.roles.append(role)
+        self.created.append(creator)
         return True
 
     def load_paper_market_data_config(self, scope):
@@ -180,21 +195,24 @@ class Host:
         assert scope == projection.config_scope_sha256
         assert (boot.DATA_ROOT / "run/owner/ATTEMPT.json").is_file()
         assert self.roles == ["run", "market", "capture"]
+        assert all(api.identity(item.handle) == item.identity for item in self.created)
         return KisPaperMarketDataConfig("invented-key", "invented-secret")
 
 def bind_with_synthetic_capture(*a, **kw):
     bound = bind(*a, **kw)
-    from thericher_v2.ops import h3_dec9_fixed_half_capture, h3_dec9_target_owner as owner
+    from thericher_v2.ops import (
+        h3_dec9_fixed_half_capture, h3_dec9_native_roots, h3_dec9_target_owner as owner,
+    )
     from thericher_v2.execution import paper_peer_visit
+    global api
+    api = h3_dec9_native_roots._Native()
     assert bound.run_owner is owner.run_dec9_target_owner
     assert bound.pins.prebind_sha256 == bound.prebind_sha256 == digest
 
     def no_network(**kwargs):
         assert kwargs["owner_ready"]().ready is True
         for path in (kwargs["market_root"], kwargs["artifact_root"]):
-            path.mkdir()
-            info = path.stat()
-            assert kwargs["on_root_created"](path, (info.st_dev, info.st_ino)) is True
+            assert kwargs["create_private_root"](path) is True
         assert kwargs["config_loader"]().app_key == "invented-key"
         raise StopBeforeNetwork
 
@@ -203,8 +221,9 @@ def bind_with_synthetic_capture(*a, **kw):
     return bound
 
 boot.bind_target_owner = bind_with_synthetic_capture
+host = Host()
 try:
-    boot.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=Host())
+    boot.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
 except StopBeforeNetwork:
     pass
 else:
@@ -292,9 +311,15 @@ def activation(frozen, monkeypatch):
             self.proof_calls += 1
             return self.proof
 
-        def register_created_root(self, proof, role, path, identity):
+        def qualify_root_parent(self, proof, role, path, parents):
             assert proof == self.proof
-            self.registrations.append((role, path, identity))
+            assert parents == (path.parent,) and not path.exists()
+            return True
+
+        def register_created_root(self, proof, role, parents, creator):
+            assert proof == self.proof
+            assert parents == (creator.path.parent,) and creator.path.is_dir()
+            self.registrations.append((role, creator.path))
             return True
 
         def load_paper_market_data_config(self, scope):
@@ -310,6 +335,24 @@ def activation(frozen, monkeypatch):
     monkeypatch.setattr(BOOT, "_now", lambda: host.now)
     monkeypatch.setattr(BOOT, "_require_runtime", lambda: None)
     monkeypatch.setattr(paper_peer_visit, "process_start", lambda _pid: host.native_birth)
+
+    class SyntheticScope:
+        def __init__(self, lifetime):
+            self.closed = False
+            lifetime.callback(setattr, self, "closed", True)
+            host.scope = self
+
+        def verify(self):
+            assert not self.closed
+
+        def parents(self, path):
+            return (path.parent,)
+
+        def create(self, path):
+            path.mkdir()
+            return SimpleNamespace(path=path)
+
+    monkeypatch.setattr(h3_dec9_native_roots, "NativeRootScope", SyntheticScope)
 
     def forbidden(*args, **kwargs):
         pytest.fail("binding reached with denied native preflight")
@@ -372,9 +415,10 @@ def test_activation_without_config_provider_never_binds_owner(activation):
         BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
 
 
-def test_activation_without_registrar_never_binds_owner(activation):
+@pytest.mark.parametrize("method", ["register_created_root", "qualify_root_parent"])
+def test_activation_without_custody_provider_never_binds_owner(activation, method):
     prebind, host = activation
-    host.register_created_root = None
+    setattr(host, method, None)
     with pytest.raises(ValueError, match="^dec9_native_root_registration$"):
         BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
     assert host.config_calls == 0
@@ -399,14 +443,13 @@ def test_activation_rechecks_owner_and_loads_config_only_in_capture(activation, 
 
         host.load_paper_market_data_config = config_with_drift
 
-    def owner(passed, *, prebind_sha256, clock, owner_ready, register_created_root, config_loader):
+    def owner(passed, *, prebind_sha256, clock, owner_ready, create_root, config_loader):
         assert passed is pins and prebind_sha256 == prebind.target_prebind_sha256
         assert host.config_calls == 0 and type(owner_ready()) is CaptureReadiness
         run = BOOT.DATA_ROOT / "run"
-        for index, (role, path) in enumerate(
-            (("run", run), ("market", BOOT.MARKET_ROOT), ("capture", run / "capture")), 1
-        ):
-            assert register_created_root(role, path, (1, index)) is True
+        expected = (("run", run), ("market", BOOT.MARKET_ROOT), ("capture", run / "capture"))
+        for role, path in expected:
+            assert create_root(role, path) is True
         assert len(host.registrations) == 3
         if fault == "instance":
             original = host.proof
@@ -449,10 +492,11 @@ def test_activation_rechecks_owner_and_loads_config_only_in_capture(activation, 
         with pytest.raises(ValueError, match="dec9_native_config|dec9_owner_clock"):
             BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
     assert host.config_calls == int(fault in {None, "config_type", "config_drift"})
+    assert host.scope.closed
 
 
 @pytest.mark.parametrize(
-    "fault", ["incomplete", "wrong_path", "truthy", "exception", "proof_drift"]
+    "fault", ["incomplete", "wrong_path", "truthy", "exception", "proof_drift", "parent_denied"]
 )
 def test_activation_registration_denial_blocks_config(activation, monkeypatch, fault):
     prebind, host = activation
@@ -464,16 +508,18 @@ def test_activation_registration_denial_blocks_config(activation, monkeypatch, f
             return True
         if fault == "exception":
             raise RuntimeError("invented internal detail")
-        if fault == "wrong_path":
-            pytest.fail("registrar called for a wrong path")
+        if fault in {"wrong_path", "parent_denied"}:
+            pytest.fail("registrar called without a qualified parent and path")
         return 1
 
     host.register_created_root = registrar
+    if fault == "parent_denied":
+        host.qualify_root_parent = lambda *_: False
 
-    def owner(_pins, *, register_created_root, config_loader, owner_ready, **_kwargs):
+    def owner(_pins, *, create_root, config_loader, owner_ready, **_kwargs):
         if fault != "incomplete":
             with pytest.raises(ValueError, match="^dec9_native_root_registration$"):
-                register_created_root("run", run if fault != "wrong_path" else run.parent, (1, 2))
+                create_root("run", run if fault != "wrong_path" else run.parent)
             assert not owner_ready().ready
         config_loader()
 
@@ -485,6 +531,8 @@ def test_activation_registration_denial_blocks_config(activation, monkeypatch, f
     with pytest.raises(ValueError, match="^dec9_native_config$"):
         BOOT.activate_target_owner(prebind, native_prebind_sha256=prebind.sha256, host=host)
     assert host.config_calls == 0
+    assert host.scope.closed
+    assert run.exists() is (fault in {"truthy", "exception", "proof_drift"})
 
 
 def test_bootstrap_is_not_an_executable_dispatch():

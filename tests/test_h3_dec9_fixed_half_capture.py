@@ -55,19 +55,17 @@ def launch(tmp_path, monkeypatch):
     monkeypatch.setattr(producer, "process_start", lambda _pid: box.native_start)
     prebind = pins.prebind_sha256
 
-    def register(role, path, identity):
-        assert identity == (path.stat().st_dev, path.stat().st_ino)
+    def create(role, path):
+        path.mkdir()
         box.registrations.append(role)
         return True
 
-    def native(plan, register_child, verify_roots):
+    def native(plan, create_child, verify_roots):
         box.calls += 1
         assert attempt.is_file() and not closure.exists()
         assert not pins.market_root.exists() and not box.state_path.parent.exists()
         for path in (pins.market_root, box.state_path.parent):
-            path.mkdir()
-            info = path.stat()
-            assert register_child(path, (info.st_dev, info.st_ino)) is True
+            assert create_child(path) is True
         verify_roots()
         started = box.now
         completed, captures = {}, []
@@ -123,7 +121,7 @@ def launch(tmp_path, monkeypatch):
         options = dict(
             prebind_sha256=prebind,
             capture_once=native,
-            register_created_root=register,
+            create_root=create,
             owner_ready=lambda: box.ready,
             clock=lambda: box.now,
         )
@@ -285,7 +283,7 @@ def test_owner_entry_denies_before_native_capture(launch, monkeypatch, fault):
             prebind_sha256="f" * 64 if fault == "prebind" else launch.prebind,
             clock=lambda: launch.now,
             owner_ready=lambda: readiness,
-            register_created_root=lambda *_: True,
+            create_root=lambda *_: pytest.fail("creation called on denied entry"),
             config_loader=lambda: pytest.fail("config loaded on denied entry"),
         )
     assert not launch.run.exists()
@@ -314,7 +312,7 @@ def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
             prebind_sha256=launch.prebind,
             clock=lambda: launch.now,
             owner_ready=ready,
-            register_created_root=lambda *_: True,
+            create_root=lambda _, path: path.mkdir() is None,
             config_loader=lambda: pytest.fail("config loaded after loss of authority"),
         )
 
@@ -327,33 +325,30 @@ def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
         run()
 
 
-@pytest.mark.parametrize("fault", ["missing", "deny", "truthy", "exception", "replace"])
+@pytest.mark.parametrize("fault", ["missing", "deny", "truthy", "exception"])
 def test_run_registration_fails_before_attempt(launch, fault):
-    def register(role, path, identity):
+    def create(role, path):
         assert role == "run" and path == launch.run
+        path.mkdir()
         if fault == "exception":
             raise RuntimeError("invented internal detail")
-        if fault == "replace":
-            path.rename(path.with_name("moved-run"))
-            path.mkdir()
-            return True
         return 1 if fault == "truthy" else False
 
     with pytest.raises(ValueError, match="^dec9_capture_root_(registration|changed)$"):
-        launch.write(register_created_root=None if fault == "missing" else register)
+        launch.write(create_root=None if fault == "missing" else create)
     assert launch.calls == 0
     assert launch.run.exists() is (fault != "missing")
     assert not (launch.run / "owner").exists()
 
 
-@pytest.mark.parametrize("fault", ["market", "capture", "replace_capture", "replace_run"])
+@pytest.mark.parametrize("fault", ["market", "capture", "replace_run"])
 def test_child_denial_or_drift_blocks_native_session_entry(launch, monkeypatch, fault):
-    def register(role, path, identity):
-        assert identity == native_capture._private_root_identity(path)
+    def create(role, path):
+        path.mkdir()
         if role == fault:
             return False
-        if role == "capture" and fault.startswith("replace_"):
-            replaced = path if fault == "replace_capture" else launch.run
+        if role == "capture" and fault == "replace_run":
+            replaced = launch.run
             replaced.rename(replaced.with_name(f"moved-{replaced.name}"))
             replaced.mkdir()
         return True
@@ -368,15 +363,15 @@ def test_child_denial_or_drift_blocks_native_session_entry(launch, monkeypatch, 
             prebind_sha256=launch.prebind,
             clock=lambda: launch.now,
             owner_ready=lambda: CaptureReadiness(True),
-            register_created_root=register,
+            create_root=create,
             config_loader=forbidden,
         )
     assert not launch.closure.exists()
 
 
 def test_unreported_children_cannot_seal(launch):
-    def native(plan, _register_child, verify_roots):
-        return launch.native(plan, lambda *_: True, verify_roots)
+    def native(plan, _create_child, verify_roots):
+        return launch.native(plan, lambda path: path.mkdir() is None, verify_roots)
 
     with pytest.raises(ValueError, match="^dec9_capture_root_registration$"):
         launch.write(capture_once=native)

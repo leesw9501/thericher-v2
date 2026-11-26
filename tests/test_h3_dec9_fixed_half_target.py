@@ -113,9 +113,8 @@ def edition(tmp_path, monkeypatch):
 
     registered = []
 
-    def register(role, path, identity):
-        info = path.stat()
-        assert identity == (info.st_dev, info.st_ino)
+    def create(role, path):
+        path.mkdir()
         assert not calls
         registered.append((role, path))
         return True
@@ -142,7 +141,7 @@ def edition(tmp_path, monkeypatch):
         prebind_sha256=initial_digest,
         clock=lambda: now,
         owner_ready=lambda: capture.CaptureReadiness(True),
-        register_created_root=register,
+        create_root=create,
         config_loader=config_loader,
         monotonic=lambda: (now - _OPENS).total_seconds(),
         sleeper=advance,

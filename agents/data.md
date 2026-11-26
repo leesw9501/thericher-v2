@@ -59,9 +59,19 @@ returned the original directory handle, protected DACL and stable native
 ID/creation time. Existing-leaf creation and rename/deletion while held
 were refused. See `dec9-native-directory-create-probe.py` in this package,
 SHA256 `918b7567c6d7f000c465ddc6910147a78843fa1f6c275ff5824fb96c94d61d73`.
-Next bind this handle to the real creator and retain the exact parent
-namespace across path use; the fixture did not prove the real ancestors
-or same-principal isolation. No Dec9 target Data task was installed.
+The tracked bootstrap now uses that relative create-new primitive and holds
+the original creator and ancestor handles through capture and sealing. It
+requires the protected host to qualify the parent chain and register the
+same creator handle. Windows focused tests confirmed collisions and
+rename/deletion refusal. Actual protected host enrollment, stable drive
+mapping and independent exclusion of same-principal writers are not proved.
+Freeze the source and bind those existing checks before any installation.
+Claude limitation: `CREATOR-HANDLE-CLAUDE-VERDICT.json` in the same package.
+The external `dec9-native-root-bridge.py` SHA256
+`75093d2cb913e94e139f8b1446871401c032629218d896cf2212618d10df13c5`
+joins the borrowed objects to the existing custody policy. Nine synthetic
+Windows cases passed twice; the original trusted bootstrap must still supply
+the actual handles. This bridge does not establish writer isolation.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

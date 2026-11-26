@@ -11,8 +11,8 @@ from thericher_v2.data.kis_paper_h3_daily_panel import H3DailyPanelPlan
 from thericher_v2.execution.kis_market_data import KisPaperMarketDataConfig
 from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
 from thericher_v2.ops.h3_dec9_fixed_half_capture import (
-    ChildRegistration,
-    RootRegistration,
+    ChildCreator,
+    RootCreator,
     write_dec9_fixed_half_capture,
 )
 from thericher_v2.ops.h3_dec9_fixed_half_target import Dec9TargetPins, _utc
@@ -24,7 +24,7 @@ def run_dec9_target_owner(
     prebind_sha256: str,
     clock: Callable[[], datetime],
     owner_ready: Callable[[], CaptureReadiness],
-    register_created_root: RootRegistration,
+    create_root: RootCreator,
     config_loader: Callable[[], KisPaperMarketDataConfig],
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
@@ -37,8 +37,8 @@ def run_dec9_target_owner(
     before attempt creation, at native effects and through sealing. It must
     work before ATTEMPT exists and after the capture window; the two existing
     primitives enforce their own distinct deadlines.
-    A protected registrar must acknowledge the exclusive run, market and
-    capture creations. A path stat alone cannot provide this authority.
+    The protected bootstrap creates and registers the run, market and capture
+    roots before they are used. A path stat alone cannot provide this authority.
 
     This entry does not bootstrap a source, retry, or establish process exit.
     The reader still requires independent positive process-tree closure.
@@ -60,7 +60,7 @@ def run_dec9_target_owner(
 
     def capture_once(
         plan: H3DailyPanelPlan,
-        register_child: ChildRegistration,
+        create_child: ChildCreator,
         verify_roots: Callable[[], None],
     ) -> H3DailyCapture:
         def capture_ready() -> CaptureReadiness:
@@ -86,14 +86,14 @@ def run_dec9_target_owner(
             monotonic=monotonic,
             sleeper=sleeper,
             private_roots=True,
-            on_root_created=register_child,
+            create_private_root=create_child,
         )
 
     return write_dec9_fixed_half_capture(
         pins,
         prebind_sha256=prebind_sha256,
         capture_once=capture_once,
-        register_created_root=register_created_root,
+        create_root=create_root,
         owner_ready=seal_ready,
         clock=clock,
     )

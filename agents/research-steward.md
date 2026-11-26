@@ -30,6 +30,11 @@ explicit blocked-access result. `appcontainer-probe-r3.RESULT.json` SHA256
 retains exact owned profile/scratch and count evidence. Do not infer isolation
 success or retry the same .NET witness. Qualify a smaller native witness
 or a separately scoped no-network runner without changing the forecast.
+Prefer the already-frozen Windows Job route: Linux Docker would need a new
+guest bootstrap and independent daemon-side closure. Next try one minimal
+native file/network witness, no .NET, shell or forecast; require same-child
+restricted token/Job, explicit refusals, and exact zero-exit/empty-Job return.
+A timeout remains unqualified. No forward or training was dispatched.
 
 ## Actual Queue
 

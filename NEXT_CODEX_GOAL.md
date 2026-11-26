@@ -10,6 +10,11 @@ The Dec4/Dec9 pair now has one tracked release reader and phase-local
 observer/restore pins. The invented two-leg case and independent exit
 passed. Freeze one actual `RELEASE.json` and both protected phase rows
 with the native launcher/installer; tracked tests do not install the pair.
+The bank launcher now derives its source action and phase window directly
+from that protected install plan, verifies the source and launcher/runtime
+bytes, and requires the same native provider binding. Next connect the
+protected outer process to the independently retained native profile pins;
+do not rebuild the plan or profile from the current Task as its own proof.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only
@@ -306,14 +311,13 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    empty bytecode-cache path. The host adapter now passes the invented
    typed activation/credential-loader fixture. Actual output parents
    confer generic write on descendants. The tracked Dec9 path now creates
-   private roots and registers its run, market and capture creations before
-   starting the capture session. A path identity check detects drift but
-   does not prove creation. The atomic create-new handle passed on synthetic
-   D: paths (Data stateboard). Wire it to the exact parent namespace and
-   original creation identity, then bind the updated source and native Scheduler
-   owner. Do not alter shared parent ACLs. The CLI stays disabled until
-   the protected host proves that binding; do not duplicate capture or
-   open outcomes before block-end.
+   private roots and registers each native create-new handle before
+   starting the capture session. The original creator and ancestor handles
+   stay held through sealing. Bind the updated source and actual protected
+   Scheduler owner to the enrolled namespace and same-principal writer
+   exclusion; the handle alone does not prove either. Do not alter shared
+   parent ACLs or activate the CLI until that binding is qualified. Do not
+   duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.

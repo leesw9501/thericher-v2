@@ -25,6 +25,10 @@ Actual inert direct root/watchdog joined the two expected Windows identities
 against the pinned CIM inventory in 2.011 s and refused a 100 ns birth change
 (HANDOFF). The live scheduled profile, restore child and attach exchange
 still need their exact release; do not use this time as the guest ACK bound.
+The bank startup now derives its command and phase from the exact installer
+plan, verifies the source/launcher/direct image pins and keeps the live
+definition probe. Anchoring the actual outer launcher and both native
+readback profiles is still required. No financial task was installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.
