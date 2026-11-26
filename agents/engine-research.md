@@ -116,6 +116,13 @@ were printed. `Verify-BaselineModuleSignatures.ps1` under the integrated root,
 SHA256 `1eae5fccb636760c527f7c68cf123734b2a63e69a2b2958f5c7e349c36ef5fdf`.
 Disk signatures do not prove the backing of mapped sections or grant
 runtime trust; no security settings or schedule changed.
+The native `GetMappedFileNameW` device paths matched both Program Files
+loader paths in two stable samples of the scrubbed direct interpreter.
+`read_baseline_section_names.py` under the integrated root SHA256
+`f7f0f2fb3458648a897012ad061518c9eaadefd36a354d08d38199969ca643b2`.
+This corroborates section path names, not section file identity, mapped
+bytes or production qualification. Do not repeat known probes for an
+apparently clean sample; use this boundary when pinning the exact host.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
