@@ -63,6 +63,7 @@ def run_dec9_target_owner(
             config_loader=load_config,
             monotonic=monotonic,
             sleeper=sleeper,
+            private_roots=True,
         )
 
     return write_dec9_fixed_half_capture(

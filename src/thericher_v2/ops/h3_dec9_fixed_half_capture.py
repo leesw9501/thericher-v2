@@ -7,7 +7,7 @@ from datetime import datetime
 from itertools import islice
 from pathlib import Path
 
-from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture
+from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture, _mkdir_private
 from thericher_v2.execution.kis_paper_data_capture import _safe_path
 from thericher_v2.execution.paper_peer_visit import process_start
 from thericher_v2.ops import h3_dec9_fixed_half_target as target
@@ -113,7 +113,7 @@ def write_dec9_fixed_half_capture(
         started = gate(pins.capture_closes)
         if int(birth.split(":")[1]) > target._ticks(started):
             raise ValueError("dec9_capture_process")
-        run.mkdir()
+        _mkdir_private(run)
         owner.mkdir()
         attempt_sha = write(
             owner / "ATTEMPT.json",

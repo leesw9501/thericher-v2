@@ -45,8 +45,11 @@ SHA256 `ff1ccba93fdab8fd429083376be8734f16fd67c33d131a3c4b37ac8cfc84515c`.
 The exact output parents still have generic write inherited by children;
 the future run and market leaf are both absent. `DEC9-CUSTODY-PARENT-ACCESS.json`
 SHA256 `744d8f0263d66c16844be5917e73756c2a8d824a205d1a7edc63897eefb1b432`.
-Use owner-only ACLs at creation for the two exact owned roots before
-capturing; do not alter the shared parent ACL or activate this fixture.
+The tracked Dec9 path now creates its run and capture roots privately, with
+no change to shared parent ACLs or the default H3 capture path. An invented
+Windows child directory and its file did not inherit the test parent's
+common-group grant. The focused suite passed 101 tests. Real Scheduler
+binding still needs the fixed source and effect-time custody/owner proof.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

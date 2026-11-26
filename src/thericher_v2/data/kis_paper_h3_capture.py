@@ -2,6 +2,7 @@
 
 import hashlib
 import os
+import sys
 from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime, timedelta
@@ -55,6 +56,13 @@ def _read_native(root: Path, reference: str) -> bytes:
     return data
 
 
+def _mkdir_private(path: Path) -> None:
+    # CPython 3.13+ applies a protected, inheritable DACL at creation on Windows.
+    if os.name == "nt" and sys.version_info < (3, 13):
+        raise H3DailyPanelError("h3_capture_private_mkdir_unsupported")
+    path.mkdir(mode=0o700)
+
+
 def capture_h3_daily_panel_once(
     *,
     plan: H3DailyPanelPlan,
@@ -67,12 +75,15 @@ def capture_h3_daily_panel_once(
     config_loader: Callable[[], KisPaperMarketDataConfig],
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
+    private_roots: bool = False,
 ) -> H3DailyCapture:
     """Return a qualified panel after successful session closure, not a publication seal.
 
     The caller pins the future window, roots and current owner probe. No resume,
     retry, reconciliation, credential fallback or schedule action is performed.
     """
+    if type(private_roots) is not bool:
+        raise H3DailyPanelError("h3_capture_private_scope")
     opens, closes = window_opens_utc, window_closes_utc
     if type(plan) is not H3DailyPanelPlan or plan.axis != NET25_H3_AXIS:
         raise H3DailyPanelError("h3_capture_axis_refused")
@@ -92,15 +103,40 @@ def capture_h3_daily_panel_once(
         return now
 
     remaining = (closes - now_in_window()).total_seconds()
-    for root in (market_root, artifact_root):
+    roots = (market_root, artifact_root)
+    for root in roots:
         if not root.is_absolute() or _safe_path(root) != root or root.exists():
             raise H3DailyPanelError("h3_capture_fresh_scope_required")
+
+    def root_id(root: Path) -> tuple[int, int]:
+        if _safe_path(root) != root or not root.is_dir():
+            raise H3DailyPanelError("h3_capture_private_scope")
+        current = root.stat(follow_symlinks=False)
+        return current.st_dev, current.st_ino
+
+    created: dict[Path, tuple[int, int]] = {}
 
     def gated_ready() -> CaptureReadiness:
         now_in_window()
         fact = owner_ready()
+        if any(root_id(path) != identity for path, identity in created.items()):
+            raise H3DailyPanelError("h3_capture_private_scope_changed")
         now_in_window()
         return fact
+
+    if private_roots:
+        if (
+            roots[0].is_relative_to(roots[1])
+            or roots[1].is_relative_to(roots[0])
+            or not all(root.parent.is_dir() for root in roots)
+        ):
+            raise H3DailyPanelError("h3_capture_private_scope")
+        for root in roots:
+            ready = gated_ready()
+            if type(ready) is not CaptureReadiness or not ready.ready or _safe_path(root) != root:
+                raise H3DailyPanelError("h3_capture_private_scope")
+            _mkdir_private(root)
+            created[root] = root_id(root)
 
     timing = {k: v for k, v in (("monotonic", monotonic), ("sleeper", sleeper)) if v is not None}
     with KisPaperDataCaptureSession(

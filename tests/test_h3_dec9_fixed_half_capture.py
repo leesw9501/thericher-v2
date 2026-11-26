@@ -284,6 +284,7 @@ def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
     def native(**kwargs):
         assert (launch.run / "owner/ATTEMPT.json").is_file()
         assert kwargs["owner_ready"] is ready
+        assert kwargs["private_roots"] is True
         if fault == "owner":
             launch.ready = False
         else:

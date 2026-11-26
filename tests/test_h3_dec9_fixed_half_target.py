@@ -119,6 +119,7 @@ def edition(tmp_path, monkeypatch):
     monkeypatch.setattr(socket.socket, "connect", no_network)
     monkeypatch.setattr(urllib.request, "build_opener", lambda *_: Opener())
     monkeypatch.setattr(capture, "_MARKET_BASE", tmp_path / "market")
+    pins.market_root.parent.mkdir()
     monkeypatch.setattr(capture, "_ARTIFACT_BASE", tmp_path / "artifacts")
     birth = f"win-filetime:{target._ticks(_OPENS)}"
     monkeypatch.setattr(sealer, "process_start", lambda pid: birth if pid == os.getpid() else None)

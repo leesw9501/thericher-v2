@@ -92,7 +92,8 @@ def test_holiday_as_of_is_not_rolled_back():
 
 
 @pytest.mark.parametrize("wrong_identity", [False, True])
-def test_native_capture_parser_to_full_panel(wrong_identity, tmp_path, monkeypatch):
+@pytest.mark.parametrize("private_roots", [False, True])
+def test_native_capture_parser_to_full_panel(wrong_identity, private_roots, tmp_path, monkeypatch):
     plan = H3DailyPanelPlan(NET25_H3_AXIS)
     tick = 0.0
     start = plan.as_of_close_utc + timedelta(minutes=10)
@@ -156,6 +157,9 @@ def test_native_capture_parser_to_full_panel(wrong_identity, tmp_path, monkeypat
     monkeypatch.setattr(urllib.request, "build_opener", lambda *_args: Opener())
     monkeypatch.setattr(capture, "_MARKET_BASE", tmp_path / "market")
     monkeypatch.setattr(capture, "_ARTIFACT_BASE", tmp_path / "artifacts")
+    if private_roots:
+        (tmp_path / "market").mkdir()
+        (tmp_path / "artifacts").mkdir()
 
     options = dict(
         plan=plan,
@@ -170,6 +174,7 @@ def test_native_capture_parser_to_full_panel(wrong_identity, tmp_path, monkeypat
         clock=clock,
         monotonic=lambda: tick,
         sleeper=sleep,
+        private_roots=private_roots,
     )
     if wrong_identity:
         with pytest.raises(H3DailyPanelError, match="page_unavailable"):
@@ -197,6 +202,36 @@ def test_native_capture_parser_to_full_panel(wrong_identity, tmp_path, monkeypat
     )
     assert tuple(row.clos for row in panel.rows[-1]) == tuple(str(11 + i) for i in range(19))
     assert panel.rows[0][0].as_document() == _wire_rows(plan, 0)[-1]
+
+
+@pytest.mark.parametrize("fault", ["owner_denied", "root_replaced"])
+def test_private_capture_refuses_before_config_or_network(tmp_path, fault):
+    plan = H3DailyPanelPlan(NET25_H3_AXIS)
+    opens = plan.as_of_close_utc + timedelta(minutes=30)
+    market_root, artifact_root = tmp_path / "market", tmp_path / "artifacts"
+
+    def ready():
+        if fault == "owner_denied":
+            return capture.CaptureReadiness(False)
+        if market_root.is_dir():
+            market_root.rename(tmp_path / "original")
+            market_root.mkdir()
+        return capture.CaptureReadiness(True)
+
+    with pytest.raises(H3DailyPanelError, match="h3_capture_private_scope"):
+        capture_h3_daily_panel_once(
+            plan=plan,
+            market_root=market_root,
+            artifact_root=artifact_root,
+            window_opens_utc=opens,
+            window_closes_utc=opens + timedelta(minutes=10),
+            clock=lambda: opens,
+            owner_ready=ready,
+            config_loader=lambda: pytest.fail("config loaded before private custody"),
+            private_roots=True,
+        )
+    assert not artifact_root.exists()
+    assert (tmp_path / "original").exists() is (fault == "root_replaced")
 
 
 def test_h3_worker_refuses_outside_window_before_touching_storage(tmp_path):

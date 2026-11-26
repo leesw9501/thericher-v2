@@ -5,6 +5,15 @@ Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 
+Nov26: offline reproduction found an installation blocker in the dated
+Dec4/Dec9 pair. Both actions pass one release digest, but restore compares
+the digest to two different phase grants. An invented entry passed and the
+matching exit refused; the real observer-contract codec also produces
+distinct digests by phase. Bind one immutable pair release with exact
+phase-local observer/restore pins. Do not make exit depend on live entry
+readiness. Verify both legs and swapped-phase refusal before install. No
+financial tasks, original H20 exit or bank authority changed.
+
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.
 The protected draft API exports exact runtime profile fields. Reuse the
