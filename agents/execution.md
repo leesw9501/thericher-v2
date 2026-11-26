@@ -247,6 +247,16 @@ sign under the frozen research 25 bp each-side scenario. Fill-price
 effects are already in the cashflow; no second slippage debit. Actual
 broker fees, settlement and measured net remain unknown. Do not call
 the arithmetic a fill, terminal proof or a measured broker-cost model.
+Optional R6 diagnostic on the same qualified ledger observation: the native
+current cumulative gross can be compared to executed quantity times the
+original independently bound limit, reversing direction for sells. Nonzero
+total gaps through one cent are separately labeled for the native amount
+agreement tolerance, not treated as proven provider rounding. Absent,
+zero, conflicting or crossed evidence remains unobserved. This does not
+prove any individual execution price, fee or slippage and changes no trade
+authority. Four invented frozen-parser tests and Ruff passed.
+`A/execution/r6-fill-limit-diagnostic-invented-20261126-v1/fill_limit_diagnostic.py`
+SHA256 `c85ba47887ab041ccb1ebeab49f50cddd34a885dfbd64645d1e4096b93d4444c`.
 Synthetic cold restart now demonstrates the same unknown request and
 reservation survive across processes without another submit (HANDOFF).
 Frozen R6 now also passed the distinct positive cold path. Its native
