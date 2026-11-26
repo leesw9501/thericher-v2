@@ -173,6 +173,21 @@ The prior producer manifest at `M/us_equities/research_inputs/current-net25-mask
 lists the exact retained COMMON hash and only the DEV role. Earlier build
 copied it unchanged to the scoped readout. This establishes input scope,
 not a new numerical result or performance claim.
+The horizon diagnostic is now closed on 47 paired DEV cohorts (188 cohort
+books, one attempt, zero fits/forwards/retries). Mean cost-adjusted growth:
+model/EW one session -8.79/-8.32 bp; three sessions -4.87/-5.97 bp. Moving
+to one session reduced the model-minus-EW edge by 1.57 bp. Mean model/EW
+sampled cohort drawdown: 0.2165/0.1819% at one and 0.3745/0.3180% at three.
+Shorter is less exposed for both; model DD was worse at each aligned
+horizon. Both model net means were negative. No compounded NAV, no model
+promotion or change to frozen Paper/research allocation.
+`A/research/current-w25-paired-open-exit-horizon-dev-20261126-v1/attempt-01/RESULT.json`
+SHA256 `47d9ed086e3bb4530591e140ba1b006d0dde7dfe2cbcbfc03d2191d8a4b9595e`.
+Same attempt's registry SHA256
+`9facdd5bc190cceece9bb32a068a10b41128a0c30260291532a1dedec4a2b089`
+matches the result, reports sealed holdout and in-cap closure. Worker exit
+zero and container removed. Parent's Claude result challenge is in the
+campaign root's `CLAUDE-RESULT-VERDICT.json`; do not retune these 47 dates.
 
 Fixed-half next unconsumed slot is Nov30 open to Dec3 open. Metadata-only
 `A/research/h3-nov30-first-slot-owner-ready-metadata-20261126-v1/owner_projection.py`
