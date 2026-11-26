@@ -110,6 +110,12 @@ passed on the direct interpreter with a scrubbed environment, before window:
 no numeric imports and no new extra-origin maps, two prior Program Files
 maps remained. This does not positively qualify those modules. Bind the
 exact protected bootstrap/profile and scoped origin, not a new data read.
+The two observed baseline Program Files images had valid non-Microsoft
+Authenticode signatures on stable held disk bytes. No paths or subjects
+were printed. `Verify-BaselineModuleSignatures.ps1` under the integrated root,
+SHA256 `1eae5fccb636760c527f7c68cf123734b2a63e69a2b2958f5c7e349c36ef5fdf`.
+Disk signatures do not prove the backing of mapped sections or grant
+runtime trust; no security settings or schedule changed.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight

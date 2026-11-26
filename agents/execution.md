@@ -69,6 +69,14 @@ It rejected missing/replaced Job receipt, wrong run/owner/observer digest,
 zero visits, abnormal recovery and the successor schema. Join the retained
 input under scoped writer exclusion before any actual read; operation
 closure is neither an attributed effect nor at-read custody evidence.
+`host-preflight/offline_readout.py` SHA256
+`0e53c0c287d28fecc6dc24d2a348c06a1df621b9070bb8ab4f32d3d2d4a1f0ef`
+passed a single-command invented flow joining phase, exact installed
+closure and retained input to the path-preserving RO consumer. The actual
+clock refused early. After the owned window it still withholds until a
+relevant-writer-excluded snapshot adapter can hold and recheck custody
+across the actual read. Reuse the existing phased exclusion pattern;
+do not certify from a successful synthetic flow or a stale census.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
