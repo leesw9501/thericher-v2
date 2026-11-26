@@ -63,6 +63,19 @@ stop. No Task was created. The final protected profile must bind the real
 entrypoint's argv, ACL and dynamic PID/birth/instance; a draft or stop cap
 is not verified runtime ownership or cleanup. Dec3 payload and proof remain
 due-time inputs, not prerequisites for drafting an absent future task.
+The production-worker candidate now returns the exact Linux Docker spec
+under one exclusive host claim. It stages only a seal; the protected host
+must dispatch, inspect, reap and retain it. Three dummy tests and actual
+pre-window refusal passed. `A/research/h3-dec4-fixed-half-production-worker-20261126-v1/worker.py`
+SHA256 `2bc34b167c629e973ad02b979110a67e6746f2e45d0fdeffa58439b270186dd8`.
+The same root's `check_host_no_site.py` SHA256
+`a6d992e9b4efe64019b134dd8de617ca3bd89033a93eef9832603595af1ee37c`
+reproduced a real `numpy` import failure with the direct registered base
+CPython `-I -S -B`. Explicit ordinary venv site resolved imports of the
+frozen code and seven metadata pins; the observed NumPy, pandas and
+calendar versions matched the lock. Pin dependencies and protect actual
+bytes before enabling; name/version/origin and source are not byte custody.
+No payload reads, Docker dispatch or task changes in this check.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
