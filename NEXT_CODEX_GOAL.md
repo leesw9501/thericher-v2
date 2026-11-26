@@ -71,8 +71,9 @@ gate, bounded observer/daemon and native retired-writer/census checks.
 Before arming, old authority retirement is checked; recheck it and the
 current census inside the bank gate through the actual write. Freeze the
 qualified release from the actual writer topology, not a declarative roster.
-The two R8 old tasks are still Enabled with no future trigger; do not admit
-them as retired or retire the existing Dec1 H20 owned exit.
+The two expired R8 task definitions are now disabled with exact independent
+retirement readback (HANDOFF). This is not current process/container custody;
+still qualify the actual writer census. Preserve the Dec1 H20 exit and reader.
 The Dec1 phase-specific readout and offline guest now distinguish entry
 from exact exit and passed synthetic/native checks. The phase host adapter
 checks explicit RO mount targets and a separately published digest. It

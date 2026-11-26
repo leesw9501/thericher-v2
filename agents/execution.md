@@ -13,8 +13,9 @@ distinct digests by phase. The tracked fix binds one immutable pair release
 and exact phase-local observer/restore pins in startup, lease and restore.
 Both legs passed with the same release; wrong phase/legacy/tampered release
 failed closed. Exit binding succeeded with an invalid entry observer pin.
-Freeze the real pair release and protected runtime definition next. No
-financial tasks, original H20 exit or bank authority changed.
+Freeze the real pair release and protected runtime definition next. The
+direct COM draft builder passed both invented phases and rejected crossed
+action hashes. Neither future financial task is installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.
@@ -49,8 +50,9 @@ closure is now retained and re-attested under the bank gate; automatic
 observer restore has a native upper deadline. The tracked no-site child now
 checks the protected source and connects exact root closure to the restore
 coordinator. The concrete release projection now binds the same bank gate,
-native retirement and current census. Actual R8 is still Enabled with no
-future time; do not infer retirement. Freeze actual same-gate proof and
+native retirement and current census. Exact expired R8 definitions are now
+disabled and independently read back; no custody or detached closure is
+inferred. Freeze actual same-gate proof and
 preserve the pending Dec1 H20 exit before operational release.
 The H20 phase-specific native reader now preserves entry and exit
 separately; the read-only guest passed synthetic Docker admission. The host

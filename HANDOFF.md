@@ -93,6 +93,14 @@ two static non-financial phase grants. In `SOURCE.json`, the
 observer plan, restore daemon and writer guard. Both exact phase bindings
 passed together offline; the exit still passed with an invalid entry
 observer pin. The actual pair is not packaged or installed.
+In its new external release root
+`A/execution/h3-dec4-dec9-native-release-20261126-v1`,
+`NATIVE-DRAFT-SMOKE.json` SHA256
+`b1c4e836b9799a374e1f696bdb30157b0b25529a01a59fac73c258a7657f61dd`
+documents unregistered native drafts from an invented typed plan.
+The builder retains UTC strings during JSON input; otherwise PowerShell's
+date coercion changes the ABI. Both action hashes matched, wrong plan
+hash and crossed action evidence were refused. No tasks were registered.
 
 The named Dec4/Dec9 normal path now composes the scheduled BankLeg,
 supervised-input adapter and existing capsule. It creates one source-owned
@@ -296,10 +304,16 @@ the fixture was never enabled and was removed. Evidence:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 RESTORE-RETIREMENT-NATIVE-20261126.json, SHA256
 `0bd5c01212e3fb0b7551db8969bf7067d8080139627b6d925ad5e647395399a8`.
-Actual old R8 definitions are Enabled with no future clocks. This code must
-not be released until they are positively retired and other remaining
-financial writers are shown to acquire the same physical gate. Preserve the
-installed Dec1 14:25 UTC H20 SPY owned exit; it is not a retired authority.
+The two exhausted R8 definitions are now disabled. Both complete native
+readbacks matched the old parent adoption before mutation; no future clock,
+demand/catch-up/repeat or hidden instance was found. Exact enabled backup and
+disabled roster are under
+`A/execution/h3-dec4-dec9-native-release-20261126-v1/r8-definition-retirement`.
+`RETIRED-ROSTER.json` SHA256
+`ef508fbcee0bc323730b194b4c3eb63f0312dfb51693379996b971eda9382a3b`
+passed the independent tracked retirement reader. That proves disabled
+definitions, not detached-process/container closure, original custody or
+bank admission. The installed Dec1 H20 exit and reader remain Ready.
 The pinned H20 compatibility reader reports the entry's attempt, acceptance,
 fill and terminal fields; an exit fill only changes its inventory projection.
 Before Dec1 qualify a separate exit-specific categorical readout against

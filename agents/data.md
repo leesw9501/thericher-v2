@@ -63,6 +63,11 @@ binds the fresh runtime fingerprint, successful direct cold-start guard,
 refused `--run`, and passed invented typed owner/credential-loader fixture.
 All outputs are separate from the older pins. This is not a native launch
 prebind, new data capture, or Scheduler installation.
+The candidate custody callback `dec9-private-custody-readback.py` SHA256
+`4773b0eb560255246b15d475450b500ccffae7b5f1dacfdf74d5e87574657937`
+passed the invented Windows DACL, creator identity, and changed-root checks.
+Bind it to identities emitted by the actual three directory creations;
+observing an existing leaf is not proof of ownership. No real roots changed.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not
