@@ -1,6 +1,6 @@
 # Runbook
 
-Updated Nov9UTC11:43 / Nov9KST20:43. Company outcome UNFINISHED.
+Updated 2026-11-26. Company outcome UNFINISHED.
 Workspace C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Current reality: HANDOFF.md. Authority: AGENTS.md. Historical runnable scopes:
@@ -172,7 +172,10 @@ A/research/h3-nov30-fixed-half-forecast-20261130-v1/run after the opportunity.
 A seal without its exact owner receipt is not admitted. No manual start,
 catch-up, targets or orders.
 
-## Current Deployment
+## Historical November R8 Deployment
+
+Do not run any of the following as current instructions. The current H20
+and R6 definitions and exact readouts are listed above and in HANDOFF.md.
 
 R8 SOURCE29ccc64da6c2c23282d9411ddad90762cf6ae77f18be00790b56d6afeb2bcefd
 ACTUALLY installed on the original pair by Nov7UTC02:58:40. Qualified repair2
