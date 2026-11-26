@@ -16,6 +16,18 @@ UTC; the dual candidate preserves both slots if qualified. The actual writer
 exclusion and Dec4 research forecast seal are still unproved. Keep the first
 installed Nov27/Nov30 pair unchanged and the later target embargo intact.
 
+Regime-input triage, Nov26: do not rerun the rejected RV20 sizing rule.
+The pinned H.15 snapshot `D:/market_data/us_equities/federal_reserve_h15/snapshot=20261007T204212Z`
+manifest SHA256 `6b2c62423470f12c17d22a634d4d5018ed7f6682d5a5875bc08c6ffd9e49e393`
+passed the native reader. Its 30-calendar-day lag / 7-day staleness selector
+found 243 noninverted, zero inverted, zero unavailable on every New York
+calendar date Dec1 2025-Jul31 2026 inclusive, a superset of this seen DEV
+decision period. There is no sign contrast to test here; no model/price/target
+payload read. Revised history and the lag do not prove historical visibility.
+One no-auth, no-retention Cboe VIX availability call for Nov25 before Nov27
+open returned `unavailable`, no receipt. The generic status does not locate
+the cause. Do not retry this attempt or promote VIX history into the H3 block.
+
 Nov26 parallel research triage: the retained Oct26-29 one-minute DEV slice
 has a complete 17-name regular-session grid, but no qualified quote or
 publication-time evidence. Reserve it for price-timing sensitivity, not fill
