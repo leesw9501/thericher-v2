@@ -28,6 +28,16 @@ One no-auth, no-retention Cboe VIX availability call for Nov25 before Nov27
 open returned `unavailable`, no receipt. The generic status does not locate
 the cause. Do not retry this attempt or promote VIX history into the H3 block.
 
+W25 cost interpretation without rerun, Nov26: read only the closed 47-cohort
+DEV `A/research/current-w25-paired-open-exit-horizon-dev-20261126-v1/attempt-01/RESULT.json`
+SHA256 `47d9ed086e3bb4530591e140ba1b006d0dde7dfe2cbcbfc03d2191d8a4b9595e`.
+For fixed marks and quantities, gross mean = archived net mean + fee at
+25 bp/side; break-even per side = 25 * gross mean / archived mean fee.
+Model/EW break-even is 7.43/8.37 bp at H1, 15.27/13.07 bp at H3.
+This is a cost-sensitivity reference for later Paper observations, not a
+lower-cost replay, drawdown estimate, criterion change or live fee claim.
+An independent role checked the arithmetic; no payload, fit or forward.
+
 Nov26 parallel research triage: the retained Oct26-29 one-minute DEV slice
 has a complete 17-name regular-session grid, but no qualified quote or
 publication-time evidence. Reserve it for price-timing sensitivity, not fill
