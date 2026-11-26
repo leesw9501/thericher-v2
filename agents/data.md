@@ -260,6 +260,13 @@ including refusal of development access, passed. Not enrolled or selected.
 `A/data/h3-dec9-dual-output-alternative-v1/RESULT.json` SHA256
 `8054896b03a1675e9ea05fb4724370081f15c3f0b05e5527d5d7827fed271b8a`.
 Actual owner/Job return and inference-only mount isolation remain required.
+The Dec9 alternative's integrated no-site bootstrap refused before the
+window without file/launch effects; on the invented boundary it withheld
+until the protected host was bound. A separate invented Job return joined
+target closure and next-prefix readiness only after zero exit and empty
+Job; a crossed digest withheld. Not enrolled or writer-excluded.
+`A/data/h3-dec9-dual-bootstrap-return-candidate-v1/RESULT.json` SHA256
+`167f72c4096b0808c892bf238deadfe7aa78e0a7e195fbe5b7badc82c8fef912`.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

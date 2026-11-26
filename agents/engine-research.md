@@ -123,6 +123,13 @@ loader paths in two stable samples of the scrubbed direct interpreter.
 This corroborates section path names, not section file identity, mapped
 bytes or production qualification. Do not repeat known probes for an
 apparently clean sample; use this boundary when pinning the exact host.
+Both exact baseline files self-describe Fasoo as their company in local
+version metadata. `Read-BaselineModuleProduct.ps1` SHA256
+`29c65e9a917c12c89fcec9850e0d13d3f77a8d0fc4f6fb74b382e150d482624f`
+and `CLAUDE-LOCAL-ORIGIN-VERDICT.json` are in the integrated root. This
+identifies a local source clue, not runtime trust. Prefer an existing
+qualified route if available; hold only this research slot otherwise.
+No security setting changes or repeated pathname tests.
 The exact direct bootstrap and Scheduler profile intent survived a native
 in-memory round trip; direct `pythonw -I -S -B` refused pre-window with
 exit 20. `A/research/h3-dec4-fixed-half-protected-bootstrap-20261126-v1/PROFILE-INTENT.json`
