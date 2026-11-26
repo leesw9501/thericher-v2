@@ -5,12 +5,27 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
-Nov26 focus: preserve Nov27/Nov30 and Dec1/Dec4/Dec9 installed owners.
-Execution is qualifying the original-alias snapshot consumer without touching
-live custody. Dec9 Data alternative remains unenrolled. The Dec4 forecast
-host is scoped withheld; do not repeat known origin probes, add a duplicate
-forecast or promote another fit on reused outcomes to fill the wait.
-Use the earliest already-owned opportunities for the first real evidence.
+Nov26 throughput review: no new financial writer or independent evaluator
+is ready before the installed owners. At 09:51 UTC the five named H3/Paper
+windows remained Ready with their original future clocks, no project task
+was Running and D: had 32.8% free. The prior real/reused and invented checks
+are closed; do not dispatch only to fill time or infer company completion.
+
+- Data/Research: Nov27 18:30 UTC needs actual source-bound capture closure
+  and READY before the installed Nov30 forecast; an independent return also
+  needs admitted target closure and the existing embargo. The separate Dec9
+  dual candidate remains unenrolled until protected custody qualifies.
+- Execution: the Nov26 14:50 UTC recurring SPY owner retains exact recovery
+  duty, not an alternate entry. The next attributable opportunity is the
+  original Dec1 exit/readout, then the original Dec4/Dec9 R6 pair. F9 needs
+  an exact newly evidenced order-reference/state join, not another generic query.
+- Alternative engineering one-share preparation stays uninstalled unless an
+  actual owned outcome makes it useful and its own scope qualifies. Another
+  reused-DEV screen, repeated origin probe or synthetic read is not a
+  substitute for these dependencies. No foreground or new follow-up worker.
+
+Tools-off Claude Sonnet challenge agreed on the scoped classification; the
+verdict is `A/execution/r6-fill-limit-diagnostic-invented-20261126-v1/THROUGHPUT-CLAUDE-VERDICT.json`.
 
 R6 deployment: installed and independently read back Dec4 entry / Dec9 owned
 exit; exact Ready definitions, no running instance or effect. Claims changed
