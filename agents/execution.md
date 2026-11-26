@@ -2,6 +2,18 @@
 
 Updated 2026-11-26. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
+Cost attribution source review: exact intent-to-cumulative-fill joins do not
+establish broker execution time, pre-submit spread, decision slippage or fees.
+The current stock cycle uses `kis_paper_stock_execute`; its sell-side quote is
+available before submit but not durable in the canary state. For a separately
+qualified successor, evaluate retaining that existing quote with the exact
+submit intent, without an extra call or changes to R6. This would measure
+fill versus quote, not supply missing broker fee or settlement evidence.
+The public KIS sample distinguishes Paper `inquire_ccnl` from the separate
+settlement and period-profit interfaces; do not assume those are Paper fee
+sources or turn missing fees into zero. Source:
+<https://github.com/koreainvestment/open-trading-api/blob/main/examples_user/overseas_stock/overseas_stock_functions.py>.
+
 R6 status supersedes earlier draft notes: named Dec4 entry/Dec9 exit are
 installed Ready, zero instances, exact full readback in HANDOFF. No manual
 start or broker call. Next prepare the phase result readers, leave Dec1 H20
