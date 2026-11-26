@@ -7,11 +7,18 @@ from datetime import datetime
 from itertools import islice
 from pathlib import Path
 
-from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture, _mkdir_private
+from thericher_v2.data.kis_paper_h3_capture import (
+    H3DailyCapture,
+    _mkdir_private,
+    _private_root_identity,
+)
 from thericher_v2.execution.kis_paper_data_capture import _safe_path
 from thericher_v2.execution.paper_peer_visit import process_start
 from thericher_v2.ops import h3_dec9_fixed_half_target as target
 from thericher_v2.research.prospective_h3_target_custody import _digest, _json, _sha
+
+RootRegistration = Callable[[str, Path, tuple[int, int]], bool]
+ChildRegistration = Callable[[Path, tuple[int, int]], bool]
 
 
 def _members(root: Path):
@@ -27,7 +34,10 @@ def write_dec9_fixed_half_capture(
     pins: target.Dec9TargetPins,
     *,
     prebind_sha256: str,
-    capture_once: Callable[[target.H3DailyPanelPlan], H3DailyCapture],
+    capture_once: Callable[
+        [target.H3DailyPanelPlan, ChildRegistration, Callable[[], None]], H3DailyCapture
+    ],
+    register_created_root: RootRegistration,
     owner_ready: Callable[[], bool],
     clock: Callable[[], datetime],
 ) -> str:
@@ -37,6 +47,8 @@ def write_dec9_fixed_half_capture(
     actual source, isolated roots/ACLs and delegated launch. The callback must
     run synchronously in this process with the exact pinned roots/window and
     native effect-time gates, and return the original closed H3DailyCapture.
+    Registration must independently bind exact creations under qualified parent
+    boundaries; the observations passed here are not creator proof.
     This writer takes no credentials and reads no page or wire-body bytes.
 
     Retain the returned OWNER-CLOSED digest only on success, with independent
@@ -46,6 +58,8 @@ def write_dec9_fixed_half_capture(
     """
     if type(pins) is not target.Dec9TargetPins or not _digest(prebind_sha256):
         raise ValueError("dec9_capture_binding")
+    if not callable(register_created_root):
+        raise ValueError("dec9_capture_root_registration")
     plan = target.H3DailyPanelPlan(target.NET25_H3_AXIS, target.INTERVAL.expiry)
     if pins._prebind(plan) != prebind_sha256:
         raise ValueError("dec9_capture_prebind")
@@ -56,6 +70,12 @@ def write_dec9_fixed_half_capture(
     source = data / "source/SOURCE.json"
     pid = os.getpid()
     last = pins.capture_opens
+    expected_roots = (("run", run), ("market", market), ("capture", capture))
+    registered: dict[Path, tuple[int, int]] = {}
+
+    def verify_roots():
+        if any(_private_root_identity(path) != identity for path, identity in registered.items()):
+            raise ValueError("dec9_capture_root_changed")
 
     def time_check(deadline):
         nonlocal last
@@ -69,7 +89,42 @@ def write_dec9_fixed_half_capture(
         time_check(deadline)
         if process_start(pid) != birth or owner_ready() is not True:
             raise ValueError("dec9_capture_owner")
+        verify_roots()
         return time_check(deadline)
+
+    def register(path, identity):
+        index = len(registered)
+        if index >= len(expected_roots) or expected_roots[index][1] != path:
+            raise ValueError("dec9_capture_root_registration")
+        if (
+            type(identity) is not tuple
+            or len(identity) != 2
+            or any(type(part) is not int for part in identity)
+            or identity[0] < 0
+            or identity[1] <= 0
+            or _private_root_identity(path) != identity
+        ):
+            raise ValueError("dec9_capture_root_registration")
+        # The new root exists but is not yet registered. Ordinary readiness may
+        # require all unregistered roots to be absent; the registrar owns this transition.
+        time_check(pins.capture_closes)
+        if process_start(pid) != birth:
+            raise ValueError("dec9_capture_owner")
+        verify_roots()
+        try:
+            accepted = register_created_root(expected_roots[index][0], path, identity)
+        except Exception:
+            raise ValueError("dec9_capture_root_registration") from None
+        if accepted is not True:
+            raise ValueError("dec9_capture_root_registration")
+        registered[path] = identity
+        gate(pins.capture_closes)
+        return True
+
+    def register_child(path, identity):
+        if not registered:
+            raise ValueError("dec9_capture_root_registration")
+        return register(path, identity)
 
     def observe(path, digest, limit):
         identity = target._fingerprint(path)
@@ -114,6 +169,7 @@ def write_dec9_fixed_half_capture(
         if int(birth.split(":")[1]) > target._ticks(started):
             raise ValueError("dec9_capture_process")
         _mkdir_private(run)
+        register(run, _private_root_identity(run))
         owner.mkdir()
         attempt_sha = write(
             owner / "ATTEMPT.json",
@@ -131,8 +187,10 @@ def write_dec9_fixed_half_capture(
         if observe(source, pins.source_sha256, target._NATIVE_LIMIT)[0] != source_id:
             raise ValueError("dec9_capture_changed")
         dispatched = gate(pins.capture_closes)
-        result = capture_once(plan)
+        result = capture_once(plan, register_child, verify_roots)
         returned = gate(pins.seal_before)
+        if len(registered) != len(expected_roots):
+            raise ValueError("dec9_capture_root_registration")
         if not (
             type(result) is H3DailyCapture
             and _digest(result.state_sha256)

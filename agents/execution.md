@@ -21,6 +21,10 @@ diagnostic's observed ancestry and one outside it. One running container
 matched a projected rule. Use HANDOFF's count-only evidence to target the
 actual caller/Job and the independent actor, not to exempt either or admit
 financial effects. H20 Dec1 remains unchanged.
+Actual inert direct root/watchdog joined the two expected Windows identities
+against the pinned CIM inventory in 2.011 s and refused a 100 ns birth change
+(HANDOFF). The live scheduled profile, restore child and attach exchange
+still need their exact release; do not use this time as the guest ACK bound.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

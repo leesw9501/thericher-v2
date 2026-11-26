@@ -50,12 +50,18 @@ no change to shared parent ACLs or the default H3 capture path. An invented
 Windows child directory and its file did not inherit the test parent's
 common-group grant. The focused suite passed 101 tests. Real Scheduler
 binding still needs the fixed source and effect-time custody/owner proof.
-The next bounded source change is to pass the creation-bound identity
-from the three existing root creators to the protected owner callback.
-Reject pre-existing/substituted roots; prove the parent protects the
-creation-to-identity interval or use the native creation identity. Verify
-again before capture-session entry and sealing. No Data task is installed
-by this review.
+The tracked path now requires the protected owner to acknowledge three
+exclusive creations in order: run, market, capture. Config and session
+entry require all three; path drift withholds sealing. The observed path
+identity is not creation proof. A standalone D: fixture independently
+passed on the production Python 3.14.3: relative `NtCreateFile` create-new
+returned the original directory handle, protected DACL and stable native
+ID/creation time. Existing-leaf creation and rename/deletion while held
+were refused. See `dec9-native-directory-create-probe.py` in this package,
+SHA256 `918b7567c6d7f000c465ddc6910147a78843fa1f6c275ff5824fb96c94d61d73`.
+Next bind this handle to the real creator and retain the exact parent
+namespace across path use; the fixture did not prove the real ancestors
+or same-principal isolation. No Dec9 target Data task was installed.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

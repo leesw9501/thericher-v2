@@ -516,6 +516,15 @@ Claude's categorical challenge is `WRITER-DIAGNOSTIC-CLAUDE-VERDICT.json`
 beside it. Bind the actual launcher/Job lineage and qualify other current
 actors with the scoped classifier before protecting the release and restore
 profile. No scheduled definitions or private custody changed.
+The direct no-site `pythonw` native root/watchdog join passed using the pinned
+CIM collector and exact process handles. It returned only the two expected
+actors and refused a 100 ns native birth mismatch. Collection plus join took
+2.011 s; this excludes live Scheduler, Docker and effect-time admission.
+Same root, `INERTNATIVEROOTWATCHR2.json`, SHA256
+`05e1aa81a0fb28f5edfd4b971d29870ba0c1504afab363fa9c280499da671ee2`.
+R1 refused without the explicit no-site timezone dependency. Use the derived
+post-install profile with an independently protected anchor, not a hash cycle
+through the source/action; Claude verdict `PAIR-PROFILE-CLAUDE-VERDICT.json`.
 The live Compose `web` role and prior Paper worker share the exact emergency
 named volume. The worker's existing readers open a writable lock even on
 read; an inert current-image named volume proved a read-only remount refuses

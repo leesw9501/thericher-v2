@@ -111,8 +111,22 @@ def edition(tmp_path, monkeypatch):
         nonlocal now
         now += timedelta(seconds=seconds)
 
+    registered = []
+
+    def register(role, path, identity):
+        info = path.stat()
+        assert identity == (info.st_dev, info.st_ino)
+        assert not calls
+        registered.append((role, path))
+        return True
+
     def config_loader():
         assert (owner / "ATTEMPT.json").is_file() and not calls
+        assert registered == [
+            ("run", run),
+            ("market", pins.market_root),
+            ("capture", run / "capture"),
+        ]
         config_loads.append(True)
         return market.KisPaperMarketDataConfig(app_key="invented-key", app_secret="invented-secret")
 
@@ -128,6 +142,7 @@ def edition(tmp_path, monkeypatch):
         prebind_sha256=initial_digest,
         clock=lambda: now,
         owner_ready=lambda: capture.CaptureReadiness(True),
+        register_created_root=register,
         config_loader=config_loader,
         monotonic=lambda: (now - _OPENS).total_seconds(),
         sleeper=advance,

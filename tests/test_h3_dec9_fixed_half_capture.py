@@ -4,6 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 
+from thericher_v2.data import kis_paper_h3_capture as native_capture
 from thericher_v2.data.kis_paper_h3_capture import H3DailyCapture
 from thericher_v2.data.kis_paper_h3_daily_panel import qualify_h3_daily_panel
 from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness, CaptureResult
@@ -45,6 +46,7 @@ def launch(tmp_path, monkeypatch):
         closure=closure,
         ready=True,
         calls=0,
+        registrations=[],
         native_start=birth,
         change_state=lambda state: None,
         state_path=run / "capture/capture-state.json",
@@ -53,12 +55,20 @@ def launch(tmp_path, monkeypatch):
     monkeypatch.setattr(producer, "process_start", lambda _pid: box.native_start)
     prebind = pins.prebind_sha256
 
-    def native(plan):
+    def register(role, path, identity):
+        assert identity == (path.stat().st_dev, path.stat().st_ino)
+        box.registrations.append(role)
+        return True
+
+    def native(plan, register_child, verify_roots):
         box.calls += 1
         assert attempt.is_file() and not closure.exists()
         assert not pins.market_root.exists() and not box.state_path.parent.exists()
-        box.state_path.parent.mkdir()
-        pins.market_root.mkdir()
+        for path in (pins.market_root, box.state_path.parent):
+            path.mkdir()
+            info = path.stat()
+            assert register_child(path, (info.st_dev, info.st_ino)) is True
+        verify_roots()
         started = box.now
         completed, captures = {}, []
         for col, query in enumerate(plan.queries, 1):
@@ -113,6 +123,7 @@ def launch(tmp_path, monkeypatch):
         options = dict(
             prebind_sha256=prebind,
             capture_once=native,
+            register_created_root=register,
             owner_ready=lambda: box.ready,
             clock=lambda: box.now,
         )
@@ -133,6 +144,7 @@ def test_metadata_surround_round_trips_without_opening_pages(launch, monkeypatch
     monkeypatch.setattr(target, "_bounded_read", track)
     digest = launch.write()
     assert launch.calls == 1 and _sha(launch.closure.read_bytes()) == digest
+    assert launch.registrations == ["run", "market", "capture"]
     assert set(visited) == {
         "SOURCE.json",
         "ATTEMPT.json",
@@ -198,10 +210,10 @@ def test_preflight_denial_leaves_no_attempt(launch, fault):
     ],
 )
 def test_incomplete_capture_consumes_attempt_without_closure(launch, fault, error):
-    def native(plan):
+    def native(*args):
         if fault == "pending":
             launch.change_state = lambda state: state.update(pending={"method": "GET"})
-        result = launch.native(plan)
+        result = launch.native(*args)
         if fault == "stale_digest":
             launch.state_path.write_bytes(b"changed")
         elif fault == "closed_late":
@@ -273,6 +285,7 @@ def test_owner_entry_denies_before_native_capture(launch, monkeypatch, fault):
             prebind_sha256="f" * 64 if fault == "prebind" else launch.prebind,
             clock=lambda: launch.now,
             owner_ready=lambda: readiness,
+            register_created_root=lambda *_: True,
             config_loader=lambda: pytest.fail("config loaded on denied entry"),
         )
     assert not launch.run.exists()
@@ -283,7 +296,7 @@ def test_owner_entry_denies_before_native_capture(launch, monkeypatch, fault):
 def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
     def native(**kwargs):
         assert (launch.run / "owner/ATTEMPT.json").is_file()
-        assert kwargs["owner_ready"] is ready
+        assert kwargs["owner_ready"]().ready
         assert kwargs["private_roots"] is True
         if fault == "owner":
             launch.ready = False
@@ -301,6 +314,7 @@ def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
             prebind_sha256=launch.prebind,
             clock=lambda: launch.now,
             owner_ready=ready,
+            register_created_root=lambda *_: True,
             config_loader=lambda: pytest.fail("config loaded after loss of authority"),
         )
 
@@ -311,3 +325,72 @@ def test_owner_entry_rechecks_before_loading_config(launch, monkeypatch, fault):
     launch.now, launch.ready = _OPENS, True
     with pytest.raises(ValueError, match="dec9_capture_fresh_scope"):
         run()
+
+
+@pytest.mark.parametrize("fault", ["missing", "deny", "truthy", "exception", "replace"])
+def test_run_registration_fails_before_attempt(launch, fault):
+    def register(role, path, identity):
+        assert role == "run" and path == launch.run
+        if fault == "exception":
+            raise RuntimeError("invented internal detail")
+        if fault == "replace":
+            path.rename(path.with_name("moved-run"))
+            path.mkdir()
+            return True
+        return 1 if fault == "truthy" else False
+
+    with pytest.raises(ValueError, match="^dec9_capture_root_(registration|changed)$"):
+        launch.write(register_created_root=None if fault == "missing" else register)
+    assert launch.calls == 0
+    assert launch.run.exists() is (fault != "missing")
+    assert not (launch.run / "owner").exists()
+
+
+@pytest.mark.parametrize("fault", ["market", "capture", "replace_capture", "replace_run"])
+def test_child_denial_or_drift_blocks_native_session_entry(launch, monkeypatch, fault):
+    def register(role, path, identity):
+        assert identity == native_capture._private_root_identity(path)
+        if role == fault:
+            return False
+        if role == "capture" and fault.startswith("replace_"):
+            replaced = path if fault == "replace_capture" else launch.run
+            replaced.rename(replaced.with_name(f"moved-{replaced.name}"))
+            replaced.mkdir()
+        return True
+
+    def forbidden(*args, **kwargs):
+        pytest.fail("native session or config entered without all roots bound")
+
+    monkeypatch.setattr(native_capture, "KisPaperDataCaptureSession", forbidden)
+    with pytest.raises(ValueError, match="^dec9_capture_root_(registration|changed)$"):
+        entry.run_dec9_target_owner(
+            launch.pins,
+            prebind_sha256=launch.prebind,
+            clock=lambda: launch.now,
+            owner_ready=lambda: CaptureReadiness(True),
+            register_created_root=register,
+            config_loader=forbidden,
+        )
+    assert not launch.closure.exists()
+
+
+def test_unreported_children_cannot_seal(launch):
+    def native(plan, _register_child, verify_roots):
+        return launch.native(plan, lambda *_: True, verify_roots)
+
+    with pytest.raises(ValueError, match="^dec9_capture_root_registration$"):
+        launch.write(capture_once=native)
+    assert launch.registrations == ["run"]
+    assert not launch.closure.exists()
+
+
+def test_returned_capture_can_seal_at_capture_cutoff(launch):
+    def native(*args):
+        result = launch.native(*args)
+        assert result.closed_at < launch.pins.capture_closes
+        launch.now = launch.pins.capture_closes
+        return result
+
+    digest = launch.write(capture_once=native)
+    assert _sha(launch.closure.read_bytes()) == digest
+    assert launch.registrations == ["run", "market", "capture"]

@@ -10,7 +10,11 @@ from thericher_v2.data.kis_paper_h3_capture import (
 from thericher_v2.data.kis_paper_h3_daily_panel import H3DailyPanelPlan
 from thericher_v2.execution.kis_market_data import KisPaperMarketDataConfig
 from thericher_v2.execution.kis_paper_data_capture import CaptureReadiness
-from thericher_v2.ops.h3_dec9_fixed_half_capture import write_dec9_fixed_half_capture
+from thericher_v2.ops.h3_dec9_fixed_half_capture import (
+    ChildRegistration,
+    RootRegistration,
+    write_dec9_fixed_half_capture,
+)
 from thericher_v2.ops.h3_dec9_fixed_half_target import Dec9TargetPins, _utc
 
 
@@ -20,6 +24,7 @@ def run_dec9_target_owner(
     prebind_sha256: str,
     clock: Callable[[], datetime],
     owner_ready: Callable[[], CaptureReadiness],
+    register_created_root: RootRegistration,
     config_loader: Callable[[], KisPaperMarketDataConfig],
     monotonic: Callable[[], float] | None = None,
     sleeper: Callable[[float], None] | None = None,
@@ -32,6 +37,8 @@ def run_dec9_target_owner(
     before attempt creation, at native effects and through sealing. It must
     work before ATTEMPT exists and after the capture window; the two existing
     primitives enforce their own distinct deadlines.
+    A protected registrar must acknowledge the exclusive run, market and
+    capture creations. A path stat alone cannot provide this authority.
 
     This entry does not bootstrap a source, retry, or establish process exit.
     The reader still requires independent positive process-tree closure.
@@ -51,7 +58,22 @@ def run_dec9_target_owner(
             raise ValueError("dec9_owner_config_denied")
         return config_loader()
 
-    def capture_once(plan: H3DailyPanelPlan) -> H3DailyCapture:
+    def capture_once(
+        plan: H3DailyPanelPlan,
+        register_child: ChildRegistration,
+        verify_roots: Callable[[], None],
+    ) -> H3DailyCapture:
+        def capture_ready() -> CaptureReadiness:
+            fact = owner_ready()
+            verify_roots()
+            return fact
+
+        def capture_config() -> KisPaperMarketDataConfig:
+            verify_roots()
+            config = load_config()
+            verify_roots()
+            return config
+
         return capture_h3_daily_panel_once(
             plan=plan,
             market_root=pins.market_root,
@@ -59,17 +81,19 @@ def run_dec9_target_owner(
             window_opens_utc=pins.capture_opens,
             window_closes_utc=pins.capture_closes,
             clock=clock,
-            owner_ready=owner_ready,
-            config_loader=load_config,
+            owner_ready=capture_ready,
+            config_loader=capture_config,
             monotonic=monotonic,
             sleeper=sleeper,
             private_roots=True,
+            on_root_created=register_child,
         )
 
     return write_dec9_fixed_half_capture(
         pins,
         prebind_sha256=prebind_sha256,
         capture_once=capture_once,
+        register_created_root=register_created_root,
         owner_ready=seal_ready,
         clock=clock,
     )

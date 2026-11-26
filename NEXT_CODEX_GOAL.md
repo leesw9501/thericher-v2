@@ -15,9 +15,10 @@ Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only
 probe in HANDOFF distinguishes diagnostic ancestry but is not an allowlist.
 Do not spend another run guessing from raw process output; use the actual
-protected caller and exact physical scope. Then bind the independent restore
-owner and qualify
-the now-wired root watchdog with the actual Scheduler/Job shape. Its scheduled BankLeg
+protected caller and exact physical scope. The inert direct root/watchdog
+CIM join passed; the actual Scheduler/Job and 13-second guest acknowledgement
+are not proved. Bind the independent restore owner and anchor the derived
+post-install profile separately from the source digest it cites. The scheduled BankLeg
 now stages and verifies the exact new
 capsule workspace before calling the existing native account worker.
 Protect the final phase profiles and source using the existing installer.
@@ -305,14 +306,14 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    empty bytecode-cache path. The host adapter now passes the invented
    typed activation/credential-loader fixture. Actual output parents
    confer generic write on descendants. The tracked Dec9 path now creates
-   private run and capture roots; a native synthetic test verified the
-   ACL and file inheritance. Wire the corrected frozen source and scoped
-   live-root checks to native Scheduler/runtime evidence. Its corrected
-   runtime manifest, guard and invented typed host checks are now refreshed
-   against the new candidate (Data stateboard). Do not alter shared parent
-   ACLs. The CLI stays
-   disabled until that launcher binds custody and independently retained protected
-   pins; do not duplicate capture or open outcomes before block-end.
+   private roots and registers its run, market and capture creations before
+   starting the capture session. A path identity check detects drift but
+   does not prove creation. The atomic create-new handle passed on synthetic
+   D: paths (Data stateboard). Wire it to the exact parent namespace and
+   original creation identity, then bind the updated source and native Scheduler
+   owner. Do not alter shared parent ACLs. The CLI stays disabled until
+   the protected host proves that binding; do not duplicate capture or
+   open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.

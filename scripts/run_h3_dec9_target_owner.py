@@ -225,9 +225,24 @@ class ProtectedNativeOwner(Protocol):
     isolated source and custody, launcher/interpreter/dependencies, config
     access scope, and the live instance's link to this process. Policy digests
     identify nonsecret bindings, not credentials or expected plan echoes.
+
+    Before creation, prove() must qualify the exact parent namespaces against
+    replacement, deletion and reparse traversal, including same-principal
+    writers. Ordinary prove() may require unregistered roots to be absent.
+    register_created_root() alone handles the transition: it must freshly
+    verify the same binding with exactly the next root just created, independently
+    attest creation by this instance and commit the registration before returning
+    True. Later prove() calls must enforce the registered binding through all
+    path-based effects and sealing.
+    Merely reopening the path, comparing its stat, or echoing inputs is not
+    proof; a host unable to enforce this boundary must not activate.
     """
 
     def prove(self) -> NativeOwnerProof: ...
+
+    def register_created_root(
+        self, proof: NativeOwnerProof, role: str, path: Path, identity: tuple[int, int]
+    ) -> bool: ...
 
     def load_paper_market_data_config(self, config_scope_sha256: str) -> object: ...
 
@@ -411,6 +426,9 @@ def activate_target_owner(
     load_scoped_config = getattr(host, "load_paper_market_data_config", None)
     if not callable(load_scoped_config):
         raise ValueError("dec9_native_config")
+    register_root = getattr(host, "register_created_root", None)
+    if not callable(register_root):
+        raise ValueError("dec9_native_root_registration")
     bound = bind_target_owner(
         prebind.source_sha256,
         prebound_at=prebind.prebound_at,
@@ -440,11 +458,40 @@ def activate_target_owner(
                 lost = True
         return CaptureReadiness(not lost)
 
+    run = DATA_ROOT / "run"
+    expected_roots = (("run", run), ("market", MARKET_ROOT), ("capture", run / "capture"))
+    registered_count = 0
+
+    def register_created_root(role, path, identity):
+        nonlocal lost, registered_count
+        try:
+            _capture_window()
+            if not (
+                registered_count < len(expected_roots)
+                and (role, path) == expected_roots[registered_count]
+                and type(identity) is tuple
+                and len(identity) == 2
+                and all(type(part) is int for part in identity)
+                and identity[0] >= 0
+                and identity[1] > 0
+                and not lost
+                and process_start(pid) == original.birth
+                and register_root(original, role, path, identity) is True
+                and ready().ready
+            ):
+                raise ValueError("dec9_native_root_registration")
+            _capture_window()
+        except Exception:
+            lost = True
+            raise ValueError("dec9_native_root_registration") from None
+        registered_count += 1
+        return True
+
     config_attempted = False
 
     def load_config():
         nonlocal config_attempted
-        if config_attempted or not ready().ready:
+        if config_attempted or registered_count != len(expected_roots) or not ready().ready:
             raise ValueError("dec9_native_config")
         _capture_window()
         config_attempted = True
@@ -469,6 +516,7 @@ def activate_target_owner(
         prebind_sha256=prebind.target_prebind_sha256,
         clock=_now,
         owner_ready=ready,
+        register_created_root=register_created_root,
         config_loader=load_config,
     )
 

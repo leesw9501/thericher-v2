@@ -55,6 +55,13 @@ credential-free reader pinned in HANDOFF (invoke via
 `uv run --no-env-file python -I -S -B` with the full reader path).
 It requires the protected `RESULT-SHA256`; a Task exit, missing publication
 or gross sign is not reconciled net PnL.
+The [official Paper-capable overseas execution example](https://github.com/koreainvestment/open-trading-api/tree/main/examples_llm/overseas_stock/inquire_ccnl)
+documents executed amount/quantity, not per-fill fees or settled cash.
+The KIS examples for daily transactions, period PnL and settlement balance
+do not demonstrate a Paper route. Do not attach those TRs or infer a zero fee.
+Record broker gross separately from any modeled costs; promote fee and
+settlement facts only when a Paper-supported record can be linked to the
+same owned fills. Missing accounting fields do not block exact reconciliation.
 
 Dec4/Dec9 Paper candidate, not installed: its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
