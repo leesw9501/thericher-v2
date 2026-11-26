@@ -86,6 +86,13 @@ Both preserved the original shared basis/F9 fixture. Broker fees, settlement
 and measured net PnL remain unknown. Claude's synthetic-only challenge
 identified exact broker history after restart as the falsifier of a stale or
 wrong local attribution; no runtime claim follows from the fixture.
+The separate `roundtrip_pending_cold.py` SHA256
+`2583d4ad854d5cb6396e11f61307be663c3296d64168e86931e2d1ca9ec039f7`
+passed with two Python processes and a fresh invented client at exit.
+It joined the persisted pending and bank bytes across processes and
+completed one recovery visit with no substitute submit or cancel. It did
+not positively resolve the simulated unknown, exercise the scheduled host,
+or read actual broker history.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:

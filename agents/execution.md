@@ -16,6 +16,9 @@ The network-disabled/read-only Docker reader passed on invented data only;
 SHA256 `b36ba84174045aa03165b617580c4e042187ac5b61f6cd6f01fa713650ffebfd`.
 Actual R6 reads still require positive relevant-writer closure and exact
 immutable request/fill links. Broker holdings are a separate observation.
+Synthetic cold restart now demonstrates the same unknown request and
+reservation survive across processes without another submit (HANDOFF).
+Positive reconciliation of an actual broker response is still unobserved.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 

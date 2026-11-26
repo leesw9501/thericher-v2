@@ -7,6 +7,14 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Dec4 fixed-half synthetic handoff: a real Windows Job ran an inert child;
+the score-only reader accepted 17 invented rows using the supervisor's
+returned independent receipt digest and rejected a changed seal or receipt.
+`A/research/h3-dec4-fixed-half-job-reader-synthetic-20261126-v1/test_job_reader.py`
+SHA256 `6e28919a53403bb8936021b9ae610d307a700a3106a565e2ee821434af8e50ef`.
+No holdout or market input opened. Protected host isolation remains separate;
+Nov30 is still the first unconsumed opportunity.
+
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
 multiset/gross in every rank tier for stable-order versus prior-close
