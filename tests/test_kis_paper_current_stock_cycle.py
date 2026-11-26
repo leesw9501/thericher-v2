@@ -614,10 +614,22 @@ def test_unknown_submit_retains_request_reservation_and_does_not_reload_or_resub
     assert cycle._projection(h["root"], binding, h["now"])[-1].reserved_buys == 150
 
 
-def test_partial_unknown_cancel_stays_pending_then_exit_uses_only_filled_quantity(h):
+@pytest.mark.parametrize("retain_plan_quote", [False, True])
+def test_partial_unknown_cancel_stays_pending_then_exit_uses_only_filled_quantity(
+    h, retain_plan_quote,
+):
     h["partial"] = True
-    assert run(h).status == "pending"
+    assert run(h, retain_plan_quote=retain_plan_quote).status == "pending"
     original = h["submits"][0]
+    original_quote = cycle._unpack(record(h)["pending"]["arguments"])["reads"].quote
+    expected_quote = (
+        canary.KisPaperCanaryPlanQuote(
+            original_quote.quoted_at, original_quote.best_bid, original_quote.best_ask,
+        )
+        if retain_plan_quote else None
+    )
+    store = canary.KisPaperCanaryStateStore(h["root"] / (original.run_id + ".json"))
+    assert store.read().plan_quote == expected_quote
     h["now"] += timedelta(minutes=6)
     h["cancel_unknown"] = True
     assert run(h, target_loader=lambda: pytest.fail("no_data")).status == "pending"
@@ -629,12 +641,18 @@ def test_partial_unknown_cancel_stays_pending_then_exit_uses_only_filled_quantit
     h["orders"][original.run_id].update(remaining=D(0), cancelled=True)
     assert run(h).status == "advanced"
     assert len(h["submits"]) == 1 and h["submits"][0] == original
+    assert record(h)["pending"] is None
+    assert store.read().plan_quote == expected_quote
     h["now"] = EXIT.close_ts - timedelta(minutes=4)
     h["partial"] = False
     # Canonical terminal evidence closes only the residual; sell only the owned fill.
-    result = run(h)
+    result = run(h, retain_plan_quote=retain_plan_quote)
     assert result.status == "advanced" and result.leg_count == 1 and len(h["submits"]) == 2
     assert h["submits"][-1].side == "sell" and h["submits"][-1].quantity == 1
+    sell_store = canary.KisPaperCanaryStateStore(
+        h["root"] / (h["submits"][-1].run_id + ".json")
+    )
+    assert (sell_store.read().plan_quote is not None) == retain_plan_quote
     assert record(h)["pending"] is None
     binding = budget._load_binding(h["root"])
     projection = cycle._projection(h["root"], binding, h["now"])[-1]

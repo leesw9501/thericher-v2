@@ -1058,7 +1058,7 @@ def _complete_h5_exit(root, record, pointer, proof, at):
         return True
 
 
-def _recover(record, root, paths, client_factory, clock, pointer=None):
+def _recover(record, root, paths, client_factory, clock, pointer=None, *, retain_plan_quote=False):
     pending = record["pending"]
     args = _unpack(pending["arguments"])
     if record.get("profile") == StockCycleProfile.MODEL_WEIGHTS_NAS_H20_EARLY_EXIT.value:
@@ -1142,7 +1142,19 @@ def _recover(record, root, paths, client_factory, clock, pointer=None):
             if proof.side == "buy"
             else execution.execute_kis_paper_stock_sell
         )
-        operation(proof=proof, client=client, clock=clock, execute=True, **paths)
+        quote = args["reads"].quote
+        plan_quote = (
+            canary.KisPaperCanaryPlanQuote(quote.quoted_at, quote.best_bid, quote.best_ask)
+            if retain_plan_quote
+            and state.phase == "intent_recorded"
+            and quote.best_bid is not None
+            and quote.best_ask is not None
+            and quote.quoted_at <= seed.intent.created_at
+            else None
+        )
+        operation(
+            proof=proof, client=client, clock=clock, execute=True, plan_quote=plan_quote, **paths
+        )
         # This is a connected native visit, never an offline observe reader.
         with _shared(root):
             binding = _book(root, record["account_ref"], record["basis_ref"])
@@ -1251,6 +1263,7 @@ def run_kis_paper_current_stock_cycle(
     | None = None,
     configure_cash_h3: Callable[[ModelPaperWeightsInput, str, SessionWindow | None], None]
     | None = None,
+    retain_plan_quote: bool = False,
 ) -> CurrentStockCycleOutcome:
     """One pending leg/visit; exact retained recovery precedes target_loader.
 
@@ -1260,12 +1273,14 @@ def run_kis_paper_current_stock_cycle(
     No new BUY follows entry close; no pending identity/TTL is renewed.
     Optional paired input/policy identity hints are not permission: they avoid
     loading expired targets only for a natively revalidated completed flat cycle.
+    Opt-in plan quote retention requires readers that support the new field.
     """
     if execute is False:
         return CurrentStockCycleOutcome("inert", "execution_not_requested")
     leg_count = 0
     try:
         _check(type(execute) is bool and callable(clock), "cycle_configuration_invalid")
+        _check(type(retain_plan_quote) is bool, "cycle_configuration_invalid")
         _check(type(profile) is StockCycleProfile, "cycle_input_invalid")
         # Cash-aware weights use the QQQ H5 journal, not this stock registry's
         # older H5 completion/recovery branches.
@@ -1396,10 +1411,9 @@ def run_kis_paper_current_stock_cycle(
                 _retired_absent(root, record)
                 if record["pending"] is not None:
                     leg_count = 1
-                    result = (
-                        _recover(record, root, paths, client_factory, clock, pointer)
-                        if scoped
-                        else _recover(record, root, paths, client_factory, clock)
+                    result = _recover(
+                        record, root, paths, client_factory, clock, pointer if scoped else None,
+                        retain_plan_quote=retain_plan_quote,
                     )
                     if not (
                         profile in _H5_STOCK_PROFILES
@@ -1750,10 +1764,9 @@ def run_kis_paper_current_stock_cycle(
                     return CurrentStockCycleOutcome("hold", "outside_declared_session")
             _save(pointer, record)
             leg_count = 1
-            outcome = (
-                _recover(record, root, paths, client_factory, clock, pointer)
-                if scoped
-                else _recover(record, root, paths, client_factory, clock)
+            outcome = _recover(
+                record, root, paths, client_factory, clock, pointer if scoped else None,
+                retain_plan_quote=retain_plan_quote,
             )
             if not (
                 profile in _H5_STOCK_PROFILES

@@ -284,6 +284,7 @@ def _execute_kis_paper_stock(
     now: datetime | None = None,
     clock: Callable[[], datetime] | None = None,
     side: str,
+    plan_quote: canary.KisPaperCanaryPlanQuote | None = None,
 ) -> canary.KisPaperCanaryOutcome | None:
     """One exact retained side; unknown outcomes never resubmit."""
     _check(type(execute) is bool, "stock_execute_invalid")
@@ -433,6 +434,7 @@ def _execute_kis_paper_stock(
                 intent,
                 cancel_after_submit=False,
                 now=at(),
+                plan_quote=plan_quote,
             )
             return canary._run_kis_paper_canary(
                 decision=(

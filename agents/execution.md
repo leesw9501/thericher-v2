@@ -23,9 +23,12 @@ successor, prefer retaining a minimal optional plan-quote observation with
 the exact durable intent, in the existing atomic lifecycle, over a new file
 or API call. This is separate from the later sell recheck, never a guard
 input and not a change to frozen R6 or old plan digests. Claude Sonnet's
-challenge favored this over a sidecar: test old-state replay, crash at the
-write/clear boundary, and absent-as-unknown. Three existing focused recovery
-cases passed on the unchanged source; persistence is not yet implemented.
+challenge favored this over a sidecar. Tracked retention is now explicit
+opt-in at the cycle API, with no installed caller enabling it. Only the first
+atomic intent write can add the original quote; canonical reservation seeds
+and legacy bytes do not change. Restart, fill and removal of pending preserve
+the measurement. Malformed optional values in well-formed JSON are treated as
+unknown, without relaxing the order-body or duplicate-key validation.
 
 The external read-only calculation prototype now accepts the native decoded
 quote and canary state only after a caller supplies the independently bound
@@ -36,8 +39,15 @@ partial fills, mismatched intent/plan, later/crossed quote, unknown and zero
 fill. This is not fee, settlement, private custody or deployment evidence.
 `A/execution/paper-plan-quote-attribution-invented-20261126-v1/plan_quote.py`
 SHA256 `d5d7c3a2dda3edbdb359a6b018d9a792f07b8ee64e9edc20869e57bc2250fe77`.
-Next bind retention in a qualified successor and test unchanged recovery and
-reader behavior across old/new versions before any same-bank deployment.
+Next bind the calculation to the retained native field and qualify every
+reader of the shared bank before enabling it. Frozen readers reject even a
+valid new field; turning the flag off would not repair that incompatibility
+after an annotated order has been written. R6 is unchanged.
+Tracked verification: 315 changed-path serial passed; clean parallel created
+12/12 workers with 21,726 collected, 21,700 passed, and 26 existing Windows
+link skips. Helper exited zero, current child `r-a537ded8` and lease cleared;
+Ruff and default/research/accounting Compose passed. Exact final run output:
+`A/execution/paper-plan-quote-attribution-invented-20261126-v1/tracked-retention-clean-parallel.txt`.
 
 R6 status supersedes earlier draft notes: named Dec4 entry/Dec9 exit are
 installed Ready, zero instances, exact full readback in HANDOFF. No manual

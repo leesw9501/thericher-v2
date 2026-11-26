@@ -499,6 +499,47 @@ class KisPaperCanaryIntent:
 
 
 @dataclass(frozen=True, repr=False)
+class KisPaperCanaryPlanQuote:
+    """Private planning observation; never an input to execution guards."""
+
+    quoted_at: datetime
+    best_bid: Decimal
+    best_ask: Decimal
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.quoted_at, datetime) or self.quoted_at.utcoffset() != timedelta(0):
+            raise ValueError("canary plan quote time must be UTC")
+        object.__setattr__(self, "quoted_at", require_utc(self.quoted_at, "quoted_at"))
+        if (
+            not all(
+                type(value) is Decimal and value.is_finite() and value > 0
+                for value in (self.best_bid, self.best_ask)
+            )
+            or self.best_bid > self.best_ask
+        ):
+            raise ValueError("canary plan quote prices are invalid")
+
+    def to_dict(self) -> dict[str, str]:
+        return {
+            "quoted_at": self.quoted_at.isoformat(),
+            "best_bid": str(self.best_bid),
+            "best_ask": str(self.best_ask),
+        }
+
+    @classmethod
+    def from_dict(cls, payload: object) -> KisPaperCanaryPlanQuote:
+        if not isinstance(payload, Mapping) or set(payload) != {
+            "quoted_at", "best_bid", "best_ask",
+        }:
+            raise ValueError("canary plan quote fields are invalid")
+        return cls(
+            quoted_at=datetime.fromisoformat(_required_text(payload["quoted_at"])),
+            best_bid=_positive_decimal(_required_text(payload["best_bid"])),
+            best_ask=_positive_decimal(_required_text(payload["best_ask"])),
+        )
+
+
+@dataclass(frozen=True, repr=False)
 class KisPaperCanaryState:
     intent: KisPaperCanaryIntent
     phase: str
@@ -514,8 +555,14 @@ class KisPaperCanaryState:
     cumulative_fill: KisPaperCumulativeFill | None = None
     fill_observation_status: str = "not_observed"
     fill_observed_at: datetime | None = None
+    plan_quote: KisPaperCanaryPlanQuote | None = None
 
     def __post_init__(self) -> None:
+        if self.plan_quote is not None and (
+            type(self.plan_quote) is not KisPaperCanaryPlanQuote
+            or self.plan_quote.quoted_at > self.intent.created_at
+        ):
+            raise ValueError("canary plan quote binding is invalid")
         if self.phase not in _STATE_PHASES:
             raise ValueError("canary state phase is invalid")
         if self.reason_code not in _SAFE_REASON_CODES:
@@ -620,7 +667,7 @@ class KisPaperCanaryState:
         return fill.quantity * (1 if self.intent.side == "buy" else -1)
 
     def to_dict(self) -> dict[str, object]:
-        return {
+        payload = {
             "schema_version": self.schema_version,
             "kind": "kis_paper_canary_state",
             "intent": self.intent.to_dict(),
@@ -646,6 +693,9 @@ class KisPaperCanaryState:
             if self.fill_observed_at is None
             else self.fill_observed_at.isoformat(),
         }
+        if self.plan_quote is not None:
+            payload["plan_quote"] = self.plan_quote.to_dict()
+        return payload
 
     @classmethod
     def from_dict(cls, payload: Mapping[str, Any]) -> KisPaperCanaryState:
@@ -668,6 +718,7 @@ class KisPaperCanaryState:
             "cumulative_fill",
             "fill_observation_status",
             "fill_observed_at",
+            "plan_quote",
         }
         if not isinstance(payload, Mapping) or not expected <= set(payload) <= expected | optional:
             raise KisPaperCanaryError("state_invalid")
@@ -700,8 +751,18 @@ class KisPaperCanaryState:
             )
             if payload["intent_fingerprint"] != intent.fingerprint:
                 raise ValueError("fingerprint")
+            plan_quote = None
+            if "plan_quote" in payload:
+                try:
+                    measurement = KisPaperCanaryPlanQuote.from_dict(payload["plan_quote"])
+                    if measurement.quoted_at <= intent.created_at:
+                        plan_quote = measurement
+                except ValueError:
+                    # Optional measurement validity must not veto order reconciliation.
+                    pass
             return cls(
                 intent=intent,
+                plan_quote=plan_quote,
                 cumulative_fill=(
                     None
                     if payload.get("cumulative_fill") is None
@@ -825,6 +886,7 @@ class KisPaperCanaryStateStore:
         *,
         cancel_after_submit: bool,
         now: datetime,
+        plan_quote: KisPaperCanaryPlanQuote | None = None,
     ) -> KisPaperCanaryState:
         with exclusive_kis_paper_canary_state_lock(self.path):
             current = self._read_unlocked()
@@ -838,6 +900,7 @@ class KisPaperCanaryStateStore:
                 updated_at=now,
                 reason_code="preview",
                 cancel_after_submit=cancel_after_submit,
+                plan_quote=plan_quote,
             )
             self._write_unlocked(state)
             return state
@@ -919,6 +982,7 @@ class KisPaperCanaryStateStore:
                 cumulative_fill=current.cumulative_fill,
                 fill_observation_status=current.fill_observation_status,
                 fill_observed_at=current.fill_observed_at,
+                plan_quote=current.plan_quote,
                 broker_order_id=(
                     current.broker_order_id if broker_order_id is None else broker_order_id
                 ),
