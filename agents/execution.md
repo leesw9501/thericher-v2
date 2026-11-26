@@ -103,6 +103,17 @@ completion, quote skip, crossed policy, and deterministic state/lock witness).
 Use only after the exact entry phase, input and writer-excluded snapshot are
 qualified. Empty basket, missing checkpoint or bare completion still does
 not prove no signal, a financial lifecycle or launch attribution.
+R6 fixed-size feasibility: four relevant tracked members match installed R6
+bytes. A synthetic positive score through `_rows` got weight
+`0.02941176470588235`; after the fixed 0.10 ceiling and 24-place floor,
+the single-name target is `0.002941176470588235` of original basis. Native
+whole-share sizing needs basis/limit strictly above 340 at this precision
+just to target one share (340 gives zero, 341 gives one before other guards).
+Remaining shared capacity, reservations, funds and current holdings can
+only further constrain it. No actual cash, quote or point was inspected.
+Therefore a positive score with a native sizing skip is plausible; leave the
+installed policy alone and classify the exact observed reason before planning
+a separately owned engineering baseline. Never resize/reassign its intent.
 The integrated exit fixture used a fresh native exit process and a separate
 network-disabled RO consumer at the original Linux paths. It distinguished
 one exact terminal flat pair, recovered buy with a positive lot and no sell,
