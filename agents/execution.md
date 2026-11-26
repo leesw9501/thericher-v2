@@ -46,7 +46,8 @@ separately; the read-only guest passed synthetic Docker admission. The host
 adapter requires an independent publication digest; the native transport
 composition now reuses the pinned r2/r3 code and joins all five admissions
 and Job/container closure. Bind the protected caller, exact exit/current
-custody proof and publication next. Use the proposed after-event window in
+custody proof next. The publisher now verifies the complete envelope and
+retains its independent commit digest without overwriting. Use the proposed after-event window in
 HANDOFF, not the old entry-only ABI. No read profile or exit change installed.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further

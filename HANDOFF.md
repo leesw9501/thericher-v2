@@ -19,9 +19,10 @@ produce Dec4 input and separate Nov30 target metadata, not a point or order.
 Earlier Nov27 and Nov30 task times/Ready state were independently unchanged.
 
 The separate Dec4 point task `thericher-h3-dec4-lstm-point-20261204-v1`
-is installed, Ready, zero instances, next Dec3 21:47 UTC (Dec4 06:47 KST).
-Source `62fced2058e405f286e10de4e138d39eabb2d9fba6b33cb2baa91361171a7cdb`
-under A/research/h3-dec4-lstm-point-20261204-v1. The native fixture passed
+is installed, Ready on source-v3, zero instances, next Dec3 21:47 UTC
+(Dec4 06:47 KST). The original source
+`62fced2058e405f286e10de4e138d39eabb2d9fba6b33cb2baa91361171a7cdb`
+is historical. The native fixture passed
 registration/readback/cleanup; the pinned executable denied early launch
 without a run. It uses the exact synchronous Dec3 program, receipt-bound
 original PID exit and input digests under an assumed-honest host, not proof
@@ -46,7 +47,7 @@ action; the fixture was removed after closure. It does not prove the
 financial caller's process image/birth or authority. The tracked point
 supervisor now requires a zero exit of the exact child and empty Windows
 Job, and same-attempt receipt/digest checks before publishing joined proof.
-The supervised point launcher is staged, not installed. Exact source
+The supervised point launcher is installed on that same future task. Source
 `8df70d7421139ac26b2cf10ee5af231f60b3c346a502eb29d0edb5ca93096205`
 under A/research/h3-dec4-lstm-point-20261204-v1/source-v3.
 `SUPERVISED-POINT-PREPARED-V3.json` in that parent binds the direct versioned
@@ -62,7 +63,14 @@ launch refused with no control writes. Paper entry now requires the
 supervised receipt reader and authenticated completion pin. The real bank
 caller still needs its full-definition Scheduler provider/risk wiring;
 the new Windows process reader itself checks image, argv and birth.
-The point task remains on its original source; no Paper pair installed.
+Independent COM readback confirms Ready, never run, identical trigger, PT8M
+cap, principal and API7 ACL. Initial disabled readback withheld on Scheduler
+XML ACL canonicalization. Exact re-derivation from the original XML with
+its unchanged effective ACL verified the installed disabled action, then
+an enable-only path resumed it; no registration replay. Rollback, verdict
+and receipt: same parent, `DEC4-POINT-V3-MIGRATION/INDEPENDENT-RESULT.json`,
+SHA256 `e5984d777dd1737cff72b61359958d8916ea04188b8c7e83d0c30af215531ecc`.
+No point result or Paper pair is evidenced.
 
 The actual pinned Python-to-PowerShell Scheduler probe matched two XML
 surfaces, ACL7 and action hash around one direct hidden inert instance;
@@ -320,7 +328,12 @@ The tracked transport adapter now composes the exact r2 metadata/Docker
 sources and r3 bounded Windows Job transport, retains the five fresh
 admissions and refuses partial closure. Focused invented joints passed.
 Finish the protected one-shot entry, exact exit/custody admission, fresh
-claims, actual joined native smoke and separately retained publication.
+claims and actual joined native smoke. The publication adapter now joins
+the exact closed/result bytes and commits a digest in a separate protected
+directory; no actual publication. The phase envelope deliberately reports
+fees/settlement/net PnL unknown. An eventual accounting adapter can reuse the
+portfolio PnL kernel on the exact validated pair; even a reconciled flat
+lot does not establish measured fees, booked settlement or net PnL.
 No phase host profile or task is installed. Claude verdict:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 H20-PHASE-HOST-CLAUDE-VERDICT-20261126.json (8d041f9d97b59da0edbc4badf7aaa1804aa28fdc29b3642dd235069ee135355b).
@@ -343,9 +356,9 @@ by the exact authorized writers (including mixed-OS and demand-start paths).
 Verdict A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 RESTORE-WRITER-SCOPE-CLAUDE-VERDICT-20261126.json, SHA256
 `05044301c3869ad6f8bf6abf024aa21fdf943f8fa4310afa853049d09da2d4bd`.
-The Dec4 point task is still Ready at Dec3 21:47 UTC, one old action and no
-catch-up. The exact prepared source-v3 manifest matches on disk but is not
-the installed action. Both financial task names are still absent.
+The Dec4 point task is Ready on v3 at Dec3 21:47 UTC, one action and no
+catch-up. The independent readback above proves installation only. Both
+financial task names remain separate; this change did not create them.
 
 The named launcher now requires the concrete Dec4 scoped writer census.
 It retains the old pinned metadata tools and classifier, not old release
@@ -424,6 +437,11 @@ core. It binds the receipt digest to positively absent writer PID, and
 rejects a late or changed host result. Named protected host, hard process
 tree bound, independently retained exit/seal digest and real joined native
 smoke are still needed; CLI is disabled. No Dec4 forecast was launched.
+The code-only source now verifies all 561 members and the independently
+pinned Dec3 source at A/research/h3-dec4-fixed-half-forecast-20261204-v1/source,
+SHA256 `30b37958da1b7412e2e07ddaea36f7b067147c3e52d0c657135b5415fde14953`.
+`SOURCE-VERIFIED.json` in the parent records the actual protected root ACL
+pin and missing host. No payloads, run or task.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.

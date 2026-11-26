@@ -25,16 +25,13 @@ local Scheduler connection and requires two hidden-inclusive empty samples.
 real inert direct-base-pythonw fixture. Bind it in the named launcher and
 verify actual Windows process birth, image, argv, source and full definition
 together; this observation alone is not native effect admission.
-The original installed point still emits a pre-exit receipt. The direct
-supervisor/child source-v3 and protected control directory are now frozen
-and native path/ACL/early-refusal checks passed (HANDOFF). Bank intake now
-calls the exact supervised receipt reader using source-qualified pins.
-Before use, qualify an update-only migrator for the single existing point
-task (no new opportunity). Fresh readback matched all 532 v3 members and
-confirmed the original is still Ready and never run. Use the same-task
-Nov30 pattern with the v3 direct Pythonw and unchanged Dec3 21:47 UTC/PT8M
-schedule, independently read back the supervisor digest, then wire the
-real bank caller. Native owner binding now reads the Windows
+The single existing point task now uses the supervised direct Pythonw v3.
+All 532 source members matched. Independent readback found Ready, never run
+and the same Dec3 21:47 UTC/PT8M schedule and effective ACL (HANDOFF).
+No point is evidenced. Retain its actual exact supervisor digest after
+the owned opportunity; wire the real bank caller to the supervised receipt
+reader now, without depending on an existing forecast. Native owner binding
+now reads the Windows
 process image, argv and creation FILETIME, and checks that birth against
 the exact leg window. The pinned Python/PowerShell Scheduler provider
 now verifies both registered XML surfaces, ACL and action hash around
@@ -76,8 +73,9 @@ from exact exit and passed synthetic/native checks. The phase host adapter
 checks explicit RO mount targets and a separately published digest. It
 now connects the pinned native metadata, five-phase read-only Docker and
 Job transport with an absolute deadline check. Freeze the protected
-caller, exact original exit closure/current custody admission and
-publication for the proposed Dec1 14:41 UTC read; verify a joined native
+caller, exact original exit closure/current custody admission for the
+proposed Dec1 14:41 UTC read. The result publisher now verifies the joined
+envelope and commits its digest separately. Verify a joined native
 invented run first. Do not use the old profile or alter the exit task.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
@@ -248,7 +246,8 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    independent completion, capture, model/policy and seal pins. No actual
    result has been admitted.
    Its new no-site CPU launcher verifies the isolated named source and
-   synchronous Dec3 closure. Bind the protected host, hard process tree
+   synchronous Dec3 closure. The actual code-only source is now frozen
+   and both source verifiers passed (HANDOFF). Bind the protected host, hard process tree
    bound and independent exit/seal receipt before installing its own
    credential-free forecast opportunity. Do not alter the Dec4 Paper point.
    The Dec4 fixed-half adapter now joins ordered typed inputs to the existing

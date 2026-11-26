@@ -15,8 +15,9 @@ ownership and per-slot input runners remain pending. No fit was repeated.
 
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72
-checkpoint. The quiet credential-free owner is installed for Dec3 UTC21:47
-with an eight-minute limit, no current instance and no actual point. Its
+checkpoint. The same quiet credential-free owner is now installed on
+supervised source-v3 for Dec3 UTC21:47, unchanged eight-minute limit/ACL,
+no current instance and no actual point. Its
 completion is conditional on the exact synchronous Data exit and bound
 input bytes. No new fit or forward. This is separate from the fixed-half study.
 
@@ -62,7 +63,8 @@ seal was opened or evaluation run.
 The separate CPU launcher now verifies both source trees and exact
 synchronous Dec3 writer absence before the existing core. Bind the
 protected host, process-tree deadline and independent exit/seal output;
-no forecast task or call yet.
+the separately protected code-only release now verifies all 561 members
+and original Dec3 source. No forecast task or call yet.
 
 The Dec4 fixed-half slot now feeds the existing exact same-gross risky
 and cash comparisons and native block reducer on invented inputs. The
