@@ -134,6 +134,17 @@ when the fresh limit differs. Four invented planner/sizer/precision cases
 passed in `A/execution/one-share-baseline-sizing-invented-20261126-v1/target.py`,
 SHA256 `46e4bc8f100eb9e127e7db9f273abfbc1f90722769f6242bfbce75488ca20764`.
 No fresh data, reservation, order, schedule, or candidate activation.
+The separate quote-band successor removes the exact-price-equality constraint
+for a future engineering baseline only. Snap one fixed target exposure on
+the original basis; its exact dollars must satisfy `upper <= target < 2*lower`
+within the original tenth. Verify the fresh native tick-rounded BUY limit is
+inside the predeclared band and the unchanged planner newly prepares exactly
+one share; a capacity-clipped larger target or replay is not qualified. Eleven
+invented native cases and an independent 5,100-case exact arithmetic check
+passed. This uses no current quote or buying power, and changes no installed
+path or obligation. `A/execution/one-share-baseline-quote-band-invented-20261126-v1/target.py`
+SHA256 `cf73c40cb6571e7d4b47a8607b5dff88f536c4b257abe34facd8c2fa9d5255c3`;
+tools-off Claude verdict at the same root's `CLAUDE-VERDICT.json`.
 The integrated exit fixture used a fresh native exit process and a separate
 network-disabled RO consumer at the original Linux paths. It distinguished
 one exact terminal flat pair, recovered buy with a positive lot and no sell,
