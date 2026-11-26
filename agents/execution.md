@@ -111,6 +111,13 @@ directory notification fixture, without claiming a physical namespace fence.
 Missing/overflow notifications are not quiet. Claude conditional planning:
 `host-preflight/CLAUDE-CAPTURE-BOUNDARY-VERDICT.json` in the same root. No
 change to live admission, no automatic retry or new global lock.
+`host-preflight/transient_snapshot_probe.py` SHA256
+`8f6aa511b5599c12f153dab2797bd28b172f9c77869fe2d1d799008bc9892dfd`
+passed the invented quiet case and caught a transient sibling create/delete
+despite identical final known member identity, bytes and name set. Root and
+ancestor identity checks and bounded cancellation remain separate; empty
+completion/overflow is inconclusive. One combined invented capture-to-reader
+run is next, not a live writer fence or custody admission.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact

@@ -165,6 +165,14 @@ Adding fees back to the executed books does not make a fee-free replay:
 each book sizes from its own evolving NAV. Do not retune these rank tiers
 or infer gross alpha. Keep the untouched paired block ahead of another
 turnover variant on this reused sample.
+New bounded DEV-only horizon diagnostic is assigned: same frozen scores and
+funded gross, one versus three sessions, each against its aligned EW and
+25 bp each side. No repeated turnover experiment, fit, forward or holdout.
+The prior producer manifest at `M/us_equities/research_inputs/current-net25-masked-chronological-gate-development-20261105-v1-dev/PUBLIC-ASSET.json`
+(SHA256 `a3c111c709ec2cf3038c738a2da3efe96c91f88c4aad8931e1ad27377c842e7b`)
+lists the exact retained COMMON hash and only the DEV role. Earlier build
+copied it unchanged to the scoped readout. This establishes input scope,
+not a new numerical result or performance claim.
 
 Fixed-half next unconsumed slot is Nov30 open to Dec3 open. Metadata-only
 `A/research/h3-nov30-first-slot-owner-ready-metadata-20261126-v1/owner_projection.py`
