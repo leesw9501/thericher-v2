@@ -32,6 +32,14 @@ readiness opens Dec4 14:37:30 UTC and ends at the Dec9 exit start.
 SHA256 `891bef21e27c2e8147be57fc37265fc07d2dd87ec2ec2c04c6cf1fa458ac2a74`.
 The H20 reader is cohort-specific; reuse native no-lock parsers rather than
 the H20 adapter. R6 still needs an exact phase-to-request and fill join.
+One invented entry consumer derived requests only through the retained phase
+and input scope plus native policy registry, bank plan and intent. It
+replayed terminal positive lots and rejected crossed cohort/owner, missing
+phase proof and missing registry. `A/execution/h3-dec4-native-ledger-inert-20261126-v1/entry-scope/entry_glue.py`
+SHA256 `8db6fc454c8d452d52ad43e4fc38b33b0c2e2732a7aa30710d02661a9c22925c`.
+R6 cannot supply an independently retained list of requests or attribute
+transport to a particular host launch. Prepare the exit join separately;
+no actual result or custody has been read.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact

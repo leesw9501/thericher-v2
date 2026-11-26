@@ -109,6 +109,15 @@ These are candidate same-date consumers, not installed owners or permission
 to read sealed targets. Existing Dec9 is target-only; do not retag or rerun
 it. Qualify one future producer with separate target and prefix outputs
 only where the source/owner contract permits, as with the Dec3 pattern.
+Native invented boundary checks rejected a post-cutoff bar before feature
+calculation and a parser-added target before publishing READY.
+`A/research/h3-dec4-fixed-half-production-prep-20261126-v1/test_prefix_target_boundary.py`
+SHA256 `667a52b7a6c26c14a97e7f0ab699ebcbb9a671cba242ce1216b3eba59a6e9b33`.
+Claude's conditional verdict in the same root's
+`CLAUDE-PREFIX-TARGET-VERDICT.json`: prior bars legitimately precede the next
+decision, but prior target receipts/metrics must not choose or change later
+inputs, checkpoints or policy. This proof covers the native parser/publisher
+boundary, not real operational isolation or absence of adaptive reuse.
 
 Dec4 LSTM-only proposal: the tracked point owner checks exact Dec3 source,
 attempt, owner closure, READY and H123 links and the unchanged Source72
