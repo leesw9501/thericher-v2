@@ -43,10 +43,11 @@ future time; do not infer retirement. Freeze actual same-gate proof and
 preserve the pending Dec1 H20 exit before operational release.
 The H20 phase-specific native reader now preserves entry and exit
 separately; the read-only guest passed synthetic Docker admission. The host
-adapter requires an independent publication digest. Next bind the current
-writer/custody proof and native transport; no read profile or exit change
-is installed. Use the proposed after-event window in HANDOFF, not the old
-entry-only ABI.
+adapter requires an independent publication digest; the native transport
+composition now reuses the pinned r2/r3 code and joins all five admissions
+and Job/container closure. Bind the protected caller, exact exit/current
+custody proof and publication next. Use the proposed after-event window in
+HANDOFF, not the old entry-only ABI. No read profile or exit change installed.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

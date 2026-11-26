@@ -29,9 +29,12 @@ The original installed point still emits a pre-exit receipt. The direct
 supervisor/child source-v3 and protected control directory are now frozen
 and native path/ACL/early-refusal checks passed (HANDOFF). Bank intake now
 calls the exact supervised receipt reader using source-qualified pins.
-Before use, qualify and update the single existing point task without a
-duplicate opportunity, independently retain the supervisor digest, and
-wire the real bank caller. Native owner binding now reads the Windows
+Before use, qualify an update-only migrator for the single existing point
+task (no new opportunity). Fresh readback matched all 532 v3 members and
+confirmed the original is still Ready and never run. Use the same-task
+Nov30 pattern with the v3 direct Pythonw and unchanged Dec3 21:47 UTC/PT8M
+schedule, independently read back the supervisor digest, then wire the
+real bank caller. Native owner binding now reads the Windows
 process image, argv and creation FILETIME, and checks that birth against
 the exact leg window. The pinned Python/PowerShell Scheduler provider
 now verifies both registered XML surfaces, ACL and action hash around
@@ -70,10 +73,12 @@ The two R8 old tasks are still Enabled with no future trigger; do not admit
 them as retired or retire the existing Dec1 H20 owned exit.
 The Dec1 phase-specific readout and offline guest now distinguish entry
 from exact exit and passed synthetic/native checks. The phase host adapter
-checks explicit RO mount targets and a separately published digest. Bind
-the real bounded native transport, current custody and protected
-publication for the proposed Dec1 14:41 UTC read before the owned window;
-do not reuse the original entry-only result ABI or alter the exit task.
+checks explicit RO mount targets and a separately published digest. It
+now connects the pinned native metadata, five-phase read-only Docker and
+Job transport with an absolute deadline check. Freeze the protected
+caller, exact original exit closure/current custody admission and
+publication for the proposed Dec1 14:41 UTC read; verify a joined native
+invented run first. Do not use the old profile or alter the exit task.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -242,6 +247,10 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    Dec4 fixed-half now has a separate score-only reader requiring the exact
    independent completion, capture, model/policy and seal pins. No actual
    result has been admitted.
+   Its new no-site CPU launcher verifies the isolated named source and
+   synchronous Dec3 closure. Bind the protected host, hard process tree
+   bound and independent exit/seal receipt before installing its own
+   credential-free forecast opportunity. Do not alter the Dec4 Paper point.
    The Dec4 fixed-half adapter now joins ordered typed inputs to the existing
    25 bp-per-side comparator and native block record. Actual target
    admission, block readout and other source owners remain separate. The

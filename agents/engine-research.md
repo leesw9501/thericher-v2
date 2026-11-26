@@ -59,6 +59,10 @@ owner completion, Dec3 read-only closure and immutable attempt/seal,
 and re-computes the 50:50 vector. It returns score inputs only at block
 end; the separate target and marks admission is unchanged. No actual
 seal was opened or evaluation run.
+The separate CPU launcher now verifies both source trees and exact
+synchronous Dec3 writer absence before the existing core. Bind the
+protected host, process-tree deadline and independent exit/seal output;
+no forecast task or call yet.
 
 The Dec4 fixed-half slot now feeds the existing exact same-gross risky
 and cash comparisons and native block reducer on invented inputs. The

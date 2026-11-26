@@ -316,9 +316,13 @@ The Dec1 phase host adapter now checks the six exact read-only mount targets,
 separate phase DTO, pinned envelope checks and independently retained native
 result digest. Tests rejected replay, stale clocks and replaced result bytes.
 Proposed read window is Dec1 14:41-14:43 UTC for starting, hard stop 14:46 UTC.
-No phase host release is installed: bind fresh scoped owner admission, the
-exact current custody and protected result publication to the real native
-transport first. Claude verdict: A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+The tracked transport adapter now composes the exact r2 metadata/Docker
+sources and r3 bounded Windows Job transport, retains the five fresh
+admissions and refuses partial closure. Focused invented joints passed.
+Finish the protected one-shot entry, exact exit/custody admission, fresh
+claims, actual joined native smoke and separately retained publication.
+No phase host profile or task is installed. Claude verdict:
+A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 H20-PHASE-HOST-CLAUDE-VERDICT-20261126.json (8d041f9d97b59da0edbc4badf7aaa1804aa28fdc29b3642dd235069ee135355b).
 
 The tracked Dec9 Scheduler probe also matched its own PID, actual
@@ -413,6 +417,13 @@ The reader copy inside the frozen producer tree still pins v1. Use the
 separately pinned corrected reader for block-end. Do not replay migration,
 edit the frozen producer tree or create a duplicate. Neither actual forecast
 nor target was read.
+
+The tracked Dec4 fixed-half CPU launcher now verifies its independent source
+tree and the exact synchronous Dec3 writer before invoking the existing seal
+core. It binds the receipt digest to positively absent writer PID, and
+rejects a late or changed host result. Named protected host, hard process
+tree bound, independently retained exit/seal digest and real joined native
+smoke are still needed; CLI is disabled. No Dec4 forecast was launched.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.
