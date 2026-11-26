@@ -120,8 +120,13 @@ The one additive `-importerror-r2/STARTUP.json` attempt (SHA256
 withheld on an earlier import-time mutation, before the timezone backend
 or clock/image checks. No registry attempt was observed before that stop.
 `AFTER.json` matched 569 source, 184 interpreter and 3,405 dependency files.
-Isolate the suspected NumPy startup mutation in a small inert reproducer;
-do not broaden the protected audit or claim this import qualified.
+The inert isolator reproduced the exact pinned NumPy branch and an
+explicit parent seed reached setup/cleanup without a mutation.
+`A/data/h3-dec9-numpy-openblas-first-cause-73c57a7f-v1/RESULT.json` SHA256
+`bcad71fc4cc8bc1be14ec47baec387fbbe6a3aba34204342771eb9ef00a3b5db`.
+Qualify the explicit startup seed inside a new bounded cold check without
+relaxing the mutation audit. The prior receipt did not identify its caller;
+the isolated fix does not prove the full Data startup.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

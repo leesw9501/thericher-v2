@@ -158,6 +158,11 @@ member and operational status mapping. Exit zero is not a fill.
 The source member `scripts/dec4_bank_runtime.py` (protected dependency
 admission, exact profile anchor and owned deferred loader) is not bound.
 Neither financial task was registered, invoked or closed by this work.
+The standalone anchor reader in the same root, `dec4_schedule_anchor.py`
+SHA256 `0dfbcbd26a20bb3fa3716f8841dcf89fd8f5da2ec6bfcf1ad6a850817934277d`,
+read invented pin rows from one real ACL-protected directory and refused
+four mismatches. It does not query Scheduler or authenticate the profile
+payload by itself; the existing provider and pre-source shape do that.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

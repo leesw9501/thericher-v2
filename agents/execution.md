@@ -44,7 +44,13 @@ The protected caller component now verifies the full pre-source COM
 profile, joins deterministic entry/exit and uses the deferred packet at
 the existing bank boundary. Inert integration refused a forged re-pinned
 ACL. The actual imports and copied DLL origin smoke ran separately
-(HANDOFF). Next compose and freeze the actual named startup; no task installed.
+(HANDOFF). The assembled no-site outer denies early execution in both
+roles and maps operational closure separately from a held bank. Its
+`dec4_schedule_anchor.py` component reads exact pin rows under the
+source-authorized fixed sibling directory and Windows ACL. It passed one
+native-directory fixture and refused four source/release/row/ACL mismatches.
+Next join both components to the actual protected dependency admission and
+deferred credential route before installing. No financial task installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.
