@@ -14,8 +14,9 @@ no demand launch, catch-up or repeat. This is not an order, fill or runtime
 qualification. Do not re-register or manually invoke either definition.
 See HANDOFF and RUNBOOK for pins, scope and owned result paths.
 
-Next: prepare exact source-safe runtime result reading and keep the Dec1
-H20 owned exit/readback separate. After each R6 opportunity classify
+Next: complete the exact financial result joins; the R6 startup-only reader
+is ready and both phases are not due. Keep the Dec1 H20 owned exit/readback
+separate. After each R6 opportunity classify
 no outcome, input refusal, submit, fill, owned inventory and terminal
 reconciliation from the actual retained evidence. Startup still enforces
 Scheduler/Job ownership and fresh account, writer, observer, quote and risk

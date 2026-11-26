@@ -71,6 +71,13 @@ Do not run or reinstall manually. Original installer and independent
 Each phase's first protected host evidence is under `evidence-entry` or
 `evidence-exit`; join only the exact BankLeg/observer/capsule IDs to that
 phase. No replacement entry/exit or released reservation from missing evidence.
+Read startup only with the pinned
+`A/execution/h3-dec4-dec9-native-release-20261126-v1/read_r6_startup.py`
+via `uv run --no-env-file --extra dev python <absolute reader> --phase entry`
+or `--phase exit`. It reads no phase receipts before the owned cutoff,
+classifies missing/unstable evidence as unknown, and does not inspect
+financial custody. A bound startup or observer handoff is not a submit,
+fill, restoration, or proof of OS Scheduler origin.
 Its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
 The external Source and separate target prebind are in HANDOFF. There is

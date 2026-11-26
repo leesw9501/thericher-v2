@@ -30,6 +30,14 @@ rows matched that existing selector in the read-only sample. Do not exempt
 other actors by process name or infer effect-time custody from this sample.
 `writer/CLAIMS-BINDING.json` SHA256
 `2b60cc04a7a8e474046a3640ff2e05a899c5fc1923732b6879ed56cdf183f9af`.
+R6 startup reader `read_r6_startup.py` in the release parent, SHA256
+`66347d695922f9ff6edf3103ffc95ef606461419a268179e04f269cf87158d275c0`,
+uses exact installed source/release/plan, phase clock and CLAIM-linked bytes.
+It reads no private BankLeg contents, touches no locks, and projects only
+state/categorical reason. Unknown or unclaimed is not a no-order claim.
+Both installed phases currently read `not_due`. Ten invented tests and
+Ruff passed; Claude mixed-scope-replay/redaction challenge in
+`STARTUP-READER-CLAUDE-VERDICT.json`. Financial joins remain separate.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:

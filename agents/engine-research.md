@@ -30,6 +30,14 @@ See `dev-once-v1/attempt-01/RESULT.json` SHA256
 and the exact host/registry receipts there. Reused development outcomes
 are not independent evidence or Paper results; do not rerun this candidate.
 
+Fixed-half next unconsumed slot is Nov30 open to Dec3 open. Metadata-only
+`A/research/h3-nov30-first-slot-owner-ready-metadata-20261126-v1/owner_projection.py`
+SHA256 `5ca3bab9bbaf8a8e70370242b8a3223f705b026aeb9240025154cb883b2f31e3`
+joins exact Nov27 owner/READY to Nov30 forecast closure, and only projects
+its seal commitment. Seven invented tests and Ruff passed. Neither owned
+closure exists yet; no real join, payload/target read, or readiness claim.
+Target embargo remains Dec28 21:00 UTC plus independent custody.
+
 The fixed-half block-end join requires all five frozen slots in order.
 Missing measurements stay explicit, separate from verified no-signal dates.
 The time-bound caller denies target reads before Dec28 21:00 UTC and requires

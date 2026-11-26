@@ -157,6 +157,13 @@ Receipt `A/data/h3-dec9-sqlite-exact-authority-validation-v1/RESULT.json`
 SHA256 `ee6ed544f7cf18674c1b5aff168cabce08f274bf512f3304f81432e929a12c34`.
 No database access, R4 rerun, or startup authority. Next reproduce the
 separate unpinned interpreter-root read without relaxing the audit.
+`A/data/h3-dec9-open-metadata-zip-cause-r4-v1/RESULT.json` SHA256
+`7500a7a0f9e5fb240a40df8304aa448cb801baaa1b7b95756a6abf7ed0fe6fe6`:
+exact pinned calendar-version lookup reproduced a denied read of an absent
+default interpreter ZIP slot; removing only that absent slot preserved
+version lookup and yielded zero denials under the unchanged audit.
+Original R4's denied target was not recorded, so attribution remains
+unproved. No R4 replay, market calls or Data activation.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
