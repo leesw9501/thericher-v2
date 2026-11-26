@@ -54,11 +54,17 @@ never a cash amount. Both actual fee lines and booked settlement remain
 unknown until independently linked to the two fills; no net PnL claim.
 Transport now withholds the private read without the original dated exit
 receipt, positive BankLeg closure and exact restore linkage. Wire the
-native outer PID/definition sampler and current custody claims to the
-protected caller; no live read or task change.
+current custody claims to the protected caller; no live read or task change.
 Actual outer lineage is newer than the historical direct installation;
 its staged exact read-only sampler passed pre-event readback and rejected
 premature closure. Inner original financial plan and bank scope match.
+Transport now invokes the actual pinned Scheduler/outer PID probe with
+write/delete-denying source handles. Native pre-event only passed; no
+inference about the future PID or runtime result.
+Both source claims consumers and repaired writer denial passed the
+source-only assembly; the exact running web passed metadata checks.
+Integrate the typed web rule in the shared-deadline census. No full
+custody census or private read was executed in this check.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

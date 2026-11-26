@@ -17,6 +17,7 @@ from thericher_v2.ops.h20_phase_host import (
     _strict_json,
     invoke_h20_phase_window,
 )
+from thericher_v2.ops.h20_phase_owner_probe import prove_h20_exit_outer_owner_closed
 
 _ROOT = Path(
     "D:/thericher-v2/model-artifacts/execution/"
@@ -89,13 +90,12 @@ class _Dec1Deadline:
         return value
 
 
-def run_h20_phase_transport(
-    *, binding, out, entry_file, entry_sha256, guest_sha256, image, owner_closed
-):
+def run_h20_phase_transport(*, binding, out, entry_file, entry_sha256, guest_sha256, image):
     """Run only from a protected one-shot caller with separately pinned binding.
 
-    The caller supplies the attested outer exit-owner probe, output claim and
-    publication. Current custody is rechecked by native admission. Do not
+    The caller supplies the protected output claim and publication.
+    The pinned outer probe is not replaceable by a caller claim.
+    Current custody is rechecked by native admission. Do not
     feed this function the old November actual binding.
     Returns the categorical DTO, five admissions and joined process facts.
     """
@@ -106,6 +106,10 @@ def run_h20_phase_transport(
     out = Path(out)
     ordinary(out)
     _need(out.is_dir() and not any(out.iterdir()))
+
+    def owner_closed(task, pid):
+        return prove_h20_exit_outer_owner_closed(task, pid, timeout=min(8, deadline.remaining()))
+
     _need(prove_h20_exit_read_boundary(owner_closed=owner_closed) is True)
     deadline.remaining()
     configure, bounded_transport, share_deadline = _native_sources()

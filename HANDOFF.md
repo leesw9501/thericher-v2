@@ -353,6 +353,19 @@ read-only exact definition/API7/PID probe is staged at
 passed and a premature positive absence request was refused. Full digests:
 `EXIT-PROFILE-READBACK.json` in that root. Bind that pinned probe as the
 outer callback of the future reader; no change to the original Task.
+The tracked transport now calls that exact outer probe itself, using
+write/delete-denying Windows handles on both pinned PowerShell and script.
+Native pre-event readback passed through the Python call; it is not
+after-event PID closure or current custody evidence. Still bind the final
+reader source/claims and independently protected scheduler/read profile.
+The monitor-era claims were verified to reach both the Python and native
+headroom inputs. Adding the exact repaired H20 launcher path denied an
+invented writer in the unmodified scoped classifier. An independent
+metadata-only Docker read matched the current web bootstrap and physical
+volume rule; changed-bootstrap and changed-mount fixtures were rejected.
+`CENSUS-INPUT-RESULT.json` and its verifier in the V2 code root retain
+the pins. Bind the typed web overlay into all five fresh admissions;
+this probe does not attest full current custody or authorize a read.
 Claude's `EXIT-LINEAGE-CLAUDE-VERDICT.json` requires fresh writer identity
 and custody census, not just disappearance of one controller PID.
 V2 code is staged under A/execution/h20-dec1-phase-v2-code-20261126-v1.

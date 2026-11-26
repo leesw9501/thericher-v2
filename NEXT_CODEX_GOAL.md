@@ -79,9 +79,13 @@ envelope and commits its digest separately. Verify a joined native
 invented run first. Do not use the old profile or alter the exit task.
 The transport now requires exact original BankLeg closure, same-phase
 host evidence and observer restoration linked to the closure bytes.
-Use the newly verified actual outer lineage-repaired task probe and
+The transport now uses the pinned native outer lineage task probe and
 unchanged inner financial receipt pins in HANDOFF. The old direct task
 receipt is historical; the actual after-event probe is not yet run.
+The matching claims paths and repaired writer-deny input, plus the current
+exact web bootstrap and mount metadata, now pass their scoped verifier.
+Next integrate the pinned typed-web checks into the five-phase census
+and protect the actual caller/output source; no broad web exemption.
 Freeze V2 for the next host profile: the public gross sign is only exact
 closed-flat KIS Paper fill cashflow before fees; no amount, settlement or
 net evidence is inferred. Keep V1 source and results historical.

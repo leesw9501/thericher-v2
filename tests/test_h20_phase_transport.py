@@ -95,7 +95,14 @@ def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, 
 
     monkeypatch.setattr(transport, "_native_sources", lambda: (configure, Native, lambda *_: None))
     monkeypatch.setattr(
-        transport, "prove_h20_exit_read_boundary", lambda *, owner_closed: owner_closed()
+        transport,
+        "prove_h20_exit_read_boundary",
+        lambda *, owner_closed: owner_closed(transport.prove_h20_exit_read_boundary, 123),
+    )
+    monkeypatch.setattr(
+        transport,
+        "prove_h20_exit_outer_owner_closed",
+        lambda _task, pid, *, timeout: pid == 123 and 0 < timeout <= 8 and fault != "exit_unlinked",
     )
     monkeypatch.setattr(
         transport,
@@ -111,7 +118,6 @@ def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, 
             entry_sha256=pin,
             guest_sha256="guest",
             image="image",
-            owner_closed=lambda: fault != "exit_unlinked",
         )
 
     if fault is not None:
