@@ -14,6 +14,17 @@ returned independent receipt digest and rejected a changed seal or receipt.
 SHA256 `6e28919a53403bb8936021b9ae610d307a700a3106a565e2ee821434af8e50ef`.
 No holdout or market input opened. Protected host isolation remains separate;
 Nov30 is still the first unconsumed opportunity.
+The alternate Dec4 CPU Docker route exercised the frozen native core on
+17 invented rows and tensors: one SELF and one OLD60 forward, zero fits,
+the native 50:50 seal passed. Network-none, source/input RO and only the
+invented output writable; zero exit in 4.68 s and container removed.
+`A/research/h3-dec4-fixed-half-forecast-20261204-v1-docker-invented-v1/HOST-EVIDENCE.json`
+SHA256 `db33f9decb7cb0c751e9a4bb61645c728b67adb366594020ff19f69411d25871`.
+Claude host-bridge verdict is preparation-only at the same root's
+`CLAUDE-HOST-BRIDGE-VERDICT.json`. The guest cannot verify a Windows owner's
+closure. Bind independently verified Dec3 source/closure and the same input
+bytes to one pinned container exit and native seal outside the guest. Do
+not conflate host consistency with OS origin or real forecast quality.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight

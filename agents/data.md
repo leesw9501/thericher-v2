@@ -196,6 +196,12 @@ separate same-principal process could open all three for add-file access.
 `68c75fbfe6690dcf1b750a57c7dd8b6aec4bb14ff4c41de63ed25f3095893a4e`.
 No files created by that peer and no activation. Held creator handles and
 protected DACLs alone do not exclude a same-principal writer.
+An isolated write-restricted peer reached suspended token/image attestation
+but exited `STATUS_DLL_INIT_FAILED` before any access checks; no write denial
+was proved. The invented writer seal was unchanged. No retry, new namespace
+activation or operational ACL change. `A/data/h3-dec9-restricted-peer-seal-contract-v1/RESULT.json`
+SHA256 `a65f311d9169db6a341b99a7fd337935b44866e0176d0d33b80f557160ae1115`.
+Check reuse of the existing protected owner before further token probes.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

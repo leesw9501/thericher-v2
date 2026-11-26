@@ -290,8 +290,12 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    the returned digest to exact child exit and empty tree. Bind the
    protected host and independent receipt retention before installing its own
    credential-free forecast opportunity. Do not alter the Dec4 Paper point.
-   The current Windows Job inherits the caller token; test real
-   network/file isolation before admitting the forecast.
+   The direct Windows isolation attempts did not qualify. A separate pinned
+   CPU Docker guest ran the frozen scorer on invented rows under network-none
+   and read-only inputs. Use that isolated compute route for preparation;
+   bind the independently verified Windows Dec3 closure to exact mounted
+   bytes, daemon-side exit and seal before any real forecast. No deployment
+   or change to the December Paper point from this synthetic result.
    The Dec4 fixed-half adapter now joins ordered typed inputs to the existing
    25 bp-per-side comparator and native block record. Actual target
    admission, block readout and other source owners remain separate. The
