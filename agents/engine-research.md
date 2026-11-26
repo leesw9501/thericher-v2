@@ -44,6 +44,18 @@ This is a cost-sensitivity reference for later Paper observations, not a
 lower-cost replay, drawdown estimate, criterion change or live fee claim.
 An independent role checked the arithmetic; no payload, fit or forward.
 
+HGB/GRU adjacent disagreement DEV: one bounded CPU replay used only the
+two released same-key forecasts and the exact common marks. Closed at
+14 pairs over 47 cohorts; candidate mean net +1.97 bp versus +0.92 bp
+for the single hash null, +1.63 bp for its algebraic expectation, and
++3.68 bp for higher original blend rank. Candidate also had worse sampled
+drawdown than higher rank (0.348% vs 0.326%). Fails the frozen falsifier;
+do not tune or rerun this rule on these cohorts. Costs are 25 bp per side,
+same slot count and funded gross. One read, zero fits/forwards; image
+network-none, inputs stable, container absent; 13.023s active incl. prep
+debit. This is seen DEV, not a strategy or Paper change. `A/research/hgb-gru-adjacent-disagreement-dev-20261126-v1/RESULT.json`
+SHA256 `36b2545694014b49443b7a5e2d9a54aca0e28afe024bd68e886295626ce1a4f3`.
+
 Nov26 parallel research triage: the retained Oct26-29 one-minute DEV slice
 has a complete 17-name regular-session grid, but no qualified quote or
 publication-time evidence. Reserve it for price-timing sensitivity, not fill
