@@ -14,6 +14,19 @@ settlement and period-profit interfaces; do not assume those are Paper fee
 sources or turn missing fees into zero. Source:
 <https://github.com/koreainvestment/open-trading-api/blob/main/examples_user/overseas_stock/overseas_stock_functions.py>.
 
+The current stock cycle already saves the original plan quote (both sides)
+with the exact plan and intent seed in `pending.arguments.reads`. Recovery
+uses these typed reads, then clears pending at native reconciliation. The
+surviving plan's limit is not a quote. Do not attempt retrospective quote
+attribution for a completed leg without the matching original read. For a
+successor, prefer retaining a minimal optional plan-quote observation with
+the exact durable intent, in the existing atomic lifecycle, over a new file
+or API call. This is separate from the later sell recheck, never a guard
+input and not a change to frozen R6 or old plan digests. Claude Sonnet's
+challenge favored this over a sidecar: test old-state replay, crash at the
+write/clear boundary, and absent-as-unknown. Three existing focused recovery
+cases passed on the unchanged source; persistence is not yet implemented.
+
 R6 status supersedes earlier draft notes: named Dec4 entry/Dec9 exit are
 installed Ready, zero instances, exact full readback in HANDOFF. No manual
 start or broker call. Next prepare the phase result readers, leave Dec1 H20
