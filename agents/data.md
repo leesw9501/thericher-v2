@@ -9,7 +9,12 @@ protected direct action, source/custody pins and existing config scope next.
 The local versioned CPython 3.14.3 Pythonw candidate has an ordinary path
 and SHA256 `3737f863a02f4c92387dee920aeee6ab260548cd7c4bed829e96ed005e65409e`.
 The generic uv base path includes a junction. No activation, data calls,
-or block-end read.
+or block-end read. The Dec9 code-only `source/SOURCE.json` is now protected
+under `A/data/h3-dec9-modp1-target-owner-20261209-v1`, SHA256
+`7ec569061f9cfae997ec3cf9477d6b74bdb643e0e3980b4863b702092471f79a`.
+Native source verification matched 567 Git members; a wrong pin failed.
+Bind the direct runtime and independent evaluation prebind next; the frozen
+entry currently expects the venv path. No target capture is installed.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

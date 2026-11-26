@@ -323,7 +323,8 @@ The production task and custody are unchanged.
 The Dec1 phase host adapter now checks the six exact read-only mount targets,
 separate phase DTO, pinned envelope checks and independently retained native
 result digest. Tests rejected replay, stale clocks and replaced result bytes.
-Proposed read window is Dec1 14:41-14:43 UTC for starting, hard stop 14:46 UTC.
+The installed read window is Dec1 14:41-14:43 UTC for starting, hard stop
+14:46 UTC. Original owned exit remains Ready Dec1 14:25 UTC.
 The tracked transport adapter now composes the exact r2 metadata/Docker
 sources and r3 bounded Windows Job transport, retains the five fresh
 admissions and refuses partial closure. Focused invented joints passed.
@@ -398,15 +399,22 @@ orchestration, publication and protected-digest reader together; its
 broker/custody/Docker edges were invented. Duplicate attempts and modified
 result bytes were refused. `HOST-JOINED-SYNTHETIC-PUBLICATION.json` SHA256
 `3e82c1f951bb0f3a58cc9534043819b1826faebc5135ba31f4263dc54d09c0bb`.
-Both the fixture Task and scratch are absent. The next step is the exact
-owned reader's future definition and protected profile/seal, keeping the
-existing financial exit unchanged. Claude's challenge distinguishes
+Both the fixture Task and scratch are absent. Claude's challenge distinguishes
 installation from start-time source checks and the absolute child deadline.
 The independent `protected-host/TASK-INTENT.json` SHA256
 `7305347d7ac702b47d9baeb3886c59190fc62849b3065b9bd77044e4d3d48b9a`
 binds the exact argv, action digest and future start/stop. Its action and
-clock matched the actual bootstrap's Python codec. This is not registration.
-No private read. The startup conditional verdict is retained
+clock matched the actual bootstrap's Python codec.
+`thericher-h20-dec1-readonly-outcome-20261201-v2` is now Ready for
+Dec1 14:41 UTC, never run, zero instances. Full expected XML in both native
+views, API7 ACL and hidden-inclusive emptiness matched independently.
+Windows inserted principal/action attributes on first registration; the
+same disabled definition was verified against an explicit draft and
+enabled without re-registering. The original exit was unchanged.
+`READ-ONLY-TASK-INSTALLED.json` SHA256
+`24b8ae229930d39a1ebb2d30c040a0c67ddbc2f2dcf872aac415c68d7bc681b5`.
+Verify the exact runtime publication after its owned window; there is no
+private read yet. The startup conditional verdict is retained
 in this receipt: this attests startup on the assumed-honest host, not
 pre-bootstrap loader integrity or resistance to host tampering.
 The same frozen no-site code also assembled the exact candidate, including
@@ -434,7 +442,7 @@ PnL, daily transaction or settlement-basis balance. The official
 [settlement sample](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_paymt_stdr_balance/inquire_paymt_stdr_balance.py)
 does not provide a demo route. Do not infer exact fee/booked cash from
 orderable funds or switch to live. Paper fee/settlement source not established.
-No phase host profile or task is installed. Claude verdict:
+Historical pre-install Claude verdict:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 H20-PHASE-HOST-CLAUDE-VERDICT-20261126.json (8d041f9d97b59da0edbc4badf7aaa1804aa28fdc29b3642dd235069ee135355b).
 

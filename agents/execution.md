@@ -48,13 +48,15 @@ composition now reuses the pinned r2/r3 code and joins all five admissions
 and Job/container closure. Bind the protected caller, exact exit/current
 custody proof next. The publisher now verifies the complete envelope and
 retains its independent commit digest without overwriting. Use the proposed after-event window in
-HANDOFF, not the old entry-only ABI. No read profile or exit change installed.
+HANDOFF, not the old entry-only ABI.
 The protected direct bootstrap passed native hidden startup and three negative
 checks without a claim or private read. See HANDOFF for the exact receipt.
 The trigger-fired native identity join now also passed through real transport
 orchestration and protected publication with invented external evidence
-(HANDOFF). Bind the actual future definition and protected profile/seal next.
-The read Task remains absent; the original financial exit is Ready.
+(HANDOFF). The protected H20 read Task is Ready for Dec1 14:41 UTC, with
+no run. Both XML surfaces, the ACL and exact owner prebinding passed.
+The original financial exit remains Ready for 14:25 UTC. Await no
+foreground session time; read the exact publication after the owned window.
 V2 adds a categorical gross result for an exact matched terminal pair and
 never a cash amount. Both actual fee lines and booked settlement remain
 unknown until independently linked to the two fills; no net PnL claim.
