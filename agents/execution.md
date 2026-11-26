@@ -40,6 +40,18 @@ SHA256 `8db6fc454c8d452d52ad43e4fc38b33b0c2e2732a7aa30710d02661a9c22925c`.
 R6 cannot supply an independently retained list of requests or attribute
 transport to a particular host launch. Prepare the exit join separately;
 no actual result or custody has been read.
+The integrated exit fixture used a fresh native exit process and a separate
+network-disabled RO consumer at the original Linux paths. It distinguished
+one exact terminal flat pair, recovered buy with a positive lot and no sell,
+and still-pending custody; crossed input failed in all three. Only the
+terminal pair admitted gross and modeled-cost signs. Under the same root:
+`exit-scope/exit_reader.py` SHA256
+`0932131836f95794199378259371a574621b697ba0829bac689235f9e63a1a2d`;
+`exit-scope/smoke.py` SHA256
+`0d79687b1591d3769abd6c462be4d098f989b508611368cdb963f904287ff208`.
+The fixture uses invented closure flags. Production glue must replace them
+with the exact independently qualified phase/BankLeg/observer/retained
+proofs and actual writer exclusion; lack of those cannot admit a read.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
