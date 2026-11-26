@@ -290,7 +290,10 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    direct executable and base image rather than the venv redirector, and
    the isolated direct native process reached an invented capture boundary.
    A corrected frozen candidate and the 19-query evaluator contract are
-   retained separately from the original (Data stateboard). The CLI stays
+   retained separately from the original (Data stateboard). Direct startup
+   also verified the measured interpreter and dependency set with an
+   empty bytecode-cache path. Bind those pins to fresh native Scheduler,
+   custody and Paper-only config proof in the actual host next. The CLI stays
    disabled until that launcher binds custody and independently retained protected
    pins; do not duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;

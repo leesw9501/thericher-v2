@@ -28,6 +28,15 @@ binds one 19-query target contract before the Dec4 open and preserves the
 Dec28 21:00 UTC evaluation release. Neither candidate grants runtime
 admission. Qualify the native, config-scoped host before selecting the
 corrected source at its fixed path. No target capture is installed.
+`DEC9-STARTUP-RUNTIME.json` SHA256
+`d70abe7702f4a2b293055eea2244e710be984e5879ee9309861a1cff31d42899`
+pins 184 interpreter and 3,405 dependency files for the actual 19-query
+cold startup (576 observed dependency imports). The native `pythonw`
+guard verified these bytes and re-imported the frozen candidate with
+the bytecode cache redirected to an absent path. It refused `--run`.
+`DEC9-RUNTIME-STARTUP-PREFLIGHT.json` SHA256
+`1ebaecbe8ef992e6073be5ca23ff57489e0ed04c09c2f186049aba80854a3639`.
+These are preflight pins, not an OS sandbox, custody proof, or activation.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

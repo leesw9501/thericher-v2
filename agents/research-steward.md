@@ -15,6 +15,14 @@ The owned synthetic profile and scratch were retained. Reconcile that
 exact scope before retry: `thericher.probe.6fe2a69bb46745d7b944cb497766db32`
 and `appcontainer-synthetic-2k39icgc`. Do not replay forecasts or remove
 anything based on this partial proof.
+Revision `appcontainer-probe-r2.py` SHA256
+`e6a57fcb000f36c41062e1c8a982bf35870c9cbb96e68a5ab09dfbc96db1f4f4`
+corrected the limit-violation counter per Microsoft; suspended counts were
+lifetime/active/limit 1/1/0, then 2/0/0 at root signal. The second lifetime
+association is unclassified. Identify it in a fresh synthetic witness before
+admitting forecast isolation; simply permitting two is not evidence.
+R2 also retained its exact profile `thericher.probe.d1cb948339be491f9823a294059d823f`
+and scratch `appcontainer-synthetic-s2pizj82`. The original remains unchanged.
 
 ## Actual Queue
 
