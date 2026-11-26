@@ -8,6 +8,7 @@ from pathlib import Path
 from types import ModuleType
 
 from thericher_v2.execution.paper_peer_visit import _read, ordinary
+from thericher_v2.ops.h20_phase_exit_boundary import prove_h20_exit_read_boundary
 from thericher_v2.ops.h20_phase_host import (
     HARD_STOP,
     LAST_START,
@@ -89,12 +90,13 @@ class _Dec1Deadline:
 
 
 def run_h20_phase_transport(
-    *, binding, out, entry_file, entry_sha256, guest_sha256, image, admission_ready
+    *, binding, out, entry_file, entry_sha256, guest_sha256, image, owner_closed
 ):
     """Run only from a protected one-shot caller with separately pinned binding.
 
-    The caller owns exact exit and current custody admission, output claim and
-    publication. Do not feed this function the old November actual binding.
+    The caller supplies the attested outer exit-owner probe, output claim and
+    publication. Current custody is rechecked by native admission. Do not
+    feed this function the old November actual binding.
     Returns the categorical DTO, five admissions and joined process facts.
     """
     deadline = _Dec1Deadline()
@@ -104,12 +106,13 @@ def run_h20_phase_transport(
     out = Path(out)
     ordinary(out)
     _need(out.is_dir() and not any(out.iterdir()))
+    _need(prove_h20_exit_read_boundary(owner_closed=owner_closed) is True)
+    deadline.remaining()
     configure, bounded_transport, share_deadline = _native_sources()
     configured = configure(binding, out, entry_file)
     namespace = configured.namespace
     _need(namespace["SOURCE"]["image"] == image)
     deadline.remaining()
-    _need(admission_ready() is True)
     evidence = []
     caller = None
 

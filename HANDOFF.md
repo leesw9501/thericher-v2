@@ -337,6 +337,24 @@ unknown; never persist fill amounts in this public envelope. Even a
 reconciled flat lot does not establish fees, booked settlement or net PnL.
 The next private accounting join needs separately evidenced fees and booked
 cash tied to both exact fills. Existing V1 evidence is retained unchanged.
+The transport now requires the original Dec1 start, operational closure
+and return bound to the exact release/round/phase and window. It validates
+the original BankLeg closure and joins the observer restore to the exact
+closure bytes. The protected caller still must supply fresh Scheduler and
+outer PID absence plus qualified custody claims. This is neither OS-origin
+proof nor evidence of an order effect.
+Fresh actual Scheduler readback corrected the outer lineage: the Ready
+Dec1 exit currently uses lineage repair Source `a62fd1c5` and operational
+release `6a9cff97`, not the historical direct action. The adoption code
+calls the unchanged financial Source `c42867fa` / release `a4a7ceb1`;
+the exact output roots, clocks and original bank scope match. Its
+read-only exact definition/API7/PID probe is staged at
+`READ-EXACT-EXIT-PROFILE.ps1` in the V2 code root. Pre-event metadata
+passed and a premature positive absence request was refused. Full digests:
+`EXIT-PROFILE-READBACK.json` in that root. Bind that pinned probe as the
+outer callback of the future reader; no change to the original Task.
+Claude's `EXIT-LINEAGE-CLAUDE-VERDICT.json` requires fresh writer identity
+and custody census, not just disappearance of one controller PID.
 V2 code is staged under A/execution/h20-dec1-phase-v2-code-20261126-v1.
 Its exact 1057-member guest source pin
 `1caa137e525fbfa45867e020132ea01c0705ad140f3a3b56f49a519a6dc6219f`
@@ -466,6 +484,10 @@ The separate Job bridge now binds the pinned runner's digest to its exact
 child PID/birth and admits the receipt only after a zero exit and empty
 Windows Job before cutoff. Invented native failures were withheld. The
 protected actual host and independent digest retention are still missing.
+The Windows Job inherits the caller's token. Env scrubbing and Job lifetime
+alone do not block outbound connections or unrelated files. The next
+native isolation probe must exercise a real restricted token, read-only
+inputs, isolated writable return and independent receipt retention.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.

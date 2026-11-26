@@ -73,10 +73,15 @@ from exact exit and passed synthetic/native checks. The phase host adapter
 checks explicit RO mount targets and a separately published digest. It
 now connects the pinned native metadata, five-phase read-only Docker and
 Job transport with an absolute deadline check. Freeze the protected
-caller, exact original exit closure/current custody admission for the
+caller and fresh outer exit-owner/custody admission for the
 proposed Dec1 14:41 UTC read. The result publisher now verifies the joined
 envelope and commits its digest separately. Verify a joined native
 invented run first. Do not use the old profile or alter the exit task.
+The transport now requires exact original BankLeg closure, same-phase
+host evidence and observer restoration linked to the closure bytes.
+Use the newly verified actual outer lineage-repaired task probe and
+unchanged inner financial receipt pins in HANDOFF. The old direct task
+receipt is historical; the actual after-event probe is not yet run.
 Freeze V2 for the next host profile: the public gross sign is only exact
 closed-flat KIS Paper fill cashflow before fees; no amount, settlement or
 net evidence is inferred. Keep V1 source and results historical.
@@ -254,6 +259,8 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    the returned digest to exact child exit and empty tree. Bind the
    protected host and independent receipt retention before installing its own
    credential-free forecast opportunity. Do not alter the Dec4 Paper point.
+   The current Windows Job inherits the caller token; test real
+   network/file isolation before admitting the forecast.
    The Dec4 fixed-half adapter now joins ordered typed inputs to the existing
    25 bp-per-side comparator and native block record. Actual target
    admission, block readout and other source owners remain separate. The

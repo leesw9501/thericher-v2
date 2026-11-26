@@ -52,6 +52,13 @@ HANDOFF, not the old entry-only ABI. No read profile or exit change installed.
 V2 adds a categorical gross result for an exact matched terminal pair and
 never a cash amount. Both actual fee lines and booked settlement remain
 unknown until independently linked to the two fills; no net PnL claim.
+Transport now withholds the private read without the original dated exit
+receipt, positive BankLeg closure and exact restore linkage. Wire the
+native outer PID/definition sampler and current custody claims to the
+protected caller; no live read or task change.
+Actual outer lineage is newer than the historical direct installation;
+its staged exact read-only sampler passed pre-event readback and rejected
+premature closure. Inner original financial plan and bank scope match.
 The exact root watchdog is connected and native inert Pythonw cases passed.
 It arms after BankLeg acquisition, rejects wrong birth, and denies further
 admission if it exits. Correct Scheduler ownership with the watcher child

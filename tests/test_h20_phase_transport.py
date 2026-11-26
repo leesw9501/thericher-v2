@@ -39,7 +39,9 @@ def test_deadline_no_early_or_late_start_and_cleanup_has_own_reserve(monkeypatch
             transport._Dec1Deadline()
 
 
-@pytest.mark.parametrize("fault", [None, "denied", "wrong_caller", "wrong_phase", "cid", "job"])
+@pytest.mark.parametrize(
+    "fault", [None, "denied", "wrong_caller", "wrong_phase", "cid", "job", "exit_unlinked"]
+)
 def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, fault):
     monkeypatch.setattr(transport, "_utc_now", lambda: transport.OPENS)
     entry = tmp_path / "entry.py"
@@ -87,10 +89,14 @@ def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, 
             return {"invented": True}
 
     def configure(binding, out, entry_file):
+        assert fault != "exit_unlinked"
         assert out == output and entry_file == entry
         return SimpleNamespace(namespace=namespace, fresh=census)
 
     monkeypatch.setattr(transport, "_native_sources", lambda: (configure, Native, lambda *_: None))
+    monkeypatch.setattr(
+        transport, "prove_h20_exit_read_boundary", lambda *, owner_closed: owner_closed()
+    )
     monkeypatch.setattr(
         transport,
         "invoke_h20_phase_window",
@@ -105,7 +111,7 @@ def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, 
             entry_sha256=pin,
             guest_sha256="guest",
             image="image",
-            admission_ready=lambda: True,
+            owner_closed=lambda: fault != "exit_unlinked",
         )
 
     if fault is not None:
@@ -116,4 +122,4 @@ def test_transport_returns_only_on_complete_native_chain(monkeypatch, tmp_path, 
         assert result == {"invented": True}
         assert closed["status"] == "PASS"
         assert [r["phase"] for r in closed["admissions"]] == list(transport._PHASES)
-    assert starts == [True]
+    assert starts == ([] if fault == "exit_unlinked" else [True])
