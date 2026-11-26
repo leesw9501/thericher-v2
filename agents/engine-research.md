@@ -65,6 +65,9 @@ synchronous Dec3 writer absence before the existing core. Bind the
 protected host, process-tree deadline and independent exit/seal output;
 the separately protected code-only release now verifies all 561 members
 and original Dec3 source. No forecast task or call yet.
+Its separate Job bridge joined the exact synthetic child PID/birth,
+zero exit and empty Job before returning a receipt digest. No seal was
+opened. Bind the protected direct host/runtime and independent digest next.
 
 The Dec4 fixed-half slot now feeds the existing exact same-gross risky
 and cash comparisons and native block reducer on invented inputs. The

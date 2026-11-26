@@ -77,6 +77,9 @@ caller, exact original exit closure/current custody admission for the
 proposed Dec1 14:41 UTC read. The result publisher now verifies the joined
 envelope and commits its digest separately. Verify a joined native
 invented run first. Do not use the old profile or alter the exit task.
+Freeze V2 for the next host profile: the public gross sign is only exact
+closed-flat KIS Paper fill cashflow before fees; no amount, settlement or
+net evidence is inferred. Keep V1 source and results historical.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -247,8 +250,9 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    result has been admitted.
    Its new no-site CPU launcher verifies the isolated named source and
    synchronous Dec3 closure. The actual code-only source is now frozen
-   and both source verifiers passed (HANDOFF). Bind the protected host, hard process tree
-   bound and independent exit/seal receipt before installing its own
+   and both source verifiers passed (HANDOFF). The Job bridge now joins
+   the returned digest to exact child exit and empty tree. Bind the
+   protected host and independent receipt retention before installing its own
    credential-free forecast opportunity. Do not alter the Dec4 Paper point.
    The Dec4 fixed-half adapter now joins ordered typed inputs to the existing
    25 bp-per-side comparator and native block record. Actual target

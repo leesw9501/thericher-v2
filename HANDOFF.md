@@ -330,10 +330,30 @@ admissions and refuses partial closure. Focused invented joints passed.
 Finish the protected one-shot entry, exact exit/custody admission, fresh
 claims and actual joined native smoke. The publication adapter now joins
 the exact closed/result bytes and commits a digest in a separate protected
-directory; no actual publication. The phase envelope deliberately reports
-fees/settlement/net PnL unknown. An eventual accounting adapter can reuse the
-portfolio PnL kernel on the exact validated pair; even a reconciled flat
-lot does not establish measured fees, booked settlement or net PnL.
+directory; no actual publication. V2 now returns only the gross PnL sign
+from the native-validated, distinct, positive matched terminal fills of a
+closed-flat pair. Missing, conflicting or noncurrent fill amounts are
+unknown; never persist fill amounts in this public envelope. Even a
+reconciled flat lot does not establish fees, booked settlement or net PnL.
+The next private accounting join needs separately evidenced fees and booked
+cash tied to both exact fills. Existing V1 evidence is retained unchanged.
+V2 code is staged under A/execution/h20-dec1-phase-v2-code-20261126-v1.
+Its exact 1057-member guest source pin
+`1caa137e525fbfa45867e020132ea01c0705ad140f3a3b56f49a519a6dc6219f`
+passed the two-admission network-none/all-RO empty-custody Docker fixture.
+`INVENTED-GUEST-RESULT.json` SHA256
+`ec2c97b118ccd5e24ce21353508e5fcdc46ebb69e3452d78c4729633def4ad9b`.
+Synthetic custody/volume removed; no operational host admission or read.
+The reader and SDK root ACL pins are in `CODE-ACL.json`, same external root.
+Claude conditional verdict: `CLAUDE-VERDICT.json` at the same external root.
+V2 uses the native cumulative totals and retained exact lot check, never
+single execution fragments. It does not include distributions or cash events.
+KIS's [official coverage table](https://github.com/koreainvestment/open-trading-api/blob/main/legacy/README.md)
+marks overseas order fills/current balance as Paper, but not its period
+PnL, daily transaction or settlement-basis balance. The official
+[settlement sample](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_paymt_stdr_balance/inquire_paymt_stdr_balance.py)
+does not provide a demo route. Do not infer exact fee/booked cash from
+orderable funds or switch to live. Paper fee/settlement source not established.
 No phase host profile or task is installed. Claude verdict:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 H20-PHASE-HOST-CLAUDE-VERDICT-20261126.json (8d041f9d97b59da0edbc4badf7aaa1804aa28fdc29b3642dd235069ee135355b).
@@ -442,6 +462,10 @@ pinned Dec3 source at A/research/h3-dec4-fixed-half-forecast-20261204-v1/source,
 SHA256 `30b37958da1b7412e2e07ddaea36f7b067147c3e52d0c657135b5415fde14953`.
 `SOURCE-VERIFIED.json` in the parent records the actual protected root ACL
 pin and missing host. No payloads, run or task.
+The separate Job bridge now binds the pinned runner's digest to its exact
+child PID/birth and admits the receipt only after a zero exit and empty
+Windows Job before cutoff. Invented native failures were withheld. The
+protected actual host and independent digest retention are still missing.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.

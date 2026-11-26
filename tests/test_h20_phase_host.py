@@ -64,17 +64,26 @@ def test_denied_before_native_transport(request_args, reason):
         host.invoke_h20_phase_window(**request_args, transport=lambda *_: pytest.fail("transport"))
 
 
-@pytest.mark.parametrize("fault", ["legacy", "unlinked", "no_entry_fill", "broker_pnl", "raw"])
+@pytest.mark.parametrize(
+    "fault",
+    ["legacy", "old_phase", "unlinked", "no_entry_fill", "broker_pnl", "gross_unclosed", "raw"],
+)
 def test_reject_unqualified_guest_projection(request_args, fault):
     answer = _completed()
     if fault == "legacy":
         answer["schema"] = "H20_EXACT_OFFLINE_OUTCOME_V1"
+    elif fault == "old_phase":
+        answer["schema"] = "H20_EXACT_OFFLINE_PHASE_OUTCOMES_V1"
+        del answer["gross_PnL_sign"], answer["gross_scope"]
     elif fault == "unlinked":
         answer["exit"] = _unknown_phase("NO_LINKED_PLAN")
     elif fault == "no_entry_fill":
         answer["entry"]["fill"] = "ZERO"
     elif fault == "broker_pnl":
         answer["net_PnL"] = "invented"
+    elif fault == "gross_unclosed":
+        answer["gross_PnL_sign"] = "POSITIVE"
+        answer["exit"]["terminal"] = "UNKNOWN"
     else:
         answer["raw"] = "invented"
     with pytest.raises(ValueError, match="H20_PHASE_HOST_UNQUALIFIED"):

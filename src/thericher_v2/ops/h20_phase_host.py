@@ -7,7 +7,13 @@ from hashlib import sha256
 from pathlib import Path
 
 from thericher_v2.execution.paper_peer_visit import _read
-from thericher_v2.ops.h20_exact_phase_outcomes import _READER, _load, _result, _unknown_phase
+from thericher_v2.ops.h20_exact_phase_outcomes import (
+    _GROSS_SIGNS,
+    _READER,
+    _load,
+    _result,
+    _unknown_phase,
+)
 
 OPENS = datetime(2026, 12, 1, 14, 41, tzinfo=UTC)
 LAST_START = datetime(2026, 12, 1, 14, 43, tzinfo=UTC)
@@ -46,9 +52,17 @@ def _check_result(value, *, reasons, stages):
         ("reason", reasons),
         ("stage", stages),
         ("current_owned_inventory", {"UNKNOWN", "POSITIVE", "FLAT"}),
+        ("gross_PnL_sign", _GROSS_SIGNS),
     ):
         _need(type(value[key]) is str and value[key] in allowed)
-    for key in reference.keys() - {"reason", "stage", "entry", "exit", "current_owned_inventory"}:
+    for key in reference.keys() - {
+        "reason",
+        "stage",
+        "entry",
+        "exit",
+        "current_owned_inventory",
+        "gross_PnL_sign",
+    }:
         _need(type(value[key]) is type(reference[key]) and value[key] == reference[key])
     for phase in ("entry", "exit"):
         row = value[phase]
@@ -61,6 +75,7 @@ def _check_result(value, *, reasons, stages):
     if value["reason"] != "OK":
         _need(value["entry"] == value["exit"] == _unknown_phase())
         _need(value["stage"] != "COMPLETE" and value["current_owned_inventory"] == "UNKNOWN")
+        _need(value["gross_PnL_sign"] == "UNKNOWN")
     else:
         _need(value["stage"] == "COMPLETE" and value["entry"]["plan"] == "LINKED")
         _need(value["exit"]["plan"] in {"LINKED", "NO_LINKED_PLAN"})
@@ -72,6 +87,11 @@ def _check_result(value, *, reasons, stages):
             )
         if value["current_owned_inventory"] != "UNKNOWN":
             _need(value["entry"]["fill"] in {"PARTIAL", "FULL"})
+        if value["gross_PnL_sign"] != "UNKNOWN":
+            _need(
+                value["current_owned_inventory"] == "FLAT"
+                and value["entry"]["terminal"] == value["exit"]["terminal"] == "YES"
+            )
     return value
 
 

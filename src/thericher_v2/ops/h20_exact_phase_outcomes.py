@@ -5,6 +5,7 @@ import os
 from hashlib import sha256
 from pathlib import Path
 
+from thericher_v2.execution.kis_paper_fill_accounting import KisPaperCumulativeFill
 from thericher_v2.execution.paper_peer_visit import _read
 
 _READER = (
@@ -16,7 +17,8 @@ _READER = (
     else Path("/reader/reader.py")
 )
 _PIN = "4250965ffab28ecf0aebaa9f548201058bec02f50cec3718ef8862ab5c55b46f"
-_SCHEMA = "H20_EXACT_OFFLINE_PHASE_OUTCOMES_V1"
+_SCHEMA = "H20_EXACT_OFFLINE_PHASE_OUTCOMES_V2"
+_GROSS_SIGNS = frozenset({"UNKNOWN", "POSITIVE", "NEGATIVE", "ZERO"})
 
 
 def _unknown_phase(plan="UNKNOWN"):
@@ -35,6 +37,8 @@ def _result(reason, stage):
         current_owned_inventory="UNKNOWN",
         inventory_scope="EXACT_NATIVE_H20_LOT_LEDGER_NOT_BROKER_HOLDINGS",
         broker_holdings="NOT_READ",
+        gross_PnL_sign="UNKNOWN",
+        gross_scope="EXACT_CLOSED_PAIR_BEFORE_FEES_NOT_SETTLED_CASH",
         fees_settlement_netPnL="NOT_OBSERVED",
         net_PnL="UNKNOWN",
         reservation_released=False,
@@ -66,6 +70,30 @@ def _outcome(state, proof, terminal):
     )
 
 
+def _gross_sign(entry, exit_state):
+    """Called only on the native-validated pair after final/flat checks."""
+    buy, sell = entry.cumulative_fill, exit_state.cumulative_fill
+    if (
+        type(buy) is not KisPaperCumulativeFill
+        or type(sell) is not KisPaperCumulativeFill
+        or not 0 < buy.quantity == sell.quantity
+        or buy.identity_ref == sell.identity_ref
+        or (entry.intent.symbol, entry.intent.exchange)
+        != (exit_state.intent.symbol, exit_state.intent.exchange)
+        or entry.current_fill != buy
+        or exit_state.current_fill != sell
+        or entry.fill_observation_status != "available"
+        or exit_state.fill_observation_status != "available"
+    ):
+        return "UNKNOWN"
+    # Sign of the difference without decimal rounding or returning an amount.
+    if sell.gross_amount > buy.gross_amount:
+        return "POSITIVE"
+    if sell.gross_amount < buy.gross_amount:
+        return "NEGATIVE"
+    return "ZERO"
+
+
 def _phases(chosen, terminal):
     if [phase for _, _, phase in chosen] not in (["entry"], ["entry", "exit"]):
         raise ValueError("STATE_BINDING_INVALID")
@@ -93,6 +121,12 @@ def _phases(chosen, terminal):
         if remaining < 0:
             raise ValueError("FILL_LINK_INVALID")
         result["current_owned_inventory"] = "POSITIVE" if remaining > 0 else "FLAT"
+        if (
+            len(chosen) == 2
+            and remaining == 0
+            and result["entry"]["terminal"] == result["exit"]["terminal"] == "YES"
+        ):
+            result["gross_PnL_sign"] = _gross_sign(entry, exit_state)
     return result
 
 

@@ -3,6 +3,7 @@ import json
 import subprocess
 import sys
 from datetime import UTC, datetime
+from decimal import Decimal, localcontext
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -59,6 +60,51 @@ def test_exact_exit_is_separate_from_full_entry(
     assert result["current_owned_inventory"] == expected_inventory
     assert result["broker_holdings"] == "NOT_READ" and result["net_PnL"] == "UNKNOWN"
     assert result["reservation_released"] is False
+    assert result["gross_PnL_sign"] == "UNKNOWN"
+
+
+@pytest.mark.parametrize(
+    ("sell_amount", "fault", "gross"),
+    [
+        ("100.0001", None, "POSITIVE"),
+        ("99.9999", None, "NEGATIVE"),
+        ("100.0000", None, "ZERO"),
+        ("100.0001", "pending", "UNKNOWN"),
+        ("100.0001", "conflict", "UNKNOWN"),
+        ("100.0001", "stale", "UNKNOWN"),
+        ("100.0001", "alias", "UNKNOWN"),
+        ("100.0001", "foreign", "UNKNOWN"),
+        ("100.0001", "not_flat", "UNKNOWN"),
+    ],
+)
+def test_gross_sign_only_for_distinct_final_closed_fills(sell_amount, fault, gross):
+    entry, exit_state = _state("buy", 5, 5, True), _state("sell", 5, 5, True)
+    now = datetime(2026, 12, 1, 14, 39, tzinfo=UTC)
+    entry.current_fill = entry.cumulative_fill = accounting.KisPaperCumulativeFill(
+        "sha256:" + "a" * 64, Decimal(5), Decimal(5), Decimal("100.0000"), now
+    )
+    exit_state.current_fill = exit_state.cumulative_fill = accounting.KisPaperCumulativeFill(
+        "sha256:" + ("a" if fault == "alias" else "b") * 64,
+        Decimal(5),
+        Decimal(4 if fault == "not_flat" else 5),
+        Decimal(sell_amount),
+        now,
+    )
+    entry.fill_observation_status = "available"
+    exit_state.fill_observation_status = "conflict" if fault == "conflict" else "available"
+    if fault == "stale":
+        exit_state.current_fill = None
+    if fault == "foreign":
+        exit_state.intent.symbol = "OTHER"
+    chosen = [(entry, True, "entry"), (exit_state, fault != "pending", "exit")]
+    with localcontext() as ctx:
+        ctx.prec = 1
+        result = readout._phases(chosen, lambda _, proof: proof)
+    assert result["gross_PnL_sign"] == gross
+    assert result["net_PnL"] == "UNKNOWN"
+    assert result["fees_settlement_netPnL"] == "NOT_OBSERVED"
+    serialized = json.dumps(result)
+    assert sell_amount not in serialized and entry.cumulative_fill.identity_ref not in serialized
 
 
 @pytest.fixture
