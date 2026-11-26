@@ -175,6 +175,22 @@ update restarts the PC, sign back in before the owned window. All seven were
 Ready at readback; six require AC and host power was online. These host
 conditions do not prove task start, runtime admission or a broker effect.
 
+Nov26 project Scheduler census: 169 definitions, 22 disabled, 15 enabled
+with a future time (all `pythonw.exe` at the registered action), 132 enabled
+without a future time, and no running task at readback. Among the 132, none
+had an enabled non-clock trigger, but 12 allow catch-up and 25 allow demand
+start. Do not treat `Ready` alone as scheduled work or use it to erase old
+ownership. Names/definitions are not current process or custody evidence.
+The original recurring `thericher-kis-paper-daily-spy-session` shares the
+private bank with R6 and remains a separate recovery owner. Its installed
+October wrapper blocks new Thanksgiving and post-early-close orders, not
+token issuance or an exact eligible recovery cancel. Do not disable it for
+the holiday; check actual relevant owner closure before claiming a stable
+private read. Several legacy read-only collectors allow late catch-up;
+`daily-spy-head` can fetch the prior session even on a holiday and shares the
+Nov27 capture's token/rate controls. No nominal overlap or actual collision
+was observed; preserve the installed schedules and do not bypass their gates.
+
 Next research block (US session dates, `OPEN[e]` to `OPEN[e+3]`):
 Nov30-Dec3, Dec4-Dec9, Dec10-Dec15, Dec16-Dec21, Dec22-Dec28.
 These are fixed research windows; only the named first-slot input and
