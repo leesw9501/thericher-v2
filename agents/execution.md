@@ -93,6 +93,16 @@ SHA256 `8db6fc454c8d452d52ad43e4fc38b33b0c2e2732a7aa30710d02661a9c22925c`.
 R6 cannot supply an independently retained list of requests or attribute
 transport to a particular host launch. Prepare the exit join separately;
 no actual result or custody has been read.
+Frozen R6 also supports positive sizing-only `no_order_completed` evidence.
+The separate read-only branch replays supplied native states and calls the
+existing absence check without taking state locks or entering recovery.
+Six invented tests ran against the R6 source (including missing/bare
+completion, quote skip, crossed policy, and deterministic state/lock witness).
+`A/execution/r6-no-order-native-readout-20261126-v1/no_order.py` SHA256
+`608b9dc6ad06fd843b13fcd6dc9bd041fd36c13c1a102c0495ccb57ef5e6f328`.
+Use only after the exact entry phase, input and writer-excluded snapshot are
+qualified. Empty basket, missing checkpoint or bare completion still does
+not prove no signal, a financial lifecycle or launch attribution.
 The integrated exit fixture used a fresh native exit process and a separate
 network-disabled RO consumer at the original Linux paths. It distinguished
 one exact terminal flat pair, recovered buy with a positive lot and no sell,
