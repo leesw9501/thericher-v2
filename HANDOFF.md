@@ -103,6 +103,15 @@ closed that same lot from the unchanged retained input. No successor task
 was installed. For an actual occurrence leave the obligation open until
 an exact owned exit is qualified and reconciled; never replay the consumed
 phase or treat missing/crossed evidence as permission for a new sell.
+The installed R6 census module and the tracked module matched SHA256
+`16dc93649d549121971fd95c91d558adee8caa26233191ec959b29eed8ed76a6`.
+The read-only input sampling in `measure_r6_census_inputs.py` SHA256
+`f5aeeaface680f08cb39fa6015cfbefbdb06c170c06c7ca4388a45ced803c27f`
+measured 1.898/1.600/1.638 s for pinned source/claims, host census and
+stable Docker membership under the native eight-second budget. This
+did not run the writer decision, monitor special case, observer, owned
+Job/container joins or guest acknowledgement; no end-to-end or effect
+admission latency claim. No source or Task changed.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:

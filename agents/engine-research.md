@@ -37,6 +37,12 @@ See `dev-once-v1/attempt-01/RESULT.json` SHA256
 `8029f18f545b41092887bac7688058d7db8d8a5c0b30b06371992159cba78e42`
 and the exact host/registry receipts there. Reused development outcomes
 are not independent evidence or Paper results; do not rerun this candidate.
+On the same sealed result, modeled fees were lower by 18.37 bp of initial
+NAV, net growth was lower by 3.40 bp, and drawdown was worse by 7.50 bp.
+Adding fees back to the executed books does not make a fee-free replay:
+each book sizes from its own evolving NAV. Do not retune these rank tiers
+or infer gross alpha. Keep the untouched paired block ahead of another
+turnover variant on this reused sample.
 
 Fixed-half next unconsumed slot is Nov30 open to Dec3 open. Metadata-only
 `A/research/h3-nov30-first-slot-owner-ready-metadata-20261126-v1/owner_projection.py`
