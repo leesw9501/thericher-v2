@@ -211,6 +211,16 @@ was proved. The invented writer seal was unchanged. No retry, new namespace
 activation or operational ACL change. `A/data/h3-dec9-restricted-peer-seal-contract-v1/RESULT.json`
 SHA256 `a65f311d9169db6a341b99a7fd337935b44866e0176d0d33b80f557160ae1115`.
 Check reuse of the existing protected owner before further token probes.
+Nov26 direct Scheduler principal projection resolves the installed Nov27 and
+Dec3 owners to this same interactive identity, both limited and Ready. The
+named Dec9 target-only and dual alternatives are absent. Reuse their capture
+code, not their namespace authority. A tools-off Claude review confirmed the
+same-identity gap; its restricting-SID-only suggestion was rejected because
+Windows also checks the token's ordinary enabled SIDs for the write. See
+<https://learn.microsoft.com/en-us/windows/win32/secauthz/restricted-tokens>.
+Stop same-account token retries. Next qualify an already enrolled distinct
+writer identity or another independently isolated output route before Dec4
+14:30 UTC; no privilege, credential, ACL or current Task changes were made.
 The exact Dec9 closure shape now passed an invented Windows Job handoff:
 one inherited return pipe, zero child exit and empty Job before parent
 retention. Wrong digest or a surviving descendant refused publication even
