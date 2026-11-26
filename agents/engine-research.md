@@ -33,6 +33,15 @@ independently matched returned seal bytes after exact zero exit and removal.
 SHA256 `755b955f90989224c58d31d872fb28b05b87ae2e64ec07e84dd378cf7dfbafe2`.
 This advances the source/clock-bound production adapter, not activation or
 actual Dec3 data/model/holdout access.
+The source-bound Dec4 preparation adapter now verifies both original
+manifests and seven model-member pins without reading any payload. Five
+refusal tests passed, including no attestor/file access outside the
+14:12-14:13 UTC start window. The adapter creates a mount plan only.
+`A/research/h3-dec4-fixed-half-production-prep-20261126-v1/candidate.py`
+SHA256 `2623953753e28f55a0e70e2743be5046c918feedab858501760b581e48726656`.
+Next map the original Windows receipt paths to exact guest RO members
+without rewriting them; bind the finite host and 14:25 UTC hard stop before
+any launch. No actual forecast or schedule change.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight

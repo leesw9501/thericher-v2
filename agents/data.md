@@ -210,6 +210,14 @@ with a clean root exit. No applicable independent writer exclusion found.
 SHA256 `de44b3527296670a0d5dff8d440c07899d1429db5e766f45dd5ac197f6a5539a`.
 Use the handoff to prove publication closure, not pre-hash custody or data
 activation. Enroll the actual isolated writer separately.
+An invented native create-new file with a held write handle and
+`FILE_SHARE_READ` denied a separate process's overwrite, rename and delete
+while held. A sibling create succeeded and overwrite succeeded after close.
+`A/data/h3-dec9-invented-capsule-closure-handoff-v1/held_member_probe.py`
+SHA256 `d7125a09ee28dec94770a99a40ca0e5321c2ee5a7ce929ce2f8e6088714faa7e`.
+This is a per-file protection option only. It does not cover unheld state,
+directory membership, metadata/ACLs, ancestor replacement or post-close
+custody; do not waive the independently retained digest or writer exclusion.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
