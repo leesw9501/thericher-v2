@@ -83,6 +83,16 @@ file hashes matched the pinned copy before and after (0.331/0.248 s).
 SHA256 `874ecbe44e54fc81063f53248cb8be9395fd60dcb47d02b06a61b576e22aa97d`.
 Component evidence only: bind the exact protected runtime and actual native
 maps/ownership separately. No Data/model bytes, no Task install or launch.
+Native Windows observation then matched disk pins for all 56 mapped SDK
+members but withheld the origin sample: two Program Files images were
+present at baseline, and one Defender ProgramData image appeared after
+import. `A/research/h3-dec4-fixed-half-production-worker-20261126-v1/check_sdk_native_maps.py`
+SHA256 `c80dbc07c9619d151498bdf6cb6b19711efab7444fc0c1e6896ec20e63b99d6b`.
+This is categorical pathname/disk evidence, not section backing, unsafe
+software or an operational exclusion decision. Do not disable security or
+retry until it happens to be absent. Prefer a metadata-only host and the
+already isolated Linux numeric path if the actual host trust scope cannot
+be qualified without extra runtime dependencies.
 
 Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
 contains a pure adapter and frozen development proposal. Same weight
