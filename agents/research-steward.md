@@ -5,6 +5,17 @@ No active optimizer or GPU worker in the prospective package. AGENTS.md owns
 resource/trial authority. History/caps/debits: Git6874494b and immutable APIs,
 not another resource platform. An MD/source folder is not an active optimizer.
 
+Nov26 Dec4 fixed-half isolation: the synthetic AppContainer probe verified
+the suspended process's exact no-capability token and Job membership. Its
+root signaled and active count reached zero, but the exact final accounting
+check withheld file/network results. No forecast ran or was admitted.
+Source: A/research/h3-dec4-fixed-half-forecast-20261204-v1/appcontainer-probe.py,
+SHA256 `936de833a9292dacb470b0dbecaf4d8dce3611c7d9f77096e8f8e45ff211ea31`.
+The owned synthetic profile and scratch were retained. Reconcile that
+exact scope before retry: `thericher.probe.6fe2a69bb46745d7b944cb497766db32`
+and `appcontainer-synthetic-2k39icgc`. Do not replay forecasts or remove
+anything based on this partial proof.
+
 ## Actual Queue
 
 | Package | Actual resource/status |
