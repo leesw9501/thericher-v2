@@ -18,6 +18,21 @@ needs timestamped exact source/symbol captures before decision, release-time
 precision separate from call time, and explicit completeness/revision limits.
 Unknown is not a clean no-event signal; no model or Paper change from this check.
 
+Sector sizing, Nov26: neither prior ETF context features nor the per-name
+inverse-volatility caps tested sector-mass shrink while keeping the original
+long-only support and within-sector weight ratios. A bounded prospective
+candidate would move only sector mass halfway toward same-support EW sector
+shares, compare unchanged sizing, ordinary half blend and same-gross EW at
+25 bp/side, and retain no uplift claim without paired growth and drawdown.
+The fraction-exact preflight identifies identity and ordinary-half duplicate
+cases before outcomes. Four synthetic tests passed. Source:
+`A/research/sector-mass-sleeve-static-preflight-20261126-v1/preflight.py`,
+SHA256 `458e3ccc8e29176432f59075600fce3756b35edf03469396fe3955a3d8f3fd99`.
+Claude checked the overlap question; its equal-sector-mass formula is a
+different rule, not the pinned same-support EW target. No date-valid full
+17-name map was found. Do not substitute ETF routes or retrospective Norgate
+index membership, open scored tapes, fit, or change Paper on this evidence.
+
 Proposal bundle current-self-lstm60-fixed-half-paper-proposal-preparation-
 20261107-v1 COMPLETE synthetic (Source2072/bundleee98). Independent Godel review
 confirmed best6 SELF MLP and OLD60 is exact Source72 best10 LSTM60 with the
