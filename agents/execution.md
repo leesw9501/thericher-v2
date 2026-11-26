@@ -114,6 +114,17 @@ only further constrain it. No actual cash, quote or point was inspected.
 Therefore a positive score with a native sizing skip is plausible; leave the
 installed policy alone and classify the exact observed reason before planning
 a separately owned engineering baseline. Never resize/reassign its intent.
+One-share engineering baseline preparation: the exact-rational helper rounds
+the prior verified limit/original basis upward at 24 places, then accepts only
+one target share under the unchanged original tenth. The native pure planner
+must independently prepare exactly one BUY at the same limit; a different
+limit, insufficient buying power or old reservation cannot trigger a clamp,
+substitute, or bank reset. The proposal must predate the fresh preview, so a
+future caller needs a separately verified prior price and must allow no-order
+when the fresh limit differs. Four invented planner/sizer/precision cases
+passed in `A/execution/one-share-baseline-sizing-invented-20261126-v1/target.py`,
+SHA256 `46e4bc8f100eb9e127e7db9f273abfbc1f90722769f6242bfbce75488ca20764`.
+No fresh data, reservation, order, schedule, or candidate activation.
 The integrated exit fixture used a fresh native exit process and a separate
 network-disabled RO consumer at the original Linux paths. It distinguished
 one exact terminal flat pair, recovered buy with a positive lot and no sell,
