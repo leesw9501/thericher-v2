@@ -135,8 +135,21 @@ SHA256 `9806569c93eed5dd9aa9a4b82f240e979d8e44af184723496acb319516192a76`.
 The direct base `pythonw -I -S -B` smoke passed 11 cases twice. It checks
 the real early clock, selected phase/release, source/member digests and
 source ACL before importing project code. It returns verified bytes and a
-provider descriptor, not a callable already authorized to execute. Compose
-it with the named protected launcher; no real anchor or schedule was made.
+provider descriptor, not a callable already authorized to execute.
+The release root's `dec4-verified-bank-dispatch.py` now joins that descriptor,
+source-pinned full profile shape, entry-only point and deferred Paper packet
+to the tracked bank call. Native drafts reached an inert bank edge for both
+legs; exit had no point member. Changing ACL even with a recomputed profile
+hash was refused against the pre-source shape. Both XML surfaces and the
+effective ACL are bound; only the cyclic source/release strings in the
+exact action and registration source are normalized.
+The actual bank/restore modules imported on direct no-site Windows Python
+from the D: copy, without the registry-backed timezone module. 56 copied
+native images matched their hashes; three UTC calendar cases passed. One
+additional signed Defender image matched its single exact path and hash.
+This is not namespace protection or installed startup. Evidence:
+`A/execution/h3-dec4-dec9-native-release-20261126-v1/PAPER-CALLER-COMPONENT-SMOKE.json`,
+SHA256 `2d1b67b2ba86f3779f0af27505f0ac65043ddfdfd37c781362ad48440c09c9bf`.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

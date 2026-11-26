@@ -40,6 +40,11 @@ The launcher now builds the bank and restore views from the same exact
 selected release. It no longer accepts independent observer/restore/writer
 objects, and exit does not take a point callback. Both phase plans matched
 in the fixture, while crossed action and interpreter pins were refused.
+The protected caller component now verifies the full pre-source COM
+profile, joins deterministic entry/exit and uses the deferred packet at
+the existing bank boundary. Inert integration refused a forged re-pinned
+ACL. The actual imports and copied DLL origin smoke ran separately
+(HANDOFF). Next compose and freeze the actual named startup; no task installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

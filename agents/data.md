@@ -108,6 +108,13 @@ reproduced a read-only Windows time-zone registry request in use by
 denied while allowing the dependency's existing fallback. This was not
 a replay of the failed import. Qualify the no-site import and exact DLL
 origins with that narrow denial control; keep unrelated effects blocked.
+The additive `-timezone-denial-r1/STARTUP.json` relative to the dependency
+package name above (SHA256
+`419c70d34ec7af18fe26e74a641b16d0fd5ab9cf3d7545483dd7c0d5a8b24803`)
+withheld on a subsequent registry connection before full imports/DLL check.
+No replay of that failed revision; original source/runtime/copy matched after.
+The separate Paper smoke used a no-registry timezone backend contract; do
+not adopt it for Data without qualifying the affected explicit UTC operations.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

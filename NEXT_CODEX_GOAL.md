@@ -21,9 +21,11 @@ own proof. The tracked bank publishes the original input reference before
 entry effects and restores it at exit without the point. Bind its original
 retained-input/reference parent into the actual protected runtime profile.
 The bank now derives its observer, restore, writer and evidence paths from
-the same selected source/release as the restore child. Assemble the actual
-protected caller and independently installed profile pins; do not invent
-any of the account, bank or native writer facts to make the caller start.
+the same selected source/release as the restore child. The verified caller
+component joined two native drafts to an inert bank boundary and the actual
+bank/restore modules passed a no-site import and DLL-origin smoke. Freeze
+the actual starter with the protected runtime and the pre-source profile
+cards before installing. Do not invent account, bank or native writer facts.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only
