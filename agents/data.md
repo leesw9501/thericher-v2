@@ -50,6 +50,13 @@ no change to shared parent ACLs or the default H3 capture path. An invented
 Windows child directory and its file did not inherit the test parent's
 common-group grant. The focused suite passed 101 tests. Real Scheduler
 binding still needs the fixed source and effect-time custody/owner proof.
+The protected `source-candidate-private-roots/SOURCE.json` SHA256
+`0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
+verified all 567 Git members at 9aaa1635, changing only the three capture
+members. `DEC9-PRIVATE-ROOTS-TARGET-PREBIND.json` SHA256
+`6ccceea44218b51ed83faf68e6a3a4e84ff5d3b885cf6225a773aad935206ec3`
+is the exact pre-open candidate for that source, not a repin of either
+earlier candidate. The new candidate is not selected or scheduled.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not
