@@ -390,7 +390,7 @@ counterexample; the source checks non-aliased default-local backing again after
 classification and refuses drift. Docker refused the declared bind-alias
 volume in a disposable, unmounted negative probe; cleanup was verified.
 
-Nov30 first-slot technical repair (not deployed): the frozen SELF file is
+Nov30 first-slot technical repair (installed, not executed): the frozen SELF file is
 a training bundle with model/optimizer/RNG namespaces, not a bare state
 dict. The shared loader now restores only exact model tensors from the
 verified bytes. Both original CPU callbacks passed on 17 invented inputs
@@ -399,20 +399,20 @@ Repair source `f37981f4d4cd232be6f5382749fd5c50a14195e93e87f535d6286aec57244a44`
 under A/research/h3-nov30-fixed-half-forecast-20261130-v1/source-v2.
 `MIGRATE-NOV30-SOURCE.ps1` in that parent, SHA256
 `b2cb4b1c3b89ac41ac9f402539d9c7c696da7dbd2afd59005d1a403753cae1d6`,
-passed validate-only; it has not changed the existing old source/Ready
-task. The first-slot reader now accepts only source-v2. The frozen producer,
+passed validate-only, then updated the same unrun task. The first-slot
+reader now accepts only source-v2. The frozen producer,
 real parser and both original CPU checkpoints sealed invented features;
 the native reader accepted the resulting closure and projected 17 names
-from invented original pages. The old pin is rejected. The host rejected
-the inert task migration command; no workaround or update attempted.
-Neither actual forecast nor target was read. Preserve the same Nov30 time
-and run root when an allowed reversible native update is qualified.
-Independent Nov26 readback still found one Ready, never-run original action
-on source-v1. The tracked first-slot reader pins source-v2, but the reader
-copy inside the frozen producer tree still pins v1. Use the separately
-pinned corrected reader for block-end. The existing native replacement
-helper's deadline is Nov30 13:42 UTC; do not bypass prior host denial,
-edit the frozen producer tree or create a duplicate.
+from invented original pages. The old pin is rejected. Independent native
+readback at Nov26 00:46 UTC found one Ready original task on source-v2,
+unchanged ACL, non-action fields, principal and Nov30 14:12 UTC opportunity,
+no instance, no run root. The original XML and ACL are retained beside
+`NOV30-SOURCE-MIGRATION/INDEPENDENT-RESULT.json` in the same parent,
+SHA256 `6cd785b7d2e81cb1cc6ba414b5f82ce4e74a759c8d57ce21ae9888cfb4fc28e8`.
+The reader copy inside the frozen producer tree still pins v1. Use the
+separately pinned corrected reader for block-end. Do not replay migration,
+edit the frozen producer tree or create a duplicate. Neither actual forecast
+nor target was read.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.

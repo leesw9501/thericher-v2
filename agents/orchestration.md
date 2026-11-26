@@ -5,6 +5,13 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
+Nov26: the original Nov30 research forecast owner was migrated in place to
+the corrected SELF loader. Independent native readback found the same
+opportunity and ACL, Ready and never run. Read its exact causal closure
+after its owned time; no duplicate forecast or target access. While the
+market opportunities are in the future, H20 native read-only integration
+continues independently. Evidence and rollback in HANDOFF.
+
 Nov26: H20 Dec1 has a phase-specific readout preserving original native
 controls/replay while separating entry and exit. A broker-free native
 guest smoke and host adapter checks passed. Bind the actual transport,

@@ -49,8 +49,10 @@ The sidecar passed an invented exact two-model CPU seal. In qualification
 we found the installed Nov30 frozen SELF loader rejects the actual
 training bundle. The shared fix reads only its exact model tensors; both
 original Nov30 callbacks passed on invented rows from frozen source-v2.
-The installed task is unchanged until the first-slot consumer is bound to
-the exact corrected source. No new fit, actual forecast, target or GPU.
+The same Nov30 task is now Ready on source-v2, with unchanged clocks and
+ACL and no run. Use the separate corrected first-slot reader at block-end;
+the embedded producer-side reader is still old. No new fit, actual
+forecast, target or GPU.
 
 The Dec4 fixed-half reader now joins the exact independent successful
 owner completion, Dec3 read-only closure and immutable attempt/seal,

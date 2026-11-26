@@ -114,6 +114,8 @@ readiness. Do not manually start or retry the one-shot.
 First-slot forecast owner: exact
 `thericher-h3-nov30-fixed-half-forecast-20261130-v1`, installed Ready for
 Nov30 14:12 UTC (23:12 KST), latest start 14:13, hard stop 14:25 UTC.
+The same task is now on corrected source-v2 `f37981f4d4cd232be6f5382749fd5c50a14195e93e87f535d6286aec57244a44`,
+with unchanged opportunity and ACL. Do not replay source migration.
 Read only the established attempt, seal and exact OWNER-CLOSED from
 A/research/h3-nov30-fixed-half-forecast-20261130-v1/run after the opportunity.
 A seal without its exact owner receipt is not admitted. No manual start,

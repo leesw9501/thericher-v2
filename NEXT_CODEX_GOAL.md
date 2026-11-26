@@ -93,19 +93,12 @@ V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.
 
-Parallel replacement cutoff Nov30 13:42 UTC (original trigger 14:12 UTC):
-the original live-in-Scheduler
-Nov30 research source rejects the already pinned SELF training bundle.
-The shared loader fix passed both actual original checkpoints on invented
-rows from the immutable `source-v2` (HANDOFF). The first-slot reader now
-accepts only the exact repair, and that frozen producer, real parser and
-both CPU models passed the full invented handoff to the marks reader.
-Independent readback confirms the task is Ready on the old source. Keep
-block-end readout separately pinned: the embedded reader in the frozen
-producer still has the old pin. Validate-only passed but the host rejected
-the inert migration command. Do not bypass. Qualify and
-update only the original unrun definition through an allowed native path
-with unchanged clocks, principal, and one-attempt run root.
+Parallel research: the original Nov30 forecaster is now Ready on the
+corrected `source-v2` (same Nov30 14:12 UTC trigger, principal, ACL and
+one-attempt run root; independent native readback in HANDOFF). No actual
+forecast or scoring yet. Verify scoped closure after the existing opportunity;
+do not rerun or create another definition. Keep block-end readout separately
+pinned: the embedded reader in the frozen producer still has the old pin.
 
 ## First Work
 
