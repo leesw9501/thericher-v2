@@ -55,6 +55,13 @@ credential-free reader pinned in HANDOFF (invoke via
 `uv run --no-env-file python -I -S -B` with the full reader path).
 It requires the protected `RESULT-SHA256`; a Task exit, missing publication
 or gross sign is not reconciled net PnL.
+Use that reader for the first Dec1 result; neither the installed loopback
+monitor nor the replacement candidate is wired to this publication. A
+Nov26 `/health` 200 from the exact `be48` image proves local service health
+only; the older H20 monitor entry is not this exit. Report the entry and
+exit terminal categories and exact owned lot separately from gross sign.
+Fees and settlement are not observed and net PnL remains unknown. Do not
+switch the pinned monitor or mount outcome code/private custody to show it.
 The [official Paper-capable overseas execution example](https://github.com/koreainvestment/open-trading-api/tree/main/examples_llm/overseas_stock/inquire_ccnl)
 documents executed amount/quantity, not per-fill fees or settled cash.
 The KIS examples for daily transactions, period PnL and settlement balance
