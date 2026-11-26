@@ -163,6 +163,19 @@ SHA256 `0dfbcbd26a20bb3fa3716f8841dcf89fd8f5da2ec6bfcf1ad6a850817934277d`,
 read invented pin rows from one real ACL-protected directory and refused
 four mismatches. It does not query Scheduler or authenticate the profile
 payload by itself; the existing provider and pre-source shape do that.
+The r3 outer in the same root, `run_h3_dec4_bank_pair_r3.py` SHA256
+`f033f3e48ca6703181c9b73c7fe66c46143d83d837329d10e02b252c20396f74`,
+now supplies the verified prelude to `dec4_bank_runtime.py` SHA256
+`26b6411dfabac9ef770a223836953a6c0238f106b93a1fa2f860afaede22590c`.
+The actual Windows lock held all 3,405 dependency files read-only; same-size
+tamper, extras, write/rename and an existing writer withheld. The pinned
+bank/restore import under those locks observed 56 copied native images and
+three UTC calendar cases. The composed inert exit exercised the real
+dependency/anchor path and imported 111 pinned project modules; config,
+network and the financial dispatcher were not used. Direct r3 Pythonw
+still denied both early phases. Neither package source nor task is frozen
+and installed yet. Select the actual source/runtime closure and real
+owner/release pins before qualifying the independent native installer.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

@@ -49,8 +49,11 @@ roles and maps operational closure separately from a held bank. Its
 `dec4_schedule_anchor.py` component reads exact pin rows under the
 source-authorized fixed sibling directory and Windows ACL. It passed one
 native-directory fixture and refused four source/release/row/ACL mismatches.
-Next join both components to the actual protected dependency admission and
-deferred credential route before installing. No financial task installed.
+R3 now joins both components to the dependency admission and deferred
+credential route in an inert-dispatch smoke: 3,405 real copied files held
+and 111 pinned project modules loaded, no credential access. Actual
+SOURCE/RELEASE and exact native writer/restore closure still need binding.
+No financial task installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.
