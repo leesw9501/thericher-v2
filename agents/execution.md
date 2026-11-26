@@ -27,6 +27,18 @@ challenge favored this over a sidecar: test old-state replay, crash at the
 write/clear boundary, and absent-as-unknown. Three existing focused recovery
 cases passed on the unchanged source; persistence is not yet implemented.
 
+The external read-only calculation prototype now accepts the native decoded
+quote and canary state only after a caller supplies the independently bound
+plan and intent. Exact signed fill-versus-plan-mid decomposes into half-spread
+and residual versus the original touch; the residual includes intervening
+price movement. Six invented native serializer/parser cases passed, including
+partial fills, mismatched intent/plan, later/crossed quote, unknown and zero
+fill. This is not fee, settlement, private custody or deployment evidence.
+`A/execution/paper-plan-quote-attribution-invented-20261126-v1/plan_quote.py`
+SHA256 `d5d7c3a2dda3edbdb359a6b018d9a792f07b8ee64e9edc20869e57bc2250fe77`.
+Next bind retention in a qualified successor and test unchanged recovery and
+reader behavior across old/new versions before any same-bank deployment.
+
 R6 status supersedes earlier draft notes: named Dec4 entry/Dec9 exit are
 installed Ready, zero instances, exact full readback in HANDOFF. No manual
 start or broker call. Next prepare the phase result readers, leave Dec1 H20
