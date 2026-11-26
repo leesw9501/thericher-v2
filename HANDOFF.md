@@ -72,6 +72,20 @@ source, request or intent rejected; no locks or before/after mutations.
 The installed format can prove exact cohort fills without the new host
 witness once its actual writer closes and a network-disabled RO custody
 reader qualifies. It cannot prove which host launch first sent the request.
+Two additional synthetic D-only fixtures match one native invocation per
+scheduled phase under `A/execution/h3-dec4-native-ledger-inert-20261126-v1`.
+`roundtrip_pnl_once.py` SHA256
+`6d5d4525cdcbc6585568ca41188744ee87438f2ac75ec31eca4dea2f5641dfd9`
+joins closed owned entry/exit fills
+and rejects crossed accounting input; synthetic gross was zero and net under
+modeled 25 bp per side was negative. `roundtrip_pending_once.py` SHA256
+`b400073b7ec3245461e175114b2b2eb5d325973094e3b16fcdc71919426c6dca`
+recovers an
+unknown entry once at exit without a substitute submit or reservation release.
+Both preserved the original shared basis/F9 fixture. Broker fees, settlement
+and measured net PnL remain unknown. Claude's synthetic-only challenge
+identified exact broker history after restart as the falsifier of a stale or
+wrong local attribution; no runtime claim follows from the fixture.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:

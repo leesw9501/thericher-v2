@@ -11,6 +11,11 @@ the exact normal Job receipt; it is not deployed to R6. Separate invented
 native-ledger replay verified the existing R6 format can identify exact
 cohort fills and owned lots after the actual writer closes, even without
 that transport witness. Host-launch attribution and fees stay distinct.
+The network-disabled/read-only Docker reader passed on invented data only;
+`A/execution/h3-dec4-native-ledger-inert-20261126-v1/docker-reader/DOCKER-READOUT.json`
+SHA256 `b36ba84174045aa03165b617580c4e042187ac5b61f6cd6f01fa713650ffebfd`.
+Actual R6 reads still require positive relevant-writer closure and exact
+immutable request/fill links. Broker holdings are a separate observation.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 

@@ -179,6 +179,15 @@ SQLite companions passed. The Defender on-disk pin stayed stable; mapped
 file identity was not exercised. R5's delta-only prior condition still
 withholds R5; do not regrade it or claim the independent probe explains
 which specific R5 branch occurred.
+One R6 absence-only cold start passed with zero audit denials and Defender
+absent from both native snapshots. A matching mapping would withhold; no
+mapped-file relationship was proved. All 576 expected imports, 56 copied
+native images, SQLite, 19-query digest, UTC cases and prebind passed. No
+remaining process, task activation or external call.
+`A/data/h3-dec9-protected-dependencies-196d-71046f-970372673c9b-importerror-r6-absence-only-v1/STARTUP.json`
+SHA256 `f2876a3fef39138dea6bae8936dbe27f8b98d19d21c8c4d0c4d61d0dd9b7c3a3`.
+Use this for startup-component readiness only; protected ownership and
+namespace activation are still separate.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

@@ -1,7 +1,8 @@
 # TheRicher v2 Long Goal
 
-This script starts one long-running goal. `NEXT_CODEX_GOAL.md` names the one
-current milestone; it is not the completion condition for the long goal.
+Use this prompt to start a long-running goal when none is active. Otherwise
+continue the existing goal. `NEXT_CODEX_GOAL.md` names the one current
+milestone; it is not the completion condition for the long goal.
 
 ```text
 /goal
@@ -11,7 +12,7 @@ Run .\scripts\start_next_codex_task.ps1. Read AGENTS.md, HANDOFF.md, NEXT_CODEX_
 
 Prioritize closing the current owned Paper lifecycle. In parallel dispatch disjoint Data, Engine Research and Execution work. Use a separately named engineering baseline if needed for execution learning; don't gate Paper on research profitability or force a signal. Keep the existing shared initial virtual-cash 10% basis, pending identities/reservations and owed exits. Reuse completed fits and schedule distinct ready experiments on CPU/GPU under measured capacity. No dummy training or silent retry.
 
-Use Claude CLI first for suitable small or medium packages: source research, pure code or test drafts, and independent challenge. Pass only selected non-sensitive excerpts and synthetic inputs; default to disabled tools and no session persistence. Use Codex for cross-lane integration, risk/custody-sensitive changes, operational effects, Git and verification. Treat Claude outputs as drafts, never authority; if Claude is unavailable or a draft fails verification, continue with Codex instead of waiting.
+Use the existing Claude subscription first for bounded public-source synthesis, pure code/test drafts and independent challenge. Match model effort to difficulty: a lighter model for mechanical work, Sonnet for routine analysis and drafts, and a stronger model only for consequential reasoning where an independent answer can change the decision. Supply only selected non-sensitive excerpts, public sources or synthetic fixtures, from outside the repo with built-in tools disabled, strict MCP configuration, no project settings and no session persistence. Never forward credentials, private evidence or holdout outcomes. Codex owns task decomposition, risk/custody-sensitive implementation, runtime effects, integration, verification and Git. Validate every Claude deliverable locally; fall back to Codex on authentication, quota or unusable output without blocking other lanes.
 
 At resume and before long dispatch, check ready/owned/due work and remove one reversible bottleneck. Keep one writer for each mutable resource. Workers own cooldowns and market due times; continue any independent ready work. After each evidenced company milestone, verify under AGENTS.md, commit/push, update current boards and replace NEXT_CODEX_GOAL.md with exactly one next milestone. Do not mark a source test, install, due time or missing result as runtime completion.
 
