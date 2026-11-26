@@ -31,13 +31,28 @@ other actors by process name or infer effect-time custody from this sample.
 `writer/CLAIMS-BINDING.json` SHA256
 `2b60cc04a7a8e474046a3640ff2e05a899c5fc1923732b6879ed56cdf183f9af`.
 R6 startup reader `read_r6_startup.py` in the release parent, SHA256
-`66347d695922f9ff6edf3103ffc95ef606461419a268179e04f269cf87158d275c0`,
+`66347d695922f9ff6edf3ffc95ef606461419a268179e04f269cf87158d275c0`,
 uses exact installed source/release/plan, phase clock and CLAIM-linked bytes.
 It reads no private BankLeg contents, touches no locks, and projects only
 state/categorical reason. Unknown or unclaimed is not a no-order claim.
 Both installed phases currently read `not_due`. Ten invented tests and
 Ruff passed; Claude mixed-scope-replay/redaction challenge in
 `STARTUP-READER-CLAUDE-VERDICT.json`. Financial joins remain separate.
+The sibling `read_r6_observer_receipt.py` SHA256
+`d875f56621d779c3f3dfe26c729835373801aec298961f3864ad9d6abc1a7781`
+joins the same phase's handoff to disable and restore marker snapshots.
+Ten further invented tests cover exact prefixes, missing links, cross-run
+substitution, state drift and changes during reads. Both actual phases
+report not_due. A restoration recorded in markers is not independent bank
+closure, current task state, or a financial event.
+The D-only financial fixture
+`A/execution/h3-dec4-financial-readout-inert-20261126-v1/fixture.py` found a
+real offline attribution gap: the installed host compares capsule stdout
+and retained summary in memory, but its normal closure receipts do not bind
+that digest. A substituted summary can still pass the guest parser.
+Do not use RAW-PRODUCER alone or mutate the installed R6 to backfill proof.
+An exact owned intent/fill/native ledger join is separate from that summary;
+fees, settlement, current broker holdings and net PnL remain unobserved.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:

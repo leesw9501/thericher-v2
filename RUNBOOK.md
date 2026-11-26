@@ -78,6 +78,11 @@ or `--phase exit`. It reads no phase receipts before the owned cutoff,
 classifies missing/unstable evidence as unknown, and does not inspect
 financial custody. A bound startup or observer handoff is not a submit,
 fill, restoration, or proof of OS Scheduler origin.
+For observer markers only, use the same command with sibling
+`read_r6_observer_receipt.py` and the exact phase. It joins STARTED,
+DISABLED, RESTORE_STARTED and RESTORED to the original handoff and compares
+the restored snapshot to the original one. A completed marker chain is
+not current Scheduler state or independent BankLeg/Job/financial closure.
 Its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
 The external Source and separate target prebind are in HANDOFF. There is

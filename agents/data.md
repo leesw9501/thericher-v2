@@ -164,6 +164,14 @@ default interpreter ZIP slot; removing only that absent slot preserved
 version lookup and yielded zero denials under the unchanged audit.
 Original R4's denied target was not recorded, so attribution remains
 unproved. No R4 replay, market calls or Data activation.
+R5 one cold attempt used the unchanged audit/read allowlist, zero denials,
+verified the exact SQLite companion, 19-query digest, five UTC cases and
+target prebind. It withheld at `exact_defender_image_not_newly_observed`:
+the on-disk pin matched but baseline/delta/absence was not distinguished.
+`-importerror-r5/STARTUP.json` SHA256
+`dc44f7f58f26956d970e39e4354da1fdf2976d768c89d764d0a4699655fb972c`.
+Integrity matched before/after; process closed, no retry or activation.
+Isolate native mapped-image state separately before another startup probe.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
