@@ -52,6 +52,16 @@ terminal pair admitted gross and modeled-cost signs. Under the same root:
 The fixture uses invented closure flags. Production glue must replace them
 with the exact independently qualified phase/BankLeg/observer/retained
 proofs and actual writer exclusion; lack of those cannot admit a read.
+`host-preflight/phase_proof_gate.py` under the same root, SHA256
+`68ae0196e547517348315205e2bc85c8c2c8f052e3213d3cf88ca4c95f52dbf6`,
+joins installed startup/restore-owner/observer metadata into typed phase
+proofs. Actual clock refused before receipt access; pair opens no earlier
+than Dec9 14:37:30 UTC. Invented valid pair, missing, stale, crossed and
+duplicated evidence exercised the installed validators. Still need exact
+entry and exit `CLOSED-<run>.json` and `JOB-CLOSED-<run>.json` under the
+original BankLeg root, and original entry-reference plus retained input
+join, under current writer exclusion. A restore marker cannot supply those
+proofs or attest a fill. No installed source was changed or real custody read.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
