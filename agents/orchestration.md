@@ -7,9 +7,12 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 Nov26: H20 Dec1 has a phase-specific readout preserving original native
 controls/replay while separating entry and exit. A broker-free native
-guest smoke passed; the after-event host/output contract is next, with
-no scheduler change. Dec9 now has a concrete exact read-only Scheduler
-instance probe, not yet the fully bound Data dispatcher.
+guest smoke and host adapter checks passed. Bind the actual transport,
+current owner/custody and protected publication before any private read.
+Dec9 source work ran in parallel: the exact Scheduler probe now brackets
+readback with native PID/birth/image/argv. Reuse direct versioned Pythonw
+instead of the venv shim. No scheduler change in either package.
+Claude CLI reviewed the non-sensitive H20 design; verdict in HANDOFF.
 
 Nov26: actual restore binding was implemented; candidate retirement check
 passed an inert native COM probe. Real R8 tasks are Enabled without a

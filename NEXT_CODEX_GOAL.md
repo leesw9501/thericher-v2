@@ -69,9 +69,11 @@ qualified release from the actual writer topology, not a declarative roster.
 The two R8 old tasks are still Enabled with no future trigger; do not admit
 them as retired or retire the existing Dec1 H20 owned exit.
 The Dec1 phase-specific readout and offline guest now distinguish entry
-from exact exit and passed synthetic/native checks. Freeze a new qualified
-read-only host/output profile for that exact duty before the owned window;
-do not reuse the original entry-only result ABI.
+from exact exit and passed synthetic/native checks. The phase host adapter
+checks explicit RO mount targets and a separately published digest. Bind
+the real bounded native transport, current custody and protected
+publication for the proposed Dec1 14:41 UTC read before the owned window;
+do not reuse the original entry-only result ABI or alter the exit task.
 Guest admission now joins exact same-CID Docker count/PID/epoch to an
 independent challenge-bound guest PID/birth/argv sample before and after
 the credential frame. The protected startup handoff and join for a separate
@@ -91,14 +93,17 @@ V2 is withheld: the original
 frozen Dec3 writer has no synchronous-closure helper. V3 reads the exact
 original attempt/receipt and checks positive native PID absence directly.
 
-Parallel deadline before Nov30 14:12 UTC: the original live-in-Scheduler
+Parallel replacement cutoff Nov30 13:42 UTC (original trigger 14:12 UTC):
+the original live-in-Scheduler
 Nov30 research source rejects the already pinned SELF training bundle.
 The shared loader fix passed both actual original checkpoints on invented
 rows from the immutable `source-v2` (HANDOFF). The first-slot reader now
 accepts only the exact repair, and that frozen producer, real parser and
 both CPU models passed the full invented handoff to the marks reader.
-The live task still points at the old source; validate-only passed but the
-host rejected the inert migration command. Do not bypass. Qualify and
+Independent readback confirms the task is Ready on the old source. Keep
+block-end readout separately pinned: the embedded reader in the frozen
+producer still has the old pin. Validate-only passed but the host rejected
+the inert migration command. Do not bypass. Qualify and
 update only the original unrun definition through an allowed native path
 with unchanged clocks, principal, and one-attempt run root.
 
@@ -254,10 +259,11 @@ with unchanged clocks, principal, and one-attempt run root.
    bootstrap now verifies the fixed Dec9 manifest and binds that callable.
    The activation boundary now joins fixed scope, native owner identity and
    deferred Paper config. The read-only Dec9 Windows Scheduler probe now
-   verifies exact action/ACL, current PID and instance. The CLI remains
-   disabled until that proof is joined to real image/argv/birth/custody
-   and independently retained protected pins; do not duplicate capture or
-   open outcomes before block-end.
+   verifies exact action/ACL, current PID and instance, bracketing readback
+   with native image/argv/birth. A venv pythonw shim launched a different
+   child process; use a protected direct launcher. The CLI stays disabled
+   until that launcher binds custody and independently retained protected
+   pins; do not duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
    separate immutable one-shot owner and each exact slot's qualified custody.

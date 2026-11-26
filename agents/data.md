@@ -2,6 +2,14 @@
 
 Updated 2026-11-26.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Nov26 Dec9 independent package: native image, parsed argv and creation
+FILETIME now bracket exact Scheduler readback. Focused Windows fixtures
+matched; the venv Pythonw shim redirected to a different process. Bind the
+protected direct action, source/custody pins and existing config scope next.
+The local versioned CPython 3.14.3 Pythonw candidate has an ordinary path
+and SHA256 `3737f863a02f4c92387dee920aeee6ab260548cd7c4bed829e96ed005e65409e`.
+The generic uv base path includes a junction. No activation, data calls,
+or block-end read.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

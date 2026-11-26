@@ -312,6 +312,15 @@ H20-PHASE-CLAUDE-VERDICT-20261126.json, SHA256
 `d5ff06585362397854673af1b94af9a6a132f89d0c9f28799b78c523c9181b4e`.
 The production task and custody are unchanged.
 
+The Dec1 phase host adapter now checks the six exact read-only mount targets,
+separate phase DTO, pinned envelope checks and independently retained native
+result digest. Tests rejected replay, stale clocks and replaced result bytes.
+Proposed read window is Dec1 14:41-14:43 UTC for starting, hard stop 14:46 UTC.
+No phase host release is installed: bind fresh scoped owner admission, the
+exact current custody and protected result publication to the real native
+transport first. Claude verdict: A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
+H20-PHASE-HOST-CLAUDE-VERDICT-20261126.json (8d041f9d97b59da0edbc4badf7aaa1804aa28fdc29b3642dd235069ee135355b).
+
 The tracked Dec9 Scheduler probe also matched its own PID, actual
 registered action/ACL and current instance in a native direct-Pythonw
 inert task. Only the fixture used a synthetic task name; it was removed.
@@ -320,6 +329,11 @@ permission to dispatch. Evidence:
 A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
 DEC9-SCHEDULER-PROBE-NATIVE-20261126.json, SHA256
 `a58598539cdf63ea680cce13b2f7350b95149808f9fbd5c90f9f6489313c8cd1`.
+It now brackets the exact native Scheduler query with real process
+image, argv and creation FILETIME samples. The tested venv pythonw shim
+redirects to a child and cannot serve as the direct task identity.
+Use a protected direct launcher and retain exact source, profile, prebind
+and capture ACLs before activation. No real Dec9 collector was started.
 Independent Claude review withheld release pending actual gate acquisition
 by the exact authorized writers (including mixed-OS and demand-start paths).
 Verdict A/synthetic-evidence-h3-scheduler-instance-20261125T194947Z/
@@ -393,6 +407,12 @@ from invented original pages. The old pin is rejected. The host rejected
 the inert task migration command; no workaround or update attempted.
 Neither actual forecast nor target was read. Preserve the same Nov30 time
 and run root when an allowed reversible native update is qualified.
+Independent Nov26 readback still found one Ready, never-run original action
+on source-v1. The tracked first-slot reader pins source-v2, but the reader
+copy inside the frozen producer tree still pins v1. Use the separately
+pinned corrected reader for block-end. The existing native replacement
+helper's deadline is Nov30 13:42 UTC; do not bypass prior host denial,
+edit the frozen producer tree or create a duplicate.
 
 Follow-on: the native NET25 pending repair verifies the original cohort and
 request under the existing policy lock without reserve, submit or cancel.

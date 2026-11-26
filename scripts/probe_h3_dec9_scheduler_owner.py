@@ -1,4 +1,4 @@
-"""Read only the Scheduler leg of the Dec9 target owner's native proof.
+"""Read the Scheduler and current-process legs of the Dec9 target owner's proof.
 
 Load from an independently protected launcher, before importing the frozen
 project. This is not a ProtectedNativeOwner and has no entry point or config
@@ -15,8 +15,8 @@ import stat
 import subprocess
 from contextlib import ExitStack
 from ctypes import wintypes
-from dataclasses import dataclass
-from pathlib import Path
+from dataclasses import dataclass, field
+from pathlib import Path, PureWindowsPath
 from typing import NamedTuple
 from uuid import UUID
 
@@ -55,6 +55,101 @@ class Dec9SchedulerEvidence(NamedTuple):
     profile_sha256: str
     instance: UUID
     pid: int
+
+
+@dataclass(frozen=True)
+class Dec9ProcessEvidence:
+    """PID, instance and birth for the owner ABI, not a NativeOwnerProof.
+
+    The launcher still has to attest runtime, source and custody, bind the
+    exact Scheduler profile to its retained projection, and enforce config scope.
+    """
+
+    scheduler: Dec9SchedulerEvidence
+    birth: str
+    image: str = field(repr=False)
+    argv: tuple[str, ...] = field(repr=False)
+
+    @property
+    def pid(self) -> int:
+        return self.scheduler.pid
+
+    @property
+    def instance(self) -> UUID:
+        return self.scheduler.instance
+
+
+class _ProcessSample(NamedTuple):
+    pid: int
+    birth: str
+    image: str
+    argv: tuple[str, ...]
+
+
+def _system_dll(name):
+    if os.name != "nt":
+        raise ValueError
+    return ctypes.WinDLL(name, use_last_error=True, winmode=0x800)  # System32 only.
+
+
+def _windows_argv(command_line):
+    if not command_line or len(command_line) >= 32768 or "\0" in command_line:
+        raise ValueError
+    kernel = _system_dll("kernel32")
+    shell = _system_dll("shell32")
+    kernel.LocalFree.argtypes = (ctypes.c_void_p,)
+    kernel.LocalFree.restype = ctypes.c_void_p
+    split = shell.CommandLineToArgvW
+    split.argtypes = (wintypes.LPCWSTR, ctypes.POINTER(ctypes.c_int))
+    split.restype = ctypes.POINTER(wintypes.LPWSTR)
+    count = ctypes.c_int()
+    pointer = split(command_line, ctypes.byref(count))
+    if not pointer:
+        raise ValueError
+    try:
+        if not 0 < count.value <= 64:
+            raise ValueError
+        argv = tuple(pointer[i] for i in range(count.value))
+        if not all(type(arg) is str for arg in argv):
+            raise ValueError
+        return argv
+    finally:
+        kernel.LocalFree(ctypes.cast(pointer, ctypes.c_void_p))
+
+
+def _read_native_process():
+    kernel = _system_dll("kernel32")
+    kernel.GetCurrentProcess.argtypes = ()
+    kernel.GetCurrentProcess.restype = wintypes.HANDLE
+    kernel.GetCurrentProcessId.argtypes = ()
+    kernel.GetCurrentProcessId.restype = wintypes.DWORD
+    kernel.GetCommandLineW.argtypes = ()
+    kernel.GetCommandLineW.restype = wintypes.LPWSTR
+    kernel.QueryFullProcessImageNameW.argtypes = (
+        wintypes.HANDLE,
+        wintypes.DWORD,
+        wintypes.LPWSTR,
+        ctypes.POINTER(wintypes.DWORD),
+    )
+    kernel.QueryFullProcessImageNameW.restype = wintypes.BOOL
+    kernel.GetProcessTimes.argtypes = (wintypes.HANDLE, *([ctypes.POINTER(wintypes.FILETIME)] * 4))
+    kernel.GetProcessTimes.restype = wintypes.BOOL
+
+    process = kernel.GetCurrentProcess()  # Pseudo-handle; no close.
+    pid = kernel.GetCurrentProcessId()
+    image = ctypes.create_unicode_buffer(32768)
+    size = wintypes.DWORD(len(image))
+    times = [wintypes.FILETIME() for _ in range(4)]
+    if (
+        not kernel.QueryFullProcessImageNameW(process, 0, image, ctypes.byref(size))
+        or not 0 < size.value < len(image)
+        or not kernel.GetProcessTimes(process, *(ctypes.byref(value) for value in times))
+    ):
+        raise ValueError
+    birth = (times[0].dwHighDateTime << 32) | times[0].dwLowDateTime
+    return _ProcessSample(
+        pid, f"win-filetime:{birth}", image.value, _windows_argv(kernel.GetCommandLineW())
+    )
 
 
 def _digest(value):
@@ -192,6 +287,48 @@ class Dec9SchedulerProbe:
         except Exception:
             failure = "dec9_scheduler_unqualified"
         raise ValueError(failure)
+
+    def read_current_process(self, action) -> Dec9ProcessEvidence:
+        """Join native image/argv/birth to fresh exact Scheduler readback.
+
+        Accepts the bootstrap's NativeAction, not a caller PID or expected argv.
+        Compare paths literally; the protected launcher must pin the exact
+        direct Exec image spelling. The ABI enforces the Dec9 birth window.
+        """
+        try:
+            action_sha256 = _action_digest(action)
+            image = action.executable
+            path = PureWindowsPath(image)
+            if (
+                not path.is_absolute()
+                or re.fullmatch(r"[A-Za-z]:", path.drive) is None
+                or '"' in image
+            ):
+                raise ValueError
+            expected_argv = _windows_argv(f'"{image}" {action.arguments}')
+            before = _read_native_process()
+            if (
+                type(before.pid) is not int
+                or before.pid != os.getpid()
+                or before.image != image
+                or before.argv != expected_argv
+                or re.fullmatch(r"win-filetime:[1-9][0-9]{17}", before.birth) is None
+            ):
+                raise ValueError
+        except Exception:
+            pass
+        else:
+            scheduler = self.read_current(action)
+            try:
+                if (
+                    scheduler.pid == before.pid
+                    and scheduler.action_sha256 == action_sha256
+                    and _read_native_process() == before
+                ):
+                    return Dec9ProcessEvidence(scheduler, before.birth, before.image, before.argv)
+            except Exception:
+                pass
+        raise ValueError("dec9_process_unqualified")
 
     def _read(self, action_sha256, pid):
         root = _windows_root()

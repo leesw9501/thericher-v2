@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from dataclasses import replace
 from pathlib import Path
 from uuid import UUID
@@ -25,6 +26,7 @@ def _load(name):
 
 probe = _load("probe_h3_dec9_scheduler_owner")
 bootstrap = _load("run_h3_dec9_target_owner")
+BIRTH = f"win-filetime:{bootstrap._ticks(bootstrap.OPENS)}"
 ACTION = bootstrap.NativeAction(
     bootstrap.TASK_PATH,
     r"C:\Invented Root\pythonw.exe",
@@ -213,6 +215,129 @@ def test_process_and_transport_fail_closed(reader, monkeypatch, fault):
     with pytest.raises(ValueError, match=f"^dec9_scheduler_{category}$") as exc:
         reader.read_current(ACTION)
     assert exc.value.__context__ is None
+
+
+@pytest.fixture
+def process_sample(monkeypatch):
+    argv = (ACTION.executable, "-I", "-S", "-B", r"C:\Invented Root\owner's.py")
+
+    def split(command):
+        assert command == f'"{ACTION.executable}" {ACTION.arguments}'
+        return argv
+
+    monkeypatch.setattr(probe, "_windows_argv", split)
+    return probe._ProcessSample(os.getpid(), BIRTH, ACTION.executable, argv)
+
+
+def test_native_process_join_uses_fresh_exact_readback(reader, monkeypatch, process_sample):
+    calls = []
+    other_guid = str(UUID(int=2))
+
+    def sample():
+        calls.append("process")
+        return process_sample
+
+    def run(argv, **options):
+        calls.append("scheduler")
+        guid = GUID if calls.count("scheduler") == 1 else other_guid
+        return subprocess.CompletedProcess(argv, 0, _reply(reader, instance_guid=guid))
+
+    monkeypatch.setattr(probe, "_read_native_process", sample)
+    monkeypatch.setattr(probe.subprocess, "run", run)
+    first = reader.read_current_process(ACTION)
+    second = reader.read_current_process(ACTION)
+    assert calls == ["process", "scheduler", "process"] * 2
+    assert (first.pid, first.instance, first.birth) == (os.getpid(), UUID(GUID), BIRTH)
+    assert (first.image, first.argv) == (ACTION.executable, process_sample.argv)
+    assert first.scheduler.action_sha256 == probe._action_digest(ACTION)
+    assert first.scheduler.profile_sha256 == reader.profile_sha256
+    assert second.instance == UUID(other_guid)  # The ABI, not this reader, latches loss.
+    assert ACTION.executable not in repr(first)
+
+
+@pytest.mark.parametrize("field", ["image", "argv", "pid", "birth"])
+@pytest.mark.parametrize("when", ["before", "after"])
+def test_process_mismatch_withholds_evidence(reader, monkeypatch, process_sample, field, when):
+    other_birth = f"win-filetime:{bootstrap._ticks(bootstrap.OPENS) + 1}"
+    changes = {
+        "image": ACTION.executable.upper(),
+        "argv": process_sample.argv + ("unexpected",),
+        "pid": process_sample.pid + 1,
+        "birth": "win-filetime:1" if when == "before" else other_birth,
+    }
+    changed = process_sample._replace(**{field: changes[field]})
+    samples = iter((changed,) if when == "before" else (process_sample, changed))
+    monkeypatch.setattr(probe, "_read_native_process", lambda: next(samples))
+    if when == "after":
+        monkeypatch.setattr(
+            probe.subprocess,
+            "run",
+            lambda *a, **kw: subprocess.CompletedProcess([], 0, _reply(reader)),
+        )
+    with pytest.raises(ValueError, match="^dec9_process_unqualified$"):
+        reader.read_current_process(ACTION)
+
+
+def test_valid_process_cannot_rescue_invalid_scheduler_reply(reader, monkeypatch, process_sample):
+    monkeypatch.setattr(probe, "_read_native_process", lambda: process_sample)
+    monkeypatch.setattr(
+        probe.subprocess,
+        "run",
+        lambda *a, **kw: subprocess.CompletedProcess([], 0, _reply(reader, engine_pid=0)),
+    )
+    with pytest.raises(ValueError, match="^dec9_scheduler_unqualified$"):
+        reader.read_current_process(ACTION)
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows native process APIs")
+def test_native_windows_current_process_uses_os_image_argv_and_filetime():
+    code = r"""
+import ctypes
+import importlib.util
+import os
+import re
+import sys
+from ctypes import wintypes
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location("probe", sys.argv[1])
+probe = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(probe)
+sample = probe._read_native_process()
+assert sample.pid == os.getpid()
+assert Path(sample.image).samefile(sys.argv[2])
+assert sample.argv[1:4] == ("-I", "-S", "-B")
+assert sample.argv[-4:] == ("two words", 'literal"quote', "C:\\trailing space\\", "")
+assert sample == probe._read_native_process()
+
+kernel = ctypes.WinDLL("kernel32")
+now = wintypes.FILETIME()
+kernel.GetSystemTimeAsFileTime(ctypes.byref(now))
+ticks = (now.dwHighDateTime << 32) | now.dwLowDateTime
+assert re.fullmatch(r"win-filetime:[0-9]{18}", sample.birth)
+assert 0 <= ticks - int(sample.birth.split(":")[1]) < 30 * 10_000_000
+"""
+    image = sys._base_executable
+    result = subprocess.run(
+        [
+            image,
+            "-I",
+            "-S",
+            "-B",
+            "-c",
+            code,
+            str(SCRIPTS / f"{probe.__name__}.py"),
+            image,
+            "two words",
+            'literal"quote',
+            "C:\\trailing space\\",
+            "",
+        ],
+        capture_output=True,
+        timeout=15,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr.decode(errors="replace")
 
 
 def _ps(value):
