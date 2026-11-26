@@ -7,6 +7,17 @@ History/sourceoffers: Git8b1db436/01f23a13 and immutable APIs.
 
 ## Current Consumer
 
+Issuer earnings hurdle source check, Nov26: three original announcement
+pages distinguish release timing from the later webcast (GOOGL, AMD, NVDA).
+Facts and public links only in
+`D:/market_data/static_reference/issuer_earnings_announcements_20261126_v1/OBSERVATIONS.json`,
+SHA256 `f0e605a09e1ca0b3f3f9e3b8a313cd218f1de97bad3d520b0aac9917700eeffb`.
+This is a retrospective positive spot check, not PIT or negative coverage.
+Claude Haiku independently rejected that inference. A future frozen trial
+needs timestamped exact source/symbol captures before decision, release-time
+precision separate from call time, and explicit completeness/revision limits.
+Unknown is not a clean no-event signal; no model or Paper change from this check.
+
 Proposal bundle current-self-lstm60-fixed-half-paper-proposal-preparation-
 20261107-v1 COMPLETE synthetic (Source2072/bundleee98). Independent Godel review
 confirmed best6 SELF MLP and OLD60 is exact Source72 best10 LSTM60 with the

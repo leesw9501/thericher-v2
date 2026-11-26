@@ -7,6 +7,15 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Prospective block critical dependency, Nov26: the Dec9 after-close capture
+can supply slot 2's target and slot 3's inference-only prefix, but neither
+exact Dec9 candidate task is registered. Without it both slots are absent
+and at most three can qualify, below the frozen minimum of four. A target-only
+capture leaves no slack. Select at most one protected owner before Dec4 14:30
+UTC; the dual candidate preserves both slots if qualified. The actual writer
+exclusion and Dec4 research forecast seal are still unproved. Keep the first
+installed Nov27/Nov30 pair unchanged and the later target embargo intact.
+
 Nov26 parallel research triage: the retained Oct26-29 one-minute DEV slice
 has a complete 17-name regular-session grid, but no qualified quote or
 publication-time evidence. Reserve it for price-timing sensitivity, not fill
