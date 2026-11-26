@@ -77,6 +77,17 @@ clock refused early. After the owned window it still withholds until a
 relevant-writer-excluded snapshot adapter can hold and recheck custody
 across the actual read. Reuse the existing phased exclusion pattern;
 do not certify from a successful synthetic flow or a stale census.
+`host-preflight/r6_snapshot_boundary.py` SHA256
+`f4dedbf0332c2ac1fe6f2cb7b858a0c248617810a4cb225221d3aaf331f1e377`
+reuses the H20 five-phase census and original gate for the known R6 aliases.
+The gate fences enrolled writers only; repeated samples are not a fence
+against non-joining writes. `host-preflight/read_sharing_probe.py` SHA256
+`542c30db52b17ccd977c70a6b50603f6686922aa9a2af982a4c2e38e857449aa`
+showed held read-share-only directory/member handles deny write, rename and
+delete of the exact member but still permit a sibling create detected by
+membership. It is not a namespace fence. Keep actual RO read withheld
+until the same snapshot boundary covers writer exclusion and original
+BankLeg/input members outside the four guest aliases. No custody read.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
