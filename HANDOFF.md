@@ -402,6 +402,10 @@ Both the fixture Task and scratch are absent. The next step is the exact
 owned reader's future definition and protected profile/seal, keeping the
 existing financial exit unchanged. Claude's challenge distinguishes
 installation from start-time source checks and the absolute child deadline.
+The independent `protected-host/TASK-INTENT.json` SHA256
+`7305347d7ac702b47d9baeb3886c59190fc62849b3065b9bd77044e4d3d48b9a`
+binds the exact argv, action digest and future start/stop. Its action and
+clock matched the actual bootstrap's Python codec. This is not registration.
 No private read. The startup conditional verdict is retained
 in this receipt: this attests startup on the assumed-honest host, not
 pre-bootstrap loader integrity or resistance to host tampering.
