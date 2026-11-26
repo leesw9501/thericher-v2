@@ -5,12 +5,13 @@ Detailed contracts/history/debits: Git8b1db436/99af01f4 and immutable package AP
 
 ## Company Reality
 
-R6 deployment: actual-path paired profiles and restore constructors checked
-from the pinned member set; exact inherited writer scope recovered. Next
-classify current claimant authority without suppressing unresolved actors.
-No task installation or financial effect. Data's SQLite candidate passed
-an isolated identity smoke; full startup still withheld on the separate
-denied read. Research's once-only W25 DEV read closed, below its frozen
+R6 deployment: installed and independently read back Dec4 entry / Dec9 owned
+exit; exact Ready definitions, no running instance or effect. Claims changed
+only the catalog-qualified Windows console image hash, not its selector.
+Next prepare source-safe phase readers, keep Dec1 H20 separate, and leave
+the future market opportunities with their existing owners. Data's SQLite
+candidate passed an isolated identity smoke; full startup still withheld
+on the separate denied read. Research's once-only W25 DEV read closed below
 criterion. No rerun, candidate promotion, GPU fit, or held-out access.
 
 Nov26 throughput: Execution joined the bank preflight to the install plan;

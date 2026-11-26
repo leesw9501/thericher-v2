@@ -2,6 +2,10 @@
 
 Updated 2026-11-26. A=D:/thericher-v2/model-artifacts.
 Authority/invariants: AGENTS.md. Prior detail/debits: Git8b1db436 and exact APIs.
+R6 status supersedes earlier draft notes: named Dec4 entry/Dec9 exit are
+installed Ready, zero instances, exact full readback in HANDOFF. No manual
+start or broker call. Next prepare the phase result readers, leave Dec1 H20
+separate, and classify only actual original run/intent/fill evidence.
 Company runtime outcome UNFINISHED; no new exactowned acceptance/fill/current
 inventory/terminal/fees/settlement/netPnL proved. No operator decision pending.
 

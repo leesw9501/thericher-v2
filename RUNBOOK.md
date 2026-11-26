@@ -63,7 +63,15 @@ Record broker gross separately from any modeled costs; promote fee and
 settlement facts only when a Paper-supported record can be linked to the
 same owned fills. Missing accounting fields do not block exact reconciliation.
 
-Dec4/Dec9 Paper candidate, not installed: its Dec3 input owner is installed
+Dec4/Dec9 R6 Paper is installed: entry
+`thericher-kis-paper-dec4-h3-entry-20261204-v1` Dec4 14:31 UTC, exit
+`thericher-kis-paper-dec9-h3-owned-exit-20261209-v1` Dec9 14:30 UTC.
+Do not run or reinstall manually. Original installer and independent
+`candidate-r6/INSTALL-READBACK.json` are pinned in HANDOFF.
+Each phase's first protected host evidence is under `evidence-entry` or
+`evidence-exit`; join only the exact BankLeg/observer/capsule IDs to that
+phase. No replacement entry/exit or released reservation from missing evidence.
+Its Dec3 input owner is installed
 as `thericher-h3-dec3-modp1-owner-20261203-v1`, Ready for Dec3 UTC21:30.
 The external Source and separate target prebind are in HANDOFF. There is
 no run. Use `H3DailyPanelPlan(NET25_H3_AXIS)` for the US Dec3 as-of.

@@ -8,6 +8,29 @@ This is working memory for the engine/Paper loop, not another evidence registry.
 
 ## Nov23 Partial Reset
 
+**Nov26 actual R6 deployment.** Under
+`A/execution/h3-dec4-dec9-native-release-20261126-v1/candidate-r6`:
+SOURCE `56236601fd2e151b99093c66c6f7256fd2b70494b0f839b7993787c9fb9556a1`;
+RELEASE `4df7ec2b864b5ea7cf6eface160067bf7d628c6df179397cec4a684b252d4c3b`;
+ANCHOR `6232d318016660ff9f666b793ebfcb36ffa6d0ce04219fdebd8bbfca1d05ceb9`.
+The create-only installer consumed its exact attempt and enabled owned exit
+before entry. Independent `INSTALL-READBACK.json` SHA256
+`5f6104f9d27392d2dde648f55c75e2e56f316fd12faf62818f985905eac64464`
+matched both XML surfaces and ACL, enabled Ready, never run, and no hidden
+instances. Dec4 entry 14:31 UTC (23:31 KST); Dec9 exit 14:30 UTC (23:30 KST).
+This supersedes earlier non-installation notes below. No Task manual start,
+credential read, broker call, submit, fill or inventory change by installation.
+Original bank/basis/F9/exit duties unchanged; retain current runtime checks.
+Liveness, independent observer restore, KIS outcomes and PnL not yet observed.
+
+Current claimant amendment was only `console_host.sha256`. Windows
+validated the exact replacement Microsoft's OS catalog signature; unchanged
+selector rejected wrong arguments, children and wrong hash. 31 actual
+rows matched that existing selector in the read-only sample. Do not exempt
+other actors by process name or infer effect-time custody from this sample.
+`writer/CLAIMS-BINDING.json` SHA256
+`2b60cc04a7a8e474046a3640ff2e05a899c5fc1923732b6879ed56cdf183f9af`.
+
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:
 `thericher-h3-dec3-modp1-owner-20261203-v1`, quiet one-shot, no catch-up.

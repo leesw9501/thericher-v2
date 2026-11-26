@@ -6,55 +6,23 @@
 attributable KIS Paper entry-to-exit lifecycle through a repeatable, tracked
 execution path. The model is a proposal source, not a separate bank writer.
 
-The Dec4/Dec9 pair now has one tracked release reader and phase-local
-observer/restore pins. The invented two-leg case and independent exit
-passed. Freeze one actual `RELEASE.json` and both protected phase rows
-with the native launcher/installer; tracked tests do not install the pair.
-The bank launcher now derives its source action and phase window directly
-from that protected install plan, verifies the source and launcher/runtime
-bytes, and requires the same native provider binding. Next connect the
-protected outer process to the independently retained native profile pins.
-The external adapter consumed both real unregistered COM drafts and refused
-a changed command even with matching profile hash (HANDOFF). Use its
-selected-phase binding; do not rebuild intent from the current Task as its
-own proof. The tracked bank publishes the original input reference before
-entry effects and restores it at exit without the point. Bind its original
-retained-input/reference parent into the actual protected runtime profile.
-The bank now derives its observer, restore, writer and evidence paths from
-the same selected source/release as the restore child. The verified caller
-component joined two native drafts to an inert bank boundary and the actual
-bank/restore modules passed a no-site import and DLL-origin smoke. The
-assembled outer starter now refuses early phases in direct no-site Pythonw
-and calls only verified runtime/dispatcher members. R3 composes the
-protected dependency loader and profile anchor to an inert final boundary.
-The protected r4 candidate now has exact program bytes and both pre-source
-COM profile cards. R6 refreshes those cards and binds the historical
-bank/basis/account and exact existing lock through acquire. The dated policy,
-original capsule mounts, inert guest image, dedicated Docker bridge, daemon
-and both observer plans are now staged. R6's static input assembler and
-exact-pin future installer are ready for the writer scope; install rehearsal
-is not task registration. The monitor role has exact current image and
-source evidence, but unmatched host claims remain unqualified.
-The inherited protected roots and 11 non-own writer-deny selectors are
-bound. Actual-path restore and native COM draft construction now match
-both pre-source profile cards with test-only historical claims. Bind the
-exact current claimant rules before freezing SOURCE/RELEASE and scheduling.
-Do not invent account, bank or native writer facts.
+The Dec4/Dec9 R6 pair is installed on immutable SOURCE/RELEASE/profiles.
+Fresh independent readback verified both complete native definitions and
+ACLs, enabled Ready, never run, zero hidden-inclusive instances. Exact clocks:
+entry Dec4 14:31 UTC and owned exit Dec9 14:30 UTC. Exit was enabled first;
+no demand launch, catch-up or repeat. This is not an order, fill or runtime
+qualification. Do not re-register or manually invoke either definition.
+See HANDOFF and RUNBOOK for pins, scope and owned result paths.
 
-Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
-qualify the writer census on fresh source-scoped role claims. The count-only
-probe in HANDOFF distinguishes diagnostic ancestry but is not an allowlist.
-Do not spend another run guessing from raw process output; use the actual
-protected caller and exact physical scope. The inert direct root/watchdog
-CIM join passed; the actual Scheduler/Job and 13-second guest acknowledgement
-are not proved. Bind the independent restore owner and anchor the derived
-post-install profile separately from the source digest it cites. The scheduled BankLeg
-now stages and verifies the exact new
-capsule workspace before calling the existing native account worker.
-Protect the final phase profiles and source using the existing installer.
-Keep abort reconciliation as a distinct path for its original request;
-do not wait for a market session or use a successful recovery fixture as
-normal-path admission. The credential-free point task is already installed.
+Next: prepare exact source-safe runtime result reading and keep the Dec1
+H20 owned exit/readback separate. After each R6 opportunity classify
+no outcome, input refusal, submit, fill, owned inventory and terminal
+reconciliation from the actual retained evidence. Startup still enforces
+Scheduler/Job ownership and fresh account, writer, observer, quote and risk
+checks at effects. The qualified Microsoft console image is only the
+unchanged console selector's new hash; it is no writer exclusion waiver.
+Preserve the one original budget, unknown pending identities and exit duties.
+Keep abort reconciliation on its exact original path. No foreground wait.
 The bank phase adapter now validates the complete point-owner handoff and
 retains the exact native proposal once. Exit restores only the original entry
 reference. Still bind the real caller, whose independent point closure and
