@@ -37,6 +37,16 @@ the bytecode cache redirected to an absent path. It refused `--run`.
 `DEC9-RUNTIME-STARTUP-PREFLIGHT.json` SHA256
 `1ebaecbe8ef992e6073be5ca23ff57489e0ed04c09c2f186049aba80854a3639`.
 These are preflight pins, not an OS sandbox, custody proof, or activation.
+The external `dec9-native-host-adapter.py` now joins fresh process proof
+to rechecked runtime/custody and defers the existing scoped Paper loader.
+Direct native smoke passed with invented inputs and the real typed API and
+loader; no actual config was opened. `DEC9-NATIVE-HOST-ADAPTER-SMOKE.json`
+SHA256 `ff1ccba93fdab8fd429083376be8734f16fd67c33d131a3c4b37ac8cfc84515c`.
+The exact output parents still have generic write inherited by children;
+the future run and market leaf are both absent. `DEC9-CUSTODY-PARENT-ACCESS.json`
+SHA256 `744d8f0263d66c16844be5917e73756c2a8d824a205d1a7edc63897eefb1b432`.
+Use owner-only ACLs at creation for the two exact owned roots before
+capturing; do not alter the shared parent ACL or activate this fixture.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

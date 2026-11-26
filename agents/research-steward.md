@@ -23,6 +23,13 @@ association is unclassified. Identify it in a fresh synthetic witness before
 admitting forecast isolation; simply permitting two is not evidence.
 R2 also retained its exact profile `thericher.probe.d1cb948339be491f9823a294059d823f`
 and scratch `appcontainer-synthetic-s2pizj82`. The original remains unchanged.
+In r3, native Job completion messages confirm a second PID, but its image
+query was denied. The witness itself returned a loopback timeout, not an
+explicit blocked-access result. `appcontainer-probe-r3.RESULT.json` SHA256
+`ba48bee22bb290df682556bb6000ef1fb017376b6b739d967cb7798881232823`
+retains exact owned profile/scratch and count evidence. Do not infer isolation
+success or retry the same .NET witness. Qualify a smaller native witness
+or a separately scoped no-network runner without changing the forecast.
 
 ## Actual Queue
 

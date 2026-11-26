@@ -292,8 +292,11 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    A corrected frozen candidate and the 19-query evaluator contract are
    retained separately from the original (Data stateboard). Direct startup
    also verified the measured interpreter and dependency set with an
-   empty bytecode-cache path. Bind those pins to fresh native Scheduler,
-   custody and Paper-only config proof in the actual host next. The CLI stays
+   empty bytecode-cache path. The host adapter now passes the invented
+   typed activation/credential-loader fixture. Actual output parents
+   confer generic write on descendants; create the two exact absent roots
+   with a protected ACL at creation, then wire those facts to real native
+   Scheduler/runtime evidence. Do not alter shared parent ACLs. The CLI stays
    disabled until that launcher binds custody and independently retained protected
    pins; do not duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;
