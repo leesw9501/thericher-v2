@@ -32,6 +32,14 @@ readiness opens Dec4 14:37:30 UTC and ends at the Dec9 exit start.
 SHA256 `891bef21e27c2e8147be57fc37265fc07d2dd87ec2ec2c04c6cf1fa458ac2a74`.
 The H20 reader is cohort-specific; reuse native no-lock parsers rather than
 the H20 adapter. R6 still needs an exact phase-to-request and fill join.
+The D-only `closed_pair_costs.py` under the same native-ledger fixture
+SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
+passed six invented threshold/identity tests. After a positive exact
+terminal owned-flat join only, it projects closed-fill gross sign and
+sign under the frozen research 25 bp each-side scenario. Fill-price
+effects are already in the cashflow; no second slippage debit. Actual
+broker fees, settlement and measured net remain unknown. Do not call
+the arithmetic a fill, terminal proof or a measured broker-cost model.
 Synthetic cold restart now demonstrates the same unknown request and
 reservation survive across processes without another submit (HANDOFF).
 Positive reconciliation of an actual broker response is still unobserved.
