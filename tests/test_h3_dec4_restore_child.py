@@ -1,5 +1,8 @@
 import importlib.util
+import subprocess
+import sys
 from contextlib import contextmanager
+from importlib.resources import files as resource_files
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -26,7 +29,7 @@ def test_project_import_executes_verified_bytes_not_later_disk_contents(tmp_path
     entry = _entry()
     files = {
         entry._ENTRY: b"# entry",
-        entry._ZONE: b"TZif-test",
+        **dict.fromkeys(entry._ZONES, b"TZif-test"),
         entry._BINDING: b"# binding",
         "src/thericher_v2/__init__.py": b"# init",
         "src/thericher_v2/known.py": b"sentinel = 'verified'",
@@ -36,6 +39,9 @@ def test_project_import_executes_verified_bytes_not_later_disk_contents(tmp_path
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(raw)
     pins = {name: entry._sha(raw) for name, raw in files.items()}
+    for zone in entry._ZONES:
+        with pytest.raises(ValueError):
+            entry._snapshot(tmp_path, {key: val for key, val in pins.items() if key != zone})
     snapshot = entry._snapshot(tmp_path, pins)
     loader = entry._PinnedImports(tmp_path, snapshot)
     (tmp_path / "src/thericher_v2/known.py").write_bytes(b"raise RuntimeError('wrong code')")
@@ -52,6 +58,29 @@ def test_project_import_executes_verified_bytes_not_later_disk_contents(tmp_path
     (tmp_path / "src/thericher_v2/foreign.py").write_bytes(b"# extra")
     with pytest.raises(ValueError):
         entry._snapshot(tmp_path, pins)
+
+
+def test_no_site_restore_import_with_only_two_manifest_zones(tmp_path):
+    for member in _entry()._ZONES:
+        path = tmp_path / member
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(resource_files("tzdata").joinpath(*Path(member).parts).read_bytes())
+    repo_source = Path(__file__).resolve().parents[1] / "src"
+    result = subprocess.run(
+        [
+            sys.executable, "-I", "-S", "-B", "-c",
+            "import sys, zoneinfo; "
+            "zoneinfo.reset_tzpath((sys.argv[1],)); sys.path.append(sys.argv[2]); "
+            "from thericher_v2.ops.h3_dec4_restore_native_binding "
+            "import build_dec4_restore_binding; "
+            "assert callable(build_dec4_restore_binding) and 'site' not in sys.modules",
+            str(tmp_path / "zoneinfo"), str(repo_source),
+        ],
+        capture_output=True,
+        timeout=20,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr.decode(errors="replace")
 
 
 @pytest.mark.skipif(not Path("C:/").is_absolute(), reason="requires Windows plan paths")

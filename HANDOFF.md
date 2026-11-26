@@ -180,9 +180,30 @@ The same root's `dec4_source_closure.py` (SHA256
 `fd44f4ecd4b490b9af1349eab7c76b2d04a2511ca9183823be4ac922f8576420`)
 selects 112 frozen Git members including the restore entry from `8409ace2`.
 The composed startup imported 111 project modules using only that subset.
-The restore binding independently imported in no-site Python with the
-New York zone file and no third-party import path. The subset fits the
-existing 256-member reader; this does not prove late runtime effects.
+The first standalone restore import used the full zone database as a
+timezone search path, without adding the third-party module path. A
+production-shaped r3 staging test then found the hidden `Asia/Seoul`
+dependency alongside `America/New_York`. The tracked restore now requires
+and rechecks both exact zone files. A separate test imports the actual
+restore binding in no-site Python with only those two files.
+Verification: 7 focused tests; full parallel run created 12/12 workers
+and collected 21,700 tests (21,674 passed, 26 known Windows-link skips),
+helper exit zero and current temp child/lease removed. Ruff and default,
+research, accounting and monitor Compose configurations passed.
+Under the same root, `candidate-r4/PROGRAM.json` SHA256
+`96afa1c047a0098a0ffcc60322e52ae6d560a3097fe7b82db7d9f1c59d9b7555`
+reopened 124 exact files under the actual protected candidate directory.
+`candidate-r4/PRE-SOURCE-PROFILE-CARDS.json` SHA256
+`65e73ce6bf74e9f9953e3963d8c0016aaa3f6883e14a30d6d2ccbc245cae6cd2`
+matched both native COM draft profiles on that path across different shape
+placeholder pins. No SOURCE/RELEASE, registration or financial execution.
+An independent metadata join found the original bank gate is outside the
+new-package path restriction, but its original scope, keyed directory and
+host lock match. Bind that exact original gate without creating/migrating
+it. Live writer, observer, account, policy and capsule admission remain
+separate from these draft profiles.
+Claude categorical challenge:
+`A/execution/h3-dec4-dec9-native-release-20261126-v1/ORIGINAL-GATE-CLAUDE-VERDICT.json`.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

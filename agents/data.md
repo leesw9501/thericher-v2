@@ -129,9 +129,14 @@ relaxing the mutation audit. The prior receipt did not identify its caller;
 the isolated fix does not prove the full Data startup.
 The one seeded `-importerror-r3/STARTUP.json` attempt (SHA256
 `50ced1d1532056b1e1e046b0b362646699d165c89c81cc97d60fc64ed0eaa299`)
-reached `exact_target_prebind` with one backend exclusion and no audit
-denials. It withheld there; no adoption or runtime authority. Review the
-exact prebind input shape rather than relaxing the import effect audit.
+reached `exact_target_prebind` with one backend exclusion after one
+interpreter-root `open` denial that it continued past. It withheld there;
+no adoption or runtime authority. The external check used ISO `T` where
+both original clock fields used the producer's `str(datetime)` format.
+`A/data/h3-dec9-target-prebind-shape-diagnostic-ccb3b315-v1/RESULT.json` SHA256
+`0e948559064bb65731cd0da0bcb3f752a052b69e3fa4b1ee712395c88cf1f919`
+matched the exact prebind and ordered 19-query digests after correcting only
+those comparisons. This is not a cold-start pass; keep the audit unchanged.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

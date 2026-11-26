@@ -15,7 +15,7 @@ from pathlib import Path
 
 _BASE = Path("D:/thericher-v2/model-artifacts/execution")
 _ENTRY = "scripts/run_h3_dec4_restore_child.py"
-_ZONE = "zoneinfo/America/New_York"
+_ZONES = frozenset(("zoneinfo/America/New_York", "zoneinfo/Asia/Seoul"))
 _BINDING = "src/thericher_v2/ops/h3_dec4_restore_native_binding.py"
 _DEP = re.compile(r"src/thericher_v2/(?:[A-Za-z0-9_]+/)*[A-Za-z0-9_]+\.py")
 
@@ -82,13 +82,13 @@ def _acl(path):
 
 def _snapshot(root, files):
     _require(type(files) is dict and 5 <= len(files) <= 256)
-    _require({_ENTRY, _ZONE, _BINDING, "src/thericher_v2/__init__.py"} <= files.keys())
+    _require({_ENTRY, _BINDING, "src/thericher_v2/__init__.py", *_ZONES} <= files.keys())
     parents = set()
     for key, pin in files.items():
         _require(
             _digest(pin)
             and (
-                key == _ZONE or _DEP.fullmatch(key) or re.fullmatch(r"scripts/[a-z0-9_]+\.py", key)
+                key in _ZONES or _DEP.fullmatch(key) or re.fullmatch(r"scripts/[a-z0-9_]+\.py", key)
             )
         )
         parents.update(p.as_posix() for p in Path(key).parents if p != Path("."))
@@ -175,7 +175,6 @@ def main():
         and _sha(_read(exe, 32 * 1024 * 1024)) == profile["executable_sha256"]
     )
     root_id = _stamp(_ordinary(root))
-    zone = root / _ZONE
     source = _snapshot(root, doc["files"])
 
     def ready():
@@ -183,16 +182,15 @@ def main():
             _stamp(_ordinary(root)) == root_id
             and _acl(root) == profile["source_acl_sha256"]
             and _read(origin, 1024 * 1024) == raw
-            and _read(zone, 128 * 1024) == source[_ZONE]
+            and all(_read(root / key, 128 * 1024) == source[key] for key in _ZONES)
             and Path.cwd() == script.parent
         )
 
     _require(ready())
     zoneinfo.reset_tzpath((str(root / "zoneinfo"),))
     sys.meta_path.insert(0, _PinnedImports(root, source))
-    from thericher_v2.ops.h3_dec4_restore_native_binding import build_dec4_restore_binding
-
     from thericher_v2.ops.h3_dec4_restore_child import run_dec4_restore_child
+    from thericher_v2.ops.h3_dec4_restore_native_binding import build_dec4_restore_binding
 
     binding = build_dec4_restore_binding(root, args[0], args[1], args[2])
     run_dec4_restore_child(binding, args, source_ready=ready)

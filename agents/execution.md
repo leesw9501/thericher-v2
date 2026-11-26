@@ -53,7 +53,15 @@ R3 now joins both components to the dependency admission and deferred
 credential route in an inert-dispatch smoke: 3,405 real copied files held
 and 111 pinned project modules loaded, no credential access. Actual
 SOURCE/RELEASE and exact native writer/restore closure still need binding.
-No financial task installed.
+R4 stages 124 exact files and both pre-source COM profiles on the real
+candidate path. Its no-site restore needed both New York and Seoul TZif
+files; this is a tracked fix, not permission to search ambient site paths.
+The old gate exists and matches the historical bank pointer and lock, but
+the restore binding currently rejects it as outside its new-package root.
+Bind that original existing gate without creating a fresh lock. A scoped
+Claude challenge highlighted replacement between path check and acquisition;
+join the observed file identity to the acquired handle. Neither future
+financial task is installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

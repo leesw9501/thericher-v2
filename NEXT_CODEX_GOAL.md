@@ -27,8 +27,12 @@ bank/restore modules passed a no-site import and DLL-origin smoke. The
 assembled outer starter now refuses early phases in direct no-site Pythonw
 and calls only verified runtime/dispatcher members. R3 composes the
 protected dependency loader and profile anchor to an inert final boundary.
-Freeze the actual protected closure and complete pre-source profile cards
-with the existing named installer before scheduling. Do not invent account,
+The protected r4 candidate now has exact program bytes and both pre-source
+COM profile cards. Next bind the original bank gate: the new-package root
+rule rejects the old, separately anchored gate, which must not be moved or
+recreated. Require the exact historical bank/basis link and original lock
+identity through acquire. Then bind the actual writer, observer and capsule
+inputs before freezing SOURCE/RELEASE and scheduling. Do not invent account,
 bank or native writer facts.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
