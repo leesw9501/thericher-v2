@@ -17,9 +17,17 @@ The tracked bootstrap now requires the pinned direct executable and base
 image, not the redirector. The isolated direct process loaded the real
 owner and dependencies and reached an invented capture boundary. Claude
 challenged dependency discovery; explicit site-packages import remains
-independent of the venv launcher. Preserve that original frozen tree and
-stage the corrected source separately; bind its protected native host and
-independent evaluation prebind next. No target capture is installed.
+independent of the venv launcher. The original frozen tree remains intact.
+New `source-candidate-direct/SOURCE.json` SHA256
+`4d8b4ede24be4ab60cbc6d8f9b9bd906c9739bf2bbdd2433b895c23079c23613`
+matched all 567 Git members at ce197cdc, with only the bootstrap changed.
+All 582 paths have equivalent owner/group/access metadata to the original.
+`DEC9-TARGET-PREBIND-CANDIDATE.json` at the same root (SHA256
+`2787c30ea0c17ac7d2c109956010190f0a988203bab821f105ef81b68d4c83de`)
+binds one 19-query target contract before the Dec4 open and preserves the
+Dec28 21:00 UTC evaluation release. Neither candidate grants runtime
+admission. Qualify the native, config-scoped host before selecting the
+corrected source at its fixed path. No target capture is installed.
 Nov26: an invented Nov27 early-close prefix passed the existing MODP1/H123
 capture-to-READY path for the Nov30 research slot, including wrong response
 identity rejection. Capture owner/source and exact forecast parser are not

@@ -289,9 +289,9 @@ pinned: the embedded reader in the frozen producer still has the old pin.
    with native image/argv/birth. The tracked bootstrap now pins the exact
    direct executable and base image rather than the venv redirector, and
    the isolated direct native process reached an invented capture boundary.
-   Stage a corrected source candidate without changing the old frozen tree.
-   The CLI stays disabled
-   until that launcher binds custody and independently retained protected
+   A corrected frozen candidate and the 19-query evaluator contract are
+   retained separately from the original (Data stateboard). The CLI stays
+   disabled until that launcher binds custody and independently retained protected
    pins; do not duplicate capture or open outcomes before block-end.
    The typed five-slot block join retains explicit unmeasured intervals;
    the time-bound evaluator cannot read before Dec28 21:00 UTC and needs a
