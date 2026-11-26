@@ -88,6 +88,13 @@ delete of the exact member but still permit a sibling create detected by
 membership. It is not a namespace fence. Keep actual RO read withheld
 until the same snapshot boundary covers writer exclusion and original
 BankLeg/input members outside the four guest aliases. No custody read.
+`host-preflight/exact_offline_snapshot.py` SHA256
+`b34d53cec43ab8a3421f800fa4136862ab9cdf1ccaf8e1f5484a96e719c3bdd2`
+verified invented pre-collected members at the four original aliases with
+no journal rewrite. A freshly hashed archive still refused changed, extra
+or missing members against an independent manifest. Next native smoke
+materializes those exact bytes and exercises the existing RO reader; the
+seal alone does not collect a live snapshot or demonstrate write exclusion.
 The D-only `closed_pair_costs.py` under the same native-ledger fixture
 SHA256 `c30cdbfbcbd26d06bc675e3e28b3c19c0c2b308778a4bf6cf2f1afe25d3282b0`
 passed six invented threshold/identity tests. After a positive exact
