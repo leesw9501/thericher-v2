@@ -93,6 +93,16 @@ It joined the persisted pending and bank bytes across processes and
 completed one recovery visit with no substitute submit or cancel. It did
 not positively resolve the simulated unknown, exercise the scheduled host,
 or read actual broker history.
+`exit_recovery_boundary.py` SHA256
+`3ea213c763f8f3e7e0d4b4e9440c1eab632faa5def994e04c284f15dafeb1fbfd`
+proved the other branch on invented data: the first exit visit bound an
+acknowledged buy's exact delayed full fill and cleared the pending marker,
+but stopped with a positive owned lot and no sell. At the old open+5
+boundary the native path refused a new sell; at a later eligible open it
+closed that same lot from the unchanged retained input. No successor task
+was installed. For an actual occurrence leave the obligation open until
+an exact owned exit is qualified and reconciled; never replay the consumed
+phase or treat missing/crossed evidence as permission for a new sell.
 
 Dec3 shared read-only capture owner is installed, Ready, zero instances,
 next 2026-12-03 21:30 UTC (Dec4 06:30 KST). Task:

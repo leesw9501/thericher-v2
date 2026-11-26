@@ -93,6 +93,14 @@ in the protected writer profile. The exit uses that reference with the
 original BankLeg closure; do not republish it, copy a point into it, or infer a
 fill from operational closure. A held original intent requires its existing
 recovery path, not a replacement exit.
+If the exit visit starts with pending custody, `initial_pending_recovery_once`
+only describes the visit. Even a positively reconciled buy can leave a live
+owned lot and no sell. Classify that separately from an unknown or known
+pending sell (same identity only) and from verified flat. After the original
+window, prepare a single new owned-exit opportunity only if the exact
+original cohort, lot and pending/owner state qualify; retain the original
+point and budget and apply the later session's native Open5 and fresh risk
+checks. Do not replay the consumed phase or act on an unrelated holding.
 The separate credential-free `thericher-h3-dec4-lstm-point-20261204-v1`
 is installed Ready for UTC21:47, with one trigger, no catch-up or demand
 start, and an eight-minute execution limit. It now uses the direct

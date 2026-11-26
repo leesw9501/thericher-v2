@@ -188,6 +188,14 @@ remaining process, task activation or external call.
 SHA256 `f2876a3fef39138dea6bae8936dbe27f8b98d19d21c8c4d0c4d61d0dd9b7c3a3`.
 Use this for startup-component readiness only; protected ownership and
 namespace activation are still separate.
+The exact 569-member candidate and prebind matched; the named Dec9 Data task
+is absent and the fixed launcher path still points to the older source.
+Three invented protected-DACL roots passed creator/custody checks, but a
+separate same-principal process could open all three for add-file access.
+`A/data/h3-dec9-owner-namespace-native-contract-v1/RESULT.json` SHA256
+`68c75fbfe6690dcf1b750a57c7dd8b6aec4bb14ff4c41de63ed25f3095893a4e`.
+No files created by that peer and no activation. Held creator handles and
+protected DACLs alone do not exclude a same-principal writer.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture
