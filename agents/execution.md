@@ -39,10 +39,16 @@ partial fills, mismatched intent/plan, later/crossed quote, unknown and zero
 fill. This is not fee, settlement, private custody or deployment evidence.
 `A/execution/paper-plan-quote-attribution-invented-20261126-v1/plan_quote.py`
 SHA256 `d5d7c3a2dda3edbdb359a6b018d9a792f07b8ee64e9edc20869e57bc2250fe77`.
-Next bind the calculation to the retained native field and qualify every
-reader of the shared bank before enabling it. Frozen readers reject even a
-valid new field; turning the flag off would not repair that incompatibility
-after an annotated order has been written. R6 is unchanged.
+The read-only successor calculation now consumes the retained native field
+and verifies exact run/intent/side/instrument against a qualified stock plan
+proof. Seven invented native atomic-write/reopen cases passed, including
+partial fill, unavailable observation and crossed identities. It does not
+perform custody qualification or see actual orders. Source:
+`A/execution/paper-retained-plan-quote-consumer-20261126-v1/retained_quote.py`
+SHA256 `40909eda9e5aefd17f39bfc2f092a825fb312c04a88af8be4af3db0cdf686db6`.
+Qualify each relevant shared-bank reader before enabling retention. Frozen
+readers reject even a valid new field; turning the flag off would not repair
+that incompatibility after an annotated order has been written. R6 is unchanged.
 Tracked verification: 315 changed-path serial passed; clean parallel created
 12/12 workers with 21,726 collected, 21,700 passed, and 26 existing Windows
 link skips. Helper exited zero, current child `r-a537ded8` and lease cleared;
