@@ -55,6 +55,10 @@ credential-free reader pinned in HANDOFF (invoke via
 `uv run --no-env-file python -I -S -B` with the full reader path).
 It requires the protected `RESULT-SHA256`; a Task exit, missing publication
 or gross sign is not reconciled net PnL.
+`VALIDATED_CURRENT_RETAINED_PHASE_STATE` only validates the envelope. Interpret
+its phase categories only when `reason == "OK"` and `stage == "COMPLETE"`;
+otherwise report a withheld joint read. A withheld exit does not erase an
+independently proved historical entry or establish that no exit ran.
 Use that reader for the first Dec1 result; neither the installed loopback
 monitor nor the replacement candidate is wired to this publication. A
 Nov26 `/health` 200 from the exact `be48` image proves local service health
@@ -190,6 +194,17 @@ private read. Several legacy read-only collectors allow late catch-up;
 `daily-spy-head` can fetch the prior session even on a holiday and shares the
 Nov27 capture's token/rate controls. No nominal overlap or actual collision
 was observed; preserve the installed schedules and do not bypass their gates.
+
+If Nov27 has no qualified READY after 18:45 UTC, distinguish a missing
+attempt, generic failure, retained wait/pending state, and all requests
+accepted with downstream qualification unconfirmed. The optional pure
+categorical projector is `A/data/h3-nov27-retained-failure-projection-20261126-v1/projection.py`,
+SHA256 `6cfdec56bf60431ccccf4504bd3def0acb4773e6877a6e6a9ab1c6c6e820c839`.
+Supply only the original stable, independently source-bound control bytes
+after actual relevant-owner closure; it does not open files or qualify a
+payload. Missing is unknown and a pending debit is not wire evidence.
+Nine invented and four focused native reservation cases passed. No actual
+Nov27 read, Task run, retry or deployment was performed.
 
 Next research block (US session dates, `OPEN[e]` to `OPEN[e+3]`):
 Nov30-Dec3, Dec4-Dec9, Dec10-Dec15, Dec16-Dec21, Dec22-Dec28.
