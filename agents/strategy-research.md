@@ -29,9 +29,20 @@ cases before outcomes. Four synthetic tests passed. Source:
 `A/research/sector-mass-sleeve-static-preflight-20261126-v1/preflight.py`,
 SHA256 `458e3ccc8e29176432f59075600fce3756b35edf03469396fe3955a3d8f3fd99`.
 Claude checked the overlap question; its equal-sector-mass formula is a
-different rule, not the pinned same-support EW target. No date-valid full
-17-name map was found. Do not substitute ETF routes or retrospective Norgate
-index membership, open scored tapes, fit, or change Paper on this evidence.
+different rule, not the pinned same-support EW target. No date-valid
+historical 17-name sector map was found. Nov26 source work did bind a
+separate observed SEC SIC industry proxy: 16 retained submissions matched
+their original accepted receipt SHA/path and the [dated XOM filing](https://www.sec.gov/Archives/edgar/data/2115436/000211543626000020/0002115436-26-000020-index.html)
+and cover supplied the seventeenth, using the newer filer rather than the
+old header with no ticker. The 17 names occupy 12 two-digit SIC groups;
+this is not GICS, historical PIT, or a new input to the five frozen slots.
+`D:/market_data/static_reference/sec_sic17_observed_20261126_v1/OBSERVATIONS.json`
+SHA256 `127a294194215a9462ac18bdcc9320416e790715a4d3faa88c51a406a8104b39`.
+On that map the real pure comparator returned identity for equal weights
+and distinct with unchanged gross on invented nonuniform weights. Current
+fixed-half replay uses equal weight on support; skip the duplicate arm.
+Only a separately prebound later nonuniform study can test this SIC proxy;
+no scored tape, model fit, frozen experiment or Paper path changed.
 
 Granite daily foundation candidate, Nov26: IBM `52-16-ft-r2.1`, immutable
 checkpoint commit `8c9c1d742ec5893d6419e3aa2ab21ed23e28df85` (2025-02-26),
