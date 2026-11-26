@@ -115,6 +115,14 @@ terminal pair admitted gross and modeled-cost signs. Under the same root:
 The fixture uses invented closure flags. Production glue must replace them
 with the exact independently qualified phase/BankLeg/observer/retained
 proofs and actual writer exclusion; lack of those cannot admit a read.
+Installed R6 entry and exit each yield after one effectful native leg;
+entry's extra calls advance no-intent targets only. A new invented-only
+readout variant covers an exact terminal partial sell whose same-owner
+remaining lot equals buy less sell. It keeps PnL, fees, and settlement
+unknown. Three focused variant tests and the native residual-exit test passed.
+`A/execution/r6-terminal-partial-exit-readout-20261126-v1/partial_exit.py`
+SHA256 `1fab3f4ea242ab0549fb66a6a2567b43460473665b8b53609f526a7eefd0684c`.
+No actual read or action; use only after the exact actual scope is qualified.
 `host-preflight/phase_proof_gate.py` under the same root, SHA256
 `68ae0196e547517348315205e2bc85c8c2c8f052e3213d3cf88ca4c95f52dbf6`,
 joins installed startup/restore-owner/observer metadata into typed phase
