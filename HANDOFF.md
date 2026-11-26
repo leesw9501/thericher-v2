@@ -234,6 +234,25 @@ binds five exact original mounts and the inertly tested image/worker to
 dated `POLICY.json` `6d9d10da313243128fdf9201caea5dfa91972a1c726e16f545103624f0bc36b1`.
 The static capsule passed real path/role checks; writer/monitor and runtime
 admission remain pending. There is still no SOURCE/RELEASE or financial task.
+The same release root's `assemble_dec4_release_inputs.py` verified the
+eight exact staged inputs, ACLs, 124 source members, launcher/dependency
+pins and installed point handoff metadata without reading the future point.
+Its read-only result `4294971f70e227bd34488f5f685df2aee59c207fd324a07b06f9f71a033ba84f`
+explicitly withheld SOURCE/RELEASE because writer scope is not yet bound.
+`Install-Dec4R6FuturePair.ps1` SHA256
+`72e96978e421462d7fd0bf96aca3e93882581adb9f1efb7ba622b9101d3e93bf`
+binds exact source/release/profile anchor and invokes the existing create-only
+installer only in explicit install mode. Dry fixture readback passed, two
+changed pins refused, and real unsealed inputs refused before opening COM.
+Two fake-Scheduler races inserted a competing name after absence checks;
+neither decoy was changed/enabled and any surviving partner stayed disabled.
+Claude challenge: `INSTALL-RACE-CLAUDE-VERDICT.json`. No real registration.
+The existing monitor image `be48f29e2750c8ef2c9fcc5d16d984bea35e90e353bcd02a1f195f9d2f6321af`
+matched its pinned source and exact loopback/control-only configuration.
+Do not use the capsule image as the monitor pin. Earlier R8 and H20 host
+samples had unmatched actors; neither grants ownership or excludes diagnostic
+ancestors. R6 still needs inherited protected/sensitive scope and exact
+writer rules, including the generated capsule output root and retained input.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

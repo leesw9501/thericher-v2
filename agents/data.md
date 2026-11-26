@@ -145,6 +145,12 @@ import without opening a database. It is absent from the R4 core manifest;
 the targeted probe does not establish the original loaded file identity or
 explain the previous separate `open` denial. Do not broaden the origin scope
 or treat R4 as activated.
+The separate `A/data/h3-dec9-sqlite-exact-authority-design-v1/sqlite_authority.py`
+does exact held-file same-identity and in-process SHA rechecks for the pinned
+UV interpreter companion. Static lint only at that checkpoint, SHA256
+`83c800dfd88546b9a946a473f2175261ef5285193b8b6542ce3193a803bf8b21`.
+This supports local runtime-file identity, not upstream signature/archive
+provenance. The separate interpreter-root denied open remains unattributed.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

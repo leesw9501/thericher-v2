@@ -14,7 +14,14 @@ holdings-aligned assignment. Eleven invented tests passed, including
 exhaustive assignment comparison for 243 holdings patterns. This proves
 prior-close turnover optimality only, not realized cost or PnL. Existing
 registry reserves one DEV readout, two books, 25 bp per side, zero fits or
-retries; native replay join is unbound. No market arrays or holdout read.
+retries. Native synthetic v1 now passes 4 end-to-end checks using the
+original W25 archive/frame parsers, fee rebalance, and tape summary with
+invented books. Prior-close assignment survives an entry-open gap and the
+25 bp routine keeps pre-fee dollar targets, including terminal liquidation.
+See `native-synthetic-v1/HOST-EVIDENCE.json` SHA256
+`489ab08a0300758c628498c46421010789ed2942d64adecacdbe51430d6a53dd`.
+The exact DEV-only worker was assigned after that pass; no market attempt
+or holdout read is established by the smoke.
 
 The fixed-half block-end join requires all five frozen slots in order.
 Missing measurements stay explicit, separate from verified no-signal dates.

@@ -31,9 +31,13 @@ The protected r4 candidate now has exact program bytes and both pre-source
 COM profile cards. R6 refreshes those cards and binds the historical
 bank/basis/account and exact existing lock through acquire. The dated policy,
 original capsule mounts, inert guest image, dedicated Docker bridge, daemon
-and both observer plans are now staged. Next bind the actual protected
-writer/monitor/current-owner claims to R6 before freezing SOURCE/RELEASE
-and scheduling. Do not invent account, bank or native writer facts.
+and both observer plans are now staged. R6's static input assembler and
+exact-pin future installer are ready for the writer scope; install rehearsal
+is not task registration. The monitor role has exact current image and
+source evidence, but unmatched host claims remain unqualified.
+Next bind the original protected scope and exact current writer roles to
+R6 before freezing SOURCE/RELEASE and scheduling. Do not invent account,
+bank or native writer facts.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only
