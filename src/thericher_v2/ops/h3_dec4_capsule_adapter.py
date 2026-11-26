@@ -19,7 +19,8 @@ from thericher_v2.ops.h3_dec4_job_closure import retain_dec4_normal_job_close
 _CONTROLLER = Path("D:/thericher-v2/model-artifacts/execution/n9h3-control-r8/c1/controller")
 _DAEMON = "38abb623556fdf08ba38253e369e369b019ffeb23221af3da9cdc37bed07fe8c"
 _JOB = "76dab8660fcc39e0876d33dd8b2acfd00f0b1d0561d0e51f8a7b3e9757637ca2"
-_BANK = "ac6781e2d3d7e05b169a0dbef476af682353b26f64ebbbcf244cd076ca1dd188"
+# Dec4 reuses the frozen R8 Job/daemon code with the current exact BankLeg API.
+_BANK = "b204268e7ee1dd466b2e8184b40670c49bdbdbe01b93250b085dd3870fde3489"
 
 
 def _verified(raw, digest):

@@ -214,19 +214,22 @@ class Dec4ObserverLease:
         identity,
         native_closed,
         clock=lambda: datetime.now(UTC),
+        existing_gate=None,
     ):
         """Restore only the exact original normally closed leg; no abort inference."""
         _need(self.root == Path(self.plan.output_root), "restore_output_scope")
         return self._restore_closed(
-            gate_root, bank, identity, native_closed, clock, pv.process_start
+            gate_root, bank, identity, native_closed, clock, pv.process_start, existing_gate
         )
 
-    def _restore_closed(self, gate_root, bank, identity, native_closed, clock, process_probe):
+    def _restore_closed(
+        self, gate_root, bank, identity, native_closed, clock, process_probe, existing_gate=None
+    ):
         key = pv.bank_key(bank)
         pv._identity(identity, key)
         root = Path(gate_root) / ("bank-" + key)
         _need(root.is_dir(), "restore_gate_missing")
-        with pv.Gate(root) as gate:
+        with pv.Gate(root, existing_identity=existing_gate) as gate:
             _need(not self._path("RESTORE_STARTED").exists(), "restore_already_attempted")
             started = self._read("STARTED")
             disabled = self._read("DISABLED")

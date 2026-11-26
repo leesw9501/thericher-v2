@@ -210,27 +210,57 @@ def process_start(pid):
     return None if fields[0] == "Z" else "linux-startticks:" + fields[19]
 
 
+def _directory_ids(root):
+    directories = []
+    for path in (root, *root.parents):
+        info = path.lstat()
+        directories.append((path, (info.st_dev, info.st_ino)))
+    return directories
+
+
+def _gate_identity(directories, lock_signature):
+    return digest([[str(path), *identity] for path, identity in directories] + [lock_signature])
+
+
+def existing_gate_identity(root):
+    """Fingerprint a provisioned lock and its directory chain without opening it."""
+    path = root / "HOST-VISIT.lock"
+    ordinary(path)
+    info = path.lstat()
+    _need(stat.S_ISREG(info.st_mode), "gate_type")
+    return _gate_identity(_directory_ids(root), _signature(info))
+
+
 class Gate:
     """Nonblocking same-OS file lock; its release never clears durable state."""
 
-    def __init__(self, root):
+    def __init__(self, root, *, existing_identity=None):
         self.root, self.file = Path(root), None
+        _need(existing_identity is None or _hash(existing_identity), "gate_identity")
+        self.existing_identity = existing_identity
 
     def __enter__(self):
         _need(self.file is None, "gate_already_owned")
         ordinary(self.root)
-        self.root.mkdir(parents=True, exist_ok=True)
+        if self.existing_identity is None:
+            self.root.mkdir(parents=True, exist_ok=True)
         ordinary(self.root)
-        self.directories = [
-            (p, (p.lstat().st_dev, p.lstat().st_ino)) for p in (self.root, *self.root.parents)
-        ]
+        self.directories = _directory_ids(self.root)
         self.path = self.root / "HOST-VISIT.lock"
-        try:
-            _new(self.path, b"0")
-        except FileExistsError:
-            pass
+        if self.existing_identity is None:
+            try:
+                _new(self.path, b"0")
+            except FileExistsError:
+                pass
         ordinary(self.path)
-        before = _signature(self.path.lstat())
+        info = self.path.lstat()
+        _need(stat.S_ISREG(info.st_mode), "gate_type")
+        before = _signature(info)
+        _need(
+            self.existing_identity is None
+            or _gate_identity(self.directories, before) == self.existing_identity,
+            "gate_identity_changed",
+        )
         self.file = self.path.open("r+b")
         try:
             _need(_signature(os.fstat(self.file.fileno())) == before, "gate_changed")
@@ -379,13 +409,13 @@ def _record(value, key):
 class BankLeg:
     """One whole-bank leg; callers debit only AFTER successful __enter__."""
 
-    def __init__(self, root, *, bank, identity, process_probe=process_start):
+    def __init__(self, root, *, bank, identity, process_probe=process_start, existing_gate=None):
         self.key = bank_key(bank)
         _identity(identity, self.key)
         self.identity = _decode(encode(identity))
         self.root = Path(root) / ("bank-" + self.key)
         self.active = self.root / "ACTIVE-LEG.json"
-        self.gate = Gate(self.root)
+        self.gate = Gate(self.root, existing_identity=existing_gate)
         self.process_probe = process_probe
         self.record = None
         self.snapshot = None

@@ -1,5 +1,6 @@
 """Materialize the native restore binding from the protected Dec4 phase source."""
 
+import json
 from dataclasses import dataclass
 from datetime import timedelta
 from hashlib import sha256
@@ -24,6 +25,8 @@ from thericher_v2.ops.paper_scheduled_preflight import ScheduledPaperPlan
 
 _ROOT = Path("D:/thericher-v2/model-artifacts/execution")
 _RESTORE_ENTRY = "scripts/run_h3_dec4_restore_child.py"
+_ORIGINAL_SOURCE = "n9h3-control-r8/c1/SOURCE.json"
+_ORIGINAL_SOURCE_SHA256 = "29ccc64da6c2c23282d9411ddad90762cf6ae77f18be00790b56d6afeb2bcefd"
 
 
 def _need(ok):
@@ -45,6 +48,33 @@ def _path(value):
 
 def _keys(value, keys):
     _need(type(value) is dict and value.keys() == set(keys.split()))
+
+
+def _original_gate(value):
+    # The retired release authenticates continuity, not a grant to execute.
+    raw, _ = pv._read(_ROOT / _ORIGINAL_SOURCE)
+    _need(sha256(raw).hexdigest() == _ORIGINAL_SOURCE_SHA256)
+    historical = json.loads(raw)
+    bank = value["original_owner"]["bank"]
+    key = pv.bank_key(bank)
+    gate = Path(value["original_gate_root"])
+    inputs = historical["original_owner"]["owner_inputs"]
+    _need(
+        value["original_gate_root"]
+        == historical["original_gate_root"]
+        == historical["control_value"]["gate_root"]
+        and gate.is_absolute()
+        and ".." not in gate.parts
+        and bank == historical["original_owner"]["bank"]
+        and value["original_basis_ref"] == inputs["basis_ref"]
+        and value["capsule"]["account_ref"] == inputs["account_ref"]
+        and value["single_bank_writer_gate"] == dict(gate_root=str(gate), bank_key=key)
+    )
+    lock = gate / ("bank-" + key) / "HOST-VISIT.lock"
+    pv.ordinary(lock)
+    _need(gate.resolve(strict=True) == gate and lock.is_file())
+    _need(pv.existing_gate_identity(lock.parent) == value["original_gate_identity"])
+    return gate, bank, key
 
 
 @dataclass(frozen=True, slots=True, repr=False)
@@ -128,9 +158,7 @@ def _build(root, phase, source_sha256, release_sha256):
         "monitor_image retirement_helper retirement_helper_sha256 retirement_roster "
         "retirement_roster_sha256",
     )
-    bank = value["original_owner"]["bank"]
-    key = pv.bank_key(bank)
-    gate = _path(value["original_gate_root"])
+    gate, bank, key = _original_gate(value)
     evidence = _path(row["evidence_root"])
     obs_plan = Dec4ObserverPlan(
         phase, str(_path(obs["package_root"])), obs["bridge_sha256"], obs["core_sha256"]
@@ -177,7 +205,6 @@ def _build(root, phase, source_sha256, release_sha256):
         pins["observer_plan_sha256"] == obs_plan.sha256
         and pins["observer_restore_daemon_sha256"] == daemon.sha256
         and pins["observer_restore_writer_guard_sha256"] == guard.sha256
-        and value["single_bank_writer_gate"] == dict(gate_root=str(gate), bank_key=key)
     )
     launcher = _path(row["launcher"])
     _need(launcher.is_relative_to(root) and launcher.relative_to(root).as_posix() in value["files"])

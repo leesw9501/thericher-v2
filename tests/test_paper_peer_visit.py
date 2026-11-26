@@ -626,3 +626,43 @@ def test_semantically_malformed_closed_pending_create_record_refused(tmp_path):
     active.active.write_bytes(peer.encode(value))
     with pytest.raises(peer.Denied, match="record_closure"), leg(tmp_path):
         pytest.fail("closed_pending_create_admitted")
+
+
+def test_existing_gate_never_initializes_or_replaces_the_original(tmp_path):
+    root = tmp_path / "gate"
+    with peer.Gate(root):
+        pass
+    original = peer.existing_gate_identity(root)
+    with peer.Gate(root, existing_identity=original) as gate:
+        gate.check()
+    lock = root / "HOST-VISIT.lock"
+    lock.rename(root / "old.lock")
+    with pytest.raises(FileNotFoundError):
+        with peer.Gate(root, existing_identity=original):
+            pass
+    assert not lock.exists()
+    lock.write_bytes(b"0")
+    with pytest.raises(peer.Denied, match="gate_identity_changed"):
+        with peer.Gate(root, existing_identity=original):
+            pass
+
+
+def test_existing_gate_refuses_replacement_at_open(tmp_path, monkeypatch):
+    with peer.Gate(tmp_path):
+        pass
+    identity = peer.existing_gate_identity(tmp_path)
+    lock = tmp_path / "HOST-VISIT.lock"
+    original_open = type(lock).open
+
+    def substitute(path, mode, *args, **kwargs):
+        if path == lock and mode == "r+b":
+            lock.rename(tmp_path / "original.lock")
+            with original_open(lock, "xb") as stream:
+                stream.write(b"0")
+        return original_open(path, mode, *args, **kwargs)
+
+    monkeypatch.setattr(type(lock), "open", substitute)
+    gate = peer.Gate(tmp_path, existing_identity=identity)
+    with pytest.raises(peer.Denied, match="gate_changed"), gate:
+        pytest.fail("replacement admitted")
+    assert gate.file is None

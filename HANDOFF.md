@@ -204,6 +204,36 @@ it. Live writer, observer, account, policy and capsule admission remain
 separate from these draft profiles.
 Claude categorical challenge:
 `A/execution/h3-dec4-dec9-native-release-20261126-v1/ORIGINAL-GATE-CLAUDE-VERDICT.json`.
+R6 now binds the original historical bank, basis and account to the
+provisioned lock. The running bank and normal restore both require the
+source-pinned directory/lock identity, including the actual opened handle,
+and cannot recreate a missing lock. Synthetic replacement at open refused.
+The first full run caught a stale Dec4 capsule-adapter hash; only the current
+Dec4 bridge was repinned, not the frozen R8 Job/daemon. The subsequent
+139 focused checks passed (1 known Windows-link skip).
+Fresh full verification created 12/12 workers and collected 21,707:
+21,681 passed and 26 known Windows-link skips. Helper exit zero and its own
+`r-558cabfa` child/lease were removed. Ruff and four credential-free Compose
+configurations passed. The interrupted older run is not test authority.
+In the same release root, `candidate-r6/PROGRAM.json`
+`fea3ec4507ff164f5be03666450fee381288ce492a7cb75f5942fc76a7a99373`
+and `PRE-SOURCE-PROFILE-CARDS.json`
+`0d2490122d98ccca7018694b514d684a66093c386ee4a71686e5211069778e74`
+verified 124 protected files and both native drafts. The projected
+`ORIGINAL-GATE-BINDING.json`
+`cba7cfd56e0743a81fc57c8a54b8177529b2f5d3b1d57c7b94aa41881a5a79cd`
+passed the actual read-only binding on the original metadata, no lock taken.
+Both observer plans staged; the exact observer was enabled and idle only
+at the read (`OBSERVER-STATIC.json`, no mutation). Daemon metadata was verified
+using an empty Docker configuration. Dedicated local Paper bridge
+`thericher-dec4-h3-paper-v1` was created and read back with zero endpoints,
+loopback publication default and inter-container communication off.
+No ports published or remote transit tested. `CAPSULE-STATIC.json`,
+`f5389dce17247f00d9a9606001006513d38c545b8a1fa7a19e018e53acc0b242`,
+binds five exact original mounts and the inertly tested image/worker to
+dated `POLICY.json` `6d9d10da313243128fdf9201caea5dfa91972a1c726e16f545103624f0bc36b1`.
+The static capsule passed real path/role checks; writer/monitor and runtime
+admission remain pending. There is still no SOURCE/RELEASE or financial task.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

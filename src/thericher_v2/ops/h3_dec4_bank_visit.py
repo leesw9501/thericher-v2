@@ -7,7 +7,7 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from uuid import uuid4
 
-from thericher_v2.execution.paper_peer_visit import BankLeg, Held, bank_key, ordinary
+from thericher_v2.execution.paper_peer_visit import BankLeg, Held, _hash, bank_key, ordinary
 from thericher_v2.ops.h3_dec4_guest import DEC4_ROUND, encode_dec4_guest_visit
 from thericher_v2.ops.h3_dec4_retained_input import (
     Dec4H3RetainedRef,
@@ -120,7 +120,10 @@ def run_dec4_owned_bank_visit(
         argv_sha256=initial["argv_sha256"],
         bank=key,
     )
-    leg = BankLeg(root, bank=bank, identity=identity)
+    existing = None if fixture_clock is not None else ready.source["original_gate_identity"]
+    if fixture_clock is None and not _hash(existing):
+        raise ValueError("h3_bank_existing_gate_identity_required")
+    leg = BankLeg(root, bank=bank, identity=identity, existing_gate=existing)
     check_time()
     try:
         leg.__enter__()

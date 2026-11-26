@@ -56,12 +56,13 @@ SOURCE/RELEASE and exact native writer/restore closure still need binding.
 R4 stages 124 exact files and both pre-source COM profiles on the real
 candidate path. Its no-site restore needed both New York and Seoul TZif
 files; this is a tracked fix, not permission to search ambient site paths.
-The old gate exists and matches the historical bank pointer and lock, but
-the restore binding currently rejects it as outside its new-package root.
-Bind that original existing gate without creating a fresh lock. A scoped
-Claude challenge highlighted replacement between path check and acquisition;
-join the observed file identity to the acquired handle. Neither future
-financial task is installed.
+R6 verifies the historical out-of-tree bank/basis/account, uses a provisioned
+lock only, and retains the directory file IDs and acquired lock signature.
+Attempted replacement and missing lock do not create substitute custody.
+Observer, daemon, dated Net25 policy, five original capsule mount roles and
+the dedicated Paper bridge passed static preparation (HANDOFF). Next bind
+the exact actual writer profile, including monitor image/source and current
+owner/exclusion facts. Neither future financial task is installed.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

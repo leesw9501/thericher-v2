@@ -7,6 +7,15 @@ No completed fit/forward/evaluation is repeated for GPU occupancy.
 
 ## Current Work
 
+Distinct turnover mechanism, Nov26: `A/research/current-rank-tier-weight-assignment-development-20261126-v1`
+contains a pure adapter and frozen development proposal. Same weight
+multiset/gross in every rank tier for stable-order versus prior-close
+holdings-aligned assignment. Eleven invented tests passed, including
+exhaustive assignment comparison for 243 holdings patterns. This proves
+prior-close turnover optimality only, not realized cost or PnL. Existing
+registry reserves one DEV readout, two books, 25 bp per side, zero fits or
+retries; native replay join is unbound. No market arrays or holdout read.
+
 The fixed-half block-end join requires all five frozen slots in order.
 Missing measurements stay explicit, separate from verified no-signal dates.
 The time-bound caller denies target reads before Dec28 21:00 UTC and requires

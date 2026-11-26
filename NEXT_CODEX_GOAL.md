@@ -28,12 +28,12 @@ assembled outer starter now refuses early phases in direct no-site Pythonw
 and calls only verified runtime/dispatcher members. R3 composes the
 protected dependency loader and profile anchor to an inert final boundary.
 The protected r4 candidate now has exact program bytes and both pre-source
-COM profile cards. Next bind the original bank gate: the new-package root
-rule rejects the old, separately anchored gate, which must not be moved or
-recreated. Require the exact historical bank/basis link and original lock
-identity through acquire. Then bind the actual writer, observer and capsule
-inputs before freezing SOURCE/RELEASE and scheduling. Do not invent account,
-bank or native writer facts.
+COM profile cards. R6 refreshes those cards and binds the historical
+bank/basis/account and exact existing lock through acquire. The dated policy,
+original capsule mounts, inert guest image, dedicated Docker bridge, daemon
+and both observer plans are now staged. Next bind the actual protected
+writer/monitor/current-owner claims to R6 before freezing SOURCE/RELEASE
+and scheduling. Do not invent account, bank or native writer facts.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only

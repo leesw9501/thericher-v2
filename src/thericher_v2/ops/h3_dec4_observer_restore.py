@@ -241,6 +241,7 @@ def restore_dec4_observer_once(
             release = source.release(value, pins.source_sha256, pins.release_sha256)
             selected = phase_restore_pins(value, phase)
             bank = dict(value["original_owner"]["bank"])
+            existing_gate = value.get("original_gate_identity") if daemon is not None else None
             valid = (
                 source.ROOT.is_absolute()
                 and source.ROUND == ROUND
@@ -254,6 +255,7 @@ def restore_dec4_observer_once(
                 and (daemon is None or selected["observer_restore_daemon_sha256"] == daemon.sha256)
                 and Path(value["original_gate_root"]) == pins.gate_root
                 and pv.bank_key(bank) == pins.bank_key
+                and (daemon is None or pv._hash(existing_gate))
                 and release.get("source") == pins.source_sha256
                 and release.get("allow_execute") is True
                 and release.get("actual_financial_admission") is False
@@ -261,9 +263,9 @@ def restore_dec4_observer_once(
         except Exception:
             raise pv.Denied("h3_observer_restore_source_or_release") from None
         pv._need(valid, "h3_observer_restore_source_or_release")
-        return bank
+        return bank, existing_gate
 
-    bank = check_source()
+    bank, existing_gate = check_source()
     root = pins.gate_root / ("bank-" + pins.bank_key)
     active = root / "ACTIVE-LEG.json"
     closed = root / ("CLOSED-" + pins.run + ".json")
@@ -342,7 +344,7 @@ def restore_dec4_observer_once(
             pv._need(clock() >= at, "h3_observer_restore_stale_start")
             pv._need(deadline is None or clock() < deadline, "h3_observer_restore_deadline")
             pv._need(
-                pv._same(current, record) and check_source() == bank,
+                pv._same(current, record) and check_source() == (bank, existing_gate),
                 "h3_observer_restore_original_mismatch",
             )
             for actor in (owner, *(child for visit in visits for child in visit["children"])):
@@ -367,7 +369,12 @@ def restore_dec4_observer_once(
 
         _absent(pending, "h3_observer_restore_stale_marker")
         lease.restore_closed(
-            pins.gate_root, bank=bank, identity=identity, native_closed=native_closed, clock=clock
+            pins.gate_root,
+            bank=bank,
+            identity=identity,
+            native_closed=native_closed,
+            clock=clock,
+            existing_gate=existing_gate,
         )
         completed = True
     pv._need(completed, "h3_observer_restore_result_unknown")

@@ -137,6 +137,14 @@ both original clock fields used the producer's `str(datetime)` format.
 `0e948559064bb65731cd0da0bcb3f752a052b69e3fa4b1ee712395c88cf1f919`
 matched the exact prebind and ordered 19-query digests after correcting only
 those comparisons. This is not a cold-start pass; keep the audit unchanged.
+The corrected R4 cold probe got past exact target prebind, then withheld on
+a load-delta image outside the profiled roots (`sqlite3.dll` basename only).
+`A/data/h3-dec9-sqlite-native-image-cause-r4-v1/RESULT.json` separately
+reproduced the exact base companion of pinned `_sqlite3.pyd` in a no-site
+import without opening a database. It is absent from the R4 core manifest;
+the targeted probe does not establish the original loaded file identity or
+explain the previous separate `open` denial. Do not broaden the origin scope
+or treat R4 as activated.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

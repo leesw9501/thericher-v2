@@ -28,8 +28,8 @@ def _write(path, row):
     return sha256(raw).hexdigest()
 
 
-def _guard(root):
-    gate = root / "gate"
+def _guard(root, gate=None):
+    gate = root / "gate" if gate is None else gate
     census = Dec4WriterCensus(
         Dec4CensusProfile(
             root / "claims.json",
@@ -68,13 +68,33 @@ def _guard(root):
         "swapped_grant",
         "changed_bytes",
         "entry_not_ready",
+        "wrong_original_basis",
+        "redirect_original_gate",
+        "wrong_original_account",
+        "wrong_original_binding",
+        "changed_original_lock",
     ],
 )
 def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, fault):
+    gate_root = tmp_path / "historical-gate"
+    tmp_path = tmp_path / "release"
+    tmp_path.mkdir()
     monkeypatch.setattr(native, "_ROOT", tmp_path)
+    monkeypatch.setattr(native, "_ORIGINAL_SOURCE", "legacy-source.json")
     source = tmp_path / "source"
     source.mkdir()
-    guard = _guard(tmp_path)
+    guard = _guard(tmp_path, gate_root)
+    gate = gate_root / ("bank-" + guard.bank_key)
+    gate.mkdir(parents=True)
+    lock = gate / "HOST-VISIT.lock"
+    lock.write_bytes(b"0")
+    original = dict(
+        original_owner=dict(bank=_BANK, owner_inputs=dict(basis_ref=_PIN, account_ref=_OTHER)),
+        original_gate_root=str(gate_root),
+        control_value=dict(gate_root=str(gate_root)),
+    )
+    old_pin = _write(tmp_path / "legacy-source.json", original)
+    monkeypatch.setattr(native, "_ORIGINAL_SOURCE_SHA256", old_pin)
     obs = Dec4ObserverPlan("entry", str(tmp_path / "observer"), _PIN, _OTHER)
     daemon = Dec4RestoreDaemon(_OTHER, _PIN, tmp_path / "docker")
     row = dict(
@@ -120,6 +140,9 @@ def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, 
         restore_native={"entry": row, "exit": exit_row},
         original_owner={"bank": _BANK},
         original_gate_root=str(guard.gate_root),
+        original_gate_identity=pv.existing_gate_identity(gate),
+        original_basis_ref=_PIN,
+        capsule=dict(account_ref=_OTHER),
         single_bank_writer_gate=dict(gate_root=str(guard.gate_root), bank_key=guard.bank_key),
         writer_census_sha256=guard.census.profile.sha256,
     )
@@ -127,6 +150,17 @@ def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, 
         row["evidence_root"] = str(tmp_path / "source" / ".." / "owner")
     if fault == "gate":
         document["single_bank_writer_gate"]["bank_key"] = _PIN
+    if fault == "wrong_original_basis":
+        document["original_basis_ref"] = _OTHER
+    if fault == "wrong_original_account":
+        document["capsule"]["account_ref"] = _PIN
+    if fault == "redirect_original_gate":
+        document["original_gate_root"] = str(tmp_path / "other")
+    if fault == "wrong_original_binding":
+        _write(tmp_path / "legacy-source.json", original | {"changed": True})
+    if fault == "changed_original_lock":
+        lock.rename(gate / "old.lock")
+        lock.write_bytes(b"0")
     if fault == "launcher":
         row["launcher"] = str(source / "scripts" / "not_pinned.py")
     if fault == "phase_pin":
