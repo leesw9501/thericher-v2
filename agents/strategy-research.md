@@ -47,6 +47,17 @@ Before a separate post-checkpoint campaign, align a causal daily OPEN prefix
 to forecast OPEN[e] and OPEN[e+3], not the gap into entry. Freeze naive and
 same-gross EW comparisons, costs and mask; no untouched or profit claim from
 release date alone. Keep this out of the frozen H3 block and Paper.
+The bounded `A/research/granite-ttm-r21-open52-dev-screen-20261126-v1`
+screen is now closed. One invented/one market CPU forward, zero fits and
+one replay in 11.38 s including container lifecycles; no rerun/holdout.
+The model received only the exact released 52-open prefixes; separate replay
+received only scores and the already released COMMON marks. Exact archived
+EW H3 mean and worst sampled drawdown matched. At 25 bp/side, Granite,
+three-open momentum and EW averaged -5.32/-9.81/-5.97 bp net. Worst sampled
+cohort drawdown was 1.1803/1.5051/0.8553 percent. Granite failed the frozen
+positive growth and EW drawdown terms; no tuning/ensemble promotion on this
+reused DEV. `output/RESULT.json` SHA256
+`85fb56df4b49fcdbb799cce45169ab3450d5e9b32691caffc9ea83a335b0bb37`.
 
 Proposal bundle current-self-lstm60-fixed-half-paper-proposal-preparation-
 20261107-v1 COMPLETE synthetic (Source2072/bundleee98). Independent Godel review
