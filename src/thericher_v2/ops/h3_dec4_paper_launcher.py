@@ -11,18 +11,15 @@ from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule
 from thericher_v2.ops.h3_dec4_capsule_adapter import run_dec4_capsule_visit
 from thericher_v2.ops.h3_dec4_docker_inventory import sample_dec4_docker_inventory
 from thericher_v2.ops.h3_dec4_monitor_mount import CONTROL, validate_worker_control_mount
-from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_restore import retain_dec4_restore_owner
-from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
 from thericher_v2.ops.h3_dec4_pair_release import (
     bind_dec4_scheduled_pair_source,
     phase_restore_pins,
 )
 from thericher_v2.ops.h3_dec4_paper_input import Dec4BankPhaseInput
-from thericher_v2.ops.h3_dec4_restore_process import Dec4RestoreProcess
+from thericher_v2.ops.h3_dec4_restore_native_binding import build_dec4_parent_binding
 from thericher_v2.ops.h3_dec4_root_watchdog import arm_root_watchdog
 from thericher_v2.ops.h3_dec4_scheduler_provider import make_dec4_windows_owner_factory
-from thericher_v2.ops.h3_dec4_scoped_writer import Dec4ScopedWriterGuard
 
 _CAPSULE = {"image", "network", "mounts", "workspace", "account_ref", "worker_sha256"}
 _GUEST_PATHS = {
@@ -309,7 +306,6 @@ def _prepare_capsule(leg, ready, retained, frame, admit, *, writer_guard, load_p
 
 
 def run_dec4_windows_paper_leg(
-    evidence_root,
     *,
     source_root,
     pin,
@@ -317,11 +313,8 @@ def run_dec4_windows_paper_leg(
     phase,
     schedule_plan,
     scheduler_providers,
-    phase_input,
-    observer_lease,
-    restore_process,
-    writer_guard,
     load_paper_packet,
+    phase_input=None,
 ):
     """Run one named leg under the same scheduled root's watchdog and native guards.
 
@@ -332,22 +325,20 @@ def run_dec4_windows_paper_leg(
     The independently armed child owns the normal restore. Abnormal physical
     closure and financial recovery remain separate.
     """
-    if (
-        type(phase_input) is not Dec4BankPhaseInput
-        or phase_input.fixture_now is not None
-        or phase_input.run.synthetic
-        or type(observer_lease) is not Dec4ObserverLease
-        or observer_lease.plan.phase != phase
-        or observer_lease.root != Path(observer_lease.plan.output_root)
-        or type(observer_lease.transport) is not Dec4NativeObserverTransport
-        or observer_lease.transport.plan != observer_lease.plan
-        or type(writer_guard) is not Dec4ScopedWriterGuard
-        or type(restore_process) is not Dec4RestoreProcess
-        or not callable(load_paper_packet)
+    if not callable(load_paper_packet) or not (
+        phase == "entry"
+        and type(phase_input) is Dec4BankPhaseInput
+        and phase_input.fixture_now is None
+        and phase_input.run.synthetic is False
+        or phase == "exit"
+        and phase_input is None
     ):
         raise ValueError("dec4_launcher_missing_owned_admission")
     make_owner = make_dec4_windows_owner_factory(schedule_plan, scheduler_providers)
     source = bind_dec4_scheduled_pair_source(source_root, schedule_plan, pin, release_pin, phase)
+    evidence_root, observer_lease, restore_process, writer_guard = build_dec4_parent_binding(
+        source_root, phase, pin, release_pin, schedule_plan
+    )
 
     def readiness(leg, ready, _watchdog_actor):
         return (
@@ -357,11 +348,7 @@ def run_dec4_windows_paper_leg(
             and observer_lease.renew_if_started(leg) is True
         )
 
-    gate = _WatchdogGate(
-        Path(schedule_plan["phases"][phase]["expected_argv"][0]),
-        readiness,
-        writer_guard,
-    )
+    gate = _WatchdogGate(restore_process.executable, readiness, writer_guard)
 
     def prepare(leg, ready, retained, frame, admit):
         dispatch = _prepare_capsule(

@@ -90,6 +90,24 @@ with wrong source/runtime pins refused. Full rechecks took 2.015-2.058 s;
 3,375 runtime members had multiple hard links. This is not a protected
 runtime or native owner proof. Protect the runtime/aliases and bound the
 fresh effect check; do not assume a writable venv is isolated.
+The four representative exact D: dependency copies (two Python modules,
+NumPy extension and OpenBLAS DLL) each had one link and a new native file ID;
+the original linked files were unchanged. Exact probe:
+A/data/h3-dec9-dependency-alias-probe-196d-71046f-75d7b3228e55/RESULT.json
+SHA256 `70d941090fefbc7f812aa4dcee5978fbdab6502dc55fd4437561b056f87de858`.
+The full 3,405-member D: dependency copy (80,117,111 bytes) now matches
+the original pinned bytes with single-link file identities. Verify from
+A/data/h3-dec9-protected-dependencies-196d-71046f-970372673c9b/COPY.json,
+SHA256 `0eaec45aed01ec16de314f21496cfa1f2000ad1e2b912494dc93d6bd56e9514e`.
+Its initial no-site cold import was withheld by the effect audit. The
+adopted source/runtime and any viable startup proof remain separate.
+The targeted `TIMEZONE-DENIAL-FALLBACK.json` (same root, SHA256
+`c9ca428e52ba8a48fd74d50177f16eb5f36a7c8c5f458d5dce3589a77bb14814`)
+reproduced a read-only Windows time-zone registry request in use by
+`dateutil` during import. A specific `PermissionError` kept the read
+denied while allowing the dependency's existing fallback. This was not
+a replay of the failed import. Qualify the no-site import and exact DLL
+origins with that narrow denial control; keep unrelated effects blocked.
 The protected `source-candidate-private-roots/SOURCE.json` SHA256
 `0eb0deeff5b37fe95aadd8aefff82175333b1b011942c410687001c12043cd5d`
 verified all 567 Git members at 9aaa1635, changing only the three capture

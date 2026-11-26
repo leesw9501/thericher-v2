@@ -20,6 +20,10 @@ selected-phase binding; do not rebuild intent from the current Task as its
 own proof. The tracked bank publishes the original input reference before
 entry effects and restores it at exit without the point. Bind its original
 retained-input/reference parent into the actual protected runtime profile.
+The bank now derives its observer, restore, writer and evidence paths from
+the same selected source/release as the restore child. Assemble the actual
+protected caller and independently installed profile pins; do not invent
+any of the account, bank or native writer facts to make the caller start.
 
 Next operational step: bind the exact Dec4/Dec9 launcher/Job lineage and
 qualify the writer census on fresh source-scoped role claims. The count-only

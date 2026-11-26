@@ -9,17 +9,21 @@ from subprocess import list2cmdline
 from thericher_v2.execution import paper_peer_visit as pv
 from thericher_v2.ops.h3_dec4_bank_visit import _TIMES, ROUND, TASKS
 from thericher_v2.ops.h3_dec4_monitor_mount import Dec4MonitorMount
+from thericher_v2.ops.h3_dec4_native_host import dec4_native_plan_fields
 from thericher_v2.ops.h3_dec4_observer_lease import Dec4ObserverLease
 from thericher_v2.ops.h3_dec4_observer_plan import Dec4ObserverPlan
 from thericher_v2.ops.h3_dec4_observer_transport import Dec4NativeObserverTransport
 from thericher_v2.ops.h3_dec4_pair_release import phase_restore_pins, read_pair_release
 from thericher_v2.ops.h3_dec4_restore_child import Dec4RestoreChildBinding
 from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
+from thericher_v2.ops.h3_dec4_restore_process import Dec4RestoreProcess
 from thericher_v2.ops.h3_dec4_restore_writer_guard import Dec4RestoreWriterGuard
+from thericher_v2.ops.h3_dec4_scoped_writer import Dec4ScopedWriterGuard
 from thericher_v2.ops.h3_dec4_writer_census import _PWSH, Dec4CensusProfile, Dec4WriterCensus
 from thericher_v2.ops.paper_scheduled_preflight import ScheduledPaperPlan
 
 _ROOT = Path("D:/thericher-v2/model-artifacts/execution")
+_RESTORE_ENTRY = "scripts/run_h3_dec4_restore_child.py"
 
 
 def _need(ok):
@@ -78,9 +82,33 @@ class _PhaseSource:
 def build_dec4_restore_binding(root, phase, source_sha256, release_sha256):
     """The source/release hashes come from the installed phase, never a model output."""
     try:
-        return _build(root, phase, source_sha256, release_sha256)
+        child, _, _ = _build(root, phase, source_sha256, release_sha256)
+        return child
     except Exception:
         raise pv.Denied("h3_restore_native_binding") from None
+
+
+def build_dec4_parent_binding(root, phase, source_sha256, release_sha256, schedule_plan):
+    """Derive the bank and restore views from the same selected protected phase."""
+    try:
+        child, restore_guard, value = _build(root, phase, source_sha256, release_sha256)
+        fields, _, _ = dec4_native_plan_fields(schedule_plan, source_sha256, phase, release_sha256)
+        bootstrap = value["restore_bootstrap"]
+        exe_pin, script_pin = bootstrap["executable_sha256"], value["files"][_RESTORE_ENTRY]
+        writer = Dec4ScopedWriterGuard(restore_guard.census)
+        _need(
+            fields["task_action_sha256"] == child.plan.action_sha256
+            and fields["dispatcher_root"] == str(root)
+            and exe_pin == schedule_plan["pythonw_sha256"]
+            and pv._hash(exe_pin)
+            and pv._hash(script_pin)
+            and writer.sha256 == value["writer_census_sha256"]
+        )
+        script = _path(str(root / _RESTORE_ENTRY))
+        process = Dec4RestoreProcess(Path(bootstrap["executable"]), exe_pin, script, script_pin)
+        return child.evidence_root, child.lease, process, writer
+    except Exception:
+        raise pv.Denied("h3_bank_native_binding") from None
 
 
 def _build(root, phase, source_sha256, release_sha256):
@@ -177,6 +205,7 @@ def _build(root, phase, source_sha256, release_sha256):
     def hold(record):
         return guard.hold(record, deadline=plan.hard_stop + timedelta(seconds=30))
 
-    return Dec4RestoreChildBinding(
+    child = Dec4RestoreChildBinding(
         source, plan, evidence, lease, daemon, hold, guard.retirement_ready
     )
+    return child, guard, value

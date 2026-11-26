@@ -14,6 +14,7 @@ from thericher_v2.ops import h3_dec4_restore_writer_guard as guard_api
 from thericher_v2.ops.h3_dec4_observer_plan import Dec4ObserverPlan
 from thericher_v2.ops.h3_dec4_pair_release import Dec4PairSource
 from thericher_v2.ops.h3_dec4_restore_daemon import Dec4RestoreDaemon
+from thericher_v2.ops.h3_dec4_schedule_plan import NATIVE_MODULES, build_dec4_schedule_plan
 from thericher_v2.ops.h3_dec4_writer_census import Dec4CensusProfile, Dec4WriterCensus
 
 _PIN = "a" * 64
@@ -114,12 +115,13 @@ def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, 
     exit_row["pins"]["observer_plan_sha256"] = exit_obs.sha256
     exit_row["evidence_root"] = str(tmp_path / "exit-owner")
     document = dict(
-        files={"scripts/bank.py": _PIN},
-        restore_bootstrap={"executable": "C:\\Python\\pythonw.exe"},
+        files={"scripts/bank.py": _PIN, native._RESTORE_ENTRY: _OTHER},
+        restore_bootstrap={"executable": "C:\\Python\\pythonw.exe", "executable_sha256": _PIN},
         restore_native={"entry": row, "exit": exit_row},
         original_owner={"bank": _BANK},
         original_gate_root=str(guard.gate_root),
         single_bank_writer_gate=dict(gate_root=str(guard.gate_root), bank_key=guard.bank_key),
+        writer_census_sha256=guard.census.profile.sha256,
     )
     if fault == "root":
         row["evidence_root"] = str(tmp_path / "source" / ".." / "owner")
@@ -167,6 +169,36 @@ def test_actual_factory_requires_matching_frozen_release(tmp_path, monkeypatch, 
     closed = native.build_dec4_restore_binding(source, "exit", pin, release)
     assert closed.plan.source_sha256 == pin and closed.plan.release_sha256 == release
     assert closed.lease.plan == exit_obs and closed.plan.task_name != binding.plan.task_name
+    args = dict(
+        source_sha256=pin,
+        release_sha256=release,
+        dispatcher_root=str(source),
+        launcher_path=row["launcher"],
+        launcher_source=b"invented bank entry",
+        launcher_sha256=sha256(b"invented bank entry").hexdigest(),
+        pythonw_path=document["restore_bootstrap"]["executable"],
+        pythonw_sha256=_PIN,
+        native_module_sha256=dict.fromkeys(NATIVE_MODULES, _PIN),
+        sid="S-1-5-21-111-222-333-1001",
+        now_utc=datetime(2026, 11, 26, tzinfo=UTC),
+        install_deadline_utc=datetime(2026, 12, 3, tzinfo=UTC),
+    )
+    plan = build_dec4_schedule_plan(**args)
+    for phase, child in (("entry", binding), ("exit", closed)):
+        evidence, lease, process, writer = native.build_dec4_parent_binding(
+            source, phase, pin, release, plan
+        )
+        assert evidence == child.evidence_root and lease.plan == child.lease.plan
+        assert process.script == source / native._RESTORE_ENTRY
+        assert process.script_sha256 == _OTHER and process.executable_sha256 == _PIN
+        assert writer.sha256 == guard.census.profile.sha256
+        for skew in (
+            {"launcher_path": str(source / "scripts" / "different.py")},
+            {"pythonw_sha256": _OTHER},
+        ):
+            with pytest.raises(pv.Denied, match="h3_bank_native_binding"):
+                crossed = build_dec4_schedule_plan(**(args | skew))
+                native.build_dec4_parent_binding(source, phase, pin, release, crossed)
     original = SimpleNamespace(
         ROOT=source,
         check=lambda supplied: binding.source.check(supplied),

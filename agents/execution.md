@@ -36,6 +36,10 @@ bank now records an original input reference before dispatch and reloads it
 with exact closed entry identity in a new process. Missing/tampered records
 and repeat exit were refused. Protect its actual storage and wire the real
 launcher; held intents still use exact recovery, not a substitute exit.
+The launcher now builds the bank and restore views from the same exact
+selected release. It no longer accepts independent observer/restore/writer
+objects, and exit does not take a point callback. Both phase plans matched
+in the fixture, while crossed action and interpreter pins were refused.
 
 Nov26: pinned Python provider to native PowerShell/full-definition readback
 passed a trigger-fired hidden direct process's own PID/birth/GUID attestation.

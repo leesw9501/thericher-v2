@@ -116,6 +116,27 @@ entry profile. Same root, `NATIVE-PLAN-PROVIDER-SMOKE.json` SHA256
 `bec8c49b83e1bbbe265477a489eb15c69d1eab9a524ddebb06339719980da870`.
 It proves the static input join, not registration, live Scheduler provenance
 or writer admission. Actual release/bootstrap still needs the protected binding.
+The bank entry now derives its evidence root, observer lease, writer guard
+and restore executable from the same selected frozen phase as the normal
+restore child. It refuses disagreement with the install plan's exact action
+or runtime image pin. Exit accepts no point-preparation callback at all.
+The focused fixtures exercised both phases and a rejected crossed command
+and interpreter pin; no native task, credentials or capsule was activated.
+Claude challenge: `NATIVE-PARENT-BINDING-CLAUDE-VERDICT.json` in the same root.
+The external `dec4-native-paper-packet.py` SHA256
+`0c3c997745b1cba940390999ba168ce9ac639df968d4139edff2827749f11e6b`
+binds an already owned Paper-only config callback to the same account digest.
+The real guest parser accepted the invented five-field packet. Binding did
+not read config; wrong account, invalid/oversize fields and re-read refused.
+It does not select a config path or grant a new read or effect authority.
+The source boundary candidate is under
+`A/execution/h3-dec4-dec9-source-bootstrap-20261126-v1/source_bootstrap.py`,
+SHA256 `9806569c93eed5dd9aa9a4b82f240e979d8e44af184723496acb319516192a76`.
+The direct base `pythonw -I -S -B` smoke passed 11 cases twice. It checks
+the real early clock, selected phase/release, source/member digests and
+source ACL before importing project code. It returns verified bytes and a
+provider descriptor, not a callable already authorized to execute. Compose
+it with the named protected launcher; no real anchor or schedule was made.
 The tracked bank coordinator publishes the original input reference before
 entry dispatch and restores it on exit without a point callback, including
 after a fresh process start. It joins exact original BankLeg identity/owner,

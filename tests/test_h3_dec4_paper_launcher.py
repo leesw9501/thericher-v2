@@ -7,7 +7,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from test_h3_dec4_bank_visit import PIN, Source, capsule, run
+from test_h3_dec4_bank_visit import PIN, RELEASE, Source, capsule, run
 from thericher_v2.ops import h3_dec4_paper_launcher as launcher
 from thericher_v2.ops.h3_dec4_capsule import inspect_dec4_capsule
 
@@ -85,6 +85,7 @@ def test_same_leg_watchdog_arms_once_and_is_checked_after_slow_admission(monkeyp
     leg = SimpleNamespace(record={"owner": {"native_start": "win-filetime:123", "pid": 2}})
     plan = SimpleNamespace(source={}, plan=SimpleNamespace(hard_stop=_entry_clock()))
     guard = SimpleNamespace(check=live_guard)
+
     def readiness(_leg, _plan, actor):
         assert actor == "invented-watchdog"
         events.append("observer")
@@ -226,3 +227,41 @@ def test_admission_change_after_dispatch_selection_holds_for_exact_recovery(
     with pytest.raises(ValueError, match=error):
         run(tmp_path, source, invoke_capsule_once=None, prepare_capsule_once=changed)
     assert len(list(source.gate.glob("*/ACTIVE-LEG.json"))) == 1
+
+
+def test_native_exit_uses_only_source_derived_binding_and_no_point(tmp_path, monkeypatch):
+    plan, providers = object(), object()
+    lease, writer, source, owner = (object() for _ in range(4))
+    restore = SimpleNamespace(executable=tmp_path / "pythonw.exe")
+    evidence = tmp_path / "exit-evidence"
+    seen = []
+
+    def selected(root, phase, pin, release, actual_plan):
+        assert (root, phase, pin, release, actual_plan) == (tmp_path, "exit", PIN, RELEASE, plan)
+        seen.append("source-derived")
+        return evidence, lease, restore, writer
+
+    def bank(root, **args):
+        assert root == evidence
+        assert args["source"] is source and args["make_owner"] is owner
+        assert args["phase"] == "exit" and args["prepare_phase_input"] is None
+        seen.append("bank")
+        return {"status": "invented"}
+
+    monkeypatch.setattr(launcher, "bind_dec4_scheduled_pair_source", lambda *_: source)
+    monkeypatch.setattr(launcher, "make_dec4_windows_owner_factory", lambda *_: owner)
+    monkeypatch.setattr(launcher, "build_dec4_parent_binding", selected)
+    monkeypatch.setattr(launcher, "run_dec4_owned_bank_visit", bank)
+    options = dict(
+        source_root=tmp_path,
+        pin=PIN,
+        release_pin=RELEASE,
+        phase="exit",
+        schedule_plan=plan,
+        scheduler_providers=providers,
+        load_paper_packet=_never,
+    )
+    assert launcher.run_dec4_windows_paper_leg(**options) == {"status": "invented"}
+    with pytest.raises(ValueError, match="missing_owned_admission"):
+        launcher.run_dec4_windows_paper_leg(**options, phase_input=_never)
+    assert seen == ["source-derived", "bank"]
